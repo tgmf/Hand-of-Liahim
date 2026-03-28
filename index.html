@@ -1225,29 +1225,109 @@ const MARSEILLE_IMAGES = {
   'major-21': '1/13/Jean_Dodal_Tarot_trump_21.jpg/120px-Jean_Dodal_Tarot_trump_21.jpg',
 };
 
-// Visconti-Sforza deck (c.1450) — majors available on Wikimedia
+// =============================================================================
+// VISCONTI-SFORZA IMAGE MAP — corrected to use the Bembo-Visconti-tarot series
+// Source: https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot
+// License: Public domain (15th-century artwork)
+// Access: Special:FilePath redirects — stable regardless of Wikimedia's internal hash paths
+//
+// Changes vs old code:
+//   • Was: "Visconti-Sforza_tarot_deck.*" series — majors only, wrong/stale filenames
+//   • Now: "Bembo-Visconti-tarot-*" series — 73 cards (all surviving), majors + full minor arcana
+//   • Suits renamed to historical names: coins (pentacles), staves (wands)
+//   • URLs use Special:FilePath for reliability (no MD5 hash guessing)
+//   • 5 missing entries documented: Devil, Tower, 3♠, Knight of Coins, King of Cups
+//   • getCardThumbUrl / getCardFullUrl updated to use the new URL pattern
+// =============================================================================
+ 
 const VISCONTI_IMAGES = {
-  'major-0':  '9/9e/Visconti-Sforza_tarot_deck._The_Fool.jpg/120px-Visconti-Sforza_tarot_deck._The_Fool.jpg',
-  'major-1':  'c/c3/Visconti-Sforza_tarot_deck._The_Magician.jpg/120px-Visconti-Sforza_tarot_deck._The_Magician.jpg',
-  'major-2':  '3/3c/Visconti-Sforza_tarot_deck._The_High_Priestess.jpg/120px-Visconti-Sforza_tarot_deck._The_High_Priestess.jpg',
-  'major-3':  '9/9b/Visconti-Sforza_tarot_deck._The_Empress.jpg/120px-Visconti-Sforza_tarot_deck._The_Empress.jpg',
-  'major-4':  'f/fd/Visconti-Sforza_tarot_deck._The_Emperor.jpg/120px-Visconti-Sforza_tarot_deck._The_Emperor.jpg',
-  'major-5':  '4/4a/Visconti-Sforza_tarot_deck._The_Hierophant.jpg/120px-Visconti-Sforza_tarot_deck._The_Hierophant.jpg',
-  'major-6':  'a/aa/Visconti-Sforza_tarot_deck._The_Lovers.jpg/120px-Visconti-Sforza_tarot_deck._The_Lovers.jpg',
-  'major-7':  '4/40/Visconti-Sforza_tarot_deck._The_Chariot.jpg/120px-Visconti-Sforza_tarot_deck._The_Chariot.jpg',
-  'major-8':  '0/0a/Visconti-Sforza_tarot_deck._Strength.jpg/120px-Visconti-Sforza_tarot_deck._Strength.jpg',
-  'major-9':  '3/35/Visconti-Sforza_tarot_deck._The_Hermit.jpg/120px-Visconti-Sforza_tarot_deck._The_Hermit.jpg',
-  'major-10': 'b/ba/Visconti-Sforza_tarot_deck._Wheel_of_Fortune.jpg/120px-Visconti-Sforza_tarot_deck._Wheel_of_Fortune.jpg',
-  'major-11': '5/5e/Visconti-Sforza_tarot_deck._Justice.jpg/120px-Visconti-Sforza_tarot_deck._Justice.jpg',
-  'major-12': '0/08/Visconti-Sforza_tarot_deck._The_Hanged_Man.jpg/120px-Visconti-Sforza_tarot_deck._The_Hanged_Man.jpg',
-  'major-13': '4/4e/Visconti-Sforza_tarot_deck._Death.jpg/120px-Visconti-Sforza_tarot_deck._Death.jpg',
-  'major-14': '9/9a/Visconti-Sforza_tarot_deck._Temperance.jpg/120px-Visconti-Sforza_tarot_deck._Temperance.jpg',
-  'major-15': 'a/ae/Visconti-Sforza_tarot_deck._The_Devil.jpg/120px-Visconti-Sforza_tarot_deck._The_Devil.jpg',
-  'major-17': '7/71/Visconti-Sforza_tarot_deck._The_Star.jpg/120px-Visconti-Sforza_tarot_deck._The_Star.jpg',
-  'major-18': '8/8b/Visconti-Sforza_tarot_deck._The_Moon.jpg/120px-Visconti-Sforza_tarot_deck._The_Moon.jpg',
-  'major-19': 'd/d6/Visconti-Sforza_tarot_deck._The_Sun.jpg/120px-Visconti-Sforza_tarot_deck._The_Sun.jpg',
-  'major-20': '9/9d/Visconti-Sforza_tarot_deck._Judgement.jpg/120px-Visconti-Sforza_tarot_deck._Judgement.jpg',
-  'major-21': '0/0a/Visconti-Sforza_tarot_deck._The_World.jpg/120px-Visconti-Sforza_tarot_deck._The_World.jpg',
+  // --- MAJOR ARCANA (20 of 22; Devil XV and Tower XVI permanently lost) ---
+  'major-0':  'Bembo-Visconti-tarot-arcanum-fool.jpg',
+  'major-1':  'Bembo-Visconti-tarot-arcanum-01-magician.jpg',
+  'major-2':  'Bembo-Visconti-tarot-arcanum-02-high_priestess.jpg',
+  'major-3':  'Bembo-Visconti-tarot-arcanum-03-empress.jpg',
+  'major-4':  'Bembo-Visconti-tarot-arcanum-04-emperor.jpg',
+  'major-5':  'Bembo-Visconti-tarot-arcanum-05-hierophant.jpg',
+  'major-6':  'Bembo-Visconti-tarot-arcanum-06-lovers.jpg',
+  'major-7':  'Bembo-Visconti-tarot-arcanum-07-chariot.jpg',
+  'major-8':  'Bembo-Visconti-tarot-arcanum-08-strength.jpg',
+  'major-9':  'Bembo-Visconti-tarot-arcanum-09-hermit.jpg',
+  'major-10': 'Bembo-Visconti-tarot-arcanum-10-fortune.jpg',
+  'major-11': 'Bembo-Visconti-tarot-arcanum-11-justice.jpg',
+  'major-12': 'Bembo-Visconti-tarot-arcanum-12-hanged_man.jpg',
+  'major-13': 'Bembo-Visconti-tarot-arcanum-13.jpg',           // Death — no name suffix
+  'major-14': 'Bembo-Visconti-tarot-arcanum-14-temperance.jpg',
+  // major-15  The Devil  — PERMANENTLY LOST (no image exists anywhere)
+  // major-16  The Tower  — PERMANENTLY LOST (no image exists anywhere)
+  'major-17': 'Bembo-Visconti-tarot-arcanum-17-star.jpg',
+  'major-18': 'Bembo-Visconti-tarot-arcanum-18-moon.jpg',
+  'major-19': 'Bembo-Visconti-tarot-arcanum-19-sun.jpg',
+  'major-20': 'Bembo-Visconti-tarot-arcanum-20-judgement.jpg',
+  'major-21': 'Bembo-Visconti-tarot-arcanum-21-world.jpg',
+ 
+  // --- COINS (= Pentacles) — 13 of 14; Knight of Coins permanently lost ---
+  'pents-ace':    'Bembo-Visconti-tarot-coins-01-ace.jpg',
+  'pents-2':      'Bembo-Visconti-tarot-coins-02.jpg',
+  'pents-3':      'Bembo-Visconti-tarot-coins-03.jpg',
+  'pents-4':      'Bembo-Visconti-tarot-coins-04.jpg',
+  'pents-5':      'Bembo-Visconti-tarot-coins-05.jpg',
+  'pents-6':      'Bembo-Visconti-tarot-coins-06.jpg',
+  'pents-7':      'Bembo-Visconti-tarot-coins-07.jpg',
+  'pents-8':      'Bembo-Visconti-tarot-coins-08.jpg',
+  'pents-9':      'Bembo-Visconti-tarot-coins-09.jpg',
+  'pents-10':     'Bembo-Visconti-tarot-coins-10.jpg',
+  'pents-page':   'Bembo-Visconti-tarot-coins-11-knave.jpg',
+  // pents-knight  Knight of Coins — PERMANENTLY LOST
+  'pents-queen':  'Bembo-Visconti-tarot-coins-13-queen.jpg',
+  'pents-king':   'Bembo-Visconti-tarot-coins-14-king.jpg',
+ 
+  // --- CUPS — 13 of 14; King of Cups survives physically but not yet on Wikimedia ---
+  'cups-ace':     'Bembo-Visconti-tarot-cups-01-ace.jpg',
+  'cups-2':       'Bembo-Visconti-tarot-cups-02.jpg',
+  'cups-3':       'Bembo-Visconti-tarot-cups-03.jpg',
+  'cups-4':       'Bembo-Visconti-tarot-cups-04.jpg',
+  'cups-5':       'Bembo-Visconti-tarot-cups-05.jpg',
+  'cups-6':       'Bembo-Visconti-tarot-cups-06.jpg',
+  'cups-7':       'Bembo-Visconti-tarot-cups-07.jpg',
+  'cups-8':       'Bembo-Visconti-tarot-cups-08.jpg',
+  'cups-9':       'Bembo-Visconti-tarot-cups-09.jpg',
+  'cups-10':      'Bembo-Visconti-tarot-cups-10.jpg',
+  'cups-page':    'Bembo-Visconti-tarot-cups-11-knave.jpg',
+  'cups-knight':  'Bembo-Visconti-tarot-cups-12-knight.jpg',
+  'cups-queen':   'Bembo-Visconti-tarot-cups-13-queen.jpg',
+  // cups-king  King of Cups — card survives but not uploaded to Wikimedia
+ 
+  // --- STAVES (= Wands) — 14 of 14, fully complete ---
+  'wands-ace':    'Bembo-Visconti-tarot-staves-01-ace.jpg',
+  'wands-2':      'Bembo-Visconti-tarot-staves-02.jpg',
+  'wands-3':      'Bembo-Visconti-tarot-staves-03.jpg',
+  'wands-4':      'Bembo-Visconti-tarot-staves-04.jpg',
+  'wands-5':      'Bembo-Visconti-tarot-staves-05.jpg',
+  'wands-6':      'Bembo-Visconti-tarot-staves-06.jpg',
+  'wands-7':      'Bembo-Visconti-tarot-staves-07.jpg',
+  'wands-8':      'Bembo-Visconti-tarot-staves-08.jpg',
+  'wands-9':      'Bembo-Visconti-tarot-staves-09.jpg',
+  'wands-10':     'Bembo-Visconti-tarot-staves-10.jpg',
+  'wands-page':   'Bembo-Visconti-tarot-staves-11-knave.jpg',
+  'wands-knight': 'Bembo-Visconti-tarot-staves-12-knight.jpg',
+  'wands-queen':  'Bembo-Visconti-tarot-staves-13-queen.jpg',
+  'wands-king':   'Bembo-Visconti-tarot-staves-14-king.jpg',
+ 
+  // --- SWORDS — 13 of 14; Three of Swords permanently lost ---
+  'swords-ace':    'Bembo-Visconti-tarot-swords-01-ace.jpg',
+  'swords-2':      'Bembo-Visconti-tarot-swords-02.jpg',
+  // swords-3  Three of Swords — PERMANENTLY LOST
+  'swords-4':      'Bembo-Visconti-tarot-swords-04.jpg',
+  'swords-5':      'Bembo-Visconti-tarot-swords-05.jpg',
+  'swords-6':      'Bembo-Visconti-tarot-swords-06.jpg',
+  'swords-7':      'Bembo-Visconti-tarot-swords-07.jpg',
+  'swords-8':      'Bembo-Visconti-tarot-swords-08.jpg',
+  'swords-9':      'Bembo-Visconti-tarot-swords-09.jpg',
+  'swords-10':     'Bembo-Visconti-tarot-swords-10.jpg',
+  'swords-page':   'Bembo-Visconti-tarot-swords-11-knave.jpg',
+  'swords-knight': 'Bembo-Visconti-tarot-swords-12-knight.jpg',
+  'swords-queen':  'Bembo-Visconti-tarot-swords-13-queen.jpg',
+  'swords-king':   'Bembo-Visconti-tarot-swords-14-king.jpg',
 };
 
 // ===== CARD DATA =====
@@ -1585,47 +1665,51 @@ const CARDS_RWS = [
 function getCardThumbUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
-
+ 
   if (deck === 'marseille') {
     return MARSEILLE_IMAGES[card.id]
       ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id]}`
       : null;
   }
-
+ 
   if (deck === 'visconti') {
-    return VISCONTI_IMAGES[card.id]
-      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${VISCONTI_IMAGES[card.id]}`
-      : null;
+    const filename = VISCONTI_IMAGES[card.id];
+    if (!filename) return null;
+    // Special:FilePath redirects to the actual CDN URL for the full image.
+    // Append ?width=120 so Wikimedia serves a scaled thumbnail.
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=120`;
   }
-
-  // rider-waite: use Wikimedia 120px thumbs for speed
+ 
+  // rider-waite: Wikimedia 120px thumbs
   return RWS_THUMB[card.id]
     ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${RWS_THUMB[card.id]}`
     : null;
 }
-
+ 
 /**
  * Returns the full-resolution URL shown in the modal.
  * RWS → archive.org full PNG.
- * Other decks → same Wikimedia path but at larger size.
+ * Marseille → Wikimedia 400px thumb.
+ * Visconti → Special:FilePath redirect at 512px (native resolution of Bembo series).
  */
 function getCardFullUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
-
+ 
   if (deck === 'marseille') {
     return MARSEILLE_IMAGES[card.id]
       ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id].replace('/120px-', '/400px-')}`
       : null;
   }
-
+ 
   if (deck === 'visconti') {
-    return VISCONTI_IMAGES[card.id]
-      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${VISCONTI_IMAGES[card.id].replace('/120px-', '/400px-')}`
-      : null;
+    const filename = VISCONTI_IMAGES[card.id];
+    if (!filename) return null;
+    // 512px matches the native upload resolution of the Bembo series
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=512`;
   }
-
-  // rider-waite: load the full archive.org PNG for the modal
+ 
+  // rider-waite: full archive.org PNG
   return RWS_FULL[card.id]
     ? `https://archive.org/download/rider-waite-tarot/${RWS_FULL[card.id]}.png`
     : null;
