@@ -94,7 +94,7 @@
     color: var(--gold);
   }
 
-  h1 {
+  h1, .logo-link {
     font-family: var(--font-title);
     font-size: clamp(2.375rem, 6vw, 4rem);
     font-weight: 400;
@@ -103,6 +103,7 @@
     text-shadow: 0 0 40px rgba(201,168,76,0.4);
     line-height: 1;
     margin-bottom: 0.625rem;
+    text-decoration: none;
   }
 
   .tagline {
@@ -754,6 +755,12 @@
       width: 100%;
       height: calc(min(90vw, 20rem) * 1.714);
     }
+
+    .meaning-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
   }
 </style>
 </head>
@@ -765,7 +772,7 @@
 <div id="app">
   <header>
     <span class="logo-ornament">✦ ✦ ✦</span>
-    <h1>The Hand of Liahim</h1>
+    <h1><a href="/" class="logo-link">The Hand of Liahim</a></h1>
     <p class="tagline">The Ancient Art of Tarot</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
@@ -1599,7 +1606,7 @@ function drawCards(n) {
   const deck = shuffle(CARDS_RWS);
   return deck.slice(0, n).map(card => ({
     ...card,
-    reversed: Math.random() < 0.3,
+    isReversed: Math.random() < 0.3,
     displayName: getCardName(card),
   }));
 }
@@ -1689,7 +1696,7 @@ function renderReading() {
   grid.innerHTML = '';
   state.drawnCards.forEach((card, i) => {
     const wrap = document.createElement('div');
-    wrap.className = 'tarot-card-wrap' + (card.reversed ? ' reversed' : '');
+    wrap.className = 'tarot-card-wrap' + (card.isReversed ? ' reversed' : '');
     wrap.onclick = () => openModal(card);
 
     const inner = document.createElement('div');
@@ -1728,7 +1735,7 @@ function renderReading() {
     nameLabel.textContent = card.displayName;
     wrap.appendChild(nameLabel);
 
-    if (card.reversed) {
+    if (card.isReversed) {
       const revBadge = document.createElement('span');
       revBadge.className = 'reversed-badge';
       revBadge.textContent = 'Reversed';
@@ -1743,7 +1750,7 @@ function renderReading() {
   meaningsEl.innerHTML = '';
   state.drawnCards.forEach((card, i) => {
     const mc = document.createElement('div');
-    mc.className = 'meaning-card' + (card.reversed ? ' reversed-card' : '');
+    mc.className = 'meaning-card' + (card.isReversed ? ' reversed-card' : '');
     mc.onclick = () => openModal(card);
 
     const header = document.createElement('div');
@@ -1759,7 +1766,7 @@ function renderReading() {
     nameSpan.textContent = card.displayName;
     header.appendChild(nameSpan);
 
-    if (card.reversed) {
+    if (card.isReversed) {
       const revTag = document.createElement('span');
       revTag.className = 'meaning-rev-tag';
       revTag.textContent = '⟳ reversed';
@@ -1770,7 +1777,7 @@ function renderReading() {
 
     const kwWrap = document.createElement('div');
     kwWrap.className = 'meaning-keywords';
-    const keywords = card.reversed
+    const keywords = card.isReversed
       ? card.keywords.map(k => `${k}*`)
       : card.keywords;
     keywords.forEach(kw => {
@@ -1783,7 +1790,7 @@ function renderReading() {
 
     const txt = document.createElement('p');
     txt.className = 'meaning-text';
-    txt.textContent = card.reversed ? card.reversed : card.upright;
+    txt.textContent = card.isReversed ? card.reversed : card.upright;
     mc.appendChild(txt);
 
     meaningsEl.appendChild(mc);
@@ -1809,7 +1816,7 @@ function openModal(card) {
   document.getElementById('modal-arcana').textContent =
     card.arcana === 'Major' ? `Major Arcana · ${card.number}` : `${card.suit} · ${card.arcana} Arcana`;
   document.getElementById('modal-upright').textContent = card.upright;
-  document.getElementById('modal-reversed').textContent = card.reversed_meaning || card.reversed;
+  document.getElementById('modal-reversed').textContent = card.reversed;
 
   const kws = document.getElementById('modal-keywords');
   kws.innerHTML = card.keywords.map(k =>
