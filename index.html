@@ -689,6 +689,23 @@
     border: 1px solid var(--card-border);
   }
 
+  /* Loading shimmer for modal image */
+  .modal-img-loading {
+    width: 60%;
+    aspect-ratio: 0.583;
+    margin: 0 auto 1.25rem;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.05) 25%, rgba(201,168,76,0.12) 50%, rgba(201,168,76,0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    display: block;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
   .modal h2 {
     font-family: var(--font-title);
     font-size: 1.375rem;
@@ -931,7 +948,8 @@
 <div class="modal-overlay" id="card-modal" onclick="closeModal(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <img id="modal-img" class="modal-img" src="" alt="" onerror="this.style.display='none'">
+    <div id="modal-img-shimmer" class="modal-img-loading" style="display:none"></div>
+    <img id="modal-img" class="modal-img" src="" alt="" style="display:none">
     <div id="modal-img-placeholder" style="display:none; text-align:center; font-size:3rem; margin-bottom:1.25rem; color:var(--gold-dim)"></div>
     <h2 id="modal-name"></h2>
     <p class="modal-arcana" id="modal-arcana"></p>
@@ -1002,419 +1020,93 @@ const SPREADS = {
   }
 };
 
-// ===== DECK IMAGE BASES =====
-// Wikimedia Commons paths for public domain decks
-const DECK_BASES = {
-  'rider-waite': (filename) => `https://upload.wikimedia.org/wikipedia/commons/thumb/${filename}`,
-  'marseille':   (filename) => `https://upload.wikimedia.org/wikipedia/commons/thumb/${filename}`,
-  'visconti':    (filename) => `https://upload.wikimedia.org/wikipedia/commons/thumb/${filename}`,
+// ===== RWS IMAGE MAPS =====
+// Thumbnail variant: Wikimedia Commons rider-waite-small-jpeg (fast, ~120px wide)
+// Used for the spread grid — small file size, quick load.
+const RWS_THUMB = {
+  'major-0':  '4/4c/RWS_Tarot_00_Fool.jpg/120px-RWS_Tarot_00_Fool.jpg',
+  'major-1':  'd/de/RWS_Tarot_01_Magician.jpg/120px-RWS_Tarot_01_Magician.jpg',
+  'major-2':  '8/88/RWS_Tarot_02_High_Priestess.jpg/120px-RWS_Tarot_02_High_Priestess.jpg',
+  'major-3':  'd/d2/RWS_Tarot_03_Empress.jpg/120px-RWS_Tarot_03_Empress.jpg',
+  'major-4':  'c/c3/RWS_Tarot_04_Emperor.jpg/120px-RWS_Tarot_04_Emperor.jpg',
+  'major-5':  '8/8d/RWS_Tarot_05_Hierophant.jpg/120px-RWS_Tarot_05_Hierophant.jpg',
+  'major-6':  '3/3a/TheLovers.jpg/120px-TheLovers.jpg',
+  'major-7':  '9/9b/RWS_Tarot_07_Chariot.jpg/120px-RWS_Tarot_07_Chariot.jpg',
+  'major-8':  'f/f6/RWS_Tarot_08_Strength.jpg/120px-RWS_Tarot_08_Strength.jpg',
+  'major-9':  '4/4d/RWS_Tarot_09_Hermit.jpg/120px-RWS_Tarot_09_Hermit.jpg',
+  'major-10': '3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg/120px-RWS_Tarot_10_Wheel_of_Fortune.jpg',
+  'major-11': 'e/e0/RWS_Tarot_11_Justice.jpg/120px-RWS_Tarot_11_Justice.jpg',
+  'major-12': '2/2b/RWS_Tarot_12_Hanged_Man.jpg/120px-RWS_Tarot_12_Hanged_Man.jpg',
+  'major-13': 'd/d7/RWS_Tarot_13_Death.jpg/120px-RWS_Tarot_13_Death.jpg',
+  'major-14': 'f/f8/RWS_Tarot_14_Temperance.jpg/120px-RWS_Tarot_14_Temperance.jpg',
+  'major-15': '5/55/RWS_Tarot_15_Devil.jpg/120px-RWS_Tarot_15_Devil.jpg',
+  'major-16': '3/3c/RWS_Tarot_16_Tower.jpg/120px-RWS_Tarot_16_Tower.jpg',
+  'major-17': 'd/db/RWS_Tarot_17_Star.jpg/120px-RWS_Tarot_17_Star.jpg',
+  'major-18': '7/7f/RWS_Tarot_18_Moon.jpg/120px-RWS_Tarot_18_Moon.jpg',
+  'major-19': '1/17/RWS_Tarot_19_Sun.jpg/120px-RWS_Tarot_19_Sun.jpg',
+  'major-20': 'd/dd/RWS_Tarot_20_Judgement.jpg/120px-RWS_Tarot_20_Judgement.jpg',
+  'major-21': 'f/ff/RWS_Tarot_21_World.jpg/120px-RWS_Tarot_21_World.jpg',
+  'wands-ace':    'a/ac/Wands01.jpg/120px-Wands01.jpg',
+  'wands-2':      '0/0f/Wands02.jpg/120px-Wands02.jpg',
+  'wands-3':      'f/ff/Wands03.jpg/120px-Wands03.jpg',
+  'wands-4':      'a/a4/Wands04.jpg/120px-Wands04.jpg',
+  'wands-5':      '9/9d/Wands05.jpg/120px-Wands05.jpg',
+  'wands-6':      '3/3b/Wands06.jpg/120px-Wands06.jpg',
+  'wands-7':      'e/e0/Wands07.jpg/120px-Wands07.jpg',
+  'wands-8':      '6/6b/Wands08.jpg/120px-Wands08.jpg',
+  'wands-9':      '4/4d/Wands09.jpg/120px-Wands09.jpg',
+  'wands-10':     '0/0b/Wands10.jpg/120px-Wands10.jpg',
+  'wands-page':   '6/6a/Wands11.jpg/120px-Wands11.jpg',
+  'wands-knight': '3/3b/Wands12.jpg/120px-Wands12.jpg',
+  'wands-queen':  '0/0d/Wands13.jpg/120px-Wands13.jpg',
+  'wands-king':   'c/ce/Wands14.jpg/120px-Wands14.jpg',
+  'cups-ace':     '3/36/Cups01.jpg/120px-Cups01.jpg',
+  'cups-2':       'f/f2/Cups02.jpg/120px-Cups02.jpg',
+  'cups-3':       '7/77/Cups03.jpg/120px-Cups03.jpg',
+  'cups-4':       '3/35/Cups04.jpg/120px-Cups04.jpg',
+  'cups-5':       'd/d7/Cups05.jpg/120px-Cups05.jpg',
+  'cups-6':       '1/17/Cups06.jpg/120px-Cups06.jpg',
+  'cups-7':       'a/ae/Cups07.jpg/120px-Cups07.jpg',
+  'cups-8':       '6/60/Cups08.jpg/120px-Cups08.jpg',
+  'cups-9':       '2/24/Cups09.jpg/120px-Cups09.jpg',
+  'cups-10':      '8/84/Cups10.jpg/120px-Cups10.jpg',
+  'cups-page':    'a/ad/Cups11.jpg/120px-Cups11.jpg',
+  'cups-knight':  'f/fa/Cups12.jpg/120px-Cups12.jpg',
+  'cups-queen':   '6/62/Cups13.jpg/120px-Cups13.jpg',
+  'cups-king':    '0/04/Cups14.jpg/120px-Cups14.jpg',
+  'swords-ace':   '1/11/Swords01.jpg/120px-Swords01.jpg',
+  'swords-2':     '9/9e/Swords02.jpg/120px-Swords02.jpg',
+  'swords-3':     '0/02/Swords03.jpg/120px-Swords03.jpg',
+  'swords-4':     'b/bf/Swords04.jpg/120px-Swords04.jpg',
+  'swords-5':     '2/23/Swords05.jpg/120px-Swords05.jpg',
+  'swords-6':     '2/29/Swords06.jpg/120px-Swords06.jpg',
+  'swords-7':     '3/3e/Swords07.jpg/120px-Swords07.jpg',
+  'swords-8':     'a/a7/Swords08.jpg/120px-Swords08.jpg',
+  'swords-9':     '2/2f/Swords09.jpg/120px-Swords09.jpg',
+  'swords-10':    'd/d6/Swords10.jpg/120px-Swords10.jpg',
+  'swords-page':  '4/4c/Swords11.jpg/120px-Swords11.jpg',
+  'swords-knight':'b/b0/Swords12.jpg/120px-Swords12.jpg',
+  'swords-queen': 'd/d4/Swords13.jpg/120px-Swords13.jpg',
+  'swords-king':  '3/33/Swords14.jpg/120px-Swords14.jpg',
+  'pents-ace':    'f/fd/Pents01.jpg/120px-Pents01.jpg',
+  'pents-2':      '9/9f/Pents02.jpg/120px-Pents02.jpg',
+  'pents-3':      '4/42/Pents03.jpg/120px-Pents03.jpg',
+  'pents-4':      'a/a6/Pents04.jpg/120px-Pents04.jpg',
+  'pents-5':      '9/96/Pents05.jpg/120px-Pents05.jpg',
+  'pents-6':      'a/a6/Pents06.jpg/120px-Pents06.jpg',
+  'pents-7':      '6/6a/Pents07.jpg/120px-Pents07.jpg',
+  'pents-8':      '4/49/Pents08.jpg/120px-Pents08.jpg',
+  'pents-9':      'f/f0/Pents09.jpg/120px-Pents09.jpg',
+  'pents-10':     '4/42/Pents10.jpg/120px-Pents10.jpg',
+  'pents-page':   'e/ec/Pents11.jpg/120px-Pents11.jpg',
+  'pents-knight': 'd/d5/Pents12.jpg/120px-Pents12.jpg',
+  'pents-queen':  '8/88/Pents13.jpg/120px-Pents13.jpg',
+  'pents-king':   '1/1c/Pents14.jpg/120px-Pents14.jpg',
 };
 
-// ===== CARD DATA =====
-// Full 78-card RWS deck with Wikimedia image paths
-const CARDS_RWS = [
-  // MAJOR ARCANA
-  { id:'major-0',  name:'The Fool',         arcana:'Major',  number:0,  suit:null, symbol:'☿',
-    keywords:['beginnings','spontaneity','innocence','freedom'],
-    upright:'A leap of faith into the unknown. The Fool represents new beginnings, unlimited potential, and the courage to take the first step without knowing the destination.',
-    reversed:'Recklessness, naïve folly, or holding back from a necessary new beginning out of fear.',
-    img:'4/4c/RWS_Tarot_00_Fool.jpg/120px-RWS_Tarot_00_Fool.jpg' },
-  { id:'major-1',  name:'The Magician',     arcana:'Major',  number:1,  suit:null, symbol:'🜍',
-    keywords:['willpower','skill','manifestation','resourcefulness'],
-    upright:'All tools are available. The Magician channels divine will into earthly action — skilled, resourceful, and capable of transforming intention into reality.',
-    reversed:'Manipulation, poor planning, latent talents unexpressed, or misdirected energy.',
-    img:'d/de/RWS_Tarot_01_Magician.jpg/120px-RWS_Tarot_01_Magician.jpg' },
-  { id:'major-2',  name:'The High Priestess', arcana:'Major', number:2, suit:null, symbol:'☽',
-    keywords:['intuition','mystery','subconscious','wisdom'],
-    upright:'Deep knowing without speaking. The High Priestess guards the threshold of inner wisdom — trust your intuition and the knowledge that comes without rational explanation.',
-    reversed:'Secrets withheld, disconnection from intuition, or surface-level understanding only.',
-    img:'8/88/RWS_Tarot_02_High_Priestess.jpg/120px-RWS_Tarot_02_High_Priestess.jpg' },
-  { id:'major-3',  name:'The Empress',      arcana:'Major',  number:3,  suit:null, symbol:'♀',
-    keywords:['fertility','abundance','nurturing','nature'],
-    upright:'Life in full bloom. The Empress represents fertility, abundance, and the creative power of nature. Nurture what you love and watch it flourish.',
-    reversed:'Neglect, creative block, dependence, or smothering those in your care.',
-    img:'d/d2/RWS_Tarot_03_Empress.jpg/120px-RWS_Tarot_03_Empress.jpg' },
-  { id:'major-4',  name:'The Emperor',      arcana:'Major',  number:4,  suit:null, symbol:'♂',
-    keywords:['authority','structure','stability','leadership'],
-    upright:'Order established through will. The Emperor brings structure, authority, and the stability of clear boundaries. Build with intention and lead with integrity.',
-    reversed:'Domination, rigidity, excessive control, or abdication of responsibility.',
-    img:'c/c3/RWS_Tarot_04_Emperor.jpg/120px-RWS_Tarot_04_Emperor.jpg' },
-  { id:'major-5',  name:'The Hierophant',   arcana:'Major',  number:5,  suit:null, symbol:'⊕',
-    keywords:['tradition','conformity','morality','ethics'],
-    upright:'The wisdom of tradition. The Hierophant represents spiritual guidance, shared values, and the accumulated knowledge of institutions. Seek learning from established paths.',
-    reversed:'Rebellion against convention, personal spirituality outside dogma, or hypocrisy.',
-    img:'8/8d/RWS_Tarot_05_Hierophant.jpg/120px-RWS_Tarot_05_Hierophant.jpg' },
-  { id:'major-6',  name:'The Lovers',       arcana:'Major',  number:6,  suit:null, symbol:'♡',
-    keywords:['love','harmony','choices','alignment'],
-    upright:'The crossroads of the heart. The Lovers speak not only of romance but of the fundamental choices that define who we are and what we value.',
-    reversed:'Misalignment of values, poor decisions, or conflict within a close relationship.',
-    img:'3/3a/TheLovers.jpg/120px-TheLovers.jpg' },
-  { id:'major-7',  name:'The Chariot',      arcana:'Major',  number:7,  suit:null, symbol:'♋',
-    keywords:['control','willpower','victory','determination'],
-    upright:'Forward through opposing forces. The Chariot represents the triumph of disciplined will — holding contradictory forces in tension and driving them toward a single goal.',
-    reversed:'Lack of control, aggression, scattered forces pulling in every direction.',
-    img:'9/9b/RWS_Tarot_07_Chariot.jpg/120px-RWS_Tarot_07_Chariot.jpg' },
-  { id:'major-8',  name:'Strength',         arcana:'Major',  number:8,  suit:null, symbol:'♌',
-    keywords:['courage','patience','compassion','inner strength'],
-    upright:'Courage that does not roar. Strength is the patient taming of raw force through gentleness and love rather than domination — inner mastery over primal impulse.',
-    reversed:'Self-doubt, weakness of character, or force used as compensation for inner insecurity.',
-    img:'f/f6/RWS_Tarot_08_Strength.jpg/120px-RWS_Tarot_08_Strength.jpg' },
-  { id:'major-9',  name:'The Hermit',       arcana:'Major',  number:9,  suit:null, symbol:'♍',
-    keywords:['introspection','solitude','guidance','seeking'],
-    upright:'The light you carry inward. The Hermit retreats from the world to listen to the deepest truth — a guide who shows the path but does not walk it for you.',
-    reversed:'Isolation turned to loneliness, withdrawal from the world as escape rather than wisdom.',
-    img:'4/4d/RWS_Tarot_09_Hermit.jpg/120px-RWS_Tarot_09_Hermit.jpg' },
-  { id:'major-10', name:'Wheel of Fortune', arcana:'Major',  number:10, suit:null, symbol:'☉',
-    keywords:['cycles','fate','turning point','luck'],
-    upright:'The great wheel turns. Fortune reminds us that life moves in cycles and that change — both welcome and difficult — is the one true constant of existence.',
-    reversed:'Bad luck, resistance to change, or clinging to the past as the wheel moves on.',
-    img:'3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg/120px-RWS_Tarot_10_Wheel_of_Fortune.jpg' },
-  { id:'major-11', name:'Justice',          arcana:'Major',  number:11, suit:null, symbol:'⚖',
-    keywords:['fairness','truth','cause & effect','law'],
-    upright:'The scales that cannot be deceived. Justice represents truth, accountability, and the impartial consequences of every choice — no more and no less than what is due.',
-    reversed:'Unfairness, dishonesty, refusal of responsibility, or legal complications.',
-    img:'e/e0/RWS_Tarot_11_Justice.jpg/120px-RWS_Tarot_11_Justice.jpg' },
-  { id:'major-12', name:'The Hanged Man',   arcana:'Major',  number:12, suit:null, symbol:'⊗',
-    keywords:['suspension','surrender','new perspective','sacrifice'],
-    upright:'Willingly suspended between worlds. The Hanged Man chooses to pause, to surrender control, and in doing so sees what was invisible from the upright perspective.',
-    reversed:'Delays, resistance to necessary sacrifice, or stagnation that no longer serves.',
-    img:'2/2b/RWS_Tarot_12_Hanged_Man.jpg/120px-RWS_Tarot_12_Hanged_Man.jpg' },
-  { id:'major-13', name:'Death',            arcana:'Major',  number:13, suit:null, symbol:'♏',
-    keywords:['endings','transition','transformation','change'],
-    upright:'What must end so something may live. Death is seldom literal — it is the great transformer, clearing away what has been outgrown to make space for what must emerge.',
-    reversed:'Resistance to ending, stagnation, fear of letting go of an identity that no longer fits.',
-    img:'d/d7/RWS_Tarot_13_Death.jpg/120px-RWS_Tarot_13_Death.jpg' },
-  { id:'major-14', name:'Temperance',       arcana:'Major',  number:14, suit:null, symbol:'♐',
-    keywords:['balance','moderation','patience','purpose'],
-    upright:'The alchemy of the middle way. Temperance blends opposites into something finer than either alone — patience, moderation, and the grace of working in perfect proportion.',
-    reversed:'Imbalance, excess, impatience, or discord caused by extremes.',
-    img:'f/f8/RWS_Tarot_14_Temperance.jpg/120px-RWS_Tarot_14_Temperance.jpg' },
-  { id:'major-15', name:'The Devil',        arcana:'Major',  number:15, suit:null, symbol:'♑',
-    keywords:['bondage','addiction','materialism','shadow'],
-    upright:'The chains we forge ourselves. The Devil illuminates where we are enslaved by fear, desire, or habit — and reminds us that the chains are often not as binding as they appear.',
-    reversed:'Detachment from addiction, releasing what binds, or reclaiming personal freedom.',
-    img:'5/55/RWS_Tarot_15_Devil.jpg/120px-RWS_Tarot_15_Devil.jpg' },
-  { id:'major-16', name:'The Tower',        arcana:'Major',  number:16, suit:null, symbol:'♜',
-    keywords:['sudden change','upheaval','revelation','chaos'],
-    upright:'Lightning and necessary ruin. The Tower strikes down what was built on a false foundation — a dramatic clearing, painful in the moment, that reveals essential truth.',
-    reversed:'Avoiding necessary change, clinging to a structure that must fall, or disaster averted.',
-    img:'3/3c/RWS_Tarot_16_Tower.jpg/120px-RWS_Tarot_16_Tower.jpg' },
-  { id:'major-17', name:'The Star',         arcana:'Major',  number:17, suit:null, symbol:'★',
-    keywords:['hope','renewal','inspiration','serenity'],
-    upright:'The sky opens after the storm. The Star pours out hope freely — a deep assurance that the universe is benevolent and that healing, renewal, and inspiration are flowing toward you.',
-    reversed:'Despair, lost faith, or feeling disconnected from hope and creative inspiration.',
-    img:'d/db/RWS_Tarot_17_Star.jpg/120px-RWS_Tarot_17_Star.jpg' },
-  { id:'major-18', name:'The Moon',         arcana:'Major',  number:18, suit:null, symbol:'☾',
-    keywords:['illusion','fear','subconscious','confusion'],
-    upright:'The path that dissolves in moonlight. The Moon speaks of illusion, the subconscious, and the uncertain territory between what is real and what is imagined. Not all is as it appears.',
-    reversed:'Clarity beginning to emerge from confusion, releasing irrational fears, or deception exposed.',
-    img:'7/7f/RWS_Tarot_18_Moon.jpg/120px-RWS_Tarot_18_Moon.jpg' },
-  { id:'major-19', name:'The Sun',          arcana:'Major',  number:19, suit:null, symbol:'☀',
-    keywords:['joy','success','vitality','clarity'],
-    upright:'Life at its fullest brightness. The Sun radiates success, joy, and the pure vitality of existence — a time of clarity, warmth, and unambiguous good fortune.',
-    reversed:'Temporary setbacks to happiness, blocked success, or optimism dimmed by circumstance.',
-    img:'1/17/RWS_Tarot_19_Sun.jpg/120px-RWS_Tarot_19_Sun.jpg' },
-  { id:'major-20', name:'Judgement',        arcana:'Major',  number:20, suit:null, symbol:'🔔',
-    keywords:['reflection','reckoning','awakening','absolution'],
-    upright:'Called into being. Judgement signals a profound awakening — a summons to rise, to evaluate your life honestly, and to answer the call you have been hearing beneath the surface.',
-    reversed:'Self-doubt, refusal of the call, fear of judgment, or ignoring a major awakening.',
-    img:'d/dd/RWS_Tarot_20_Judgement.jpg/120px-RWS_Tarot_20_Judgement.jpg' },
-  { id:'major-21', name:'The World',        arcana:'Major',  number:21, suit:null, symbol:'⊕',
-    keywords:['completion','integration','accomplishment','wholeness'],
-    upright:'The dance of completion. The World marks the triumphant end of a cycle — full integration, mastery achieved, and the joyful awareness that you have arrived exactly where you were meant to be.',
-    reversed:'Incomplete endings, shortcuts avoiding necessary closure, or inability to celebrate success.',
-    img:'f/ff/RWS_Tarot_21_World.jpg/120px-RWS_Tarot_21_World.jpg' },
-
-  // WANDS
-  { id:'wands-ace', name:'Ace of Wands',    arcana:'Minor', number:1, suit:'Wands', symbol:'🔥',
-    keywords:['inspiration','potential','creation','energy'],
-    upright:'The spark of creative fire. A powerful new beginning in the realm of passion, inspiration, and creative endeavor. Seize the moment.',
-    reversed:'Delays, lack of motivation, creative blocks, or a promising idea failing to ignite.',
-    img:'a/ac/Wands01.jpg/120px-Wands01.jpg' },
-  { id:'wands-2', name:'Two of Wands',      arcana:'Minor', number:2, suit:'Wands', symbol:'🌍',
-    keywords:['planning','progress','discovery','decisions'],
-    upright:'The world spread before you, waiting. A moment of bold vision — you stand at the threshold of a great journey, choosing your direction with confidence.',
-    reversed:'Fear of the unknown, lack of planning, or playing it too safe when expansion is needed.',
-    img:'0/0f/Wands02.jpg/120px-Wands02.jpg' },
-  { id:'wands-3', name:'Three of Wands',    arcana:'Minor', number:3, suit:'Wands', symbol:'⛵',
-    keywords:['expansion','foresight','overseas','leadership'],
-    upright:'Your ships are in. The initial work is done and results are coming — foresight, expansion, and the confidence of one who has ventured boldly into the unknown.',
-    reversed:'Delays in results, lack of foresight, or plans failing to take off as hoped.',
-    img:'f/ff/Wands03.jpg/120px-Wands03.jpg' },
-  { id:'wands-4', name:'Four of Wands',     arcana:'Minor', number:4, suit:'Wands', symbol:'🏡',
-    keywords:['celebration','harmony','homecoming','community'],
-    upright:'Garlands hung, celebration earned. A time of joy, homecoming, and well-earned rest — community, harmony, and the pleasure of stable foundations.',
-    reversed:'Transition, instability at home, or celebration that is incomplete or disrupted.',
-    img:'a/a4/Wands04.jpg/120px-Wands04.jpg' },
-  { id:'wands-5', name:'Five of Wands',     arcana:'Minor', number:5, suit:'Wands', symbol:'⚔',
-    keywords:['conflict','competition','tension','diversity'],
-    upright:'Wands clashing in the arena. Competition, disagreement, and productive conflict — a chaotic energy that can sharpen ideas if channeled, or exhaust if allowed to run wild.',
-    reversed:'Avoiding conflict, inner tension, competition that turns destructive, or resolution of strife.',
-    img:'9/9d/Wands05.jpg/120px-Wands05.jpg' },
-  { id:'wands-6', name:'Six of Wands',      arcana:'Minor', number:6, suit:'Wands', symbol:'🏆',
-    keywords:['victory','recognition','progress','self-confidence'],
-    upright:'The victor rides home crowned. Public recognition, success after effort, and the confidence that comes from having earned genuine acclaim.',
-    reversed:'Ego, fall from grace, lack of recognition, or private victory without public acknowledgment.',
-    img:'3/3b/Wands06.jpg/120px-Wands06.jpg' },
-  { id:'wands-7', name:'Seven of Wands',    arcana:'Minor', number:7, suit:'Wands', symbol:'🛡',
-    keywords:['challenge','perseverance','defense','competition'],
-    upright:'Stand your ground on the hilltop. You hold an advantageous position but must defend it against those who would take it — courage, perseverance, and standing firm in your convictions.',
-    reversed:'Overwhelmed, giving up, indecision at a critical moment, or abandoning a position unnecessarily.',
-    img:'e/e0/Wands07.jpg/120px-Wands07.jpg' },
-  { id:'wands-8', name:'Eight of Wands',    arcana:'Minor', number:8, suit:'Wands', symbol:'💫',
-    keywords:['speed','action','air travel','movement'],
-    upright:'Everything at once, swift and sure. Rapid movement, news arriving quickly, and the energizing rush of things finally moving after a long stillness.',
-    reversed:'Delays, frustration, slowing down, or energy scattered without clear direction.',
-    img:'6/6b/Wands08.jpg/120px-Wands08.jpg' },
-  { id:'wands-9', name:'Nine of Wands',     arcana:'Minor', number:9, suit:'Wands', symbol:'🧱',
-    keywords:['resilience','grit','last stand','persistence'],
-    upright:'Wounded but undefeated. The battle-worn figure who stands ready for one more challenge — resilience, persistence, and the strength of one who has already survived much.',
-    reversed:'Exhaustion, paranoia, refusing help, or an inability to recover from past wounds.',
-    img:'4/4d/Wands09.jpg/120px-Wands09.jpg' },
-  { id:'wands-10', name:'Ten of Wands',     arcana:'Minor', number:10, suit:'Wands', symbol:'⛓',
-    keywords:['burden','responsibility','hard work','completion'],
-    upright:'The weight of all you carry. Overburdened but almost at the destination — a reminder that heavy responsibilities must eventually be set down to reach true completion.',
-    reversed:'Delegating, releasing burdens, or finally setting down what you have carried too long.',
-    img:'0/0b/Wands10.jpg/120px-Wands10.jpg' },
-  { id:'wands-page', name:'Page of Wands',  arcana:'Minor', number:11, suit:'Wands', symbol:'🧑',
-    keywords:['enthusiasm','exploration','discovery','free spirit'],
-    upright:'Wild-eyed with possibility. The Page of Wands brings youthful enthusiasm, an explorer\'s spirit, and the energy to leap into new adventures without looking back.',
-    reversed:'Lack of direction, immaturity, all energy and no follow-through.',
-    img:'6/6a/Wands11.jpg/120px-Wands11.jpg' },
-  { id:'wands-knight', name:'Knight of Wands', arcana:'Minor', number:12, suit:'Wands', symbol:'🏇',
-    keywords:['action','adventure','impulsiveness','energy'],
-    upright:'Charging ahead without looking back. The Knight of Wands is pure passionate momentum — adventurous, courageous, and sometimes recklessly fast. Energy crackles around every move.',
-    reversed:'Recklessness, scattered energy, haste causing errors, or passion burning out.',
-    img:'3/3b/Wands12.jpg/120px-Wands12.jpg' },
-  { id:'wands-queen', name:'Queen of Wands',  arcana:'Minor', number:13, suit:'Wands', symbol:'👑',
-    keywords:['courage','confidence','independence','determination'],
-    upright:'Radiant, magnetic, entirely herself. The Queen of Wands commands attention through sheer presence — warm, courageous, and possessed of an almost solar self-assurance.',
-    reversed:'Jealousy, self-doubt, demanding attention, or fire turned inward as aggression.',
-    img:'0/0d/Wands13.jpg/120px-Wands13.jpg' },
-  { id:'wands-king', name:'King of Wands',    arcana:'Minor', number:14, suit:'Wands', symbol:'♛',
-    keywords:['natural-born leader','vision','entrepreneur','honor'],
-    upright:'The visionary on the throne. The King of Wands leads through inspiration rather than force — a natural entrepreneur, passionate and bold, who others follow because they want to.',
-    reversed:'Impulsiveness, ruthlessness, high expectations that become tyranny.',
-    img:'c/ce/Wands14.jpg/120px-Wands14.jpg' },
-
-  // CUPS
-  { id:'cups-ace', name:'Ace of Cups',      arcana:'Minor', number:1, suit:'Cups', symbol:'💧',
-    keywords:['new love','overflowing emotions','intuition','spiritual renewal'],
-    upright:'The cup of the heart, overflowing. A new emotional beginning — love, compassion, and spiritual renewal pouring forth like a chalice that cannot be emptied.',
-    reversed:'Emotional blockage, repressed feelings, or an inability to receive what is offered.',
-    img:'3/36/Cups01.jpg/120px-Cups01.jpg' },
-  { id:'cups-2', name:'Two of Cups',        arcana:'Minor', number:2, suit:'Cups', symbol:'💑',
-    keywords:['unified love','partnership','attraction','connection'],
-    upright:'Two turned toward each other. A profound connection — romantic, creative, or deeply personal — built on mutual recognition and the magic of feeling truly met.',
-    reversed:'Misalignment, broken connection, codependency, or the end of a meaningful union.',
-    img:'f/f2/Cups02.jpg/120px-Cups02.jpg' },
-  { id:'cups-3', name:'Three of Cups',      arcana:'Minor', number:3, suit:'Cups', symbol:'🎉',
-    keywords:['celebration','friendship','creativity','community'],
-    upright:'Three cups raised in joy. Community celebration, friendship, creative collaboration, and the particular pleasure of belonging. Dance with those you love.',
-    reversed:'Gossip, excess, social isolation, or joy curdled by overindulgence.',
-    img:'7/77/Cups03.jpg/120px-Cups03.jpg' },
-  { id:'cups-4', name:'Four of Cups',       arcana:'Minor', number:4, suit:'Cups', symbol:'😔',
-    keywords:['apathy','contemplation','disconnection','reevaluation'],
-    upright:'Turning inward, missing what is offered. The Four of Cups speaks of withdrawal, apathy, and the tendency to overlook what is given while brooding over what is not.',
-    reversed:'Renewed motivation, emerging from withdrawal, choosing to re-engage with life.',
-    img:'3/35/Cups04.jpg/120px-Cups04.jpg' },
-  { id:'cups-5', name:'Five of Cups',       arcana:'Minor', number:5, suit:'Cups', symbol:'😢',
-    keywords:['loss','regret','grief','disappointment'],
-    upright:'Spilled and mourned. The Five of Cups asks you to grieve what is lost — but gently reminds you that two cups still stand behind you, full.',
-    reversed:'Moving on, forgiveness, focusing on what remains rather than what was lost.',
-    img:'d/d7/Cups05.jpg/120px-Cups05.jpg' },
-  { id:'cups-6', name:'Six of Cups',        arcana:'Minor', number:6, suit:'Cups', symbol:'🌸',
-    keywords:['nostalgia','innocence','reunion','childhood'],
-    upright:'Sweet remembered things. The Six of Cups carries the scent of childhood — nostalgia, innocence, kindness freely given, and the reunion of souls from the past.',
-    reversed:'Living too much in the past, naive idealism, or refusing to grow beyond what once was.',
-    img:'1/17/Cups06.jpg/120px-Cups06.jpg' },
-  { id:'cups-7', name:'Seven of Cups',      arcana:'Minor', number:7, suit:'Cups', symbol:'💭',
-    keywords:['illusion','fantasy','choices','wishful thinking'],
-    upright:'Seven doors, most of them mirages. Imagination and choice expand before you, but not all visions are real. Discern between wish and genuine possibility.',
-    reversed:'Clarity cutting through illusion, making a decisive choice, or wishful thinking dispelled.',
-    img:'a/ae/Cups07.jpg/120px-Cups07.jpg' },
-  { id:'cups-8', name:'Eight of Cups',      arcana:'Minor', number:8, suit:'Cups', symbol:'🌒',
-    keywords:['walking away','disillusionment','leaving behind','searching for truth'],
-    upright:'Turning from what no longer fills. The Eight of Cups depicts the courage of walking away from what was — not in bitterness, but in search of something truer.',
-    reversed:'Fear of moving on, returning to what should be left, or stagnation disguised as loyalty.',
-    img:'6/60/Cups08.jpg/120px-Cups08.jpg' },
-  { id:'cups-9', name:'Nine of Cups',       arcana:'Minor', number:9, suit:'Cups', symbol:'✨',
-    keywords:['contentment','satisfaction','gratitude','wish come true'],
-    upright:'The wish card. All nine cups full behind you — deep satisfaction, the pleasure of desires fulfilled, and the warmth of abundance. Pause to savor what is yours.',
-    reversed:'Overindulgence, materialism, satisfaction that rings hollow, or counting blessings too rarely.',
-    img:'2/24/Cups09.jpg/120px-Cups09.jpg' },
-  { id:'cups-10', name:'Ten of Cups',       arcana:'Minor', number:10, suit:'Cups', symbol:'🌈',
-    keywords:['divine love','harmony','alignment','family'],
-    upright:'The rainbow over a joyful family. The Ten of Cups represents the fullest emotional happiness — lasting love, deep belonging, harmony in the home, and true contentment.',
-    reversed:'Broken family, surface harmony hiding discord, or idealized happiness that cannot be sustained.',
-    img:'8/84/Cups10.jpg/120px-Cups10.jpg' },
-  { id:'cups-page', name:'Page of Cups',    arcana:'Minor', number:11, suit:'Cups', symbol:'🐟',
-    keywords:['creative opportunities','curiosity','possibility','new ideas'],
-    upright:'A fish speaks from the cup — wonder without cynicism. The Page of Cups brings intuitive messages, creative opportunity, and the open-hearted curiosity of one who sees magic in ordinary things.',
-    reversed:'Immaturity, moodiness, creative ideas that don\'t progress beyond daydreaming.',
-    img:'a/ad/Cups11.jpg/120px-Cups11.jpg' },
-  { id:'cups-knight', name:'Knight of Cups', arcana:'Minor', number:12, suit:'Cups', symbol:'🦄',
-    keywords:['romanticism','charm','imagination','beauty'],
-    upright:'The dreaming knight rides slowly forward. Romantic, idealistic, and moved by beauty — the Knight of Cups follows the heart with artistry, grace, and sincere feeling.',
-    reversed:'Moodiness, jealousy, unrealistic idealism, or charm used to manipulate.',
-    img:'f/fa/Cups12.jpg/120px-Cups12.jpg' },
-  { id:'cups-queen', name:'Queen of Cups',  arcana:'Minor', number:13, suit:'Cups', symbol:'🐚',
-    keywords:['compassionate','caring','empathic','intuitive'],
-    upright:'Still water that sees everything. The Queen of Cups is profoundly empathic — a keeper of deep emotional wisdom, intuitive, compassionate, and capable of infinite understanding.',
-    reversed:'Emotional insecurity, dependency, or feelings so internalized they become hidden manipulation.',
-    img:'6/62/Cups13.jpg/120px-Cups13.jpg' },
-  { id:'cups-king', name:'King of Cups',    arcana:'Minor', number:14, suit:'Cups', symbol:'🌊',
-    keywords:['compassion','control','balance','wisdom'],
-    upright:'The ocean king who remains calm. Emotional mastery — the King of Cups holds deep feelings without being drowned by them, offering wise and compassionate counsel.',
-    reversed:'Moodiness, emotional manipulation, or feelings suppressed until they erupt.',
-    img:'0/04/Cups14.jpg/120px-Cups14.jpg' },
-
-  // SWORDS
-  { id:'swords-ace', name:'Ace of Swords',  arcana:'Minor', number:1, suit:'Swords', symbol:'⚡',
-    keywords:['breakthrough','clarity','sharp mind','truth'],
-    upright:'A blade of pure clarity. The Ace of Swords cuts through confusion to reveal essential truth — a breakthrough in thinking, an important decision that must be made with integrity.',
-    reversed:'Confusion, brutality, using intelligence as a weapon, or a truth that comes at great cost.',
-    img:'1/11/Swords01.jpg/120px-Swords01.jpg' },
-  { id:'swords-2', name:'Two of Swords',    arcana:'Minor', number:2, suit:'Swords', symbol:'⚖',
-    keywords:['indecision','stalemate','blocked emotions','avoidance'],
-    upright:'Eyes covered, blades crossed. The Two of Swords speaks of a stalemate, indecision, or a deliberate turning away from a truth that must eventually be faced.',
-    reversed:'Indecision resolved, seeing clearly at last, or deception coming to light.',
-    img:'9/9e/Swords02.jpg/120px-Swords02.jpg' },
-  { id:'swords-3', name:'Three of Swords',  arcana:'Minor', number:3, suit:'Swords', symbol:'💔',
-    keywords:['heartbreak','sorrow','grief','hurt'],
-    upright:'Three swords through a heart, rain falling. The Three of Swords does not flinch from the reality of sorrow — grief, loss, and heartbreak that must be felt before they can be healed.',
-    reversed:'Recovery, releasing pain, forgiveness, or moving through grief toward the other side.',
-    img:'0/02/Swords03.jpg/120px-Swords03.jpg' },
-  { id:'swords-4', name:'Four of Swords',   arcana:'Minor', number:4, suit:'Swords', symbol:'🕯',
-    keywords:['rest','restoration','contemplation','recovery'],
-    upright:'The knight lies still in the chapel. The Four of Swords prescribes rest — recovery, contemplation, and the necessary withdrawal from conflict to restore body and mind.',
-    reversed:'Restlessness, unable to rest even when needed, or returning to action before full recovery.',
-    img:'b/bf/Swords04.jpg/120px-Swords04.jpg' },
-  { id:'swords-5', name:'Five of Swords',   arcana:'Minor', number:5, suit:'Swords', symbol:'⚔',
-    keywords:['conflict','defeat','hostility','hollow victory'],
-    upright:'Victory with nothing left to celebrate. The Five of Swords warns of conflict that leaves everyone diminished — ask whether winning this battle is worth the damage.',
-    reversed:'Reconciliation, moving beyond conflict, or the regret that follows a pyrrhic victory.',
-    img:'2/23/Swords05.jpg/120px-Swords05.jpg' },
-  { id:'swords-6', name:'Six of Swords',    arcana:'Minor', number:6, suit:'Swords', symbol:'⛵',
-    keywords:['transition','change','rite of passage','release'],
-    upright:'Moving toward calmer water. The Six of Swords promises passage out of turbulence — a necessary transition that may be sorrowful, but leads toward quieter shores.',
-    reversed:'Incomplete transition, inability to leave difficulties behind, or resisting a necessary move.',
-    img:'2/29/Swords06.jpg/120px-Swords06.jpg' },
-  { id:'swords-7', name:'Seven of Swords',  arcana:'Minor', number:7, suit:'Swords', symbol:'🐱',
-    keywords:['betrayal','deception','strategy','sneaking away'],
-    upright:'Slipping away with what isn\'t yours. The Seven of Swords speaks of deception — whether you are being deceived, or whether you are taking a shortcut that bypasses integrity.',
-    reversed:'Coming clean, returning what was taken, or a deception finally uncovered.',
-    img:'3/3e/Swords07.jpg/120px-Swords07.jpg' },
-  { id:'swords-8', name:'Eight of Swords',  arcana:'Minor', number:8, suit:'Swords', symbol:'🧿',
-    keywords:['restriction','imprisonment','victim mentality','powerlessness'],
-    upright:'Bound but the path is clear. The Eight of Swords reveals restriction that is partly self-imposed — the blindfold can be removed; the ropes loosened. The prison is belief as much as circumstance.',
-    reversed:'Breaking free, new perspective, or recognizing that the constraints were never absolute.',
-    img:'a/a7/Swords08.jpg/120px-Swords08.jpg' },
-  { id:'swords-9', name:'Nine of Swords',   arcana:'Minor', number:9, suit:'Swords', symbol:'😰',
-    keywords:['anxiety','worry','fear','despair'],
-    upright:'Waking in the dark hours. The Nine of Swords represents the particular anguish of the restless mind — anxiety, worry, and the fears that seem most real at three in the morning.',
-    reversed:'Coming through the worst, seeking help, or realizing that fears were larger than reality.',
-    img:'2/2f/Swords09.jpg/120px-Swords09.jpg' },
-  { id:'swords-10', name:'Ten of Swords',   arcana:'Minor', number:10, suit:'Swords', symbol:'🌅',
-    keywords:['painful endings','defeat','crisis','rock bottom'],
-    upright:'The dawn that follows the darkest point. Ten swords in the back — complete defeat, crisis, and the hitting of a bottom that, paradoxically, is the very beginning of recovery.',
-    reversed:'Recovery, regeneration, or refusing to let a defeat be final.',
-    img:'d/d6/Swords10.jpg/120px-Swords10.jpg' },
-  { id:'swords-page', name:'Page of Swords', arcana:'Minor', number:11, suit:'Swords', symbol:'🦅',
-    keywords:['curiosity','restlessness','mental energy','thirst for knowledge'],
-    upright:'Alert, watchful, sword raised. The Page of Swords brings sharp curiosity, quick thinking, and the restless energy of a mind that wants to know everything immediately.',
-    reversed:'Deception, all talk no action, or gossip disguised as information.',
-    img:'4/4c/Swords11.jpg/120px-Swords11.jpg' },
-  { id:'swords-knight', name:'Knight of Swords', arcana:'Minor', number:12, suit:'Swords', symbol:'⚡',
-    keywords:['ambitious','action-oriented','driven','assertive'],
-    upright:'The charge without looking down. The Knight of Swords is pure decisive momentum — courageous, perhaps reckless, driven by intellect and the conviction that moving fast is moving right.',
-    reversed:'Aggressive, scatter-brained, or charging into battle without a strategy.',
-    img:'b/b0/Swords12.jpg/120px-Swords12.jpg' },
-  { id:'swords-queen', name:'Queen of Swords', arcana:'Minor', number:13, suit:'Swords', symbol:'🗡',
-    keywords:['independent','unbiased judgment','clear boundaries','direct communication'],
-    upright:'Clear eyes, clean cuts. The Queen of Swords has been through enough to know that clarity is kindness — she sees without illusion and communicates with a precision that is ultimately a gift.',
-    reversed:'Coldness, harsh criticism, or using sharp perception to wound rather than clarify.',
-    img:'d/d4/Swords13.jpg/120px-Swords13.jpg' },
-  { id:'swords-king', name:'King of Swords',   arcana:'Minor', number:14, suit:'Swords', symbol:'👁',
-    keywords:['mental clarity','authority','truth','analytical'],
-    upright:'The mind that sits in judgment. The King of Swords wields intellect with authority — clear, ethical, analytically precise, and committed to truth even when it is uncomfortable.',
-    reversed:'Misuse of power, tyranny, manipulative intelligence, or cold detachment from human consequences.',
-    img:'3/33/Swords14.jpg/120px-Swords14.jpg' },
-
-  // PENTACLES
-  { id:'pents-ace', name:'Ace of Pentacles',  arcana:'Minor', number:1, suit:'Pentacles', symbol:'💰',
-    keywords:['opportunity','new beginnings','security','abundance'],
-    upright:'The coin from the cloud. A golden new beginning in the material world — opportunity for prosperity, health, and tangible security. Take the offer with both hands.',
-    reversed:'Missed opportunity, lost money, or material stability just out of reach.',
-    img:'f/fd/Pents01.jpg/120px-Pents01.jpg' },
-  { id:'pents-2', name:'Two of Pentacles',    arcana:'Minor', number:2, suit:'Pentacles', symbol:'⚖',
-    keywords:['balance','adaptability','time management','fluctuating priorities'],
-    upright:'Juggling gracefully in the storm. The Two of Pentacles is the art of balance — managing multiple priorities, fluctuating resources, and keeping all the necessary balls in the air.',
-    reversed:'Overwhelmed, disorganized, or imbalance between material and spiritual concerns.',
-    img:'9/9f/Pents02.jpg/120px-Pents02.jpg' },
-  { id:'pents-3', name:'Three of Pentacles',  arcana:'Minor', number:3, suit:'Pentacles', symbol:'🏛',
-    keywords:['teamwork','implementation','mastery','collaboration'],
-    upright:'The craftsman discusses the plans. The Three of Pentacles celebrates skillful collaboration — three different minds pooling their expertise to create something none could achieve alone.',
-    reversed:'Lack of teamwork, corners cut, work done without pride or proper collaboration.',
-    img:'4/42/Pents03.jpg/120px-Pents03.jpg' },
-  { id:'pents-4', name:'Four of Pentacles',   arcana:'Minor', number:4, suit:'Pentacles', symbol:'🤑',
-    keywords:['saving money','security','conservatism','scarcity'],
-    upright:'Holding tight to what you have. The Four of Pentacles speaks of financial security through conservative management — but warns that clutching too tightly prevents both growth and generosity.',
-    reversed:'Letting go of materialism, overcoming scarcity mentality, or financial insecurity.',
-    img:'a/a6/Pents04.jpg/120px-Pents04.jpg' },
-  { id:'pents-5', name:'Five of Pentacles',   arcana:'Minor', number:5, suit:'Pentacles', symbol:'❄',
-    keywords:['financial loss','poverty','lack','isolation'],
-    upright:'Cold outside the lit window. Financial hardship, feeling left out in the cold, and the particular pain of material loss — yet the church door stands open for those who look up.',
-    reversed:'Recovery from hardship, accepting help, spiritual richness compensating material lack.',
-    img:'9/96/Pents05.jpg/120px-Pents05.jpg' },
-  { id:'pents-6', name:'Six of Pentacles',    arcana:'Minor', number:6, suit:'Pentacles', symbol:'🤲',
-    keywords:['generosity','charity','giving & receiving','sharing wealth'],
-    upright:'The scales of giving. The Six of Pentacles depicts the flow of prosperity — generosity, fair dealing, and the understanding that abundance shared creates abundance multiplied.',
-    reversed:'Strings attached to gifts, unequal giving, debt, or generosity used as control.',
-    img:'a/a6/Pents06.jpg/120px-Pents06.jpg' },
-  { id:'pents-7', name:'Seven of Pentacles',  arcana:'Minor', number:7, suit:'Pentacles', symbol:'🌱',
-    keywords:['long-term view','sustainable results','perseverance','investment'],
-    upright:'Resting on the hoe, surveying the growth. The Seven of Pentacles counsels patience — good work takes time, and this pause to evaluate whether effort is yielding what was intended is necessary.',
-    reversed:'Impatience, poor returns, or working hard in the wrong direction.',
-    img:'6/6a/Pents07.jpg/120px-Pents07.jpg' },
-  { id:'pents-8', name:'Eight of Pentacles',  arcana:'Minor', number:8, suit:'Pentacles', symbol:'🔨',
-    keywords:['apprenticeship','dedication','high standards','skill development'],
-    upright:'Each coin shaped with full attention. The Eight of Pentacles is the joy of mastery through diligent work — learning a craft, honing a skill, and taking pride in doing the thing right.',
-    reversed:'Lack of focus, perfectionism that prevents completion, or shortcuts undermining quality.',
-    img:'4/49/Pents08.jpg/120px-Pents08.jpg' },
-  { id:'pents-9', name:'Nine of Pentacles',   arcana:'Minor', number:9, suit:'Pentacles', symbol:'🦅',
-    keywords:['abundance','luxury','self-sufficiency','financial independence'],
-    upright:'The garden of earned abundance. The Nine of Pentacles celebrates self-sufficiency, elegant surroundings, and the deep pleasure of enjoying what one\'s own discipline has created.',
-    reversed:'Living beyond means, superficial values, or depending on others for what should be self-earned.',
-    img:'f/f0/Pents09.jpg/120px-Pents09.jpg' },
-  { id:'pents-10', name:'Ten of Pentacles',   arcana:'Minor', number:10, suit:'Pentacles', symbol:'🏘',
-    keywords:['legacy','financial security','inheritance','family'],
-    upright:'Three generations under arching pentacles. The Ten of Pentacles represents the fullness of material success — lasting wealth, family legacy, and the deep satisfaction of what is truly built to endure.',
-    reversed:'Family conflict over money, failed legacy, or financial instability despite apparent wealth.',
-    img:'4/42/Pents10.jpg/120px-Pents10.jpg' },
-  { id:'pents-page', name:'Page of Pentacles',arcana:'Minor', number:11, suit:'Pentacles', symbol:'📚',
-    keywords:['manifestation','financial opportunity','skill development','diligence'],
-    upright:'The coin studied with pure attention. The Page of Pentacles approaches the material world with curiosity and diligence — a student of practical skill, ambitious but grounded.',
-    reversed:'Lack of focus, procrastination, or learning without practical application.',
-    img:'e/ec/Pents11.jpg/120px-Pents11.jpg' },
-  { id:'pents-knight', name:'Knight of Pentacles', arcana:'Minor', number:12, suit:'Pentacles', symbol:'🐎',
-    keywords:['hard work','productivity','routine','conventionality'],
-    upright:'The still knight who gets things done. The Knight of Pentacles moves slowly, methodically, and without drama — reliable, hardworking, and capable of sustained effort long after others have quit.',
-    reversed:'Boredom, being stuck in routine, or hard work with no flexibility or creative spark.',
-    img:'d/d5/Pents12.jpg/120px-Pents12.jpg' },
-  { id:'pents-queen', name:'Queen of Pentacles', arcana:'Minor', number:13, suit:'Pentacles', symbol:'🌿',
-    keywords:['down-to-earth','practical','nurturing','resourceful'],
-    upright:'Nature held in able hands. The Queen of Pentacles combines warm nurturing with practical wisdom — she creates a world of abundance, comfort, and beauty through intelligent and grounded action.',
-    reversed:'Materialism overwhelming the soul, smothering over-care, or neglect of practical needs.',
-    img:'8/88/Pents13.jpg/120px-Pents13.jpg' },
-  { id:'pents-king', name:'King of Pentacles',   arcana:'Minor', number:14, suit:'Pentacles', symbol:'💎',
-    keywords:['abundance','prosperity','security','ambition'],
-    upright:'The throne grown from what was planted. The King of Pentacles embodies the mastery of the material world — secure, prosperous, generous, and possessed of the hard-won wisdom of one who built an empire one coin at a time.',
-    reversed:'Materialism, stubbornness, or wealth used as power rather than shared as abundance.',
-    img:'1/1c/Pents14.jpg/120px-Pents14.jpg' },
-];
-
-const RWS_IA = {
+// Full-size variant: archive.org rider-waite-tarot PNG
+// Used only when the modal opens — larger, higher quality.
+const RWS_FULL = {
   'major-0':  'major_arcana_fool',
   'major-1':  'major_arcana_magician',
   'major-2':  'major_arcana_priestess',
@@ -1437,58 +1129,58 @@ const RWS_IA = {
   'major-19': 'major_arcana_sun',
   'major-20': 'major_arcana_judgement',
   'major-21': 'major_arcana_world',
-  'wands-ace': 'minor_arcana_wands_ace',
-  'wands-2':   'minor_arcana_wands_2',
-  'wands-3':   'minor_arcana_wands_3',
-  'wands-4':   'minor_arcana_wands_4',
-  'wands-5':   'minor_arcana_wands_5',
-  'wands-6':   'minor_arcana_wands_6',
-  'wands-7':   'minor_arcana_wands_7',
-  'wands-8':   'minor_arcana_wands_8',
-  'wands-9':   'minor_arcana_wands_9',
-  'wands-10':  'minor_arcana_wands_10',
+  'wands-ace':    'minor_arcana_wands_ace',
+  'wands-2':      'minor_arcana_wands_2',
+  'wands-3':      'minor_arcana_wands_3',
+  'wands-4':      'minor_arcana_wands_4',
+  'wands-5':      'minor_arcana_wands_5',
+  'wands-6':      'minor_arcana_wands_6',
+  'wands-7':      'minor_arcana_wands_7',
+  'wands-8':      'minor_arcana_wands_8',
+  'wands-9':      'minor_arcana_wands_9',
+  'wands-10':     'minor_arcana_wands_10',
   'wands-page':   'minor_arcana_wands_page',
   'wands-knight': 'minor_arcana_wands_knight',
   'wands-queen':  'minor_arcana_wands_queen',
   'wands-king':   'minor_arcana_wands_king',
-  'cups-ace': 'minor_arcana_cups_ace',
-  'cups-2':   'minor_arcana_cups_2',
-  'cups-3':   'minor_arcana_cups_3',
-  'cups-4':   'minor_arcana_cups_4',
-  'cups-5':   'minor_arcana_cups_5',
-  'cups-6':   'minor_arcana_cups_6',
-  'cups-7':   'minor_arcana_cups_7',
-  'cups-8':   'minor_arcana_cups_8',
-  'cups-9':   'minor_arcana_cups_9',
-  'cups-10':  'minor_arcana_cups_10',
-  'cups-page':   'minor_arcana_cups_page',
-  'cups-knight': 'minor_arcana_cups_knight',
-  'cups-queen':  'minor_arcana_cups_queen',
-  'cups-king':   'minor_arcana_cups_king',
-  'swords-ace': 'minor_arcana_swords_ace',
-  'swords-2':   'minor_arcana_swords_2',
-  'swords-3':   'minor_arcana_swords_3',
-  'swords-4':   'minor_arcana_swords_4',
-  'swords-5':   'minor_arcana_swords_5',
-  'swords-6':   'minor_arcana_swords_6',
-  'swords-7':   'minor_arcana_swords_7',
-  'swords-8':   'minor_arcana_swords_8',
-  'swords-9':   'minor_arcana_swords_9',
-  'swords-10':  'minor_arcana_swords_10',
-  'swords-page':   'minor_arcana_swords_page',
-  'swords-knight': 'minor_arcana_swords_knight',
-  'swords-queen':  'minor_arcana_swords_queen',
-  'swords-king':   'minor_arcana_swords_king',
-  'pents-ace': 'minor_arcana_pentacles_ace',
-  'pents-2':   'minor_arcana_pentacles_2',
-  'pents-3':   'minor_arcana_pentacles_3',
-  'pents-4':   'minor_arcana_pentacles_4',
-  'pents-5':   'minor_arcana_pentacles_5',
-  'pents-6':   'minor_arcana_pentacles_6',
-  'pents-7':   'minor_arcana_pentacles_7',
-  'pents-8':   'minor_arcana_pentacles_8',
-  'pents-9':   'minor_arcana_pentacles_9',
-  'pents-10':  'minor_arcana_pentacles_10',
+  'cups-ace':     'minor_arcana_cups_ace',
+  'cups-2':       'minor_arcana_cups_2',
+  'cups-3':       'minor_arcana_cups_3',
+  'cups-4':       'minor_arcana_cups_4',
+  'cups-5':       'minor_arcana_cups_5',
+  'cups-6':       'minor_arcana_cups_6',
+  'cups-7':       'minor_arcana_cups_7',
+  'cups-8':       'minor_arcana_cups_8',
+  'cups-9':       'minor_arcana_cups_9',
+  'cups-10':      'minor_arcana_cups_10',
+  'cups-page':    'minor_arcana_cups_page',
+  'cups-knight':  'minor_arcana_cups_knight',
+  'cups-queen':   'minor_arcana_cups_queen',
+  'cups-king':    'minor_arcana_cups_king',
+  'swords-ace':   'minor_arcana_swords_ace',
+  'swords-2':     'minor_arcana_swords_2',
+  'swords-3':     'minor_arcana_swords_3',
+  'swords-4':     'minor_arcana_swords_4',
+  'swords-5':     'minor_arcana_swords_5',
+  'swords-6':     'minor_arcana_swords_6',
+  'swords-7':     'minor_arcana_swords_7',
+  'swords-8':     'minor_arcana_swords_8',
+  'swords-9':     'minor_arcana_swords_9',
+  'swords-10':    'minor_arcana_swords_10',
+  'swords-page':  'minor_arcana_swords_page',
+  'swords-knight':'minor_arcana_swords_knight',
+  'swords-queen': 'minor_arcana_swords_queen',
+  'swords-king':  'minor_arcana_swords_king',
+  'pents-ace':    'minor_arcana_pentacles_ace',
+  'pents-2':      'minor_arcana_pentacles_2',
+  'pents-3':      'minor_arcana_pentacles_3',
+  'pents-4':      'minor_arcana_pentacles_4',
+  'pents-5':      'minor_arcana_pentacles_5',
+  'pents-6':      'minor_arcana_pentacles_6',
+  'pents-7':      'minor_arcana_pentacles_7',
+  'pents-8':      'minor_arcana_pentacles_8',
+  'pents-9':      'minor_arcana_pentacles_9',
+  'pents-10':     'minor_arcana_pentacles_10',
   'pents-page':   'minor_arcana_pentacles_page',
   'pents-knight': 'minor_arcana_pentacles_knight',
   'pents-queen':  'minor_arcana_pentacles_queen',
@@ -1558,28 +1250,384 @@ const VISCONTI_IMAGES = {
   'major-21': '0/0a/Visconti-Sforza_tarot_deck._The_World.jpg/120px-Visconti-Sforza_tarot_deck._The_World.jpg',
 };
 
-// ===== HELPERS =====
-function getCardImageUrl(card) {
+// ===== CARD DATA =====
+const CARDS_RWS = [
+  // MAJOR ARCANA
+  { id:'major-0',  name:'The Fool',         arcana:'Major',  number:0,  suit:null, symbol:'☿',
+    keywords:['beginnings','spontaneity','innocence','freedom'],
+    upright:'A leap of faith into the unknown. The Fool represents new beginnings, unlimited potential, and the courage to take the first step without knowing the destination.',
+    reversed:'Recklessness, naïve folly, or holding back from a necessary new beginning out of fear.' },
+  { id:'major-1',  name:'The Magician',     arcana:'Major',  number:1,  suit:null, symbol:'🜍',
+    keywords:['willpower','skill','manifestation','resourcefulness'],
+    upright:'All tools are available. The Magician channels divine will into earthly action — skilled, resourceful, and capable of transforming intention into reality.',
+    reversed:'Manipulation, poor planning, latent talents unexpressed, or misdirected energy.' },
+  { id:'major-2',  name:'The High Priestess', arcana:'Major', number:2, suit:null, symbol:'☽',
+    keywords:['intuition','mystery','subconscious','wisdom'],
+    upright:'Deep knowing without speaking. The High Priestess guards the threshold of inner wisdom — trust your intuition and the knowledge that comes without rational explanation.',
+    reversed:'Secrets withheld, disconnection from intuition, or surface-level understanding only.' },
+  { id:'major-3',  name:'The Empress',      arcana:'Major',  number:3,  suit:null, symbol:'♀',
+    keywords:['fertility','abundance','nurturing','nature'],
+    upright:'Life in full bloom. The Empress represents fertility, abundance, and the creative power of nature. Nurture what you love and watch it flourish.',
+    reversed:'Neglect, creative block, dependence, or smothering those in your care.' },
+  { id:'major-4',  name:'The Emperor',      arcana:'Major',  number:4,  suit:null, symbol:'♂',
+    keywords:['authority','structure','stability','leadership'],
+    upright:'Order established through will. The Emperor brings structure, authority, and the stability of clear boundaries. Build with intention and lead with integrity.',
+    reversed:'Domination, rigidity, excessive control, or abdication of responsibility.' },
+  { id:'major-5',  name:'The Hierophant',   arcana:'Major',  number:5,  suit:null, symbol:'⊕',
+    keywords:['tradition','conformity','morality','ethics'],
+    upright:'The wisdom of tradition. The Hierophant represents spiritual guidance, shared values, and the accumulated knowledge of institutions. Seek learning from established paths.',
+    reversed:'Rebellion against convention, personal spirituality outside dogma, or hypocrisy.' },
+  { id:'major-6',  name:'The Lovers',       arcana:'Major',  number:6,  suit:null, symbol:'♡',
+    keywords:['love','harmony','choices','alignment'],
+    upright:'The crossroads of the heart. The Lovers speak not only of romance but of the fundamental choices that define who we are and what we value.',
+    reversed:'Misalignment of values, poor decisions, or conflict within a close relationship.' },
+  { id:'major-7',  name:'The Chariot',      arcana:'Major',  number:7,  suit:null, symbol:'♋',
+    keywords:['control','willpower','victory','determination'],
+    upright:'Forward through opposing forces. The Chariot represents the triumph of disciplined will — holding contradictory forces in tension and driving them toward a single goal.',
+    reversed:'Lack of control, aggression, scattered forces pulling in every direction.' },
+  { id:'major-8',  name:'Strength',         arcana:'Major',  number:8,  suit:null, symbol:'♌',
+    keywords:['courage','patience','compassion','inner strength'],
+    upright:'Courage that does not roar. Strength is the patient taming of raw force through gentleness and love rather than domination — inner mastery over primal impulse.',
+    reversed:'Self-doubt, weakness of character, or force used as compensation for inner insecurity.' },
+  { id:'major-9',  name:'The Hermit',       arcana:'Major',  number:9,  suit:null, symbol:'♍',
+    keywords:['introspection','solitude','guidance','seeking'],
+    upright:'The light you carry inward. The Hermit retreats from the world to listen to the deepest truth — a guide who shows the path but does not walk it for you.',
+    reversed:'Isolation turned to loneliness, withdrawal from the world as escape rather than wisdom.' },
+  { id:'major-10', name:'Wheel of Fortune', arcana:'Major',  number:10, suit:null, symbol:'☉',
+    keywords:['cycles','fate','turning point','luck'],
+    upright:'The great wheel turns. Fortune reminds us that life moves in cycles and that change — both welcome and difficult — is the one true constant of existence.',
+    reversed:'Bad luck, resistance to change, or clinging to the past as the wheel moves on.' },
+  { id:'major-11', name:'Justice',          arcana:'Major',  number:11, suit:null, symbol:'⚖',
+    keywords:['fairness','truth','cause & effect','law'],
+    upright:'The scales that cannot be deceived. Justice represents truth, accountability, and the impartial consequences of every choice — no more and no less than what is due.',
+    reversed:'Unfairness, dishonesty, refusal of responsibility, or legal complications.' },
+  { id:'major-12', name:'The Hanged Man',   arcana:'Major',  number:12, suit:null, symbol:'⊗',
+    keywords:['suspension','surrender','new perspective','sacrifice'],
+    upright:'Willingly suspended between worlds. The Hanged Man chooses to pause, to surrender control, and in doing so sees what was invisible from the upright perspective.',
+    reversed:'Delays, resistance to necessary sacrifice, or stagnation that no longer serves.' },
+  { id:'major-13', name:'Death',            arcana:'Major',  number:13, suit:null, symbol:'♏',
+    keywords:['endings','transition','transformation','change'],
+    upright:'What must end so something may live. Death is seldom literal — it is the great transformer, clearing away what has been outgrown to make space for what must emerge.',
+    reversed:'Resistance to ending, stagnation, fear of letting go of an identity that no longer fits.' },
+  { id:'major-14', name:'Temperance',       arcana:'Major',  number:14, suit:null, symbol:'♐',
+    keywords:['balance','moderation','patience','purpose'],
+    upright:'The alchemy of the middle way. Temperance blends opposites into something finer than either alone — patience, moderation, and the grace of working in perfect proportion.',
+    reversed:'Imbalance, excess, impatience, or discord caused by extremes.' },
+  { id:'major-15', name:'The Devil',        arcana:'Major',  number:15, suit:null, symbol:'♑',
+    keywords:['bondage','addiction','materialism','shadow'],
+    upright:'The chains we forge ourselves. The Devil illuminates where we are enslaved by fear, desire, or habit — and reminds us that the chains are often not as binding as they appear.',
+    reversed:'Detachment from addiction, releasing what binds, or reclaiming personal freedom.' },
+  { id:'major-16', name:'The Tower',        arcana:'Major',  number:16, suit:null, symbol:'♜',
+    keywords:['sudden change','upheaval','revelation','chaos'],
+    upright:'Lightning and necessary ruin. The Tower strikes down what was built on a false foundation — a dramatic clearing, painful in the moment, that reveals essential truth.',
+    reversed:'Avoiding necessary change, clinging to a structure that must fall, or disaster averted.' },
+  { id:'major-17', name:'The Star',         arcana:'Major',  number:17, suit:null, symbol:'★',
+    keywords:['hope','renewal','inspiration','serenity'],
+    upright:'The sky opens after the storm. The Star pours out hope freely — a deep assurance that the universe is benevolent and that healing, renewal, and inspiration are flowing toward you.',
+    reversed:'Despair, lost faith, or feeling disconnected from hope and creative inspiration.' },
+  { id:'major-18', name:'The Moon',         arcana:'Major',  number:18, suit:null, symbol:'☾',
+    keywords:['illusion','fear','subconscious','confusion'],
+    upright:'The path that dissolves in moonlight. The Moon speaks of illusion, the subconscious, and the uncertain territory between what is real and what is imagined. Not all is as it appears.',
+    reversed:'Clarity beginning to emerge from confusion, releasing irrational fears, or deception exposed.' },
+  { id:'major-19', name:'The Sun',          arcana:'Major',  number:19, suit:null, symbol:'☀',
+    keywords:['joy','success','vitality','clarity'],
+    upright:'Life at its fullest brightness. The Sun radiates success, joy, and the pure vitality of existence — a time of clarity, warmth, and unambiguous good fortune.',
+    reversed:'Temporary setbacks to happiness, blocked success, or optimism dimmed by circumstance.' },
+  { id:'major-20', name:'Judgement',        arcana:'Major',  number:20, suit:null, symbol:'🔔',
+    keywords:['reflection','reckoning','awakening','absolution'],
+    upright:'Called into being. Judgement signals a profound awakening — a summons to rise, to evaluate your life honestly, and to answer the call you have been hearing beneath the surface.',
+    reversed:'Self-doubt, refusal of the call, fear of judgment, or ignoring a major awakening.' },
+  { id:'major-21', name:'The World',        arcana:'Major',  number:21, suit:null, symbol:'⊕',
+    keywords:['completion','integration','accomplishment','wholeness'],
+    upright:'The dance of completion. The World marks the triumphant end of a cycle — full integration, mastery achieved, and the joyful awareness that you have arrived exactly where you were meant to be.',
+    reversed:'Incomplete endings, shortcuts avoiding necessary closure, or inability to celebrate success.' },
+
+  // WANDS
+  { id:'wands-ace', name:'Ace of Wands',    arcana:'Minor', number:1, suit:'Wands', symbol:'🔥',
+    keywords:['inspiration','potential','creation','energy'],
+    upright:'The spark of creative fire. A powerful new beginning in the realm of passion, inspiration, and creative endeavor. Seize the moment.',
+    reversed:'Delays, lack of motivation, creative blocks, or a promising idea failing to ignite.' },
+  { id:'wands-2', name:'Two of Wands',      arcana:'Minor', number:2, suit:'Wands', symbol:'🌍',
+    keywords:['planning','progress','discovery','decisions'],
+    upright:'The world spread before you, waiting. A moment of bold vision — you stand at the threshold of a great journey, choosing your direction with confidence.',
+    reversed:'Fear of the unknown, lack of planning, or playing it too safe when expansion is needed.' },
+  { id:'wands-3', name:'Three of Wands',    arcana:'Minor', number:3, suit:'Wands', symbol:'⛵',
+    keywords:['expansion','foresight','overseas','leadership'],
+    upright:'Your ships are in. The initial work is done and results are coming — foresight, expansion, and the confidence of one who has ventured boldly into the unknown.',
+    reversed:'Delays in results, lack of foresight, or plans failing to take off as hoped.' },
+  { id:'wands-4', name:'Four of Wands',     arcana:'Minor', number:4, suit:'Wands', symbol:'🏡',
+    keywords:['celebration','harmony','homecoming','community'],
+    upright:'Garlands hung, celebration earned. A time of joy, homecoming, and well-earned rest — community, harmony, and the pleasure of stable foundations.',
+    reversed:'Transition, instability at home, or celebration that is incomplete or disrupted.' },
+  { id:'wands-5', name:'Five of Wands',     arcana:'Minor', number:5, suit:'Wands', symbol:'⚔',
+    keywords:['conflict','competition','tension','diversity'],
+    upright:'Wands clashing in the arena. Competition, disagreement, and productive conflict — a chaotic energy that can sharpen ideas if channeled, or exhaust if allowed to run wild.',
+    reversed:'Avoiding conflict, inner tension, competition that turns destructive, or resolution of strife.' },
+  { id:'wands-6', name:'Six of Wands',      arcana:'Minor', number:6, suit:'Wands', symbol:'🏆',
+    keywords:['victory','recognition','progress','self-confidence'],
+    upright:'The victor rides home crowned. Public recognition, success after effort, and the confidence that comes from having earned genuine acclaim.',
+    reversed:'Ego, fall from grace, lack of recognition, or private victory without public acknowledgment.' },
+  { id:'wands-7', name:'Seven of Wands',    arcana:'Minor', number:7, suit:'Wands', symbol:'🛡',
+    keywords:['challenge','perseverance','defense','competition'],
+    upright:'Stand your ground on the hilltop. You hold an advantageous position but must defend it against those who would take it — courage, perseverance, and standing firm in your convictions.',
+    reversed:'Overwhelmed, giving up, indecision at a critical moment, or abandoning a position unnecessarily.' },
+  { id:'wands-8', name:'Eight of Wands',    arcana:'Minor', number:8, suit:'Wands', symbol:'💫',
+    keywords:['speed','action','air travel','movement'],
+    upright:'Everything at once, swift and sure. Rapid movement, news arriving quickly, and the energizing rush of things finally moving after a long stillness.',
+    reversed:'Delays, frustration, slowing down, or energy scattered without clear direction.' },
+  { id:'wands-9', name:'Nine of Wands',     arcana:'Minor', number:9, suit:'Wands', symbol:'🧱',
+    keywords:['resilience','grit','last stand','persistence'],
+    upright:'Wounded but undefeated. The battle-worn figure who stands ready for one more challenge — resilience, persistence, and the strength of one who has already survived much.',
+    reversed:'Exhaustion, paranoia, refusing help, or an inability to recover from past wounds.' },
+  { id:'wands-10', name:'Ten of Wands',     arcana:'Minor', number:10, suit:'Wands', symbol:'⛓',
+    keywords:['burden','responsibility','hard work','completion'],
+    upright:'The weight of all you carry. Overburdened but almost at the destination — a reminder that heavy responsibilities must eventually be set down to reach true completion.',
+    reversed:'Delegating, releasing burdens, or finally setting down what you have carried too long.' },
+  { id:'wands-page', name:'Page of Wands',  arcana:'Minor', number:11, suit:'Wands', symbol:'🧑',
+    keywords:['enthusiasm','exploration','discovery','free spirit'],
+    upright:'Wild-eyed with possibility. The Page of Wands brings youthful enthusiasm, an explorer\'s spirit, and the energy to leap into new adventures without looking back.',
+    reversed:'Lack of direction, immaturity, all energy and no follow-through.' },
+  { id:'wands-knight', name:'Knight of Wands', arcana:'Minor', number:12, suit:'Wands', symbol:'🏇',
+    keywords:['action','adventure','impulsiveness','energy'],
+    upright:'Charging ahead without looking back. The Knight of Wands is pure passionate momentum — adventurous, courageous, and sometimes recklessly fast. Energy crackles around every move.',
+    reversed:'Recklessness, scattered energy, haste causing errors, or passion burning out.' },
+  { id:'wands-queen', name:'Queen of Wands',  arcana:'Minor', number:13, suit:'Wands', symbol:'👑',
+    keywords:['courage','confidence','independence','determination'],
+    upright:'Radiant, magnetic, entirely herself. The Queen of Wands commands attention through sheer presence — warm, courageous, and possessed of an almost solar self-assurance.',
+    reversed:'Jealousy, self-doubt, demanding attention, or fire turned inward as aggression.' },
+  { id:'wands-king', name:'King of Wands',    arcana:'Minor', number:14, suit:'Wands', symbol:'♛',
+    keywords:['natural-born leader','vision','entrepreneur','honor'],
+    upright:'The visionary on the throne. The King of Wands leads through inspiration rather than force — a natural entrepreneur, passionate and bold, who others follow because they want to.',
+    reversed:'Impulsiveness, ruthlessness, high expectations that become tyranny.' },
+
+  // CUPS
+  { id:'cups-ace', name:'Ace of Cups',      arcana:'Minor', number:1, suit:'Cups', symbol:'💧',
+    keywords:['new love','overflowing emotions','intuition','spiritual renewal'],
+    upright:'The cup of the heart, overflowing. A new emotional beginning — love, compassion, and spiritual renewal pouring forth like a chalice that cannot be emptied.',
+    reversed:'Emotional blockage, repressed feelings, or an inability to receive what is offered.' },
+  { id:'cups-2', name:'Two of Cups',        arcana:'Minor', number:2, suit:'Cups', symbol:'💑',
+    keywords:['unified love','partnership','attraction','connection'],
+    upright:'Two turned toward each other. A profound connection — romantic, creative, or deeply personal — built on mutual recognition and the magic of feeling truly met.',
+    reversed:'Misalignment, broken connection, codependency, or the end of a meaningful union.' },
+  { id:'cups-3', name:'Three of Cups',      arcana:'Minor', number:3, suit:'Cups', symbol:'🎉',
+    keywords:['celebration','friendship','creativity','community'],
+    upright:'Three cups raised in joy. Community celebration, friendship, creative collaboration, and the particular pleasure of belonging. Dance with those you love.',
+    reversed:'Gossip, excess, social isolation, or joy curdled by overindulgence.' },
+  { id:'cups-4', name:'Four of Cups',       arcana:'Minor', number:4, suit:'Cups', symbol:'😔',
+    keywords:['apathy','contemplation','disconnection','reevaluation'],
+    upright:'Turning inward, missing what is offered. The Four of Cups speaks of withdrawal, apathy, and the tendency to overlook what is given while brooding over what is not.',
+    reversed:'Renewed motivation, emerging from withdrawal, choosing to re-engage with life.' },
+  { id:'cups-5', name:'Five of Cups',       arcana:'Minor', number:5, suit:'Cups', symbol:'😢',
+    keywords:['loss','regret','grief','disappointment'],
+    upright:'Spilled and mourned. The Five of Cups asks you to grieve what is lost — but gently reminds you that two cups still stand behind you, full.',
+    reversed:'Moving on, forgiveness, focusing on what remains rather than what was lost.' },
+  { id:'cups-6', name:'Six of Cups',        arcana:'Minor', number:6, suit:'Cups', symbol:'🌸',
+    keywords:['nostalgia','innocence','reunion','childhood'],
+    upright:'Sweet remembered things. The Six of Cups carries the scent of childhood — nostalgia, innocence, kindness freely given, and the reunion of souls from the past.',
+    reversed:'Living too much in the past, naive idealism, or refusing to grow beyond what once was.' },
+  { id:'cups-7', name:'Seven of Cups',      arcana:'Minor', number:7, suit:'Cups', symbol:'💭',
+    keywords:['illusion','fantasy','choices','wishful thinking'],
+    upright:'Seven doors, most of them mirages. Imagination and choice expand before you, but not all visions are real. Discern between wish and genuine possibility.',
+    reversed:'Clarity cutting through illusion, making a decisive choice, or wishful thinking dispelled.' },
+  { id:'cups-8', name:'Eight of Cups',      arcana:'Minor', number:8, suit:'Cups', symbol:'🌒',
+    keywords:['walking away','disillusionment','leaving behind','searching for truth'],
+    upright:'Turning from what no longer fills. The Eight of Cups depicts the courage of walking away from what was — not in bitterness, but in search of something truer.',
+    reversed:'Fear of moving on, returning to what should be left, or stagnation disguised as loyalty.' },
+  { id:'cups-9', name:'Nine of Cups',       arcana:'Minor', number:9, suit:'Cups', symbol:'✨',
+    keywords:['contentment','satisfaction','gratitude','wish come true'],
+    upright:'The wish card. All nine cups full behind you — deep satisfaction, the pleasure of desires fulfilled, and the warmth of abundance. Pause to savor what is yours.',
+    reversed:'Overindulgence, materialism, satisfaction that rings hollow, or counting blessings too rarely.' },
+  { id:'cups-10', name:'Ten of Cups',       arcana:'Minor', number:10, suit:'Cups', symbol:'🌈',
+    keywords:['divine love','harmony','alignment','family'],
+    upright:'The rainbow over a joyful family. The Ten of Cups represents the fullest emotional happiness — lasting love, deep belonging, harmony in the home, and true contentment.',
+    reversed:'Broken family, surface harmony hiding discord, or idealized happiness that cannot be sustained.' },
+  { id:'cups-page', name:'Page of Cups',    arcana:'Minor', number:11, suit:'Cups', symbol:'🐟',
+    keywords:['creative opportunities','curiosity','possibility','new ideas'],
+    upright:'A fish speaks from the cup — wonder without cynicism. The Page of Cups brings intuitive messages, creative opportunity, and the open-hearted curiosity of one who sees magic in ordinary things.',
+    reversed:'Immaturity, moodiness, creative ideas that don\'t progress beyond daydreaming.' },
+  { id:'cups-knight', name:'Knight of Cups', arcana:'Minor', number:12, suit:'Cups', symbol:'🦄',
+    keywords:['romanticism','charm','imagination','beauty'],
+    upright:'The dreaming knight rides slowly forward. Romantic, idealistic, and moved by beauty — the Knight of Cups follows the heart with artistry, grace, and sincere feeling.',
+    reversed:'Moodiness, jealousy, unrealistic idealism, or charm used to manipulate.' },
+  { id:'cups-queen', name:'Queen of Cups',  arcana:'Minor', number:13, suit:'Cups', symbol:'🐚',
+    keywords:['compassionate','caring','empathic','intuitive'],
+    upright:'Still water that sees everything. The Queen of Cups is profoundly empathic — a keeper of deep emotional wisdom, intuitive, compassionate, and capable of infinite understanding.',
+    reversed:'Emotional insecurity, dependency, or feelings so internalized they become hidden manipulation.' },
+  { id:'cups-king', name:'King of Cups',    arcana:'Minor', number:14, suit:'Cups', symbol:'🌊',
+    keywords:['compassion','control','balance','wisdom'],
+    upright:'The ocean king who remains calm. Emotional mastery — the King of Cups holds deep feelings without being drowned by them, offering wise and compassionate counsel.',
+    reversed:'Moodiness, emotional manipulation, or feelings suppressed until they erupt.' },
+
+  // SWORDS
+  { id:'swords-ace', name:'Ace of Swords',  arcana:'Minor', number:1, suit:'Swords', symbol:'⚡',
+    keywords:['breakthrough','clarity','sharp mind','truth'],
+    upright:'A blade of pure clarity. The Ace of Swords cuts through confusion to reveal essential truth — a breakthrough in thinking, an important decision that must be made with integrity.',
+    reversed:'Confusion, brutality, using intelligence as a weapon, or a truth that comes at great cost.' },
+  { id:'swords-2', name:'Two of Swords',    arcana:'Minor', number:2, suit:'Swords', symbol:'⚖',
+    keywords:['indecision','stalemate','blocked emotions','avoidance'],
+    upright:'Eyes covered, blades crossed. The Two of Swords speaks of a stalemate, indecision, or a deliberate turning away from a truth that must eventually be faced.',
+    reversed:'Indecision resolved, seeing clearly at last, or deception coming to light.' },
+  { id:'swords-3', name:'Three of Swords',  arcana:'Minor', number:3, suit:'Swords', symbol:'💔',
+    keywords:['heartbreak','sorrow','grief','hurt'],
+    upright:'Three swords through a heart, rain falling. The Three of Swords does not flinch from the reality of sorrow — grief, loss, and heartbreak that must be felt before they can be healed.',
+    reversed:'Recovery, releasing pain, forgiveness, or moving through grief toward the other side.' },
+  { id:'swords-4', name:'Four of Swords',   arcana:'Minor', number:4, suit:'Swords', symbol:'🕯',
+    keywords:['rest','restoration','contemplation','recovery'],
+    upright:'The knight lies still in the chapel. The Four of Swords prescribes rest — recovery, contemplation, and the necessary withdrawal from conflict to restore body and mind.',
+    reversed:'Restlessness, unable to rest even when needed, or returning to action before full recovery.' },
+  { id:'swords-5', name:'Five of Swords',   arcana:'Minor', number:5, suit:'Swords', symbol:'⚔',
+    keywords:['conflict','defeat','hostility','hollow victory'],
+    upright:'Victory with nothing left to celebrate. The Five of Swords warns of conflict that leaves everyone diminished — ask whether winning this battle is worth the damage.',
+    reversed:'Reconciliation, moving beyond conflict, or the regret that follows a pyrrhic victory.' },
+  { id:'swords-6', name:'Six of Swords',    arcana:'Minor', number:6, suit:'Swords', symbol:'⛵',
+    keywords:['transition','change','rite of passage','release'],
+    upright:'Moving toward calmer water. The Six of Swords promises passage out of turbulence — a necessary transition that may be sorrowful, but leads toward quieter shores.',
+    reversed:'Incomplete transition, inability to leave difficulties behind, or resisting a necessary move.' },
+  { id:'swords-7', name:'Seven of Swords',  arcana:'Minor', number:7, suit:'Swords', symbol:'🐱',
+    keywords:['betrayal','deception','strategy','sneaking away'],
+    upright:'Slipping away with what isn\'t yours. The Seven of Swords speaks of deception — whether you are being deceived, or whether you are taking a shortcut that bypasses integrity.',
+    reversed:'Coming clean, returning what was taken, or a deception finally uncovered.' },
+  { id:'swords-8', name:'Eight of Swords',  arcana:'Minor', number:8, suit:'Swords', symbol:'🧿',
+    keywords:['restriction','imprisonment','victim mentality','powerlessness'],
+    upright:'Bound but the path is clear. The Eight of Swords reveals restriction that is partly self-imposed — the blindfold can be removed; the ropes loosened. The prison is belief as much as circumstance.',
+    reversed:'Breaking free, new perspective, or recognizing that the constraints were never absolute.' },
+  { id:'swords-9', name:'Nine of Swords',   arcana:'Minor', number:9, suit:'Swords', symbol:'😰',
+    keywords:['anxiety','worry','fear','despair'],
+    upright:'Waking in the dark hours. The Nine of Swords represents the particular anguish of the restless mind — anxiety, worry, and the fears that seem most real at three in the morning.',
+    reversed:'Coming through the worst, seeking help, or realizing that fears were larger than reality.' },
+  { id:'swords-10', name:'Ten of Swords',   arcana:'Minor', number:10, suit:'Swords', symbol:'🌅',
+    keywords:['painful endings','defeat','crisis','rock bottom'],
+    upright:'The dawn that follows the darkest point. Ten swords in the back — complete defeat, crisis, and the hitting of a bottom that, paradoxically, is the very beginning of recovery.',
+    reversed:'Recovery, regeneration, or refusing to let a defeat be final.' },
+  { id:'swords-page', name:'Page of Swords', arcana:'Minor', number:11, suit:'Swords', symbol:'🦅',
+    keywords:['curiosity','restlessness','mental energy','thirst for knowledge'],
+    upright:'Alert, watchful, sword raised. The Page of Swords brings sharp curiosity, quick thinking, and the restless energy of a mind that wants to know everything immediately.',
+    reversed:'Deception, all talk no action, or gossip disguised as information.' },
+  { id:'swords-knight', name:'Knight of Swords', arcana:'Minor', number:12, suit:'Swords', symbol:'⚡',
+    keywords:['ambitious','action-oriented','driven','assertive'],
+    upright:'The charge without looking down. The Knight of Swords is pure decisive momentum — courageous, perhaps reckless, driven by intellect and the conviction that moving fast is moving right.',
+    reversed:'Aggressive, scatter-brained, or charging into battle without a strategy.' },
+  { id:'swords-queen', name:'Queen of Swords', arcana:'Minor', number:13, suit:'Swords', symbol:'🗡',
+    keywords:['independent','unbiased judgment','clear boundaries','direct communication'],
+    upright:'Clear eyes, clean cuts. The Queen of Swords has been through enough to know that clarity is kindness — she sees without illusion and communicates with a precision that is ultimately a gift.',
+    reversed:'Coldness, harsh criticism, or using sharp perception to wound rather than clarify.' },
+  { id:'swords-king', name:'King of Swords',   arcana:'Minor', number:14, suit:'Swords', symbol:'👁',
+    keywords:['mental clarity','authority','truth','analytical'],
+    upright:'The mind that sits in judgment. The King of Swords wields intellect with authority — clear, ethical, analytically precise, and committed to truth even when it is uncomfortable.',
+    reversed:'Misuse of power, tyranny, manipulative intelligence, or cold detachment from human consequences.' },
+
+  // PENTACLES
+  { id:'pents-ace', name:'Ace of Pentacles',  arcana:'Minor', number:1, suit:'Pentacles', symbol:'💰',
+    keywords:['opportunity','new beginnings','security','abundance'],
+    upright:'The coin from the cloud. A golden new beginning in the material world — opportunity for prosperity, health, and tangible security. Take the offer with both hands.',
+    reversed:'Missed opportunity, lost money, or material stability just out of reach.' },
+  { id:'pents-2', name:'Two of Pentacles',    arcana:'Minor', number:2, suit:'Pentacles', symbol:'⚖',
+    keywords:['balance','adaptability','time management','fluctuating priorities'],
+    upright:'Juggling gracefully in the storm. The Two of Pentacles is the art of balance — managing multiple priorities, fluctuating resources, and keeping all the necessary balls in the air.',
+    reversed:'Overwhelmed, disorganized, or imbalance between material and spiritual concerns.' },
+  { id:'pents-3', name:'Three of Pentacles',  arcana:'Minor', number:3, suit:'Pentacles', symbol:'🏛',
+    keywords:['teamwork','implementation','mastery','collaboration'],
+    upright:'The craftsman discusses the plans. The Three of Pentacles celebrates skillful collaboration — three different minds pooling their expertise to create something none could achieve alone.',
+    reversed:'Lack of teamwork, corners cut, work done without pride or proper collaboration.' },
+  { id:'pents-4', name:'Four of Pentacles',   arcana:'Minor', number:4, suit:'Pentacles', symbol:'🤑',
+    keywords:['saving money','security','conservatism','scarcity'],
+    upright:'Holding tight to what you have. The Four of Pentacles speaks of financial security through conservative management — but warns that clutching too tightly prevents both growth and generosity.',
+    reversed:'Letting go of materialism, overcoming scarcity mentality, or financial insecurity.' },
+  { id:'pents-5', name:'Five of Pentacles',   arcana:'Minor', number:5, suit:'Pentacles', symbol:'❄',
+    keywords:['financial loss','poverty','lack','isolation'],
+    upright:'Cold outside the lit window. Financial hardship, feeling left out in the cold, and the particular pain of material loss — yet the church door stands open for those who look up.',
+    reversed:'Recovery from hardship, accepting help, spiritual richness compensating material lack.' },
+  { id:'pents-6', name:'Six of Pentacles',    arcana:'Minor', number:6, suit:'Pentacles', symbol:'🤲',
+    keywords:['generosity','charity','giving & receiving','sharing wealth'],
+    upright:'The scales of giving. The Six of Pentacles depicts the flow of prosperity — generosity, fair dealing, and the understanding that abundance shared creates abundance multiplied.',
+    reversed:'Strings attached to gifts, unequal giving, debt, or generosity used as control.' },
+  { id:'pents-7', name:'Seven of Pentacles',  arcana:'Minor', number:7, suit:'Pentacles', symbol:'🌱',
+    keywords:['long-term view','sustainable results','perseverance','investment'],
+    upright:'Resting on the hoe, surveying the growth. The Seven of Pentacles counsels patience — good work takes time, and this pause to evaluate whether effort is yielding what was intended is necessary.',
+    reversed:'Impatience, poor returns, or working hard in the wrong direction.' },
+  { id:'pents-8', name:'Eight of Pentacles',  arcana:'Minor', number:8, suit:'Pentacles', symbol:'🔨',
+    keywords:['apprenticeship','dedication','high standards','skill development'],
+    upright:'Each coin shaped with full attention. The Eight of Pentacles is the joy of mastery through diligent work — learning a craft, honing a skill, and taking pride in doing the thing right.',
+    reversed:'Lack of focus, perfectionism that prevents completion, or shortcuts undermining quality.' },
+  { id:'pents-9', name:'Nine of Pentacles',   arcana:'Minor', number:9, suit:'Pentacles', symbol:'🦅',
+    keywords:['abundance','luxury','self-sufficiency','financial independence'],
+    upright:'The garden of earned abundance. The Nine of Pentacles celebrates self-sufficiency, elegant surroundings, and the deep pleasure of enjoying what one\'s own discipline has created.',
+    reversed:'Living beyond means, superficial values, or depending on others for what should be self-earned.' },
+  { id:'pents-10', name:'Ten of Pentacles',   arcana:'Minor', number:10, suit:'Pentacles', symbol:'🏘',
+    keywords:['legacy','financial security','inheritance','family'],
+    upright:'Three generations under arching pentacles. The Ten of Pentacles represents the fullness of material success — lasting wealth, family legacy, and the deep satisfaction of what is truly built to endure.',
+    reversed:'Family conflict over money, failed legacy, or financial instability despite apparent wealth.' },
+  { id:'pents-page', name:'Page of Pentacles',arcana:'Minor', number:11, suit:'Pentacles', symbol:'📚',
+    keywords:['manifestation','financial opportunity','skill development','diligence'],
+    upright:'The coin studied with pure attention. The Page of Pentacles approaches the material world with curiosity and diligence — a student of practical skill, ambitious but grounded.',
+    reversed:'Lack of focus, procrastination, or learning without practical application.' },
+  { id:'pents-knight', name:'Knight of Pentacles', arcana:'Minor', number:12, suit:'Pentacles', symbol:'🐎',
+    keywords:['hard work','productivity','routine','conventionality'],
+    upright:'The still knight who gets things done. The Knight of Pentacles moves slowly, methodically, and without drama — reliable, hardworking, and capable of sustained effort long after others have quit.',
+    reversed:'Boredom, being stuck in routine, or hard work with no flexibility or creative spark.' },
+  { id:'pents-queen', name:'Queen of Pentacles', arcana:'Minor', number:13, suit:'Pentacles', symbol:'🌿',
+    keywords:['down-to-earth','practical','nurturing','resourceful'],
+    upright:'Nature held in able hands. The Queen of Pentacles combines warm nurturing with practical wisdom — she creates a world of abundance, comfort, and beauty through intelligent and grounded action.',
+    reversed:'Materialism overwhelming the soul, smothering over-care, or neglect of practical needs.' },
+  { id:'pents-king', name:'King of Pentacles',   arcana:'Minor', number:14, suit:'Pentacles', symbol:'💎',
+    keywords:['abundance','prosperity','security','ambition'],
+    upright:'The throne grown from what was planted. The King of Pentacles embodies the mastery of the material world — secure, prosperous, generous, and possessed of the hard-won wisdom of one who built an empire one coin at a time.',
+    reversed:'Materialism, stubbornness, or wealth used as power rather than shared as abundance.' },
+];
+
+// ===== IMAGE URL HELPERS =====
+
+/**
+ * Returns the thumbnail URL for use in the spread grid (small, fast-loading).
+ * RWS → Wikimedia Commons 120px JPEG thumbs.
+ * Other decks → same Wikimedia path as before.
+ */
+function getCardThumbUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
 
   if (deck === 'marseille') {
-    // Dodal deck only has majors — return null for minors so symbolic fallback shows
     return MARSEILLE_IMAGES[card.id]
       ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id]}`
       : null;
   }
 
   if (deck === 'visconti') {
-    // Visconti only has majors — return null for minors
     return VISCONTI_IMAGES[card.id]
       ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${VISCONTI_IMAGES[card.id]}`
       : null;
   }
 
-  // Rider-Waite: full 78 cards
-  return RWS_IA[card.id]
-    ? `https://archive.org/download/rider-waite-tarot/${RWS_IA[card.id]}.png`
+  // rider-waite: use Wikimedia 120px thumbs for speed
+  return RWS_THUMB[card.id]
+    ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${RWS_THUMB[card.id]}`
+    : null;
+}
+
+/**
+ * Returns the full-resolution URL shown in the modal.
+ * RWS → archive.org full PNG.
+ * Other decks → same Wikimedia path but at larger size.
+ */
+function getCardFullUrl(card) {
+  const deck = state.deck;
+  if (deck === 'symbolic') return null;
+
+  if (deck === 'marseille') {
+    return MARSEILLE_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id].replace('/120px-', '/400px-')}`
+      : null;
+  }
+
+  if (deck === 'visconti') {
+    return VISCONTI_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${VISCONTI_IMAGES[card.id].replace('/120px-', '/400px-')}`
+      : null;
+  }
+
+  // rider-waite: load the full archive.org PNG for the modal
+  return RWS_FULL[card.id]
+    ? `https://archive.org/download/rider-waite-tarot/${RWS_FULL[card.id]}.png`
     : null;
 }
 
@@ -1652,7 +1700,6 @@ async function beginReading() {
   const spread = SPREADS[state.spread];
   const n = spread.positions.length;
 
-  // Show dealing animation
   showPanel('dealing-panel');
   const msgs = ['Shuffling the deck...', 'Clearing your mind...', 'Calling the cards...', 'The spread is ready.'];
   const msgEl = document.getElementById('dealing-msg');
@@ -1665,19 +1712,16 @@ async function beginReading() {
     msgEl.textContent = msgs[mi];
   }, 800);
 
-  // Animate placeholders
   for (let i = 0; i < n; i++) {
     await new Promise(r => setTimeout(r, 180));
     const ph = document.createElement('div');
     ph.className = 'dealing-placeholder';
-    ph.style.animationDelay = `0ms`;
     placeholders.appendChild(ph);
   }
 
   await new Promise(r => setTimeout(r, 1000));
   clearInterval(msgTimer);
 
-  // Draw cards
   state.drawnCards = drawCards(n);
   state.currentSpread = spread;
 
@@ -1691,7 +1735,7 @@ function renderReading() {
   document.getElementById('reading-spread-name').textContent = spread.name;
   document.getElementById('reading-spread-desc').textContent = spread.desc;
 
-  // Card visuals
+  // Card visuals — use thumb URLs for fast grid loading
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
   state.drawnCards.forEach((card, i) => {
@@ -1702,7 +1746,7 @@ function renderReading() {
     const inner = document.createElement('div');
     inner.className = 'card-inner';
 
-    const imgUrl = getCardImageUrl(card);
+    const imgUrl = getCardThumbUrl(card);
     if (imgUrl) {
       const img = document.createElement('img');
       img.className = 'card-img';
@@ -1801,7 +1845,6 @@ function renderReading() {
   const aiBtn = document.getElementById('ai-btn');
   aiBtn.style.display = provider !== 'none' ? 'inline-block' : 'none';
 
-  // Reset AI output
   const aiOut = document.getElementById('ai-output');
   aiOut.className = 'placeholder';
   aiOut.textContent = provider !== 'none'
@@ -1823,21 +1866,35 @@ function openModal(card) {
     `<span class="keyword">${k}</span>`
   ).join('');
 
-  const imgUrl = getCardImageUrl(card);
+  const fullUrl = getCardFullUrl(card);
   const modalImg = document.getElementById('modal-img');
   const modalPh = document.getElementById('modal-img-placeholder');
+  const shimmer = document.getElementById('modal-img-shimmer');
 
-  if (imgUrl) {
-    modalImg.style.display = 'block';
-    modalImg.src = imgUrl;
-    modalPh.style.display = 'none';
-    modalImg.onerror = function() {
-      this.style.display = 'none';
+  // Reset state
+  modalImg.style.display = 'none';
+  modalPh.style.display = 'none';
+  shimmer.style.display = 'none';
+
+  if (fullUrl) {
+    // Show shimmer while full image loads
+    shimmer.style.display = 'block';
+    modalImg.style.display = 'none';
+
+    const loader = new Image();
+    loader.onload = () => {
+      shimmer.style.display = 'none';
+      modalImg.src = fullUrl;
+      modalImg.alt = card.displayName;
+      modalImg.style.display = 'block';
+    };
+    loader.onerror = () => {
+      shimmer.style.display = 'none';
       modalPh.style.display = 'block';
       modalPh.textContent = card.symbol || '✦';
     };
+    loader.src = fullUrl;
   } else {
-    modalImg.style.display = 'none';
     modalPh.style.display = 'block';
     modalPh.textContent = card.symbol || '✦';
   }
@@ -1868,7 +1925,7 @@ async function getAiReading() {
 
   const spread = state.currentSpread;
   const cardList = state.drawnCards.map((c, i) =>
-    `${spread.positions[i]}: ${c.displayName}${c.reversed ? ' (Reversed)' : ''} — ${c.reversed ? c.reversed : c.upright}`
+    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
   ).join('\n');
 
   const prompt = `You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.
