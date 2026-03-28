@@ -1391,6 +1391,87 @@ const CARDS_RWS = [
     img:'1/1c/Pents14.jpg/120px-Pents14.jpg' },
 ];
 
+const RWS_IA = {
+  'major-0':  'major_arcana_fool',
+  'major-1':  'major_arcana_magician',
+  'major-2':  'major_arcana_priestess',
+  'major-3':  'major_arcana_empress',
+  'major-4':  'major_arcana_emperor',
+  'major-5':  'major_arcana_hierophant',
+  'major-6':  'major_arcana_lovers',
+  'major-7':  'major_arcana_chariot',
+  'major-8':  'major_arcana_strength',
+  'major-9':  'major_arcana_hermit',
+  'major-10': 'major_arcana_fortune',
+  'major-11': 'major_arcana_justice',
+  'major-12': 'major_arcana_hanged',
+  'major-13': 'major_arcana_death',
+  'major-14': 'major_arcana_temperance',
+  'major-15': 'major_arcana_devil',
+  'major-16': 'major_arcana_tower',
+  'major-17': 'major_arcana_star',
+  'major-18': 'major_arcana_moon',
+  'major-19': 'major_arcana_sun',
+  'major-20': 'major_arcana_judgement',
+  'major-21': 'major_arcana_world',
+  'wands-ace': 'minor_arcana_wands_ace',
+  'wands-2':   'minor_arcana_wands_2',
+  'wands-3':   'minor_arcana_wands_3',
+  'wands-4':   'minor_arcana_wands_4',
+  'wands-5':   'minor_arcana_wands_5',
+  'wands-6':   'minor_arcana_wands_6',
+  'wands-7':   'minor_arcana_wands_7',
+  'wands-8':   'minor_arcana_wands_8',
+  'wands-9':   'minor_arcana_wands_9',
+  'wands-10':  'minor_arcana_wands_10',
+  'wands-page':   'minor_arcana_wands_page',
+  'wands-knight': 'minor_arcana_wands_knight',
+  'wands-queen':  'minor_arcana_wands_queen',
+  'wands-king':   'minor_arcana_wands_king',
+  'cups-ace': 'minor_arcana_cups_ace',
+  'cups-2':   'minor_arcana_cups_2',
+  'cups-3':   'minor_arcana_cups_3',
+  'cups-4':   'minor_arcana_cups_4',
+  'cups-5':   'minor_arcana_cups_5',
+  'cups-6':   'minor_arcana_cups_6',
+  'cups-7':   'minor_arcana_cups_7',
+  'cups-8':   'minor_arcana_cups_8',
+  'cups-9':   'minor_arcana_cups_9',
+  'cups-10':  'minor_arcana_cups_10',
+  'cups-page':   'minor_arcana_cups_page',
+  'cups-knight': 'minor_arcana_cups_knight',
+  'cups-queen':  'minor_arcana_cups_queen',
+  'cups-king':   'minor_arcana_cups_king',
+  'swords-ace': 'minor_arcana_swords_ace',
+  'swords-2':   'minor_arcana_swords_2',
+  'swords-3':   'minor_arcana_swords_3',
+  'swords-4':   'minor_arcana_swords_4',
+  'swords-5':   'minor_arcana_swords_5',
+  'swords-6':   'minor_arcana_swords_6',
+  'swords-7':   'minor_arcana_swords_7',
+  'swords-8':   'minor_arcana_swords_8',
+  'swords-9':   'minor_arcana_swords_9',
+  'swords-10':  'minor_arcana_swords_10',
+  'swords-page':   'minor_arcana_swords_page',
+  'swords-knight': 'minor_arcana_swords_knight',
+  'swords-queen':  'minor_arcana_swords_queen',
+  'swords-king':   'minor_arcana_swords_king',
+  'pents-ace': 'minor_arcana_pentacles_ace',
+  'pents-2':   'minor_arcana_pentacles_2',
+  'pents-3':   'minor_arcana_pentacles_3',
+  'pents-4':   'minor_arcana_pentacles_4',
+  'pents-5':   'minor_arcana_pentacles_5',
+  'pents-6':   'minor_arcana_pentacles_6',
+  'pents-7':   'minor_arcana_pentacles_7',
+  'pents-8':   'minor_arcana_pentacles_8',
+  'pents-9':   'minor_arcana_pentacles_9',
+  'pents-10':  'minor_arcana_pentacles_10',
+  'pents-page':   'minor_arcana_pentacles_page',
+  'pents-knight': 'minor_arcana_pentacles_knight',
+  'pents-queen':  'minor_arcana_pentacles_queen',
+  'pents-king':   'minor_arcana_pentacles_king',
+};
+
 // Thoth system: rename suits & some major arcana
 const THOTH_MAP = {
   'Strength': 'Lust',
@@ -1474,7 +1555,9 @@ function getCardImageUrl(card) {
   }
 
   // Rider-Waite: full 78 cards
-  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${card.img}`;
+  return RWS_IA[card.id]
+    ? `https://archive.org/download/rider-waite-tarot/${RWS_IA[card.id]}.png`
+    : null;
 }
 
 function getCardName(card) {
