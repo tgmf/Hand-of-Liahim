@@ -795,12 +795,12 @@
             <span class="btn-sub">Pamela Colman Smith's classic illustrations</span>
           </button>
           <button class="choice-btn" data-val="marseille" onclick="selectChoice('deck', this)">
-            <span class="btn-title">Tarot de Marseille</span>
-            <span class="btn-sub">Traditional woodcut style, c. 1700s</span>
+            <span class="btn-title">Tarot de Marseille (Dodal, 1701)</span>
+            <span class="btn-sub">Woodcut majors; symbolic view for minors</span>
           </button>
           <button class="choice-btn" data-val="visconti" onclick="selectChoice('deck', this)">
             <span class="btn-title">Visconti-Sforza (1440s)</span>
-            <span class="btn-sub">Oldest surviving painted deck</span>
+            <span class="btn-sub">Painted majors; symbolic view for minors</span>
           </button>
           <button class="choice-btn" data-val="symbolic" onclick="selectChoice('deck', this)">
             <span class="btn-title">Symbolic (No images)</span>
@@ -1403,17 +1403,55 @@ const THOTH_MAP = {
   'Pentacles': 'Disks',
 };
 
-// Marseille deck uses different Wikimedia paths
+// Jean Dodal Tarot de Marseille (Lyon, 1701-1715) — full 22 majors on Wikimedia
 const MARSEILLE_IMAGES = {
-  'major-0':  'a/a0/Tarot_de_Marseille_Camoin_Jodorowsky_Le_Fou.jpg/120px-Tarot_de_Marseille_Camoin_Jodorowsky_Le_Fou.jpg',
-  'major-1':  '7/7a/TarotJuggler.jpg/120px-TarotJuggler.jpg',
-  'major-2':  '6/6c/Papess.jpg/120px-Papess.jpg',
+  'major-0':  '5/5b/Jean_Dodal_Tarot_trump_00.jpg/120px-Jean_Dodal_Tarot_trump_00.jpg',
+  'major-1':  'b/b8/Jean_Dodal_Tarot_trump_01.jpg/120px-Jean_Dodal_Tarot_trump_01.jpg',
+  'major-2':  'c/c5/Jean_Dodal_Tarot_trump_02.jpg/120px-Jean_Dodal_Tarot_trump_02.jpg',
+  'major-3':  '9/9b/Jean_Dodal_Tarot_trump_03.jpg/120px-Jean_Dodal_Tarot_trump_03.jpg',
+  'major-4':  'f/f2/Jean_Dodal_Tarot_trump_04.jpg/120px-Jean_Dodal_Tarot_trump_04.jpg',
+  'major-5':  'a/a6/Jean_Dodal_Tarot_trump_05.jpg/120px-Jean_Dodal_Tarot_trump_05.jpg',
+  'major-6':  '5/59/Jean_Dodal_Tarot_trump_06.jpg/120px-Jean_Dodal_Tarot_trump_06.jpg',
+  'major-7':  '1/18/Jean_Dodal_Tarot_trump_07.jpg/120px-Jean_Dodal_Tarot_trump_07.jpg',
+  'major-8':  '3/3d/Jean_Dodal_Tarot_trump_08.jpg/120px-Jean_Dodal_Tarot_trump_08.jpg',
+  'major-9':  'e/e9/Jean_Dodal_Tarot_trump_09.jpg/120px-Jean_Dodal_Tarot_trump_09.jpg',
+  'major-10': 'd/de/Jean_Dodal_Tarot_trump_10.jpg/120px-Jean_Dodal_Tarot_trump_10.jpg',
+  'major-11': 'a/a9/Jean_Dodal_Tarot_trump_11.jpg/120px-Jean_Dodal_Tarot_trump_11.jpg',
+  'major-12': '3/31/Jean_Dodal_Tarot_trump_12.jpg/120px-Jean_Dodal_Tarot_trump_12.jpg',
+  'major-13': '7/7f/Jean_Dodal_Tarot_trump_13.jpg/120px-Jean_Dodal_Tarot_trump_13.jpg',
+  'major-14': 'b/b4/Jean_Dodal_Tarot_trump_14.jpg/120px-Jean_Dodal_Tarot_trump_14.jpg',
+  'major-15': 'a/a8/Jean_Dodal_Tarot_trump_15.jpg/120px-Jean_Dodal_Tarot_trump_15.jpg',
+  'major-16': '6/6e/Jean_Dodal_Tarot_trump_16.jpg/120px-Jean_Dodal_Tarot_trump_16.jpg',
+  'major-17': '6/60/Jean_Dodal_Tarot_trump_17.jpg/120px-Jean_Dodal_Tarot_trump_17.jpg',
+  'major-18': 'e/e1/Jean_Dodal_Tarot_trump_18.jpg/120px-Jean_Dodal_Tarot_trump_18.jpg',
+  'major-19': 'a/a9/Jean_Dodal_Tarot_trump_19.jpg/120px-Jean_Dodal_Tarot_trump_19.jpg',
+  'major-20': '3/3e/Jean_Dodal_Tarot_trump_20.jpg/120px-Jean_Dodal_Tarot_trump_20.jpg',
+  'major-21': '1/13/Jean_Dodal_Tarot_trump_21.jpg/120px-Jean_Dodal_Tarot_trump_21.jpg',
 };
 
-// Visconti deck
+// Visconti-Sforza deck (c.1450) — majors available on Wikimedia
 const VISCONTI_IMAGES = {
-  'major-0':  'f/f0/Visconti-fool.jpg/120px-Visconti-fool.jpg',
-  'major-1':  '0/01/The_Magician-Visconti.jpg/120px-The_Magician-Visconti.jpg',
+  'major-0':  '9/9e/Visconti-Sforza_tarot_deck._The_Fool.jpg/120px-Visconti-Sforza_tarot_deck._The_Fool.jpg',
+  'major-1':  'c/c3/Visconti-Sforza_tarot_deck._The_Magician.jpg/120px-Visconti-Sforza_tarot_deck._The_Magician.jpg',
+  'major-2':  '3/3c/Visconti-Sforza_tarot_deck._The_High_Priestess.jpg/120px-Visconti-Sforza_tarot_deck._The_High_Priestess.jpg',
+  'major-3':  '9/9b/Visconti-Sforza_tarot_deck._The_Empress.jpg/120px-Visconti-Sforza_tarot_deck._The_Empress.jpg',
+  'major-4':  'f/fd/Visconti-Sforza_tarot_deck._The_Emperor.jpg/120px-Visconti-Sforza_tarot_deck._The_Emperor.jpg',
+  'major-5':  '4/4a/Visconti-Sforza_tarot_deck._The_Hierophant.jpg/120px-Visconti-Sforza_tarot_deck._The_Hierophant.jpg',
+  'major-6':  'a/aa/Visconti-Sforza_tarot_deck._The_Lovers.jpg/120px-Visconti-Sforza_tarot_deck._The_Lovers.jpg',
+  'major-7':  '4/40/Visconti-Sforza_tarot_deck._The_Chariot.jpg/120px-Visconti-Sforza_tarot_deck._The_Chariot.jpg',
+  'major-8':  '0/0a/Visconti-Sforza_tarot_deck._Strength.jpg/120px-Visconti-Sforza_tarot_deck._Strength.jpg',
+  'major-9':  '3/35/Visconti-Sforza_tarot_deck._The_Hermit.jpg/120px-Visconti-Sforza_tarot_deck._The_Hermit.jpg',
+  'major-10': 'b/ba/Visconti-Sforza_tarot_deck._Wheel_of_Fortune.jpg/120px-Visconti-Sforza_tarot_deck._Wheel_of_Fortune.jpg',
+  'major-11': '5/5e/Visconti-Sforza_tarot_deck._Justice.jpg/120px-Visconti-Sforza_tarot_deck._Justice.jpg',
+  'major-12': '0/08/Visconti-Sforza_tarot_deck._The_Hanged_Man.jpg/120px-Visconti-Sforza_tarot_deck._The_Hanged_Man.jpg',
+  'major-13': '4/4e/Visconti-Sforza_tarot_deck._Death.jpg/120px-Visconti-Sforza_tarot_deck._Death.jpg',
+  'major-14': '9/9a/Visconti-Sforza_tarot_deck._Temperance.jpg/120px-Visconti-Sforza_tarot_deck._Temperance.jpg',
+  'major-15': 'a/ae/Visconti-Sforza_tarot_deck._The_Devil.jpg/120px-Visconti-Sforza_tarot_deck._The_Devil.jpg',
+  'major-17': '7/71/Visconti-Sforza_tarot_deck._The_Star.jpg/120px-Visconti-Sforza_tarot_deck._The_Star.jpg',
+  'major-18': '8/8b/Visconti-Sforza_tarot_deck._The_Moon.jpg/120px-Visconti-Sforza_tarot_deck._The_Moon.jpg',
+  'major-19': 'd/d6/Visconti-Sforza_tarot_deck._The_Sun.jpg/120px-Visconti-Sforza_tarot_deck._The_Sun.jpg',
+  'major-20': '9/9d/Visconti-Sforza_tarot_deck._Judgement.jpg/120px-Visconti-Sforza_tarot_deck._Judgement.jpg',
+  'major-21': '0/0a/Visconti-Sforza_tarot_deck._The_World.jpg/120px-Visconti-Sforza_tarot_deck._The_World.jpg',
 };
 
 // ===== HELPERS =====
@@ -1421,13 +1459,22 @@ function getCardImageUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
 
-  let path = card.img;
-  if (deck === 'marseille' && MARSEILLE_IMAGES[card.id]) {
-    path = MARSEILLE_IMAGES[card.id];
-  } else if (deck === 'visconti' && VISCONTI_IMAGES[card.id]) {
-    path = VISCONTI_IMAGES[card.id];
+  if (deck === 'marseille') {
+    // Dodal deck only has majors — return null for minors so symbolic fallback shows
+    return MARSEILLE_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id]}`
+      : null;
   }
-  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}`;
+
+  if (deck === 'visconti') {
+    // Visconti only has majors — return null for minors
+    return VISCONTI_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${VISCONTI_IMAGES[card.id]}`
+      : null;
+  }
+
+  // Rider-Waite: full 78 cards
+  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${card.img}`;
 }
 
 function getCardName(card) {
