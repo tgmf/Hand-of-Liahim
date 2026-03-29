@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Рука Лиахима — Расклады Таро</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -425,7 +426,6 @@
   .card-inner {
     position: relative;
     width: 8.75rem;
-    height: 15rem;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--card-border);
@@ -445,15 +445,14 @@
 
   .card-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     transition: opacity 0.4s ease;
   }
 
   .card-img-placeholder {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3 / 5.17;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -790,7 +789,7 @@
 <div id="app">
   <header>
     <span class="logo-ornament">✦ ✦ ✦</span>
-    <h1><a href="/" class="logo-link">Рука Лиахима</a></h1>
+    <h1><a href="/ru/" class="logo-link">Рука Лиахима</a></h1>
     <p class="tagline">Древнее искусство Таро</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
