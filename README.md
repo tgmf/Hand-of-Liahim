@@ -2,7 +2,7 @@
 
 A single-file tarot web app. No backend, no dependencies, no build step.
 
-**[Live demo →](https://tgmf.github.io/hand-of-liahim/)**
+**[Live demo →](https://tgmf.github.io/Hand-of-Liahim/)**
 
 ## Features
 
@@ -15,8 +15,8 @@ A single-file tarot web app. No backend, no dependencies, no build step.
 ## Deploy
 
 ```bash
-git clone https://github.com/tgmf/hand-of-liahim
-cd hand-of-liahim
+git clone https://github.com/tgmf/Hand-of-Liahim
+cd Hand-of-Liahim
 # open index.html in a browser, or push to GitHub Pages
 ```
 
