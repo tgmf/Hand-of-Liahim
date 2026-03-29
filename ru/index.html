@@ -1947,8 +1947,8 @@ function renderReading() {
   const aiOut = document.getElementById('ai-output');
   aiOut.className = 'placeholder';
   aiOut.textContent = provider !== 'none'
-    ? 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.'
-    : 'Consider each card\'s position and its meaning. How do the energies speak to you?';
+    ? 'Нажмите «Получить ИИ-Интерпретацию» или поразмышляйте над картами самостоятельно.'
+    : 'Рассмотрите каждую карту в её позиции и значение. О чём говорит вам энергия?';
   document.getElementById('clear-ai-btn').style.display = 'none';
 }
 
@@ -1956,7 +1956,7 @@ function renderReading() {
 function openModal(card) {
   document.getElementById('modal-name').textContent = card.displayName;
   document.getElementById('modal-arcana').textContent =
-    card.arcana === 'Major' ? `Major Arcana · ${card.number}` : `${card.suit} · ${card.arcana} Arcana`;
+    card.arcana === 'Major' ? `Старшие Арканы · ${card.number}` : `${card.suit} · ${card.arcana} Арканы`;
   document.getElementById('modal-upright').textContent = card.upright;
   document.getElementById('modal-reversed').textContent = card.reversed;
 
@@ -2027,23 +2027,23 @@ async function getAiReading() {
     `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Перевернута)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
   ).join('\n');
 
-  const prompt = `You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.
-
-Spread: ${spread.name}
+  const prompt = `Вы — мудрый и поэтичный таролог с глубоким знанием эзотерической символики. Дайте вдумчивую, целостную интерпретацию этого расклада Таро.
+ 
+Расклад: ${spread.name}
 ${spread.desc}
-
-Cards drawn:
+ 
+Вытянутые карты:
 ${cardList}
-
-Provide a narrative interpretation that weaves all the cards together into a coherent reading. Be insightful, poetic, and specific to the positions. Speak in second person. Keep it under 400 words.`;
+ 
+Предоставьте нарративную интерпретацию, объединяющую все карты в единое связное чтение. Будьте проницательны, поэтичны и конкретны в отношении позиций. Говорите от второго лица («вы»). Объём — не более 400 слов.`;
 
   const aiOut = document.getElementById('ai-output');
   aiOut.className = '';
-  aiOut.textContent = 'Reading the cards...';
+  aiOut.textContent = 'Читаю карты...';
 
   const btn = document.getElementById('ai-btn');
   btn.disabled = true;
-  btn.textContent = 'Reading...';
+  btn.textContent = 'Чтение...';
 
   try {
     let text = '';
@@ -2113,14 +2113,14 @@ Provide a narrative interpretation that weaves all the cards together into a coh
     aiOut.textContent = `Error: ${err.message}\n\nPlease check your API key and try again.`;
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Get AI Reading';
+    btn.textContent = 'Получить ИИ-Интерпретацию';
   }
 }
 
 function clearAiReading() {
   const aiOut = document.getElementById('ai-output');
   aiOut.className = 'placeholder';
-  aiOut.textContent = 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.';
+  aiOut.textContent = 'Нажмите «Получить ИИ-Интерпретацию» или поразмышляйте над картами самостоятельно.';
   document.getElementById('clear-ai-btn').style.display = 'none';
 }
 
