@@ -1230,14 +1230,6 @@ const MARSEILLE_IMAGES = {
 // Source: https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot
 // License: Public domain (15th-century artwork)
 // Access: Special:FilePath redirects — stable regardless of Wikimedia's internal hash paths
-//
-// Changes vs old code:
-//   • Was: "Visconti-Sforza_tarot_deck.*" series — majors only, wrong/stale filenames
-//   • Now: "Bembo-Visconti-tarot-*" series — 73 cards (all surviving), majors + full minor arcana
-//   • Suits renamed to historical names: coins (pentacles), staves (wands)
-//   • URLs use Special:FilePath for reliability (no MD5 hash guessing)
-//   • 5 missing entries documented: Devil, Tower, 3♠, Knight of Coins, King of Cups
-//   • getCardThumbUrl / getCardFullUrl updated to use the new URL pattern
 // =============================================================================
  
 const VISCONTI_IMAGES = {
@@ -1761,7 +1753,7 @@ function updateModelOptions() {
     none: [],
     anthropic: ['claude-opus-4-5', 'claude-sonnet-4-5', 'claude-haiku-4-5-20251001'],
     openai: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo'],
-    gemini: ['gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-1.5-flash'],
+    gemini: ['gemini-2.5-flash', 'gemini-2.0-pro', 'gemini-2.5-pro'],
   };
 
   modelSel.innerHTML = models[provider].map(m => `<option value="${m}">${m}</option>`).join('');

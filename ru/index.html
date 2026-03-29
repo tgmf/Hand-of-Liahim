@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рука Лиахима — Расклады Таро</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    font-size: 1.125rem;
+    --ink: #1a1108;
+    --parchment: #f5edd8;
+    --parchment-dark: #e8d9b8;
+    --gold: #c9a84c;
+    --gold-bright: #e8c46a;
+    --gold-dim: #b08838;
+    --crimson: #8b1a1a;
+    --crimson-dim: #5a1010;
+    --shadow: rgba(20,10,0,0.35);
+    --card-bg: #1c1408;
+    --card-border: #8b6914;
+    --reversed-tint: rgba(139,26,26,0.12);
+    --font-title: 'Cinzel', serif;
+    --font-body: 'Crimson Pro', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d0a04;
+    color: var(--parchment);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield bg */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(80,40,0,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(60,20,60,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(20,40,80,0.08) 0%, transparent 50%),
+      #0d0a04;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    background: #c9a84c;
+    border-radius: 50%;
+    animation: twinkle var(--d,3s) ease-in-out infinite var(--dl,0s);
+  }
+
+  @keyframes twinkle {
+    0%,100% { opacity: var(--a, 0.4); transform: scale(1); }
+    50% { opacity: 0.1; transform: scale(0.7); }
+  }
+
+  #app {
+    position: relative;
+    z-index: 1;
+    max-width: 68.75rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .logo-ornament {
+    display: block;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+    letter-spacing: 0.75rem;
+    color: var(--gold);
+  }
+
+  h1, .logo-link {
+    font-family: var(--font-title);
+    font-size: clamp(2.375rem, 6vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: var(--gold-bright);
+    text-shadow: 0 0 40px rgba(201,168,76,0.4);
+    line-height: 1;
+    margin-bottom: 0.625rem;
+    text-decoration: none;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    font-weight: 300;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.75rem auto;
+    max-width: 25rem;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  }
+  .divider-gem {
+    width: 0.375rem; height: 0.375rem;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* PANELS */
+  .panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  .panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION TITLES */
+  .section-label {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+
+  /* SETUP GRID */
+  .setup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .setup-grid { grid-template-columns: 1fr; }
+  }
+
+  .setup-col {}
+
+  /* CHOICE GROUPS */
+  .choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .choice-btn {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--parchment);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1.125rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .choice-btn:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    color: var(--gold-bright);
+  }
+
+  .choice-btn.selected {
+    background: rgba(201,168,76,0.15);
+    border-color: var(--gold);
+    color: var(--gold-bright);
+  }
+
+  .choice-btn.selected::after {
+    content: '◆';
+    position: absolute;
+    right: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: var(--gold);
+  }
+
+  .choice-btn .btn-title {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.125rem;
+  }
+
+  .choice-btn .btn-sub {
+    font-size: 1rem;
+    color: inherit;
+    opacity: 0.65;
+    font-style: italic;
+  }
+
+  /* CTA BUTTON */
+  .cta-wrap {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #8b6914, #c9a84c, #8b6914);
+    background-size: 200% 100%;
+    border: none;
+    color: #1a1108;
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    letter-spacing: 0.3em;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: background-position 0.4s, transform 0.15s, box-shadow 0.3s;
+    box-shadow: 0 0.25rem 1.5rem rgba(201,168,76,0.2);
+    text-transform: uppercase;
+  }
+
+  .btn-primary:hover {
+    background-position: 100% 0;
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 0.375rem 2rem rgba(201,168,76,0.35);
+  }
+
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-dim);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    padding: 0.625rem 1.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* AI SETTINGS */
+  .ai-settings {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .ai-settings h3 {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .ai-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 480px) { .ai-row { grid-template-columns: 1fr; } }
+
+  .ai-field label {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.375rem;
+  }
+
+  .ai-field select,
+  .ai-field input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--parchment);
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    padding: 0.5625rem 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 2px;
+  }
+
+  .ai-field select:focus,
+  .ai-field input:focus {
+    border-color: var(--gold);
+  }
+
+  .ai-field select option { background: #1a1108; }
+
+  .ai-note {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gold-dim);
+    margin-top: 0.625rem;
+    line-height: 1.5;
+  }
+
+  /* DEALING ANIMATION */
+  #dealing-panel {
+    text-align: center;
+    padding: 5rem 0;
+  }
+
+  .dealing-msg {
+    font-family: var(--font-title);
+    font-size: 1.125rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .dealing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .dealing-placeholder {
+    width: 5rem;
+    height: 8.5rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 6px;
+    background: rgba(201,168,76,0.05);
+    animation: cardAppear 0.4s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes cardAppear {
+    to { opacity: 1; }
+  }
+
+  /* SPREAD LAYOUT */
+  #reading-panel {}
+
+  .spread-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .spread-title h2 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-bright);
+    margin-bottom: 0.375rem;
+  }
+
+  .spread-title p {
+    font-style: italic;
+    color: var(--gold-dim);
+    font-size: 1.5rem;
+  }
+
+  /* CARD GRID */
+  .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  /* CARD */
+  .tarot-card-wrap {
+    width: 8.75rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .tarot-card-wrap:hover { transform: translateY(-0.375rem); }
+
+  .tarot-card-wrap.reversed .card-inner { transform: rotateX(0deg) rotateZ(180deg); }
+
+  .card-inner {
+    position: relative;
+    width: 8.75rem;
+    height: 15rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.1);
+    background: var(--card-bg);
+    transition: box-shadow 0.3s;
+  }
+
+  .tarot-card-wrap.reversed .card-inner {
+    box-shadow: 0 0.5rem 2rem rgba(139,26,26,0.4), 0 0 0 1px rgba(139,26,26,0.3);
+    border-color: var(--crimson);
+  }
+
+  .tarot-card-wrap:hover .card-inner {
+    box-shadow: 0 0.75rem 3rem rgba(201,168,76,0.3), 0 0 0 1px rgba(201,168,76,0.3);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #1c1408 0%, #0d0a04 100%);
+    font-size: 3rem;
+    color: var(--gold-dim);
+  }
+
+  .card-position-label {
+    text-align: center;
+    margin-top: 0.625rem;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  .card-name-label {
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1rem;
+    color: var(--gold);
+    margin-top: 3px;
+  }
+
+  .reversed-badge {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: var(--crimson);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  /* CARD MEANINGS */
+  .meanings-section {
+    margin-bottom: 3rem;
+  }
+
+  .meanings-section h3 {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .meaning-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .meaning-card {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    padding: 1.125rem 1.375rem;
+    border-left: 3px solid var(--gold-dim);
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+
+  .meaning-card:hover { border-left-color: var(--gold); }
+  .meaning-card.reversed-card { border-left-color: var(--crimson-dim); }
+
+  .meaning-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .meaning-pos {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  .meaning-name {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    color: var(--gold-bright);
+  }
+
+  .meaning-rev-tag {
+    font-size: 1rem;
+    color: var(--crimson);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .meaning-keywords {
+    display: flex;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .keyword {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.125rem 0.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold-dim);
+  }
+
+  .meaning-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: rgba(245,237,216,0.8);
+  }
+
+  /* AI PANEL */
+  .ai-reading-section {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .ai-reading-box {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 1.75rem 2rem;
+    position: relative;
+  }
+
+  .ai-reading-box::before {
+    content: '✦';
+    position: absolute;
+    top: -0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d0a04;
+    padding: 0 0.75rem;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .ai-reading-box h3 {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  #ai-output {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(245,237,216,0.88);
+    white-space: pre-wrap;
+    font-style: italic;
+  }
+
+  #ai-output.placeholder {
+    text-align: center;
+    font-style: italic;
+    color: var(--gold-dim);
+    padding: 1.25rem 0;
+  }
+
+  .ai-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* FOOTER ACTIONS */
+  .reading-footer {
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: #150f04;
+    border: 1px solid rgba(201,168,76,0.25);
+    max-width: calc(57vh + 4rem);
+    width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: var(--gold-dim);
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--gold); }
+
+  .modal-img {
+    width: 100%;
+    max-width: 80%;
+    max-height: 85vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+  }
+
+  /* Loading shimmer for modal image */
+  .modal-img-loading {
+    width: 60%;
+    aspect-ratio: 0.583;
+    margin: 0 auto 1.25rem;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.05) 25%, rgba(201,168,76,0.12) 50%, rgba(201,168,76,0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    display: block;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .modal h2 {
+    font-family: var(--font-title);
+    font-size: 1.375rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-bright);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .modal-arcana {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-keywords {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-meaning h4 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.5em;
+  }
+
+  .modal-meaning p {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.5em;
+  }
+
+  .modal-meaning p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(245,237,216,0.85);
+    margin-bottom: 1em;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0d0a04; }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    #app { padding: 1.5rem 1rem 3.75rem; }
+
+    .tarot-card-wrap {
+      width: min(90vw, 20rem);
+    }
+    .card-inner {
+      width: 100%;
+      height: calc(min(90vw, 20rem) * 1.714);
+    }
+
+    .meaning-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<div id="app">
+  <header>
+    <span class="logo-ornament">✦ ✦ ✦</span>
+    <h1><a href="/" class="logo-link">Рука Лиахима</a></h1>
+    <p class="tagline">Древнее искусство Таро</p>
+    <div class="divider"><div class="divider-gem"></div></div>
+  </header>
+
+  <!-- SETUP PANEL -->
+  <div class="panel active" id="setup-panel">
+
+    <div class="setup-grid">
+
+      <!-- Spread selection -->
+      <div class="setup-col">
+        <p class="section-label">Выберите расклад</p>
+        <div class="choice-group" id="spread-choices">
+          <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Одна карта</span>
+            <span class="btn-sub">Одна карта для ясности, сосредоточенности на вопросе или ежедневного размышления</span>
+          </button>
+          <button class="choice-btn" data-val="three" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Расклад на три карты</span>
+            <span class="btn-sub">Переход от прошлого через настоящее к будущему</span>
+          </button>
+          <button class="choice-btn" data-val="celtic" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Кельтский крест</span>
+            <span class="btn-sub">Классический расклад из десяти карт для глубокого и всестороннего понимания жизни</span>
+          </button>
+          <button class="choice-btn" data-val="horseshoe" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Подкова</span>
+            <span class="btn-sub">Семь карт дугой вокруг ситуации, раскрывая её во всей полноте</span>
+          </button>
+          <button class="choice-btn" data-val="relationship" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Отношения</span>
+            <span class="btn-sub">Шесть карт для двух человек</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual & system -->
+      <div class="setup-col">
+        <p class="section-label">Визуальная тема карт</p>
+        <div class="choice-group" id="deck-choices">
+          <button class="choice-btn selected" data-val="rider-waite" onclick="selectChoice('deck', this)">
+            <span class="btn-title">Rider-Waite (1909)</span>
+            <span class="btn-sub">Классические иллюстрации Памелы Колман Смит</span>
+          </button>
+          <!-- <button class="choice-btn" data-val="marseille" onclick="selectChoice('deck', this)">
+            <span class="btn-title">Tarot de Marseille (Dodal, 1701)</span>
+            <span class="btn-sub">Гравюры старших арканов; символическое представление младших арканов</span>
+          </button> -->
+          <button class="choice-btn" data-val="visconti" onclick="selectChoice('deck', this)">
+            <span class="btn-title">Visconti-Sforza (1440s)</span>
+            <span class="btn-sub">Ручная роспись лучших художников того времени</span>
+          </button>
+          <button class="choice-btn" data-val="symbolic" onclick="selectChoice('deck', this)">
+            <span class="btn-title">Symbolic (No images)</span>
+            <span class="btn-sub">Карты на основе текста, без изображений</span>
+          </button>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <p class="section-label">Система колоды</p>
+          <div class="choice-group" id="system-choices">
+            <button class="choice-btn selected" data-val="rws" onclick="selectChoice('system', this)">
+              <span class="btn-title">Rider-Waite-Smith</span>
+              <span class="btn-sub">78 карт — наиболее широко используемая</span>
+            </button>
+            <button class="choice-btn" data-val="thoth" onclick="selectChoice('system', this)">
+              <span class="btn-title">Thoth</span>
+              <span class="btn-sub">Система Кроули на основе Каббалы</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AI Settings -->
+    <div class="ai-settings">
+      <h3>⊕ AI Интерпретация (необязательно)</h3>
+      <div class="ai-row">
+        <div class="ai-field">
+          <label>Провайдер</label>
+          <select id="ai-provider" onchange="updateModelOptions()">
+            <option value="none">Нет — я интерпретирую сам</option>
+            <option value="anthropic">Anthropic (Claude)</option>
+            <option value="openai">OpenAI (GPT)</option>
+            <option value="gemini">Google (Gemini)</option>
+          </select>
+        </div>
+        <div class="ai-field" id="model-field">
+          <label>Модель</label>
+          <select id="ai-model">
+            <option value="">—</option>
+          </select>
+        </div>
+      </div>
+      <div class="ai-field" id="key-field" style="display:none">
+        <label>API Key</label>
+        <input type="password" id="ai-key" placeholder="Вставьте ваш API ключ здесь — хранится только в памяти браузера" autocomplete="off">
+      </div>
+      <p class="ai-note">Ваш ключ никогда не отправляется куда-либо, кроме выбранного провайдера. Он хранится только в памяти вашего устройства и очищается при закрытии вкладки.</p>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="btn-primary" onclick="beginReading()">Начать расклад</button>
+    </div>
+
+  </div><!-- /setup-panel -->
+
+  <!-- DEALING PANEL -->
+  <div class="panel" id="dealing-panel">
+    <p class="dealing-msg" id="dealing-msg">Перетасовываем колоду...</p>
+    <div class="dealing-cards" id="dealing-placeholders"></div>
+  </div>
+
+  <!-- READING PANEL -->
+  <div class="panel" id="reading-panel">
+    <div class="spread-title">
+      <h2 id="reading-spread-name"></h2>
+      <p id="reading-spread-desc"></p>
+    </div>
+
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <!-- Card visuals -->
+    <div class="cards-grid" id="cards-grid"></div>
+
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <!-- Card meanings -->
+    <div class="meanings-section">
+      <h3>Значения карт</h3>
+      <div class="meaning-cards" id="meaning-cards"></div>
+    </div>
+
+    <!-- AI section -->
+    <div class="ai-reading-section" id="ai-section">
+      <div class="ai-reading-box">
+        <h3>Интерпретация</h3>
+        <div id="ai-output" class="placeholder">Нажмите "Получить AI интерпретацию", чтобы получить интерпретацию, или размышляйте над картами самостоятельно.</div>
+        <div class="ai-actions">
+          <button class="btn-primary" id="ai-btn" onclick="getAiReading()" style="display:none">Получить AI интерпретацию</button>
+          <button class="btn-secondary" onclick="clearAiReading()" id="clear-ai-btn" style="display:none">Очистить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reading-footer">
+      <button class="btn-primary" onclick="beginReading()">Начать снова</button>
+      <button class="btn-secondary" onclick="goToSetup()">Изменить настройки</button>
+    </div>
+  </div><!-- /reading-panel -->
+
+</div><!-- /app -->
+
+<!-- Card detail modal -->
+<div class="modal-overlay" id="card-modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-img-shimmer" class="modal-img-loading" style="display:none"></div>
+    <img id="modal-img" class="modal-img" src="" alt="" style="display:none">
+    <div id="modal-img-placeholder" style="display:none; text-align:center; font-size:3rem; margin-bottom:1.25rem; color:var(--gold-dim)"></div>
+    <h2 id="modal-name"></h2>
+    <p class="modal-arcana" id="modal-arcana"></p>
+    <div class="modal-keywords" id="modal-keywords"></div>
+    <div class="modal-meaning">
+      <h4>Upright</h4>
+      <p id="modal-upright"></p>
+      <h4>Reversed</h4>
+      <p id="modal-reversed"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== STATE =====
+const state = {
+  spread: 'single',
+  deck: 'rider-waite',
+  system: 'rws',
+  drawnCards: [],
+  currentSpread: null,
+};
+
+// ===== STARS =====
+(function() {
+  const container = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 1.8 + 0.4;
+    s.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      left:${Math.random()*100}%;top:${Math.random()*100}%;
+      --d:${(Math.random()*3+2).toFixed(1)}s;
+      --dl:${(Math.random()*4).toFixed(1)}s;
+      --a:${(Math.random()*0.4+0.1).toFixed(2)};
+    `;
+    container.appendChild(s);
+  }
+})();
+
+// ===== SPREADS =====
+const SPREADS = {
+  single: {
+    name: 'Одна карта',
+    desc: 'Одна карта для ясности, сосредоточенности на вопросе или ежедневного размышления',
+    positions: ['Карта']
+  },
+  three: {
+    name: 'Расклад на Три Карты',
+    desc: 'Переход от прошлого через настоящее к будущему',
+    positions: ['Прошлое', 'Настоящее', 'Будущее']
+  },
+  celtic: {
+    name: 'Кельтский крест',
+    desc: 'Классический расклад из десяти карт для глубокого и всестороннего понимания жизни',
+    positions: ['Настоящее', 'Препятствие', 'Далекое прошлое', 'Недавнее прошлое', 'Научший исход', 'Ближайшее будущее', 'Ваша позиция', 'Внешние влияния', 'Надежды и страхи', 'Исход']
+  },
+  horseshoe: {
+    name: 'Подкова',
+    desc: 'Семь карт дугой вокруг ситуации, раскрывая её во всей полноте',
+    positions: ['Прошлое', 'Настоящее', 'Скрытые влияния', 'Препятствия', 'Внешние влияния', 'Совет', 'Вероятный исход']
+  },
+  relationship: {
+    name: 'Расклад на отношения',
+    desc: 'Шесть карт исследуют связь между двумя людьми',
+    positions: ['Вы', 'Другой', 'Связь', 'Сильные стороны', 'Испытания', 'Что развивать']
+  }
+};
+
+// ===== RWS IMAGE MAPS =====
+// Thumbnail variant: Wikimedia Commons rider-waite-small-jpeg (fast, ~120px wide)
+// Used for the spread grid — small file size, quick load.
+const RWS_THUMB = {
+  'major-0':  '4/4c/RWS_Tarot_00_Fool.jpg/120px-RWS_Tarot_00_Fool.jpg',
+  'major-1':  'd/de/RWS_Tarot_01_Magician.jpg/120px-RWS_Tarot_01_Magician.jpg',
+  'major-2':  '8/88/RWS_Tarot_02_High_Priestess.jpg/120px-RWS_Tarot_02_High_Priestess.jpg',
+  'major-3':  'd/d2/RWS_Tarot_03_Empress.jpg/120px-RWS_Tarot_03_Empress.jpg',
+  'major-4':  'c/c3/RWS_Tarot_04_Emperor.jpg/120px-RWS_Tarot_04_Emperor.jpg',
+  'major-5':  '8/8d/RWS_Tarot_05_Hierophant.jpg/120px-RWS_Tarot_05_Hierophant.jpg',
+  'major-6':  '3/3a/TheLovers.jpg/120px-TheLovers.jpg',
+  'major-7':  '9/9b/RWS_Tarot_07_Chariot.jpg/120px-RWS_Tarot_07_Chariot.jpg',
+  'major-8':  'f/f6/RWS_Tarot_08_Strength.jpg/120px-RWS_Tarot_08_Strength.jpg',
+  'major-9':  '4/4d/RWS_Tarot_09_Hermit.jpg/120px-RWS_Tarot_09_Hermit.jpg',
+  'major-10': '3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg/120px-RWS_Tarot_10_Wheel_of_Fortune.jpg',
+  'major-11': 'e/e0/RWS_Tarot_11_Justice.jpg/120px-RWS_Tarot_11_Justice.jpg',
+  'major-12': '2/2b/RWS_Tarot_12_Hanged_Man.jpg/120px-RWS_Tarot_12_Hanged_Man.jpg',
+  'major-13': 'd/d7/RWS_Tarot_13_Death.jpg/120px-RWS_Tarot_13_Death.jpg',
+  'major-14': 'f/f8/RWS_Tarot_14_Temperance.jpg/120px-RWS_Tarot_14_Temperance.jpg',
+  'major-15': '5/55/RWS_Tarot_15_Devil.jpg/120px-RWS_Tarot_15_Devil.jpg',
+  'major-16': '3/3c/RWS_Tarot_16_Tower.jpg/120px-RWS_Tarot_16_Tower.jpg',
+  'major-17': 'd/db/RWS_Tarot_17_Star.jpg/120px-RWS_Tarot_17_Star.jpg',
+  'major-18': '7/7f/RWS_Tarot_18_Moon.jpg/120px-RWS_Tarot_18_Moon.jpg',
+  'major-19': '1/17/RWS_Tarot_19_Sun.jpg/120px-RWS_Tarot_19_Sun.jpg',
+  'major-20': 'd/dd/RWS_Tarot_20_Judgement.jpg/120px-RWS_Tarot_20_Judgement.jpg',
+  'major-21': 'f/ff/RWS_Tarot_21_World.jpg/120px-RWS_Tarot_21_World.jpg',
+  'wands-ace':    'a/ac/Wands01.jpg/120px-Wands01.jpg',
+  'wands-2':      '0/0f/Wands02.jpg/120px-Wands02.jpg',
+  'wands-3':      'f/ff/Wands03.jpg/120px-Wands03.jpg',
+  'wands-4':      'a/a4/Wands04.jpg/120px-Wands04.jpg',
+  'wands-5':      '9/9d/Wands05.jpg/120px-Wands05.jpg',
+  'wands-6':      '3/3b/Wands06.jpg/120px-Wands06.jpg',
+  'wands-7':      'e/e0/Wands07.jpg/120px-Wands07.jpg',
+  'wands-8':      '6/6b/Wands08.jpg/120px-Wands08.jpg',
+  'wands-9':      '4/4d/Wands09.jpg/120px-Wands09.jpg',
+  'wands-10':     '0/0b/Wands10.jpg/120px-Wands10.jpg',
+  'wands-page':   '6/6a/Wands11.jpg/120px-Wands11.jpg',
+  'wands-knight': '3/3b/Wands12.jpg/120px-Wands12.jpg',
+  'wands-queen':  '0/0d/Wands13.jpg/120px-Wands13.jpg',
+  'wands-king':   'c/ce/Wands14.jpg/120px-Wands14.jpg',
+  'cups-ace':     '3/36/Cups01.jpg/120px-Cups01.jpg',
+  'cups-2':       'f/f2/Cups02.jpg/120px-Cups02.jpg',
+  'cups-3':       '7/77/Cups03.jpg/120px-Cups03.jpg',
+  'cups-4':       '3/35/Cups04.jpg/120px-Cups04.jpg',
+  'cups-5':       'd/d7/Cups05.jpg/120px-Cups05.jpg',
+  'cups-6':       '1/17/Cups06.jpg/120px-Cups06.jpg',
+  'cups-7':       'a/ae/Cups07.jpg/120px-Cups07.jpg',
+  'cups-8':       '6/60/Cups08.jpg/120px-Cups08.jpg',
+  'cups-9':       '2/24/Cups09.jpg/120px-Cups09.jpg',
+  'cups-10':      '8/84/Cups10.jpg/120px-Cups10.jpg',
+  'cups-page':    'a/ad/Cups11.jpg/120px-Cups11.jpg',
+  'cups-knight':  'f/fa/Cups12.jpg/120px-Cups12.jpg',
+  'cups-queen':   '6/62/Cups13.jpg/120px-Cups13.jpg',
+  'cups-king':    '0/04/Cups14.jpg/120px-Cups14.jpg',
+  'swords-ace':   '1/11/Swords01.jpg/120px-Swords01.jpg',
+  'swords-2':     '9/9e/Swords02.jpg/120px-Swords02.jpg',
+  'swords-3':     '0/02/Swords03.jpg/120px-Swords03.jpg',
+  'swords-4':     'b/bf/Swords04.jpg/120px-Swords04.jpg',
+  'swords-5':     '2/23/Swords05.jpg/120px-Swords05.jpg',
+  'swords-6':     '2/29/Swords06.jpg/120px-Swords06.jpg',
+  'swords-7':     '3/3e/Swords07.jpg/120px-Swords07.jpg',
+  'swords-8':     'a/a7/Swords08.jpg/120px-Swords08.jpg',
+  'swords-9':     '2/2f/Swords09.jpg/120px-Swords09.jpg',
+  'swords-10':    'd/d6/Swords10.jpg/120px-Swords10.jpg',
+  'swords-page':  '4/4c/Swords11.jpg/120px-Swords11.jpg',
+  'swords-knight':'b/b0/Swords12.jpg/120px-Swords12.jpg',
+  'swords-queen': 'd/d4/Swords13.jpg/120px-Swords13.jpg',
+  'swords-king':  '3/33/Swords14.jpg/120px-Swords14.jpg',
+  'pents-ace':    'f/fd/Pents01.jpg/120px-Pents01.jpg',
+  'pents-2':      '9/9f/Pents02.jpg/120px-Pents02.jpg',
+  'pents-3':      '4/42/Pents03.jpg/120px-Pents03.jpg',
+  'pents-4':      'a/a6/Pents04.jpg/120px-Pents04.jpg',
+  'pents-5':      '9/96/Pents05.jpg/120px-Pents05.jpg',
+  'pents-6':      'a/a6/Pents06.jpg/120px-Pents06.jpg',
+  'pents-7':      '6/6a/Pents07.jpg/120px-Pents07.jpg',
+  'pents-8':      '4/49/Pents08.jpg/120px-Pents08.jpg',
+  'pents-9':      'f/f0/Pents09.jpg/120px-Pents09.jpg',
+  'pents-10':     '4/42/Pents10.jpg/120px-Pents10.jpg',
+  'pents-page':   'e/ec/Pents11.jpg/120px-Pents11.jpg',
+  'pents-knight': 'd/d5/Pents12.jpg/120px-Pents12.jpg',
+  'pents-queen':  '8/88/Pents13.jpg/120px-Pents13.jpg',
+  'pents-king':   '1/1c/Pents14.jpg/120px-Pents14.jpg',
+};
+
+// Full-size variant: archive.org rider-waite-tarot PNG
+// Used only when the modal opens — larger, higher quality.
+const RWS_FULL = {
+  'major-0':  'major_arcana_fool',
+  'major-1':  'major_arcana_magician',
+  'major-2':  'major_arcana_priestess',
+  'major-3':  'major_arcana_empress',
+  'major-4':  'major_arcana_emperor',
+  'major-5':  'major_arcana_hierophant',
+  'major-6':  'major_arcana_lovers',
+  'major-7':  'major_arcana_chariot',
+  'major-8':  'major_arcana_strength',
+  'major-9':  'major_arcana_hermit',
+  'major-10': 'major_arcana_fortune',
+  'major-11': 'major_arcana_justice',
+  'major-12': 'major_arcana_hanged',
+  'major-13': 'major_arcana_death',
+  'major-14': 'major_arcana_temperance',
+  'major-15': 'major_arcana_devil',
+  'major-16': 'major_arcana_tower',
+  'major-17': 'major_arcana_star',
+  'major-18': 'major_arcana_moon',
+  'major-19': 'major_arcana_sun',
+  'major-20': 'major_arcana_judgement',
+  'major-21': 'major_arcana_world',
+  'wands-ace':    'minor_arcana_wands_ace',
+  'wands-2':      'minor_arcana_wands_2',
+  'wands-3':      'minor_arcana_wands_3',
+  'wands-4':      'minor_arcana_wands_4',
+  'wands-5':      'minor_arcana_wands_5',
+  'wands-6':      'minor_arcana_wands_6',
+  'wands-7':      'minor_arcana_wands_7',
+  'wands-8':      'minor_arcana_wands_8',
+  'wands-9':      'minor_arcana_wands_9',
+  'wands-10':     'minor_arcana_wands_10',
+  'wands-page':   'minor_arcana_wands_page',
+  'wands-knight': 'minor_arcana_wands_knight',
+  'wands-queen':  'minor_arcana_wands_queen',
+  'wands-king':   'minor_arcana_wands_king',
+  'cups-ace':     'minor_arcana_cups_ace',
+  'cups-2':       'minor_arcana_cups_2',
+  'cups-3':       'minor_arcana_cups_3',
+  'cups-4':       'minor_arcana_cups_4',
+  'cups-5':       'minor_arcana_cups_5',
+  'cups-6':       'minor_arcana_cups_6',
+  'cups-7':       'minor_arcana_cups_7',
+  'cups-8':       'minor_arcana_cups_8',
+  'cups-9':       'minor_arcana_cups_9',
+  'cups-10':      'minor_arcana_cups_10',
+  'cups-page':    'minor_arcana_cups_page',
+  'cups-knight':  'minor_arcana_cups_knight',
+  'cups-queen':   'minor_arcana_cups_queen',
+  'cups-king':    'minor_arcana_cups_king',
+  'swords-ace':   'minor_arcana_swords_ace',
+  'swords-2':     'minor_arcana_swords_2',
+  'swords-3':     'minor_arcana_swords_3',
+  'swords-4':     'minor_arcana_swords_4',
+  'swords-5':     'minor_arcana_swords_5',
+  'swords-6':     'minor_arcana_swords_6',
+  'swords-7':     'minor_arcana_swords_7',
+  'swords-8':     'minor_arcana_swords_8',
+  'swords-9':     'minor_arcana_swords_9',
+  'swords-10':    'minor_arcana_swords_10',
+  'swords-page':  'minor_arcana_swords_page',
+  'swords-knight':'minor_arcana_swords_knight',
+  'swords-queen': 'minor_arcana_swords_queen',
+  'swords-king':  'minor_arcana_swords_king',
+  'pents-ace':    'minor_arcana_pentacles_ace',
+  'pents-2':      'minor_arcana_pentacles_2',
+  'pents-3':      'minor_arcana_pentacles_3',
+  'pents-4':      'minor_arcana_pentacles_4',
+  'pents-5':      'minor_arcana_pentacles_5',
+  'pents-6':      'minor_arcana_pentacles_6',
+  'pents-7':      'minor_arcana_pentacles_7',
+  'pents-8':      'minor_arcana_pentacles_8',
+  'pents-9':      'minor_arcana_pentacles_9',
+  'pents-10':     'minor_arcana_pentacles_10',
+  'pents-page':   'minor_arcana_pentacles_page',
+  'pents-knight': 'minor_arcana_pentacles_knight',
+  'pents-queen':  'minor_arcana_pentacles_queen',
+  'pents-king':   'minor_arcana_pentacles_king',
+};
+
+// Thoth system: rename suits & some major arcana
+const THOTH_MAP = {
+  'Strength': 'Lust',
+  'Justice': 'Adjustment',
+  'Judgement': 'The Aeon',
+  'The World': 'The Universe',
+  'Wands': 'Wands',
+  'Cups': 'Cups',
+  'Swords': 'Swords',
+  'Pentacles': 'Disks',
+};
+
+// Jean Dodal Tarot de Marseille (Lyon, 1701-1715) — full 22 majors on Wikimedia
+const MARSEILLE_IMAGES = {
+  'major-0':  '5/5b/Jean_Dodal_Tarot_trump_00.jpg/120px-Jean_Dodal_Tarot_trump_00.jpg',
+  'major-1':  'b/b8/Jean_Dodal_Tarot_trump_01.jpg/120px-Jean_Dodal_Tarot_trump_01.jpg',
+  'major-2':  'c/c5/Jean_Dodal_Tarot_trump_02.jpg/120px-Jean_Dodal_Tarot_trump_02.jpg',
+  'major-3':  '9/9b/Jean_Dodal_Tarot_trump_03.jpg/120px-Jean_Dodal_Tarot_trump_03.jpg',
+  'major-4':  'f/f2/Jean_Dodal_Tarot_trump_04.jpg/120px-Jean_Dodal_Tarot_trump_04.jpg',
+  'major-5':  'a/a6/Jean_Dodal_Tarot_trump_05.jpg/120px-Jean_Dodal_Tarot_trump_05.jpg',
+  'major-6':  '5/59/Jean_Dodal_Tarot_trump_06.jpg/120px-Jean_Dodal_Tarot_trump_06.jpg',
+  'major-7':  '1/18/Jean_Dodal_Tarot_trump_07.jpg/120px-Jean_Dodal_Tarot_trump_07.jpg',
+  'major-8':  '3/3d/Jean_Dodal_Tarot_trump_08.jpg/120px-Jean_Dodal_Tarot_trump_08.jpg',
+  'major-9':  'e/e9/Jean_Dodal_Tarot_trump_09.jpg/120px-Jean_Dodal_Tarot_trump_09.jpg',
+  'major-10': 'd/de/Jean_Dodal_Tarot_trump_10.jpg/120px-Jean_Dodal_Tarot_trump_10.jpg',
+  'major-11': 'a/a9/Jean_Dodal_Tarot_trump_11.jpg/120px-Jean_Dodal_Tarot_trump_11.jpg',
+  'major-12': '3/31/Jean_Dodal_Tarot_trump_12.jpg/120px-Jean_Dodal_Tarot_trump_12.jpg',
+  'major-13': '7/7f/Jean_Dodal_Tarot_trump_13.jpg/120px-Jean_Dodal_Tarot_trump_13.jpg',
+  'major-14': 'b/b4/Jean_Dodal_Tarot_trump_14.jpg/120px-Jean_Dodal_Tarot_trump_14.jpg',
+  'major-15': 'a/a8/Jean_Dodal_Tarot_trump_15.jpg/120px-Jean_Dodal_Tarot_trump_15.jpg',
+  'major-16': '6/6e/Jean_Dodal_Tarot_trump_16.jpg/120px-Jean_Dodal_Tarot_trump_16.jpg',
+  'major-17': '6/60/Jean_Dodal_Tarot_trump_17.jpg/120px-Jean_Dodal_Tarot_trump_17.jpg',
+  'major-18': 'e/e1/Jean_Dodal_Tarot_trump_18.jpg/120px-Jean_Dodal_Tarot_trump_18.jpg',
+  'major-19': 'a/a9/Jean_Dodal_Tarot_trump_19.jpg/120px-Jean_Dodal_Tarot_trump_19.jpg',
+  'major-20': '3/3e/Jean_Dodal_Tarot_trump_20.jpg/120px-Jean_Dodal_Tarot_trump_20.jpg',
+  'major-21': '1/13/Jean_Dodal_Tarot_trump_21.jpg/120px-Jean_Dodal_Tarot_trump_21.jpg',
+};
+
+// =============================================================================
+// VISCONTI-SFORZA IMAGE MAP — corrected to use the Bembo-Visconti-tarot series
+// Source: https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot
+// License: Public domain (15th-century artwork)
+// Access: Special:FilePath redirects — stable regardless of Wikimedia's internal hash paths
+// =============================================================================
+ 
+const VISCONTI_IMAGES = {
+  // --- MAJOR ARCANA (20 of 22; Devil XV and Tower XVI permanently lost) ---
+  'major-0':  'Bembo-Visconti-tarot-arcanum-fool.jpg',
+  'major-1':  'Bembo-Visconti-tarot-arcanum-01-magician.jpg',
+  'major-2':  'Bembo-Visconti-tarot-arcanum-02-high_priestess.jpg',
+  'major-3':  'Bembo-Visconti-tarot-arcanum-03-empress.jpg',
+  'major-4':  'Bembo-Visconti-tarot-arcanum-04-emperor.jpg',
+  'major-5':  'Bembo-Visconti-tarot-arcanum-05-hierophant.jpg',
+  'major-6':  'Bembo-Visconti-tarot-arcanum-06-lovers.jpg',
+  'major-7':  'Bembo-Visconti-tarot-arcanum-07-chariot.jpg',
+  'major-8':  'Bembo-Visconti-tarot-arcanum-08-strength.jpg',
+  'major-9':  'Bembo-Visconti-tarot-arcanum-09-hermit.jpg',
+  'major-10': 'Bembo-Visconti-tarot-arcanum-10-fortune.jpg',
+  'major-11': 'Bembo-Visconti-tarot-arcanum-11-justice.jpg',
+  'major-12': 'Bembo-Visconti-tarot-arcanum-12-hanged_man.jpg',
+  'major-13': 'Bembo-Visconti-tarot-arcanum-13.jpg',           // Death — no name suffix
+  'major-14': 'Bembo-Visconti-tarot-arcanum-14-temperance.jpg',
+  // major-15  The Devil  — PERMANENTLY LOST (no image exists anywhere)
+  // major-16  The Tower  — PERMANENTLY LOST (no image exists anywhere)
+  'major-17': 'Bembo-Visconti-tarot-arcanum-17-star.jpg',
+  'major-18': 'Bembo-Visconti-tarot-arcanum-18-moon.jpg',
+  'major-19': 'Bembo-Visconti-tarot-arcanum-19-sun.jpg',
+  'major-20': 'Bembo-Visconti-tarot-arcanum-20-judgement.jpg',
+  'major-21': 'Bembo-Visconti-tarot-arcanum-21-world.jpg',
+ 
+  // --- COINS (= Pentacles) — 13 of 14; Knight of Coins permanently lost ---
+  'pents-ace':    'Bembo-Visconti-tarot-coins-01-ace.jpg',
+  'pents-2':      'Bembo-Visconti-tarot-coins-02.jpg',
+  'pents-3':      'Bembo-Visconti-tarot-coins-03.jpg',
+  'pents-4':      'Bembo-Visconti-tarot-coins-04.jpg',
+  'pents-5':      'Bembo-Visconti-tarot-coins-05.jpg',
+  'pents-6':      'Bembo-Visconti-tarot-coins-06.jpg',
+  'pents-7':      'Bembo-Visconti-tarot-coins-07.jpg',
+  'pents-8':      'Bembo-Visconti-tarot-coins-08.jpg',
+  'pents-9':      'Bembo-Visconti-tarot-coins-09.jpg',
+  'pents-10':     'Bembo-Visconti-tarot-coins-10.jpg',
+  'pents-page':   'Bembo-Visconti-tarot-coins-11-knave.jpg',
+  // pents-knight  Knight of Coins — PERMANENTLY LOST
+  'pents-queen':  'Bembo-Visconti-tarot-coins-13-queen.jpg',
+  'pents-king':   'Bembo-Visconti-tarot-coins-14-king.jpg',
+ 
+  // --- CUPS — 13 of 14; King of Cups survives physically but not yet on Wikimedia ---
+  'cups-ace':     'Bembo-Visconti-tarot-cups-01-ace.jpg',
+  'cups-2':       'Bembo-Visconti-tarot-cups-02.jpg',
+  'cups-3':       'Bembo-Visconti-tarot-cups-03.jpg',
+  'cups-4':       'Bembo-Visconti-tarot-cups-04.jpg',
+  'cups-5':       'Bembo-Visconti-tarot-cups-05.jpg',
+  'cups-6':       'Bembo-Visconti-tarot-cups-06.jpg',
+  'cups-7':       'Bembo-Visconti-tarot-cups-07.jpg',
+  'cups-8':       'Bembo-Visconti-tarot-cups-08.jpg',
+  'cups-9':       'Bembo-Visconti-tarot-cups-09.jpg',
+  'cups-10':      'Bembo-Visconti-tarot-cups-10.jpg',
+  'cups-page':    'Bembo-Visconti-tarot-cups-11-knave.jpg',
+  'cups-knight':  'Bembo-Visconti-tarot-cups-12-knight.jpg',
+  'cups-queen':   'Bembo-Visconti-tarot-cups-13-queen.jpg',
+  // cups-king  King of Cups — card survives but not uploaded to Wikimedia
+ 
+  // --- STAVES (= Wands) — 14 of 14, fully complete ---
+  'wands-ace':    'Bembo-Visconti-tarot-staves-01-ace.jpg',
+  'wands-2':      'Bembo-Visconti-tarot-staves-02.jpg',
+  'wands-3':      'Bembo-Visconti-tarot-staves-03.jpg',
+  'wands-4':      'Bembo-Visconti-tarot-staves-04.jpg',
+  'wands-5':      'Bembo-Visconti-tarot-staves-05.jpg',
+  'wands-6':      'Bembo-Visconti-tarot-staves-06.jpg',
+  'wands-7':      'Bembo-Visconti-tarot-staves-07.jpg',
+  'wands-8':      'Bembo-Visconti-tarot-staves-08.jpg',
+  'wands-9':      'Bembo-Visconti-tarot-staves-09.jpg',
+  'wands-10':     'Bembo-Visconti-tarot-staves-10.jpg',
+  'wands-page':   'Bembo-Visconti-tarot-staves-11-knave.jpg',
+  'wands-knight': 'Bembo-Visconti-tarot-staves-12-knight.jpg',
+  'wands-queen':  'Bembo-Visconti-tarot-staves-13-queen.jpg',
+  'wands-king':   'Bembo-Visconti-tarot-staves-14-king.jpg',
+ 
+  // --- SWORDS — 13 of 14; Three of Swords permanently lost ---
+  'swords-ace':    'Bembo-Visconti-tarot-swords-01-ace.jpg',
+  'swords-2':      'Bembo-Visconti-tarot-swords-02.jpg',
+  // swords-3  Three of Swords — PERMANENTLY LOST
+  'swords-4':      'Bembo-Visconti-tarot-swords-04.jpg',
+  'swords-5':      'Bembo-Visconti-tarot-swords-05.jpg',
+  'swords-6':      'Bembo-Visconti-tarot-swords-06.jpg',
+  'swords-7':      'Bembo-Visconti-tarot-swords-07.jpg',
+  'swords-8':      'Bembo-Visconti-tarot-swords-08.jpg',
+  'swords-9':      'Bembo-Visconti-tarot-swords-09.jpg',
+  'swords-10':     'Bembo-Visconti-tarot-swords-10.jpg',
+  'swords-page':   'Bembo-Visconti-tarot-swords-11-knave.jpg',
+  'swords-knight': 'Bembo-Visconti-tarot-swords-12-knight.jpg',
+  'swords-queen':  'Bembo-Visconti-tarot-swords-13-queen.jpg',
+  'swords-king':   'Bembo-Visconti-tarot-swords-14-king.jpg',
+};
+
+// ===== CARD DATA =====
+const CARDS_RWS = [
+  // СТАРШИЕ АРКАНЫ
+  { id:'major-0',  name:'Шут',              arcana:'Старший', number:0,  suit:null, symbol:'☿',
+    keywords:['начало','спонтанность','невинность','свобода'],
+    upright:'Прыжок веры в неизведанное. Шут олицетворяет новые начинания, безграничный потенциал и смелость сделать первый шаг, не зная пункта назначения.',
+    reversed:'Безрассудство, наивное безумство или страх, мешающий необходимому новому началу.' },
+  { id:'major-1',  name:'Маг',              arcana:'Старший', number:1,  suit:null, symbol:'🜍',
+    keywords:['воля','мастерство','проявление','находчивость'],
+    upright:'Все инструменты в наличии. Маг направляет божественную волю в земное действие — умелый, находчивый, способный превратить намерение в реальность.',
+    reversed:'Манипуляции, слабое планирование, невыраженные таланты или неправильно направленная энергия.' },
+  { id:'major-2',  name:'Верховная Жрица',  arcana:'Старший', number:2,  suit:null, symbol:'☽',
+    keywords:['интуиция','тайна','подсознание','мудрость'],
+    upright:'Глубокое знание без слов. Верховная Жрица стоит у порога внутренней мудрости — доверяйте интуиции и знанию, которое приходит без рационального объяснения.',
+    reversed:'Утаённые тайны, утрата связи с интуицией или поверхностное понимание.' },
+  { id:'major-3',  name:'Императрица',      arcana:'Старший', number:3,  suit:null, symbol:'♀',
+    keywords:['плодородие','изобилие','забота','природа'],
+    upright:'Жизнь в полном расцвете. Императрица воплощает плодородие, изобилие и созидательную силу природы. Заботьтесь о том, что любите, и наблюдайте, как оно расцветает.',
+    reversed:'Пренебрежение, творческий кризис, зависимость или удушающая опека.' },
+  { id:'major-4',  name:'Император',        arcana:'Старший', number:4,  suit:null, symbol:'♂',
+    keywords:['власть','структура','стабильность','лидерство'],
+    upright:'Порядок, установленный волей. Император привносит структуру, авторитет и стабильность чётких границ. Стройте с намерением и ведите с достоинством.',
+    reversed:'Деспотизм, негибкость, чрезмерный контроль или отказ от ответственности.' },
+  { id:'major-5',  name:'Иерофант',         arcana:'Старший', number:5,  suit:null, symbol:'⊕',
+    keywords:['традиция','следование нормам','нравственность','этика'],
+    upright:'Мудрость традиции. Иерофант олицетворяет духовное наставничество, общие ценности и накопленные знания институтов. Ищите учения на проверенных путях.',
+    reversed:'Бунт против условностей, личная духовность вне догм или лицемерие.' },
+  { id:'major-6',  name:'Влюблённые',       arcana:'Старший', number:6,  suit:null, symbol:'♡',
+    keywords:['любовь','гармония','выбор','согласованность'],
+    upright:'Перекрёсток сердца. Влюблённые говорят не только о романтике, но и о фундаментальном выборе, определяющем, кем мы являемся и что ценим.',
+    reversed:'Несоответствие ценностей, неверные решения или конфликт в близких отношениях.' },
+  { id:'major-7',  name:'Колесница',        arcana:'Старший', number:7,  suit:null, symbol:'♋',
+    keywords:['контроль','воля','победа','решимость'],
+    upright:'Вперёд — сквозь противоборствующие силы. Колесница — это триумф дисциплинированной воли: держать в напряжении противоречивые силы и направлять их к единой цели.',
+    reversed:'Потеря контроля, агрессия, силы, тянущие в разные стороны.' },
+  { id:'major-8',  name:'Сила',             arcana:'Старший', number:8,  suit:null, symbol:'♌',
+    keywords:['мужество','терпение','сострадание','внутренняя сила'],
+    upright:'Мужество, которое не кричит. Сила — это терпеливое укрощение грубой мощи через нежность и любовь, а не через господство; внутреннее владение первобытными импульсами.',
+    reversed:'Сомнения в себе, слабость характера или грубая сила как компенсация внутренней неуверенности.' },
+  { id:'major-9',  name:'Отшельник',        arcana:'Старший', number:9,  suit:null, symbol:'♍',
+    keywords:['самоанализ','одиночество','наставничество','поиск'],
+    upright:'Свет, который вы несёте внутрь. Отшельник удаляется от мира, чтобы услышать глубочайшую истину — проводник, указывающий путь, но не идущий им за вас.',
+    reversed:'Одиночество, превратившееся в изоляцию; уход от мира как побег, а не мудрость.' },
+  { id:'major-10', name:'Колесо Фортуны',   arcana:'Старший', number:10, suit:null, symbol:'☉',
+    keywords:['циклы','судьба','поворотный момент','удача'],
+    upright:'Великое колесо вращается. Фортуна напоминает: жизнь движется циклами, а перемены — желанные и трудные — единственная истинная константа бытия.',
+    reversed:'Неудача, сопротивление переменам или цепляние за прошлое, пока колесо движется дальше.' },
+  { id:'major-11', name:'Справедливость',   arcana:'Старший', number:11, suit:null, symbol:'⚖',
+    keywords:['честность','правда','причина и следствие','закон'],
+    upright:'Весы, которые нельзя обмануть. Справедливость олицетворяет истину, ответственность и беспристрастные последствия каждого выбора — ни больше, ни меньше, чем должно.',
+    reversed:'Несправедливость, нечестность, отказ от ответственности или юридические осложнения.' },
+  { id:'major-12', name:'Повешенный',       arcana:'Старший', number:12, suit:null, symbol:'⊗',
+    keywords:['приостановка','капитуляция','новый взгляд','жертва'],
+    upright:'Добровольно подвешенный между мирами. Повешенный выбирает паузу, отказывается от контроля и в этом видит то, что было невидимо с обычной точки зрения.',
+    reversed:'Задержки, сопротивление необходимой жертве или стагнация, утратившая смысл.' },
+  { id:'major-13', name:'Смерть',           arcana:'Старший', number:13, suit:null, symbol:'♏',
+    keywords:['завершение','переход','трансформация','перемены'],
+    upright:'То, что должно закончиться, чтобы нечто могло жить. Смерть редко бывает буквальной — это великий преобразователь, расчищающий отжившее, чтобы дать место тому, что должно возникнуть.',
+    reversed:'Сопротивление окончанию, стагнация, страх расстаться с идентичностью, которая больше не подходит.' },
+  { id:'major-14', name:'Умеренность',      arcana:'Старший', number:14, suit:null, symbol:'♐',
+    keywords:['равновесие','умеренность','терпение','цель'],
+    upright:'Алхимия среднего пути. Умеренность смешивает противоположности в нечто более тонкое, чем каждое из них в отдельности — терпение, мера и изящество работы в идеальной пропорции.',
+    reversed:'Дисбаланс, крайности, нетерпение или разлад, вызванный избытком.' },
+  { id:'major-15', name:'Дьявол',           arcana:'Старший', number:15, suit:null, symbol:'♑',
+    keywords:['оковы','зависимость','материализм','тень'],
+    upright:'Цепи, которые мы куём сами. Дьявол освещает, где мы порабощены страхом, желанием или привычкой, — и напоминает: оковы зачастую не так крепки, как кажется.',
+    reversed:'Освобождение от зависимости, отказ от того, что связывает, возвращение личной свободы.' },
+  { id:'major-16', name:'Башня',            arcana:'Старший', number:16, suit:null, symbol:'♜',
+    keywords:['внезапная перемена','потрясение','откровение','хаос'],
+    upright:'Молния и необходимые руины. Башня сокрушает то, что было выстроено на ложном основании — драматическое очищение, болезненное в моменте, но обнажающее существенную истину.',
+    reversed:'Избегание необходимых перемен, цепляние за рушащуюся структуру или предотвращённая катастрофа.' },
+  { id:'major-17', name:'Звезда',           arcana:'Старший', number:17, suit:null, symbol:'★',
+    keywords:['надежда','обновление','вдохновение','безмятежность'],
+    upright:'Небо открывается после бури. Звезда льёт надежду без остатка — глубокая уверенность в том, что вселенная благосклонна и что исцеление, обновление и вдохновение уже движутся к вам.',
+    reversed:'Отчаяние, утрата веры или ощущение оторванности от надежды и творческого вдохновения.' },
+  { id:'major-18', name:'Луна',             arcana:'Старший', number:18, suit:null, symbol:'☾',
+    keywords:['иллюзия','страх','подсознание','замешательство'],
+    upright:'Тропа, растворяющаяся в лунном свете. Луна говорит об иллюзиях, подсознании и неопределённой территории между реальным и воображаемым. Не всё является тем, чем кажется.',
+    reversed:'Ясность, начинающая пробиваться сквозь замешательство; освобождение от иррациональных страхов или разоблачение обмана.' },
+  { id:'major-19', name:'Солнце',           arcana:'Старший', number:19, suit:null, symbol:'☀',
+    keywords:['радость','успех','жизненность','ясность'],
+    upright:'Жизнь в полной яркости. Солнце излучает успех, радость и чистую жизненную силу бытия — время ясности, тепла и недвусмысленного удачи.',
+    reversed:'Временные препятствия для счастья, заблокированный успех или оптимизм, омрачённый обстоятельствами.' },
+  { id:'major-20', name:'Суд',              arcana:'Старший', number:20, suit:null, symbol:'🔔',
+    keywords:['осмысление','воздаяние','пробуждение','отпущение'],
+    upright:'Призванный к жизни. Суд сигнализирует о глубоком пробуждении — призыве подняться, честно оценить свою жизнь и ответить на зов, который вы слышали под поверхностью.',
+    reversed:'Сомнение в себе, отказ от призыва, страх осуждения или игнорирование важного пробуждения.' },
+  { id:'major-21', name:'Мир',              arcana:'Старший', number:21, suit:null, symbol:'⊕',
+    keywords:['завершение','интеграция','достижение','целостность'],
+    upright:'Танец завершённости. Мир знаменует триумфальное окончание цикла — полная интеграция, обретённое мастерство и радостное осознание того, что вы прибыли именно туда, куда были призваны.',
+    reversed:'Незавершённые финалы, обходные пути, уклонение от необходимого завершения или неспособность отпраздновать успех.' },
+ 
+  // ЖЕЗЛЫ
+  { id:'wands-ace', name:'Туз Жезлов',      arcana:'Младший', number:1, suit:'Жезлы', symbol:'🔥',
+    keywords:['вдохновение','потенциал','творчество','энергия'],
+    upright:'Искра творческого огня. Мощное новое начало в сфере страсти, вдохновения и творческих устремлений. Используйте этот момент.',
+    reversed:'Задержки, отсутствие мотивации, творческие блоки или многообещающая идея, которой не суждено разгореться.' },
+  { id:'wands-2', name:'Двойка Жезлов',     arcana:'Младший', number:2, suit:'Жезлы', symbol:'🌍',
+    keywords:['планирование','прогресс','открытие','решения'],
+    upright:'Мир простёрся перед вами в ожидании. Миг смелого видения — вы стоите на пороге великого путешествия, уверенно выбирая направление.',
+    reversed:'Страх неизвестного, отсутствие планирования или чрезмерная осторожность, когда нужен рост.' },
+  { id:'wands-3', name:'Тройка Жезлов',     arcana:'Младший', number:3, suit:'Жезлы', symbol:'⛵',
+    keywords:['расширение','дальновидность','заморские дела','руководство'],
+    upright:'Ваши корабли прибыли. Начальная работа сделана, и результаты приходят — дальновидность, расширение и уверенность того, кто смело шагнул в неизведанное.',
+    reversed:'Задержки результатов, отсутствие предусмотрительности или планы, не взлетающие так, как ожидалось.' },
+  { id:'wands-4', name:'Четвёрка Жезлов',   arcana:'Младший', number:4, suit:'Жезлы', symbol:'🏡',
+    keywords:['праздник','гармония','возвращение домой','сообщество'],
+    upright:'Гирлянды повешены, праздник заслужен. Время радости, возвращения домой и заслуженного отдыха — сообщество, гармония и удовольствие от стабильного основания.',
+    reversed:'Переход, нестабильность в доме или праздник, который неполон или нарушен.' },
+  { id:'wands-5', name:'Пятёрка Жезлов',    arcana:'Младший', number:5, suit:'Жезлы', symbol:'⚔',
+    keywords:['конфликт','конкуренция','напряжение','разнообразие'],
+    upright:'Жезлы скрещиваются на арене. Соперничество, разногласия и продуктивный конфликт — хаотичная энергия, способная заострить идеи, если её направить, или истощить, если дать ей разгуляться.',
+    reversed:'Избегание конфликта, внутреннее напряжение, конкуренция, становящаяся деструктивной, или урегулирование разногласий.' },
+  { id:'wands-6', name:'Шестёрка Жезлов',   arcana:'Младший', number:6, suit:'Жезлы', symbol:'🏆',
+    keywords:['победа','признание','прогресс','уверенность в себе'],
+    upright:'Победитель возвращается увенчанный. Общественное признание, успех после усилий и уверенность, возникающая от заслуженного настоящего признания.',
+    reversed:'Эгоизм, падение с высоты, отсутствие признания или личная победа без публичного одобрения.' },
+  { id:'wands-7', name:'Семёрка Жезлов',    arcana:'Младший', number:7, suit:'Жезлы', symbol:'🛡',
+    keywords:['вызов','настойчивость','защита','конкуренция'],
+    upright:'Стойте на вершине холма. Вы занимаете выгодную позицию, но должны её отстоять — мужество, настойчивость и твёрдость в своих убеждениях.',
+    reversed:'Подавленность, сдача, нерешительность в критический момент или ненужное оставление позиции.' },
+  { id:'wands-8', name:'Восьмёрка Жезлов',  arcana:'Младший', number:8, suit:'Жезлы', symbol:'💫',
+    keywords:['скорость','действие','воздушное путешествие','движение'],
+    upright:'Всё сразу, стремительно и точно. Быстрое движение, новости, приходящие скоро, и бодрящий поток событий, наконец сдвинувшихся с места после долгого застоя.',
+    reversed:'Задержки, разочарование, замедление или энергия, рассеянная без чёткого направления.' },
+  { id:'wands-9', name:'Девятка Жезлов',    arcana:'Младший', number:9, suit:'Жезлы', symbol:'🧱',
+    keywords:['стойкость','выдержка','последний рубеж','настойчивость'],
+    upright:'Ранен, но не сломлен. Потрёпанный в боях, но готовый к очередному испытанию — стойкость, настойчивость и сила того, кто уже многое пережил.',
+    reversed:'Истощение, паранойя, отказ от помощи или неспособность оправиться от прошлых ран.' },
+  { id:'wands-10', name:'Десятка Жезлов',   arcana:'Младший', number:10, suit:'Жезлы', symbol:'⛓',
+    keywords:['бремя','ответственность','тяжёлый труд','завершение'],
+    upright:'Тяжесть всего, что вы несёте. Перегружен, но почти у цели — напоминание о том, что тяжёлые обязанности нужно когда-то отложить, чтобы достичь подлинного завершения.',
+    reversed:'Делегирование, освобождение от бремени или наконец-то отложение того, что несли слишком долго.' },
+  { id:'wands-page', name:'Паж Жезлов',     arcana:'Младший', number:11, suit:'Жезлы', symbol:'🧑',
+    keywords:['энтузиазм','исследование','открытие','вольный дух'],
+    upright:'Сверкающие глаза от возможностей. Паж Жезлов приносит юношеский энтузиазм, дух первопроходца и энергию бросаться в новые приключения не оглядываясь.',
+    reversed:'Отсутствие направления, незрелость, вся энергия — и никакого завершения.' },
+  { id:'wands-knight', name:'Рыцарь Жезлов', arcana:'Младший', number:12, suit:'Жезлы', symbol:'🏇',
+    keywords:['действие','приключение','импульсивность','энергия'],
+    upright:'Мчится вперёд, не оглядываясь. Рыцарь Жезлов — чистый страстный импульс: авантюрный, смелый, порой безрассудно быстрый. Вокруг него потрескивает энергия.',
+    reversed:'Безрассудство, рассеянная энергия, поспешность, приводящая к ошибкам, или иссякающая страсть.' },
+  { id:'wands-queen', name:'Королева Жезлов', arcana:'Младший', number:13, suit:'Жезлы', symbol:'👑',
+    keywords:['смелость','уверенность','независимость','решимость'],
+    upright:'Лучезарная, притягательная, совершенно сама по себе. Королева Жезлов притягивает внимание одним присутствием — тёплая, смелая, с почти солнечной уверенностью в себе.',
+    reversed:'Ревность, неуверенность в себе, жажда внимания или огонь, обращённый внутрь как агрессия.' },
+  { id:'wands-king', name:'Король Жезлов',   arcana:'Младший', number:14, suit:'Жезлы', symbol:'♛',
+    keywords:['прирождённый лидер','видение','предприниматель','честь'],
+    upright:'Провидец на троне. Король Жезлов ведёт вдохновением, а не принуждением — прирождённый предприниматель, страстный и смелый, за которым идут по собственной воле.',
+    reversed:'Импульсивность, жестокость, высокие ожидания, переходящие в тиранию.' },
+ 
+  // КУБКИ
+  { id:'cups-ace', name:'Туз Кубков',       arcana:'Младший', number:1, suit:'Кубки', symbol:'💧',
+    keywords:['новая любовь','полнота чувств','интуиция','духовное обновление'],
+    upright:'Чаша сердца, переполненная через край. Новое эмоциональное начало — любовь, сострадание и духовное обновление, льющиеся, как чаша, которую невозможно опустошить.',
+    reversed:'Эмоциональная блокировка, подавленные чувства или неспособность принять то, что предлагается.' },
+  { id:'cups-2', name:'Двойка Кубков',      arcana:'Младший', number:2, suit:'Кубки', symbol:'💑',
+    keywords:['единая любовь','партнёрство','влечение','связь'],
+    upright:'Двое, обращённые друг к другу. Глубокая связь — романтическая, творческая или сокровенная — выстроенная на взаимном признании и волшебстве чувства, что тебя по-настоящему встретили.',
+    reversed:'Несоответствие, разрыв связи, созависимость или конец значимого союза.' },
+  { id:'cups-3', name:'Тройка Кубков',      arcana:'Младший', number:3, suit:'Кубки', symbol:'🎉',
+    keywords:['празднование','дружба','творчество','сообщество'],
+    upright:'Три кубка, поднятые в радости. Общее торжество, дружба, творческое сотрудничество и особое удовольствие от чувства принадлежности. Танцуйте с теми, кого любите.',
+    reversed:'Сплетни, излишества, социальная изоляция или радость, скисшая от пресыщения.' },
+  { id:'cups-4', name:'Четвёрка Кубков',    arcana:'Младший', number:4, suit:'Кубки', symbol:'😔',
+    keywords:['апатия','созерцание','отстранённость','переосмысление'],
+    upright:'Уход внутрь, пропуская предложенное. Четвёрка Кубков говорит об уходе в себя, апатии и склонности не замечать то, что даётся, пока сетуешь на то, чего нет.',
+    reversed:'Возрождённая мотивация, выход из оцепенения, желание снова участвовать в жизни.' },
+  { id:'cups-5', name:'Пятёрка Кубков',     arcana:'Младший', number:5, suit:'Кубки', symbol:'😢',
+    keywords:['утрата','сожаление','скорбь','разочарование'],
+    upright:'Пролитое и оплаканное. Пятёрка Кубков просит оплакать утраченное — но мягко напоминает: два кубка по-прежнему стоят за вашей спиной, полные.',
+    reversed:'Движение вперёд, прощение, сосредоточение на том, что осталось, а не на том, что потеряно.' },
+  { id:'cups-6', name:'Шестёрка Кубков',    arcana:'Младший', number:6, suit:'Кубки', symbol:'🌸',
+    keywords:['ностальгия','невинность','воссоединение','детство'],
+    upright:'Сладкие воспоминания. Шестёрка Кубков несёт аромат детства — ностальгия, невинность, щедро даруемая доброта и воссоединение с душами из прошлого.',
+    reversed:'Чрезмерное погружение в прошлое, наивный идеализм или отказ расти за пределы того, что было.' },
+  { id:'cups-7', name:'Семёрка Кубков',     arcana:'Младший', number:7, suit:'Кубки', symbol:'💭',
+    keywords:['иллюзия','фантазия','выбор','самообман'],
+    upright:'Семь дверей, большинство из которых — миражи. Воображение и выбор расширяются перед вами, но не все видения реальны. Отделяйте желаемое от истинной возможности.',
+    reversed:'Ясность, рассеивающая иллюзию, решительный выбор или развеянный самообман.' },
+  { id:'cups-8', name:'Восьмёрка Кубков',   arcana:'Младший', number:8, suit:'Кубки', symbol:'🌒',
+    keywords:['уход','разочарование','оставление позади','поиск истины'],
+    upright:'Отворачиваясь от того, что больше не наполняет. Восьмёрка Кубков изображает мужество уйти от прошлого — не в горечи, но в поисках чего-то более истинного.',
+    reversed:'Страх двигаться дальше, возврат к тому, что следует оставить, или стагнация под маской верности.' },
+  { id:'cups-9', name:'Девятка Кубков',     arcana:'Младший', number:9, suit:'Кубки', symbol:'✨',
+    keywords:['довольство','удовлетворение','благодарность','исполненное желание'],
+    upright:'Карта желаний. Все девять кубков полны за вашей спиной — глубокое удовлетворение, радость исполнившихся желаний и тепло изобилия. Остановитесь, чтобы насладиться тем, что ваше.',
+    reversed:'Пресыщение, материализм, удовлетворение, звучащее фальшиво, или редкий подсчёт своих благ.' },
+  { id:'cups-10', name:'Десятка Кубков',    arcana:'Младший', number:10, suit:'Кубки', symbol:'🌈',
+    keywords:['божественная любовь','гармония','согласованность','семья'],
+    upright:'Радуга над счастливой семьёй. Десятка Кубков олицетворяет полноту эмоционального счастья — долгосрочную любовь, глубокую принадлежность, гармонию в доме и истинное довольство.',
+    reversed:'Разлад в семье, показная гармония, скрывающая конфликт, или идеализированное счастье, которое не может длиться.' },
+  { id:'cups-page', name:'Паж Кубков',      arcana:'Младший', number:11, suit:'Кубки', symbol:'🐟',
+    keywords:['творческие возможности','любопытство','возможность','новые идеи'],
+    upright:'Из кубка говорит рыба — удивление без цинизма. Паж Кубков приносит интуитивные послания, творческие возможности и открытое любопытство того, кто видит магию в обыденном.',
+    reversed:'Незрелость, перепады настроения, творческие идеи, не выходящие за рамки мечтаний.' },
+  { id:'cups-knight', name:'Рыцарь Кубков', arcana:'Младший', number:12, suit:'Кубки', symbol:'🦄',
+    keywords:['романтизм','обаяние','воображение','красота'],
+    upright:'Мечтающий рыцарь медленно движется вперёд. Романтичный, идеалистичный, тронутый красотой — Рыцарь Кубков следует сердцу с артистизмом, изяществом и искренним чувством.',
+    reversed:'Перепады настроения, ревность, нереалистичный идеализм или обаяние, используемое для манипуляций.' },
+  { id:'cups-queen', name:'Королева Кубков', arcana:'Младший', number:13, suit:'Кубки', symbol:'🐚',
+    keywords:['сострадательная','заботливая','эмпатичная','интуитивная'],
+    upright:'Тихая вода, видящая всё. Королева Кубков глубоко эмпатична — хранительница эмоциональной мудрости, интуитивная, сострадательная, способная на бесконечное понимание.',
+    reversed:'Эмоциональная неуверенность, зависимость или чувства, настолько загнанные внутрь, что превращающиеся в скрытые манипуляции.' },
+  { id:'cups-king', name:'Король Кубков',   arcana:'Младший', number:14, suit:'Кубки', symbol:'🌊',
+    keywords:['сострадание','контроль','равновесие','мудрость'],
+    upright:'Царь океана, хранящий спокойствие. Эмоциональное мастерство — Король Кубков несёт глубокие чувства, не тонув в них, предлагая мудрые и сострадательные советы.',
+    reversed:'Переменчивость настроения, эмоциональные манипуляции или подавленные чувства, в конце концов прорывающиеся наружу.' },
+ 
+  // МЕЧИ
+  { id:'swords-ace', name:'Туз Мечей',      arcana:'Младший', number:1, suit:'Мечи', symbol:'⚡',
+    keywords:['прорыв','ясность','острый ум','истина'],
+    upright:'Лезвие чистой ясности. Туз Мечей рассекает замешательство, обнажая существенную истину — прорыв в мышлении, важное решение, которое нужно принять с честью.',
+    reversed:'Замешательство, жестокость, интеллект как оружие или истина, дающаяся ценой великих потерь.' },
+  { id:'swords-2', name:'Двойка Мечей',     arcana:'Младший', number:2, suit:'Мечи', symbol:'⚖',
+    keywords:['нерешительность','тупик','заблокированные эмоции','уклонение'],
+    upright:'Глаза закрыты, клинки скрещены. Двойка Мечей говорит о тупике, нерешительности или намеренном отворачивании от истины, которую в конечном счёте придётся принять.',
+    reversed:'Нерешительность преодолена, наконец видно ясно, или обман выходит на свет.' },
+  { id:'swords-3', name:'Тройка Мечей',     arcana:'Младший', number:3, suit:'Мечи', symbol:'💔',
+    keywords:['разбитое сердце','печаль','горе','боль'],
+    upright:'Три меча в сердце, дождь. Тройка Мечей не уклоняется от реальности горя — скорбь, утрата и сердечная боль, которые нужно прочувствовать, прежде чем их исцелить.',
+    reversed:'Восстановление, отпускание боли, прощение или движение сквозь горе к другому берегу.' },
+  { id:'swords-4', name:'Четвёрка Мечей',   arcana:'Младший', number:4, suit:'Мечи', symbol:'🕯',
+    keywords:['отдых','восстановление','созерцание','выздоровление'],
+    upright:'Рыцарь лежит неподвижно в часовне. Четвёрка Мечей предписывает отдых — восстановление, созерцание и необходимый уход от конфликта, чтобы вернуть силы телу и разуму.',
+    reversed:'Беспокойство, неспособность отдохнуть, когда это необходимо, или возврат к действию раньше полного восстановления.' },
+  { id:'swords-5', name:'Пятёрка Мечей',    arcana:'Младший', number:5, suit:'Мечи', symbol:'⚔',
+    keywords:['конфликт','поражение','враждебность','пустая победа'],
+    upright:'Победа, после которой нечего праздновать. Пятёрка Мечей предостерегает от конфликта, в котором проигрывают все, — спросите себя, стоит ли победа в этой битве причинённого ущерба.',
+    reversed:'Примирение, выход за рамки конфликта или сожаление, последовавшее за пирровой победой.' },
+  { id:'swords-6', name:'Шестёрка Мечей',   arcana:'Младший', number:6, suit:'Мечи', symbol:'⛵',
+    keywords:['переход','перемены','обряд посвящения','освобождение'],
+    upright:'Движение к спокойным водам. Шестёрка Мечей обещает выход из потрясений — необходимый переход, который может быть горестным, но ведёт к более тихим берегам.',
+    reversed:'Незавершённый переход, неспособность оставить трудности позади или сопротивление необходимому переезду.' },
+  { id:'swords-7', name:'Семёрка Мечей',    arcana:'Младший', number:7, suit:'Мечи', symbol:'🐱',
+    keywords:['предательство','обман','стратегия','тайный уход'],
+    upright:'Ускользает с чужим. Семёрка Мечей говорит об обмане — вас обманывают или вы сами выбираете обходной путь в ущерб честности.',
+    reversed:'Признание, возврат взятого или наконец раскрытый обман.' },
+  { id:'swords-8', name:'Восьмёрка Мечей',  arcana:'Младший', number:8, suit:'Мечи', symbol:'🧿',
+    keywords:['ограничение','заточение','позиция жертвы','беспомощность'],
+    upright:'Связан, но путь виден. Восьмёрка Мечей обнажает ограничение, отчасти самостоятельно созданное — повязку можно снять, верёвки — ослабить. Темница — это столько же убеждение, сколько обстоятельство.',
+    reversed:'Освобождение, новый взгляд или осознание того, что ограничения никогда не были абсолютными.' },
+  { id:'swords-9', name:'Девятка Мечей',    arcana:'Младший', number:9, suit:'Мечи', symbol:'😰',
+    keywords:['тревога','беспокойство','страх','отчаяние'],
+    upright:'Пробуждение в тёмные часы. Девятка Мечей олицетворяет особую муку беспокойного разума — тревогу, страхи, которые кажутся наиболее реальными в три часа ночи.',
+    reversed:'Выход из худшего, обращение за помощью или осознание того, что страхи были больше реальности.' },
+  { id:'swords-10', name:'Десятка Мечей',   arcana:'Младший', number:10, suit:'Мечи', symbol:'🌅',
+    keywords:['болезненные окончания','поражение','кризис','дно'],
+    upright:'Рассвет после самой тёмной точки. Десять мечей в спине — полное поражение, кризис и достижение дна, которое, как ни парадоксально, является самым началом восстановления.',
+    reversed:'Восстановление, возрождение или отказ позволить поражению стать окончательным.' },
+  { id:'swords-page', name:'Паж Мечей',     arcana:'Младший', number:11, suit:'Мечи', symbol:'🦅',
+    keywords:['любопытство','беспокойность','умственная энергия','жажда знания'],
+    upright:'Бдительный, наблюдательный, с поднятым мечом. Паж Мечей приносит острое любопытство, быстрое мышление и неугомонную энергию ума, желающего знать всё немедленно.',
+    reversed:'Обман, пустые слова без действий или сплетни под видом информации.' },
+  { id:'swords-knight', name:'Рыцарь Мечей', arcana:'Младший', number:12, suit:'Мечи', symbol:'⚡',
+    keywords:['амбициозность','ориентация на действие','напористость','решительность'],
+    upright:'Атака без взгляда вниз. Рыцарь Мечей — чистый решительный импульс: смелый, возможно безрассудный, ведомый интеллектом и убеждённостью в том, что действовать быстро — значит действовать правильно.',
+    reversed:'Агрессия, разбросанность или бросок в бой без стратегии.' },
+  { id:'swords-queen', name:'Королева Мечей', arcana:'Младший', number:13, suit:'Мечи', symbol:'🗡',
+    keywords:['независимость','беспристрастное суждение','чёткие границы','прямое общение'],
+    upright:'Ясный взгляд, чистые порезы. Королева Мечей пережила достаточно, чтобы знать: ясность — это доброта. Она видит без иллюзий и общается с точностью, которая в конечном счёте является даром.',
+    reversed:'Холодность, жёсткая критика или использование острого восприятия для ранения, а не прояснения.' },
+  { id:'swords-king', name:'Король Мечей',   arcana:'Младший', number:14, suit:'Мечи', symbol:'👁',
+    keywords:['ясность ума','авторитет','истина','аналитичность'],
+    upright:'Разум, вершащий суд. Король Мечей владеет интеллектом с властью — ясный, этичный, аналитически точный, преданный истине даже тогда, когда она неудобна.',
+    reversed:'Злоупотребление властью, тирания, манипулятивный интеллект или холодная отстранённость от человеческих последствий.' },
+ 
+  // ПЕНТАКЛИ
+  { id:'pents-ace', name:'Туз Пентаклей',   arcana:'Младший', number:1, suit:'Пентакли', symbol:'💰',
+    keywords:['возможность','новые начинания','безопасность','изобилие'],
+    upright:'Монета из облака. Золотое новое начало в материальном мире — возможность процветания, здоровья и осязаемой безопасности. Принимайте предложение обеими руками.',
+    reversed:'Упущенная возможность, потеря денег или материальная стабильность, почти недостижимая.' },
+  { id:'pents-2', name:'Двойка Пентаклей',  arcana:'Младший', number:2, suit:'Пентакли', symbol:'⚖',
+    keywords:['баланс','адаптивность','управление временем','меняющиеся приоритеты'],
+    upright:'Изящный жонглёр в буре. Двойка Пентаклей — это искусство равновесия: управление несколькими приоритетами, нестабильными ресурсами и удержание всех необходимых шаров в воздухе.',
+    reversed:'Перегруженность, дезорганизация или дисбаланс между материальными и духовными заботами.' },
+  { id:'pents-3', name:'Тройка Пентаклей',  arcana:'Младший', number:3, suit:'Пентакли', symbol:'🏛',
+    keywords:['командная работа','воплощение','мастерство','сотрудничество'],
+    upright:'Мастер обсуждает планы. Тройка Пентаклей прославляет умелое сотрудничество — три разных ума, объединяющих свою экспертизу, чтобы создать то, чего ни один из них не достиг бы в одиночку.',
+    reversed:'Отсутствие командной работы, халтура, работа без гордости или должного сотрудничества.' },
+  { id:'pents-4', name:'Четвёрка Пентаклей', arcana:'Младший', number:4, suit:'Пентакли', symbol:'🤑',
+    keywords:['накопление','безопасность','консерватизм','скудость'],
+    upright:'Держась за то, что есть. Четвёрка Пентаклей говорит о финансовой безопасности через консервативное управление — но предостерегает: слишком крепкая хватка мешает и росту, и щедрости.',
+    reversed:'Отпускание материализма, преодоление мышления дефицита или финансовая незащищённость.' },
+  { id:'pents-5', name:'Пятёрка Пентаклей', arcana:'Младший', number:5, suit:'Пентакли', symbol:'❄',
+    keywords:['финансовые потери','бедность','нужда','изоляция'],
+    upright:'Снаружи у освещённого окна. Материальные трудности, ощущение выброшенности на холод и особая боль материальной потери — но дверь церкви открыта для тех, кто смотрит вверх.',
+    reversed:'Выход из нужды, принятие помощи или духовное богатство, компенсирующее материальный недостаток.' },
+  { id:'pents-6', name:'Шестёрка Пентаклей', arcana:'Младший', number:6, suit:'Пентакли', symbol:'🤲',
+    keywords:['щедрость','благотворительность','давать и получать','делиться богатством'],
+    upright:'Весы дарения. Шестёрка Пентаклей изображает поток процветания — щедрость, честное обращение и понимание того, что разделённое изобилие умножает изобилие.',
+    reversed:'Условия при подарках, неравная щедрость, долг или великодушие, используемое как контроль.' },
+  { id:'pents-7', name:'Семёрка Пентаклей', arcana:'Младший', number:7, suit:'Пентакли', symbol:'🌱',
+    keywords:['долгосрочный взгляд','устойчивые результаты','настойчивость','инвестиции'],
+    upright:'Опираясь на мотыгу, оглядывая рост. Семёрка Пентаклей призывает к терпению — хорошая работа требует времени, и эта пауза для оценки, приносят ли усилия ожидаемый результат, необходима.',
+    reversed:'Нетерпение, скудная отдача или упорный труд в неправильном направлении.' },
+  { id:'pents-8', name:'Восьмёрка Пентаклей', arcana:'Младший', number:8, suit:'Пентакли', symbol:'🔨',
+    keywords:['ученичество','самоотдача','высокие стандарты','развитие навыков'],
+    upright:'Каждая монета отчеканена с полным вниманием. Восьмёрка Пентаклей — радость мастерства через прилежный труд: изучение ремесла, совершенствование навыка и гордость от того, что делаешь дело правильно.',
+    reversed:'Рассеянность, перфекционизм, мешающий завершению, или срезание углов, подрывающее качество.' },
+  { id:'pents-9', name:'Девятка Пентаклей', arcana:'Младший', number:9, suit:'Пентакли', symbol:'🦅',
+    keywords:['изобилие','роскошь','самодостаточность','финансовая независимость'],
+    upright:'Сад заслуженного изобилия. Девятка Пентаклей прославляет самодостаточность, изысканное окружение и глубокое удовольствие от наслаждения тем, что создано собственной дисциплиной.',
+    reversed:'Жизнь не по средствам, поверхностные ценности или зависимость от других в том, что должно быть самостоятельно заработано.' },
+  { id:'pents-10', name:'Десятка Пентаклей', arcana:'Младший', number:10, suit:'Пентакли', symbol:'🏘',
+    keywords:['наследие','финансовая безопасность','наследство','семья'],
+    upright:'Три поколения под дугой пентаклей. Десятка Пентаклей олицетворяет полноту материального успеха — долговременное богатство, семейное наследие и глубокое удовлетворение от по-настоящему прочно выстроенного.',
+    reversed:'Семейный конфликт из-за денег, несостоявшееся наследие или финансовая нестабильность вопреки видимому благополучию.' },
+  { id:'pents-page', name:'Паж Пентаклей',  arcana:'Младший', number:11, suit:'Пентакли', symbol:'📚',
+    keywords:['проявление','финансовая возможность','развитие навыков','усердие'],
+    upright:'Монета, изучаемая с чистым вниманием. Паж Пентаклей подходит к материальному миру с любопытством и усердием — ученик практического мастерства, амбициозный, но приземлённый.',
+    reversed:'Отсутствие сосредоточенности, промедление или учёба без практического применения.' },
+  { id:'pents-knight', name:'Рыцарь Пентаклей', arcana:'Младший', number:12, suit:'Пентакли', symbol:'🐎',
+    keywords:['упорный труд','продуктивность','рутина','приверженность традиции'],
+    upright:'Недвижный рыцарь, который добивается своего. Рыцарь Пентаклей движется медленно, методично и без драм — надёжный, трудолюбивый, способный к устойчивым усилиям тогда, когда другие уже сдались.',
+    reversed:'Скука, застрявший в рутине или упорный труд без гибкости и творческой искры.' },
+  { id:'pents-queen', name:'Королева Пентаклей', arcana:'Младший', number:13, suit:'Пентакли', symbol:'🌿',
+    keywords:['приземлённость','практичность','забота','находчивость'],
+    upright:'Природа в умелых руках. Королева Пентаклей сочетает тёплую заботу с практической мудростью — она создаёт мир изобилия, комфорта и красоты через умные и взвешенные действия.',
+    reversed:'Материализм, захлёстывающий душу, удушающая опека или пренебрежение практическими нуждами.' },
+  { id:'pents-king', name:'Король Пентаклей', arcana:'Младший', number:14, suit:'Пентакли', symbol:'💎',
+    keywords:['изобилие','процветание','безопасность','амбиции'],
+    upright:'Трон, выросший из посеянного. Король Пентаклей воплощает мастерство в материальном мире — уверенный, процветающий, щедрый, обладающий выстраданной мудростью того, кто создавал империю монета за монетой.',
+    reversed:'Материализм, упрямство или богатство, используемое как власть, а не разделяемое как изобилие.' },
+];
+
+// ===== IMAGE URL HELPERS =====
+
+/**
+ * Returns the thumbnail URL for use in the spread grid (small, fast-loading).
+ * RWS → Wikimedia Commons 120px JPEG thumbs.
+ * Other decks → same Wikimedia path as before.
+ */
+function getCardThumbUrl(card) {
+  const deck = state.deck;
+  if (deck === 'symbolic') return null;
+ 
+  if (deck === 'marseille') {
+    return MARSEILLE_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id]}`
+      : null;
+  }
+ 
+  if (deck === 'visconti') {
+    const filename = VISCONTI_IMAGES[card.id];
+    if (!filename) return null;
+    // Special:FilePath redirects to the actual CDN URL for the full image.
+    // Append ?width=120 so Wikimedia serves a scaled thumbnail.
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=120`;
+  }
+ 
+  // rider-waite: Wikimedia 120px thumbs
+  return RWS_THUMB[card.id]
+    ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${RWS_THUMB[card.id]}`
+    : null;
+}
+ 
+/**
+ * Returns the full-resolution URL shown in the modal.
+ * RWS → archive.org full PNG.
+ * Marseille → Wikimedia 400px thumb.
+ * Visconti → Special:FilePath redirect at 512px (native resolution of Bembo series).
+ */
+function getCardFullUrl(card) {
+  const deck = state.deck;
+  if (deck === 'symbolic') return null;
+ 
+  if (deck === 'marseille') {
+    return MARSEILLE_IMAGES[card.id]
+      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id].replace('/120px-', '/400px-')}`
+      : null;
+  }
+ 
+  if (deck === 'visconti') {
+    const filename = VISCONTI_IMAGES[card.id];
+    if (!filename) return null;
+    // 512px matches the native upload resolution of the Bembo series
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=512`;
+  }
+ 
+  // rider-waite: full archive.org PNG
+  return RWS_FULL[card.id]
+    ? `https://archive.org/download/rider-waite-tarot/${RWS_FULL[card.id]}.png`
+    : null;
+}
+
+function getCardName(card) {
+  if (state.system === 'thoth') {
+    if (THOTH_MAP[card.name]) return THOTH_MAP[card.name];
+    if (card.suit && THOTH_MAP[card.suit]) {
+      return card.name.replace(card.suit, THOTH_MAP[card.suit]);
+    }
+  }
+  return card.name;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function drawCards(n) {
+  const deck = shuffle(CARDS_RWS);
+  return deck.slice(0, n).map(card => ({
+    ...card,
+    isReversed: Math.random() < 0.3,
+    displayName: getCardName(card),
+  }));
+}
+
+// ===== UI CONTROLS =====
+function selectChoice(group, btn) {
+  const container = document.getElementById(`${group}-choices`);
+  container.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  state[group] = btn.dataset.val;
+}
+
+function updateModelOptions() {
+  const provider = document.getElementById('ai-provider').value;
+  const modelSel = document.getElementById('ai-model');
+  const keyField = document.getElementById('key-field');
+  const modelField = document.getElementById('model-field');
+
+  const models = {
+    none: [],
+    anthropic: ['claude-opus-4-5', 'claude-sonnet-4-5', 'claude-haiku-4-5-20251001'],
+    openai: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo'],
+    gemini: ['gemini-2.5-flash', 'gemini-2.0-pro', 'gemini-2.5-pro'],
+  };
+
+  modelSel.innerHTML = models[provider].map(m => `<option value="${m}">${m}</option>`).join('');
+  keyField.style.display = provider === 'none' ? 'none' : 'block';
+  modelField.style.display = provider === 'none' ? 'none' : 'block';
+}
+
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goToSetup() {
+  showPanel('setup-panel');
+}
+
+// ===== READING =====
+async function beginReading() {
+  const spread = SPREADS[state.spread];
+  const n = spread.positions.length;
+
+  showPanel('dealing-panel');
+  const msgs = ['Shuffling the deck...', 'Clearing your mind...', 'Calling the cards...', 'The spread is ready.'];
+  const msgEl = document.getElementById('dealing-msg');
+  const placeholders = document.getElementById('dealing-placeholders');
+  placeholders.innerHTML = '';
+
+  let mi = 0;
+  const msgTimer = setInterval(() => {
+    mi = (mi + 1) % msgs.length;
+    msgEl.textContent = msgs[mi];
+  }, 800);
+
+  for (let i = 0; i < n; i++) {
+    await new Promise(r => setTimeout(r, 180));
+    const ph = document.createElement('div');
+    ph.className = 'dealing-placeholder';
+    placeholders.appendChild(ph);
+  }
+
+  await new Promise(r => setTimeout(r, 1000));
+  clearInterval(msgTimer);
+
+  state.drawnCards = drawCards(n);
+  state.currentSpread = spread;
+
+  renderReading();
+  showPanel('reading-panel');
+}
+
+function renderReading() {
+  const spread = state.currentSpread;
+
+  document.getElementById('reading-spread-name').textContent = spread.name;
+  document.getElementById('reading-spread-desc').textContent = spread.desc;
+
+  // Card visuals — use thumb URLs for fast grid loading
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  state.drawnCards.forEach((card, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'tarot-card-wrap' + (card.isReversed ? ' reversed' : '');
+    wrap.onclick = () => openModal(card);
+
+    const inner = document.createElement('div');
+    inner.className = 'card-inner';
+
+    const imgUrl = getCardThumbUrl(card);
+    if (imgUrl) {
+      const img = document.createElement('img');
+      img.className = 'card-img';
+      img.src = imgUrl;
+      img.alt = card.displayName;
+      img.onerror = function() {
+        this.style.display = 'none';
+        const ph = document.createElement('div');
+        ph.className = 'card-img-placeholder';
+        ph.textContent = card.symbol || '✦';
+        inner.appendChild(ph);
+      };
+      inner.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'card-img-placeholder';
+      ph.innerHTML = `<div style="text-align:center;padding:1rem;"><div style="font-size:2.25rem;margin-bottom:0.75rem;color:var(--gold)">${card.symbol || '✦'}</div><div style="font-family:var(--font-title);font-size:0.8125rem;color:var(--gold);letter-spacing:0.05em;line-height:1.4">${card.displayName}</div></div>`;
+      inner.appendChild(ph);
+    }
+
+    wrap.appendChild(inner);
+
+    const posLabel = document.createElement('div');
+    posLabel.className = 'card-position-label';
+    posLabel.textContent = spread.positions[i];
+    wrap.appendChild(posLabel);
+
+    const nameLabel = document.createElement('div');
+    nameLabel.className = 'card-name-label';
+    nameLabel.textContent = card.displayName;
+    wrap.appendChild(nameLabel);
+
+    if (card.isReversed) {
+      const revBadge = document.createElement('span');
+      revBadge.className = 'reversed-badge';
+      revBadge.textContent = 'Reversed';
+      wrap.appendChild(revBadge);
+    }
+
+    grid.appendChild(wrap);
+  });
+
+  // Meanings
+  const meaningsEl = document.getElementById('meaning-cards');
+  meaningsEl.innerHTML = '';
+  state.drawnCards.forEach((card, i) => {
+    const mc = document.createElement('div');
+    mc.className = 'meaning-card' + (card.isReversed ? ' reversed-card' : '');
+    mc.onclick = () => openModal(card);
+
+    const header = document.createElement('div');
+    header.className = 'meaning-card-header';
+
+    const posSpan = document.createElement('span');
+    posSpan.className = 'meaning-pos';
+    posSpan.textContent = spread.positions[i];
+    header.appendChild(posSpan);
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'meaning-name';
+    nameSpan.textContent = card.displayName;
+    header.appendChild(nameSpan);
+
+    if (card.isReversed) {
+      const revTag = document.createElement('span');
+      revTag.className = 'meaning-rev-tag';
+      revTag.textContent = '⟳ reversed';
+      header.appendChild(revTag);
+    }
+
+    mc.appendChild(header);
+
+    const kwWrap = document.createElement('div');
+    kwWrap.className = 'meaning-keywords';
+    const keywords = card.isReversed
+      ? card.keywords.map(k => `${k}*`)
+      : card.keywords;
+    keywords.forEach(kw => {
+      const span = document.createElement('span');
+      span.className = 'keyword';
+      span.textContent = kw;
+      kwWrap.appendChild(span);
+    });
+    mc.appendChild(kwWrap);
+
+    const txt = document.createElement('p');
+    txt.className = 'meaning-text';
+    txt.textContent = card.isReversed ? card.reversed : card.upright;
+    mc.appendChild(txt);
+
+    meaningsEl.appendChild(mc);
+  });
+
+  // Show AI button if provider set
+  const provider = document.getElementById('ai-provider').value;
+  const aiBtn = document.getElementById('ai-btn');
+  aiBtn.style.display = provider !== 'none' ? 'inline-block' : 'none';
+
+  const aiOut = document.getElementById('ai-output');
+  aiOut.className = 'placeholder';
+  aiOut.textContent = provider !== 'none'
+    ? 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.'
+    : 'Consider each card\'s position and its meaning. How do the energies speak to you?';
+  document.getElementById('clear-ai-btn').style.display = 'none';
+}
+
+// ===== MODAL =====
+function openModal(card) {
+  document.getElementById('modal-name').textContent = card.displayName;
+  document.getElementById('modal-arcana').textContent =
+    card.arcana === 'Major' ? `Major Arcana · ${card.number}` : `${card.suit} · ${card.arcana} Arcana`;
+  document.getElementById('modal-upright').textContent = card.upright;
+  document.getElementById('modal-reversed').textContent = card.reversed;
+
+  const kws = document.getElementById('modal-keywords');
+  kws.innerHTML = card.keywords.map(k =>
+    `<span class="keyword">${k}</span>`
+  ).join('');
+
+  const fullUrl = getCardFullUrl(card);
+  const modalImg = document.getElementById('modal-img');
+  const modalPh = document.getElementById('modal-img-placeholder');
+  const shimmer = document.getElementById('modal-img-shimmer');
+
+  // Reset state
+  modalImg.style.display = 'none';
+  modalPh.style.display = 'none';
+  shimmer.style.display = 'none';
+
+  if (fullUrl) {
+    // Show shimmer while full image loads
+    shimmer.style.display = 'block';
+    modalImg.style.display = 'none';
+
+    const loader = new Image();
+    loader.onload = () => {
+      shimmer.style.display = 'none';
+      modalImg.src = fullUrl;
+      modalImg.alt = card.displayName;
+      modalImg.style.display = 'block';
+    };
+    loader.onerror = () => {
+      shimmer.style.display = 'none';
+      modalPh.style.display = 'block';
+      modalPh.textContent = card.symbol || '✦';
+    };
+    loader.src = fullUrl;
+  } else {
+    modalPh.style.display = 'block';
+    modalPh.textContent = card.symbol || '✦';
+  }
+
+  document.getElementById('card-modal').classList.add('open');
+}
+
+function closeModal(event) {
+  if (!event || event.target.id === 'card-modal' || event.target.classList.contains('modal-close')) {
+    document.getElementById('card-modal').classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal({ target: { id: 'card-modal' }});
+});
+
+// ===== AI READING =====
+async function getAiReading() {
+  const provider = document.getElementById('ai-provider').value;
+  const model = document.getElementById('ai-model').value;
+  const key = document.getElementById('ai-key').value.trim();
+
+  if (!key) {
+    alert('Please enter your API key in the settings.');
+    return;
+  }
+
+  const spread = state.currentSpread;
+  const cardList = state.drawnCards.map((c, i) =>
+    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
+  ).join('\n');
+
+  const prompt = `You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.
+
+Spread: ${spread.name}
+${spread.desc}
+
+Cards drawn:
+${cardList}
+
+Provide a narrative interpretation that weaves all the cards together into a coherent reading. Be insightful, poetic, and specific to the positions. Speak in second person. Keep it under 400 words.`;
+
+  const aiOut = document.getElementById('ai-output');
+  aiOut.className = '';
+  aiOut.textContent = 'Reading the cards...';
+
+  const btn = document.getElementById('ai-btn');
+  btn.disabled = true;
+  btn.textContent = 'Reading...';
+
+  try {
+    let text = '';
+
+    if (provider === 'anthropic') {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 600,
+          messages: [{ role: 'user', content: prompt }],
+        }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error.message);
+      text = data.content[0].text;
+
+    } else if (provider === 'openai') {
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
+        body: JSON.stringify({
+          model,
+          max_tokens: 600,
+          messages: [{ role: 'user', content: prompt }],
+        }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error.message);
+      text = data.choices[0].message.content;
+
+    } else if (provider === 'gemini') {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+        }
+      );
+      const data = await res.json();
+      if (data.error) throw new Error(data.error.message);
+      text = data.candidates[0].content.parts[0].text;
+    }
+
+    // Typewriter effect
+    aiOut.textContent = '';
+    let i = 0;
+    const typeTimer = setInterval(() => {
+      if (i < text.length) {
+        aiOut.textContent += text[i++];
+      } else {
+        clearInterval(typeTimer);
+      }
+    }, 12);
+
+    document.getElementById('clear-ai-btn').style.display = 'inline-block';
+
+  } catch (err) {
+    aiOut.className = '';
+    aiOut.textContent = `Error: ${err.message}\n\nPlease check your API key and try again.`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Get AI Reading';
+  }
+}
+
+function clearAiReading() {
+  const aiOut = document.getElementById('ai-output');
+  aiOut.className = 'placeholder';
+  aiOut.textContent = 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.';
+  document.getElementById('clear-ai-btn').style.display = 'none';
+}
+
+// Init
+updateModelOptions();
+</script>
+</body>
+</html>
