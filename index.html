@@ -448,6 +448,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.4s ease;
   }
 
   .card-img-placeholder {
@@ -1823,6 +1824,7 @@ function renderReading() {
     inner.className = 'card-inner';
 
     const imgUrl = getCardThumbUrl(card);
+    const fullUrl = getCardFullUrl(card);
     if (imgUrl) {
       const img = document.createElement('img');
       img.className = 'card-img';
@@ -1836,6 +1838,27 @@ function renderReading() {
         inner.appendChild(ph);
       };
       inner.appendChild(img);
+      // Lazy-load full image in background; swap when ready
+      if (fullUrl && fullUrl !== imgUrl) {
+        const loader = new Image();
+        loader.onload = function() {
+          const ph = inner.querySelector('.card-img-placeholder');
+          if (ph) {
+            // thumb failed — replace placeholder with full image
+            ph.remove();
+            img.src = fullUrl;
+            img.style.display = '';
+          } else {
+            // thumb loaded fine — fade-swap to full image
+            img.style.opacity = '0';
+            requestAnimationFrame(() => {
+              img.src = fullUrl;
+              img.style.opacity = '';
+            });
+          }
+        };
+        loader.src = fullUrl;
+      }
     } else {
       const ph = document.createElement('div');
       ph.className = 'card-img-placeholder';
