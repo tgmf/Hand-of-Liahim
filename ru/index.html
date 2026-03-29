@@ -955,9 +955,9 @@
     <p class="modal-arcana" id="modal-arcana"></p>
     <div class="modal-keywords" id="modal-keywords"></div>
     <div class="modal-meaning">
-      <h4>Upright</h4>
+      <h4>Прямое положение</h4>
       <p id="modal-upright"></p>
-      <h4>Reversed</h4>
+      <h4>Перевёрнутое положение</h4>
       <p id="modal-reversed"></p>
     </div>
   </div>
@@ -1858,7 +1858,7 @@ function renderReading() {
     if (card.isReversed) {
       const revBadge = document.createElement('span');
       revBadge.className = 'reversed-badge';
-      revBadge.textContent = 'Reversed';
+      revBadge.textContent = 'Перевёрнута';
       wrap.appendChild(revBadge);
     }
 
@@ -1889,7 +1889,7 @@ function renderReading() {
     if (card.isReversed) {
       const revTag = document.createElement('span');
       revTag.className = 'meaning-rev-tag';
-      revTag.textContent = '⟳ reversed';
+      revTag.textContent = '⟳ перевёрнута';
       header.appendChild(revTag);
     }
 
@@ -2001,7 +2001,7 @@ async function getAiReading() {
 
   const spread = state.currentSpread;
   const cardList = state.drawnCards.map((c, i) =>
-    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
+    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Перевернута)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
   ).join('\n');
 
   const prompt = `You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.
