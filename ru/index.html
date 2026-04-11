@@ -823,6 +823,10 @@
             <span class="btn-title">Отношения</span>
             <span class="btn-sub">Шесть карт для двух человек</span>
           </button>
+          <button class="choice-btn" data-val="index" onclick="selectChoice('spread', this)">
+            <span class="btn-title">Все карты</span>
+            <span class="btn-sub">Просмотр всех 78 карт</span>
+          </button>
         </div>
       </div>
 
@@ -913,13 +917,22 @@
 
     <div class="divider"><div class="divider-gem"></div></div>
 
+    <div id="index-filters" style="display:none; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2rem;">
+      <button class="choice-btn selected" data-filter="all"       onclick="filterIndex(this)">Все</button>
+      <button class="choice-btn"          data-filter="Major"     onclick="filterIndex(this)">Старшие Арканы</button>
+      <button class="choice-btn"          data-filter="Wands"     onclick="filterIndex(this)">Жезлы</button>
+      <button class="choice-btn"          data-filter="Cups"      onclick="filterIndex(this)">Кубки</button>
+      <button class="choice-btn"          data-filter="Swords"    onclick="filterIndex(this)">Мечи</button>
+      <button class="choice-btn"          data-filter="Pentacles" onclick="filterIndex(this)">Пентакли</button>
+    </div>
+
     <!-- Card visuals -->
     <div class="cards-grid" id="cards-grid"></div>
 
     <div class="divider"><div class="divider-gem"></div></div>
 
     <!-- Card meanings -->
-    <div class="meanings-section">
+    <div id="meanings-section" class="meanings-section">
       <h3>Значения карт</h3>
       <div class="meaning-cards" id="meaning-cards"></div>
     </div>
@@ -1773,6 +1786,12 @@ function goToSetup() {
 
 // ===== READING =====
 async function beginReading() {
+  if (state.spread === 'index') {
+    renderIndex('all');
+    showPanel('reading-panel');
+    return;
+  }
+
   const spread = SPREADS[state.spread];
   const n = spread.positions.length;
 
@@ -1808,6 +1827,9 @@ async function beginReading() {
 function renderReading() {
   const spread = state.currentSpread;
 
+  document.getElementById('index-filters').style.display = 'none';
+  document.getElementById('meanings-section').style.display = 'block';
+  document.getElementById('ai-section').style.display = 'block';
   document.getElementById('reading-spread-name').textContent = spread.name;
   document.getElementById('reading-spread-desc').textContent = spread.desc;
 
@@ -1949,6 +1971,75 @@ function renderReading() {
     ? 'Нажмите «Получить ИИ-Интерпретацию» или поразмышляйте над картами самостоятельно.'
     : 'Рассмотрите каждую карту в её позиции и значение. О чём говорит вам энергия?';
   document.getElementById('clear-ai-btn').style.display = 'none';
+}
+
+function renderIndex(filter) {
+  const isIndex = true;
+  document.getElementById('reading-spread-name').textContent = 'Card Index';
+  document.getElementById('reading-spread-desc').textContent = 'All 78 cards — tap any for full meanings';
+
+  const filters = document.getElementById('index-filters');
+  filters.style.display = 'flex';
+  document.getElementById('meaning-cards').innerHTML = '';
+  document.getElementById('ai-section').style.display = 'none';
+  document.getElementById('meanings-section').style.display = 'none';
+
+  const cards = filter === 'all'
+    ? CARDS_RWS
+    : filter === 'Major'
+      ? CARDS_RWS.filter(c => c.arcana === 'Major')
+      : CARDS_RWS.filter(c => c.suit === filter);
+
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  cards.forEach(card => {
+    const dc = { ...card, isReversed: false, displayName: getCardName(card) };
+    const wrap = document.createElement('div');
+    wrap.className = 'tarot-card-wrap';
+    wrap.onclick = () => openModal(dc);
+
+    const inner = document.createElement('div');
+    inner.className = 'card-inner';
+    const imgUrl = getCardThumbUrl(dc);
+    if (imgUrl) {
+      const img = document.createElement('img');
+      img.className = 'card-img';
+      img.src = imgUrl;
+      img.alt = dc.displayName;
+      img.onerror = function() {
+        this.style.display = 'none';
+        const ph = document.createElement('div');
+        ph.className = 'card-img-placeholder';
+        ph.textContent = card.symbol || '✦';
+        inner.appendChild(ph);
+      };
+      inner.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'card-img-placeholder';
+      ph.innerHTML = `<div style="text-align:center;padding:1rem;"><div style="font-size:2.25rem;margin-bottom:0.75rem;color:var(--gold)">${card.symbol||'✦'}</div><div style="font-family:var(--font-title);font-size:0.8125rem;color:var(--gold);letter-spacing:0.05em;line-height:1.4">${dc.displayName}</div></div>`;
+      inner.appendChild(ph);
+    }
+    wrap.appendChild(inner);
+
+    const nameLabel = document.createElement('div');
+    nameLabel.className = 'card-name-label';
+    nameLabel.textContent = dc.displayName;
+    wrap.appendChild(nameLabel);
+
+    const subLabel = document.createElement('div');
+    subLabel.className = 'card-position-label';
+    subLabel.textContent = card.arcana === 'Major' ? `Major · ${card.number}` : card.suit;
+    wrap.appendChild(subLabel);
+
+    grid.appendChild(wrap);
+  });
+}
+
+function filterIndex(btn) {
+  document.querySelectorAll('#index-filters .choice-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  renderIndex(btn.dataset.filter);
 }
 
 // ===== MODAL =====
