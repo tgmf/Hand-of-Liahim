@@ -1947,6 +1947,153 @@ function applyDecodedReading(decoded) {
   showPanel('reading-panel');
 }
 
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function wrapCenteredLines(ctx, text, maxWidth) {
+  const words = text.split(' ');
+  const lines = [];
+  let line = '';
+  words.forEach(word => {
+    const test = line ? `${line} ${word}` : word;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = test;
+    }
+  });
+  if (line) lines.push(line);
+  return lines;
+}
+
+function drawReadingCard(ctx, card, position, x, y, w, h) {
+  roundRectPath(ctx, x, y, w, h, 12);
+  ctx.fillStyle = '#1c1408';
+  ctx.fill();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = card.isReversed ? '#8b1a1a' : '#8b6914';
+  ctx.stroke();
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#b08838';
+  ctx.font = '600 15px Cinzel, Georgia, serif';
+  wrapCenteredLines(ctx, position.toUpperCase(), w - 24).forEach((line, i) => {
+    ctx.fillText(line, x + w / 2, y + 32 + i * 18);
+  });
+
+  ctx.save();
+  const symbolCx = x + w / 2, symbolCy = y + h / 2 - 18;
+  if (card.isReversed) {
+    ctx.translate(symbolCx, symbolCy);
+    ctx.rotate(Math.PI);
+    ctx.translate(-symbolCx, -symbolCy);
+  }
+  ctx.fillStyle = '#c9a84c';
+  ctx.font = '58px serif';
+  ctx.fillText(card.symbol || '✦', symbolCx, symbolCy + 20);
+  ctx.restore();
+
+  ctx.fillStyle = '#e8c46a';
+  ctx.font = '600 19px Cinzel, Georgia, serif';
+  const nameLines = wrapCenteredLines(ctx, card.displayName, w - 24);
+  const nameLastLineY = y + h - (card.isReversed ? 56 : 30);
+  nameLines.forEach((line, i) => {
+    ctx.fillText(line, x + w / 2, nameLastLineY - (nameLines.length - 1 - i) * 22);
+  });
+
+  if (card.isReversed) {
+    ctx.fillStyle = '#c94f4f';
+    ctx.font = 'italic 14px Georgia, serif';
+    ctx.fillText('Reversed', x + w / 2, y + h - 16);
+  }
+}
+
+async function buildReadingImageBlob() {
+  if (document.fonts && document.fonts.ready) {
+    try { await document.fonts.ready; } catch (err) {}
+  }
+
+  const spread = state.currentSpread;
+  const cards = state.drawnCards;
+  const n = cards.length;
+
+  const cardW = 220, cardH = 320, gap = 26;
+  const cols = n <= 3 ? n : n <= 6 ? 3 : n <= 8 ? 4 : 5;
+  const rows = Math.ceil(n / cols);
+
+  const marginX = 60, headerH = 210, footerH = 70;
+  const gridWidth = cols * cardW + (cols - 1) * gap;
+  const height = headerH + rows * cardH + (rows - 1) * gap + footerH;
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.font = '600 40px Cinzel, Georgia, serif';
+  const titleWidth = ctx.measureText('The Hand of Liahim').width;
+  ctx.font = '600 22px Cinzel, Georgia, serif';
+  const spreadNameWidth = ctx.measureText(spread.name).width;
+  const minHeaderWidth = Math.max(titleWidth, spreadNameWidth) + 80;
+
+  const width = Math.max(marginX * 2 + gridWidth, minHeaderWidth);
+  canvas.width = width;
+  canvas.height = height;
+
+  ctx.fillStyle = '#0d0a04';
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#c9a84c';
+  ctx.font = '28px serif';
+  ctx.fillText('✦ ✦ ✦', width / 2, 56);
+
+  ctx.fillStyle = '#e8c46a';
+  ctx.font = '600 40px Cinzel, Georgia, serif';
+  ctx.fillText('The Hand of Liahim', width / 2, 108);
+
+  ctx.fillStyle = '#b08838';
+  ctx.font = '600 22px Cinzel, Georgia, serif';
+  ctx.fillText(spread.name, width / 2, 148);
+
+  ctx.fillStyle = 'rgba(232,196,106,0.75)';
+  ctx.font = 'italic 16px Georgia, serif';
+  wrapCenteredLines(ctx, spread.desc, width - 120).slice(0, 2).forEach((line, i) => {
+    ctx.fillText(line, width / 2, 178 + i * 22);
+  });
+
+  const startX = (width - gridWidth) / 2;
+  cards.forEach((card, i) => {
+    const col = i % cols, row = Math.floor(i / cols);
+    const x = startX + col * (cardW + gap);
+    const y = headerH + row * (cardH + gap);
+    drawReadingCard(ctx, card, spread.positions[i], x, y, cardW, cardH);
+  });
+
+  ctx.fillStyle = 'rgba(176,136,56,0.6)';
+  ctx.font = '14px Cinzel, Georgia, serif';
+  ctx.fillText('liahim.tgmf.st', width / 2, height - 28);
+
+  return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 async function shareReading() {
   const url = location.href;
   const spread = state.currentSpread;
@@ -1955,6 +2102,23 @@ async function shareReading() {
     : `My ${spread.name} tarot reading:\n` + state.drawnCards
         .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''}`)
         .join('\n');
+
+  let imageBlob = null;
+  if (state.spread !== 'index') {
+    try { imageBlob = await buildReadingImageBlob(); } catch (err) { imageBlob = null; }
+  }
+
+  const imageFile = imageBlob ? new File([imageBlob], 'tarot-reading.png', { type: 'image/png' }) : null;
+
+  if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
+    try {
+      await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
+      return;
+    } catch (err) {
+      if (err && err.name === 'AbortError') return;
+      // fall through to the non-file share / download path
+    }
+  }
 
   if (navigator.share) {
     try {
@@ -1967,13 +2131,21 @@ async function shareReading() {
 
   const btn = document.getElementById('share-btn');
   const original = btn.textContent;
+  let copied = false;
   try {
     await navigator.clipboard.writeText(url);
-    btn.textContent = 'Link Copied!';
+    copied = true;
   } catch (err) {
+    // clipboard unavailable — fall back to the image download and/or a manual prompt below
+  }
+  if (imageBlob) {
+    downloadBlob(imageBlob, 'tarot-reading.png');
+  }
+  if (!copied && !imageBlob) {
     window.prompt('Copy this link to share your reading:', url);
     return;
   }
+  btn.textContent = copied && imageBlob ? 'Link Copied & Image Saved!' : copied ? 'Link Copied!' : 'Image Saved!';
   setTimeout(() => { btn.textContent = original; }, 1800);
 }
 
