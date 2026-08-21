@@ -2160,17 +2160,6 @@ async function buildReadingImageBlob() {
   return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
 }
 
-function downloadBlob(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
 function isMobileOS() {
   const ua = navigator.userAgent || '';
   if (/Android|iPhone|iPod/i.test(ua)) return true;
@@ -2225,22 +2214,40 @@ async function shareReading() {
 
   const btn = document.getElementById('share-btn');
   const original = btn.textContent;
-  let copied = false;
-  try {
-    await navigator.clipboard.writeText(url);
-    copied = true;
-  } catch (err) {
-    // clipboard unavailable — fall back to the image download and/or a manual prompt below
+  const combinedText = `${text}\n${url}`;
+  let mode = null; // 'image' | 'text' | null
+
+  if (imageBlob && window.ClipboardItem) {
+    try {
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          'image/png': imageBlob,
+          'text/plain': new Blob([combinedText], { type: 'text/plain' }),
+        }),
+      ]);
+      mode = 'image';
+    } catch (err) {
+      // some browsers only accept a single representation, or the user
+      // denied clipboard-write — fall through to a plain text copy
+    }
   }
-  if (imageBlob) {
-    downloadBlob(imageBlob, 'tarot-reading.png');
+
+  if (!mode) {
+    try {
+      await navigator.clipboard.writeText(combinedText);
+      mode = 'text';
+    } catch (err) {
+      // clipboard unavailable entirely
+    }
   }
-  if (!copied && !imageBlob) {
+
+  if (!mode) {
     window.prompt('Copy this link to share your reading:', url);
     return;
   }
-  btn.textContent = copied && imageBlob ? 'Link Copied & Image Saved!' : copied ? 'Link Copied!' : 'Image Saved!';
-  setTimeout(() => { btn.textContent = original; }, 1800);
+
+  btn.textContent = mode === 'image' ? 'Copied — paste the image or link!' : 'Link Copied!';
+  setTimeout(() => { btn.textContent = original; }, 2200);
 }
 
 // ===== READING =====
