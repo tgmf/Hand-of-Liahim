@@ -1974,7 +1974,21 @@ function wrapCenteredLines(ctx, text, maxWidth) {
   return lines;
 }
 
-function drawReadingCard(ctx, card, position, x, y, w, h) {
+function drawCoverImage(ctx, img, x, y, w, h, flip) {
+  const scale = Math.max(w / img.width, h / img.height);
+  const sw = w / scale, sh = h / scale;
+  const sx = (img.width - sw) / 2, sy = (img.height - sh) / 2;
+  ctx.save();
+  if (flip) {
+    ctx.translate(x + w / 2, y + h / 2);
+    ctx.rotate(Math.PI);
+    ctx.translate(-(x + w / 2), -(y + h / 2));
+  }
+  ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+  ctx.restore();
+}
+
+function drawReadingCard(ctx, card, position, x, y, w, h, img) {
   roundRectPath(ctx, x, y, w, h, 12);
   ctx.fillStyle = '#1c1408';
   ctx.fill();
@@ -1982,24 +1996,41 @@ function drawReadingCard(ctx, card, position, x, y, w, h) {
   ctx.strokeStyle = card.isReversed ? '#8b1a1a' : '#8b6914';
   ctx.stroke();
 
+  ctx.save();
+  roundRectPath(ctx, x, y, w, h, 12);
+  ctx.clip();
+
+  const headerH = 42;
   ctx.textAlign = 'center';
   ctx.fillStyle = '#b08838';
   ctx.font = '600 15px Cinzel, Georgia, serif';
   wrapCenteredLines(ctx, position.toUpperCase(), w - 24).forEach((line, i) => {
-    ctx.fillText(line, x + w / 2, y + 32 + i * 18);
+    ctx.fillText(line, x + w / 2, y + 24 + i * 18);
   });
 
-  ctx.save();
-  const symbolCx = x + w / 2, symbolCy = y + h / 2 - 18;
-  if (card.isReversed) {
-    ctx.translate(symbolCx, symbolCy);
-    ctx.rotate(Math.PI);
-    ctx.translate(-symbolCx, -symbolCy);
+  if (img) {
+    const imgX = x + 6, imgY = y + headerH, imgW = w - 12, imgH = h - headerH - 6;
+    drawCoverImage(ctx, img, imgX, imgY, imgW, imgH, card.isReversed);
+
+    const scrimH = Math.min(imgH, 108);
+    const grad = ctx.createLinearGradient(0, imgY + imgH - scrimH, 0, imgY + imgH);
+    grad.addColorStop(0, 'rgba(20,14,6,0)');
+    grad.addColorStop(1, 'rgba(20,14,6,0.92)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(imgX, imgY + imgH - scrimH, imgW, scrimH);
+  } else {
+    const symbolCx = x + w / 2, symbolCy = y + headerH + (h - headerH) / 2 - 18;
+    ctx.save();
+    if (card.isReversed) {
+      ctx.translate(symbolCx, symbolCy);
+      ctx.rotate(Math.PI);
+      ctx.translate(-symbolCx, -symbolCy);
+    }
+    ctx.fillStyle = '#c9a84c';
+    ctx.font = '58px serif';
+    ctx.fillText(card.symbol || '✦', symbolCx, symbolCy + 20);
+    ctx.restore();
   }
-  ctx.fillStyle = '#c9a84c';
-  ctx.font = '58px serif';
-  ctx.fillText(card.symbol || '✦', symbolCx, symbolCy + 20);
-  ctx.restore();
 
   ctx.fillStyle = '#e8c46a';
   ctx.font = '600 19px Cinzel, Georgia, serif';
@@ -2014,6 +2045,34 @@ function drawReadingCard(ctx, card, position, x, y, w, h) {
     ctx.font = 'italic 14px Georgia, serif';
     ctx.fillText('Reversed', x + w / 2, y + h - 16);
   }
+
+  ctx.restore();
+}
+
+const _cardImageCache = new Map();
+function loadImageWithCORS(url, timeoutMs) {
+  if (!url) return Promise.resolve(null);
+  if (_cardImageCache.has(url)) return Promise.resolve(_cardImageCache.get(url));
+  return new Promise(resolve => {
+    const img = new Image();
+    let settled = false;
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      if (result) _cardImageCache.set(url, result);
+      resolve(result);
+    };
+    const timer = setTimeout(() => finish(null), timeoutMs);
+    img.crossOrigin = 'anonymous';
+    img.onload = () => { clearTimeout(timer); finish(img); };
+    img.onerror = () => { clearTimeout(timer); finish(null); };
+    img.src = url;
+  });
+}
+
+function getOnscreenCardImage(index) {
+  const img = document.querySelectorAll('#cards-grid .card-img')[index];
+  return (img && img.crossOrigin && img.complete && img.naturalWidth > 0) ? img : null;
 }
 
 async function buildReadingImageBlob() {
@@ -2024,6 +2083,20 @@ async function buildReadingImageBlob() {
   const spread = state.currentSpread;
   const cards = state.drawnCards;
   const n = cards.length;
+
+  // Reuse the card art already loaded on screen where possible — it's the
+  // same CORS-safe element, so no extra fetch is needed. Falls back to a
+  // fresh cross-origin load (thumb, then full-res) for decks that can't be
+  // reused, or when a thumbnail link is stale.
+  const cardImages = await Promise.all(
+    cards.map(async (card, i) => {
+      const onscreen = getOnscreenCardImage(i);
+      if (onscreen) return onscreen;
+      const thumb = await loadImageWithCORS(getCardThumbUrl(card), 4000);
+      if (thumb) return thumb;
+      return loadImageWithCORS(getCardFullUrl(card), 9000);
+    })
+  );
 
   const cardW = 220, cardH = 320, gap = 26;
   const cols = n <= 3 ? n : n <= 6 ? 3 : n <= 8 ? 4 : 5;
@@ -2073,7 +2146,7 @@ async function buildReadingImageBlob() {
     const col = i % cols, row = Math.floor(i / cols);
     const x = startX + col * (cardW + gap);
     const y = headerH + row * (cardH + gap);
-    drawReadingCard(ctx, card, spread.positions[i], x, y, cardW, cardH);
+    drawReadingCard(ctx, card, spread.positions[i], x, y, cardW, cardH, cardImages[i]);
   });
 
   ctx.fillStyle = 'rgba(176,136,56,0.6)';
@@ -2216,6 +2289,11 @@ function renderReading() {
     if (imgUrl) {
       const img = document.createElement('img');
       img.className = 'card-img';
+      // Rider-Waite/Marseille (Wikimedia + archive.org) send CORS headers, so
+      // loading cross-origin lets the share-image canvas reuse this same
+      // element later. Visconti's Special:FilePath redirect breaks CORS
+      // validation, so it's left as a plain (canvas-unsafe) image.
+      if (state.deck !== 'visconti') img.crossOrigin = 'anonymous';
       img.src = imgUrl;
       img.alt = card.displayName;
       img.onerror = function() {
