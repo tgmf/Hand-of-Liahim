@@ -1027,7 +1027,9 @@
 
     <div class="reading-footer">
       <button class="btn-primary" onclick="beginReading(true)">Начать снова</button>
-      <button class="btn-secondary" id="share-btn" onclick="shareReading()">Поделиться раскладом</button>
+      <button class="btn-secondary" id="share-btn" onclick="shareReading()" style="display:none">Поделиться раскладом</button>
+      <button class="btn-secondary" id="copy-link-btn" onclick="copyLinkToClipboard()" style="display:none">Скопировать ссылку</button>
+      <button class="btn-secondary" id="copy-image-btn" onclick="copyImageToClipboard()" style="display:none">Скопировать изображение</button>
       <button class="btn-secondary" onclick="goToSetup()">Изменить настройки</button>
     </div>
   </div><!-- /reading-panel -->
@@ -2172,7 +2174,7 @@ function isMobileOS() {
   return false;
 }
 
-async function shareReading() {
+function getShareContent() {
   const url = location.href;
   const spread = state.currentSpread;
   const text = state.spread === 'index'
@@ -2180,77 +2182,80 @@ async function shareReading() {
     : `Мой расклад «${spread.name}»:\n` + state.drawnCards
         .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Перевернута)' : ''}`)
         .join('\n');
+  return { url, text, combinedText: `${text}\n${url}` };
+}
+
+// За один вставку буфер обмена может отдать только один "победивший"
+// формат — приложения, принимающие и текст, и изображение (большинство
+// мессенджеров), выберут изображение и молча отбросят текст, поэтому
+// изображение и текст не могут надёжно путешествовать вместе в одном
+// копировании. На телефонах/планшетах это решается нативным окном
+// "Поделиться" (ниже), которое корректно объединяет текст, ссылку и файл
+// изображения. На десктопе вместо одного неоднозначного действия —
+// два явных.
+async function shareReading() {
+  const { text, url } = getShareContent();
 
   let imageBlob = null;
   if (state.spread !== 'index') {
     try { imageBlob = await buildReadingImageBlob(); } catch (err) { imageBlob = null; }
   }
-
   const imageFile = imageBlob ? new File([imageBlob], 'tarot-reading.png', { type: 'image/png' }) : null;
 
-  // Нативное окно "Поделиться" надёжно работает на телефонах/планшетах, но
-  // кнопка "Копировать" в панели Windows, как известно, показывает галочку
-  // об успехе, хотя на самом деле ничего не копирует в буфер обмена — это
-  // хуже, чем отсутствие запасного варианта. Ноутбук с сенсорным экраном
-  // всё равно считается "десктопом", так как проблема на уровне ОС, а не
-  // типа указателя. Поэтому десктопные ОС всегда используют надёжный способ
-  // копирования/скачивания ниже.
-  if (isMobileOS() && navigator.share) {
-    if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
-      try {
-        await navigator.share({ title: 'Рука Лиахима', text, url, files: [imageFile] });
-        return;
-      } catch (err) {
-        if (err && err.name === 'AbortError') return;
-        // если не удалось — переходим к следующему способу
-      }
-    }
-
+  if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
     try {
-      await navigator.share({ title: 'Рука Лиахима', text, url });
+      await navigator.share({ title: 'Рука Лиахима', text, url, files: [imageFile] });
+      return;
     } catch (err) {
-      // пользователь отменил отправку
+      if (err && err.name === 'AbortError') return;
+      // если не удалось — переходим к обмену без файла
     }
-    return;
   }
 
-  const btn = document.getElementById('share-btn');
+  try {
+    await navigator.share({ title: 'Рука Лиахима', text, url });
+  } catch (err) {
+    // пользователь отменил отправку
+  }
+}
+
+async function copyLinkToClipboard() {
+  const { combinedText, url } = getShareContent();
+  const btn = document.getElementById('copy-link-btn');
   const original = btn.textContent;
-  const combinedText = `${text}\n${url}`;
-  let mode = null; // 'image' | 'text' | null
-
-  if (imageBlob && window.ClipboardItem) {
-    try {
-      await navigator.clipboard.write([
-        new ClipboardItem({
-          'image/png': imageBlob,
-          'text/plain': new Blob([combinedText], { type: 'text/plain' }),
-        }),
-      ]);
-      mode = 'image';
-    } catch (err) {
-      // некоторые браузеры принимают только одно представление, либо
-      // пользователь отклонил доступ к буферу обмена — переходим к
-      // копированию обычного текста
-    }
-  }
-
-  if (!mode) {
-    try {
-      await navigator.clipboard.writeText(combinedText);
-      mode = 'text';
-    } catch (err) {
-      // буфер обмена недоступен вовсе
-    }
-  }
-
-  if (!mode) {
+  try {
+    await navigator.clipboard.writeText(combinedText);
+    btn.textContent = 'Ссылка скопирована!';
+  } catch (err) {
     window.prompt('Скопируйте эту ссылку, чтобы поделиться раскладом:', url);
     return;
   }
+  setTimeout(() => { btn.textContent = original; }, 1800);
+}
 
-  btn.textContent = mode === 'image' ? 'Скопировано — вставьте изображение или ссылку!' : 'Ссылка скопирована!';
-  setTimeout(() => { btn.textContent = original; }, 2200);
+async function copyImageToClipboard() {
+  const btn = document.getElementById('copy-image-btn');
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Создаём изображение...';
+  try {
+    const imageBlob = await buildReadingImageBlob();
+    if (!imageBlob || !window.ClipboardItem) throw new Error('image copy unsupported');
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': imageBlob })]);
+    btn.textContent = 'Изображение скопировано!';
+  } catch (err) {
+    btn.textContent = 'Не удалось скопировать';
+  } finally {
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = original; }, 1800);
+  }
+}
+
+function updateShareButtonsVisibility() {
+  const mobile = isMobileOS();
+  document.getElementById('share-btn').style.display = mobile ? 'inline-block' : 'none';
+  document.getElementById('copy-link-btn').style.display = mobile ? 'none' : 'inline-block';
+  document.getElementById('copy-image-btn').style.display = (!mobile && state.spread !== 'index') ? 'inline-block' : 'none';
 }
 
 // ===== READING =====
@@ -2298,6 +2303,7 @@ async function beginReading(isRedraw) {
 function renderReading() {
   const spread = state.currentSpread;
 
+  updateShareButtonsVisibility();
   document.getElementById('index-filters').style.display = 'none';
   document.getElementById('meanings-section').style.display = 'block';
   document.getElementById('ai-section').style.display = 'block';
@@ -2450,6 +2456,7 @@ function renderReading() {
 }
 
 function renderIndex(filter) {
+  updateShareButtonsVisibility();
   const isIndex = true;
   document.getElementById('reading-spread-name').textContent = 'Card Index';
   document.getElementById('reading-spread-desc').textContent = 'All 78 cards — tap any for full meanings';

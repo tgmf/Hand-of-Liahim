@@ -1027,7 +1027,9 @@
 
     <div class="reading-footer">
       <button class="btn-primary" onclick="beginReading(true)">Read Again</button>
-      <button class="btn-secondary" id="share-btn" onclick="shareReading()">Share Reading</button>
+      <button class="btn-secondary" id="share-btn" onclick="shareReading()" style="display:none">Share Reading</button>
+      <button class="btn-secondary" id="copy-link-btn" onclick="copyLinkToClipboard()" style="display:none">Copy Link</button>
+      <button class="btn-secondary" id="copy-image-btn" onclick="copyImageToClipboard()" style="display:none">Copy Image</button>
       <button class="btn-secondary" onclick="goToSetup()">Change Settings</button>
     </div>
   </div><!-- /reading-panel -->
@@ -2171,7 +2173,7 @@ function isMobileOS() {
   return false;
 }
 
-async function shareReading() {
+function getShareContent() {
   const url = location.href;
   const spread = state.currentSpread;
   const text = state.spread === 'index'
@@ -2179,75 +2181,78 @@ async function shareReading() {
     : `My ${spread.name} tarot reading:\n` + state.drawnCards
         .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''}`)
         .join('\n');
+  return { url, text, combinedText: `${text}\n${url}` };
+}
+
+// A clipboard entry can only hold one "winning" format per paste — apps
+// that accept both text and an image (most chat apps) will pick the image
+// and silently drop the text, so image+text can't reliably travel together
+// in a single copy. Phones/tablets sidestep this entirely via the native
+// share sheet (below), which bundles text, url, and the image file
+// properly. Desktop gets two explicit actions instead of one ambiguous one.
+async function shareReading() {
+  const { text, url } = getShareContent();
 
   let imageBlob = null;
   if (state.spread !== 'index') {
     try { imageBlob = await buildReadingImageBlob(); } catch (err) { imageBlob = null; }
   }
-
   const imageFile = imageBlob ? new File([imageBlob], 'tarot-reading.png', { type: 'image/png' }) : null;
 
-  // Native share sheets are reliable on phones/tablets, but Windows' share
-  // flyout's own "Copy" tile is known to report success (checkmark) without
-  // actually placing anything on the clipboard — worse than no fallback at
-  // all. A touchscreen laptop still counts as "desktop" here since the bug
-  // is OS-level, not about pointer type. So desktop/laptop OSes always go
-  // straight to the reliable copy/download path below.
-  if (isMobileOS() && navigator.share) {
-    if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
-      try {
-        await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
-        return;
-      } catch (err) {
-        if (err && err.name === 'AbortError') return;
-        // fall through to the non-file share / download path
-      }
-    }
-
+  if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
     try {
-      await navigator.share({ title: 'The Hand of Liahim', text, url });
+      await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
+      return;
     } catch (err) {
-      // user cancelled the share sheet
+      if (err && err.name === 'AbortError') return;
+      // fall through to the non-file share
     }
-    return;
   }
 
-  const btn = document.getElementById('share-btn');
+  try {
+    await navigator.share({ title: 'The Hand of Liahim', text, url });
+  } catch (err) {
+    // user cancelled the share sheet
+  }
+}
+
+async function copyLinkToClipboard() {
+  const { combinedText, url } = getShareContent();
+  const btn = document.getElementById('copy-link-btn');
   const original = btn.textContent;
-  const combinedText = `${text}\n${url}`;
-  let mode = null; // 'image' | 'text' | null
-
-  if (imageBlob && window.ClipboardItem) {
-    try {
-      await navigator.clipboard.write([
-        new ClipboardItem({
-          'image/png': imageBlob,
-          'text/plain': new Blob([combinedText], { type: 'text/plain' }),
-        }),
-      ]);
-      mode = 'image';
-    } catch (err) {
-      // some browsers only accept a single representation, or the user
-      // denied clipboard-write — fall through to a plain text copy
-    }
-  }
-
-  if (!mode) {
-    try {
-      await navigator.clipboard.writeText(combinedText);
-      mode = 'text';
-    } catch (err) {
-      // clipboard unavailable entirely
-    }
-  }
-
-  if (!mode) {
+  try {
+    await navigator.clipboard.writeText(combinedText);
+    btn.textContent = 'Link Copied!';
+  } catch (err) {
     window.prompt('Copy this link to share your reading:', url);
     return;
   }
+  setTimeout(() => { btn.textContent = original; }, 1800);
+}
 
-  btn.textContent = mode === 'image' ? 'Copied — paste the image or link!' : 'Link Copied!';
-  setTimeout(() => { btn.textContent = original; }, 2200);
+async function copyImageToClipboard() {
+  const btn = document.getElementById('copy-image-btn');
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Building Image...';
+  try {
+    const imageBlob = await buildReadingImageBlob();
+    if (!imageBlob || !window.ClipboardItem) throw new Error('image copy unsupported');
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': imageBlob })]);
+    btn.textContent = 'Image Copied!';
+  } catch (err) {
+    btn.textContent = 'Copy Failed';
+  } finally {
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = original; }, 1800);
+  }
+}
+
+function updateShareButtonsVisibility() {
+  const mobile = isMobileOS();
+  document.getElementById('share-btn').style.display = mobile ? 'inline-block' : 'none';
+  document.getElementById('copy-link-btn').style.display = mobile ? 'none' : 'inline-block';
+  document.getElementById('copy-image-btn').style.display = (!mobile && state.spread !== 'index') ? 'inline-block' : 'none';
 }
 
 // ===== READING =====
@@ -2295,6 +2300,7 @@ async function beginReading(isRedraw) {
 function renderReading() {
   const spread = state.currentSpread;
 
+  updateShareButtonsVisibility();
   document.getElementById('index-filters').style.display = 'none';
   document.getElementById('meanings-section').style.display = 'block';
   document.getElementById('ai-section').style.display = 'block';
@@ -2447,6 +2453,7 @@ function renderReading() {
 }
 
 function renderIndex(filter) {
+  updateShareButtonsVisibility();
   document.getElementById('reading-spread-name').textContent = 'Card Index';
   document.getElementById('reading-spread-desc').textContent = 'All 78 cards — tap any for full meanings';
 
