@@ -88,6 +88,7 @@
 
   .logo-ornament {
     display: block;
+    pointer-events: none;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
     opacity: 0.7;
@@ -157,6 +158,18 @@
     margin-bottom: 1rem;
   }
 
+  .section-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label-row .section-label {
+    margin-bottom: 0;
+  }
+
   /* SETUP GRID */
   .setup-grid {
     display: grid;
@@ -165,11 +178,79 @@
     margin-bottom: 2.5rem;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .setup-grid { grid-template-columns: 1fr; }
+    .section-label-row .section-label { letter-spacing: 0.18em; }
   }
 
-  .setup-col {}
+  /* SETTINGS TOGGLE (mobile only) */
+  .settings-toggle {
+    display: none;
+  }
+
+  .settings-close {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .settings-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      color: var(--gold-dim);
+      font-size: 1.125rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .settings-toggle:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    #visual-settings-col {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #0d0a04;
+      padding: 4.5rem 1.5rem 2rem;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    #visual-settings-col.open {
+      transform: translateX(0);
+    }
+
+    .settings-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      color: var(--gold-dim);
+      font-size: 1.125rem;
+      cursor: pointer;
+    }
+
+    .settings-close:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+  }
 
   /* CHOICE GROUPS */
   .choice-group {
@@ -796,7 +877,10 @@
 
       <!-- Spread selection -->
       <div class="setup-col">
-        <p class="section-label">Choose your spread</p>
+        <div class="section-label-row">
+          <p class="section-label">Choose your spread</p>
+          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" aria-label="Card visual theme &amp; deck system settings">⚙</button>
+        </div>
         <div class="choice-group" id="spread-choices">
           <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
             <span class="btn-title">Single Card</span>
@@ -826,7 +910,8 @@
       </div>
 
       <!-- Visual & system -->
-      <div class="setup-col">
+      <div class="setup-col" id="visual-settings-col">
+        <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Close settings">✕</button>
         <p class="section-label">Card visual theme</p>
         <div class="choice-group" id="deck-choices">
           <button class="choice-btn selected" data-val="rider-waite" onclick="selectChoice('deck', this)">
@@ -1782,6 +1867,10 @@ function goToSetup() {
   } else {
     showPanel('setup-panel');
   }
+}
+
+function toggleSettingsPanel() {
+  document.getElementById('visual-settings-col').classList.toggle('open');
 }
 
 function selectChoiceButton(group, val) {

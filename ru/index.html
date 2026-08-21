@@ -88,6 +88,7 @@
 
   .logo-ornament {
     display: block;
+    pointer-events: none;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
     opacity: 0.7;
@@ -157,6 +158,18 @@
     margin-bottom: 1rem;
   }
 
+  .section-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label-row .section-label {
+    margin-bottom: 0;
+  }
+
   /* SETUP GRID */
   .setup-grid {
     display: grid;
@@ -165,11 +178,79 @@
     margin-bottom: 2.5rem;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .setup-grid { grid-template-columns: 1fr; }
+    .section-label-row .section-label { letter-spacing: 0.18em; }
   }
 
-  .setup-col {}
+  /* SETTINGS TOGGLE (mobile only) */
+  .settings-toggle {
+    display: none;
+  }
+
+  .settings-close {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .settings-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      color: var(--gold-dim);
+      font-size: 1.125rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .settings-toggle:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    #visual-settings-col {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #0d0a04;
+      padding: 4.5rem 1.5rem 2rem;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    #visual-settings-col.open {
+      transform: translateX(0);
+    }
+
+    .settings-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      color: var(--gold-dim);
+      font-size: 1.125rem;
+      cursor: pointer;
+    }
+
+    .settings-close:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+  }
 
   /* CHOICE GROUPS */
   .choice-group {
@@ -230,11 +311,6 @@
   }
 
   /* CTA BUTTON */
-  .cta-wrap {
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-
   .btn-primary {
     background: linear-gradient(135deg, #8b6914, #c9a84c, #8b6914);
     background-size: 200% 100%;
@@ -801,7 +877,10 @@
 
       <!-- Spread selection -->
       <div class="setup-col">
-        <p class="section-label">Выберите расклад</p>
+        <div class="section-label-row">
+          <p class="section-label">Выберите расклад</p>
+          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" aria-label="Визуальная тема карт и система колоды">⚙</button>
+        </div>
         <div class="choice-group" id="spread-choices">
           <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
             <span class="btn-title">Одна карта</span>
@@ -831,7 +910,8 @@
       </div>
 
       <!-- Visual & system -->
-      <div class="setup-col">
+      <div class="setup-col" id="visual-settings-col">
+        <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Закрыть настройки">✕</button>
         <p class="section-label">Визуальная тема карт</p>
         <div class="choice-group" id="deck-choices">
           <button class="choice-btn selected" data-val="rider-waite" onclick="selectChoice('deck', this)">
@@ -896,10 +976,6 @@
       <p class="ai-note">Ваш ключ никогда не отправляется куда-либо, кроме выбранного провайдера. Он хранится только в памяти вашего устройства и очищается при закрытии вкладки.</p>
     </div>
 
-    <div class="cta-wrap">
-      <button class="btn-primary" onclick="beginReading()">Начать расклад</button>
-    </div>
-
   </div><!-- /setup-panel -->
 
   <!-- DEALING PANEL -->
@@ -950,7 +1026,8 @@
     </div>
 
     <div class="reading-footer">
-      <button class="btn-primary" onclick="beginReading()">Начать снова</button>
+      <button class="btn-primary" onclick="beginReading(true)">Начать снова</button>
+      <button class="btn-secondary" id="share-btn" onclick="shareReading()">Поделиться раскладом</button>
       <button class="btn-secondary" onclick="goToSetup()">Изменить настройки</button>
     </div>
   </div><!-- /reading-panel -->
@@ -1754,6 +1831,10 @@ function selectChoice(group, btn) {
   container.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   state[group] = btn.dataset.val;
+
+  if (group === 'spread') {
+    beginReading();
+  }
 }
 
 function updateModelOptions() {
@@ -1781,14 +1862,127 @@ function showPanel(id) {
 }
 
 function goToSetup() {
-  showPanel('setup-panel');
+  if (history.state && history.state.panel === 'reading') {
+    history.back();
+  } else {
+    showPanel('setup-panel');
+  }
+}
+
+function selectChoiceButton(group, val) {
+  const container = document.getElementById(`${group}-choices`);
+  if (!container) return;
+  container.querySelectorAll('.choice-btn').forEach(b => {
+    b.classList.toggle('selected', b.dataset.val === val);
+  });
+}
+
+function toggleSettingsPanel() {
+  document.getElementById('visual-settings-col').classList.toggle('open');
+}
+
+// ===== SHAREABLE READING STATE =====
+function readingQueryString() {
+  if (state.spread === 'index') return '?spread=index';
+
+  const cardStr = state.drawnCards
+    .map(c => c.isReversed ? `${c.id}:r` : c.id)
+    .join(',');
+  const params = new URLSearchParams();
+  params.set('spread', state.spread);
+  if (state.system !== 'rws') params.set('system', state.system);
+  params.set('cards', cardStr);
+  return '?' + params.toString();
+}
+
+function updateReadingHistoryState(isRedraw) {
+  const qs = readingQueryString();
+  if (isRedraw) {
+    history.replaceState({ panel: 'reading' }, '', qs);
+  } else {
+    history.pushState({ panel: 'reading' }, '', qs);
+  }
+}
+
+function decodeReadingFromURL() {
+  const params = new URLSearchParams(location.search);
+  const spreadKey = params.get('spread');
+  if (!spreadKey) return null;
+  if (spreadKey === 'index') return { spreadKey: 'index' };
+  if (!SPREADS[spreadKey]) return null;
+
+  const cardStr = params.get('cards');
+  if (!cardStr) return null;
+
+  const cards = cardStr.split(',').map(p => {
+    const [id, flag] = p.split(':');
+    const base = CARDS_RWS.find(cc => cc.id === id);
+    return base ? { id: base.id, isReversed: flag === 'r' } : null;
+  });
+  if (cards.includes(null) || cards.length !== SPREADS[spreadKey].positions.length) return null;
+
+  const system = params.get('system') === 'thoth' ? 'thoth' : 'rws';
+  return { spreadKey, system, cards };
+}
+
+function applyDecodedReading(decoded) {
+  if (decoded.spreadKey === 'index') {
+    state.spread = 'index';
+    selectChoiceButton('spread', 'index');
+    renderIndex('all');
+    showPanel('reading-panel');
+    return;
+  }
+
+  state.spread = decoded.spreadKey;
+  state.system = decoded.system;
+  state.currentSpread = SPREADS[decoded.spreadKey];
+  state.drawnCards = decoded.cards.map(c => {
+    const base = CARDS_RWS.find(cc => cc.id === c.id);
+    return { ...base, isReversed: c.isReversed, displayName: getCardName(base) };
+  });
+  selectChoiceButton('spread', decoded.spreadKey);
+  selectChoiceButton('system', decoded.system);
+  renderReading();
+  showPanel('reading-panel');
+}
+
+async function shareReading() {
+  const url = location.href;
+  const spread = state.currentSpread;
+  const text = state.spread === 'index'
+    ? 'Указатель карт Таро — Рука Лиахима'
+    : `Мой расклад «${spread.name}»:\n` + state.drawnCards
+        .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Перевернута)' : ''}`)
+        .join('\n');
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: 'Рука Лиахима', text, url });
+    } catch (err) {
+      // пользователь отменил отправку
+    }
+    return;
+  }
+
+  const btn = document.getElementById('share-btn');
+  const original = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(url);
+    btn.textContent = 'Ссылка скопирована!';
+  } catch (err) {
+    window.prompt('Скопируйте эту ссылку, чтобы поделиться раскладом:', url);
+    return;
+  }
+  setTimeout(() => { btn.textContent = original; }, 1800);
 }
 
 // ===== READING =====
-async function beginReading() {
+async function beginReading(isRedraw) {
   if (state.spread === 'index') {
     renderIndex('all');
     showPanel('reading-panel');
+    updateReadingHistoryState(isRedraw);
     return;
   }
 
@@ -1822,6 +2016,7 @@ async function beginReading() {
 
   renderReading();
   showPanel('reading-panel');
+  updateReadingHistoryState(isRedraw);
 }
 
 function renderReading() {
@@ -2216,6 +2411,28 @@ function clearAiReading() {
 
 // Init
 updateModelOptions();
+
+(function initFromURL() {
+  const originalSearch = location.search;
+  const decoded = decodeReadingFromURL();
+  history.replaceState({ panel: 'setup' }, '', location.pathname);
+  if (decoded) {
+    applyDecodedReading(decoded);
+    history.pushState({ panel: 'reading' }, '', originalSearch);
+  }
+})();
+
+window.addEventListener('popstate', (e) => {
+  const st = e.state;
+  if (st && st.panel === 'reading') {
+    const decoded = decodeReadingFromURL();
+    if (decoded) {
+      applyDecodedReading(decoded);
+      return;
+    }
+  }
+  showPanel('setup-panel');
+});
 </script>
 </body>
 </html>
