@@ -1975,9 +1975,13 @@ function wrapCenteredLines(ctx, text, maxWidth) {
 }
 
 function drawCoverImage(ctx, img, x, y, w, h, flip) {
-  const scale = Math.max(w / img.width, h / img.height);
+  // naturalWidth/Height (intrinsic pixels), not width/height — the latter
+  // reflects the CSS-rendered size for on-screen <img> elements (.card-img
+  // is width:100%), which is the wrong coordinate space for source cropping.
+  const iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
+  const scale = Math.max(w / iw, h / ih);
   const sw = w / scale, sh = h / scale;
-  const sx = (img.width - sw) / 2, sy = (img.height - sh) / 2;
+  const sx = (iw - sw) / 2, sy = (ih - sh) / 2;
   ctx.save();
   if (flip) {
     ctx.translate(x + w / 2, y + h / 2);
@@ -2167,6 +2171,10 @@ function downloadBlob(blob, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+function isTouchPrimary() {
+  return !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+}
+
 async function shareReading() {
   const url = location.href;
   const spread = state.currentSpread;
@@ -2183,17 +2191,22 @@ async function shareReading() {
 
   const imageFile = imageBlob ? new File([imageBlob], 'tarot-reading.png', { type: 'image/png' }) : null;
 
-  if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
-    try {
-      await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
-      return;
-    } catch (err) {
-      if (err && err.name === 'AbortError') return;
-      // fall through to the non-file share / download path
+  // Native share sheets are the expected pattern on touch devices, but on
+  // desktop (e.g. Windows Chrome) they open an OS flyout that often has no
+  // useful targets — closing it looks like the button "did nothing" with no
+  // fallback. So desktop always goes straight to the reliable copy/download
+  // path below; only touch devices try navigator.share first.
+  if (isTouchPrimary() && navigator.share) {
+    if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
+      try {
+        await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
+        return;
+      } catch (err) {
+        if (err && err.name === 'AbortError') return;
+        // fall through to the non-file share / download path
+      }
     }
-  }
 
-  if (navigator.share) {
     try {
       await navigator.share({ title: 'The Hand of Liahim', text, url });
     } catch (err) {
