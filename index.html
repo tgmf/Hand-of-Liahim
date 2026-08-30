@@ -175,7 +175,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 2.5rem;
   }
 
   @media (max-width: 768px) {
@@ -832,7 +831,7 @@
 
   /* Responsive */
   @media (max-width: 480px) {
-    #app { padding: 1.5rem 1rem 3.75rem; }
+    #app { padding: 1.5rem 1rem; }
 
     .cards-grid { gap: 0.625rem; }
 
@@ -925,7 +924,7 @@
       <div class="setup-col">
         <div class="section-label-row">
           <p class="section-label">Choose your spread</p>
-          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" aria-label="Card visual theme &amp; deck system settings">⚙</button>
+          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
         </div>
         <div class="choice-group" id="spread-choices">
           <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
@@ -955,7 +954,7 @@
         </div>
       </div>
 
-      <!-- Visual & system -->
+      <!-- Visual & AI settings -->
       <div class="setup-col" id="visual-settings-col">
         <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Close settings">✕</button>
         <p class="section-label">Card visual theme</p>
@@ -978,48 +977,34 @@
           </button>
         </div>
 
-        <div style="margin-top: 28px;">
-          <p class="section-label">Deck system</p>
-          <div class="choice-group" id="system-choices">
-            <button class="choice-btn selected" data-val="rws" onclick="selectChoice('system', this)">
-              <span class="btn-title">Rider-Waite</span>
-              <span class="btn-sub">78 cards — most widely used</span>
-            </button>
-            <button class="choice-btn" data-val="thoth" onclick="selectChoice('system', this)">
-              <span class="btn-title">Thoth</span>
-              <span class="btn-sub">Crowley's Qabalistic system</span>
-            </button>
+        <!-- AI Settings -->
+        <div class="ai-settings">
+          <h3>⊕ AI Interpretation (optional)</h3>
+          <div class="ai-row">
+            <div class="ai-field">
+              <label>Provider</label>
+              <select id="ai-provider" onchange="updateModelOptions()">
+                <option value="none">None — I'll interpret myself</option>
+                <option value="anthropic">Anthropic (Claude)</option>
+                <option value="openai">OpenAI (GPT)</option>
+                <option value="gemini">Google (Gemini)</option>
+              </select>
+            </div>
+            <div class="ai-field" id="model-field">
+              <label>Model</label>
+              <select id="ai-model">
+                <option value="">—</option>
+              </select>
+            </div>
           </div>
+          <div class="ai-field" id="key-field" style="display:none">
+            <label>API Key</label>
+            <input type="password" id="ai-key" placeholder="Paste your API key here — stored only in browser memory" autocomplete="off">
+          </div>
+          <p class="ai-note">Your key is never sent anywhere except directly to the chosen provider. It stays in memory only and is cleared when you close the tab.</p>
         </div>
       </div>
 
-    </div>
-
-    <!-- AI Settings -->
-    <div class="ai-settings">
-      <h3>⊕ AI Interpretation (optional)</h3>
-      <div class="ai-row">
-        <div class="ai-field">
-          <label>Provider</label>
-          <select id="ai-provider" onchange="updateModelOptions()">
-            <option value="none">None — I'll interpret myself</option>
-            <option value="anthropic">Anthropic (Claude)</option>
-            <option value="openai">OpenAI (GPT)</option>
-            <option value="gemini">Google (Gemini)</option>
-          </select>
-        </div>
-        <div class="ai-field" id="model-field">
-          <label>Model</label>
-          <select id="ai-model">
-            <option value="">—</option>
-          </select>
-        </div>
-      </div>
-      <div class="ai-field" id="key-field" style="display:none">
-        <label>API Key</label>
-        <input type="password" id="ai-key" placeholder="Paste your API key here — stored only in browser memory" autocomplete="off">
-      </div>
-      <p class="ai-note">Your key is never sent anywhere except directly to the chosen provider. It stays in memory only and is cleared when you close the tab.</p>
     </div>
 
   </div><!-- /setup-panel -->
@@ -1944,7 +1929,6 @@ function readingQueryString() {
     .join(',');
   const params = new URLSearchParams();
   params.set('spread', state.spread);
-  if (state.system !== 'rws') params.set('system', state.system);
   params.set('cards', cardStr);
   return '?' + params.toString();
 }
@@ -1975,8 +1959,7 @@ function decodeReadingFromURL() {
   });
   if (cards.includes(null) || cards.length !== SPREADS[spreadKey].positions.length) return null;
 
-  const system = params.get('system') === 'thoth' ? 'thoth' : 'rws';
-  return { spreadKey, system, cards };
+  return { spreadKey, system: 'rws', cards };
 }
 
 function applyDecodedReading(decoded) {
@@ -1996,7 +1979,6 @@ function applyDecodedReading(decoded) {
     return { ...base, isReversed: c.isReversed, displayName: getCardName(base) };
   });
   selectChoiceButton('spread', decoded.spreadKey);
-  selectChoiceButton('system', decoded.system);
   renderReading();
   showPanel('reading-panel');
 }
