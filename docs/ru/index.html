@@ -38,6 +38,9 @@
     overflow-x: hidden;
   }
 
+  /* Freeze the page behind an open card modal or settings drawer */
+  html.no-scroll, body.no-scroll { overflow: hidden; }
+
   /* Starfield bg */
   body::before {
     content: '';
@@ -1764,6 +1767,15 @@ function selectChoiceButton(group, val) {
 
 function toggleSettingsPanel() {
   document.getElementById('visual-settings-col').classList.toggle('open');
+  updateScrollLock();
+}
+
+// Lock page scroll while the card modal or the settings drawer is open.
+function updateScrollLock() {
+  const open = document.getElementById('card-modal').classList.contains('open')
+    || document.getElementById('visual-settings-col').classList.contains('open');
+  document.documentElement.classList.toggle('no-scroll', open);
+  document.body.classList.toggle('no-scroll', open);
 }
 
 // ===== SHAREABLE READING STATE =====
@@ -2520,6 +2532,7 @@ function openModal(card, opts = {}) {
   }
 
   document.getElementById('card-modal').classList.add('open');
+  updateScrollLock();
 
   document.querySelector('.modal').scrollTop = 0;
   document.getElementById('modal-detail').scrollTop = 0;
@@ -2533,6 +2546,7 @@ function openModal(card, opts = {}) {
 function closeModal(event) {
   if (!event || event.target.id === 'card-modal' || event.target.classList.contains('modal-close')) {
     document.getElementById('card-modal').classList.remove('open');
+    updateScrollLock();
   }
 }
 
