@@ -1,0 +1,28 @@
+{
+  "name": "the-hand-of-liahim",
+  "version": "1.0.0",
+  "description": "A single-file tarot web app. No backend, no dependencies, no build step.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgmf/Hand-of-Liahim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tgmf/Hand-of-Liahim/issues"
+  },
+  "homepage": "https://github.com/tgmf/Hand-of-Liahim#readme",
+  "dependencies": {
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0"
+  }
+}

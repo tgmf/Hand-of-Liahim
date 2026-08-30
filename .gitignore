@@ -1,0 +1,51 @@
+# ===== Node / npm =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# ===== Capacitor =====
+# The native android/ and ios/ project folders themselves ARE meant to be
+# committed (they can carry hand-edited native config/plugins) - only their
+# build output and machine-specific files are ignored below.
+
+# --- Android ---
+android/app/build/
+android/build/
+android/.gradle/
+android/captures/
+android/local.properties
+android/*.iml
+android/.idea/
+android/app/release/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# --- iOS (for when @capacitor/ios is added later) ---
+ios/App/Pods/
+ios/App/build/
+ios/App/DerivedData/
+ios/App/App.xcworkspace/xcuserdata/
+ios/App/App.xcodeproj/xcuserdata/
+ios/App/App.xcodeproj/project.xcworkspace/xcuserdata/
+ios/App/Podfile.lock
+*.xcuserstate
+DerivedData/
+
+# ===== Editor / OS cruft =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# ===== Secrets (defensive - not used yet, but good to have from day one) =====
+.env
+.env.local
+.env.*.local
+
+# ==== Local scripts and utilities =====
+/utils/
