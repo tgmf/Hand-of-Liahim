@@ -988,7 +988,6 @@
   <div class="panel" id="reading-panel">
     <div class="spread-title">
       <h2 id="reading-spread-name"></h2>
-      <p id="reading-spread-desc"></p>
     </div>
 
     <div class="divider"><div class="divider-gem"></div></div>
@@ -1077,7 +1076,7 @@ const state = {
       left:${Math.random()*100}%;top:${Math.random()*100}%;
       --d:${(Math.random()*3+2).toFixed(1)}s;
       --dl:${(Math.random()*4).toFixed(1)}s;
-      --a:${(Math.random()*0.4+0.1).toFixed(2)};
+      --a:${(Math.random()*0.6+0.1).toFixed(2)};
     `;
     container.appendChild(s);
   }
@@ -2308,7 +2307,7 @@ function renderReading() {
   document.getElementById('meanings-section').style.display = 'block';
   document.getElementById('ai-section').style.display = 'block';
   document.getElementById('reading-spread-name').textContent = spread.name;
-  document.getElementById('reading-spread-desc').textContent = spread.desc;
+  // document.getElementById('reading-spread-desc').textContent = spread.desc;
 
   // Card visuals — use thumb URLs for fast grid loading
   const grid = document.getElementById('cards-grid');
@@ -2458,8 +2457,7 @@ function renderReading() {
 function renderIndex(filter) {
   updateShareButtonsVisibility();
   const isIndex = true;
-  document.getElementById('reading-spread-name').textContent = 'Card Index';
-  document.getElementById('reading-spread-desc').textContent = 'All 78 cards — tap any for full meanings';
+  document.getElementById('reading-spread-name').textContent = 'Индекс карт';
 
   const filters = document.getElementById('index-filters');
   filters.style.display = 'flex';
@@ -2603,7 +2601,6 @@ async function getAiReading() {
   const prompt = `Вы — мудрый и поэтичный таролог с глубоким знанием эзотерической символики. Дайте вдумчивую, целостную интерпретацию этого расклада Таро.
  
 Расклад: ${spread.name}
-${spread.desc}
  
 Вытянутые карты:
 ${cardList}
