@@ -640,13 +640,6 @@
     color: var(--gold-dim);
   }
 
-  .meaning-text {
-    font-size: 1.2rem;
-    line-height: 1.65;
-    font-style: italic;
-    color: rgba(245,237,216,0.8);
-  }
-
   /* AI PANEL */
   .ai-reading-section {
     margin-top: 2.5rem;
@@ -841,18 +834,71 @@
   @media (max-width: 480px) {
     #app { padding: 1.5rem 1rem 3.75rem; }
 
+    .cards-grid { gap: 0.625rem; }
+
     .tarot-card-wrap {
-      width: min(90vw, 20rem);
+      width: calc((100% - 1.5rem) / 3);
     }
     .card-inner {
       width: 100%;
-      height: calc(min(90vw, 20rem) * 1.714);
+      height: auto;
+    }
+
+    .card-position-label,
+    .card-name-label,
+    .reversed-badge {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
     }
 
     .meaning-card-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.2rem;
+    }
+
+    .modal-overlay { padding: 0; align-items: start; }
+    .modal {
+      padding: 0 1rem 1.5rem;
+      max-width: 100%;
+      max-height: 100vh;
+      border: none;
+    }
+
+    .modal-img { max-width: 100%; }
+    .modal-meaning { scroll-margin-top: 3.25rem; }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+      background: #150f04;
+    }
+    .modal-close {
+      position: static;
+      padding: 0;
+      font-size: 0;
+    }
+    .modal-close::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: currentColor;
+      --back-arrow: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='square'%20stroke-linejoin='miter'%3E%3Cpath%20d='M10.2%205.4%203%2012%2010.2%2018.6M3%2012H23'/%3E%3C/svg%3E");
+      -webkit-mask-image: var(--back-arrow);
+      mask-image: var(--back-arrow);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
     }
   }
 </style>
@@ -1039,7 +1085,9 @@
 <!-- Card detail modal -->
 <div class="modal-overlay" id="card-modal" onclick="closeModal(event)">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
     <div id="modal-img-shimmer" class="modal-img-loading" style="display:none"></div>
     <img id="modal-img" class="modal-img" src="" alt="" style="display:none">
     <div id="modal-img-placeholder" style="display:none; text-align:center; font-size:3rem; margin-bottom:1.25rem; color:var(--gold-dim)"></div>
@@ -1047,10 +1095,14 @@
     <p class="modal-arcana" id="modal-arcana"></p>
     <div class="modal-keywords" id="modal-keywords"></div>
     <div class="modal-meaning">
-      <h4>Upright</h4>
-      <p id="modal-upright"></p>
-      <h4>Reversed</h4>
-      <p id="modal-reversed"></p>
+      <div class="modal-meaning-block" id="modal-upright-block">
+        <h4>Upright</h4>
+        <p id="modal-upright"></p>
+      </div>
+      <div class="modal-meaning-block" id="modal-reversed-block">
+        <h4>Reversed</h4>
+        <p id="modal-reversed"></p>
+      </div>
     </div>
   </div>
 </div>
@@ -2394,7 +2446,7 @@ function renderReading() {
   state.drawnCards.forEach((card, i) => {
     const mc = document.createElement('div');
     mc.className = 'meaning-card' + (card.isReversed ? ' reversed-card' : '');
-    mc.onclick = () => openModal(card);
+    mc.onclick = () => openModal(card, { focusMeaning: true });
 
     const header = document.createElement('div');
     header.className = 'meaning-card-header';
@@ -2430,11 +2482,6 @@ function renderReading() {
       kwWrap.appendChild(span);
     });
     mc.appendChild(kwWrap);
-
-    const txt = document.createElement('p');
-    txt.className = 'meaning-text';
-    txt.textContent = card.isReversed ? card.reversed : card.upright;
-    mc.appendChild(txt);
 
     meaningsEl.appendChild(mc);
   });
@@ -2475,7 +2522,7 @@ function renderIndex(filter) {
     const dc = { ...card, isReversed: false, displayName: getCardName(card) };
     const wrap = document.createElement('div');
     wrap.className = 'tarot-card-wrap';
-    wrap.onclick = () => openModal(dc);
+    wrap.onclick = () => openModal(dc, { showBoth: true });
 
     const inner = document.createElement('div');
     inner.className = 'card-inner';
@@ -2541,12 +2588,18 @@ function filterIndex(btn) {
 }
 
 // ===== MODAL =====
-function openModal(card) {
+function openModal(card, opts = {}) {
   document.getElementById('modal-name').textContent = card.displayName;
   document.getElementById('modal-arcana').textContent =
     card.arcana === 'Major' ? `Major Arcana · ${card.number}` : `${card.suit} · ${card.arcana} Arcana`;
   document.getElementById('modal-upright').textContent = card.upright;
   document.getElementById('modal-reversed').textContent = card.reversed;
+
+  // Show both orientations only in the Card Index; in a spread show the drawn orientation
+  const showUpright = opts.showBoth || !card.isReversed;
+  const showReversed = opts.showBoth || card.isReversed;
+  document.getElementById('modal-upright-block').style.display = showUpright ? '' : 'none';
+  document.getElementById('modal-reversed-block').style.display = showReversed ? '' : 'none';
 
   const kws = document.getElementById('modal-keywords');
   kws.innerHTML = card.keywords.map(k =>
@@ -2587,6 +2640,14 @@ function openModal(card) {
   }
 
   document.getElementById('card-modal').classList.add('open');
+
+  const modalEl = document.querySelector('.modal');
+  modalEl.scrollTop = 0;
+  if (opts.focusMeaning) {
+    const toMeaning = () => document.querySelector('.modal-meaning').scrollIntoView({ block: 'start' });
+    requestAnimationFrame(toMeaning);
+    modalImg.addEventListener('load', toMeaning, { once: true });
+  }
 }
 
 function closeModal(event) {
