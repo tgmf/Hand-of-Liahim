@@ -25,6 +25,7 @@
     --reversed-tint: rgba(139,26,26,0.12);
     --font-title: 'Cinzel', serif;
     --font-body: 'Crimson Pro', serif;
+    --back-arrow: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='square'%20stroke-linejoin='miter'%3E%3Cpath%20d='M10.2%205.4%203%2012%2010.2%2018.6M3%2012H23'/%3E%3C/svg%3E");
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,7 +188,8 @@
     display: none;
   }
 
-  .settings-close {
+  .settings-close,
+  .settings-header {
     display: none;
   }
 
@@ -218,7 +220,7 @@
       inset: 0;
       z-index: 200;
       background: #0d0a04;
-      padding: 4.5rem 1.5rem 2rem;
+      padding: 0 1.5rem 2rem;
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.3s ease;
@@ -228,25 +230,49 @@
       transform: translateX(0);
     }
 
-    .settings-close {
+    .settings-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 2.5rem;
-      height: 2.5rem;
+      height: 3rem;
+      margin: 0 -1.5rem;
+      padding: 0 1.5rem;
+      background: #0d0a04;
+    }
+
+    .settings-close {
+      display: block;
+      position: static;
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 0;
       background: transparent;
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 50%;
+      border: none;
       color: var(--gold-dim);
-      font-size: 1.125rem;
+      font-size: 0;
       cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .settings-close::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: currentColor;
+      -webkit-mask-image: var(--back-arrow);
+      mask-image: var(--back-arrow);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
     }
 
     .settings-close:hover {
-      border-color: var(--gold);
       color: var(--gold);
     }
   }
@@ -836,16 +862,20 @@
     .cards-grid { gap: 0.625rem; }
 
     .tarot-card-wrap {
-      width: calc((100% - 1.5rem) / 3);
+      width: min(90vw, 20rem);
     }
     .card-inner {
       width: 100%;
       height: auto;
     }
 
-    .card-position-label,
-    .card-name-label,
-    .reversed-badge {
+    /* Rows of three only when the spread has more than two cards */
+    .cards-grid:has(.tarot-card-wrap:nth-child(3)) .tarot-card-wrap {
+      width: calc((100% - 1.5rem) / 3);
+    }
+    .cards-grid:has(.tarot-card-wrap:nth-child(3)) .card-position-label,
+    .cards-grid:has(.tarot-card-wrap:nth-child(3)) .card-name-label,
+    .cards-grid:has(.tarot-card-wrap:nth-child(3)) .reversed-badge {
       font-size: 0.6875rem;
       letter-spacing: 0.1em;
     }
@@ -889,7 +919,6 @@
       width: 1.5rem;
       height: 1.5rem;
       background-color: currentColor;
-      --back-arrow: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='square'%20stroke-linejoin='miter'%3E%3Cpath%20d='M10.2%205.4%203%2012%2010.2%2018.6M3%2012H23'/%3E%3C/svg%3E");
       -webkit-mask-image: var(--back-arrow);
       mask-image: var(--back-arrow);
       -webkit-mask-repeat: no-repeat;
@@ -956,17 +985,15 @@
 
       <!-- Visual & AI settings -->
       <div class="setup-col" id="visual-settings-col">
-        <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Close settings">✕</button>
+        <div class="settings-header">
+          <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Close settings">✕</button>
+        </div>
         <p class="section-label">Card visual theme</p>
         <div class="choice-group" id="deck-choices">
           <button class="choice-btn selected" data-val="rider-waite" onclick="selectChoice('deck', this)">
             <span class="btn-title">Rider-Waite-Smith (1909)</span>
             <span class="btn-sub">Pamela Colman Smith's classic illustrations</span>
           </button>
-          <!-- <button class="choice-btn" data-val="marseille" onclick="selectChoice('deck', this)">
-            <span class="btn-title">Tarot de Marseille (Dodal, 1701)</span>
-            <span class="btn-sub">Woodcut majors; symbolic view for minors</span>
-          </button> -->
           <button class="choice-btn" data-val="visconti" onclick="selectChoice('deck', this)">
             <span class="btn-title">Visconti-Sforza (1440s)</span>
             <span class="btn-sub">Painted majors; symbolic view for minors</span>
@@ -1326,32 +1353,6 @@ const THOTH_MAP = {
   'Cups': 'Cups',
   'Swords': 'Swords',
   'Pentacles': 'Disks',
-};
-
-// Jean Dodal Tarot de Marseille (Lyon, 1701-1715) — full 22 majors on Wikimedia
-const MARSEILLE_IMAGES = {
-  'major-0':  '5/5b/Jean_Dodal_Tarot_trump_00.jpg/120px-Jean_Dodal_Tarot_trump_00.jpg',
-  'major-1':  'b/b8/Jean_Dodal_Tarot_trump_01.jpg/120px-Jean_Dodal_Tarot_trump_01.jpg',
-  'major-2':  'c/c5/Jean_Dodal_Tarot_trump_02.jpg/120px-Jean_Dodal_Tarot_trump_02.jpg',
-  'major-3':  '9/9b/Jean_Dodal_Tarot_trump_03.jpg/120px-Jean_Dodal_Tarot_trump_03.jpg',
-  'major-4':  'f/f2/Jean_Dodal_Tarot_trump_04.jpg/120px-Jean_Dodal_Tarot_trump_04.jpg',
-  'major-5':  'a/a6/Jean_Dodal_Tarot_trump_05.jpg/120px-Jean_Dodal_Tarot_trump_05.jpg',
-  'major-6':  '5/59/Jean_Dodal_Tarot_trump_06.jpg/120px-Jean_Dodal_Tarot_trump_06.jpg',
-  'major-7':  '1/18/Jean_Dodal_Tarot_trump_07.jpg/120px-Jean_Dodal_Tarot_trump_07.jpg',
-  'major-8':  '3/3d/Jean_Dodal_Tarot_trump_08.jpg/120px-Jean_Dodal_Tarot_trump_08.jpg',
-  'major-9':  'e/e9/Jean_Dodal_Tarot_trump_09.jpg/120px-Jean_Dodal_Tarot_trump_09.jpg',
-  'major-10': 'd/de/Jean_Dodal_Tarot_trump_10.jpg/120px-Jean_Dodal_Tarot_trump_10.jpg',
-  'major-11': 'a/a9/Jean_Dodal_Tarot_trump_11.jpg/120px-Jean_Dodal_Tarot_trump_11.jpg',
-  'major-12': '3/31/Jean_Dodal_Tarot_trump_12.jpg/120px-Jean_Dodal_Tarot_trump_12.jpg',
-  'major-13': '7/7f/Jean_Dodal_Tarot_trump_13.jpg/120px-Jean_Dodal_Tarot_trump_13.jpg',
-  'major-14': 'b/b4/Jean_Dodal_Tarot_trump_14.jpg/120px-Jean_Dodal_Tarot_trump_14.jpg',
-  'major-15': 'a/a8/Jean_Dodal_Tarot_trump_15.jpg/120px-Jean_Dodal_Tarot_trump_15.jpg',
-  'major-16': '6/6e/Jean_Dodal_Tarot_trump_16.jpg/120px-Jean_Dodal_Tarot_trump_16.jpg',
-  'major-17': '6/60/Jean_Dodal_Tarot_trump_17.jpg/120px-Jean_Dodal_Tarot_trump_17.jpg',
-  'major-18': 'e/e1/Jean_Dodal_Tarot_trump_18.jpg/120px-Jean_Dodal_Tarot_trump_18.jpg',
-  'major-19': 'a/a9/Jean_Dodal_Tarot_trump_19.jpg/120px-Jean_Dodal_Tarot_trump_19.jpg',
-  'major-20': '3/3e/Jean_Dodal_Tarot_trump_20.jpg/120px-Jean_Dodal_Tarot_trump_20.jpg',
-  'major-21': '1/13/Jean_Dodal_Tarot_trump_21.jpg/120px-Jean_Dodal_Tarot_trump_21.jpg',
 };
 
 // =============================================================================
@@ -1786,13 +1787,7 @@ const CARDS_RWS = [
 function getCardThumbUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
- 
-  if (deck === 'marseille') {
-    return MARSEILLE_IMAGES[card.id]
-      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id]}`
-      : null;
-  }
- 
+
   if (deck === 'visconti') {
     const filename = VISCONTI_IMAGES[card.id];
     if (!filename) return null;
@@ -1810,19 +1805,12 @@ function getCardThumbUrl(card) {
 /**
  * Returns the full-resolution URL shown in the modal.
  * RWS → archive.org full PNG.
- * Marseille → Wikimedia 400px thumb.
  * Visconti → Special:FilePath redirect at 512px (native resolution of Bembo series).
  */
 function getCardFullUrl(card) {
   const deck = state.deck;
   if (deck === 'symbolic') return null;
- 
-  if (deck === 'marseille') {
-    return MARSEILLE_IMAGES[card.id]
-      ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${MARSEILLE_IMAGES[card.id].replace('/120px-', '/400px-')}`
-      : null;
-  }
- 
+
   if (deck === 'visconti') {
     const filename = VISCONTI_IMAGES[card.id];
     if (!filename) return null;
@@ -2357,7 +2345,7 @@ function renderReading() {
     if (imgUrl) {
       const img = document.createElement('img');
       img.className = 'card-img';
-      // Rider-Waite/Marseille (Wikimedia + archive.org) send CORS headers, so
+      // Rider-Waite (Wikimedia + archive.org) sends CORS headers, so
       // loading cross-origin lets the share-image canvas reuse this same
       // element later. Visconti's Special:FilePath redirect breaks CORS
       // validation, so it's left as a plain (canvas-unsafe) image.
