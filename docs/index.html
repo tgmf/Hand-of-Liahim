@@ -14,9 +14,9 @@
     --ink: #1a1108;
     --parchment: #f5edd8;
     --parchment-dark: #e8d9b8;
-    --gold: #c9a84c;
-    --gold-bright: #e8c46a;
-    --gold-dim: #b08838;
+    --gold: #e3bc4f;
+    --gold-bright: #ffdb82;
+    --gold-dim: #c59638;
     --crimson: #8b1a1a;
     --crimson-dim: #5a1010;
     --shadow: rgba(20,10,0,0.35);
@@ -1995,7 +1995,7 @@ async function buildReadingImageBlob() {
   const cols = n <= 3 ? n : n <= 6 ? 3 : n <= 8 ? 4 : 5;
   const rows = Math.ceil(n / cols);
 
-  const marginX = 60, headerH = 210, footerH = 70;
+  const marginX = 60, headerH = 175, footerH = 70;
   const gridWidth = cols * cardW + (cols - 1) * gap;
   const height = headerH + rows * cardH + (rows - 1) * gap + footerH;
 
@@ -2028,12 +2028,6 @@ async function buildReadingImageBlob() {
   ctx.font = '600 22px Cinzel, Georgia, serif';
   ctx.fillText(spread.name, width / 2, 148);
 
-  ctx.fillStyle = 'rgba(232,196,106,0.75)';
-  ctx.font = 'italic 16px Georgia, serif';
-  wrapCenteredLines(ctx, spread.desc, width - 120).slice(0, 2).forEach((line, i) => {
-    ctx.fillText(line, width / 2, 178 + i * 22);
-  });
-
   const startX = (width - gridWidth) / 2;
   cards.forEach((card, i) => {
     const col = i % cols, row = Math.floor(i / cols);
@@ -2060,8 +2054,13 @@ function isMobileOS() {
   return false;
 }
 
+// In the Capacitor shell location.href is https://localhost/... — a shared link
+// has to carry the real origin, and there is no navigator.share to hand off to.
+const CAPACITOR = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+const SHARE_ORIGIN = 'https://liahim.tgmf.st';
+
 function getShareContent() {
-  const url = location.href;
+  const url = CAPACITOR ? SHARE_ORIGIN + location.pathname + location.search : location.href;
   const spread = state.currentSpread;
   const text = state.spread === 'index'
     ? 'The Tarot Card Index — The Hand of Liahim'
@@ -2084,6 +2083,9 @@ async function shareReading() {
   if (state.spread !== 'index') {
     try { imageBlob = await buildReadingImageBlob(); } catch (err) { imageBlob = null; }
   }
+
+  if (CAPACITOR) { await shareViaCapacitor(text, url, imageBlob); return; }
+
   const imageFile = imageBlob ? new File([imageBlob], 'tarot-reading.png', { type: 'image/png' }) : null;
 
   if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
@@ -2101,6 +2103,36 @@ async function shareReading() {
   } catch (err) {
     // user cancelled the share sheet
   }
+}
+
+// Android WebView has no navigator.share; hand off to the Capacitor Share
+// plugin. It can only attach a file:// URI, so the reading image is written to
+// the cache dir first (covered by the app's FileProvider <cache-path>).
+async function shareViaCapacitor(text, url, imageBlob) {
+  const { Share, Filesystem } = window.Capacitor.Plugins;
+  let files;
+  if (imageBlob) {
+    try {
+      const data = await blobToBase64(imageBlob);
+      await Filesystem.writeFile({ path: 'tarot-reading.png', data, directory: 'CACHE' });
+      const { uri } = await Filesystem.getUri({ path: 'tarot-reading.png', directory: 'CACHE' });
+      files = [uri];
+    } catch (err) { files = undefined; }
+  }
+  try {
+    await Share.share({ title: 'The Hand of Liahim', text, url, files, dialogTitle: 'Share your reading' });
+  } catch (err) {
+    // user dismissed the share sheet
+  }
+}
+
+function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(String(reader.result).split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
 }
 
 async function copyLinkToClipboard() {
@@ -2688,6 +2720,24 @@ window.addEventListener('popstate', (e) => {
   }
   showPanel('setup-panel');
 });
+
+// ===== ANDROID HARDWARE / GESTURE BACK (Capacitor shell) =====
+// Android WebView's native canGoBack() ignores history.pushState entries, so
+// Capacitor's default handling minimizes the app instead of closing an overlay
+// or stepping back a panel. Take over the decision and drive our own history.
+if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App) {
+  const App = window.Capacitor.Plugins.App;
+  App.addListener('backButton', () => {
+    const overlayOpen =
+      document.getElementById('card-modal').classList.contains('open') ||
+      document.getElementById('visual-settings-col').classList.contains('open');
+    if (overlayOpen || (history.state && history.state.panel === 'reading')) {
+      history.back();
+    } else {
+      App.minimizeApp();
+    }
+  });
+}
 </script>
 </body>
 </html>
