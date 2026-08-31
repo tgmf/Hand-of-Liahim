@@ -86,23 +86,22 @@
   /* HEADER */
   header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     position: relative;
   }
 
   .logo-ornament {
     display: block;
     pointer-events: none;
-    font-size: 1.75rem;
+    font-size: 0.75rem;
     margin-bottom: 0.5rem;
     opacity: 0.7;
-    letter-spacing: 0.75rem;
     color: var(--gold);
   }
 
   h1, .logo-link {
     font-family: var(--font-title);
-    font-size: clamp(2.375rem, 6vw, 4rem);
+    font-size: clamp(1.125rem, 3vw, 2rem);
     font-weight: 400;
     letter-spacing: 0.18em;
     color: var(--gold-bright);
@@ -110,14 +109,6 @@
     line-height: 1;
     margin-bottom: 0.625rem;
     text-decoration: none;
-  }
-
-  .tagline {
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    font-weight: 300;
   }
 
   .divider {
@@ -507,7 +498,7 @@
 
   .spread-title {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .spread-title h2 {
@@ -1031,7 +1022,6 @@
   <header>
     <span class="logo-ornament">✦ ✦ ✦</span>
     <h1><a href="/" class="logo-link">The Hand of Liahim</a></h1>
-    <p class="tagline">The Ancient Art of Tarot</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
 
@@ -1757,8 +1747,14 @@ function goToSetup() {
 }
 
 function toggleSettingsPanel() {
-  document.getElementById('visual-settings-col').classList.toggle('open');
-  updateScrollLock();
+  const col = document.getElementById('visual-settings-col');
+  if (col.classList.contains('open')) {
+    history.back();                       // pops the overlay state -> popstate closes it
+  } else {
+    col.classList.add('open');
+    updateScrollLock();
+    history.pushState({ overlay: 'settings' }, '');
+  }
 }
 
 // Lock page scroll while the card modal or the settings drawer is open.
@@ -2522,6 +2518,7 @@ function openModal(card, opts = {}) {
 
   document.getElementById('card-modal').classList.add('open');
   updateScrollLock();
+  history.pushState({ overlay: 'card' }, '');
 
   document.querySelector('.modal').scrollTop = 0;
   document.getElementById('modal-detail').scrollTop = 0;
@@ -2532,10 +2529,16 @@ function openModal(card, opts = {}) {
   }
 }
 
+function teardownOverlays() {
+  document.getElementById('card-modal').classList.remove('open');
+  document.getElementById('visual-settings-col').classList.remove('open');
+  updateScrollLock();
+}
+
 function closeModal(event) {
-  if (!event || event.target.id === 'card-modal' || event.target.classList.contains('modal-close')) {
-    document.getElementById('card-modal').classList.remove('open');
-    updateScrollLock();
+  if (!event || event.target.id === 'card-modal') {
+    if (history.state && history.state.overlay === 'card') history.back();
+    else teardownOverlays();
   }
 }
 
@@ -2670,6 +2673,11 @@ updateModelOptions();
 })();
 
 window.addEventListener('popstate', (e) => {
+  if (document.getElementById('card-modal').classList.contains('open') ||
+      document.getElementById('visual-settings-col').classList.contains('open')) {
+    teardownOverlays();
+    return;                     // consumed the back gesture -- don't switch panels / minimize
+  }
   const st = e.state;
   if (st && st.panel === 'reading') {
     const decoded = decodeReadingFromURL();

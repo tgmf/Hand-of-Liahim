@@ -111,15 +111,7 @@
     margin-bottom: 0.625rem;
     text-decoration: none;
   }
-
-  .tagline {
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    font-weight: 300;
-  }
-
+  
   .divider {
     display: flex;
     align-items: center;
@@ -1031,7 +1023,6 @@
   <header>
     <span class="logo-ornament">✦ ✦ ✦</span>
     <h1><a href="/ru/" class="logo-link">Рука Лиахима</a></h1>
-    <p class="tagline">Древнее искусство Таро</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
 
@@ -1766,8 +1757,14 @@ function selectChoiceButton(group, val) {
 }
 
 function toggleSettingsPanel() {
-  document.getElementById('visual-settings-col').classList.toggle('open');
-  updateScrollLock();
+  const col = document.getElementById('visual-settings-col');
+  if (col.classList.contains('open')) {
+    history.back();                       // pops the overlay state -> popstate closes it
+  } else {
+    col.classList.add('open');
+    updateScrollLock();
+    history.pushState({ overlay: 'settings' }, '');
+  }
 }
 
 // Lock page scroll while the card modal or the settings drawer is open.
@@ -2533,6 +2530,7 @@ function openModal(card, opts = {}) {
 
   document.getElementById('card-modal').classList.add('open');
   updateScrollLock();
+  history.pushState({ overlay: 'card' }, '');
 
   document.querySelector('.modal').scrollTop = 0;
   document.getElementById('modal-detail').scrollTop = 0;
@@ -2543,10 +2541,16 @@ function openModal(card, opts = {}) {
   }
 }
 
+function teardownOverlays() {
+  document.getElementById('card-modal').classList.remove('open');
+  document.getElementById('visual-settings-col').classList.remove('open');
+  updateScrollLock();
+}
+
 function closeModal(event) {
-  if (!event || event.target.id === 'card-modal' || event.target.classList.contains('modal-close')) {
-    document.getElementById('card-modal').classList.remove('open');
-    updateScrollLock();
+  if (!event || event.target.id === 'card-modal') {
+    if (history.state && history.state.overlay === 'card') history.back();
+    else teardownOverlays();
   }
 }
 
@@ -2681,6 +2685,11 @@ updateModelOptions();
 })();
 
 window.addEventListener('popstate', (e) => {
+  if (document.getElementById('card-modal').classList.contains('open') ||
+      document.getElementById('visual-settings-col').classList.contains('open')) {
+    teardownOverlays();
+    return;                     // consumed the back gesture -- don't switch panels / minimize
+  }
   const st = e.state;
   if (st && st.panel === 'reading') {
     const decoded = decodeReadingFromURL();
