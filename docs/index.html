@@ -763,11 +763,44 @@
     max-width: calc(57vh + 4rem);
     width: 100%;
     max-height: 95vh;
-    overflow-y: auto;
+    overflow: hidden auto;
     padding: 2rem;
     position: relative;
     animation: fadeIn 0.25s ease;
   }
+
+  .modal-body { position: relative; background: #150f04; }
+
+  /* Card-swiper effect between spread cards: only .modal-swipe (the art + text)
+     rides with the drag and tilts — the header stays pinned to the top. The
+     next/prev card sits under it in .modal-peek and scales up as it leaves. */
+  .modal-swipe {
+    position: relative;
+    z-index: 2;
+    background: #150f04;
+    touch-action: pan-y;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+  }
+  .modal-swipe.card-dragging { transition: none; }
+
+  .modal-peek {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3rem;          /* height of the sticky .modal-header on mobile */
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    overflow: hidden;
+    background: #150f04;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.96);
+    transform-origin: center top;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  }
+  .modal-peek.show { display: block; }
+  .modal-peek > .modal-swipe { min-height: 100%; }
 
   .modal-close {
     position: absolute;
@@ -874,6 +907,10 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 3.5rem minmax(0, 1fr);
     }
+
+    /* No card-swiper on the desktop layout — let the grid place the children */
+    .modal-swipe { display: contents; }
+    .modal-peek { display: none; }
 
     .modal-visual {
       grid-column: 1;
@@ -1183,26 +1220,30 @@
       <div class="modal-header">
         <button class="modal-close" onclick="closeModal()">✕</button>
       </div>
-      <div class="modal-visual" id="modal-visual">
-        <div id="modal-img-shimmer" class="modal-img-loading" style="display:none"></div>
-        <img id="modal-img" class="modal-img" src="" alt="" style="display:none">
-        <div id="modal-img-placeholder" style="display:none; text-align:center; font-size:3rem; margin-bottom:1.25rem; color:var(--gold-dim)"></div>
-      </div>
-      <div class="modal-detail" id="modal-detail">
-        <h2 id="modal-name"></h2>
-        <p class="modal-arcana" id="modal-arcana"></p>
-        <div class="modal-keywords" id="modal-keywords"></div>
-        <div class="modal-meaning">
-          <div class="modal-meaning-block" id="modal-upright-block">
-            <h4>Upright</h4>
-            <p id="modal-upright"></p>
-          </div>
-          <div class="modal-meaning-block" id="modal-reversed-block">
-            <h4>Reversed</h4>
-            <p id="modal-reversed"></p>
+      <div class="modal-swipe" id="modal-swipe">
+        <div class="modal-visual" id="modal-visual">
+          <div id="modal-img-shimmer" class="modal-img-loading" style="display:none"></div>
+          <img id="modal-img" class="modal-img" src="" alt="" style="display:none">
+          <div id="modal-img-placeholder" style="display:none; text-align:center; font-size:3rem; margin-bottom:1.25rem; color:var(--gold-dim)"></div>
+        </div>
+        <div class="modal-detail" id="modal-detail">
+          <h2 id="modal-name"></h2>
+          <p class="modal-arcana" id="modal-arcana"></p>
+          <div class="modal-keywords" id="modal-keywords"></div>
+          <div class="modal-meaning">
+            <div class="modal-meaning-block" id="modal-upright-block">
+              <h4>Upright</h4>
+              <p id="modal-upright"></p>
+            </div>
+            <div class="modal-meaning-block" id="modal-reversed-block">
+              <h4>Reversed</h4>
+              <p id="modal-reversed"></p>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Filled with a clone of #modal-swipe during a card-swipe drag -->
+      <div class="modal-peek" id="modal-peek" aria-hidden="true"></div>
     </div>
   </div>
 </div>
@@ -2231,7 +2272,7 @@ function renderReading() {
   state.drawnCards.forEach((card, i) => {
     const wrap = document.createElement('div');
     wrap.className = 'tarot-card-wrap' + (card.isReversed ? ' reversed' : '');
-    wrap.onclick = () => openModal(card);
+    wrap.onclick = () => openModal(card, { list: state.drawnCards, index: i });
 
     const inner = document.createElement('div');
     inner.className = 'card-inner';
@@ -2310,7 +2351,7 @@ function renderReading() {
   state.drawnCards.forEach((card, i) => {
     const mc = document.createElement('div');
     mc.className = 'meaning-card' + (card.isReversed ? ' reversed-card' : '');
-    mc.onclick = () => openModal(card, { focusMeaning: true });
+    mc.onclick = () => openModal(card, { focusMeaning: true, list: state.drawnCards, index: i });
 
     const header = document.createElement('div');
     header.className = 'meaning-card-header';
@@ -2455,6 +2496,11 @@ function filterIndex(btn) {
 // Desktop: scroll the wheel over the card image to zoom it; the pointer position
 // sets the focal point, and leaving the image resets it.
 const modalZoom = { scale: 1 };
+
+// When the modal is opened from a spread, these hold the cards a horizontal
+// swipe can cycle through and the position currently shown (null = no cycling).
+let modalCards = null;
+let modalIndex = -1;
 (function initModalZoom() {
   const box = document.getElementById('modal-visual');
   const img = document.getElementById('modal-img');
@@ -2496,57 +2542,71 @@ function resetModalZoom() {
   document.getElementById('modal-visual').classList.remove('zoomed');
 }
 
-function openModal(card, opts = {}) {
-  resetModalZoom();
-  document.getElementById('modal-name').textContent = card.displayName;
-  document.getElementById('modal-arcana').textContent =
+// Render one card's art + text into a .modal-body element — the live one, or a
+// clone used as the swipe peek. `root` is scoped so a clone's duplicate ids
+// don't collide with the real modal.
+function renderCardInto(root, card, opts = {}) {
+  root.querySelector('#modal-name').textContent = card.displayName;
+  root.querySelector('#modal-arcana').textContent =
     card.arcana === 'Major' ? `Major Arcana · ${getCardNumber(card)}` : `${card.suit} · ${card.arcana} Arcana`;
-  document.getElementById('modal-upright').textContent = card.upright;
-  document.getElementById('modal-reversed').textContent = card.reversed;
+  root.querySelector('#modal-upright').textContent = card.upright;
+  root.querySelector('#modal-reversed').textContent = card.reversed;
 
   // Show both orientations only in the Card Index; in a spread show the drawn orientation
   const showUpright = opts.showBoth || !card.isReversed;
   const showReversed = opts.showBoth || card.isReversed;
-  document.getElementById('modal-upright-block').style.display = showUpright ? '' : 'none';
-  document.getElementById('modal-reversed-block').style.display = showReversed ? '' : 'none';
+  root.querySelector('#modal-upright-block').style.display = showUpright ? '' : 'none';
+  root.querySelector('#modal-reversed-block').style.display = showReversed ? '' : 'none';
 
-  const kws = document.getElementById('modal-keywords');
-  kws.innerHTML = card.keywords.map(k =>
+  root.querySelector('#modal-keywords').innerHTML = card.keywords.map(k =>
     `<span class="keyword">${k}</span>`
   ).join('');
 
   const fullUrl = getCardFullUrl(card);
-  const modalImg = document.getElementById('modal-img');
-  const modalPh = document.getElementById('modal-img-placeholder');
-  const shimmer = document.getElementById('modal-img-shimmer');
+  const modalImg = root.querySelector('#modal-img');
+  const modalPh = root.querySelector('#modal-img-placeholder');
+  const shimmer = root.querySelector('#modal-img-shimmer');
 
-  // Reset state
   modalImg.style.display = 'none';
   modalPh.style.display = 'none';
   shimmer.style.display = 'none';
 
   if (fullUrl) {
-    // Show shimmer while full image loads
     shimmer.style.display = 'block';
-    modalImg.style.display = 'none';
-
     const loader = new Image();
-    loader.onload = () => {
+    const show = () => {
       shimmer.style.display = 'none';
       modalImg.src = fullUrl;
       modalImg.alt = card.displayName;
       modalImg.style.display = 'block';
     };
+    loader.onload = show;
     loader.onerror = () => {
       shimmer.style.display = 'none';
       modalPh.style.display = 'block';
       modalPh.textContent = card.symbol || '✦';
     };
     loader.src = fullUrl;
+    if (loader.complete) show();   // already cached — skip the shimmer flash
   } else {
     modalPh.style.display = 'block';
     modalPh.textContent = card.symbol || '✦';
   }
+}
+
+// Populate the live modal. Kept separate from opening so a swipe can swap the
+// contents without touching history or the open state.
+function fillModalCard(card, opts = {}) {
+  resetModalZoom();
+  renderCardInto(document.querySelector('.modal-swipe'), card, opts);
+}
+
+function openModal(card, opts = {}) {
+  // A horizontal swipe cycles the spread only when opened from one with >1 card.
+  modalCards = (opts.list && opts.list.length > 1) ? opts.list : null;
+  modalIndex = modalCards ? opts.index : -1;
+
+  fillModalCard(card, opts);
 
   document.getElementById('card-modal').classList.add('open');
   updateScrollLock();
@@ -2557,13 +2617,156 @@ function openModal(card, opts = {}) {
   if (opts.focusMeaning) {
     const toMeaning = () => document.querySelector('.modal-meaning').scrollIntoView({ block: 'start' });
     requestAnimationFrame(toMeaning);
-    modalImg.addEventListener('load', toMeaning, { once: true });
+    document.getElementById('modal-img').addEventListener('load', toMeaning, { once: true });
   }
 }
+
+// Advance the modal to another spread card and reset its scroll.
+// dir: +1 = next (swipe left), -1 = previous (swipe right). Wraps around.
+function cycleModalCard(dir) {
+  if (!modalCards) return;
+  modalIndex = (modalIndex + dir + modalCards.length) % modalCards.length;
+  fillModalCard(modalCards[modalIndex]);
+  document.querySelector('.modal').scrollTop = 0;
+  document.getElementById('modal-detail').scrollTop = 0;
+}
+
+// Card-swiper gesture. The dragged card tracks the finger and tilts; a full
+// clone of the next/prev card sits underneath in #modal-peek and scales up as
+// the top card leaves. Past the commit distance the top card flies off and the
+// peek takes its place; otherwise it springs back. Screen edges stay with the
+// OS back gesture, vertical drags still scroll the modal.
+(function initModalSwipe() {
+  const overlay = document.getElementById('card-modal');
+  const peek = document.getElementById('modal-peek');
+  const EDGE = 24, COMMIT = 90;
+  let sx = 0, sy = 0, axis = null, tracking = false, peekDir = 0, resetTimer = 0;
+
+  const swipeEl = () => document.querySelector('.modal-swipe');
+
+  function showPeek(dir) {
+    clearTimeout(resetTimer);
+    if (dir === peekDir && peek.firstElementChild) return;
+    peekDir = dir;
+    let clone = peek.firstElementChild;
+    if (!clone) {
+      clone = swipeEl().cloneNode(true);
+      clone.classList.remove('card-dragging');
+      clone.style.cssText = '';
+      peek.appendChild(clone);
+    }
+    renderCardInto(clone, modalCards[(modalIndex + dir + modalCards.length) % modalCards.length]);
+    peek.classList.add('show');
+  }
+
+  function resetPeek(animate) {
+    clearTimeout(resetTimer);
+    const hard = () => {
+      peek.classList.remove('show');
+      peek.style.cssText = '';
+      peek.replaceChildren();
+      peekDir = 0;
+    };
+    if (animate && peek.classList.contains('show')) {
+      peek.style.transform = '';   // -> CSS scale(0.96)
+      peek.style.opacity = '';     // -> CSS opacity 0
+      resetTimer = setTimeout(hard, 260);
+    } else {
+      hard();
+    }
+  }
+
+  overlay.addEventListener('touchstart', e => {
+    if (!modalCards || e.touches.length !== 1 || matchMedia('(min-width: 769px)').matches) { tracking = false; return; }
+    const t = e.touches[0];
+    if (t.clientX < EDGE || t.clientX > window.innerWidth - EDGE) { tracking = false; return; }
+    sx = t.clientX; sy = t.clientY; axis = null; tracking = true;
+  }, { passive: true });
+
+  overlay.addEventListener('touchmove', e => {
+    if (!tracking) return;
+    const t = e.touches[0];
+    const dx = t.clientX - sx, dy = t.clientY - sy;
+    if (axis === null && Math.hypot(dx, dy) > 10) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    if (axis !== 'x') return;
+    e.preventDefault();
+    const b = swipeEl();
+    b.classList.add('card-dragging');
+    b.style.transform = `translateX(${dx}px) rotate(${dx / 24}deg)`;
+    showPeek(dx < 0 ? 1 : -1);
+    const p = Math.min(1, Math.abs(dx) / COMMIT);
+    peek.style.transform = `scale(${0.96 + 0.04 * p})`;
+    peek.style.opacity = String(0.4 + 0.6 * p);
+  }, { passive: false });
+
+  overlay.addEventListener('touchend', e => {
+    if (!tracking) return;
+    tracking = false;
+    const b = swipeEl();
+    b.classList.remove('card-dragging');
+    if (axis !== 'x') { resetPeek(false); return; }
+
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) < COMMIT) {
+      b.style.transform = '';
+      b.style.opacity = '';
+      resetPeek(true);
+      return;
+    }
+
+    const dir = dx < 0 ? 1 : -1;
+    b.style.transform = `translateX(${-dir * window.innerWidth * 1.15}px) rotate(${-dir * 8}deg)`;
+    b.style.opacity = '0';
+    peek.style.transform = 'scale(1)';
+    peek.style.opacity = '1';
+
+    let done = false;
+    const finish = ev => {
+      if (done || (ev && ev.target !== b)) return;
+      done = true;
+      b.removeEventListener('transitionend', finish);
+      // Snap the new card into the real element (centre, full opacity, no
+      // transition) so it's already covering the peek, then drop the peek a
+      // frame later — the two never overlap visibly.
+      b.classList.add('card-dragging');
+      cycleModalCard(dir);
+      b.style.transform = '';
+      b.style.opacity = '';
+      void b.offsetHeight;
+      b.classList.remove('card-dragging');
+      requestAnimationFrame(() => resetPeek(false));
+    };
+    b.addEventListener('transitionend', finish);
+    setTimeout(finish, 400);
+  }, { passive: true });
+
+  // The OS back gesture (or any interruption) fires touchcancel instead of
+  // touchend — bail out cleanly so nothing stays half-dragged.
+  overlay.addEventListener('touchcancel', () => {
+    if (!tracking) return;
+    tracking = false;
+    const b = swipeEl();
+    b.classList.remove('card-dragging');
+    b.style.transform = '';
+    b.style.opacity = '';
+    resetPeek(true);
+  }, { passive: true });
+})();
 
 function teardownOverlays() {
   document.getElementById('card-modal').classList.remove('open');
   document.getElementById('visual-settings-col').classList.remove('open');
+  modalCards = null;
+  modalIndex = -1;
+  // Clear anything a swipe left mid-flight
+  const sw = document.querySelector('.modal-swipe');
+  sw.classList.remove('card-dragging');
+  sw.style.transform = '';
+  sw.style.opacity = '';
+  const pk = document.getElementById('modal-peek');
+  pk.classList.remove('show');
+  pk.style.cssText = '';
+  pk.replaceChildren();
   updateScrollLock();
 }
 
