@@ -772,7 +772,15 @@
     overflow: hidden auto;
     padding: 2rem;
     position: relative;
-    animation: fadeIn 0.25s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  /* Fade + rise on open, via @starting-style rather than a keyframe animation:
+     the browser renders every frame of a transition, so the deck's layers
+     rasterise *during* the fade instead of popping in after it. Pre-117
+     Chromium/WebView ignores this and the modal just appears — fine either way. */
+  @starting-style {
+    .modal { opacity: 0; transform: translateY(12px); }
   }
 
   .modal-body { position: relative; background: #150f04; }
@@ -822,6 +830,11 @@
     touch-action: pan-y;
     padding: 1.25rem 1rem 2.5rem;
     scrollbar-width: none;
+    /* Opaque fill on the layer that actually shows the card. .deck-slide's own
+       fill is byte-identical to what's behind it, so the WebView drops it for a
+       frame during the open transition and the neighbour card's text shows
+       through. This is 1 unit off #150f04 — invisible, but not a de-dupe match. */
+    background: #160f05;
   }
   .modal-rail > .deck-slide > .deck-scroll::-webkit-scrollbar { display: none; }
 
