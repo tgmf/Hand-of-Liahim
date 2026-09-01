@@ -1,13 +1,14 @@
 {
   "name": "the-hand-of-liahim",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A single-file tarot web app. No backend, no dependencies, no build step.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx --yes serve docs -l 5173"
   },
   "repository": {
     "type": "git",

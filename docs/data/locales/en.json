@@ -58,6 +58,24 @@
   "reading.button.changeSettings": "Change Settings",
   "modal.upright": "Upright",
   "modal.reversed": "Reversed",
+  "app.titleTag": "The Hand of Liahim — Tarot Reader",
+  "settings.language.label": "Language",
+  "ai.placeholder.selfReflect": "Consider each card's position and its meaning. How do the energies speak to you?",
+  "ai.prompt.template": "You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.\n\nSpread: {spread}\n{desc}\n\nCards drawn:\n{cards}\n\nProvide a narrative interpretation that weaves all the cards together into a coherent reading. Be insightful, poetic, and specific to the positions. Speak in second person. Keep it under 400 words.",
+  "ai.error.generic": "Error: {msg}\n\nPlease check your API key and try again.",
+  "share.indexText": "The Tarot Card Index — The Hand of Liahim",
+  "share.readingLabel": "My {spread} tarot reading:",
+  "share.reversedParen": " (Reversed)",
+  "reading.copyLinkPrompt": "Copy this link to share your reading:",
+  "card.majorShort": "Major",
+  "card.majorArcanaLabel": "Major Arcana",
+  "card.minorArcanaLabel": "Minor Arcana",
+  "dealing.messages": [
+    "Shuffling the deck...",
+    "Clearing your mind...",
+    "Calling the cards...",
+    "The spread is ready."
+  ],
   "spread.single.positions": [
     "The Card"
   ],

@@ -49,3 +49,6 @@ Thumbs.db
 
 # ==== Local scripts and utilities =====
 /utils/
+
+# ==== Dev notes and instructions =====
+new_schema.md

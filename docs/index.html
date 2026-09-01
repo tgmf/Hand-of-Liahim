@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+SC:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     font-size: 1.125rem;
@@ -26,6 +26,11 @@
     --font-title: 'Cinzel', serif;
     --font-body: 'Crimson Pro', serif;
     --back-arrow: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='square'%20stroke-linejoin='miter'%3E%3Cpath%20d='M10.2%205.4%203%2012%2010.2%2018.6M3%2012H23'/%3E%3C/svg%3E");
+  }
+
+  /* Cinzel has no Cyrillic glyphs; the RU page historically used Cormorant SC. */
+  :root[lang="ru"] {
+    --font-title: 'Cormorant SC', 'Cinzel', serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1111,7 +1116,7 @@
 <div id="app">
   <header>
     <span class="logo-ornament">✦ ✦ ✦</span>
-    <h1><a href="/" class="logo-link">The Hand of Liahim</a></h1>
+    <h1><a href="/" class="logo-link" data-i18n="app.title">The Hand of Liahim</a></h1>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
 
@@ -1123,33 +1128,33 @@
       <!-- Spread selection -->
       <div class="setup-col">
         <div class="section-label-row">
-          <p class="section-label">Choose your spread</p>
-          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
+          <p class="section-label" data-i18n="setup.spread.label">Choose your spread</p>
+          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsToggle.ariaLabel" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
         </div>
         <div class="choice-group" id="spread-choices">
           <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Single Card</span>
-            <span class="btn-sub">A focused answer or daily reflection</span>
+            <span class="btn-title" data-i18n="spread.single.title">Single Card</span>
+            <span class="btn-sub" data-i18n="spread.single.desc">A focused answer or daily reflection</span>
           </button>
           <button class="choice-btn" data-val="three" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Three Cards</span>
-            <span class="btn-sub">Past · Present · Future</span>
+            <span class="btn-title" data-i18n="spread.three.title">Three Cards</span>
+            <span class="btn-sub" data-i18n="spread.three.desc">Past · Present · Future</span>
           </button>
           <button class="choice-btn" data-val="celtic" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Celtic Cross</span>
-            <span class="btn-sub">A full ten-card deep reading</span>
+            <span class="btn-title" data-i18n="spread.celtic.title">Celtic Cross</span>
+            <span class="btn-sub" data-i18n="spread.celtic.desc">A full ten-card deep reading</span>
           </button>
           <button class="choice-btn" data-val="horseshoe" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Horseshoe</span>
-            <span class="btn-sub">Seven cards for a situation</span>
+            <span class="btn-title" data-i18n="spread.horseshoe.title">Horseshoe</span>
+            <span class="btn-sub" data-i18n="spread.horseshoe.desc">Seven cards for a situation</span>
           </button>
           <button class="choice-btn" data-val="relationship" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Relationship</span>
-            <span class="btn-sub">Six cards for two people</span>
+            <span class="btn-title" data-i18n="spread.relationship.title">Relationship</span>
+            <span class="btn-sub" data-i18n="spread.relationship.desc">Six cards for two people</span>
           </button>
           <button class="choice-btn" data-val="index" onclick="selectChoice('spread', this)">
-            <span class="btn-title">Card Index</span>
-            <span class="btn-sub">Browse all 78 cards</span>
+            <span class="btn-title" data-i18n="spread.index.title">Card Index</span>
+            <span class="btn-sub" data-i18n="spread.index.desc">Browse all 78 cards</span>
           </button>
         </div>
       </div>
@@ -1157,51 +1162,66 @@
       <!-- Visual & AI settings -->
       <div class="setup-col" id="visual-settings-col">
         <div class="settings-header">
-          <button class="settings-close" onclick="toggleSettingsPanel()" aria-label="Close settings">✕</button>
+          <button class="settings-close" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsClose.ariaLabel" aria-label="Close settings">✕</button>
         </div>
         <div class="deck-section">
-          <p class="section-label">Card visual theme</p>
+          <p class="section-label" data-i18n="setup.deck.label">Card visual theme</p>
           <div class="choice-group" id="deck-choices">
             <button class="choice-btn selected" data-val="rider-waite" onclick="selectChoice('deck', this)">
-              <span class="btn-title">Rider-Waite-Smith (1909)</span>
-              <span class="btn-sub">Pamela Colman Smith's classic illustrations</span>
+              <span class="btn-title" data-i18n="deck.riderWaite.title">Rider-Waite-Smith (1909)</span>
+              <span class="btn-sub" data-i18n="deck.riderWaite.desc">Pamela Colman Smith's classic illustrations</span>
             </button>
             <button class="choice-btn" data-val="visconti" onclick="selectChoice('deck', this)">
-              <span class="btn-title">Visconti-Sforza (1440s)</span>
-              <span class="btn-sub">Painted majors; symbolic view for minors</span>
+              <span class="btn-title" data-i18n="deck.visconti.title">Visconti-Sforza (1440s)</span>
+              <span class="btn-sub" data-i18n="deck.visconti.desc">Painted majors; symbolic view for minors</span>
             </button>
             <button class="choice-btn" data-val="symbolic" onclick="selectChoice('deck', this)">
-              <span class="btn-title">Symbolic (No images)</span>
-              <span class="btn-sub">Text-based cards, no external images</span>
+              <span class="btn-title" data-i18n="deck.symbolic.title">Symbolic (No images)</span>
+              <span class="btn-sub" data-i18n="deck.symbolic.desc">Text-based cards, no external images</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="deck-section">
+          <p class="section-label" data-i18n="settings.language.label">Language</p>
+          <div class="choice-group" id="lang-choices">
+            <button class="choice-btn" data-val="en" onclick="setLang('en')">
+              <span class="btn-title">English</span>
+            </button>
+            <button class="choice-btn" data-val="ru" onclick="setLang('ru')">
+              <span class="btn-title">Русский</span>
+            </button>
+            <button class="choice-btn" data-val="es" onclick="setLang('es')">
+              <span class="btn-title">Español</span>
             </button>
           </div>
         </div>
 
         <!-- AI Settings -->
         <div class="ai-settings">
-          <h3>⊕ AI Interpretation (optional)</h3>
+          <h3 data-i18n="ai.title">⊕ AI Interpretation (optional)</h3>
           <div class="ai-row">
             <div class="ai-field">
-              <label>Provider</label>
+              <label data-i18n="ai.provider.label">Provider</label>
               <select id="ai-provider" onchange="updateModelOptions()">
-                <option value="none">None — I'll interpret myself</option>
+                <option value="none" data-i18n="ai.provider.none">None — I'll interpret myself</option>
                 <option value="anthropic">Anthropic (Claude)</option>
                 <option value="openai">OpenAI (GPT)</option>
                 <option value="gemini">Google (Gemini)</option>
               </select>
             </div>
             <div class="ai-field" id="model-field">
-              <label>Model</label>
+              <label data-i18n="ai.model.label">Model</label>
               <select id="ai-model">
                 <option value="">—</option>
               </select>
             </div>
           </div>
           <div class="ai-field" id="key-field" style="display:none">
-            <label>API Key</label>
-            <input type="password" id="ai-key" placeholder="Paste your API key here — stored only in browser memory" autocomplete="off">
+            <label data-i18n="ai.key.label">API Key</label>
+            <input type="password" id="ai-key" data-i18n-ph="ai.key.placeholder" placeholder="Paste your API key here — stored only in browser memory" autocomplete="off">
           </div>
-          <p class="ai-note">Your key is never sent anywhere except directly to the chosen provider. It stays in memory only and is cleared when you close the tab.</p>
+          <p class="ai-note" data-i18n="ai.key.note">Your key is never sent anywhere except directly to the chosen provider. It stays in memory only and is cleared when you close the tab.</p>
         </div>
       </div>
 
@@ -1211,7 +1231,7 @@
 
   <!-- DEALING PANEL -->
   <div class="panel" id="dealing-panel">
-    <p class="dealing-msg" id="dealing-msg">Shuffling the deck...</p>
+    <p class="dealing-msg" id="dealing-msg" data-i18n="dealing.msg">Shuffling the deck...</p>
     <div class="dealing-cards" id="dealing-placeholders"></div>
   </div>
 
@@ -1224,12 +1244,12 @@
     <div class="divider"><div class="divider-gem"></div></div>
     
     <div id="index-filters" style="display:none; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2rem;">
-      <button class="choice-btn selected" data-filter="all"       onclick="filterIndex(this)">All</button>
-      <button class="choice-btn"          data-filter="Major"     onclick="filterIndex(this)">Major Arcana</button>
-      <button class="choice-btn"          data-filter="Wands"     onclick="filterIndex(this)">Wands</button>
-      <button class="choice-btn"          data-filter="Cups"      onclick="filterIndex(this)">Cups</button>
-      <button class="choice-btn"          data-filter="Swords"    onclick="filterIndex(this)">Swords</button>
-      <button class="choice-btn"          data-filter="Pentacles" onclick="filterIndex(this)">Pentacles</button>
+      <button class="choice-btn selected" data-filter="all"       onclick="filterIndex(this)" data-i18n="index.filter.all">All</button>
+      <button class="choice-btn"          data-filter="Major"     onclick="filterIndex(this)" data-i18n="index.filter.major">Major Arcana</button>
+      <button class="choice-btn"          data-filter="Wands"     onclick="filterIndex(this)" data-i18n="index.filter.wands">Wands</button>
+      <button class="choice-btn"          data-filter="Cups"      onclick="filterIndex(this)" data-i18n="index.filter.cups">Cups</button>
+      <button class="choice-btn"          data-filter="Swords"    onclick="filterIndex(this)" data-i18n="index.filter.swords">Swords</button>
+      <button class="choice-btn"          data-filter="Pentacles" onclick="filterIndex(this)" data-i18n="index.filter.pentacles">Pentacles</button>
     </div>
 
     <!-- Card visuals -->
@@ -1239,28 +1259,28 @@
 
     <!-- Card meanings -->
     <div id="meanings-section" class="meanings-section">
-      <h3>Card Meanings</h3>
+      <h3 data-i18n="reading.meanings.title">Card Meanings</h3>
       <div class="meaning-cards" id="meaning-cards"></div>
     </div>
 
     <!-- AI section -->
     <div class="ai-reading-section" id="ai-section">
       <div class="ai-reading-box">
-        <h3>Interpretation</h3>
-        <div id="ai-output" class="placeholder">Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.</div>
+        <h3 data-i18n="reading.interpretation.title">Interpretation</h3>
+        <div id="ai-output" class="placeholder" data-i18n="ai.output.placeholder">Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.</div>
         <div class="ai-actions">
-          <button class="btn-primary" id="ai-btn" onclick="getAiReading()" style="display:none">Get AI Reading</button>
-          <button class="btn-secondary" onclick="clearAiReading()" id="clear-ai-btn" style="display:none">Clear</button>
+          <button class="btn-primary" id="ai-btn" onclick="getAiReading()" style="display:none" data-i18n="ai.button.get">Get AI Reading</button>
+          <button class="btn-secondary" onclick="clearAiReading()" id="clear-ai-btn" style="display:none" data-i18n="ai.button.clear">Clear</button>
         </div>
       </div>
     </div>
 
     <div class="reading-footer">
-      <button class="btn-primary" onclick="beginReading(true)">Read Again</button>
-      <button class="btn-secondary" id="share-btn" onclick="shareReading()" style="display:none">Share Reading</button>
-      <button class="btn-secondary" id="copy-link-btn" onclick="copyLinkToClipboard()" style="display:none">Copy Link</button>
-      <button class="btn-secondary" id="copy-image-btn" onclick="copyImageToClipboard()" style="display:none">Copy Image</button>
-      <button class="btn-secondary" onclick="goToSetup()">Change Settings</button>
+      <button class="btn-primary" onclick="beginReading(true)" data-i18n="reading.button.readAgain">Read Again</button>
+      <button class="btn-secondary" id="share-btn" onclick="shareReading()" style="display:none" data-i18n="reading.button.share">Share Reading</button>
+      <button class="btn-secondary" id="copy-link-btn" onclick="copyLinkToClipboard()" style="display:none" data-i18n="reading.button.copyLink">Copy Link</button>
+      <button class="btn-secondary" id="copy-image-btn" onclick="copyImageToClipboard()" style="display:none" data-i18n="reading.button.copyImage">Copy Image</button>
+      <button class="btn-secondary" onclick="goToSetup()" data-i18n="reading.button.changeSettings">Change Settings</button>
     </div>
   </div><!-- /reading-panel -->
 
@@ -1290,11 +1310,11 @@
             <div class="modal-keywords" id="modal-keywords"></div>
             <div class="modal-meaning">
               <div class="modal-meaning-block modal-upright-block" id="modal-upright-block">
-                <h4>Upright</h4>
+                <h4 data-i18n="modal.upright">Upright</h4>
                 <p class="modal-upright" id="modal-upright"></p>
               </div>
               <div class="modal-meaning-block modal-reversed-block" id="modal-reversed-block">
-                <h4>Reversed</h4>
+                <h4 data-i18n="modal.reversed">Reversed</h4>
                 <p class="modal-reversed" id="modal-reversed"></p>
               </div>
             </div>
@@ -1311,10 +1331,12 @@
 const state = {
   spread: 'single',
   deck: 'rider-waite',
-  system: 'rws',
   drawnCards: [],
   currentSpread: null,
 };
+
+// Card Index: the filter currently shown, so a language switch can re-render it.
+let currentIndexFilter = 'all';
 
 // ===== STARS =====
 (function() {
@@ -1334,406 +1356,94 @@ const state = {
   }
 })();
 
-// ===== SPREADS =====
-const SPREADS = {
-  single: {
-    name: 'Single Card',
-    desc: 'A single card drawn for focus, clarity, or daily guidance.',
-    positions: ['The Card']
-  },
-  three: {
-    name: 'Three Card Spread',
-    desc: 'Three cards illuminate the flow of past into present into future.',
-    positions: ['Past', 'Present', 'Future']
-  },
-  celtic: {
-    name: 'Celtic Cross',
-    desc: 'The classical ten-card spread for deep and comprehensive insight.',
-    positions: ['The Present', 'The Challenge', 'The Distant Past', 'The Recent Past', 'The Best Outcome', 'The Near Future', 'Your Attitude', 'External Influences', 'Hopes & Fears', 'The Outcome']
-  },
-  horseshoe: {
-    name: 'Horseshoe Spread',
-    desc: 'Seven cards arc around a situation to reveal its full dimensions.',
-    positions: ['The Past', 'The Present', 'Hidden Influences', 'Obstacles', 'External Influences', 'Advice', 'Likely Outcome']
-  },
-  relationship: {
-    name: 'Relationship Spread',
-    desc: 'Six cards examine the bond between two people.',
-    positions: ['You', 'The Other', 'The Connection', 'Strengths', 'Challenges', 'What to Cultivate']
-  }
-};
+// ===== DATA (loaded at runtime from data/*.json — see boot()) =====
+const SUPPORTED_LANGS = ['en', 'ru', 'es'];
+const LS_LANG = 'liahim.lang';
 
-// ===== LOCAL IMAGE ASSETS =====
-// All card art is bundled under tarot-images/<deck>/{thumb,full}/<file>.webp
-// Majors are keyed by their number within the current system
-const IMAGE_BASE = 'tarot-images';
-
-const IMAGE_DECK_DIR = {
+// state.deck value -> deck JSON basename under data/decks/. 'symbolic' has no
+// deck file and no image dir (text-only).
+const DECK_FILE = {
   'rider-waite': 'rider-waite-smith',
   'visconti':    'visconti-sforza',
 };
 
-// Cards with no surviving / available art in a given deck: go straight to the
-// text placeholder instead of firing a request that can only 404.
-const IMAGE_MISSING = {
-  'visconti-sforza': new Set([
-    'major-15', 'major-16',                    // The Devil & The Tower — lost since the 15th c.
-    'cups-king', 'pents-knight', 'swords-3',   // never painted / not survived
-  ]),
-};
+const RAW = { cards: [], decks: {}, locales: {} };
+let LANG = 'en';
+let CARDS = [];                        // flat, resolved for LANG + state.deck
+let SPREADS = {};                      // flat, resolved for LANG
+let DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set() };
+
+// { en:…, ru:… } -> string for the active language, falling back to en.
+function pick(field) {
+  if (field == null) return '';
+  if (typeof field === 'string') return field;
+  return field[LANG] ?? field.en ?? '';
+}
+
+// UI-chrome catalog lookup: active language, then en, then the key itself.
+function t(key) {
+  const cur = (RAW.locales[LANG] || {})[key];
+  if (cur != null) return cur;
+  const fb = (RAW.locales.en || {})[key];
+  return fb != null ? fb : key;
+}
+
+// Build DECK (image dir + missing-art set + number overrides + exclusions).
+function resolveDeck(deckVal) {
+  DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set() };
+  const data = RAW.decks[DECK_FILE[deckVal]];
+  if (!data) return;                   // 'symbolic' / unknown -> no images
+  DECK.image_dir = data.image_dir || data.deck_id || DECK_FILE[deckVal];
+  const cards = data.cards || {};
+  for (const id in cards) {
+    const patch = cards[id];
+    if (patch === null) { DECK.excluded.add(id); continue; }
+    if (patch.image === null) DECK.missing.add(id);
+    if (typeof patch.number === 'number') DECK.numberOverride[id] = patch.number;
+  }
+}
+
+// Flatten RAW.cards to the shape the render code expects, for LANG + current deck.
+function resolveCards() {
+  CARDS = RAW.cards
+    .filter(c => !DECK.excluded.has(c.id))
+    .map(c => ({
+      id: c.id,
+      arcana: c.arcana,
+      suit: c.suit,
+      rank: c.rank,
+      number: c.rank,                  // majors: rank IS the arcana number
+      symbol: c.symbol,
+      name: pick(c.name),
+      keywords: (c.keywords && (c.keywords[LANG] || c.keywords.en)) || [],
+      upright: pick(c.divination_meaning && c.divination_meaning.upright),
+      reversed: pick(c.divination_meaning && c.divination_meaning.reversed),
+    }));
+}
+
+// Flatten the spread catalog (title/desc/positions live in the locale files).
+function resolveSpreads() {
+  SPREADS = {};
+  for (const key of ['single', 'three', 'celtic', 'horseshoe', 'relationship']) {
+    const pos = t(`spread.${key}.positions`);
+    SPREADS[key] = {
+      name: t(`spread.${key}.title`),
+      desc: t(`spread.${key}.desc`),
+      positions: Array.isArray(pos) ? pos : [],
+    };
+  }
+}
+
+// ===== LOCAL IMAGE ASSETS =====
+// All card art is bundled under tarot-images/<deck.image_dir>/{thumb,full}/<file>.webp
+const IMAGE_BASE = 'tarot-images';
 
 // Basename of the art file for a card in the current deck, or null if none.
 function cardImageName(card) {
-  const dir = IMAGE_DECK_DIR[state.deck];
-  if (!dir) return null;
-  if (IMAGE_MISSING[dir] && IMAGE_MISSING[dir].has(card.id)) return null;
+  if (!DECK.image_dir) return null;                 // symbolic deck
+  if (DECK.missing.has(card.id)) return null;
   return card.arcana === 'Major' ? `major-${getCardNumber(card)}` : card.id;
 }
-
-// Thoth system: rename suits & some major arcana
-const THOTH_MAP = {
-  'Strength': 'Lust',
-  'Justice': 'Adjustment',
-  'Judgement': 'The Aeon',
-  'The World': 'The Universe',
-  'Wands': 'Wands',
-  'Cups': 'Cups',
-  'Swords': 'Swords',
-  'Pentacles': 'Disks',
-};
-
-// Visconti system: the older major-arcana numbering, where Justice is VIII and
-// Strength is XI (Rider-Waite-Smith swapped the two). Card identities and
-// descriptions are unchanged — only the number and the index order differ.
-const VISCONTI_MAJOR_NUMBERS = {
-  'major-8': 11,   // Strength
-  'major-11': 8,   // Justice
-};
-
-// ===== CARD DATA =====
-const CARDS_RWS = [
-  // MAJOR ARCANA
-  { id:'major-0',  name:'The Fool',         arcana:'Major',  number:0,  suit:null, symbol:'☿',
-    keywords:['beginnings','spontaneity','innocence','freedom'],
-    upright:'A leap of faith into the unknown. The Fool represents new beginnings, unlimited potential, and the courage to take the first step without knowing the destination.',
-    reversed:'Recklessness, naïve folly, or holding back from a necessary new beginning out of fear.' },
-  { id:'major-1',  name:'The Magician',     arcana:'Major',  number:1,  suit:null, symbol:'🜍',
-    keywords:['willpower','skill','manifestation','resourcefulness'],
-    upright:'All tools are available. The Magician channels divine will into earthly action — skilled, resourceful, and capable of transforming intention into reality.',
-    reversed:'Manipulation, poor planning, latent talents unexpressed, or misdirected energy.' },
-  { id:'major-2',  name:'The High Priestess', arcana:'Major', number:2, suit:null, symbol:'☽',
-    keywords:['intuition','mystery','subconscious','wisdom'],
-    upright:'Deep knowing without speaking. The High Priestess guards the threshold of inner wisdom — trust your intuition and the knowledge that comes without rational explanation.',
-    reversed:'Secrets withheld, disconnection from intuition, or surface-level understanding only.' },
-  { id:'major-3',  name:'The Empress',      arcana:'Major',  number:3,  suit:null, symbol:'♀',
-    keywords:['fertility','abundance','nurturing','nature'],
-    upright:'Life in full bloom. The Empress represents fertility, abundance, and the creative power of nature. Nurture what you love and watch it flourish.',
-    reversed:'Neglect, creative block, dependence, or smothering those in your care.' },
-  { id:'major-4',  name:'The Emperor',      arcana:'Major',  number:4,  suit:null, symbol:'♂',
-    keywords:['authority','structure','stability','leadership'],
-    upright:'Order established through will. The Emperor brings structure, authority, and the stability of clear boundaries. Build with intention and lead with integrity.',
-    reversed:'Domination, rigidity, excessive control, or abdication of responsibility.' },
-  { id:'major-5',  name:'The Hierophant',   arcana:'Major',  number:5,  suit:null, symbol:'⊕',
-    keywords:['tradition','conformity','morality','ethics'],
-    upright:'The wisdom of tradition. The Hierophant represents spiritual guidance, shared values, and the accumulated knowledge of institutions. Seek learning from established paths.',
-    reversed:'Rebellion against convention, personal spirituality outside dogma, or hypocrisy.' },
-  { id:'major-6',  name:'The Lovers',       arcana:'Major',  number:6,  suit:null, symbol:'♡',
-    keywords:['love','harmony','choices','alignment'],
-    upright:'The crossroads of the heart. The Lovers speak not only of romance but of the fundamental choices that define who we are and what we value.',
-    reversed:'Misalignment of values, poor decisions, or conflict within a close relationship.' },
-  { id:'major-7',  name:'The Chariot',      arcana:'Major',  number:7,  suit:null, symbol:'♋',
-    keywords:['control','willpower','victory','determination'],
-    upright:'Forward through opposing forces. The Chariot represents the triumph of disciplined will — holding contradictory forces in tension and driving them toward a single goal.',
-    reversed:'Lack of control, aggression, scattered forces pulling in every direction.' },
-  { id:'major-8',  name:'Strength',         arcana:'Major',  number:8,  suit:null, symbol:'♌',
-    keywords:['courage','patience','compassion','inner strength'],
-    upright:'Courage that does not roar. Strength is the patient taming of raw force through gentleness and love rather than domination — inner mastery over primal impulse.',
-    reversed:'Self-doubt, weakness of character, or force used as compensation for inner insecurity.' },
-  { id:'major-9',  name:'The Hermit',       arcana:'Major',  number:9,  suit:null, symbol:'♍',
-    keywords:['introspection','solitude','guidance','seeking'],
-    upright:'The light you carry inward. The Hermit retreats from the world to listen to the deepest truth — a guide who shows the path but does not walk it for you.',
-    reversed:'Isolation turned to loneliness, withdrawal from the world as escape rather than wisdom.' },
-  { id:'major-10', name:'Wheel of Fortune', arcana:'Major',  number:10, suit:null, symbol:'☉',
-    keywords:['cycles','fate','turning point','luck'],
-    upright:'The great wheel turns. Fortune reminds us that life moves in cycles and that change — both welcome and difficult — is the one true constant of existence.',
-    reversed:'Bad luck, resistance to change, or clinging to the past as the wheel moves on.' },
-  { id:'major-11', name:'Justice',          arcana:'Major',  number:11, suit:null, symbol:'⚖',
-    keywords:['fairness','truth','cause & effect','law'],
-    upright:'The scales that cannot be deceived. Justice represents truth, accountability, and the impartial consequences of every choice — no more and no less than what is due.',
-    reversed:'Unfairness, dishonesty, refusal of responsibility, or legal complications.' },
-  { id:'major-12', name:'The Hanged Man',   arcana:'Major',  number:12, suit:null, symbol:'⊗',
-    keywords:['suspension','surrender','new perspective','sacrifice'],
-    upright:'Willingly suspended between worlds. The Hanged Man chooses to pause, to surrender control, and in doing so sees what was invisible from the upright perspective.',
-    reversed:'Delays, resistance to necessary sacrifice, or stagnation that no longer serves.' },
-  { id:'major-13', name:'Death',            arcana:'Major',  number:13, suit:null, symbol:'♏',
-    keywords:['endings','transition','transformation','change'],
-    upright:'What must end so something may live. Death is seldom literal — it is the great transformer, clearing away what has been outgrown to make space for what must emerge.',
-    reversed:'Resistance to ending, stagnation, fear of letting go of an identity that no longer fits.' },
-  { id:'major-14', name:'Temperance',       arcana:'Major',  number:14, suit:null, symbol:'♐',
-    keywords:['balance','moderation','patience','purpose'],
-    upright:'The alchemy of the middle way. Temperance blends opposites into something finer than either alone — patience, moderation, and the grace of working in perfect proportion.',
-    reversed:'Imbalance, excess, impatience, or discord caused by extremes.' },
-  { id:'major-15', name:'The Devil',        arcana:'Major',  number:15, suit:null, symbol:'♑',
-    keywords:['bondage','addiction','materialism','shadow'],
-    upright:'The chains we forge ourselves. The Devil illuminates where we are enslaved by fear, desire, or habit — and reminds us that the chains are often not as binding as they appear.',
-    reversed:'Detachment from addiction, releasing what binds, or reclaiming personal freedom.' },
-  { id:'major-16', name:'The Tower',        arcana:'Major',  number:16, suit:null, symbol:'♜',
-    keywords:['sudden change','upheaval','revelation','chaos'],
-    upright:'Lightning and necessary ruin. The Tower strikes down what was built on a false foundation — a dramatic clearing, painful in the moment, that reveals essential truth.',
-    reversed:'Avoiding necessary change, clinging to a structure that must fall, or disaster averted.' },
-  { id:'major-17', name:'The Star',         arcana:'Major',  number:17, suit:null, symbol:'★',
-    keywords:['hope','renewal','inspiration','serenity'],
-    upright:'The sky opens after the storm. The Star pours out hope freely — a deep assurance that the universe is benevolent and that healing, renewal, and inspiration are flowing toward you.',
-    reversed:'Despair, lost faith, or feeling disconnected from hope and creative inspiration.' },
-  { id:'major-18', name:'The Moon',         arcana:'Major',  number:18, suit:null, symbol:'☾',
-    keywords:['illusion','fear','subconscious','confusion'],
-    upright:'The path that dissolves in moonlight. The Moon speaks of illusion, the subconscious, and the uncertain territory between what is real and what is imagined. Not all is as it appears.',
-    reversed:'Clarity beginning to emerge from confusion, releasing irrational fears, or deception exposed.' },
-  { id:'major-19', name:'The Sun',          arcana:'Major',  number:19, suit:null, symbol:'☀',
-    keywords:['joy','success','vitality','clarity'],
-    upright:'Life at its fullest brightness. The Sun radiates success, joy, and the pure vitality of existence — a time of clarity, warmth, and unambiguous good fortune.',
-    reversed:'Temporary setbacks to happiness, blocked success, or optimism dimmed by circumstance.' },
-  { id:'major-20', name:'Judgement',        arcana:'Major',  number:20, suit:null, symbol:'🔔',
-    keywords:['reflection','reckoning','awakening','absolution'],
-    upright:'Called into being. Judgement signals a profound awakening — a summons to rise, to evaluate your life honestly, and to answer the call you have been hearing beneath the surface.',
-    reversed:'Self-doubt, refusal of the call, fear of judgment, or ignoring a major awakening.' },
-  { id:'major-21', name:'The World',        arcana:'Major',  number:21, suit:null, symbol:'⊕',
-    keywords:['completion','integration','accomplishment','wholeness'],
-    upright:'The dance of completion. The World marks the triumphant end of a cycle — full integration, mastery achieved, and the joyful awareness that you have arrived exactly where you were meant to be.',
-    reversed:'Incomplete endings, shortcuts avoiding necessary closure, or inability to celebrate success.' },
-
-  // WANDS
-  { id:'wands-ace', name:'Ace of Wands',    arcana:'Minor', number:1, suit:'Wands', symbol:'🔥',
-    keywords:['inspiration','potential','creation','energy'],
-    upright:'The spark of creative fire. A powerful new beginning in the realm of passion, inspiration, and creative endeavor. Seize the moment.',
-    reversed:'Delays, lack of motivation, creative blocks, or a promising idea failing to ignite.' },
-  { id:'wands-2', name:'Two of Wands',      arcana:'Minor', number:2, suit:'Wands', symbol:'🌍',
-    keywords:['planning','progress','discovery','decisions'],
-    upright:'The world spread before you, waiting. A moment of bold vision — you stand at the threshold of a great journey, choosing your direction with confidence.',
-    reversed:'Fear of the unknown, lack of planning, or playing it too safe when expansion is needed.' },
-  { id:'wands-3', name:'Three of Wands',    arcana:'Minor', number:3, suit:'Wands', symbol:'⛵',
-    keywords:['expansion','foresight','overseas','leadership'],
-    upright:'Your ships are in. The initial work is done and results are coming — foresight, expansion, and the confidence of one who has ventured boldly into the unknown.',
-    reversed:'Delays in results, lack of foresight, or plans failing to take off as hoped.' },
-  { id:'wands-4', name:'Four of Wands',     arcana:'Minor', number:4, suit:'Wands', symbol:'🏡',
-    keywords:['celebration','harmony','homecoming','community'],
-    upright:'Garlands hung, celebration earned. A time of joy, homecoming, and well-earned rest — community, harmony, and the pleasure of stable foundations.',
-    reversed:'Transition, instability at home, or celebration that is incomplete or disrupted.' },
-  { id:'wands-5', name:'Five of Wands',     arcana:'Minor', number:5, suit:'Wands', symbol:'⚔',
-    keywords:['conflict','competition','tension','diversity'],
-    upright:'Wands clashing in the arena. Competition, disagreement, and productive conflict — a chaotic energy that can sharpen ideas if channeled, or exhaust if allowed to run wild.',
-    reversed:'Avoiding conflict, inner tension, competition that turns destructive, or resolution of strife.' },
-  { id:'wands-6', name:'Six of Wands',      arcana:'Minor', number:6, suit:'Wands', symbol:'🏆',
-    keywords:['victory','recognition','progress','self-confidence'],
-    upright:'The victor rides home crowned. Public recognition, success after effort, and the confidence that comes from having earned genuine acclaim.',
-    reversed:'Ego, fall from grace, lack of recognition, or private victory without public acknowledgment.' },
-  { id:'wands-7', name:'Seven of Wands',    arcana:'Minor', number:7, suit:'Wands', symbol:'🛡',
-    keywords:['challenge','perseverance','defense','competition'],
-    upright:'Stand your ground on the hilltop. You hold an advantageous position but must defend it against those who would take it — courage, perseverance, and standing firm in your convictions.',
-    reversed:'Overwhelmed, giving up, indecision at a critical moment, or abandoning a position unnecessarily.' },
-  { id:'wands-8', name:'Eight of Wands',    arcana:'Minor', number:8, suit:'Wands', symbol:'💫',
-    keywords:['speed','action','air travel','movement'],
-    upright:'Everything at once, swift and sure. Rapid movement, news arriving quickly, and the energizing rush of things finally moving after a long stillness.',
-    reversed:'Delays, frustration, slowing down, or energy scattered without clear direction.' },
-  { id:'wands-9', name:'Nine of Wands',     arcana:'Minor', number:9, suit:'Wands', symbol:'🧱',
-    keywords:['resilience','grit','last stand','persistence'],
-    upright:'Wounded but undefeated. The battle-worn figure who stands ready for one more challenge — resilience, persistence, and the strength of one who has already survived much.',
-    reversed:'Exhaustion, paranoia, refusing help, or an inability to recover from past wounds.' },
-  { id:'wands-10', name:'Ten of Wands',     arcana:'Minor', number:10, suit:'Wands', symbol:'⛓',
-    keywords:['burden','responsibility','hard work','completion'],
-    upright:'The weight of all you carry. Overburdened but almost at the destination — a reminder that heavy responsibilities must eventually be set down to reach true completion.',
-    reversed:'Delegating, releasing burdens, or finally setting down what you have carried too long.' },
-  { id:'wands-page', name:'Page of Wands',  arcana:'Minor', number:11, suit:'Wands', symbol:'🧑',
-    keywords:['enthusiasm','exploration','discovery','free spirit'],
-    upright:'Wild-eyed with possibility. The Page of Wands brings youthful enthusiasm, an explorer\'s spirit, and the energy to leap into new adventures without looking back.',
-    reversed:'Lack of direction, immaturity, all energy and no follow-through.' },
-  { id:'wands-knight', name:'Knight of Wands', arcana:'Minor', number:12, suit:'Wands', symbol:'🏇',
-    keywords:['action','adventure','impulsiveness','energy'],
-    upright:'Charging ahead without looking back. The Knight of Wands is pure passionate momentum — adventurous, courageous, and sometimes recklessly fast. Energy crackles around every move.',
-    reversed:'Recklessness, scattered energy, haste causing errors, or passion burning out.' },
-  { id:'wands-queen', name:'Queen of Wands',  arcana:'Minor', number:13, suit:'Wands', symbol:'👑',
-    keywords:['courage','confidence','independence','determination'],
-    upright:'Radiant, magnetic, entirely herself. The Queen of Wands commands attention through sheer presence — warm, courageous, and possessed of an almost solar self-assurance.',
-    reversed:'Jealousy, self-doubt, demanding attention, or fire turned inward as aggression.' },
-  { id:'wands-king', name:'King of Wands',    arcana:'Minor', number:14, suit:'Wands', symbol:'♛',
-    keywords:['natural-born leader','vision','entrepreneur','honor'],
-    upright:'The visionary on the throne. The King of Wands leads through inspiration rather than force — a natural entrepreneur, passionate and bold, who others follow because they want to.',
-    reversed:'Impulsiveness, ruthlessness, high expectations that become tyranny.' },
-
-  // CUPS
-  { id:'cups-ace', name:'Ace of Cups',      arcana:'Minor', number:1, suit:'Cups', symbol:'💧',
-    keywords:['new love','overflowing emotions','intuition','spiritual renewal'],
-    upright:'The cup of the heart, overflowing. A new emotional beginning — love, compassion, and spiritual renewal pouring forth like a chalice that cannot be emptied.',
-    reversed:'Emotional blockage, repressed feelings, or an inability to receive what is offered.' },
-  { id:'cups-2', name:'Two of Cups',        arcana:'Minor', number:2, suit:'Cups', symbol:'💑',
-    keywords:['unified love','partnership','attraction','connection'],
-    upright:'Two turned toward each other. A profound connection — romantic, creative, or deeply personal — built on mutual recognition and the magic of feeling truly met.',
-    reversed:'Misalignment, broken connection, codependency, or the end of a meaningful union.' },
-  { id:'cups-3', name:'Three of Cups',      arcana:'Minor', number:3, suit:'Cups', symbol:'🎉',
-    keywords:['celebration','friendship','creativity','community'],
-    upright:'Three cups raised in joy. Community celebration, friendship, creative collaboration, and the particular pleasure of belonging. Dance with those you love.',
-    reversed:'Gossip, excess, social isolation, or joy curdled by overindulgence.' },
-  { id:'cups-4', name:'Four of Cups',       arcana:'Minor', number:4, suit:'Cups', symbol:'😔',
-    keywords:['apathy','contemplation','disconnection','reevaluation'],
-    upright:'Turning inward, missing what is offered. The Four of Cups speaks of withdrawal, apathy, and the tendency to overlook what is given while brooding over what is not.',
-    reversed:'Renewed motivation, emerging from withdrawal, choosing to re-engage with life.' },
-  { id:'cups-5', name:'Five of Cups',       arcana:'Minor', number:5, suit:'Cups', symbol:'😢',
-    keywords:['loss','regret','grief','disappointment'],
-    upright:'Spilled and mourned. The Five of Cups asks you to grieve what is lost — but gently reminds you that two cups still stand behind you, full.',
-    reversed:'Moving on, forgiveness, focusing on what remains rather than what was lost.' },
-  { id:'cups-6', name:'Six of Cups',        arcana:'Minor', number:6, suit:'Cups', symbol:'🌸',
-    keywords:['nostalgia','innocence','reunion','childhood'],
-    upright:'Sweet remembered things. The Six of Cups carries the scent of childhood — nostalgia, innocence, kindness freely given, and the reunion of souls from the past.',
-    reversed:'Living too much in the past, naive idealism, or refusing to grow beyond what once was.' },
-  { id:'cups-7', name:'Seven of Cups',      arcana:'Minor', number:7, suit:'Cups', symbol:'💭',
-    keywords:['illusion','fantasy','choices','wishful thinking'],
-    upright:'Seven doors, most of them mirages. Imagination and choice expand before you, but not all visions are real. Discern between wish and genuine possibility.',
-    reversed:'Clarity cutting through illusion, making a decisive choice, or wishful thinking dispelled.' },
-  { id:'cups-8', name:'Eight of Cups',      arcana:'Minor', number:8, suit:'Cups', symbol:'🌒',
-    keywords:['walking away','disillusionment','leaving behind','searching for truth'],
-    upright:'Turning from what no longer fills. The Eight of Cups depicts the courage of walking away from what was — not in bitterness, but in search of something truer.',
-    reversed:'Fear of moving on, returning to what should be left, or stagnation disguised as loyalty.' },
-  { id:'cups-9', name:'Nine of Cups',       arcana:'Minor', number:9, suit:'Cups', symbol:'✨',
-    keywords:['contentment','satisfaction','gratitude','wish come true'],
-    upright:'The wish card. All nine cups full behind you — deep satisfaction, the pleasure of desires fulfilled, and the warmth of abundance. Pause to savor what is yours.',
-    reversed:'Overindulgence, materialism, satisfaction that rings hollow, or counting blessings too rarely.' },
-  { id:'cups-10', name:'Ten of Cups',       arcana:'Minor', number:10, suit:'Cups', symbol:'🌈',
-    keywords:['divine love','harmony','alignment','family'],
-    upright:'The rainbow over a joyful family. The Ten of Cups represents the fullest emotional happiness — lasting love, deep belonging, harmony in the home, and true contentment.',
-    reversed:'Broken family, surface harmony hiding discord, or idealized happiness that cannot be sustained.' },
-  { id:'cups-page', name:'Page of Cups',    arcana:'Minor', number:11, suit:'Cups', symbol:'🐟',
-    keywords:['creative opportunities','curiosity','possibility','new ideas'],
-    upright:'A fish speaks from the cup — wonder without cynicism. The Page of Cups brings intuitive messages, creative opportunity, and the open-hearted curiosity of one who sees magic in ordinary things.',
-    reversed:'Immaturity, moodiness, creative ideas that don\'t progress beyond daydreaming.' },
-  { id:'cups-knight', name:'Knight of Cups', arcana:'Minor', number:12, suit:'Cups', symbol:'🦄',
-    keywords:['romanticism','charm','imagination','beauty'],
-    upright:'The dreaming knight rides slowly forward. Romantic, idealistic, and moved by beauty — the Knight of Cups follows the heart with artistry, grace, and sincere feeling.',
-    reversed:'Moodiness, jealousy, unrealistic idealism, or charm used to manipulate.' },
-  { id:'cups-queen', name:'Queen of Cups',  arcana:'Minor', number:13, suit:'Cups', symbol:'🐚',
-    keywords:['compassionate','caring','empathic','intuitive'],
-    upright:'Still water that sees everything. The Queen of Cups is profoundly empathic — a keeper of deep emotional wisdom, intuitive, compassionate, and capable of infinite understanding.',
-    reversed:'Emotional insecurity, dependency, or feelings so internalized they become hidden manipulation.' },
-  { id:'cups-king', name:'King of Cups',    arcana:'Minor', number:14, suit:'Cups', symbol:'🌊',
-    keywords:['compassion','control','balance','wisdom'],
-    upright:'The ocean king who remains calm. Emotional mastery — the King of Cups holds deep feelings without being drowned by them, offering wise and compassionate counsel.',
-    reversed:'Moodiness, emotional manipulation, or feelings suppressed until they erupt.' },
-
-  // SWORDS
-  { id:'swords-ace', name:'Ace of Swords',  arcana:'Minor', number:1, suit:'Swords', symbol:'⚡',
-    keywords:['breakthrough','clarity','sharp mind','truth'],
-    upright:'A blade of pure clarity. The Ace of Swords cuts through confusion to reveal essential truth — a breakthrough in thinking, an important decision that must be made with integrity.',
-    reversed:'Confusion, brutality, using intelligence as a weapon, or a truth that comes at great cost.' },
-  { id:'swords-2', name:'Two of Swords',    arcana:'Minor', number:2, suit:'Swords', symbol:'⚖',
-    keywords:['indecision','stalemate','blocked emotions','avoidance'],
-    upright:'Eyes covered, blades crossed. The Two of Swords speaks of a stalemate, indecision, or a deliberate turning away from a truth that must eventually be faced.',
-    reversed:'Indecision resolved, seeing clearly at last, or deception coming to light.' },
-  { id:'swords-3', name:'Three of Swords',  arcana:'Minor', number:3, suit:'Swords', symbol:'💔',
-    keywords:['heartbreak','sorrow','grief','hurt'],
-    upright:'Three swords through a heart, rain falling. The Three of Swords does not flinch from the reality of sorrow — grief, loss, and heartbreak that must be felt before they can be healed.',
-    reversed:'Recovery, releasing pain, forgiveness, or moving through grief toward the other side.' },
-  { id:'swords-4', name:'Four of Swords',   arcana:'Minor', number:4, suit:'Swords', symbol:'🕯',
-    keywords:['rest','restoration','contemplation','recovery'],
-    upright:'The knight lies still in the chapel. The Four of Swords prescribes rest — recovery, contemplation, and the necessary withdrawal from conflict to restore body and mind.',
-    reversed:'Restlessness, unable to rest even when needed, or returning to action before full recovery.' },
-  { id:'swords-5', name:'Five of Swords',   arcana:'Minor', number:5, suit:'Swords', symbol:'⚔',
-    keywords:['conflict','defeat','hostility','hollow victory'],
-    upright:'Victory with nothing left to celebrate. The Five of Swords warns of conflict that leaves everyone diminished — ask whether winning this battle is worth the damage.',
-    reversed:'Reconciliation, moving beyond conflict, or the regret that follows a pyrrhic victory.' },
-  { id:'swords-6', name:'Six of Swords',    arcana:'Minor', number:6, suit:'Swords', symbol:'⛵',
-    keywords:['transition','change','rite of passage','release'],
-    upright:'Moving toward calmer water. The Six of Swords promises passage out of turbulence — a necessary transition that may be sorrowful, but leads toward quieter shores.',
-    reversed:'Incomplete transition, inability to leave difficulties behind, or resisting a necessary move.' },
-  { id:'swords-7', name:'Seven of Swords',  arcana:'Minor', number:7, suit:'Swords', symbol:'🐱',
-    keywords:['betrayal','deception','strategy','sneaking away'],
-    upright:'Slipping away with what isn\'t yours. The Seven of Swords speaks of deception — whether you are being deceived, or whether you are taking a shortcut that bypasses integrity.',
-    reversed:'Coming clean, returning what was taken, or a deception finally uncovered.' },
-  { id:'swords-8', name:'Eight of Swords',  arcana:'Minor', number:8, suit:'Swords', symbol:'🧿',
-    keywords:['restriction','imprisonment','victim mentality','powerlessness'],
-    upright:'Bound but the path is clear. The Eight of Swords reveals restriction that is partly self-imposed — the blindfold can be removed; the ropes loosened. The prison is belief as much as circumstance.',
-    reversed:'Breaking free, new perspective, or recognizing that the constraints were never absolute.' },
-  { id:'swords-9', name:'Nine of Swords',   arcana:'Minor', number:9, suit:'Swords', symbol:'😰',
-    keywords:['anxiety','worry','fear','despair'],
-    upright:'Waking in the dark hours. The Nine of Swords represents the particular anguish of the restless mind — anxiety, worry, and the fears that seem most real at three in the morning.',
-    reversed:'Coming through the worst, seeking help, or realizing that fears were larger than reality.' },
-  { id:'swords-10', name:'Ten of Swords',   arcana:'Minor', number:10, suit:'Swords', symbol:'🌅',
-    keywords:['painful endings','defeat','crisis','rock bottom'],
-    upright:'The dawn that follows the darkest point. Ten swords in the back — complete defeat, crisis, and the hitting of a bottom that, paradoxically, is the very beginning of recovery.',
-    reversed:'Recovery, regeneration, or refusing to let a defeat be final.' },
-  { id:'swords-page', name:'Page of Swords', arcana:'Minor', number:11, suit:'Swords', symbol:'🦅',
-    keywords:['curiosity','restlessness','mental energy','thirst for knowledge'],
-    upright:'Alert, watchful, sword raised. The Page of Swords brings sharp curiosity, quick thinking, and the restless energy of a mind that wants to know everything immediately.',
-    reversed:'Deception, all talk no action, or gossip disguised as information.' },
-  { id:'swords-knight', name:'Knight of Swords', arcana:'Minor', number:12, suit:'Swords', symbol:'⚡',
-    keywords:['ambitious','action-oriented','driven','assertive'],
-    upright:'The charge without looking down. The Knight of Swords is pure decisive momentum — courageous, perhaps reckless, driven by intellect and the conviction that moving fast is moving right.',
-    reversed:'Aggressive, scatter-brained, or charging into battle without a strategy.' },
-  { id:'swords-queen', name:'Queen of Swords', arcana:'Minor', number:13, suit:'Swords', symbol:'🗡',
-    keywords:['independent','unbiased judgment','clear boundaries','direct communication'],
-    upright:'Clear eyes, clean cuts. The Queen of Swords has been through enough to know that clarity is kindness — she sees without illusion and communicates with a precision that is ultimately a gift.',
-    reversed:'Coldness, harsh criticism, or using sharp perception to wound rather than clarify.' },
-  { id:'swords-king', name:'King of Swords',   arcana:'Minor', number:14, suit:'Swords', symbol:'👁',
-    keywords:['mental clarity','authority','truth','analytical'],
-    upright:'The mind that sits in judgment. The King of Swords wields intellect with authority — clear, ethical, analytically precise, and committed to truth even when it is uncomfortable.',
-    reversed:'Misuse of power, tyranny, manipulative intelligence, or cold detachment from human consequences.' },
-
-  // PENTACLES
-  { id:'pents-ace', name:'Ace of Pentacles',  arcana:'Minor', number:1, suit:'Pentacles', symbol:'💰',
-    keywords:['opportunity','new beginnings','security','abundance'],
-    upright:'The coin from the cloud. A golden new beginning in the material world — opportunity for prosperity, health, and tangible security. Take the offer with both hands.',
-    reversed:'Missed opportunity, lost money, or material stability just out of reach.' },
-  { id:'pents-2', name:'Two of Pentacles',    arcana:'Minor', number:2, suit:'Pentacles', symbol:'⚖',
-    keywords:['balance','adaptability','time management','fluctuating priorities'],
-    upright:'Juggling gracefully in the storm. The Two of Pentacles is the art of balance — managing multiple priorities, fluctuating resources, and keeping all the necessary balls in the air.',
-    reversed:'Overwhelmed, disorganized, or imbalance between material and spiritual concerns.' },
-  { id:'pents-3', name:'Three of Pentacles',  arcana:'Minor', number:3, suit:'Pentacles', symbol:'🏛',
-    keywords:['teamwork','implementation','mastery','collaboration'],
-    upright:'The craftsman discusses the plans. The Three of Pentacles celebrates skillful collaboration — three different minds pooling their expertise to create something none could achieve alone.',
-    reversed:'Lack of teamwork, corners cut, work done without pride or proper collaboration.' },
-  { id:'pents-4', name:'Four of Pentacles',   arcana:'Minor', number:4, suit:'Pentacles', symbol:'🤑',
-    keywords:['saving money','security','conservatism','scarcity'],
-    upright:'Holding tight to what you have. The Four of Pentacles speaks of financial security through conservative management — but warns that clutching too tightly prevents both growth and generosity.',
-    reversed:'Letting go of materialism, overcoming scarcity mentality, or financial insecurity.' },
-  { id:'pents-5', name:'Five of Pentacles',   arcana:'Minor', number:5, suit:'Pentacles', symbol:'❄',
-    keywords:['financial loss','poverty','lack','isolation'],
-    upright:'Cold outside the lit window. Financial hardship, feeling left out in the cold, and the particular pain of material loss — yet the church door stands open for those who look up.',
-    reversed:'Recovery from hardship, accepting help, spiritual richness compensating material lack.' },
-  { id:'pents-6', name:'Six of Pentacles',    arcana:'Minor', number:6, suit:'Pentacles', symbol:'🤲',
-    keywords:['generosity','charity','giving & receiving','sharing wealth'],
-    upright:'The scales of giving. The Six of Pentacles depicts the flow of prosperity — generosity, fair dealing, and the understanding that abundance shared creates abundance multiplied.',
-    reversed:'Strings attached to gifts, unequal giving, debt, or generosity used as control.' },
-  { id:'pents-7', name:'Seven of Pentacles',  arcana:'Minor', number:7, suit:'Pentacles', symbol:'🌱',
-    keywords:['long-term view','sustainable results','perseverance','investment'],
-    upright:'Resting on the hoe, surveying the growth. The Seven of Pentacles counsels patience — good work takes time, and this pause to evaluate whether effort is yielding what was intended is necessary.',
-    reversed:'Impatience, poor returns, or working hard in the wrong direction.' },
-  { id:'pents-8', name:'Eight of Pentacles',  arcana:'Minor', number:8, suit:'Pentacles', symbol:'🔨',
-    keywords:['apprenticeship','dedication','high standards','skill development'],
-    upright:'Each coin shaped with full attention. The Eight of Pentacles is the joy of mastery through diligent work — learning a craft, honing a skill, and taking pride in doing the thing right.',
-    reversed:'Lack of focus, perfectionism that prevents completion, or shortcuts undermining quality.' },
-  { id:'pents-9', name:'Nine of Pentacles',   arcana:'Minor', number:9, suit:'Pentacles', symbol:'🦅',
-    keywords:['abundance','luxury','self-sufficiency','financial independence'],
-    upright:'The garden of earned abundance. The Nine of Pentacles celebrates self-sufficiency, elegant surroundings, and the deep pleasure of enjoying what one\'s own discipline has created.',
-    reversed:'Living beyond means, superficial values, or depending on others for what should be self-earned.' },
-  { id:'pents-10', name:'Ten of Pentacles',   arcana:'Minor', number:10, suit:'Pentacles', symbol:'🏘',
-    keywords:['legacy','financial security','inheritance','family'],
-    upright:'Three generations under arching pentacles. The Ten of Pentacles represents the fullness of material success — lasting wealth, family legacy, and the deep satisfaction of what is truly built to endure.',
-    reversed:'Family conflict over money, failed legacy, or financial instability despite apparent wealth.' },
-  { id:'pents-page', name:'Page of Pentacles',arcana:'Minor', number:11, suit:'Pentacles', symbol:'📚',
-    keywords:['manifestation','financial opportunity','skill development','diligence'],
-    upright:'The coin studied with pure attention. The Page of Pentacles approaches the material world with curiosity and diligence — a student of practical skill, ambitious but grounded.',
-    reversed:'Lack of focus, procrastination, or learning without practical application.' },
-  { id:'pents-knight', name:'Knight of Pentacles', arcana:'Minor', number:12, suit:'Pentacles', symbol:'🐎',
-    keywords:['hard work','productivity','routine','conventionality'],
-    upright:'The still knight who gets things done. The Knight of Pentacles moves slowly, methodically, and without drama — reliable, hardworking, and capable of sustained effort long after others have quit.',
-    reversed:'Boredom, being stuck in routine, or hard work with no flexibility or creative spark.' },
-  { id:'pents-queen', name:'Queen of Pentacles', arcana:'Minor', number:13, suit:'Pentacles', symbol:'🌿',
-    keywords:['down-to-earth','practical','nurturing','resourceful'],
-    upright:'Nature held in able hands. The Queen of Pentacles combines warm nurturing with practical wisdom — she creates a world of abundance, comfort, and beauty through intelligent and grounded action.',
-    reversed:'Materialism overwhelming the soul, smothering over-care, or neglect of practical needs.' },
-  { id:'pents-king', name:'King of Pentacles',   arcana:'Minor', number:14, suit:'Pentacles', symbol:'💎',
-    keywords:['abundance','prosperity','security','ambition'],
-    upright:'The throne grown from what was planted. The King of Pentacles embodies the mastery of the material world — secure, prosperous, generous, and possessed of the hard-won wisdom of one who built an empire one coin at a time.',
-    reversed:'Materialism, stubbornness, or wealth used as power rather than shared as abundance.' },
-];
 
 // ===== IMAGE URL HELPERS =====
 // Both variants are local WebP files: thumb/ for the spread grid, full/ for the
@@ -1744,38 +1454,30 @@ const CARDS_RWS = [
 const CORS_OK = location.protocol === 'http:' || location.protocol === 'https:';
 
 function getCardThumbUrl(card) {
-  const dir = IMAGE_DECK_DIR[state.deck];
-  const name = dir && cardImageName(card);
-  return name ? `${IMAGE_BASE}/${dir}/thumb/${name}.webp` : null;
+  const name = cardImageName(card);
+  return name ? `${IMAGE_BASE}/${DECK.image_dir}/thumb/${name}.webp` : null;
 }
 
 function getCardFullUrl(card) {
-  const dir = IMAGE_DECK_DIR[state.deck];
-  const name = dir && cardImageName(card);
-  return name ? `${IMAGE_BASE}/${dir}/full/${name}.webp` : null;
+  const name = cardImageName(card);
+  return name ? `${IMAGE_BASE}/${DECK.image_dir}/full/${name}.webp` : null;
 }
 
+// Card names are already resolved to the active language in resolveCards();
+// kept as a seam for any future per-deck rename overrides.
 function getCardName(card) {
-  if (state.system === 'thoth') {
-    if (THOTH_MAP[card.name]) return THOTH_MAP[card.name];
-    if (card.suit && THOTH_MAP[card.suit]) {
-      return card.name.replace(card.suit, THOTH_MAP[card.suit]);
-    }
-  }
   return card.name;
 }
 
 function getCardNumber(card) {
-  if (state.system === 'visconti' && VISCONTI_MAJOR_NUMBERS[card.id] != null) {
-    return VISCONTI_MAJOR_NUMBERS[card.id];
-  }
-  return card.number;
+  const o = DECK.numberOverride[card.id];
+  return o != null ? o : card.number;
 }
 
-// Major arcana in the order the current system numbers them.
+// Major arcana in the order the current deck numbers them.
 function orderedMajors() {
-  const majors = CARDS_RWS.filter(c => c.arcana === 'Major');
-  if (state.system !== 'visconti') return majors;
+  const majors = CARDS.filter(c => c.arcana === 'Major');
+  if (!Object.keys(DECK.numberOverride).length) return majors;
   return [...majors].sort((a, b) => getCardNumber(a) - getCardNumber(b));
 }
 
@@ -1789,7 +1491,7 @@ function shuffle(arr) {
 }
 
 function drawCards(n) {
-  const deck = shuffle(CARDS_RWS);
+  const deck = shuffle(CARDS);
   return deck.slice(0, n).map(card => ({
     ...card,
     isReversed: Math.random() < 0.3,
@@ -1805,12 +1507,54 @@ function selectChoice(group, btn) {
   state[group] = btn.dataset.val;
 
   if (group === 'deck') {
-    state.system = btn.dataset.val === 'visconti' ? 'visconti' : 'rws';
+    resolveDeck(state.deck);
+    resolveCards();
   }
 
   if (group === 'spread') {
     beginReading();
   }
+}
+
+// Switch UI + content language, persist the choice, and re-render live views.
+function setLang(lang) {
+  if (!SUPPORTED_LANGS.includes(lang) || lang === LANG) return;
+  LANG = lang;
+  try { localStorage.setItem(LS_LANG, lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  selectChoiceButton('lang', lang);
+
+  resolveDeck(state.deck);
+  resolveCards();
+  resolveSpreads();
+  applyI18n();
+
+  if (document.getElementById('reading-panel').classList.contains('active')) {
+    if (state.spread === 'index') {
+      renderIndex(currentIndexFilter);
+    } else if (state.currentSpread) {
+      state.currentSpread = SPREADS[state.spread];
+      state.drawnCards = state.drawnCards.map(dc => {
+        const base = CARDS.find(c => c.id === dc.id);
+        return { ...base, isReversed: dc.isReversed, displayName: getCardName(base) };
+      });
+      renderReading();
+    }
+  }
+}
+
+// Re-render every element carrying an i18n hook against the active locale.
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    el.setAttribute('aria-label', t(el.dataset.i18nAria));
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    el.setAttribute('placeholder', t(el.dataset.i18nPh));
+  });
+  document.title = t('app.titleTag');
 }
 
 function updateModelOptions() {
@@ -1906,12 +1650,12 @@ function decodeReadingFromURL() {
 
   const cards = cardStr.split(',').map(p => {
     const [id, flag] = p.split(':');
-    const base = CARDS_RWS.find(cc => cc.id === id);
+    const base = CARDS.find(cc => cc.id === id);
     return base ? { id: base.id, isReversed: flag === 'r' } : null;
   });
   if (cards.includes(null) || cards.length !== SPREADS[spreadKey].positions.length) return null;
 
-  return { spreadKey, system: 'rws', cards };
+  return { spreadKey, cards };
 }
 
 function applyDecodedReading(decoded) {
@@ -1924,10 +1668,9 @@ function applyDecodedReading(decoded) {
   }
 
   state.spread = decoded.spreadKey;
-  state.system = decoded.system;
   state.currentSpread = SPREADS[decoded.spreadKey];
   state.drawnCards = decoded.cards.map(c => {
-    const base = CARDS_RWS.find(cc => cc.id === c.id);
+    const base = CARDS.find(cc => cc.id === c.id);
     return { ...base, isReversed: c.isReversed, displayName: getCardName(base) };
   });
   selectChoiceButton('spread', decoded.spreadKey);
@@ -1995,7 +1738,7 @@ function drawReadingCard(ctx, card, position, x, y, w, h, img) {
   const headerH = 42;
   ctx.textAlign = 'center';
   ctx.fillStyle = '#b08838';
-  ctx.font = '600 15px Cinzel, Georgia, serif';
+  ctx.font = "600 15px Cinzel, 'Cormorant SC', Georgia, serif";
   wrapCenteredLines(ctx, position.toUpperCase(), w - 24).forEach((line, i) => {
     ctx.fillText(line, x + w / 2, y + 24 + i * 18);
   });
@@ -2025,7 +1768,7 @@ function drawReadingCard(ctx, card, position, x, y, w, h, img) {
   }
 
   ctx.fillStyle = '#e8c46a';
-  ctx.font = '600 19px Cinzel, Georgia, serif';
+  ctx.font = "600 19px Cinzel, 'Cormorant SC', Georgia, serif";
   const nameLines = wrapCenteredLines(ctx, card.displayName, w - 24);
   const nameLastLineY = y + h - (card.isReversed ? 56 : 30);
   nameLines.forEach((line, i) => {
@@ -2035,7 +1778,7 @@ function drawReadingCard(ctx, card, position, x, y, w, h, img) {
   if (card.isReversed) {
     ctx.fillStyle = '#c94f4f';
     ctx.font = 'italic 14px Georgia, serif';
-    ctx.fillText('Reversed', x + w / 2, y + h - 16);
+    ctx.fillText(t('reading.card.reversedBadge'), x + w / 2, y + h - 16);
   }
 
   ctx.restore();
@@ -2101,9 +1844,9 @@ async function buildReadingImageBlob() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
 
-  ctx.font = '600 40px Cinzel, Georgia, serif';
-  const titleWidth = ctx.measureText('The Hand of Liahim').width;
-  ctx.font = '600 22px Cinzel, Georgia, serif';
+  ctx.font = "600 40px Cinzel, 'Cormorant SC', Georgia, serif";
+  const titleWidth = ctx.measureText(t('app.title')).width;
+  ctx.font = "600 22px Cinzel, 'Cormorant SC', Georgia, serif";
   const spreadNameWidth = ctx.measureText(spread.name).width;
   const minHeaderWidth = Math.max(titleWidth, spreadNameWidth) + 80;
 
@@ -2120,11 +1863,11 @@ async function buildReadingImageBlob() {
   ctx.fillText('✦ ✦ ✦', width / 2, 56);
 
   ctx.fillStyle = '#e8c46a';
-  ctx.font = '600 40px Cinzel, Georgia, serif';
-  ctx.fillText('The Hand of Liahim', width / 2, 108);
+  ctx.font = "600 40px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.fillText(t('app.title'), width / 2, 108);
 
   ctx.fillStyle = '#b08838';
-  ctx.font = '600 22px Cinzel, Georgia, serif';
+  ctx.font = "600 22px Cinzel, 'Cormorant SC', Georgia, serif";
   ctx.fillText(spread.name, width / 2, 148);
 
   const startX = (width - gridWidth) / 2;
@@ -2136,7 +1879,7 @@ async function buildReadingImageBlob() {
   });
 
   ctx.fillStyle = 'rgba(176,136,56,0.6)';
-  ctx.font = '14px Cinzel, Georgia, serif';
+  ctx.font = "14px Cinzel, 'Cormorant SC', Georgia, serif";
   ctx.fillText('liahim.tgmf.st', width / 2, height - 28);
 
   return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
@@ -2162,9 +1905,9 @@ function getShareContent() {
   const url = CAPACITOR ? SHARE_ORIGIN + location.pathname + location.search : location.href;
   const spread = state.currentSpread;
   const text = state.spread === 'index'
-    ? 'The Tarot Card Index — The Hand of Liahim'
-    : `My ${spread.name} tarot reading:\n` + state.drawnCards
-        .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''}`)
+    ? t('share.indexText')
+    : t('share.readingLabel').replace('{spread}', spread.name) + '\n' + state.drawnCards
+        .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? t('share.reversedParen') : ''}`)
         .join('\n');
   return { url, text, combinedText: `${text}\n${url}` };
 }
@@ -2189,7 +1932,7 @@ async function shareReading() {
 
   if (imageFile && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
     try {
-      await navigator.share({ title: 'The Hand of Liahim', text, url, files: [imageFile] });
+      await navigator.share({ title: t('app.title'), text, url, files: [imageFile] });
       return;
     } catch (err) {
       if (err && err.name === 'AbortError') return;
@@ -2198,7 +1941,7 @@ async function shareReading() {
   }
 
   try {
-    await navigator.share({ title: 'The Hand of Liahim', text, url });
+    await navigator.share({ title: t('app.title'), text, url });
   } catch (err) {
     // user cancelled the share sheet
   }
@@ -2219,7 +1962,7 @@ async function shareViaCapacitor(text, url, imageBlob) {
     } catch (err) { files = undefined; }
   }
   try {
-    await Share.share({ title: 'The Hand of Liahim', text, url, files, dialogTitle: 'Share your reading' });
+    await Share.share({ title: t('app.title'), text, url, files, dialogTitle: t('reading.button.share') });
   } catch (err) {
     // user dismissed the share sheet
   }
@@ -2240,9 +1983,9 @@ async function copyLinkToClipboard() {
   const original = btn.textContent;
   try {
     await navigator.clipboard.writeText(combinedText);
-    btn.textContent = 'Link Copied!';
+    btn.textContent = t('reading.button.copyLink.copied');
   } catch (err) {
-    window.prompt('Copy this link to share your reading:', url);
+    window.prompt(t('reading.copyLinkPrompt'), url);
     return;
   }
   setTimeout(() => { btn.textContent = original; }, 1800);
@@ -2252,14 +1995,14 @@ async function copyImageToClipboard() {
   const btn = document.getElementById('copy-image-btn');
   const original = btn.textContent;
   btn.disabled = true;
-  btn.textContent = 'Building Image...';
+  btn.textContent = t('reading.button.copyImage.building');
   try {
     const imageBlob = await buildReadingImageBlob();
     if (!imageBlob || !window.ClipboardItem) throw new Error('image copy unsupported');
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': imageBlob })]);
-    btn.textContent = 'Image Copied!';
+    btn.textContent = t('reading.button.copyImage.copied');
   } catch (err) {
-    btn.textContent = 'Copy Failed';
+    btn.textContent = t('reading.button.copyImage.failed');
   } finally {
     btn.disabled = false;
     setTimeout(() => { btn.textContent = original; }, 1800);
@@ -2286,8 +2029,11 @@ async function beginReading(isRedraw) {
   const n = spread.positions.length;
 
   showPanel('dealing-panel');
-  const msgs = ['Shuffling the deck...', 'Clearing your mind...', 'Calling the cards...', 'The spread is ready.'];
+  const fallbackMsgs = ['Shuffling the deck...', 'Clearing your mind...', 'Calling the cards...', 'The spread is ready.'];
+  const catMsgs = t('dealing.messages');
+  const msgs = Array.isArray(catMsgs) && catMsgs.length ? catMsgs : fallbackMsgs;
   const msgEl = document.getElementById('dealing-msg');
+  msgEl.textContent = msgs[0];
   const placeholders = document.getElementById('dealing-placeholders');
   placeholders.innerHTML = '';
 
@@ -2396,7 +2142,7 @@ function renderReading() {
     if (card.isReversed) {
       const revBadge = document.createElement('span');
       revBadge.className = 'reversed-badge';
-      revBadge.textContent = 'Reversed';
+      revBadge.textContent = t('reading.card.reversedBadge');
       wrap.appendChild(revBadge);
     }
 
@@ -2427,7 +2173,7 @@ function renderReading() {
     if (card.isReversed) {
       const revTag = document.createElement('span');
       revTag.className = 'meaning-rev-tag';
-      revTag.textContent = '⟳ reversed';
+      revTag.textContent = t('reading.card.reversedTag');
       header.appendChild(revTag);
     }
 
@@ -2457,14 +2203,15 @@ function renderReading() {
   const aiOut = document.getElementById('ai-output');
   aiOut.className = 'placeholder';
   aiOut.textContent = provider !== 'none'
-    ? 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.'
-    : 'Consider each card\'s position and its meaning. How do the energies speak to you?';
+    ? t('ai.output.placeholder')
+    : t('ai.placeholder.selfReflect');
   document.getElementById('clear-ai-btn').style.display = 'none';
 }
 
 function renderIndex(filter) {
+  currentIndexFilter = filter;
   updateShareButtonsVisibility();
-  document.getElementById('reading-spread-name').textContent = 'Card Index';
+  document.getElementById('reading-spread-name').textContent = t('reading.index.heading');
 
   const filters = document.getElementById('index-filters');
   filters.style.display = 'flex';
@@ -2473,10 +2220,10 @@ function renderIndex(filter) {
   document.getElementById('meanings-section').style.display = 'none';
 
   const cards = filter === 'all'
-    ? [...orderedMajors(), ...CARDS_RWS.filter(c => c.arcana !== 'Major')]
+    ? [...orderedMajors(), ...CARDS.filter(c => c.arcana !== 'Major')]
     : filter === 'Major'
       ? orderedMajors()
-      : CARDS_RWS.filter(c => c.suit === filter);
+      : CARDS.filter(c => c.suit === filter);
 
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
@@ -2536,7 +2283,9 @@ function renderIndex(filter) {
 
     const subLabel = document.createElement('div');
     subLabel.className = 'card-position-label';
-    subLabel.textContent = card.arcana === 'Major' ? `Major · ${getCardNumber(card)}` : card.suit;
+    subLabel.textContent = card.arcana === 'Major'
+      ? `${t('card.majorShort')} · ${getCardNumber(card)}`
+      : t('index.filter.' + String(card.suit).toLowerCase());
     wrap.appendChild(subLabel);
 
     grid.appendChild(wrap);
@@ -2606,7 +2355,9 @@ function resetModalZoom() {
 function renderCardInto(root, card, opts = {}) {
   root.querySelector('.modal-name').textContent = card.displayName;
   root.querySelector('.modal-arcana').textContent =
-    card.arcana === 'Major' ? `Major Arcana · ${getCardNumber(card)}` : `${card.suit} · ${card.arcana} Arcana`;
+    card.arcana === 'Major'
+      ? `${t('card.majorArcanaLabel')} · ${getCardNumber(card)}`
+      : `${t('index.filter.' + String(card.suit).toLowerCase())} · ${t('card.minorArcanaLabel')}`;
   root.querySelector('.modal-upright').textContent = card.upright;
   root.querySelector('.modal-reversed').textContent = card.reversed;
 
@@ -2913,32 +2664,27 @@ async function getAiReading() {
   const key = document.getElementById('ai-key').value.trim();
 
   if (!key) {
-    alert('Please enter your API key in the settings.');
+    alert(t('ai.error.noKey'));
     return;
   }
 
   const spread = state.currentSpread;
   const cardList = state.drawnCards.map((c, i) =>
-    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? ' (Reversed)' : ''} — ${c.isReversed ? c.reversed : c.upright}`
+    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? t('share.reversedParen') : ''} — ${c.isReversed ? c.reversed : c.upright}`
   ).join('\n');
 
-  const prompt = `You are a wise and poetic tarot reader with deep knowledge of esoteric symbolism. Provide a thoughtful, holistic interpretation of this tarot reading.
-
-Spread: ${spread.name}
-${spread.desc}
-
-Cards drawn:
-${cardList}
-
-Provide a narrative interpretation that weaves all the cards together into a coherent reading. Be insightful, poetic, and specific to the positions. Speak in second person. Keep it under 400 words.`;
+  const prompt = t('ai.prompt.template')
+    .replace('{spread}', spread.name)
+    .replace('{desc}', spread.desc)
+    .replace('{cards}', cardList);
 
   const aiOut = document.getElementById('ai-output');
   aiOut.className = '';
-  aiOut.textContent = 'Reading the cards...';
+  aiOut.textContent = t('ai.status.reading');
 
   const btn = document.getElementById('ai-btn');
   btn.disabled = true;
-  btn.textContent = 'Reading...';
+  btn.textContent = t('ai.button.reading');
 
   try {
     let text = '';
@@ -3005,24 +2751,39 @@ Provide a narrative interpretation that weaves all the cards together into a coh
 
   } catch (err) {
     aiOut.className = '';
-    aiOut.textContent = `Error: ${err.message}\n\nPlease check your API key and try again.`;
+    aiOut.textContent = t('ai.error.generic').replace('{msg}', err.message);
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Get AI Reading';
+    btn.textContent = t('ai.button.get');
   }
 }
 
 function clearAiReading() {
   const aiOut = document.getElementById('ai-output');
   aiOut.className = 'placeholder';
-  aiOut.textContent = 'Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.';
+  aiOut.textContent = t('ai.output.placeholder');
   document.getElementById('clear-ai-btn').style.display = 'none';
 }
 
-// Init
-updateModelOptions();
+// ===== INIT =====
+// Resolution order: ?lang= (also persisted) -> localStorage -> navigator -> en.
+function initialLang() {
+  try {
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q && SUPPORTED_LANGS.includes(q)) {
+      try { localStorage.setItem(LS_LANG, q); } catch (e) {}
+      return q;
+    }
+  } catch (e) {}
+  try {
+    const saved = localStorage.getItem(LS_LANG);
+    if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+  } catch (e) {}
+  const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  return SUPPORTED_LANGS.includes(nav) ? nav : 'en';
+}
 
-(function initFromURL() {
+function initFromURL() {
   const originalSearch = location.search;
   const decoded = decodeReadingFromURL();
   history.replaceState({ panel: 'setup' }, '', location.pathname);
@@ -3030,7 +2791,52 @@ updateModelOptions();
     applyDecodedReading(decoded);
     history.pushState({ panel: 'reading' }, '', originalSearch);
   }
-})();
+}
+
+// Load the JSON data files, resolve for the active language, then run the
+// original URL-driven init. Needs http(s) — fetch() is blocked on file://.
+async function boot() {
+  const load = (p) => fetch(p).then(r => {
+    if (!r.ok) throw new Error(`${p}: ${r.status}`);
+    return r.json();
+  });
+  try {
+    const [cards, rws, visconti, en, ru, es] = await Promise.all([
+      load('data/general/cards.json'),
+      load('data/decks/rider-waite-smith.json'),
+      load('data/decks/visconti-sforza.json'),
+      load('data/locales/en.json'),
+      load('data/locales/ru.json'),
+      load('data/locales/es.json'),
+    ]);
+    RAW.cards = cards;
+    RAW.decks = { 'rider-waite-smith': rws, 'visconti-sforza': visconti };
+    RAW.locales = { en, ru, es };
+  } catch (err) {
+    console.error('boot: data load failed', err);
+    document.getElementById('app').innerHTML =
+      '<p style="padding:2rem 1rem;text-align:center;color:var(--gold);line-height:1.6">' +
+      'Could not load card data. Serve this page over http(s) — e.g. <code>npm run serve</code> — ' +
+      'rather than opening the file directly.</p>';
+    return;
+  }
+
+  LANG = initialLang();
+  document.documentElement.lang = LANG;
+  selectChoiceButton('lang', LANG);
+  selectChoiceButton('deck', state.deck);
+  selectChoiceButton('spread', state.spread);
+
+  resolveDeck(state.deck);
+  resolveCards();
+  resolveSpreads();
+  applyI18n();
+
+  updateModelOptions();
+  initFromURL();
+}
+
+boot();
 
 window.addEventListener('popstate', (e) => {
   if (document.getElementById('card-modal').classList.contains('open') ||

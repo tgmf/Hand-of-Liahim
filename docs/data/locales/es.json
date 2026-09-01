@@ -58,6 +58,24 @@
   "reading.button.changeSettings": "Cambiar ajustes",
   "modal.upright": "Derecho",
   "modal.reversed": "Invertido",
+  "app.titleTag": "La Mano de Liahim — Lector de Tarot",
+  "settings.language.label": "Idioma",
+  "ai.placeholder.selfReflect": "Considera la posición de cada carta y su significado. ¿Qué te dicen las energías?",
+  "ai.prompt.template": "Eres un lector de tarot sabio y poético con profundo conocimiento del simbolismo esotérico. Ofrece una interpretación reflexiva y holística de esta tirada de tarot.\n\nTirada: {spread}\n{desc}\n\nCartas extraídas:\n{cards}\n\nOfrece una interpretación narrativa que entrelace todas las cartas en una lectura coherente. Sé perspicaz, poético y específico respecto a las posiciones. Habla en segunda persona. Que no supere las 400 palabras.",
+  "ai.error.generic": "Error: {msg}\n\nComprueba tu clave API e inténtalo de nuevo.",
+  "share.indexText": "El Índice de Cartas del Tarot — La Mano de Liahim",
+  "share.readingLabel": "Mi tirada de tarot «{spread}»:",
+  "share.reversedParen": " (invertida)",
+  "reading.copyLinkPrompt": "Copia este enlace para compartir tu tirada:",
+  "card.majorShort": "Mayor",
+  "card.majorArcanaLabel": "Arcanos Mayores",
+  "card.minorArcanaLabel": "Arcanos Menores",
+  "dealing.messages": [
+    "Barajando las cartas...",
+    "Aclarando tu mente...",
+    "Llamando a las cartas...",
+    "La tirada está lista."
+  ],
   "spread.single.positions": [
     "La Carta"
   ],
