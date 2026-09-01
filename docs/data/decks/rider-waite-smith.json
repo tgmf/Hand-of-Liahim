@@ -1,0 +1,141 @@
+{
+  "deck_id": "rider-waite-smith",
+  "deck_name": {
+    "en": "Rider-Waite-Smith (RWS)",
+    "ru": "Райдер-Уэйт-Смит (RWS)",
+    "es": "Rider-Waite-Smith (RWS)"
+  },
+  "image_dir": "rider-waite-smith",
+  "cards": {
+    "major-0": {
+      "qabalah": {
+        "path_number": "11",
+        "hebrew_letter": {
+          "en": "Aleph",
+          "ru": "Алеф",
+          "es": "Álef"
+        },
+        "hebrew_symbol": "א",
+        "hebrew_unicode": "U+05D0",
+        "sephirothic_connection": {
+          "en": "Kether – Chokmah",
+          "ru": "Кетер – Хокма",
+          "es": "Kéter – Jokmá"
+        },
+        "interpretation": {
+          "en": "This path represents the flow of pure creative force from the unknowable source (Kether) into the first spark of differentiated wisdom (Chokmah). It suggests initiation through direct experience of unity, where insight arises before form.",
+          "ru": "Этот путь представляет поток чистой созидательной силы из непознаваемого источника (Кетер) в первую искру дифференцированной мудрости (Хокма). Он предполагает инициацию через непосредственный опыт единства, где прозрение возникает раньше формы.",
+          "es": "Este sendero representa el flujo de la fuerza creativa pura desde la fuente incognoscible (Kéter) hacia la primera chispa de sabiduría diferenciada (Jokmá). Sugiere la iniciación a través de la experiencia directa de la unidad, donde la intuición surge antes que la forma."
+        },
+        "notes": {
+          "en": "Traditional Golden Dawn attribution used in RWS-influenced systems.",
+          "ru": "Традиционная атрибуция Golden Dawn, используемая в системах, связанных с RWS.",
+          "es": "Atribución tradicional de la Golden Dawn utilizada en los sistemas influenciados por el RWS."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The youthful figure at the cliff edge",
+            "ru": "Юная фигура на краю обрыва",
+            "es": "La joven figura al borde del acantilado"
+          },
+          "description": {
+            "en": "A young traveller in colourful, motley clothing walks lightly toward a precipice, one foot already in motion. This expresses readiness to begin, momentum, and a willingness to learn by doing—even without a full plan. The cliff itself marks the threshold between the known and the unknown, the moment of risk and possibility.",
+            "ru": "Молодой путник в разноцветной, пёстрой одежде легко шагает к обрыву, уже сделав шаг вперёд. Это выражает готовность начать, движение вперёд и желание учиться на деле — даже без полного плана. Сам обрыв обозначает порог между известным и неизвестным, момент риска и возможностей.",
+            "es": "Un joven viajero con ropas coloridas y abigarradas camina ligero hacia un precipicio, con un pie ya en movimiento. Esto expresa disposición para comenzar, impulso, y voluntad de aprender haciendo — incluso sin un plan completo. El propio acantilado marca el umbral entre lo conocido y lo desconocido, el momento del riesgo y la posibilidad."
+          }
+        },
+        {
+          "element": {
+            "en": "Upward gaze and open posture",
+            "ru": "Взгляд вверх и открытая поза",
+            "es": "La mirada hacia arriba y la postura abierta"
+          },
+          "description": {
+            "en": "The Fool looks up toward the sky/sun rather than down at the drop. This suggests trust, optimism, and 'beginner's mind': curiosity over calculation, faith over fear. It's the stance of someone guided by intuition and inspiration more than by caution.",
+            "ru": "Шут смотрит вверх на небо и солнце, а не вниз на обрыв. Это указывает на доверие, оптимизм и 'сознание новичка': любопытство важнее расчёта, вера важнее страха. Это позиция человека, которым руководит интуиция и вдохновение, а не осторожность.",
+            "es": "El Loco mira hacia el cielo o el sol en lugar de hacia el precipicio. Esto sugiere confianza, optimismo y 'mente de principiante': curiosidad por encima del cálculo, fe por encima del miedo. Es la postura de alguien guiado más por la intuición y la inspiración que por la cautela."
+          }
+        },
+        {
+          "element": {
+            "en": "The white rose in the left hand",
+            "ru": "Белая роза в левой руке",
+            "es": "La rosa blanca en la mano izquierda"
+          },
+          "description": {
+            "en": "The white rose stands for purity of intention, innocence, and desire raised to a higher, uncorrupted level. It signals that the Fool's motive is sincere and unburdened by cynicism or manipulation.",
+            "ru": "Белая роза символизирует чистоту намерений, невинность и желание, поднятое на более высокий, неиспорченный уровень. Она указывает на то, что мотивы Шута искренни и не отягощены цинизмом или манипуляцией.",
+            "es": "La rosa blanca representa la pureza de intención, la inocencia, y el deseo elevado a un nivel superior e incorrupto. Señala que el motivo del Loco es sincero y no está cargado de cinismo ni manipulación."
+          }
+        },
+        {
+          "element": {
+            "en": "The staff with a small bundle (knapsack)",
+            "ru": "Посох с небольшим узелком (рюкзаком)",
+            "es": "El bastón con un pequeño hatillo (mochila)"
+          },
+          "description": {
+            "en": "Slung over the shoulder is a black staff bearing a tiny bundle of possessions. This represents the bare essentials for the journey: past experience and latent potential carried lightly, not as heavy baggage. The bundle hints at untapped knowledge or skills that will be discovered and shaped along the way.",
+            "ru": "Через плечо перекинут чёрный посох с небольшим узелком вещей. Это символизирует лишь самое необходимое для пути: прошлый опыт и скрытый потенциал, которые несут легко, а не как тяжёлый багаж. Узелок намекает на нераскрытые знания или навыки, которые будут обнаружены и раскрыты по мере пути.",
+            "es": "Colgado del hombro hay un bastón negro con un pequeño hatillo de pertenencias. Esto representa lo esencial para el viaje: experiencia pasada y potencial latente llevados con ligereza, no como un equipaje pesado. El hatillo insinúa conocimientos o habilidades sin explotar que se descubrirán y desarrollarán en el camino."
+          }
+        },
+        {
+          "element": {
+            "en": "The small white dog at his heels",
+            "ru": "Маленькая белая собака у его ног",
+            "es": "El pequeño perro blanco a sus talones"
+          },
+          "description": {
+            "en": "The dog is instinct, loyalty, and the inner warning system. It both encourages the Fool forward and barks a caution about the edge—symbolising intuition that can protect if heeded, but which the Fool may cheerfully ignore in his enthusiasm.",
+            "ru": "Собака символизирует инстинкт, преданность и внутреннюю систему предупреждения. Она одновременно подталкивает Шута вперёд и предупреждающе лает об обрыве — символизируя интуицию, которая может защитить, если её услышать, но которую Шут может весело игнорировать в своём энтузиазме.",
+            "es": "El perro es el instinto, la lealtad, y el sistema de alerta interior. Al mismo tiempo anima al Loco a avanzar y ladra advirtiendo sobre el borde — simbolizando una intuición que puede proteger si se le presta atención, pero que el Loco puede alegremente ignorar en su entusiasmo."
+          }
+        },
+        {
+          "element": {
+            "en": "Snow-capped mountains in the distance",
+            "ru": "Покрытые снегом горы на горизонте",
+            "es": "Montañas nevadas en la distancia"
+          },
+          "description": {
+            "en": "The distant peaks signify future challenges, trials already crossed in spirit, and the long arc of growth ahead. They remind us that the journey has stages and obstacles, even if the Fool is focused only on the first step.",
+            "ru": "Далёкие вершины символизируют будущие испытания, преодоленные духом трудности и долгий путь роста впереди. Они напоминают, что путешествие состоит из этапов и препятствий, даже если Шут сосредоточен лишь на первом шаге.",
+            "es": "Los picos lejanos significan los desafíos futuros, las pruebas ya superadas en espíritu, y el largo arco de crecimiento por delante. Nos recuerdan que el viaje tiene etapas y obstáculos, aunque el Loco esté concentrado únicamente en el primer paso."
+          }
+        },
+        {
+          "element": {
+            "en": "The sun and bright sky",
+            "ru": "Солнце и яркое небо",
+            "es": "El sol y el cielo brillante"
+          },
+          "description": {
+            "en": "The radiant sun overhead represents clarity, illumination, and divine guidance. The light suggests a clean slate—awareness before fear or expectation colours it—and spiritual support for the leap.",
+            "ru": "Сияющее солнце над головой символизирует ясность, озарение и божественное руководство. Свет намекает на чистый лист — осознанность до того, как её окрасят страх или ожидания — и духовную поддержку для прыжка.",
+            "es": "El sol radiante en lo alto representa claridad, iluminación y guía divina. La luz sugiere una hoja en blanco — conciencia antes de que el miedo o la expectativa la tiñan — y apoyo espiritual para el salto."
+          }
+        },
+        {
+          "element": {
+            "en": "Number 0 (or unnumbered)",
+            "ru": "Число 0 (или без номера)",
+            "es": "Número 0 (o sin numerar)"
+          },
+          "description": {
+            "en": "As 0, The Fool is the void that contains all possibilities: the egg-point from which the rest of the Major Arcana unfolds. Numerologically it denotes potential, emptiness, and the source from which all numbers (and experiences) emerge.",
+            "ru": "Как число 0, Шут представляет собой пустоту, содержащую все возможности: точку-исток, из которой разворачиваются все остальные Старшие Арканы. Нумерологически это обозначает потенциал, пустоту и источник, из которого возникают все числа (и опыт).",
+            "es": "Como el número 0, El Loco es el vacío que contiene todas las posibilidades: el punto-huevo del que se despliega el resto de los Arcanos Mayores. Numerológicamente denota potencial, vacío, y la fuente de la que surgen todos los números (y experiencias)."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, The Fool emphasises the moment of first movement—the instant before experience hardens into pattern. It is the card of pure potential and the courage to begin. Divinationally it often marks unexpected opportunities, travel, or a call to trust intuition over planning. Symbolically it is the archetypal wanderer whose innocence is not ignorance but a conscious choice to remain open to life.",
+        "ru": "В RWS Шут подчёркивает момент первого движения — миг до того, как опыт застывает в устойчивый паттерн. Это карта чистого потенциала и смелости начать. В гадании часто указывает на неожиданные возможности, путешествия или призыв доверять интуиции больше, чем планированию. Символически это архетипический странник, чья невинность не является невежеством, а осознанным выбором оставаться открытым жизни.",
+        "es": "En el RWS, El Loco enfatiza el momento del primer movimiento — el instante antes de que la experiencia se solidifique en un patrón. Es la carta del potencial puro y el valor de comenzar. En la adivinación, a menudo señala oportunidades inesperadas, viajes, o un llamado a confiar en la intuición más que en la planificación. Simbólicamente es el vagabundo arquetípico cuya inocencia no es ignorancia, sino una elección consciente de permanecer abierto a la vida."
+      }
+    }
+  }
+}

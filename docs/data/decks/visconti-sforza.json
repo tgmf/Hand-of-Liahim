@@ -1,0 +1,32 @@
+{
+  "deck_id": "visconti-sforza",
+  "deck_name": {
+    "en": "Visconti-Sforza (1440s)",
+    "ru": "Висконти-Сфорца (1440-е)",
+    "es": "Visconti-Sforza (siglo XV)"
+  },
+  "image_dir": "visconti-sforza",
+  "cards": {
+    "major-8": {
+      "number": 11
+    },
+    "major-11": {
+      "number": 8
+    },
+    "major-15": {
+      "image": null
+    },
+    "major-16": {
+      "image": null
+    },
+    "cups-king": {
+      "image": null
+    },
+    "pents-knight": {
+      "image": null
+    },
+    "swords-3": {
+      "image": null
+    }
+  }
+}

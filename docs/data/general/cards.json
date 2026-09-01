@@ -1,0 +1,3829 @@
+[
+  {
+    "id": "major-0",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 0,
+    "symbol": "☿",
+    "name": {
+      "en": "The Fool",
+      "ru": "Шут",
+      "es": "El Loco"
+    },
+    "keywords": {
+      "en": [
+        "beginnings",
+        "spontaneity",
+        "innocence",
+        "freedom"
+      ],
+      "ru": [
+        "начало",
+        "спонтанность",
+        "невинность",
+        "свобода"
+      ],
+      "es": [
+        "comienzos",
+        "espontaneidad",
+        "inocencia",
+        "libertad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "A leap of faith into the unknown. The Fool represents new beginnings, unlimited potential, and the courage to take the first step without knowing the destination.",
+        "ru": "Прыжок веры в неизведанное. Шут олицетворяет новые начинания, безграничный потенциал и смелость сделать первый шаг, не зная пункта назначения.",
+        "es": "Un salto de fe hacia lo desconocido. El Loco representa nuevos comienzos, potencial ilimitado y el valor de dar el primer paso sin conocer el destino."
+      },
+      "reversed": {
+        "en": "Recklessness, naïve folly, or holding back from a necessary new beginning out of fear.",
+        "ru": "Безрассудство, наивное безумство или страх, мешающий необходимому новому началу.",
+        "es": "Imprudencia, necedad ingenua, o resistirse a un nuevo comienzo necesario por miedo."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The soul at the start of its journey: the archetype of the divine innocent, the holy vagabond, and the creative spark that initiates cycles. Embodies 'beginner's mind' and the courage to step into uncertainty with faith rather than proof. Linked to Air (mind, ideas, inspiration) and Uranus (sudden change, innovation), reinforcing its role as the catalyst for transformation and novelty.",
+      "ru": "Душа в начале своего пути: архетип божественно невинного, святого странника и созидательной искры, инициирующей циклы. Воплощает 'сознание новичка' и смелость шагнуть в неизвестность с верой, а не с доказательствами. Связан со Стихией Воздуха (разум, идеи, вдохновение) и Ураном (внезапные перемены, новаторство), что подчёркивает его роль катализатора трансформации и новизны.",
+      "es": "El alma al comienzo de su viaje: el arquetipo del inocente divino, el vagabundo sagrado, y la chispa creativa que inicia los ciclos. Encarna la 'mente de principiante' y el valor de adentrarse en la incertidumbre con fe en lugar de pruebas. Vinculado al Aire (mente, ideas, inspiración) y a Urano (cambio repentino, innovación), lo que refuerza su papel como catalizador de la transformación y la novedad."
+    }
+  },
+  {
+    "id": "major-1",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 1,
+    "symbol": "🜍",
+    "name": {
+      "en": "The Magician",
+      "ru": "Маг",
+      "es": "El Mago"
+    },
+    "keywords": {
+      "en": [
+        "willpower",
+        "skill",
+        "manifestation",
+        "resourcefulness"
+      ],
+      "ru": [
+        "воля",
+        "мастерство",
+        "проявление",
+        "находчивость"
+      ],
+      "es": [
+        "voluntad",
+        "habilidad",
+        "manifestación",
+        "ingenio"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "All tools are available. The Magician channels divine will into earthly action — skilled, resourceful, and capable of transforming intention into reality.",
+        "ru": "Все инструменты в наличии. Маг направляет божественную волю в земное действие — умелый, находчивый, способный превратить намерение в реальность.",
+        "es": "Todas las herramientas están disponibles. El Mago canaliza la voluntad divina hacia la acción terrenal — hábil, ingenioso y capaz de transformar la intención en realidad."
+      },
+      "reversed": {
+        "en": "Manipulation, poor planning, latent talents unexpressed, or misdirected energy.",
+        "ru": "Манипуляции, слабое планирование, невыраженные таланты или неправильно направленная энергия.",
+        "es": "Manipulación, mala planificación, talentos latentes sin expresar, o energía mal dirigida."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-2",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 2,
+    "symbol": "☽",
+    "name": {
+      "en": "The High Priestess",
+      "ru": "Верховная Жрица",
+      "es": "La Sacerdotisa"
+    },
+    "keywords": {
+      "en": [
+        "intuition",
+        "mystery",
+        "subconscious",
+        "wisdom"
+      ],
+      "ru": [
+        "интуиция",
+        "тайна",
+        "подсознание",
+        "мудрость"
+      ],
+      "es": [
+        "intuición",
+        "misterio",
+        "subconsciente",
+        "sabiduría"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Deep knowing without speaking. The High Priestess guards the threshold of inner wisdom — trust your intuition and the knowledge that comes without rational explanation.",
+        "ru": "Глубокое знание без слов. Верховная Жрица стоит у порога внутренней мудрости — доверяйте интуиции и знанию, которое приходит без рационального объяснения.",
+        "es": "Un saber profundo que no necesita palabras. La Sacerdotisa custodia el umbral de la sabiduría interior — confía en tu intuición y en el conocimiento que llega sin explicación racional."
+      },
+      "reversed": {
+        "en": "Secrets withheld, disconnection from intuition, or surface-level understanding only.",
+        "ru": "Утаённые тайны, утрата связи с интуицией или поверхностное понимание.",
+        "es": "Secretos ocultos, desconexión de la intuición, o una comprensión únicamente superficial."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-3",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 3,
+    "symbol": "♀",
+    "name": {
+      "en": "The Empress",
+      "ru": "Императрица",
+      "es": "La Emperatriz"
+    },
+    "keywords": {
+      "en": [
+        "fertility",
+        "abundance",
+        "nurturing",
+        "nature"
+      ],
+      "ru": [
+        "плодородие",
+        "изобилие",
+        "забота",
+        "природа"
+      ],
+      "es": [
+        "fertilidad",
+        "abundancia",
+        "cuidado",
+        "naturaleza"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Life in full bloom. The Empress represents fertility, abundance, and the creative power of nature. Nurture what you love and watch it flourish.",
+        "ru": "Жизнь в полном расцвете. Императрица воплощает плодородие, изобилие и созидательную силу природы. Заботьтесь о том, что любите, и наблюдайте, как оно расцветает.",
+        "es": "La vida en plena floración. La Emperatriz representa la fertilidad, la abundancia y el poder creativo de la naturaleza. Cuida lo que amas y observa cómo florece."
+      },
+      "reversed": {
+        "en": "Neglect, creative block, dependence, or smothering those in your care.",
+        "ru": "Пренебрежение, творческий кризис, зависимость или удушающая опека.",
+        "es": "Descuido, bloqueo creativo, dependencia, o sofocar a quienes están bajo tu cuidado."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-4",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 4,
+    "symbol": "♂",
+    "name": {
+      "en": "The Emperor",
+      "ru": "Император",
+      "es": "El Emperador"
+    },
+    "keywords": {
+      "en": [
+        "authority",
+        "structure",
+        "stability",
+        "leadership"
+      ],
+      "ru": [
+        "власть",
+        "структура",
+        "стабильность",
+        "лидерство"
+      ],
+      "es": [
+        "autoridad",
+        "estructura",
+        "estabilidad",
+        "liderazgo"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Order established through will. The Emperor brings structure, authority, and the stability of clear boundaries. Build with intention and lead with integrity.",
+        "ru": "Порядок, установленный волей. Император привносит структуру, авторитет и стабильность чётких границ. Стройте с намерением и ведите с достоинством.",
+        "es": "El orden establecido por la voluntad. El Emperador aporta estructura, autoridad y la estabilidad de límites claros. Construye con intención y lidera con integridad."
+      },
+      "reversed": {
+        "en": "Domination, rigidity, excessive control, or abdication of responsibility.",
+        "ru": "Деспотизм, негибкость, чрезмерный контроль или отказ от ответственности.",
+        "es": "Dominación, rigidez, control excesivo, o abdicación de la responsabilidad."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-5",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 5,
+    "symbol": "⊕",
+    "name": {
+      "en": "The Hierophant",
+      "ru": "Иерофант",
+      "es": "El Hierofante"
+    },
+    "keywords": {
+      "en": [
+        "tradition",
+        "conformity",
+        "morality",
+        "ethics"
+      ],
+      "ru": [
+        "традиция",
+        "следование нормам",
+        "нравственность",
+        "этика"
+      ],
+      "es": [
+        "tradición",
+        "conformidad",
+        "moralidad",
+        "ética"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The wisdom of tradition. The Hierophant represents spiritual guidance, shared values, and the accumulated knowledge of institutions. Seek learning from established paths.",
+        "ru": "Мудрость традиции. Иерофант олицетворяет духовное наставничество, общие ценности и накопленные знания институтов. Ищите учения на проверенных путях.",
+        "es": "La sabiduría de la tradición. El Hierofante representa la guía espiritual, los valores compartidos y el conocimiento acumulado de las instituciones. Busca aprender de caminos ya establecidos."
+      },
+      "reversed": {
+        "en": "Rebellion against convention, personal spirituality outside dogma, or hypocrisy.",
+        "ru": "Бунт против условностей, личная духовность вне догм или лицемерие.",
+        "es": "Rebelión contra lo convencional, espiritualidad personal fuera del dogma, o hipocresía."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-6",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 6,
+    "symbol": "♡",
+    "name": {
+      "en": "The Lovers",
+      "ru": "Влюблённые",
+      "es": "Los Enamorados"
+    },
+    "keywords": {
+      "en": [
+        "love",
+        "harmony",
+        "choices",
+        "alignment"
+      ],
+      "ru": [
+        "любовь",
+        "гармония",
+        "выбор",
+        "согласованность"
+      ],
+      "es": [
+        "amor",
+        "armonía",
+        "decisiones",
+        "alineación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The crossroads of the heart. The Lovers speak not only of romance but of the fundamental choices that define who we are and what we value.",
+        "ru": "Перекрёсток сердца. Влюблённые говорят не только о романтике, но и о фундаментальном выборе, определяющем, кем мы являемся и что ценим.",
+        "es": "La encrucijada del corazón. Los Enamorados hablan no solo de romance, sino de las decisiones fundamentales que definen quiénes somos y qué valoramos."
+      },
+      "reversed": {
+        "en": "Misalignment of values, poor decisions, or conflict within a close relationship.",
+        "ru": "Несоответствие ценностей, неверные решения или конфликт в близких отношениях.",
+        "es": "Desalineación de valores, malas decisiones, o conflicto dentro de una relación cercana."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-7",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 7,
+    "symbol": "♋",
+    "name": {
+      "en": "The Chariot",
+      "ru": "Колесница",
+      "es": "El Carro"
+    },
+    "keywords": {
+      "en": [
+        "control",
+        "willpower",
+        "victory",
+        "determination"
+      ],
+      "ru": [
+        "контроль",
+        "воля",
+        "победа",
+        "решимость"
+      ],
+      "es": [
+        "control",
+        "voluntad",
+        "victoria",
+        "determinación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Forward through opposing forces. The Chariot represents the triumph of disciplined will — holding contradictory forces in tension and driving them toward a single goal.",
+        "ru": "Вперёд — сквозь противоборствующие силы. Колесница — это триумф дисциплинированной воли: держать в напряжении противоречивые силы и направлять их к единой цели.",
+        "es": "Avanzar a través de fuerzas opuestas. El Carro representa el triunfo de la voluntad disciplinada — mantener fuerzas contradictorias en tensión y conducirlas hacia una sola meta."
+      },
+      "reversed": {
+        "en": "Lack of control, aggression, scattered forces pulling in every direction.",
+        "ru": "Потеря контроля, агрессия, силы, тянущие в разные стороны.",
+        "es": "Falta de control, agresividad, fuerzas dispersas tirando en todas direcciones."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-8",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 8,
+    "symbol": "♌",
+    "name": {
+      "en": "Strength",
+      "ru": "Сила",
+      "es": "La Fuerza"
+    },
+    "keywords": {
+      "en": [
+        "courage",
+        "patience",
+        "compassion",
+        "inner strength"
+      ],
+      "ru": [
+        "мужество",
+        "терпение",
+        "сострадание",
+        "внутренняя сила"
+      ],
+      "es": [
+        "coraje",
+        "paciencia",
+        "compasión",
+        "fuerza interior"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Courage that does not roar. Strength is the patient taming of raw force through gentleness and love rather than domination — inner mastery over primal impulse.",
+        "ru": "Мужество, которое не кричит. Сила — это терпеливое укрощение грубой мощи через нежность и любовь, а не через господство; внутреннее владение первобытными импульсами.",
+        "es": "Un coraje que no necesita rugir. La Fuerza es la paciente doma de la fuerza bruta mediante la gentileza y el amor, no el dominio — el dominio interior sobre el impulso primario."
+      },
+      "reversed": {
+        "en": "Self-doubt, weakness of character, or force used as compensation for inner insecurity.",
+        "ru": "Сомнения в себе, слабость характера или грубая сила как компенсация внутренней неуверенности.",
+        "es": "Inseguridad, debilidad de carácter, o fuerza usada para compensar una inseguridad interior."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-9",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 9,
+    "symbol": "♍",
+    "name": {
+      "en": "The Hermit",
+      "ru": "Отшельник",
+      "es": "El Ermitaño"
+    },
+    "keywords": {
+      "en": [
+        "introspection",
+        "solitude",
+        "guidance",
+        "seeking"
+      ],
+      "ru": [
+        "самоанализ",
+        "одиночество",
+        "наставничество",
+        "поиск"
+      ],
+      "es": [
+        "introspección",
+        "soledad",
+        "guía",
+        "búsqueda"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The light you carry inward. The Hermit retreats from the world to listen to the deepest truth — a guide who shows the path but does not walk it for you.",
+        "ru": "Свет, который вы несёте внутрь. Отшельник удаляется от мира, чтобы услышать глубочайшую истину — проводник, указывающий путь, но не идущий им за вас.",
+        "es": "La luz que llevas dentro. El Ermitaño se retira del mundo para escuchar la verdad más profunda — un guía que muestra el camino pero no lo recorre por ti."
+      },
+      "reversed": {
+        "en": "Isolation turned to loneliness, withdrawal from the world as escape rather than wisdom.",
+        "ru": "Одиночество, превратившееся в изоляцию; уход от мира как побег, а не мудрость.",
+        "es": "Aislamiento convertido en soledad, alejamiento del mundo como escape más que como sabiduría."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-10",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 10,
+    "symbol": "☉",
+    "name": {
+      "en": "Wheel of Fortune",
+      "ru": "Колесо Фортуны",
+      "es": "La Rueda de la Fortuna"
+    },
+    "keywords": {
+      "en": [
+        "cycles",
+        "fate",
+        "turning point",
+        "luck"
+      ],
+      "ru": [
+        "циклы",
+        "судьба",
+        "поворотный момент",
+        "удача"
+      ],
+      "es": [
+        "ciclos",
+        "destino",
+        "punto de inflexión",
+        "suerte"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The great wheel turns. Fortune reminds us that life moves in cycles and that change — both welcome and difficult — is the one true constant of existence.",
+        "ru": "Великое колесо вращается. Фортуна напоминает: жизнь движется циклами, а перемены — желанные и трудные — единственная истинная константа бытия.",
+        "es": "La gran rueda gira. La Fortuna nos recuerda que la vida se mueve en ciclos y que el cambio — bienvenido o difícil — es la única constante verdadera de la existencia."
+      },
+      "reversed": {
+        "en": "Bad luck, resistance to change, or clinging to the past as the wheel moves on.",
+        "ru": "Неудача, сопротивление переменам или цепляние за прошлое, пока колесо движется дальше.",
+        "es": "Mala suerte, resistencia al cambio, o aferrarse al pasado mientras la rueda sigue girando."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-11",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 11,
+    "symbol": "⚖",
+    "name": {
+      "en": "Justice",
+      "ru": "Справедливость",
+      "es": "La Justicia"
+    },
+    "keywords": {
+      "en": [
+        "fairness",
+        "truth",
+        "cause & effect",
+        "law"
+      ],
+      "ru": [
+        "честность",
+        "правда",
+        "причина и следствие",
+        "закон"
+      ],
+      "es": [
+        "equidad",
+        "verdad",
+        "causa y efecto",
+        "ley"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The scales that cannot be deceived. Justice represents truth, accountability, and the impartial consequences of every choice — no more and no less than what is due.",
+        "ru": "Весы, которые нельзя обмануть. Справедливость олицетворяет истину, ответственность и беспристрастные последствия каждого выбора — ни больше, ни меньше, чем должно.",
+        "es": "La balanza que no se deja engañar. La Justicia representa la verdad, la responsabilidad y las consecuencias imparciales de cada elección — ni más ni menos de lo que corresponde."
+      },
+      "reversed": {
+        "en": "Unfairness, dishonesty, refusal of responsibility, or legal complications.",
+        "ru": "Несправедливость, нечестность, отказ от ответственности или юридические осложнения.",
+        "es": "Injusticia, deshonestidad, negativa a asumir responsabilidad, o complicaciones legales."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-12",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 12,
+    "symbol": "⊗",
+    "name": {
+      "en": "The Hanged Man",
+      "ru": "Повешенный",
+      "es": "El Colgado"
+    },
+    "keywords": {
+      "en": [
+        "suspension",
+        "surrender",
+        "new perspective",
+        "sacrifice"
+      ],
+      "ru": [
+        "приостановка",
+        "капитуляция",
+        "новый взгляд",
+        "жертва"
+      ],
+      "es": [
+        "suspensión",
+        "entrega",
+        "nueva perspectiva",
+        "sacrificio"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Willingly suspended between worlds. The Hanged Man chooses to pause, to surrender control, and in doing so sees what was invisible from the upright perspective.",
+        "ru": "Добровольно подвешенный между мирами. Повешенный выбирает паузу, отказывается от контроля и в этом видит то, что было невидимо с обычной точки зрения.",
+        "es": "Suspendido por voluntad propia entre dos mundos. El Colgado elige detenerse, entregar el control, y al hacerlo ve lo que era invisible desde la perspectiva erguida."
+      },
+      "reversed": {
+        "en": "Delays, resistance to necessary sacrifice, or stagnation that no longer serves.",
+        "ru": "Задержки, сопротивление необходимой жертве или стагнация, утратившая смысл.",
+        "es": "Demoras, resistencia a un sacrificio necesario, o estancamiento que ya no sirve."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-13",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 13,
+    "symbol": "♏",
+    "name": {
+      "en": "Death",
+      "ru": "Смерть",
+      "es": "La Muerte"
+    },
+    "keywords": {
+      "en": [
+        "endings",
+        "transition",
+        "transformation",
+        "change"
+      ],
+      "ru": [
+        "завершение",
+        "переход",
+        "трансформация",
+        "перемены"
+      ],
+      "es": [
+        "finales",
+        "transición",
+        "transformación",
+        "cambio"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "What must end so something may live. Death is seldom literal — it is the great transformer, clearing away what has been outgrown to make space for what must emerge.",
+        "ru": "То, что должно закончиться, чтобы нечто могло жить. Смерть редко бывает буквальной — это великий преобразователь, расчищающий отжившее, чтобы дать место тому, что должно возникнуть.",
+        "es": "Lo que debe terminar para que algo pueda vivir. La Muerte rara vez es literal — es el gran transformador, que despeja lo que ya se ha superado para dar espacio a lo que debe surgir."
+      },
+      "reversed": {
+        "en": "Resistance to ending, stagnation, fear of letting go of an identity that no longer fits.",
+        "ru": "Сопротивление окончанию, стагнация, страх расстаться с идентичностью, которая больше не подходит.",
+        "es": "Resistencia a terminar, estancamiento, miedo a soltar una identidad que ya no encaja."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-14",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 14,
+    "symbol": "♐",
+    "name": {
+      "en": "Temperance",
+      "ru": "Умеренность",
+      "es": "La Templanza"
+    },
+    "keywords": {
+      "en": [
+        "balance",
+        "moderation",
+        "patience",
+        "purpose"
+      ],
+      "ru": [
+        "равновесие",
+        "умеренность",
+        "терпение",
+        "цель"
+      ],
+      "es": [
+        "equilibrio",
+        "moderación",
+        "paciencia",
+        "propósito"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The alchemy of the middle way. Temperance blends opposites into something finer than either alone — patience, moderation, and the grace of working in perfect proportion.",
+        "ru": "Алхимия среднего пути. Умеренность смешивает противоположности в нечто более тонкое, чем каждое из них в отдельности — терпение, мера и изящество работы в идеальной пропорции.",
+        "es": "La alquimia del término medio. La Templanza mezcla opuestos en algo más refinado que cualquiera de ellos por separado — paciencia, moderación y la gracia de trabajar en perfecta proporción."
+      },
+      "reversed": {
+        "en": "Imbalance, excess, impatience, or discord caused by extremes.",
+        "ru": "Дисбаланс, крайности, нетерпение или разлад, вызванный избытком.",
+        "es": "Desequilibrio, exceso, impaciencia, o discordia causada por los extremos."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-15",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 15,
+    "symbol": "♑",
+    "name": {
+      "en": "The Devil",
+      "ru": "Дьявол",
+      "es": "El Diablo"
+    },
+    "keywords": {
+      "en": [
+        "bondage",
+        "addiction",
+        "materialism",
+        "shadow"
+      ],
+      "ru": [
+        "оковы",
+        "зависимость",
+        "материализм",
+        "тень"
+      ],
+      "es": [
+        "esclavitud",
+        "adicción",
+        "materialismo",
+        "sombra"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The chains we forge ourselves. The Devil illuminates where we are enslaved by fear, desire, or habit — and reminds us that the chains are often not as binding as they appear.",
+        "ru": "Цепи, которые мы куём сами. Дьявол освещает, где мы порабощены страхом, желанием или привычкой, — и напоминает: оковы зачастую не так крепки, как кажется.",
+        "es": "Las cadenas que forjamos nosotros mismos. El Diablo ilumina dónde estamos esclavizados por el miedo, el deseo o el hábito — y recuerda que las cadenas a menudo no son tan firmes como parecen."
+      },
+      "reversed": {
+        "en": "Detachment from addiction, releasing what binds, or reclaiming personal freedom.",
+        "ru": "Освобождение от зависимости, отказ от того, что связывает, возвращение личной свободы.",
+        "es": "Desapego de la adicción, liberación de lo que ata, o recuperación de la libertad personal."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-16",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 16,
+    "symbol": "♜",
+    "name": {
+      "en": "The Tower",
+      "ru": "Башня",
+      "es": "La Torre"
+    },
+    "keywords": {
+      "en": [
+        "sudden change",
+        "upheaval",
+        "revelation",
+        "chaos"
+      ],
+      "ru": [
+        "внезапная перемена",
+        "потрясение",
+        "откровение",
+        "хаос"
+      ],
+      "es": [
+        "cambio repentino",
+        "agitación",
+        "revelación",
+        "caos"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Lightning and necessary ruin. The Tower strikes down what was built on a false foundation — a dramatic clearing, painful in the moment, that reveals essential truth.",
+        "ru": "Молния и необходимые руины. Башня сокрушает то, что было выстроено на ложном основании — драматическое очищение, болезненное в моменте, но обнажающее существенную истину.",
+        "es": "El rayo y la ruina necesaria. La Torre derriba lo construido sobre una base falsa — una limpieza dramática, dolorosa en el momento, que revela una verdad esencial."
+      },
+      "reversed": {
+        "en": "Avoiding necessary change, clinging to a structure that must fall, or disaster averted.",
+        "ru": "Избегание необходимых перемен, цепляние за рушащуюся структуру или предотвращённая катастрофа.",
+        "es": "Evitar un cambio necesario, aferrarse a una estructura que debe caer, o un desastre evitado."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-17",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 17,
+    "symbol": "★",
+    "name": {
+      "en": "The Star",
+      "ru": "Звезда",
+      "es": "La Estrella"
+    },
+    "keywords": {
+      "en": [
+        "hope",
+        "renewal",
+        "inspiration",
+        "serenity"
+      ],
+      "ru": [
+        "надежда",
+        "обновление",
+        "вдохновение",
+        "безмятежность"
+      ],
+      "es": [
+        "esperanza",
+        "renovación",
+        "inspiración",
+        "serenidad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The sky opens after the storm. The Star pours out hope freely — a deep assurance that the universe is benevolent and that healing, renewal, and inspiration are flowing toward you.",
+        "ru": "Небо открывается после бури. Звезда льёт надежду без остатка — глубокая уверенность в том, что вселенная благосклонна и что исцеление, обновление и вдохновение уже движутся к вам.",
+        "es": "El cielo se abre después de la tormenta. La Estrella derrama esperanza con generosidad — una profunda certeza de que el universo es benevolente y de que la sanación, la renovación y la inspiración fluyen hacia ti."
+      },
+      "reversed": {
+        "en": "Despair, lost faith, or feeling disconnected from hope and creative inspiration.",
+        "ru": "Отчаяние, утрата веры или ощущение оторванности от надежды и творческого вдохновения.",
+        "es": "Desesperanza, fe perdida, o sentirse desconectado de la esperanza y la inspiración creativa."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-18",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 18,
+    "symbol": "☾",
+    "name": {
+      "en": "The Moon",
+      "ru": "Луна",
+      "es": "La Luna"
+    },
+    "keywords": {
+      "en": [
+        "illusion",
+        "fear",
+        "subconscious",
+        "confusion"
+      ],
+      "ru": [
+        "иллюзия",
+        "страх",
+        "подсознание",
+        "замешательство"
+      ],
+      "es": [
+        "ilusión",
+        "miedo",
+        "subconsciente",
+        "confusión"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The path that dissolves in moonlight. The Moon speaks of illusion, the subconscious, and the uncertain territory between what is real and what is imagined. Not all is as it appears.",
+        "ru": "Тропа, растворяющаяся в лунном свете. Луна говорит об иллюзиях, подсознании и неопределённой территории между реальным и воображаемым. Не всё является тем, чем кажется.",
+        "es": "El sendero que se disuelve bajo la luz de la luna. La Luna habla de la ilusión, el subconsciente y el territorio incierto entre lo real y lo imaginado. No todo es lo que parece."
+      },
+      "reversed": {
+        "en": "Clarity beginning to emerge from confusion, releasing irrational fears, or deception exposed.",
+        "ru": "Ясность, начинающая пробиваться сквозь замешательство; освобождение от иррациональных страхов или разоблачение обмана.",
+        "es": "Claridad que empieza a emerger de la confusión, liberación de miedos irracionales, o un engaño al descubierto."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-19",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 19,
+    "symbol": "☀",
+    "name": {
+      "en": "The Sun",
+      "ru": "Солнце",
+      "es": "El Sol"
+    },
+    "keywords": {
+      "en": [
+        "joy",
+        "success",
+        "vitality",
+        "clarity"
+      ],
+      "ru": [
+        "радость",
+        "успех",
+        "жизненность",
+        "ясность"
+      ],
+      "es": [
+        "alegría",
+        "éxito",
+        "vitalidad",
+        "claridad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Life at its fullest brightness. The Sun radiates success, joy, and the pure vitality of existence — a time of clarity, warmth, and unambiguous good fortune.",
+        "ru": "Жизнь в полной яркости. Солнце излучает успех, радость и чистую жизненную силу бытия — время ясности, тепла и недвусмысленного удачи.",
+        "es": "La vida en su máximo brillo. El Sol irradia éxito, alegría y la vitalidad pura de la existencia — un tiempo de claridad, calidez y buena fortuna inequívoca."
+      },
+      "reversed": {
+        "en": "Temporary setbacks to happiness, blocked success, or optimism dimmed by circumstance.",
+        "ru": "Временные препятствия для счастья, заблокированный успех или оптимизм, омрачённый обстоятельствами.",
+        "es": "Contratiempos temporales a la felicidad, éxito bloqueado, u optimismo atenuado por las circunstancias."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-20",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 20,
+    "symbol": "🔔",
+    "name": {
+      "en": "Judgement",
+      "ru": "Суд",
+      "es": "El Juicio"
+    },
+    "keywords": {
+      "en": [
+        "reflection",
+        "reckoning",
+        "awakening",
+        "absolution"
+      ],
+      "ru": [
+        "осмысление",
+        "воздаяние",
+        "пробуждение",
+        "отпущение"
+      ],
+      "es": [
+        "reflexión",
+        "ajuste de cuentas",
+        "despertar",
+        "absolución"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Called into being. Judgement signals a profound awakening — a summons to rise, to evaluate your life honestly, and to answer the call you have been hearing beneath the surface.",
+        "ru": "Призванный к жизни. Суд сигнализирует о глубоком пробуждении — призыве подняться, честно оценить свою жизнь и ответить на зов, который вы слышали под поверхностью.",
+        "es": "Llamado a existir plenamente. El Juicio señala un despertar profundo — un llamado a levantarse, a evaluar tu vida con honestidad, y a responder al llamado que has estado escuchando bajo la superficie."
+      },
+      "reversed": {
+        "en": "Self-doubt, refusal of the call, fear of judgment, or ignoring a major awakening.",
+        "ru": "Сомнение в себе, отказ от призыва, страх осуждения или игнорирование важного пробуждения.",
+        "es": "Inseguridad, negarse al llamado, miedo al juicio, o ignorar un despertar importante."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "major-21",
+    "arcana": "Major",
+    "suit": null,
+    "rank": 21,
+    "symbol": "⊕",
+    "name": {
+      "en": "The World",
+      "ru": "Мир",
+      "es": "El Mundo"
+    },
+    "keywords": {
+      "en": [
+        "completion",
+        "integration",
+        "accomplishment",
+        "wholeness"
+      ],
+      "ru": [
+        "завершение",
+        "интеграция",
+        "достижение",
+        "целостность"
+      ],
+      "es": [
+        "finalización",
+        "integración",
+        "logro",
+        "plenitud"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The dance of completion. The World marks the triumphant end of a cycle — full integration, mastery achieved, and the joyful awareness that you have arrived exactly where you were meant to be.",
+        "ru": "Танец завершённости. Мир знаменует триумфальное окончание цикла — полная интеграция, обретённое мастерство и радостное осознание того, что вы прибыли именно туда, куда были призваны.",
+        "es": "La danza de la finalización. El Mundo marca el triunfante final de un ciclo — integración plena, maestría alcanzada, y la alegre conciencia de haber llegado exactamente donde debías estar."
+      },
+      "reversed": {
+        "en": "Incomplete endings, shortcuts avoiding necessary closure, or inability to celebrate success.",
+        "ru": "Незавершённые финалы, обходные пути, уклонение от необходимого завершения или неспособность отпраздновать успех.",
+        "es": "Finales incompletos, atajos que evitan un cierre necesario, o incapacidad para celebrar el éxito."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-ace",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "ace",
+    "symbol": "🔥",
+    "name": {
+      "en": "Ace of Wands",
+      "ru": "Туз Жезлов",
+      "es": "As de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "inspiration",
+        "potential",
+        "creation",
+        "energy"
+      ],
+      "ru": [
+        "вдохновение",
+        "потенциал",
+        "творчество",
+        "энергия"
+      ],
+      "es": [
+        "inspiración",
+        "potencial",
+        "creación",
+        "energía"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The spark of creative fire. A powerful new beginning in the realm of passion, inspiration, and creative endeavor. Seize the moment.",
+        "ru": "Искра творческого огня. Мощное новое начало в сфере страсти, вдохновения и творческих устремлений. Используйте этот момент.",
+        "es": "La chispa del fuego creativo. Un poderoso nuevo comienzo en el terreno de la pasión, la inspiración y el esfuerzo creativo. Aprovecha el momento."
+      },
+      "reversed": {
+        "en": "Delays, lack of motivation, creative blocks, or a promising idea failing to ignite.",
+        "ru": "Задержки, отсутствие мотивации, творческие блоки или многообещающая идея, которой не суждено разгореться.",
+        "es": "Demoras, falta de motivación, bloqueos creativos, o una idea prometedora que no logra encenderse."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-2",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "2",
+    "symbol": "🌍",
+    "name": {
+      "en": "Two of Wands",
+      "ru": "Двойка Жезлов",
+      "es": "Dos de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "planning",
+        "progress",
+        "discovery",
+        "decisions"
+      ],
+      "ru": [
+        "планирование",
+        "прогресс",
+        "открытие",
+        "решения"
+      ],
+      "es": [
+        "planificación",
+        "progreso",
+        "descubrimiento",
+        "decisiones"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The world spread before you, waiting. A moment of bold vision — you stand at the threshold of a great journey, choosing your direction with confidence.",
+        "ru": "Мир простёрся перед вами в ожидании. Миг смелого видения — вы стоите на пороге великого путешествия, уверенно выбирая направление.",
+        "es": "El mundo extendido ante ti, esperando. Un momento de visión audaz — estás en el umbral de un gran viaje, eligiendo tu rumbo con confianza."
+      },
+      "reversed": {
+        "en": "Fear of the unknown, lack of planning, or playing it too safe when expansion is needed.",
+        "ru": "Страх неизвестного, отсутствие планирования или чрезмерная осторожность, когда нужен рост.",
+        "es": "Miedo a lo desconocido, falta de planificación, o jugar demasiado a lo seguro cuando se necesita expansión."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-3",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "3",
+    "symbol": "⛵",
+    "name": {
+      "en": "Three of Wands",
+      "ru": "Тройка Жезлов",
+      "es": "Tres de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "expansion",
+        "foresight",
+        "overseas",
+        "leadership"
+      ],
+      "ru": [
+        "расширение",
+        "дальновидность",
+        "заморские дела",
+        "руководство"
+      ],
+      "es": [
+        "expansión",
+        "previsión",
+        "ultramar",
+        "liderazgo"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Your ships are in. The initial work is done and results are coming — foresight, expansion, and the confidence of one who has ventured boldly into the unknown.",
+        "ru": "Ваши корабли прибыли. Начальная работа сделана, и результаты приходят — дальновидность, расширение и уверенность того, кто смело шагнул в неизведанное.",
+        "es": "Tus barcos han llegado. El trabajo inicial está hecho y los resultados están en camino — previsión, expansión y la confianza de quien se ha aventurado con audacia hacia lo desconocido."
+      },
+      "reversed": {
+        "en": "Delays in results, lack of foresight, or plans failing to take off as hoped.",
+        "ru": "Задержки результатов, отсутствие предусмотрительности или планы, не взлетающие так, как ожидалось.",
+        "es": "Demoras en los resultados, falta de previsión, o planes que no despegan como se esperaba."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-4",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "4",
+    "symbol": "🏡",
+    "name": {
+      "en": "Four of Wands",
+      "ru": "Четвёрка Жезлов",
+      "es": "Cuatro de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "celebration",
+        "harmony",
+        "homecoming",
+        "community"
+      ],
+      "ru": [
+        "праздник",
+        "гармония",
+        "возвращение домой",
+        "сообщество"
+      ],
+      "es": [
+        "celebración",
+        "armonía",
+        "regreso a casa",
+        "comunidad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Garlands hung, celebration earned. A time of joy, homecoming, and well-earned rest — community, harmony, and the pleasure of stable foundations.",
+        "ru": "Гирлянды повешены, праздник заслужен. Время радости, возвращения домой и заслуженного отдыха — сообщество, гармония и удовольствие от стабильного основания.",
+        "es": "Guirnaldas colgadas, celebración merecida. Un momento de alegría, regreso a casa y descanso bien ganado — comunidad, armonía y el placer de tener bases estables."
+      },
+      "reversed": {
+        "en": "Transition, instability at home, or celebration that is incomplete or disrupted.",
+        "ru": "Переход, нестабильность в доме или праздник, который неполон или нарушен.",
+        "es": "Transición, inestabilidad en el hogar, o una celebración incompleta o interrumpida."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-5",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "5",
+    "symbol": "⚔",
+    "name": {
+      "en": "Five of Wands",
+      "ru": "Пятёрка Жезлов",
+      "es": "Cinco de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "conflict",
+        "competition",
+        "tension",
+        "diversity"
+      ],
+      "ru": [
+        "конфликт",
+        "конкуренция",
+        "напряжение",
+        "разнообразие"
+      ],
+      "es": [
+        "conflicto",
+        "competencia",
+        "tensión",
+        "diversidad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Wands clashing in the arena. Competition, disagreement, and productive conflict — a chaotic energy that can sharpen ideas if channeled, or exhaust if allowed to run wild.",
+        "ru": "Жезлы скрещиваются на арене. Соперничество, разногласия и продуктивный конфликт — хаотичная энергия, способная заострить идеи, если её направить, или истощить, если дать ей разгуляться.",
+        "es": "Bastos que chocan en la arena. Competencia, desacuerdo y conflicto productivo — una energía caótica que puede afilar las ideas si se canaliza, o agotar si se deja correr sin control."
+      },
+      "reversed": {
+        "en": "Avoiding conflict, inner tension, competition that turns destructive, or resolution of strife.",
+        "ru": "Избегание конфликта, внутреннее напряжение, конкуренция, становящаяся деструктивной, или урегулирование разногласий.",
+        "es": "Evitar el conflicto, tensión interior, competencia que se vuelve destructiva, o resolución de la contienda."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-6",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "6",
+    "symbol": "🏆",
+    "name": {
+      "en": "Six of Wands",
+      "ru": "Шестёрка Жезлов",
+      "es": "Seis de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "victory",
+        "recognition",
+        "progress",
+        "self-confidence"
+      ],
+      "ru": [
+        "победа",
+        "признание",
+        "прогресс",
+        "уверенность в себе"
+      ],
+      "es": [
+        "victoria",
+        "reconocimiento",
+        "progreso",
+        "autoconfianza"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The victor rides home crowned. Public recognition, success after effort, and the confidence that comes from having earned genuine acclaim.",
+        "ru": "Победитель возвращается увенчанный. Общественное признание, успех после усилий и уверенность, возникающая от заслуженного настоящего признания.",
+        "es": "El vencedor regresa coronado. Reconocimiento público, éxito tras el esfuerzo, y la confianza que llega de haber ganado una aclamación genuina."
+      },
+      "reversed": {
+        "en": "Ego, fall from grace, lack of recognition, or private victory without public acknowledgment.",
+        "ru": "Эгоизм, падение с высоты, отсутствие признания или личная победа без публичного одобрения.",
+        "es": "Ego, caída en desgracia, falta de reconocimiento, o victoria privada sin reconocimiento público."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-7",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "7",
+    "symbol": "🛡",
+    "name": {
+      "en": "Seven of Wands",
+      "ru": "Семёрка Жезлов",
+      "es": "Siete de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "challenge",
+        "perseverance",
+        "defense",
+        "competition"
+      ],
+      "ru": [
+        "вызов",
+        "настойчивость",
+        "защита",
+        "конкуренция"
+      ],
+      "es": [
+        "desafío",
+        "perseverancia",
+        "defensa",
+        "competencia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Stand your ground on the hilltop. You hold an advantageous position but must defend it against those who would take it — courage, perseverance, and standing firm in your convictions.",
+        "ru": "Стойте на вершине холма. Вы занимаете выгодную позицию, но должны её отстоять — мужество, настойчивость и твёрдость в своих убеждениях.",
+        "es": "Mantén tu posición en la colina. Ocupas una posición ventajosa pero debes defenderla de quienes querrían arrebatártela — coraje, perseverancia y firmeza en tus convicciones."
+      },
+      "reversed": {
+        "en": "Overwhelmed, giving up, indecision at a critical moment, or abandoning a position unnecessarily.",
+        "ru": "Подавленность, сдача, нерешительность в критический момент или ненужное оставление позиции.",
+        "es": "Sentirse abrumado, rendirse, indecisión en un momento crítico, o abandonar una posición innecesariamente."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-8",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "8",
+    "symbol": "💫",
+    "name": {
+      "en": "Eight of Wands",
+      "ru": "Восьмёрка Жезлов",
+      "es": "Ocho de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "speed",
+        "action",
+        "air travel",
+        "movement"
+      ],
+      "ru": [
+        "скорость",
+        "действие",
+        "воздушное путешествие",
+        "движение"
+      ],
+      "es": [
+        "velocidad",
+        "acción",
+        "viaje aéreo",
+        "movimiento"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Everything at once, swift and sure. Rapid movement, news arriving quickly, and the energizing rush of things finally moving after a long stillness.",
+        "ru": "Всё сразу, стремительно и точно. Быстрое движение, новости, приходящие скоро, и бодрящий поток событий, наконец сдвинувшихся с места после долгого застоя.",
+        "es": "Todo a la vez, rápido y certero. Movimiento veloz, noticias que llegan con rapidez, y el impulso energizante de las cosas que por fin avanzan tras una larga quietud."
+      },
+      "reversed": {
+        "en": "Delays, frustration, slowing down, or energy scattered without clear direction.",
+        "ru": "Задержки, разочарование, замедление или энергия, рассеянная без чёткого направления.",
+        "es": "Demoras, frustración, desaceleración, o energía dispersa sin dirección clara."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-9",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "9",
+    "symbol": "🧱",
+    "name": {
+      "en": "Nine of Wands",
+      "ru": "Девятка Жезлов",
+      "es": "Nueve de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "resilience",
+        "grit",
+        "last stand",
+        "persistence"
+      ],
+      "ru": [
+        "стойкость",
+        "выдержка",
+        "последний рубеж",
+        "настойчивость"
+      ],
+      "es": [
+        "resiliencia",
+        "tenacidad",
+        "última resistencia",
+        "persistencia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Wounded but undefeated. The battle-worn figure who stands ready for one more challenge — resilience, persistence, and the strength of one who has already survived much.",
+        "ru": "Ранен, но не сломлен. Потрёпанный в боях, но готовый к очередному испытанию — стойкость, настойчивость и сила того, кто уже многое пережил.",
+        "es": "Herido pero invicto. La figura curtida en batalla que se mantiene lista para un desafío más — resiliencia, persistencia y la fuerza de quien ya ha sobrevivido a mucho."
+      },
+      "reversed": {
+        "en": "Exhaustion, paranoia, refusing help, or an inability to recover from past wounds.",
+        "ru": "Истощение, паранойя, отказ от помощи или неспособность оправиться от прошлых ран.",
+        "es": "Agotamiento, paranoia, negarse a pedir ayuda, o incapacidad para recuperarse de heridas pasadas."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-10",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "10",
+    "symbol": "⛓",
+    "name": {
+      "en": "Ten of Wands",
+      "ru": "Десятка Жезлов",
+      "es": "Diez de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "burden",
+        "responsibility",
+        "hard work",
+        "completion"
+      ],
+      "ru": [
+        "бремя",
+        "ответственность",
+        "тяжёлый труд",
+        "завершение"
+      ],
+      "es": [
+        "carga",
+        "responsabilidad",
+        "trabajo duro",
+        "finalización"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The weight of all you carry. Overburdened but almost at the destination — a reminder that heavy responsibilities must eventually be set down to reach true completion.",
+        "ru": "Тяжесть всего, что вы несёте. Перегружен, но почти у цели — напоминание о том, что тяжёлые обязанности нужно когда-то отложить, чтобы достичь подлинного завершения.",
+        "es": "El peso de todo lo que cargas. Sobrecargado pero casi en el destino — un recordatorio de que las responsabilidades pesadas deben, eventualmente, soltarse para alcanzar una verdadera finalización."
+      },
+      "reversed": {
+        "en": "Delegating, releasing burdens, or finally setting down what you have carried too long.",
+        "ru": "Делегирование, освобождение от бремени или наконец-то отложение того, что несли слишком долго.",
+        "es": "Delegar, soltar cargas, o por fin dejar aquello que has cargado durante demasiado tiempo."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-page",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "page",
+    "symbol": "🧑",
+    "name": {
+      "en": "Page of Wands",
+      "ru": "Паж Жезлов",
+      "es": "Sota de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "enthusiasm",
+        "exploration",
+        "discovery",
+        "free spirit"
+      ],
+      "ru": [
+        "энтузиазм",
+        "исследование",
+        "открытие",
+        "вольный дух"
+      ],
+      "es": [
+        "entusiasmo",
+        "exploración",
+        "descubrimiento",
+        "espíritu libre"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Wild-eyed with possibility. The Page of Wands brings youthful enthusiasm, an explorer's spirit, and the energy to leap into new adventures without looking back.",
+        "ru": "Сверкающие глаза от возможностей. Паж Жезлов приносит юношеский энтузиазм, дух первопроходца и энергию бросаться в новые приключения не оглядываясь.",
+        "es": "Con la mirada encendida de posibilidades. La Sota de Bastos trae entusiasmo juvenil, espíritu explorador, y la energía para lanzarse a nuevas aventuras sin mirar atrás."
+      },
+      "reversed": {
+        "en": "Lack of direction, immaturity, all energy and no follow-through.",
+        "ru": "Отсутствие направления, незрелость, вся энергия — и никакого завершения.",
+        "es": "Falta de dirección, inmadurez, toda energía y ningún seguimiento."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-knight",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "knight",
+    "symbol": "🏇",
+    "name": {
+      "en": "Knight of Wands",
+      "ru": "Рыцарь Жезлов",
+      "es": "Caballero de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "action",
+        "adventure",
+        "impulsiveness",
+        "energy"
+      ],
+      "ru": [
+        "действие",
+        "приключение",
+        "импульсивность",
+        "энергия"
+      ],
+      "es": [
+        "acción",
+        "aventura",
+        "impulsividad",
+        "energía"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Charging ahead without looking back. The Knight of Wands is pure passionate momentum — adventurous, courageous, and sometimes recklessly fast. Energy crackles around every move.",
+        "ru": "Мчится вперёд, не оглядываясь. Рыцарь Жезлов — чистый страстный импульс: авантюрный, смелый, порой безрассудно быстрый. Вокруг него потрескивает энергия.",
+        "es": "Avanzando sin mirar atrás. El Caballero de Bastos es puro impulso apasionado — aventurero, valiente, y a veces temerariamente veloz. La energía chispea en cada movimiento."
+      },
+      "reversed": {
+        "en": "Recklessness, scattered energy, haste causing errors, or passion burning out.",
+        "ru": "Безрассудство, рассеянная энергия, поспешность, приводящая к ошибкам, или иссякающая страсть.",
+        "es": "Imprudencia, energía dispersa, prisa que causa errores, o pasión que se agota."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-queen",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "queen",
+    "symbol": "👑",
+    "name": {
+      "en": "Queen of Wands",
+      "ru": "Королева Жезлов",
+      "es": "Reina de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "courage",
+        "confidence",
+        "independence",
+        "determination"
+      ],
+      "ru": [
+        "смелость",
+        "уверенность",
+        "независимость",
+        "решимость"
+      ],
+      "es": [
+        "coraje",
+        "confianza",
+        "independencia",
+        "determinación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Radiant, magnetic, entirely herself. The Queen of Wands commands attention through sheer presence — warm, courageous, and possessed of an almost solar self-assurance.",
+        "ru": "Лучезарная, притягательная, совершенно сама по себе. Королева Жезлов притягивает внимание одним присутствием — тёплая, смелая, с почти солнечной уверенностью в себе.",
+        "es": "Radiante, magnética, plenamente ella misma. La Reina de Bastos capta la atención por pura presencia — cálida, valiente, y dotada de una autoconfianza casi solar."
+      },
+      "reversed": {
+        "en": "Jealousy, self-doubt, demanding attention, or fire turned inward as aggression.",
+        "ru": "Ревность, неуверенность в себе, жажда внимания или огонь, обращённый внутрь как агрессия.",
+        "es": "Celos, inseguridad, exigir atención, o fuego vuelto hacia adentro como agresividad."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "wands-king",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "rank": "king",
+    "symbol": "♛",
+    "name": {
+      "en": "King of Wands",
+      "ru": "Король Жезлов",
+      "es": "Rey de Bastos"
+    },
+    "keywords": {
+      "en": [
+        "natural-born leader",
+        "vision",
+        "entrepreneur",
+        "honor"
+      ],
+      "ru": [
+        "прирождённый лидер",
+        "видение",
+        "предприниматель",
+        "честь"
+      ],
+      "es": [
+        "líder nato",
+        "visión",
+        "emprendedor",
+        "honor"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The visionary on the throne. The King of Wands leads through inspiration rather than force — a natural entrepreneur, passionate and bold, who others follow because they want to.",
+        "ru": "Провидец на троне. Король Жезлов ведёт вдохновением, а не принуждением — прирождённый предприниматель, страстный и смелый, за которым идут по собственной воле.",
+        "es": "El visionario en el trono. El Rey de Bastos lidera a través de la inspiración más que de la fuerza — un emprendedor nato, apasionado y audaz, a quien otros siguen porque quieren hacerlo."
+      },
+      "reversed": {
+        "en": "Impulsiveness, ruthlessness, high expectations that become tyranny.",
+        "ru": "Импульсивность, жестокость, высокие ожидания, переходящие в тиранию.",
+        "es": "Impulsividad, crueldad, expectativas tan altas que se convierten en tiranía."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-ace",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "ace",
+    "symbol": "💧",
+    "name": {
+      "en": "Ace of Cups",
+      "ru": "Туз Кубков",
+      "es": "As de Copas"
+    },
+    "keywords": {
+      "en": [
+        "new love",
+        "overflowing emotions",
+        "intuition",
+        "spiritual renewal"
+      ],
+      "ru": [
+        "новая любовь",
+        "полнота чувств",
+        "интуиция",
+        "духовное обновление"
+      ],
+      "es": [
+        "nuevo amor",
+        "emociones desbordantes",
+        "intuición",
+        "renovación espiritual"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The cup of the heart, overflowing. A new emotional beginning — love, compassion, and spiritual renewal pouring forth like a chalice that cannot be emptied.",
+        "ru": "Чаша сердца, переполненная через край. Новое эмоциональное начало — любовь, сострадание и духовное обновление, льющиеся, как чаша, которую невозможно опустошить.",
+        "es": "La copa del corazón, desbordante. Un nuevo comienzo emocional — amor, compasión y renovación espiritual brotando como un cáliz que no puede vaciarse."
+      },
+      "reversed": {
+        "en": "Emotional blockage, repressed feelings, or an inability to receive what is offered.",
+        "ru": "Эмоциональная блокировка, подавленные чувства или неспособность принять то, что предлагается.",
+        "es": "Bloqueo emocional, sentimientos reprimidos, o incapacidad para recibir lo que se ofrece."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-2",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "2",
+    "symbol": "💑",
+    "name": {
+      "en": "Two of Cups",
+      "ru": "Двойка Кубков",
+      "es": "Dos de Copas"
+    },
+    "keywords": {
+      "en": [
+        "unified love",
+        "partnership",
+        "attraction",
+        "connection"
+      ],
+      "ru": [
+        "единая любовь",
+        "партнёрство",
+        "влечение",
+        "связь"
+      ],
+      "es": [
+        "amor unificado",
+        "asociación",
+        "atracción",
+        "conexión"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Two turned toward each other. A profound connection — romantic, creative, or deeply personal — built on mutual recognition and the magic of feeling truly met.",
+        "ru": "Двое, обращённые друг к другу. Глубокая связь — романтическая, творческая или сокровенная — выстроенная на взаимном признании и волшебстве чувства, что тебя по-настоящему встретили.",
+        "es": "Dos que se vuelven el uno hacia el otro. Una conexión profunda — romántica, creativa o profundamente personal — construida sobre el reconocimiento mutuo y la magia de sentirse verdaderamente comprendido."
+      },
+      "reversed": {
+        "en": "Misalignment, broken connection, codependency, or the end of a meaningful union.",
+        "ru": "Несоответствие, разрыв связи, созависимость или конец значимого союза.",
+        "es": "Desalineación, conexión rota, codependencia, o el fin de una unión significativa."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-3",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "3",
+    "symbol": "🎉",
+    "name": {
+      "en": "Three of Cups",
+      "ru": "Тройка Кубков",
+      "es": "Tres de Copas"
+    },
+    "keywords": {
+      "en": [
+        "celebration",
+        "friendship",
+        "creativity",
+        "community"
+      ],
+      "ru": [
+        "празднование",
+        "дружба",
+        "творчество",
+        "сообщество"
+      ],
+      "es": [
+        "celebración",
+        "amistad",
+        "creatividad",
+        "comunidad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Three cups raised in joy. Community celebration, friendship, creative collaboration, and the particular pleasure of belonging. Dance with those you love.",
+        "ru": "Три кубка, поднятые в радости. Общее торжество, дружба, творческое сотрудничество и особое удовольствие от чувства принадлежности. Танцуйте с теми, кого любите.",
+        "es": "Tres copas alzadas con alegría. Celebración comunitaria, amistad, colaboración creativa y el placer particular de pertenecer. Baila con quienes amas."
+      },
+      "reversed": {
+        "en": "Gossip, excess, social isolation, or joy curdled by overindulgence.",
+        "ru": "Сплетни, излишества, социальная изоляция или радость, скисшая от пресыщения.",
+        "es": "Chismes, excesos, aislamiento social, o alegría agriada por los excesos."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-4",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "4",
+    "symbol": "😔",
+    "name": {
+      "en": "Four of Cups",
+      "ru": "Четвёрка Кубков",
+      "es": "Cuatro de Copas"
+    },
+    "keywords": {
+      "en": [
+        "apathy",
+        "contemplation",
+        "disconnection",
+        "reevaluation"
+      ],
+      "ru": [
+        "апатия",
+        "созерцание",
+        "отстранённость",
+        "переосмысление"
+      ],
+      "es": [
+        "apatía",
+        "contemplación",
+        "desconexión",
+        "reevaluación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Turning inward, missing what is offered. The Four of Cups speaks of withdrawal, apathy, and the tendency to overlook what is given while brooding over what is not.",
+        "ru": "Уход внутрь, пропуская предложенное. Четвёрка Кубков говорит об уходе в себя, апатии и склонности не замечать то, что даётся, пока сетуешь на то, чего нет.",
+        "es": "Volviéndose hacia adentro, sin ver lo que se ofrece. El Cuatro de Copas habla de retraimiento, apatía y la tendencia a pasar por alto lo que se tiene mientras se cavila sobre lo que falta."
+      },
+      "reversed": {
+        "en": "Renewed motivation, emerging from withdrawal, choosing to re-engage with life.",
+        "ru": "Возрождённая мотивация, выход из оцепенения, желание снова участвовать в жизни.",
+        "es": "Motivación renovada, salir del retraimiento, elegir volver a comprometerse con la vida."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-5",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "5",
+    "symbol": "😢",
+    "name": {
+      "en": "Five of Cups",
+      "ru": "Пятёрка Кубков",
+      "es": "Cinco de Copas"
+    },
+    "keywords": {
+      "en": [
+        "loss",
+        "regret",
+        "grief",
+        "disappointment"
+      ],
+      "ru": [
+        "утрата",
+        "сожаление",
+        "скорбь",
+        "разочарование"
+      ],
+      "es": [
+        "pérdida",
+        "arrepentimiento",
+        "duelo",
+        "decepción"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Spilled and mourned. The Five of Cups asks you to grieve what is lost — but gently reminds you that two cups still stand behind you, full.",
+        "ru": "Пролитое и оплаканное. Пятёрка Кубков просит оплакать утраченное — но мягко напоминает: два кубка по-прежнему стоят за вашей спиной, полные.",
+        "es": "Derramadas y lloradas. El Cinco de Copas te pide que llores lo perdido — pero recuerda con suavidad que dos copas siguen en pie detrás de ti, llenas."
+      },
+      "reversed": {
+        "en": "Moving on, forgiveness, focusing on what remains rather than what was lost.",
+        "ru": "Движение вперёд, прощение, сосредоточение на том, что осталось, а не на том, что потеряно.",
+        "es": "Seguir adelante, perdón, enfocarse en lo que queda en lugar de lo que se perdió."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-6",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "6",
+    "symbol": "🌸",
+    "name": {
+      "en": "Six of Cups",
+      "ru": "Шестёрка Кубков",
+      "es": "Seis de Copas"
+    },
+    "keywords": {
+      "en": [
+        "nostalgia",
+        "innocence",
+        "reunion",
+        "childhood"
+      ],
+      "ru": [
+        "ностальгия",
+        "невинность",
+        "воссоединение",
+        "детство"
+      ],
+      "es": [
+        "nostalgia",
+        "inocencia",
+        "reencuentro",
+        "infancia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Sweet remembered things. The Six of Cups carries the scent of childhood — nostalgia, innocence, kindness freely given, and the reunion of souls from the past.",
+        "ru": "Сладкие воспоминания. Шестёрка Кубков несёт аромат детства — ностальгия, невинность, щедро даруемая доброта и воссоединение с душами из прошлого.",
+        "es": "Dulces recuerdos. El Seis de Copas lleva el aroma de la infancia — nostalgia, inocencia, bondad ofrecida libremente, y el reencuentro de almas del pasado."
+      },
+      "reversed": {
+        "en": "Living too much in the past, naive idealism, or refusing to grow beyond what once was.",
+        "ru": "Чрезмерное погружение в прошлое, наивный идеализм или отказ расти за пределы того, что было.",
+        "es": "Vivir demasiado en el pasado, idealismo ingenuo, o negarse a crecer más allá de lo que fue."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-7",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "7",
+    "symbol": "💭",
+    "name": {
+      "en": "Seven of Cups",
+      "ru": "Семёрка Кубков",
+      "es": "Siete de Copas"
+    },
+    "keywords": {
+      "en": [
+        "illusion",
+        "fantasy",
+        "choices",
+        "wishful thinking"
+      ],
+      "ru": [
+        "иллюзия",
+        "фантазия",
+        "выбор",
+        "самообман"
+      ],
+      "es": [
+        "ilusión",
+        "fantasía",
+        "decisiones",
+        "pensamiento ilusorio"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Seven doors, most of them mirages. Imagination and choice expand before you, but not all visions are real. Discern between wish and genuine possibility.",
+        "ru": "Семь дверей, большинство из которых — миражи. Воображение и выбор расширяются перед вами, но не все видения реальны. Отделяйте желаемое от истинной возможности.",
+        "es": "Siete puertas, la mayoría espejismos. La imaginación y la posibilidad se expanden ante ti, pero no todas las visiones son reales. Discierne entre el deseo y la posibilidad genuina."
+      },
+      "reversed": {
+        "en": "Clarity cutting through illusion, making a decisive choice, or wishful thinking dispelled.",
+        "ru": "Ясность, рассеивающая иллюзию, решительный выбор или развеянный самообман.",
+        "es": "Claridad que atraviesa la ilusión, tomar una decisión definitiva, o pensamiento ilusorio disipado."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-8",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "8",
+    "symbol": "🌒",
+    "name": {
+      "en": "Eight of Cups",
+      "ru": "Восьмёрка Кубков",
+      "es": "Ocho de Copas"
+    },
+    "keywords": {
+      "en": [
+        "walking away",
+        "disillusionment",
+        "leaving behind",
+        "searching for truth"
+      ],
+      "ru": [
+        "уход",
+        "разочарование",
+        "оставление позади",
+        "поиск истины"
+      ],
+      "es": [
+        "alejarse",
+        "desilusión",
+        "dejar atrás",
+        "búsqueda de la verdad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Turning from what no longer fills. The Eight of Cups depicts the courage of walking away from what was — not in bitterness, but in search of something truer.",
+        "ru": "Отворачиваясь от того, что больше не наполняет. Восьмёрка Кубков изображает мужество уйти от прошлого — не в горечи, но в поисках чего-то более истинного.",
+        "es": "Apartarse de lo que ya no llena. El Ocho de Copas retrata el coraje de alejarse de lo que fue — no con amargura, sino en busca de algo más verdadero."
+      },
+      "reversed": {
+        "en": "Fear of moving on, returning to what should be left, or stagnation disguised as loyalty.",
+        "ru": "Страх двигаться дальше, возврат к тому, что следует оставить, или стагнация под маской верности.",
+        "es": "Miedo a seguir adelante, volver a algo que debería dejarse atrás, o estancamiento disfrazado de lealtad."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-9",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "9",
+    "symbol": "✨",
+    "name": {
+      "en": "Nine of Cups",
+      "ru": "Девятка Кубков",
+      "es": "Nueve de Copas"
+    },
+    "keywords": {
+      "en": [
+        "contentment",
+        "satisfaction",
+        "gratitude",
+        "wish come true"
+      ],
+      "ru": [
+        "довольство",
+        "удовлетворение",
+        "благодарность",
+        "исполненное желание"
+      ],
+      "es": [
+        "satisfacción",
+        "contento",
+        "gratitud",
+        "deseo cumplido"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The wish card. All nine cups full behind you — deep satisfaction, the pleasure of desires fulfilled, and the warmth of abundance. Pause to savor what is yours.",
+        "ru": "Карта желаний. Все девять кубков полны за вашей спиной — глубокое удовлетворение, радость исполнившихся желаний и тепло изобилия. Остановитесь, чтобы насладиться тем, что ваше.",
+        "es": "La carta del deseo cumplido. Las nueve copas llenas detrás de ti — profunda satisfacción, el placer de los deseos cumplidos, y la calidez de la abundancia. Detente a saborear lo que es tuyo."
+      },
+      "reversed": {
+        "en": "Overindulgence, materialism, satisfaction that rings hollow, or counting blessings too rarely.",
+        "ru": "Пресыщение, материализм, удовлетворение, звучащее фальшиво, или редкий подсчёт своих благ.",
+        "es": "Excesos, materialismo, satisfacción que suena hueca, o contar las bendiciones con demasiada poca frecuencia."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-10",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "10",
+    "symbol": "🌈",
+    "name": {
+      "en": "Ten of Cups",
+      "ru": "Десятка Кубков",
+      "es": "Diez de Copas"
+    },
+    "keywords": {
+      "en": [
+        "divine love",
+        "harmony",
+        "alignment",
+        "family"
+      ],
+      "ru": [
+        "божественная любовь",
+        "гармония",
+        "согласованность",
+        "семья"
+      ],
+      "es": [
+        "amor divino",
+        "armonía",
+        "alineación",
+        "familia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The rainbow over a joyful family. The Ten of Cups represents the fullest emotional happiness — lasting love, deep belonging, harmony in the home, and true contentment.",
+        "ru": "Радуга над счастливой семьёй. Десятка Кубков олицетворяет полноту эмоционального счастья — долгосрочную любовь, глубокую принадлежность, гармонию в доме и истинное довольство.",
+        "es": "El arcoíris sobre una familia feliz. El Diez de Copas representa la felicidad emocional más plena — amor duradero, profundo sentido de pertenencia, armonía en el hogar y contento verdadero."
+      },
+      "reversed": {
+        "en": "Broken family, surface harmony hiding discord, or idealized happiness that cannot be sustained.",
+        "ru": "Разлад в семье, показная гармония, скрывающая конфликт, или идеализированное счастье, которое не может длиться.",
+        "es": "Familia rota, armonía superficial que oculta discordia, o una felicidad idealizada que no se sostiene."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-page",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "page",
+    "symbol": "🐟",
+    "name": {
+      "en": "Page of Cups",
+      "ru": "Паж Кубков",
+      "es": "Sota de Copas"
+    },
+    "keywords": {
+      "en": [
+        "creative opportunities",
+        "curiosity",
+        "possibility",
+        "new ideas"
+      ],
+      "ru": [
+        "творческие возможности",
+        "любопытство",
+        "возможность",
+        "новые идеи"
+      ],
+      "es": [
+        "oportunidades creativas",
+        "curiosidad",
+        "posibilidad",
+        "nuevas ideas"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "A fish speaks from the cup — wonder without cynicism. The Page of Cups brings intuitive messages, creative opportunity, and the open-hearted curiosity of one who sees magic in ordinary things.",
+        "ru": "Из кубка говорит рыба — удивление без цинизма. Паж Кубков приносит интуитивные послания, творческие возможности и открытое любопытство того, кто видит магию в обыденном.",
+        "es": "Un pez habla desde la copa — asombro sin cinismo. La Sota de Copas trae mensajes intuitivos, oportunidad creativa, y la curiosidad de corazón abierto de quien ve magia en las cosas comunes."
+      },
+      "reversed": {
+        "en": "Immaturity, moodiness, creative ideas that don't progress beyond daydreaming.",
+        "ru": "Незрелость, перепады настроения, творческие идеи, не выходящие за рамки мечтаний.",
+        "es": "Inmadurez, cambios de humor, ideas creativas que no avanzan más allá de la ensoñación."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-knight",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "knight",
+    "symbol": "🦄",
+    "name": {
+      "en": "Knight of Cups",
+      "ru": "Рыцарь Кубков",
+      "es": "Caballero de Copas"
+    },
+    "keywords": {
+      "en": [
+        "romanticism",
+        "charm",
+        "imagination",
+        "beauty"
+      ],
+      "ru": [
+        "романтизм",
+        "обаяние",
+        "воображение",
+        "красота"
+      ],
+      "es": [
+        "romanticismo",
+        "encanto",
+        "imaginación",
+        "belleza"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The dreaming knight rides slowly forward. Romantic, idealistic, and moved by beauty — the Knight of Cups follows the heart with artistry, grace, and sincere feeling.",
+        "ru": "Мечтающий рыцарь медленно движется вперёд. Романтичный, идеалистичный, тронутый красотой — Рыцарь Кубков следует сердцу с артистизмом, изяществом и искренним чувством.",
+        "es": "El caballero soñador avanza despacio. Romántico, idealista, y movido por la belleza — el Caballero de Copas sigue al corazón con arte, gracia y sentimiento sincero."
+      },
+      "reversed": {
+        "en": "Moodiness, jealousy, unrealistic idealism, or charm used to manipulate.",
+        "ru": "Перепады настроения, ревность, нереалистичный идеализм или обаяние, используемое для манипуляций.",
+        "es": "Cambios de humor, celos, idealismo poco realista, o encanto usado para manipular."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-queen",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "queen",
+    "symbol": "🐚",
+    "name": {
+      "en": "Queen of Cups",
+      "ru": "Королева Кубков",
+      "es": "Reina de Copas"
+    },
+    "keywords": {
+      "en": [
+        "compassionate",
+        "caring",
+        "empathic",
+        "intuitive"
+      ],
+      "ru": [
+        "сострадательная",
+        "заботливая",
+        "эмпатичная",
+        "интуитивная"
+      ],
+      "es": [
+        "compasiva",
+        "cariñosa",
+        "empática",
+        "intuitiva"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Still water that sees everything. The Queen of Cups is profoundly empathic — a keeper of deep emotional wisdom, intuitive, compassionate, and capable of infinite understanding.",
+        "ru": "Тихая вода, видящая всё. Королева Кубков глубоко эмпатична — хранительница эмоциональной мудрости, интуитивная, сострадательная, способная на бесконечное понимание.",
+        "es": "Agua quieta que lo ve todo. La Reina de Copas es profundamente empática — guardiana de una profunda sabiduría emocional, intuitiva, compasiva, y capaz de una comprensión infinita."
+      },
+      "reversed": {
+        "en": "Emotional insecurity, dependency, or feelings so internalized they become hidden manipulation.",
+        "ru": "Эмоциональная неуверенность, зависимость или чувства, настолько загнанные внутрь, что превращающиеся в скрытые манипуляции.",
+        "es": "Inseguridad emocional, dependencia, o sentimientos tan interiorizados que se convierten en manipulación oculta."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "cups-king",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "rank": "king",
+    "symbol": "🌊",
+    "name": {
+      "en": "King of Cups",
+      "ru": "Король Кубков",
+      "es": "Rey de Copas"
+    },
+    "keywords": {
+      "en": [
+        "compassion",
+        "control",
+        "balance",
+        "wisdom"
+      ],
+      "ru": [
+        "сострадание",
+        "контроль",
+        "равновесие",
+        "мудрость"
+      ],
+      "es": [
+        "compasión",
+        "control",
+        "equilibrio",
+        "sabiduría"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The ocean king who remains calm. Emotional mastery — the King of Cups holds deep feelings without being drowned by them, offering wise and compassionate counsel.",
+        "ru": "Царь океана, хранящий спокойствие. Эмоциональное мастерство — Король Кубков несёт глубокие чувства, не тонув в них, предлагая мудрые и сострадательные советы.",
+        "es": "El rey del océano que permanece en calma. Maestría emocional — el Rey de Copas sostiene sentimientos profundos sin ahogarse en ellos, ofreciendo consejo sabio y compasivo."
+      },
+      "reversed": {
+        "en": "Moodiness, emotional manipulation, or feelings suppressed until they erupt.",
+        "ru": "Переменчивость настроения, эмоциональные манипуляции или подавленные чувства, в конце концов прорывающиеся наружу.",
+        "es": "Cambios de humor, manipulación emocional, o sentimientos reprimidos hasta que estallan."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-ace",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "ace",
+    "symbol": "⚡",
+    "name": {
+      "en": "Ace of Swords",
+      "ru": "Туз Мечей",
+      "es": "As de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "breakthrough",
+        "clarity",
+        "sharp mind",
+        "truth"
+      ],
+      "ru": [
+        "прорыв",
+        "ясность",
+        "острый ум",
+        "истина"
+      ],
+      "es": [
+        "revelación",
+        "claridad",
+        "mente aguda",
+        "verdad"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "A blade of pure clarity. The Ace of Swords cuts through confusion to reveal essential truth — a breakthrough in thinking, an important decision that must be made with integrity.",
+        "ru": "Лезвие чистой ясности. Туз Мечей рассекает замешательство, обнажая существенную истину — прорыв в мышлении, важное решение, которое нужно принять с честью.",
+        "es": "Una hoja de pura claridad. El As de Espadas corta la confusión para revelar la verdad esencial — un avance en el pensamiento, una decisión importante que debe tomarse con integridad."
+      },
+      "reversed": {
+        "en": "Confusion, brutality, using intelligence as a weapon, or a truth that comes at great cost.",
+        "ru": "Замешательство, жестокость, интеллект как оружие или истина, дающаяся ценой великих потерь.",
+        "es": "Confusión, brutalidad, usar la inteligencia como arma, o una verdad que llega a un gran costo."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-2",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "2",
+    "symbol": "⚖",
+    "name": {
+      "en": "Two of Swords",
+      "ru": "Двойка Мечей",
+      "es": "Dos de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "indecision",
+        "stalemate",
+        "blocked emotions",
+        "avoidance"
+      ],
+      "ru": [
+        "нерешительность",
+        "тупик",
+        "заблокированные эмоции",
+        "уклонение"
+      ],
+      "es": [
+        "indecisión",
+        "punto muerto",
+        "emociones bloqueadas",
+        "evasión"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Eyes covered, blades crossed. The Two of Swords speaks of a stalemate, indecision, or a deliberate turning away from a truth that must eventually be faced.",
+        "ru": "Глаза закрыты, клинки скрещены. Двойка Мечей говорит о тупике, нерешительности или намеренном отворачивании от истины, которую в конечном счёте придётся принять.",
+        "es": "Ojos cubiertos, espadas cruzadas. El Dos de Espadas habla de un punto muerto, la indecisión, o un alejamiento deliberado de una verdad que, tarde o temprano, deberá enfrentarse."
+      },
+      "reversed": {
+        "en": "Indecision resolved, seeing clearly at last, or deception coming to light.",
+        "ru": "Нерешительность преодолена, наконец видно ясно, или обман выходит на свет.",
+        "es": "Indecisión resuelta, ver con claridad por fin, o un engaño que sale a la luz."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-3",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "3",
+    "symbol": "💔",
+    "name": {
+      "en": "Three of Swords",
+      "ru": "Тройка Мечей",
+      "es": "Tres de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "heartbreak",
+        "sorrow",
+        "grief",
+        "hurt"
+      ],
+      "ru": [
+        "разбитое сердце",
+        "печаль",
+        "горе",
+        "боль"
+      ],
+      "es": [
+        "desamor",
+        "pesar",
+        "duelo",
+        "dolor"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Three swords through a heart, rain falling. The Three of Swords does not flinch from the reality of sorrow — grief, loss, and heartbreak that must be felt before they can be healed.",
+        "ru": "Три меча в сердце, дождь. Тройка Мечей не уклоняется от реальности горя — скорбь, утрата и сердечная боль, которые нужно прочувствовать, прежде чем их исцелить.",
+        "es": "Tres espadas atraviesan un corazón, la lluvia cae. El Tres de Espadas no rehúye la realidad del pesar — duelo, pérdida y desamor que deben sentirse antes de poder sanar."
+      },
+      "reversed": {
+        "en": "Recovery, releasing pain, forgiveness, or moving through grief toward the other side.",
+        "ru": "Восстановление, отпускание боли, прощение или движение сквозь горе к другому берегу.",
+        "es": "Recuperación, liberar el dolor, perdón, o atravesar el duelo hacia el otro lado."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-4",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "4",
+    "symbol": "🕯",
+    "name": {
+      "en": "Four of Swords",
+      "ru": "Четвёрка Мечей",
+      "es": "Cuatro de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "rest",
+        "restoration",
+        "contemplation",
+        "recovery"
+      ],
+      "ru": [
+        "отдых",
+        "восстановление",
+        "созерцание",
+        "выздоровление"
+      ],
+      "es": [
+        "descanso",
+        "restauración",
+        "contemplación",
+        "recuperación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The knight lies still in the chapel. The Four of Swords prescribes rest — recovery, contemplation, and the necessary withdrawal from conflict to restore body and mind.",
+        "ru": "Рыцарь лежит неподвижно в часовне. Четвёрка Мечей предписывает отдых — восстановление, созерцание и необходимый уход от конфликта, чтобы вернуть силы телу и разуму.",
+        "es": "El caballero yace inmóvil en la capilla. El Cuatro de Espadas prescribe descanso — recuperación, contemplación, y el retiro necesario del conflicto para restaurar cuerpo y mente."
+      },
+      "reversed": {
+        "en": "Restlessness, unable to rest even when needed, or returning to action before full recovery.",
+        "ru": "Беспокойство, неспособность отдохнуть, когда это необходимо, или возврат к действию раньше полного восстановления.",
+        "es": "Inquietud, incapacidad de descansar incluso cuando se necesita, o volver a la acción antes de una recuperación completa."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-5",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "5",
+    "symbol": "⚔",
+    "name": {
+      "en": "Five of Swords",
+      "ru": "Пятёрка Мечей",
+      "es": "Cinco de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "conflict",
+        "defeat",
+        "hostility",
+        "hollow victory"
+      ],
+      "ru": [
+        "конфликт",
+        "поражение",
+        "враждебность",
+        "пустая победа"
+      ],
+      "es": [
+        "conflicto",
+        "derrota",
+        "hostilidad",
+        "victoria vacía"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Victory with nothing left to celebrate. The Five of Swords warns of conflict that leaves everyone diminished — ask whether winning this battle is worth the damage.",
+        "ru": "Победа, после которой нечего праздновать. Пятёрка Мечей предостерегает от конфликта, в котором проигрывают все, — спросите себя, стоит ли победа в этой битве причинённого ущерба.",
+        "es": "Victoria sin nada que celebrar. El Cinco de Espadas advierte de un conflicto que deja a todos disminuidos — pregúntate si ganar esta batalla vale el daño causado."
+      },
+      "reversed": {
+        "en": "Reconciliation, moving beyond conflict, or the regret that follows a pyrrhic victory.",
+        "ru": "Примирение, выход за рамки конфликта или сожаление, последовавшее за пирровой победой.",
+        "es": "Reconciliación, superar el conflicto, o el arrepentimiento que sigue a una victoria pírrica."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-6",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "6",
+    "symbol": "⛵",
+    "name": {
+      "en": "Six of Swords",
+      "ru": "Шестёрка Мечей",
+      "es": "Seis de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "transition",
+        "change",
+        "rite of passage",
+        "release"
+      ],
+      "ru": [
+        "переход",
+        "перемены",
+        "обряд посвящения",
+        "освобождение"
+      ],
+      "es": [
+        "transición",
+        "cambio",
+        "rito de paso",
+        "liberación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Moving toward calmer water. The Six of Swords promises passage out of turbulence — a necessary transition that may be sorrowful, but leads toward quieter shores.",
+        "ru": "Движение к спокойным водам. Шестёрка Мечей обещает выход из потрясений — необходимый переход, который может быть горестным, но ведёт к более тихим берегам.",
+        "es": "Avanzando hacia aguas más tranquilas. El Seis de Espadas promete un paso más allá de la turbulencia — una transición necesaria que puede ser dolorosa, pero que conduce a costas más serenas."
+      },
+      "reversed": {
+        "en": "Incomplete transition, inability to leave difficulties behind, or resisting a necessary move.",
+        "ru": "Незавершённый переход, неспособность оставить трудности позади или сопротивление необходимому переезду.",
+        "es": "Transición incompleta, incapacidad de dejar atrás las dificultades, o resistencia a un movimiento necesario."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-7",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "7",
+    "symbol": "🐱",
+    "name": {
+      "en": "Seven of Swords",
+      "ru": "Семёрка Мечей",
+      "es": "Siete de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "betrayal",
+        "deception",
+        "strategy",
+        "sneaking away"
+      ],
+      "ru": [
+        "предательство",
+        "обман",
+        "стратегия",
+        "тайный уход"
+      ],
+      "es": [
+        "traición",
+        "engaño",
+        "estrategia",
+        "huida sigilosa"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Slipping away with what isn't yours. The Seven of Swords speaks of deception — whether you are being deceived, or whether you are taking a shortcut that bypasses integrity.",
+        "ru": "Ускользает с чужим. Семёрка Мечей говорит об обмане — вас обманывают или вы сами выбираете обходной путь в ущерб честности.",
+        "es": "Escabulléndose con lo que no te pertenece. El Siete de Espadas habla de engaño — ya sea que te estén engañando, o que estés tomando un atajo que sortea la integridad."
+      },
+      "reversed": {
+        "en": "Coming clean, returning what was taken, or a deception finally uncovered.",
+        "ru": "Признание, возврат взятого или наконец раскрытый обман.",
+        "es": "Sincerarse, devolver lo tomado, o un engaño finalmente descubierto."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-8",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "8",
+    "symbol": "🧿",
+    "name": {
+      "en": "Eight of Swords",
+      "ru": "Восьмёрка Мечей",
+      "es": "Ocho de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "restriction",
+        "imprisonment",
+        "victim mentality",
+        "powerlessness"
+      ],
+      "ru": [
+        "ограничение",
+        "заточение",
+        "позиция жертвы",
+        "беспомощность"
+      ],
+      "es": [
+        "restricción",
+        "encierro",
+        "mentalidad de víctima",
+        "impotencia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Bound but the path is clear. The Eight of Swords reveals restriction that is partly self-imposed — the blindfold can be removed; the ropes loosened. The prison is belief as much as circumstance.",
+        "ru": "Связан, но путь виден. Восьмёрка Мечей обнажает ограничение, отчасти самостоятельно созданное — повязку можно снять, верёвки — ослабить. Темница — это столько же убеждение, сколько обстоятельство.",
+        "es": "Atada, pero el camino está despejado. El Ocho de Espadas revela una restricción que es en parte autoimpuesta — la venda puede quitarse; las cuerdas, aflojarse. La prisión es tanto creencia como circunstancia."
+      },
+      "reversed": {
+        "en": "Breaking free, new perspective, or recognizing that the constraints were never absolute.",
+        "ru": "Освобождение, новый взгляд или осознание того, что ограничения никогда не были абсолютными.",
+        "es": "Liberarse, nueva perspectiva, o reconocer que las limitaciones nunca fueron absolutas."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-9",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "9",
+    "symbol": "😰",
+    "name": {
+      "en": "Nine of Swords",
+      "ru": "Девятка Мечей",
+      "es": "Nueve de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "anxiety",
+        "worry",
+        "fear",
+        "despair"
+      ],
+      "ru": [
+        "тревога",
+        "беспокойство",
+        "страх",
+        "отчаяние"
+      ],
+      "es": [
+        "ansiedad",
+        "preocupación",
+        "miedo",
+        "desesperación"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Waking in the dark hours. The Nine of Swords represents the particular anguish of the restless mind — anxiety, worry, and the fears that seem most real at three in the morning.",
+        "ru": "Пробуждение в тёмные часы. Девятка Мечей олицетворяет особую муку беспокойного разума — тревогу, страхи, которые кажутся наиболее реальными в три часа ночи.",
+        "es": "Despertar en las horas oscuras. El Nueve de Espadas representa la angustia particular de la mente inquieta — ansiedad, preocupación, y los miedos que parecen más reales a las tres de la madrugada."
+      },
+      "reversed": {
+        "en": "Coming through the worst, seeking help, or realizing that fears were larger than reality.",
+        "ru": "Выход из худшего, обращение за помощью или осознание того, что страхи были больше реальности.",
+        "es": "Salir de lo peor, buscar ayuda, o darse cuenta de que los miedos eran más grandes que la realidad."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-10",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "10",
+    "symbol": "🌅",
+    "name": {
+      "en": "Ten of Swords",
+      "ru": "Десятка Мечей",
+      "es": "Diez de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "painful endings",
+        "defeat",
+        "crisis",
+        "rock bottom"
+      ],
+      "ru": [
+        "болезненные окончания",
+        "поражение",
+        "кризис",
+        "дно"
+      ],
+      "es": [
+        "finales dolorosos",
+        "derrota",
+        "crisis",
+        "tocar fondo"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The dawn that follows the darkest point. Ten swords in the back — complete defeat, crisis, and the hitting of a bottom that, paradoxically, is the very beginning of recovery.",
+        "ru": "Рассвет после самой тёмной точки. Десять мечей в спине — полное поражение, кризис и достижение дна, которое, как ни парадоксально, является самым началом восстановления.",
+        "es": "El amanecer que sigue al punto más oscuro. Diez espadas en la espalda — derrota total, crisis, y tocar un fondo que, paradójicamente, es el verdadero inicio de la recuperación."
+      },
+      "reversed": {
+        "en": "Recovery, regeneration, or refusing to let a defeat be final.",
+        "ru": "Восстановление, возрождение или отказ позволить поражению стать окончательным.",
+        "es": "Recuperación, regeneración, o negarse a que una derrota sea definitiva."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-page",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "page",
+    "symbol": "🦅",
+    "name": {
+      "en": "Page of Swords",
+      "ru": "Паж Мечей",
+      "es": "Sota de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "curiosity",
+        "restlessness",
+        "mental energy",
+        "thirst for knowledge"
+      ],
+      "ru": [
+        "любопытство",
+        "беспокойность",
+        "умственная энергия",
+        "жажда знания"
+      ],
+      "es": [
+        "curiosidad",
+        "inquietud",
+        "energía mental",
+        "sed de conocimiento"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Alert, watchful, sword raised. The Page of Swords brings sharp curiosity, quick thinking, and the restless energy of a mind that wants to know everything immediately.",
+        "ru": "Бдительный, наблюдательный, с поднятым мечом. Паж Мечей приносит острое любопытство, быстрое мышление и неугомонную энергию ума, желающего знать всё немедленно.",
+        "es": "Alerta, vigilante, espada en alto. La Sota de Espadas trae una curiosidad aguda, pensamiento rápido, y la energía inquieta de una mente que quiere saberlo todo de inmediato."
+      },
+      "reversed": {
+        "en": "Deception, all talk no action, or gossip disguised as information.",
+        "ru": "Обман, пустые слова без действий или сплетни под видом информации.",
+        "es": "Engaño, todo palabras y nada de acción, o chismes disfrazados de información."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-knight",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "knight",
+    "symbol": "⚡",
+    "name": {
+      "en": "Knight of Swords",
+      "ru": "Рыцарь Мечей",
+      "es": "Caballero de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "ambitious",
+        "action-oriented",
+        "driven",
+        "assertive"
+      ],
+      "ru": [
+        "амбициозность",
+        "ориентация на действие",
+        "напористость",
+        "решительность"
+      ],
+      "es": [
+        "ambicioso",
+        "orientado a la acción",
+        "decidido",
+        "asertivo"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The charge without looking down. The Knight of Swords is pure decisive momentum — courageous, perhaps reckless, driven by intellect and the conviction that moving fast is moving right.",
+        "ru": "Атака без взгляда вниз. Рыцарь Мечей — чистый решительный импульс: смелый, возможно безрассудный, ведомый интеллектом и убеждённостью в том, что действовать быстро — значит действовать правильно.",
+        "es": "La carga sin mirar hacia abajo. El Caballero de Espadas es puro ímpetu decisivo — valiente, quizás temerario, impulsado por el intelecto y la convicción de que moverse rápido es moverse bien."
+      },
+      "reversed": {
+        "en": "Aggressive, scatter-brained, or charging into battle without a strategy.",
+        "ru": "Агрессия, разбросанность или бросок в бой без стратегии.",
+        "es": "Agresividad, dispersión mental, o lanzarse a la batalla sin estrategia."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-queen",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "queen",
+    "symbol": "🗡",
+    "name": {
+      "en": "Queen of Swords",
+      "ru": "Королева Мечей",
+      "es": "Reina de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "independent",
+        "unbiased judgment",
+        "clear boundaries",
+        "direct communication"
+      ],
+      "ru": [
+        "независимость",
+        "беспристрастное суждение",
+        "чёткие границы",
+        "прямое общение"
+      ],
+      "es": [
+        "independiente",
+        "juicio imparcial",
+        "límites claros",
+        "comunicación directa"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Clear eyes, clean cuts. The Queen of Swords has been through enough to know that clarity is kindness — she sees without illusion and communicates with a precision that is ultimately a gift.",
+        "ru": "Ясный взгляд, чистые порезы. Королева Мечей пережила достаточно, чтобы знать: ясность — это доброта. Она видит без иллюзий и общается с точностью, которая в конечном счёте является даром.",
+        "es": "Ojos claros, cortes limpios. La Reina de Espadas ha vivido lo suficiente para saber que la claridad es una forma de bondad — ve sin ilusiones y se comunica con una precisión que, al final, es un regalo."
+      },
+      "reversed": {
+        "en": "Coldness, harsh criticism, or using sharp perception to wound rather than clarify.",
+        "ru": "Холодность, жёсткая критика или использование острого восприятия для ранения, а не прояснения.",
+        "es": "Frialdad, crítica dura, o usar la percepción aguda para herir en lugar de aclarar."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "swords-king",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "rank": "king",
+    "symbol": "👁",
+    "name": {
+      "en": "King of Swords",
+      "ru": "Король Мечей",
+      "es": "Rey de Espadas"
+    },
+    "keywords": {
+      "en": [
+        "mental clarity",
+        "authority",
+        "truth",
+        "analytical"
+      ],
+      "ru": [
+        "ясность ума",
+        "авторитет",
+        "истина",
+        "аналитичность"
+      ],
+      "es": [
+        "claridad mental",
+        "autoridad",
+        "verdad",
+        "analítico"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The mind that sits in judgment. The King of Swords wields intellect with authority — clear, ethical, analytically precise, and committed to truth even when it is uncomfortable.",
+        "ru": "Разум, вершащий суд. Король Мечей владеет интеллектом с властью — ясный, этичный, аналитически точный, преданный истине даже тогда, когда она неудобна.",
+        "es": "La mente que se sienta a juzgar. El Rey de Espadas ejerce el intelecto con autoridad — claro, ético, analíticamente preciso, y comprometido con la verdad incluso cuando resulta incómoda."
+      },
+      "reversed": {
+        "en": "Misuse of power, tyranny, manipulative intelligence, or cold detachment from human consequences.",
+        "ru": "Злоупотребление властью, тирания, манипулятивный интеллект или холодная отстранённость от человеческих последствий.",
+        "es": "Abuso de poder, tiranía, inteligencia manipuladora, o frío distanciamiento de las consecuencias humanas."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-ace",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "ace",
+    "symbol": "💰",
+    "name": {
+      "en": "Ace of Pentacles",
+      "ru": "Туз Пентаклей",
+      "es": "As de Oros"
+    },
+    "keywords": {
+      "en": [
+        "opportunity",
+        "new beginnings",
+        "security",
+        "abundance"
+      ],
+      "ru": [
+        "возможность",
+        "новые начинания",
+        "безопасность",
+        "изобилие"
+      ],
+      "es": [
+        "oportunidad",
+        "nuevos comienzos",
+        "seguridad",
+        "abundancia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The coin from the cloud. A golden new beginning in the material world — opportunity for prosperity, health, and tangible security. Take the offer with both hands.",
+        "ru": "Монета из облака. Золотое новое начало в материальном мире — возможность процветания, здоровья и осязаемой безопасности. Принимайте предложение обеими руками.",
+        "es": "La moneda que cae de la nube. Un nuevo comienzo dorado en el mundo material — oportunidad de prosperidad, salud y seguridad tangible. Toma la oferta con ambas manos."
+      },
+      "reversed": {
+        "en": "Missed opportunity, lost money, or material stability just out of reach.",
+        "ru": "Упущенная возможность, потеря денег или материальная стабильность, почти недостижимая.",
+        "es": "Oportunidad perdida, dinero perdido, o estabilidad material fuera de alcance."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-2",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "2",
+    "symbol": "⚖",
+    "name": {
+      "en": "Two of Pentacles",
+      "ru": "Двойка Пентаклей",
+      "es": "Dos de Oros"
+    },
+    "keywords": {
+      "en": [
+        "balance",
+        "adaptability",
+        "time management",
+        "fluctuating priorities"
+      ],
+      "ru": [
+        "баланс",
+        "адаптивность",
+        "управление временем",
+        "меняющиеся приоритеты"
+      ],
+      "es": [
+        "equilibrio",
+        "adaptabilidad",
+        "gestión del tiempo",
+        "prioridades cambiantes"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Juggling gracefully in the storm. The Two of Pentacles is the art of balance — managing multiple priorities, fluctuating resources, and keeping all the necessary balls in the air.",
+        "ru": "Изящный жонглёр в буре. Двойка Пентаклей — это искусство равновесия: управление несколькими приоритетами, нестабильными ресурсами и удержание всех необходимых шаров в воздухе.",
+        "es": "Haciendo malabares con gracia en medio de la tormenta. El Dos de Oros es el arte del equilibrio — gestionar múltiples prioridades, recursos fluctuantes, y mantener todas las bolas necesarias en el aire."
+      },
+      "reversed": {
+        "en": "Overwhelmed, disorganized, or imbalance between material and spiritual concerns.",
+        "ru": "Перегруженность, дезорганизация или дисбаланс между материальными и духовными заботами.",
+        "es": "Sentirse abrumado, desorganización, o desequilibrio entre lo material y lo espiritual."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-3",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "3",
+    "symbol": "🏛",
+    "name": {
+      "en": "Three of Pentacles",
+      "ru": "Тройка Пентаклей",
+      "es": "Tres de Oros"
+    },
+    "keywords": {
+      "en": [
+        "teamwork",
+        "implementation",
+        "mastery",
+        "collaboration"
+      ],
+      "ru": [
+        "командная работа",
+        "воплощение",
+        "мастерство",
+        "сотрудничество"
+      ],
+      "es": [
+        "trabajo en equipo",
+        "ejecución",
+        "maestría",
+        "colaboración"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The craftsman discusses the plans. The Three of Pentacles celebrates skillful collaboration — three different minds pooling their expertise to create something none could achieve alone.",
+        "ru": "Мастер обсуждает планы. Тройка Пентаклей прославляет умелое сотрудничество — три разных ума, объединяющих свою экспертизу, чтобы создать то, чего ни один из них не достиг бы в одиночку.",
+        "es": "El artesano discute los planos. El Tres de Oros celebra la colaboración hábil — tres mentes distintas que unen su experiencia para crear algo que ninguna podría lograr sola."
+      },
+      "reversed": {
+        "en": "Lack of teamwork, corners cut, work done without pride or proper collaboration.",
+        "ru": "Отсутствие командной работы, халтура, работа без гордости или должного сотрудничества.",
+        "es": "Falta de trabajo en equipo, atajos tomados, trabajo hecho sin orgullo ni colaboración adecuada."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-4",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "4",
+    "symbol": "🤑",
+    "name": {
+      "en": "Four of Pentacles",
+      "ru": "Четвёрка Пентаклей",
+      "es": "Cuatro de Oros"
+    },
+    "keywords": {
+      "en": [
+        "saving money",
+        "security",
+        "conservatism",
+        "scarcity"
+      ],
+      "ru": [
+        "накопление",
+        "безопасность",
+        "консерватизм",
+        "скудость"
+      ],
+      "es": [
+        "ahorro",
+        "seguridad",
+        "conservadurismo",
+        "escasez"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Holding tight to what you have. The Four of Pentacles speaks of financial security through conservative management — but warns that clutching too tightly prevents both growth and generosity.",
+        "ru": "Держась за то, что есть. Четвёрка Пентаклей говорит о финансовой безопасности через консервативное управление — но предостерегает: слишком крепкая хватка мешает и росту, и щедрости.",
+        "es": "Aferrarse fuerte a lo que se tiene. El Cuatro de Oros habla de seguridad financiera mediante una gestión conservadora — pero advierte que aferrarse demasiado impide tanto el crecimiento como la generosidad."
+      },
+      "reversed": {
+        "en": "Letting go of materialism, overcoming scarcity mentality, or financial insecurity.",
+        "ru": "Отпускание материализма, преодоление мышления дефицита или финансовая незащищённость.",
+        "es": "Soltar el materialismo, superar la mentalidad de escasez, o inseguridad financiera."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-5",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "5",
+    "symbol": "❄",
+    "name": {
+      "en": "Five of Pentacles",
+      "ru": "Пятёрка Пентаклей",
+      "es": "Cinco de Oros"
+    },
+    "keywords": {
+      "en": [
+        "financial loss",
+        "poverty",
+        "lack",
+        "isolation"
+      ],
+      "ru": [
+        "финансовые потери",
+        "бедность",
+        "нужда",
+        "изоляция"
+      ],
+      "es": [
+        "pérdida financiera",
+        "pobreza",
+        "carencia",
+        "aislamiento"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Cold outside the lit window. Financial hardship, feeling left out in the cold, and the particular pain of material loss — yet the church door stands open for those who look up.",
+        "ru": "Снаружи у освещённого окна. Материальные трудности, ощущение выброшенности на холод и особая боль материальной потери — но дверь церкви открыта для тех, кто смотрит вверх.",
+        "es": "Frío afuera de la ventana iluminada. Dificultad financiera, sentirse dejado fuera en el frío, y el dolor particular de la pérdida material — sin embargo, la puerta de la iglesia permanece abierta para quien alce la mirada."
+      },
+      "reversed": {
+        "en": "Recovery from hardship, accepting help, spiritual richness compensating material lack.",
+        "ru": "Выход из нужды, принятие помощи или духовное богатство, компенсирующее материальный недостаток.",
+        "es": "Recuperación tras la dificultad, aceptar ayuda, riqueza espiritual que compensa la carencia material."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-6",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "6",
+    "symbol": "🤲",
+    "name": {
+      "en": "Six of Pentacles",
+      "ru": "Шестёрка Пентаклей",
+      "es": "Seis de Oros"
+    },
+    "keywords": {
+      "en": [
+        "generosity",
+        "charity",
+        "giving & receiving",
+        "sharing wealth"
+      ],
+      "ru": [
+        "щедрость",
+        "благотворительность",
+        "давать и получать",
+        "делиться богатством"
+      ],
+      "es": [
+        "generosidad",
+        "caridad",
+        "dar y recibir",
+        "compartir la riqueza"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The scales of giving. The Six of Pentacles depicts the flow of prosperity — generosity, fair dealing, and the understanding that abundance shared creates abundance multiplied.",
+        "ru": "Весы дарения. Шестёрка Пентаклей изображает поток процветания — щедрость, честное обращение и понимание того, что разделённое изобилие умножает изобилие.",
+        "es": "La balanza de dar. El Seis de Oros representa el flujo de la prosperidad — generosidad, trato justo, y el entendimiento de que la abundancia compartida crea más abundancia."
+      },
+      "reversed": {
+        "en": "Strings attached to gifts, unequal giving, debt, or generosity used as control.",
+        "ru": "Условия при подарках, неравная щедрость, долг или великодушие, используемое как контроль.",
+        "es": "Condiciones ocultas en los regalos, dar de forma desigual, deudas, o generosidad usada como control."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-7",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "7",
+    "symbol": "🌱",
+    "name": {
+      "en": "Seven of Pentacles",
+      "ru": "Семёрка Пентаклей",
+      "es": "Siete de Oros"
+    },
+    "keywords": {
+      "en": [
+        "long-term view",
+        "sustainable results",
+        "perseverance",
+        "investment"
+      ],
+      "ru": [
+        "долгосрочный взгляд",
+        "устойчивые результаты",
+        "настойчивость",
+        "инвестиции"
+      ],
+      "es": [
+        "visión a largo plazo",
+        "resultados sostenibles",
+        "perseverancia",
+        "inversión"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Resting on the hoe, surveying the growth. The Seven of Pentacles counsels patience — good work takes time, and this pause to evaluate whether effort is yielding what was intended is necessary.",
+        "ru": "Опираясь на мотыгу, оглядывая рост. Семёрка Пентаклей призывает к терпению — хорошая работа требует времени, и эта пауза для оценки, приносят ли усилия ожидаемый результат, необходима.",
+        "es": "Descansando sobre la azada, contemplando el crecimiento. El Siete de Oros aconseja paciencia — el buen trabajo lleva tiempo, y es necesaria esta pausa para evaluar si el esfuerzo está dando lo esperado."
+      },
+      "reversed": {
+        "en": "Impatience, poor returns, or working hard in the wrong direction.",
+        "ru": "Нетерпение, скудная отдача или упорный труд в неправильном направлении.",
+        "es": "Impaciencia, malos resultados, o trabajar duro en la dirección equivocada."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-8",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "8",
+    "symbol": "🔨",
+    "name": {
+      "en": "Eight of Pentacles",
+      "ru": "Восьмёрка Пентаклей",
+      "es": "Ocho de Oros"
+    },
+    "keywords": {
+      "en": [
+        "apprenticeship",
+        "dedication",
+        "high standards",
+        "skill development"
+      ],
+      "ru": [
+        "ученичество",
+        "самоотдача",
+        "высокие стандарты",
+        "развитие навыков"
+      ],
+      "es": [
+        "aprendizaje",
+        "dedicación",
+        "altos estándares",
+        "desarrollo de habilidades"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Each coin shaped with full attention. The Eight of Pentacles is the joy of mastery through diligent work — learning a craft, honing a skill, and taking pride in doing the thing right.",
+        "ru": "Каждая монета отчеканена с полным вниманием. Восьмёрка Пентаклей — радость мастерства через прилежный труд: изучение ремесла, совершенствование навыка и гордость от того, что делаешь дело правильно.",
+        "es": "Cada moneda forjada con total atención. El Ocho de Oros es la alegría de la maestría a través del trabajo diligente — aprender un oficio, perfeccionar una habilidad, y sentir orgullo por hacer las cosas bien."
+      },
+      "reversed": {
+        "en": "Lack of focus, perfectionism that prevents completion, or shortcuts undermining quality.",
+        "ru": "Рассеянность, перфекционизм, мешающий завершению, или срезание углов, подрывающее качество.",
+        "es": "Falta de enfoque, perfeccionismo que impide terminar, o atajos que socavan la calidad."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-9",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "9",
+    "symbol": "🦅",
+    "name": {
+      "en": "Nine of Pentacles",
+      "ru": "Девятка Пентаклей",
+      "es": "Nueve de Oros"
+    },
+    "keywords": {
+      "en": [
+        "abundance",
+        "luxury",
+        "self-sufficiency",
+        "financial independence"
+      ],
+      "ru": [
+        "изобилие",
+        "роскошь",
+        "самодостаточность",
+        "финансовая независимость"
+      ],
+      "es": [
+        "abundancia",
+        "lujo",
+        "autosuficiencia",
+        "independencia financiera"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The garden of earned abundance. The Nine of Pentacles celebrates self-sufficiency, elegant surroundings, and the deep pleasure of enjoying what one's own discipline has created.",
+        "ru": "Сад заслуженного изобилия. Девятка Пентаклей прославляет самодостаточность, изысканное окружение и глубокое удовольствие от наслаждения тем, что создано собственной дисциплиной.",
+        "es": "El jardín de la abundancia ganada. El Nueve de Oros celebra la autosuficiencia, un entorno elegante, y el profundo placer de disfrutar lo que la propia disciplina ha creado."
+      },
+      "reversed": {
+        "en": "Living beyond means, superficial values, or depending on others for what should be self-earned.",
+        "ru": "Жизнь не по средствам, поверхностные ценности или зависимость от других в том, что должно быть самостоятельно заработано.",
+        "es": "Vivir por encima de las posibilidades, valores superficiales, o depender de otros para lo que debería ganarse por uno mismo."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-10",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "10",
+    "symbol": "🏘",
+    "name": {
+      "en": "Ten of Pentacles",
+      "ru": "Десятка Пентаклей",
+      "es": "Diez de Oros"
+    },
+    "keywords": {
+      "en": [
+        "legacy",
+        "financial security",
+        "inheritance",
+        "family"
+      ],
+      "ru": [
+        "наследие",
+        "финансовая безопасность",
+        "наследство",
+        "семья"
+      ],
+      "es": [
+        "legado",
+        "seguridad financiera",
+        "herencia",
+        "familia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Three generations under arching pentacles. The Ten of Pentacles represents the fullness of material success — lasting wealth, family legacy, and the deep satisfaction of what is truly built to endure.",
+        "ru": "Три поколения под дугой пентаклей. Десятка Пентаклей олицетворяет полноту материального успеха — долговременное богатство, семейное наследие и глубокое удовлетворение от по-настоящему прочно выстроенного.",
+        "es": "Tres generaciones bajo arcos de oros. El Diez de Oros representa la plenitud del éxito material — riqueza duradera, legado familiar, y la profunda satisfacción de lo que verdaderamente perdura."
+      },
+      "reversed": {
+        "en": "Family conflict over money, failed legacy, or financial instability despite apparent wealth.",
+        "ru": "Семейный конфликт из-за денег, несостоявшееся наследие или финансовая нестабильность вопреки видимому благополучию.",
+        "es": "Conflicto familiar por dinero, legado fallido, o inestabilidad financiera pese a la riqueza aparente."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-page",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "page",
+    "symbol": "📚",
+    "name": {
+      "en": "Page of Pentacles",
+      "ru": "Паж Пентаклей",
+      "es": "Sota de Oros"
+    },
+    "keywords": {
+      "en": [
+        "manifestation",
+        "financial opportunity",
+        "skill development",
+        "diligence"
+      ],
+      "ru": [
+        "проявление",
+        "финансовая возможность",
+        "развитие навыков",
+        "усердие"
+      ],
+      "es": [
+        "manifestación",
+        "oportunidad financiera",
+        "desarrollo de habilidades",
+        "diligencia"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The coin studied with pure attention. The Page of Pentacles approaches the material world with curiosity and diligence — a student of practical skill, ambitious but grounded.",
+        "ru": "Монета, изучаемая с чистым вниманием. Паж Пентаклей подходит к материальному миру с любопытством и усердием — ученик практического мастерства, амбициозный, но приземлённый.",
+        "es": "La moneda estudiada con pura atención. La Sota de Oros aborda el mundo material con curiosidad y diligencia — una estudiante de la habilidad práctica, ambiciosa pero con los pies en la tierra."
+      },
+      "reversed": {
+        "en": "Lack of focus, procrastination, or learning without practical application.",
+        "ru": "Отсутствие сосредоточенности, промедление или учёба без практического применения.",
+        "es": "Falta de enfoque, procrastinación, o aprender sin aplicación práctica."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-knight",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "knight",
+    "symbol": "🐎",
+    "name": {
+      "en": "Knight of Pentacles",
+      "ru": "Рыцарь Пентаклей",
+      "es": "Caballero de Oros"
+    },
+    "keywords": {
+      "en": [
+        "hard work",
+        "productivity",
+        "routine",
+        "conventionality"
+      ],
+      "ru": [
+        "упорный труд",
+        "продуктивность",
+        "рутина",
+        "приверженность традиции"
+      ],
+      "es": [
+        "trabajo duro",
+        "productividad",
+        "rutina",
+        "convencionalismo"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The still knight who gets things done. The Knight of Pentacles moves slowly, methodically, and without drama — reliable, hardworking, and capable of sustained effort long after others have quit.",
+        "ru": "Недвижный рыцарь, который добивается своего. Рыцарь Пентаклей движется медленно, методично и без драм — надёжный, трудолюбивый, способный к устойчивым усилиям тогда, когда другие уже сдались.",
+        "es": "El caballero quieto que hace que las cosas sucedan. El Caballero de Oros se mueve despacio, metódicamente, y sin dramatismo — confiable, trabajador, y capaz de un esfuerzo sostenido mucho después de que otros abandonaron."
+      },
+      "reversed": {
+        "en": "Boredom, being stuck in routine, or hard work with no flexibility or creative spark.",
+        "ru": "Скука, застрявший в рутине или упорный труд без гибкости и творческой искры.",
+        "es": "Aburrimiento, quedar atrapado en la rutina, o trabajo duro sin flexibilidad ni chispa creativa."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-queen",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "queen",
+    "symbol": "🌿",
+    "name": {
+      "en": "Queen of Pentacles",
+      "ru": "Королева Пентаклей",
+      "es": "Reina de Oros"
+    },
+    "keywords": {
+      "en": [
+        "down-to-earth",
+        "practical",
+        "nurturing",
+        "resourceful"
+      ],
+      "ru": [
+        "приземлённость",
+        "практичность",
+        "забота",
+        "находчивость"
+      ],
+      "es": [
+        "con los pies en la tierra",
+        "práctica",
+        "protectora",
+        "ingeniosa"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "Nature held in able hands. The Queen of Pentacles combines warm nurturing with practical wisdom — she creates a world of abundance, comfort, and beauty through intelligent and grounded action.",
+        "ru": "Природа в умелых руках. Королева Пентаклей сочетает тёплую заботу с практической мудростью — она создаёт мир изобилия, комфорта и красоты через умные и взвешенные действия.",
+        "es": "La naturaleza sostenida por manos hábiles. La Reina de Oros combina un cuidado cálido con sabiduría práctica — crea un mundo de abundancia, comodidad y belleza mediante la acción inteligente y realista."
+      },
+      "reversed": {
+        "en": "Materialism overwhelming the soul, smothering over-care, or neglect of practical needs.",
+        "ru": "Материализм, захлёстывающий душу, удушающая опека или пренебрежение практическими нуждами.",
+        "es": "Materialismo que abruma al alma, un cuidado excesivo que asfixia, o descuido de las necesidades prácticas."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  },
+  {
+    "id": "pents-king",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "rank": "king",
+    "symbol": "💎",
+    "name": {
+      "en": "King of Pentacles",
+      "ru": "Король Пентаклей",
+      "es": "Rey de Oros"
+    },
+    "keywords": {
+      "en": [
+        "abundance",
+        "prosperity",
+        "security",
+        "ambition"
+      ],
+      "ru": [
+        "изобилие",
+        "процветание",
+        "безопасность",
+        "амбиции"
+      ],
+      "es": [
+        "abundancia",
+        "prosperidad",
+        "seguridad",
+        "ambición"
+      ]
+    },
+    "divination_meaning": {
+      "upright": {
+        "en": "The throne grown from what was planted. The King of Pentacles embodies the mastery of the material world — secure, prosperous, generous, and possessed of the hard-won wisdom of one who built an empire one coin at a time.",
+        "ru": "Трон, выросший из посеянного. Король Пентаклей воплощает мастерство в материальном мире — уверенный, процветающий, щедрый, обладающий выстраданной мудростью того, кто создавал империю монета за монетой.",
+        "es": "El trono que creció de lo sembrado. El Rey de Oros encarna la maestría del mundo material — seguro, próspero, generoso, y dotado de la sabiduría bien ganada de quien construyó un imperio moneda a moneda."
+      },
+      "reversed": {
+        "en": "Materialism, stubbornness, or wealth used as power rather than shared as abundance.",
+        "ru": "Материализм, упрямство или богатство, используемое как власть, а не разделяемое как изобилие.",
+        "es": "Materialismo, terquedad, o riqueza usada como poder en lugar de compartirse como abundancia."
+      }
+    },
+    "liahim_commentary": {
+      "en": "",
+      "ru": "",
+      "es": ""
+    }
+  }
+]
