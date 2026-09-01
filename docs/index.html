@@ -529,6 +529,9 @@
     width: 8.75rem;
     cursor: pointer;
     transition: transform 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .tarot-card-wrap:hover { transform: translateY(-0.375rem); }
@@ -628,6 +631,9 @@
     border-left: 3px solid var(--gold-dim);
     transition: border-color 0.2s;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .meaning-card:hover { border-left-color: var(--gold); }
@@ -787,20 +793,37 @@
     touch-action: pan-y;
   }
 
-  /* Card deck: one absolutely-stacked slide per spread card. JS moves only the
-     front slide (follows the thumb + tilts) and the neighbour it reveals. Each
-     slide is its own GPU layer so nothing re-rasterises mid-swipe. */
+  /* Card deck: exactly 3 mounted slides (centre / prev / next), transformed by
+     JS. touch-action:pan-y — the browser natively scrolls the inner .deck-scroll
+     (real momentum) and leaves horizontal to us; .deck-slide itself never
+     scrolls, so it can't be repainted by a scroll-commit while we drag it. */
   .modal-rail > .deck-slide {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+    padding: 0;
     background: #150f04;
     border: 1px solid rgba(201,168,76,0.16);
-    border-radius: 12px;
     box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55);
-    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
     backface-visibility: hidden;
     transform-origin: center center;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
   }
+  .modal-rail > .deck-slide > .deck-scroll {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    padding: 1.25rem 1rem 2.5rem;
+    scrollbar-width: none;
+  }
+  .modal-rail > .deck-slide > .deck-scroll::-webkit-scrollbar { display: none; }
 
   .modal-close {
     position: absolute;
@@ -2616,8 +2639,8 @@ function renderCardInto(root, card, opts = {}) {
   }
 
   root.scrollTop = 0;
-  const detail = root.querySelector('.modal-detail');
-  if (detail) detail.scrollTop = 0;
+  const sc = root.querySelector('.deck-scroll') || root.querySelector('.modal-detail');
+  if (sc) sc.scrollTop = 0;
 }
 
 function fillModalCard(card, opts = {}) {
@@ -2652,14 +2675,17 @@ function openModal(card, opts = {}) {
 }
 
 // ===== CARD DECK (mobile) =====
-// One persistent slide per spread card, stacked absolutely in #modal-rail and
-// rendered ONCE. Only two slides ever move: the front one (follows the thumb +
-// tilts) and the neighbour being revealed (scales 0.92 -> 1). Commit / spring-
-// back is a rAF tween of `deckOffset` that any new touch interrupts. Nothing is
-// re-rendered on a swipe, and the slides are their own GPU layers, so there is
-// nothing to flicker. Wrap is k = (k +/- 1) % n — a real loop.
-const DECK_TILT = 12, COMMIT_PX = 130;
-let deckK = 0, deckOffset = 0, deckPeer = -1, deckAnim = 0;
+// Only THREE slides are mounted (a bigger stack gets occlusion-culled by the
+// WebView and blanks out). deckRole maps {c,l,r} -> which of the 3 nodes is the
+// centre / left-neighbour / right-neighbour card. On a swipe only the centre
+// slide moves (thumb + tilt) and the revealed neighbour scales up. On commit
+// the roles rotate and the ONE slide that's now stale — always hidden behind
+// the opaque centre card — is re-rendered. Nothing visible is ever re-rendered.
+// Vertical content-scroll is JS-driven (slides are touch-action:none) so the
+// browser never scroll-commits and repaints the card mid-grab.
+const DECK_TILT = 12, DECK_COMMIT_PX = 130;
+let deckK = 0, deckOffset = 0, deckAnim = 0, deckDone = null;
+let deckRole = { c: 1, l: 0, r: 2 };
 
 function pagerActive() {
   return !!modalCards && !matchMedia('(min-width: 769px)').matches;
@@ -2667,50 +2693,33 @@ function pagerActive() {
 
 function currentSlide() {
   const kids = document.getElementById('modal-rail').children;
-  return kids[deckK] || document.getElementById('modal-swipe');
+  return kids[deckRole.c] || document.getElementById('modal-swipe');
 }
 
-function parkSlide(s) {
-  s.style.transform = 'scale(0.92)';
-  s.style.opacity = '0';
-  s.style.zIndex = '10';
-  s.style.pointerEvents = 'none';
-}
-
-// Position the front slide from deckOffset and reveal the neighbour in the drag
-// direction; leave every other slide parked.
+// Per-frame: move the centre slide, scale up the neighbour in the drag direction.
 function deckApply() {
   const rail = document.getElementById('modal-rail');
-  const slides = rail.children;
-  const n = slides.length;
-  if (!n) return;
+  const s = rail.children;
+  if (s.length < 3) return;
   const w = rail.clientWidth || 1;
-  const front = slides[deckK];
-  front.style.transform = `translateX(${deckOffset}px) rotate(${(deckOffset / w) * DECK_TILT}deg)`;
-  front.style.opacity = '1';        // dragged card stays fully opaque; it just slides off-screen
+  const prog = Math.min(1, Math.abs(deckOffset) / DECK_COMMIT_PX);
+
+  const front = s[deckRole.c];
+  front.style.transform = `translate3d(${deckOffset}px,0,0) rotate3d(0,0,1,${(deckOffset / w) * DECK_TILT}deg)`;
   front.style.zIndex = '30';
   front.style.pointerEvents = 'auto';
 
-  const peer = deckOffset === 0 ? -1 : (deckK + (deckOffset < 0 ? 1 : -1) + n) % n;
-  if (peer !== deckPeer && deckPeer >= 0 && deckPeer !== deckK) parkSlide(slides[deckPeer]);
-  deckPeer = peer;
-  if (peer >= 0 && peer !== deckK) {
-    const s = slides[peer];
-    const prog = Math.min(1, Math.abs(deckOffset) / COMMIT_PX);
-    s.style.transform = `scale(${0.92 + 0.08 * prog})`;
-    s.style.opacity = '1';
-    s.style.zIndex = '20';
-    s.style.pointerEvents = 'none';
-  }
+  const peer = deckOffset <= 0 ? s[deckRole.r] : s[deckRole.l];
+  const other = deckOffset <= 0 ? s[deckRole.l] : s[deckRole.r];
+  peer.style.transform = `translate3d(0,0,0) scale(${0.92 + 0.08 * prog})`;
+  peer.style.zIndex = '20';
+  peer.style.pointerEvents = 'none';
+  other.style.transform = 'translate3d(0,0,0) scale(0.92)';
+  other.style.zIndex = '10';
+  other.style.pointerEvents = 'none';
 }
 
-function deckReset() {
-  const slides = document.getElementById('modal-rail').children;
-  for (let i = 0; i < slides.length; i++) parkSlide(slides[i]);
-  deckOffset = 0; deckPeer = -1;
-  deckApply();
-}
-
+// Spring-back / settle tween (offset -> `to`). Not force-completable.
 function deckTween(to, dur, done) {
   cancelAnimationFrame(deckAnim);
   const from = deckOffset;
@@ -2726,6 +2735,48 @@ function deckTween(to, dur, done) {
   deckAnim = requestAnimationFrame(step);
 }
 
+// Throw the centre card off in `dir`. Finalises the instant it clears the
+// screen — no wasted travel/time — and can be force-finished by the next touch.
+function deckThrow(dir) {
+  cancelAnimationFrame(deckAnim);
+  const w = document.getElementById('modal-rail').clientWidth || 1;
+  const from = deckOffset;
+  const target = (dir > 0 ? -1 : 1) * w * 1.15;
+  const dur = Math.max(110, Math.min(240, Math.abs(target - from) * 0.42));
+  const t0 = performance.now();
+  const ease = x => 1 - Math.pow(1 - x, 3);
+  deckDone = () => { deckDone = null; cancelAnimationFrame(deckAnim); deckCommit(dir); };
+  const step = now => {
+    const p = Math.min(1, (now - t0) / dur);
+    deckOffset = from + (target - from) * ease(p);
+    if (p >= 1 || Math.abs(deckOffset) >= w) { deckDone(); return; }
+    deckApply();
+    deckAnim = requestAnimationFrame(step);
+  };
+  deckAnim = requestAnimationFrame(step);
+}
+
+// If a throw is mid-flight, snap it to done (so a fast re-grab lands on the
+// NEW card, not the one still leaving).
+function deckFinishThrow() {
+  if (deckDone) deckDone();
+}
+
+// dir +1 = advance to next card, -1 = previous. Roles rotate; the newly-stale
+// far slide (hidden behind the centre) is re-rendered.
+function deckCommit(dir) {
+  const s = document.getElementById('modal-rail').children;
+  const n = modalCards.length;
+  deckK = (deckK + dir + n) % n;
+  const r = deckRole;
+  deckRole = dir > 0 ? { c: r.r, l: r.c, r: r.l } : { c: r.l, l: r.r, r: r.c };
+  const staleNode = s[dir > 0 ? deckRole.r : deckRole.l];
+  const staleIdx = dir > 0 ? (deckK + 1) % n : (deckK - 1 + n) % n;
+  renderCardInto(staleNode, modalCards[staleIdx]);
+  deckOffset = 0;
+  deckApply();
+}
+
 function buildDeck() {
   cancelAnimationFrame(deckAnim);
   const track = document.querySelector('.modal-track');
@@ -2733,19 +2784,28 @@ function buildDeck() {
   const template = document.getElementById('modal-swipe');
   const n = modalCards.length;
   const frag = document.createDocumentFragment();
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < 3; i++) {
     const s = template.cloneNode(true);
     s.removeAttribute('id');
     s.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
     s.classList.add('deck-slide');
     s.style.cssText = '';
-    renderCardInto(s, modalCards[i]);
+    const sc = document.createElement('div');   // inner native-scroll layer
+    sc.className = 'deck-scroll';
+    while (s.firstChild) sc.appendChild(s.firstChild);
+    s.appendChild(sc);
     frag.appendChild(s);
   }
   rail.replaceChildren(frag);
   track.classList.add('paged');
   deckK = modalIndex;
-  deckReset();
+  deckRole = { c: 1, l: 0, r: 2 };
+  const s = rail.children;
+  renderCardInto(s[deckRole.c], modalCards[deckK]);
+  renderCardInto(s[deckRole.l], modalCards[(deckK - 1 + n) % n]);
+  renderCardInto(s[deckRole.r], modalCards[(deckK + 1) % n]);
+  deckOffset = 0;
+  deckApply();
 }
 
 function teardownDeck() {
@@ -2754,7 +2814,7 @@ function teardownDeck() {
   const rail = document.getElementById('modal-rail');
   if (track) track.classList.remove('paged');
   if (rail) rail.replaceChildren();
-  deckK = 0; deckOffset = 0; deckPeer = -1;
+  deckK = 0; deckOffset = 0; deckRole = { c: 1, l: 0, r: 2 };
 }
 
 (function initDeck() {
@@ -2768,53 +2828,48 @@ function teardownDeck() {
     if (!pagerActive() || e.touches.length !== 1 || !rail.children.length) { tracking = false; return; }
     const t = e.touches[0];
     if (t.clientX < EDGE || t.clientX > window.innerWidth - EDGE) { tracking = false; return; }
-    cancelAnimationFrame(deckAnim);                 // grab the current pose mid-tween
+    cancelAnimationFrame(deckAnim);
+    deckFinishThrow();               // a card mid-throw is done — grab the new one
     sx = t.clientX; sy = t.clientY; axis = null; tracking = true;
     w = rail.clientWidth || 1;
     startOffset = deckOffset;
     pX = t.clientX; vX = 0; vT = performance.now();
   }, { passive: true });
 
+  // All passive. Horizontal = our swipe; vertical is left entirely to the
+  // browser's native scroll of the inner .deck-scroll (real momentum, no
+  // preventDefault, no intervention).
   overlay.addEventListener('touchmove', e => {
     if (!tracking) return;
     const t = e.touches[0];
     const dx = t.clientX - sx, dy = t.clientY - sy;
     if (axis === null && Math.hypot(dx, dy) > 10) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
     if (axis !== 'x') return;
-    e.preventDefault();
-    const now = performance.now();
-    if (now > vT) { vX = (t.clientX - pX) / (now - vT); pX = t.clientX; vT = now; }
+    const now = performance.now(), dt = now - vT;
+    if (dt > 0) { vX = (t.clientX - pX) / dt; pX = t.clientX; vT = now; }
     let o = startOffset + dx;
-    if (Math.abs(o) > w) o = Math.sign(o) * (w + (Math.abs(o) - w) * 0.3);   // end resistance
+    if (Math.abs(o) > w) o = Math.sign(o) * (w + (Math.abs(o) - w) * 0.3);
     deckOffset = o;
     deckApply();
-  }, { passive: false });
+  }, { passive: true });
 
   overlay.addEventListener('touchend', e => {
     if (!tracking) return;
     tracking = false;
     if (axis !== 'x') return;
-    const n = rail.children.length;
     const flick = Math.abs(vX) > 0.4;
     const far = Math.abs(deckOffset) > Math.min(w * 0.32, 130);
-    if (n > 1 && deckOffset !== 0 && (flick || far)) {
-      const goNext = flick ? vX < 0 : deckOffset < 0;
-      deckTween(goNext ? -w * 1.25 : w * 1.25, 260, () => {
-        const slides = rail.children;
-        parkSlide(slides[deckK]);
-        deckK = (deckK + (goNext ? 1 : -1) + n) % n;
-        deckOffset = 0; deckPeer = -1;
-        deckApply();
-      });
+    if (modalCards.length > 1 && deckOffset !== 0 && (flick || far)) {
+      deckThrow((flick ? vX < 0 : deckOffset < 0) ? 1 : -1);
     } else {
-      deckTween(0, 200, () => { deckPeer = -1; deckApply(); });
+      deckTween(0, 200, () => { deckApply(); });
     }
   }, { passive: true });
 
   overlay.addEventListener('touchcancel', () => {
     if (!tracking) return;
     tracking = false;
-    deckTween(0, 180, () => { deckPeer = -1; deckApply(); });
+    if (axis === 'x') deckTween(0, 180, () => { deckApply(); });
   }, { passive: true });
 })();
 
