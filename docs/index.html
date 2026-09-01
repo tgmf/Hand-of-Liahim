@@ -5,10 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Hand of Liahim — Tarot Reader</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+SC:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
+  /* Self-hosted so the app renders correctly offline (Google Fonts <link>
+     removed). Subsets under docs/fonts/ — Cinzel & Crimson Pro are Latin-only
+     variable fonts; Cormorant SC (RU titles) carries Latin + Cyrillic. */
+  @font-face {
+    font-family: 'Cinzel';
+    src: url('fonts/cinzel.woff2') format('woff2');
+    font-weight: 400 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Crimson Pro';
+    src: url('fonts/crimson-pro.woff2') format('woff2');
+    font-weight: 300 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Crimson Pro';
+    src: url('fonts/crimson-pro-italic.woff2') format('woff2');
+    font-weight: 300 700; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Cormorant SC';
+    src: url('fonts/cormorant-sc-400.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Cormorant SC';
+    src: url('fonts/cormorant-sc-600.woff2') format('woff2');
+    font-weight: 600; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Cormorant SC';
+    src: url('fonts/cormorant-sc-700.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
   :root {
     font-size: 1.125rem;
     --ink: #1a1108;
