@@ -2,7 +2,7 @@
   "app.title": "Рука Лиахима",
   "setup.spread.label": "Выберите расклад",
   "setup.settingsToggle.ariaLabel": "Тема карт и настройки ИИ",
-  "setup.settingsClose.ariaLabel": "Закрыть настройки",
+  "header.back.ariaLabel": "Назад",
   "setup.deck.label": "Тема карт",
   "spread.single.title": "Одна карта",
   "spread.single.desc": "Чёткий ответ или ежедневное размышление",
@@ -58,6 +58,9 @@
   "reading.button.changeSettings": "Изменить настройки",
   "modal.upright": "Прямое",
   "modal.reversed": "Перевёрнутое",
+  "modal.symbolic": "Символизм и архетип",
+  "modal.qabalah": "Каббала",
+  "modal.qabalah.path": "Путь",
   "spread.single.positions": [
     "Карта"
   ],

@@ -12,34 +12,37 @@
     },
     "keywords": {
       "en": [
-        "beginnings",
-        "spontaneity",
+        "new beginnings",
         "innocence",
-        "freedom"
+        "spontaneity",
+        "leap of faith",
+        "potential"
       ],
       "ru": [
-        "начало",
-        "спонтанность",
+        "новые начинания",
         "невинность",
-        "свобода"
+        "спонтанность",
+        "прыжок веры",
+        "потенциал"
       ],
       "es": [
-        "comienzos",
-        "espontaneidad",
+        "nuevos comienzos",
         "inocencia",
-        "libertad"
+        "espontaneidad",
+        "salto de fe",
+        "potencial"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "A leap of faith into the unknown. The Fool represents new beginnings, unlimited potential, and the courage to take the first step without knowing the destination.",
-        "ru": "Прыжок веры в неизведанное. Шут олицетворяет новые начинания, безграничный потенциал и смелость сделать первый шаг, не зная пункта назначения.",
-        "es": "Un salto de fe hacia lo desconocido. El Loco representa nuevos comienzos, potencial ilimitado y el valor de dar el primer paso sin conocer el destino."
+        "en": "A fresh start is available—often unexpected or unplanned. Encourages openness, optimism, and willingness to begin without guarantees. In love, career, or personal growth, points to a moment to say 'yes' to possibility, even if it feels risky or naive.",
+        "ru": "Появляется возможность начать с чистого листа — часто неожиданно или незапланированно. Карта побуждает к открытости, оптимизму и готовности начинать без гарантий. В любви, карьере или личном развитии указывает на момент, когда стоит сказать 'да' новой возможности, даже если это кажется рискованным или наивным.",
+        "es": "Se presenta la oportunidad de empezar de nuevo, a menudo de forma inesperada o no planificada. Fomenta la apertura, el optimismo y la disposición a comenzar sin garantías. En el amor, la carrera o el crecimiento personal, señala un momento para decir 'sí' a una posibilidad, aunque parezca arriesgado o ingenuo."
       },
       "reversed": {
-        "en": "Recklessness, naïve folly, or holding back from a necessary new beginning out of fear.",
-        "ru": "Безрассудство, наивное безумство или страх, мешающий необходимому новому началу.",
-        "es": "Imprudencia, necedad ingenua, o resistirse a un nuevo comienzo necesario por miedo."
+        "en": "Holding back, fear of change, recklessness, risk-taking without awareness, vanity, apathy. Either resisting a necessary beginning (overthinking, clinging to safety) or acting impulsively without regard for consequences. Can indicate missed opportunities through hesitation, or foolish behaviour through ignoring clear warnings.",
+        "ru": "Сдержанность, страх перемен, безрассудство, риск без осознания последствий, тщеславие, апатия. Либо сопротивление необходимому началу (чрезмерные раздумья, цепляние за безопасность), либо импульсивные действия без учёта последствий. Может указывать на упущенные возможности из-за нерешительности или на безрассудное поведение при игнорировании явных предупреждений.",
+        "es": "Contención, miedo al cambio, imprudencia, asumir riesgos sin conciencia, vanidad, apatía. Ya sea resistirse a un comienzo necesario (exceso de reflexión, aferrarse a la seguridad) o actuar impulsivamente sin considerar las consecuencias. Puede indicar oportunidades perdidas por indecisión, o comportamiento imprudente al ignorar advertencias claras."
       }
     },
     "liahim_commentary": {
@@ -50,7 +53,7 @@
     "symbolic_and_archetypal_meaning": {
       "en": "The soul at the start of its journey: the archetype of the divine innocent, the holy vagabond, and the creative spark that initiates cycles. Embodies 'beginner's mind' and the courage to step into uncertainty with faith rather than proof. Linked to Air (mind, ideas, inspiration) and Uranus (sudden change, innovation), reinforcing its role as the catalyst for transformation and novelty.",
       "ru": "Душа в начале своего пути: архетип божественно невинного, святого странника и созидательной искры, инициирующей циклы. Воплощает 'сознание новичка' и смелость шагнуть в неизвестность с верой, а не с доказательствами. Связан со Стихией Воздуха (разум, идеи, вдохновение) и Ураном (внезапные перемены, новаторство), что подчёркивает его роль катализатора трансформации и новизны.",
-      "es": "El alma al comienzo de su viaje: el arquetipo del inocente divino, el vagabundo sagrado, y la chispa creativa que inicia los ciclos. Encarna la 'mente de principiante' y el valor de adentrarse en la incertidumbre con fe en lugar de pruebas. Vinculado al Aire (mente, ideas, inspiración) y a Urano (cambio repentino, innovación), lo que refuerza su papel como catalizador de la transformación y la novedad."
+      "es": "El alma al inicio de su viaje: el arquetipo del inocente divino, el vagabundo sagrado y la chispa creativa que inicia los ciclos. Encarna la 'mente de principiante' y el valor de adentrarse en la incertidumbre con fe en lugar de pruebas. Vinculado al Aire (mente, ideas, inspiración) y a Urano (cambio súbito, innovación), reforzando su papel como catalizador de la transformación y la novedad."
     }
   },
   {
@@ -66,40 +69,48 @@
     },
     "keywords": {
       "en": [
-        "willpower",
-        "skill",
         "manifestation",
-        "resourcefulness"
+        "willpower",
+        "resourcefulness",
+        "skill",
+        "focused action"
       ],
       "ru": [
-        "воля",
-        "мастерство",
         "проявление",
-        "находчивость"
+        "сила воли",
+        "находчивость",
+        "мастерство",
+        "целенаправленное действие"
       ],
       "es": [
-        "voluntad",
-        "habilidad",
         "manifestación",
-        "ingenio"
+        "fuerza de voluntad",
+        "ingenio",
+        "habilidad",
+        "acción enfocada"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "All tools are available. The Magician channels divine will into earthly action — skilled, resourceful, and capable of transforming intention into reality.",
-        "ru": "Все инструменты в наличии. Маг направляет божественную волю в земное действие — умелый, находчивый, способный превратить намерение в реальность.",
-        "es": "Todas las herramientas están disponibles. El Mago canaliza la voluntad divina hacia la acción terrenal — hábil, ingenioso y capaz de transformar la intención en realidad."
+        "en": "The Magician indicates that you have all the tools and talents needed to turn ideas into reality. A time of competence, confidence, and conscious creation—where intention meets opportunity and results follow.",
+        "ru": "Маг указывает на то, что у вас есть все инструменты и таланты, необходимые для превращения идей в реальность. Время компетентности, уверенности и осознанного созидания — когда намерение встречается с возможностью, и приходят результаты.",
+        "es": "El Mago indica que tienes todas las herramientas y talentos necesarios para convertir las ideas en realidad. Un momento de competencia, confianza y creación consciente—donde la intención se encuentra con la oportunidad y llegan los resultados."
       },
       "reversed": {
-        "en": "Manipulation, poor planning, latent talents unexpressed, or misdirected energy.",
-        "ru": "Манипуляции, слабое планирование, невыраженные таланты или неправильно направленная энергия.",
-        "es": "Manipulación, mala planificación, talentos latentes sin expresar, o energía mal dirigida."
+        "en": "Untapped potential, scattered energy, manipulation, or misuse of power. The reversed Magician can indicate creative blocks, poor planning, deception, or using gifts for selfish ends. It may also point to anxiety, restlessness, or an unfinished initiation where power is present but not properly channelled.",
+        "ru": "Нераскрытый потенциал, рассеянная энергия, манипуляция или неправильное использование силы. Перевёрнутый Маг может указывать на творческие блоки, плохое планирование, обман или использование дарований в эгоистичных целях. Также может указывать на тревогу, беспокойство или незавершённую инициацию, где сила присутствует, но не направлена должным образом.",
+        "es": "Potencial sin explotar, energía dispersa, manipulación o mal uso del poder. El Mago invertido puede indicar bloqueos creativos, mala planificación, engaño, o el uso de dones para fines egoístas. También puede señalar ansiedad, inquietud, o una iniciación inacabada donde el poder está presente pero no se canaliza adecuadamente."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The Magician is the archetype of conscious will meeting the material world—the living bridge between spirit and matter. He embodies the Hermetic principle 'as above, so below': drawing from the unseen and anchoring it in the visible. This card represents the first active step of creation, where potential becomes form through focused intention, skill, and alignment with universal forces.",
+      "ru": "Маг — это архетип осознанной воли, встречающейся с материальным миром — живой мост между духом и материей. Он воплощает герметический принцип 'как вверху, так и внизу': извлекая из невидимого и закрепляя это в видимом. Эта карта представляет первый активный шаг творения, где потенциал становится формой через сосредоточенное намерение, мастерство и согласованность с универсальными силами.",
+      "es": "El Mago es el arquetipo de la voluntad consciente que se encuentra con el mundo material—el puente vivo entre espíritu y materia. Encarna el principio hermético 'como arriba, es abajo': extrayendo de lo invisible y anclándolo en lo visible. Esta carta representa el primer paso activo de la creación, donde el potencial se convierte en forma a través de la intención enfocada, la habilidad y la alineación con las fuerzas universales."
     }
   },
   {
@@ -117,38 +128,46 @@
       "en": [
         "intuition",
         "mystery",
-        "subconscious",
-        "wisdom"
+        "the subconscious",
+        "inner knowing",
+        "stillness"
       ],
       "ru": [
         "интуиция",
         "тайна",
         "подсознание",
-        "мудрость"
+        "внутреннее знание",
+        "тишина"
       ],
       "es": [
         "intuición",
         "misterio",
         "subconsciente",
-        "sabiduría"
+        "saber interior",
+        "quietud"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Deep knowing without speaking. The High Priestess guards the threshold of inner wisdom — trust your intuition and the knowledge that comes without rational explanation.",
-        "ru": "Глубокое знание без слов. Верховная Жрица стоит у порога внутренней мудрости — доверяйте интуиции и знанию, которое приходит без рационального объяснения.",
-        "es": "Un saber profundo que no necesita palabras. La Sacerdotisa custodia el umbral de la sabiduría interior — confía en tu intuición y en el conocimiento que llega sin explicación racional."
+        "en": "A time to listen inward rather than act—answers come through dreams, symbols, and quiet awareness rather than analysis.",
+        "ru": "Время слушать внутренний голос, а не действовать — ответы приходят через сны, символы и тихое осознавание, а не через анализ.",
+        "es": "Un momento para escuchar hacia dentro en lugar de actuar—las respuestas llegan a través de sueños, símbolos y una conciencia silenciosa, no del análisis."
       },
       "reversed": {
-        "en": "Secrets withheld, disconnection from intuition, or surface-level understanding only.",
-        "ru": "Утаённые тайны, утрата связи с интуицией или поверхностное понимание.",
-        "es": "Secretos ocultos, desconexión de la intuición, o una comprensión únicamente superficial."
+        "en": "Secrets withheld, disconnection from intuition, surface-level thinking, repressed feelings. Can indicate information hidden from you, or that you are ignoring your own inner knowing in favour of noise and distraction.",
+        "ru": "Утаённые секреты, разрыв связи с интуицией, поверхностное мышление, подавленные чувства. Может указывать на скрытую от вас информацию или на то, что вы игнорируете собственное внутреннее знание в пользу шума и отвлечений.",
+        "es": "Secretos ocultos, desconexión de la intuición, pensamiento superficial, sentimientos reprimidos. Puede indicar información oculta para ti, o que estás ignorando tu propio saber interior en favor del ruido y la distracción."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The guardian of the threshold between conscious and unconscious, embodying the archetype of the Divine Feminine as keeper of mysteries not yet ready for form. She sits between two pillars—Boaz and Jachin, severity and mercy—holding balance rather than resolving it. Linked to the Moon, she governs cycles, receptivity, and the wisdom that cannot be forced, only received.",
+      "ru": "Хранительница порога между сознанием и бессознательным, воплощающая архетип Божественной Женственности как хранительницы тайн, ещё не готовых обрести форму. Она сидит между двумя колоннами — Боаз и Иахин, строгостью и милосердием — удерживая равновесие, а не разрешая его. Связана с Луной, она управляет циклами, восприимчивостью и мудростью, которую нельзя добыть силой, можно лишь принять.",
+      "es": "La guardiana del umbral entre lo consciente y lo inconsciente, encarnando el arquetipo de lo Femenino Divino como custodia de misterios aún no listos para tomar forma. Se sienta entre dos columnas—Boaz y Jachin, severidad y misericordia—sosteniendo el equilibrio en lugar de resolverlo. Vinculada a la Luna, rige los ciclos, la receptividad y la sabiduría que no puede forzarse, solo recibirse."
     }
   },
   {
@@ -164,40 +183,48 @@
     },
     "keywords": {
       "en": [
-        "fertility",
         "abundance",
         "nurturing",
-        "nature"
+        "fertility",
+        "sensuality",
+        "creativity"
       ],
       "ru": [
-        "плодородие",
         "изобилие",
         "забота",
-        "природа"
+        "плодородие",
+        "чувственность",
+        "творчество"
       ],
       "es": [
-        "fertilidad",
         "abundancia",
         "cuidado",
-        "naturaleza"
+        "fertilidad",
+        "sensualidad",
+        "creatividad"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Life in full bloom. The Empress represents fertility, abundance, and the creative power of nature. Nurture what you love and watch it flourish.",
-        "ru": "Жизнь в полном расцвете. Императрица воплощает плодородие, изобилие и созидательную силу природы. Заботьтесь о том, что любите, и наблюдайте, как оно расцветает.",
-        "es": "La vida en plena floración. La Emperatriz representa la fertilidad, la abundancia y el poder creativo de la naturaleza. Cuida lo que amas y observa cómo florece."
+        "en": "Life grows and flourishes without force—a season of receiving, feeding, and enjoying what has been sown.",
+        "ru": "Жизнь растёт и процветает без усилий — сезон получения, питания и наслаждения плодами посеянного.",
+        "es": "La vida crece y florece sin esfuerzo—una temporada de recibir, nutrir y disfrutar lo que se ha sembrado."
       },
       "reversed": {
-        "en": "Neglect, creative block, dependence, or smothering those in your care.",
-        "ru": "Пренебрежение, творческий кризис, зависимость или удушающая опека.",
-        "es": "Descuido, bloqueo creativo, dependencia, o sofocar a quienes están bajo tu cuidado."
+        "en": "Creative block, smothering or neglectful nurturing, dependence on others, disconnection from the body and nature. Can point to overindulgence, or to withholding care from oneself while giving it endlessly to others.",
+        "ru": "Творческий блок, удушающая или небрежная забота, зависимость от других, разрыв связи с телом и природой. Может указывать на чрезмерное потакание себе или на отказ от заботы о себе при бесконечной отдаче другим.",
+        "es": "Bloqueo creativo, cuidado asfixiante o negligente, dependencia de otros, desconexión del cuerpo y la naturaleza. Puede señalar excesos, o negarse cuidado a una misma mientras se lo da sin fin a los demás."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetypal Great Mother: fertility goddess, giver of form to raw creative force, ruler of the natural world in full flourish. Linked to Venus, she represents love made manifest through beauty, comfort, and abundance rather than abstraction—creation experienced through the senses and the body.",
+      "ru": "Архетипическая Великая Мать: богиня плодородия, дающая форму сырой созидательной силе, владычица природного мира в полном расцвете. Связана с Венерой, она олицетворяет любовь, воплощённую через красоту, комфорт и изобилие, а не через абстракцию — творение, переживаемое через чувства и тело.",
+      "es": "La arquetípica Gran Madre: diosa de la fertilidad, que da forma a la fuerza creativa en bruto, soberana del mundo natural en pleno florecimiento. Vinculada a Venus, representa el amor hecho manifiesto a través de la belleza, el confort y la abundancia en lugar de la abstracción—la creación experimentada a través de los sentidos y el cuerpo."
     }
   },
   {
@@ -215,38 +242,46 @@
       "en": [
         "authority",
         "structure",
-        "stability",
-        "leadership"
+        "discipline",
+        "leadership",
+        "stability"
       ],
       "ru": [
         "власть",
         "структура",
-        "стабильность",
-        "лидерство"
+        "дисциплина",
+        "лидерство",
+        "стабильность"
       ],
       "es": [
         "autoridad",
         "estructura",
-        "estabilidad",
-        "liderazgo"
+        "disciplina",
+        "liderazgo",
+        "estabilidad"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Order established through will. The Emperor brings structure, authority, and the stability of clear boundaries. Build with intention and lead with integrity.",
-        "ru": "Порядок, установленный волей. Император привносит структуру, авторитет и стабильность чётких границ. Стройте с намерением и ведите с достоинством.",
-        "es": "El orden establecido por la voluntad. El Emperador aporta estructura, autoridad y la estabilidad de límites claros. Construye con intención y lidera con integridad."
+        "en": "Order is imposed on chaos through will and clear rules—a time to build lasting foundations and take firm, responsible command.",
+        "ru": "Порядок навязывается хаосу через волю и чёткие правила — время строить прочные основы и брать на себя твёрдое, ответственное руководство.",
+        "es": "El orden se impone sobre el caos mediante la voluntad y reglas claras—un momento para construir cimientos duraderos y asumir un mando firme y responsable."
       },
       "reversed": {
-        "en": "Domination, rigidity, excessive control, or abdication of responsibility.",
-        "ru": "Деспотизм, негибкость, чрезмерный контроль или отказ от ответственности.",
-        "es": "Dominación, rigidez, control excesivo, o abdicación de la responsabilidad."
+        "en": "Rigidity, control, domination, tyranny, abuse of power. Structure has become a cage rather than a support—rules enforced without compassion, or authority so absent that chaos rushes in unchecked.",
+        "ru": "Косность, контроль, доминирование, тирания, злоупотребление властью. Структура превратилась в клетку, а не в опору — правила соблюдаются без сострадания, либо власть настолько отсутствует, что хаос вторгается беспрепятственно.",
+        "es": "Rigidez, control, dominación, tiranía, abuso de poder. La estructura se ha convertido en una jaula en vez de un apoyo—reglas impuestas sin compasión, o una autoridad tan ausente que el caos avanza sin freno."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetypal Father: builder of civilisation, giver of law and boundary, the will that shapes raw matter into enduring form. Where the Empress creates through growth, the Emperor creates through structure—Mars-tempered discipline that protects what has been grown and gives it lasting shape.",
+      "ru": "Архетипический Отец: строитель цивилизации, создатель закона и границ, воля, придающая сырой материи прочную форму. Там, где Императрица творит через рост, Император творит через структуру — марсианская дисциплина, защищающая выращенное и придающая ему устойчивую форму.",
+      "es": "El arquetipo del Padre: constructor de la civilización, dador de la ley y del límite, la voluntad que da a la materia bruta una forma duradera. Donde la Emperatriz crea a través del crecimiento, el Emperador crea a través de la estructura—una disciplina templada por Marte que protege lo que ha crecido y le da una forma perdurable."
     }
   },
   {
@@ -263,39 +298,47 @@
     "keywords": {
       "en": [
         "tradition",
-        "conformity",
-        "morality",
-        "ethics"
+        "teaching",
+        "spiritual guidance",
+        "institutions",
+        "conformity"
       ],
       "ru": [
         "традиция",
-        "следование нормам",
-        "нравственность",
-        "этика"
+        "обучение",
+        "духовное наставничество",
+        "институты",
+        "конформизм"
       ],
       "es": [
         "tradición",
-        "conformidad",
-        "moralidad",
-        "ética"
+        "enseñanza",
+        "guía espiritual",
+        "instituciones",
+        "conformidad"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The wisdom of tradition. The Hierophant represents spiritual guidance, shared values, and the accumulated knowledge of institutions. Seek learning from established paths.",
-        "ru": "Мудрость традиции. Иерофант олицетворяет духовное наставничество, общие ценности и накопленные знания институтов. Ищите учения на проверенных путях.",
-        "es": "La sabiduría de la tradición. El Hierofante representa la guía espiritual, los valores compartidos y el conocimiento acumulado de las instituciones. Busca aprender de caminos ya establecidos."
+        "en": "A time to seek counsel from a mentor, faith, or system with structure and lineage behind it.",
+        "ru": "Время искать совет у наставника, веры или системы, обладающей структурой и преемственностью.",
+        "es": "Un momento para buscar consejo de un mentor, una fe o un sistema con estructura y linaje detrás."
       },
       "reversed": {
-        "en": "Rebellion against convention, personal spirituality outside dogma, or hypocrisy.",
-        "ru": "Бунт против условностей, личная духовность вне догм или лицемерие.",
-        "es": "Rebelión contra lo convencional, espiritualidad personal fuera del dogma, o hipocresía."
+        "en": "Rigid dogma, blind conformity, rebellion against convention, or a crisis of faith. Either clinging to rules that no longer serve growth, or breaking from tradition in a way that risks losing valuable structure.",
+        "ru": "Жёсткая догма, слепой конформизм, бунт против условностей или кризис веры. Либо цепляние за правила, уже не служащие росту, либо отход от традиции способом, рискующим потерей ценной структуры.",
+        "es": "Dogma rígido, conformismo ciego, rebelión contra lo convencional, o una crisis de fe. Ya sea aferrarse a reglas que ya no sirven al crecimiento, o romper con la tradición de un modo que arriesga perder una estructura valiosa."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The bridge between the human and the divine, teacher of shared doctrine and keeper of collective wisdom passed hand to hand across generations. Where the High Priestess holds private, unspoken mystery, the Hierophant makes it public, teachable, and communal—religion, philosophy, or any structured body of knowledge one joins rather than discovers alone.",
+      "ru": "Мост между человеческим и божественным, учитель общей доктрины и хранитель коллективной мудрости, передаваемой из поколения в поколение. Там, где Верховная Жрица хранит личную, невысказанную тайну, Иерофант делает её публичной, обучаемой и общинной — религия, философия или любая структурированная система знаний, к которой присоединяются, а не открывают в одиночку.",
+      "es": "El puente entre lo humano y lo divino, maestro de la doctrina compartida y guardián de la sabiduría colectiva transmitida de mano en mano a través de generaciones. Donde la Sacerdotisa guarda un misterio privado y no dicho, el Hierofante lo hace público, enseñable y comunitario—religión, filosofía o cualquier cuerpo estructurado de conocimiento al que uno se une, en lugar de descubrirlo a solas."
     }
   },
   {
@@ -311,40 +354,48 @@
     },
     "keywords": {
       "en": [
-        "love",
+        "union",
+        "choice",
         "harmony",
-        "choices",
-        "alignment"
+        "values",
+        "connection"
       ],
       "ru": [
-        "любовь",
-        "гармония",
+        "союз",
         "выбор",
-        "согласованность"
+        "гармония",
+        "ценности",
+        "связь"
       ],
       "es": [
-        "amor",
+        "unión",
+        "elección",
         "armonía",
-        "decisiones",
-        "alineación"
+        "valores",
+        "conexión"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The crossroads of the heart. The Lovers speak not only of romance but of the fundamental choices that define who we are and what we value.",
-        "ru": "Перекрёсток сердца. Влюблённые говорят не только о романтике, но и о фундаментальном выборе, определяющем, кем мы являемся и что ценим.",
-        "es": "La encrucijada del corazón. Los Enamorados hablan no solo de romance, sino de las decisiones fundamentales que definen quiénes somos y qué valoramos."
+        "en": "Represents relationships built on genuine harmony, and moments where a decision must reflect one's truest values.",
+        "ru": "Символизирует отношения, построенные на подлинной гармонии, и моменты, когда решение должно отражать самые истинные ценности человека.",
+        "es": "Representa relaciones construidas sobre una armonía genuina, y momentos en los que una decisión debe reflejar los valores más verdaderos de uno."
       },
       "reversed": {
-        "en": "Misalignment of values, poor decisions, or conflict within a close relationship.",
-        "ru": "Несоответствие ценностей, неверные решения или конфликт в близких отношениях.",
-        "es": "Desalineación de valores, malas decisiones, o conflicto dentro de una relación cercana."
+        "en": "Disharmony, misalignment, a difficult choice avoided, or a relationship built on convenience rather than truth. Can indicate temptation away from one's values, or a partnership out of sync.",
+        "ru": "Дисгармония, несогласованность, избегание трудного выбора или отношения, построенные на удобстве, а не на истине. Может указывать на соблазн отойти от своих ценностей или на партнёрство, вышедшее из равновесия.",
+        "es": "Desarmonía, desalineación, una decisión difícil evitada, o una relación construida sobre la conveniencia en lugar de la verdad. Puede indicar tentación que aleja de los propios valores, o una pareja desincronizada."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of sacred union and moral choice: two become a conscious whole through free will rather than instinct alone. Ruled by Gemini and Mercury, it is as much about the duality within a single mind—reconciling opposites—as about romantic partnership between two people.",
+      "ru": "Архетип священного союза и нравственного выбора: двое становятся осознанным целым через свободную волю, а не только через инстинкт. Управляемая Близнецами и Меркурием, эта карта столько же о двойственности внутри одного разума — примирении противоположностей — сколько о романтическом партнёрстве между двумя людьми.",
+      "es": "El arquetipo de la unión sagrada y la elección moral: dos se convierten en un todo consciente mediante el libre albedrío y no solo el instinto. Regida por Géminis y Mercurio, trata tanto de la dualidad dentro de una sola mente—reconciliar opuestos—como de la pareja romántica entre dos personas."
     }
   },
   {
@@ -360,40 +411,48 @@
     },
     "keywords": {
       "en": [
-        "control",
         "willpower",
+        "determination",
+        "control",
         "victory",
-        "determination"
+        "momentum"
       ],
       "ru": [
+        "сила воли",
+        "решимость",
         "контроль",
-        "воля",
         "победа",
-        "решимость"
+        "импульс"
       ],
       "es": [
+        "fuerza de voluntad",
+        "determinación",
         "control",
-        "voluntad",
         "victoria",
-        "determinación"
+        "impulso"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Forward through opposing forces. The Chariot represents the triumph of disciplined will — holding contradictory forces in tension and driving them toward a single goal.",
-        "ru": "Вперёд — сквозь противоборствующие силы. Колесница — это триумф дисциплинированной воли: держать в напряжении противоречивые силы и направлять их к единой цели.",
-        "es": "Avanzar a través de fuerzas opuestas. El Carro representa el triunfo de la voluntad disciplinada — mantener fuerzas contradictorias en tensión y conducirlas hacia una sola meta."
+        "en": "Opposing forces are harnessed rather than eliminated, driven toward a single clear goal through sheer disciplined will.",
+        "ru": "Противоборствующие силы не устраняются, а обуздываются, направляясь к единой ясной цели через дисциплинированную волю.",
+        "es": "Las fuerzas opuestas se dominan en lugar de eliminarse, dirigidas hacia una meta única y clara mediante la pura voluntad disciplinada."
       },
       "reversed": {
-        "en": "Lack of control, aggression, scattered forces pulling in every direction.",
-        "ru": "Потеря контроля, агрессия, силы, тянущие в разные стороны.",
-        "es": "Falta de control, agresividad, fuerzas dispersas tirando en todas direcciones."
+        "en": "Lack of direction, loss of control, aggression without restraint, or being pulled apart by opposing forces. Can indicate a victory that comes at too high a cost, or momentum that has become reckless.",
+        "ru": "Отсутствие направления, потеря контроля, агрессия без сдержанности или разрывание противоборствующими силами. Может указывать на победу, доставшуюся слишком высокой ценой, или на импульс, ставший безрассудным.",
+        "es": "Falta de dirección, pérdida de control, agresión sin freno, o verse desgarrado por fuerzas opuestas. Puede indicar una victoria que llega a un costo demasiado alto, o un impulso que se ha vuelto imprudente."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of the disciplined ego asserting mastery over conflicting drives, riding forth from the union achieved by the Lovers into decisive worldly action. Ruled by Cancer, it channels emotional will into armoured, protected forward motion—triumph achieved through self-command rather than brute force.",
+      "ru": "Архетип дисциплинированного эго, утверждающего власть над противоречивыми побуждениями, выезжающего из союза, достигнутого Влюблёнными, к решительному мирскому действию. Управляемая Раком, эта карта направляет эмоциональную волю в бронированное, защищённое движение вперёд — торжество, достигнутое через самообладание, а не грубую силу.",
+      "es": "El arquetipo del ego disciplinado que afirma su dominio sobre impulsos contradictorios, avanzando desde la unión lograda por los Enamorados hacia una acción mundana decisiva. Regido por Cáncer, canaliza la voluntad emocional en un avance blindado y protegido—el triunfo logrado mediante el autodominio y no la fuerza bruta."
     }
   },
   {
@@ -409,40 +468,48 @@
     },
     "keywords": {
       "en": [
+        "inner strength",
         "courage",
-        "patience",
         "compassion",
-        "inner strength"
+        "patience",
+        "self-mastery"
       ],
       "ru": [
+        "внутренняя сила",
         "мужество",
-        "терпение",
         "сострадание",
-        "внутренняя сила"
+        "терпение",
+        "самообладание"
       ],
       "es": [
+        "fuerza interior",
         "coraje",
-        "paciencia",
         "compasión",
-        "fuerza interior"
+        "paciencia",
+        "autodominio"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Courage that does not roar. Strength is the patient taming of raw force through gentleness and love rather than domination — inner mastery over primal impulse.",
-        "ru": "Мужество, которое не кричит. Сила — это терпеливое укрощение грубой мощи через нежность и любовь, а не через господство; внутреннее владение первобытными импульсами.",
-        "es": "Un coraje que no necesita rugir. La Fuerza es la paciente doma de la fuerza bruta mediante la gentileza y el amor, no el dominio — el dominio interior sobre el impulso primario."
+        "en": "True power comes not from force but from patient, loving control of one's own wilder impulses and fears.",
+        "ru": "Истинная сила исходит не от грубой силы, а от терпеливого, любящего управления собственными дикими порывами и страхами.",
+        "es": "El verdadero poder no proviene de la fuerza bruta, sino del control paciente y amoroso de los propios impulsos y miedos más salvajes."
       },
       "reversed": {
-        "en": "Self-doubt, weakness of character, or force used as compensation for inner insecurity.",
-        "ru": "Сомнения в себе, слабость характера или грубая сила как компенсация внутренней неуверенности.",
-        "es": "Inseguridad, debilidad de carácter, o fuerza usada para compensar una inseguridad interior."
+        "en": "Self-doubt, weakness, raw impulse unchecked, or force used harshly instead of gently. Can indicate a loss of confidence, or resorting to domination where patience and compassion were needed.",
+        "ru": "Сомнение в себе, слабость, необузданный порыв или сила, применённая грубо вместо мягкости. Может указывать на потерю уверенности или на обращение к господству там, где требовались терпение и сострадание.",
+        "es": "Duda de sí mismo, debilidad, impulso en bruto sin control, o fuerza usada con dureza en lugar de suavidad. Puede indicar una pérdida de confianza, o recurrir a la dominación donde se necesitaban paciencia y compasión."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of tamed instinct: the animal within mastered not through violence but through steady, loving presence. Ruled by Leo and the Sun, it reframes courage as gentle, sustained inner authority rather than aggression—the taming of the lion by patience, not the sword.",
+      "ru": "Архетип укрощённого инстинкта: зверь внутри, покорённый не насилием, а постоянным, любящим присутствием. Управляемая Львом и Солнцем, эта карта переосмысляет мужество как мягкий, устойчивый внутренний авторитет, а не агрессию — укрощение льва терпением, а не мечом.",
+      "es": "El arquetipo del instinto domado: el animal interior dominado no mediante la violencia, sino a través de una presencia constante y amorosa. Regida por Leo y el Sol, reformula el coraje como una autoridad interior suave y sostenida, no como agresión—la doma del león por la paciencia, no por la espada."
     }
   },
   {
@@ -460,38 +527,46 @@
       "en": [
         "introspection",
         "solitude",
-        "guidance",
-        "seeking"
+        "inner guidance",
+        "wisdom",
+        "withdrawal"
       ],
       "ru": [
         "самоанализ",
-        "одиночество",
-        "наставничество",
-        "поиск"
+        "уединение",
+        "внутреннее руководство",
+        "мудрость",
+        "отстранение"
       ],
       "es": [
         "introspección",
         "soledad",
-        "guía",
-        "búsqueda"
+        "guía interior",
+        "sabiduría",
+        "retiro"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The light you carry inward. The Hermit retreats from the world to listen to the deepest truth — a guide who shows the path but does not walk it for you.",
-        "ru": "Свет, который вы несёте внутрь. Отшельник удаляется от мира, чтобы услышать глубочайшую истину — проводник, указывающий путь, но не идущий им за вас.",
-        "es": "La luz que llevas dentro. El Ermitaño se retira del mundo para escuchar la verdad más profunda — un guía que muestra el camino pero no lo recorre por ti."
+        "en": "Wisdom earned through withdrawal from the crowd. A time to pause, reflect, and seek one's own inner light rather than external validation.",
+        "ru": "Мудрость, обретённая через отстранение от толпы. Время остановиться, поразмыслить и искать собственный внутренний свет, а не внешнее одобрение.",
+        "es": "Sabiduría ganada mediante el retiro de la multitud. Un momento para hacer una pausa, reflexionar y buscar la propia luz interior en lugar de la validación externa."
       },
       "reversed": {
-        "en": "Isolation turned to loneliness, withdrawal from the world as escape rather than wisdom.",
-        "ru": "Одиночество, превратившееся в изоляцию; уход от мира как побег, а не мудрость.",
-        "es": "Aislamiento convertido en soledad, alejamiento del mundo como escape más que como sabiduría."
+        "en": "Isolation, loneliness, withdrawal that has become avoidance, or refusal of needed guidance. Can indicate excessive introspection that cuts one off from helpful connection and support.",
+        "ru": "Изоляция, одиночество, уединение, превратившееся в избегание, или отказ от нужного руководства. Может указывать на чрезмерный самоанализ, отрезающий от полезной связи и поддержки.",
+        "es": "Aislamiento, soledad, un retiro que se ha convertido en evasión, o el rechazo de una guía necesaria. Puede indicar una introspección excesiva que corta la conexión y el apoyo útiles."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of the solitary sage who withdraws not from fear but to distil wisdom earned through experience, then offers a single small light to guide others who seek it. Ruled by Virgo, he embodies careful, discerning inner work—the treasure found only by going within and taking one's time.",
+      "ru": "Архетип одинокого мудреца, удаляющегося не из страха, а чтобы дистиллировать мудрость, обретённую через опыт, а затем предложить единственный маленький свет тем, кто его ищет. Управляемый Девой, он воплощает тщательную, различающую внутреннюю работу — сокровище, находимое лишь через погружение внутрь себя и неспешность.",
+      "es": "El arquetipo del sabio solitario que se retira no por miedo, sino para destilar la sabiduría ganada a través de la experiencia, y luego ofrece una pequeña luz única para guiar a quienes la buscan. Regido por Virgo, encarna un trabajo interior cuidadoso y discernidor—el tesoro que solo se halla yendo hacia adentro y tomándose su tiempo."
     }
   },
   {
@@ -507,40 +582,48 @@
     },
     "keywords": {
       "en": [
-        "cycles",
         "fate",
-        "turning point",
-        "luck"
+        "cycles",
+        "change",
+        "fortune",
+        "turning point"
       ],
       "ru": [
-        "циклы",
         "судьба",
-        "поворотный момент",
-        "удача"
+        "циклы",
+        "перемены",
+        "удача",
+        "поворотный момент"
       ],
       "es": [
-        "ciclos",
         "destino",
-        "punto de inflexión",
-        "suerte"
+        "ciclos",
+        "cambio",
+        "fortuna",
+        "punto de inflexión"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The great wheel turns. Fortune reminds us that life moves in cycles and that change — both welcome and difficult — is the one true constant of existence.",
-        "ru": "Великое колесо вращается. Фортуна напоминает: жизнь движется циклами, а перемены — желанные и трудные — единственная истинная константа бытия.",
-        "es": "La gran rueda gira. La Fortuna nos recuerda que la vida se mueve en ciclos y que el cambio — bienvenido o difícil — es la única constante verdadera de la existencia."
+        "en": "Forces larger than personal control. Life moves in patterns of rise and fall; this is a moment when fortune shifts, for better or worse, carrying you forward.",
+        "ru": "Силы, превосходящие личный контроль. Жизнь движется по образцам подъёма и спада; это момент, когда удача меняется, к лучшему или худшему, увлекая вас вперёд.",
+        "es": "Fuerzas mayores que el control personal. La vida se mueve en patrones de ascenso y caída; este es un momento en que la fortuna cambia, para bien o para mal, llevándote hacia adelante."
       },
       "reversed": {
-        "en": "Bad luck, resistance to change, or clinging to the past as the wheel moves on.",
-        "ru": "Неудача, сопротивление переменам или цепляние за прошлое, пока колесо движется дальше.",
-        "es": "Mala suerte, resistencia al cambio, o aferrarse al pasado mientras la rueda sigue girando."
+        "en": "Bad luck, resistance to necessary change, feeling like a victim of circumstance, or a cycle repeating without learning from it. Can indicate a setback that feels unfair, or clinging to control where surrender is needed.",
+        "ru": "Невезение, сопротивление необходимым переменам, ощущение себя жертвой обстоятельств или цикл, повторяющийся без извлечения уроков. Может указывать на неудачу, кажущуюся несправедливой, или на цепляние за контроль там, где нужна капитуляция.",
+        "es": "Mala suerte, resistencia al cambio necesario, sentirse víctima de las circunstancias, o un ciclo que se repite sin aprender de él. Puede indicar un revés que se siente injusto, o aferrarse al control donde se necesita rendirse."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of cosmic cyclical time: fate's great wheel turning regardless of individual will, governed by Jupiter's expansive, unpredictable fortune. It marks the midpoint of the Major Arcana's journey, where the seeker learns that some forces must simply be met with grace rather than mastered.",
+      "ru": "Архетип космического циклического времени: великое колесо судьбы, вращающееся независимо от индивидуальной воли, управляемое экспансивной, непредсказуемой удачей Юпитера. Оно отмечает середину пути Старших Арканов, где ищущий узнаёт, что некоторые силы нужно просто встречать с достоинством, а не покорять.",
+      "es": "El arquetipo del tiempo cíclico cósmico: la gran rueda del destino que gira independientemente de la voluntad individual, gobernada por la fortuna expansiva e impredecible de Júpiter. Marca el punto medio del viaje de los Arcanos Mayores, donde el buscador aprende que algunas fuerzas simplemente deben afrontarse con gracia, no dominarse."
     }
   },
   {
@@ -556,40 +639,48 @@
     },
     "keywords": {
       "en": [
+        "justice",
         "fairness",
         "truth",
-        "cause & effect",
-        "law"
+        "accountability",
+        "balance"
       ],
       "ru": [
+        "справедливость",
         "честность",
-        "правда",
-        "причина и следствие",
-        "закон"
+        "истина",
+        "ответственность",
+        "равновесие"
       ],
       "es": [
+        "justicia",
         "equidad",
         "verdad",
-        "causa y efecto",
-        "ley"
+        "responsabilidad",
+        "equilibrio"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The scales that cannot be deceived. Justice represents truth, accountability, and the impartial consequences of every choice — no more and no less than what is due.",
-        "ru": "Весы, которые нельзя обмануть. Справедливость олицетворяет истину, ответственность и беспристрастные последствия каждого выбора — ни больше, ни меньше, чем должно.",
-        "es": "La balanza que no se deja engañar. La Justicia representa la verdad, la responsabilidad y las consecuencias imparciales de cada elección — ni más ni menos de lo que corresponde."
+        "en": "Fairness, truth, accountability, cause and effect. Actions and their consequences are weighed with clear, impartial eyes—a time when honesty and balanced judgement determine the outcome.",
+        "ru": "Справедливость, истина, ответственность, причина и следствие. Действия и их последствия взвешиваются ясным, беспристрастным взором — время, когда честность и взвешенное суждение определяют исход.",
+        "es": "Equidad, verdad, responsabilidad, causa y efecto. Las acciones y sus consecuencias se sopesan con ojos claros e imparciales—un momento en que la honestidad y el juicio equilibrado determinan el resultado."
       },
       "reversed": {
-        "en": "Unfairness, dishonesty, refusal of responsibility, or legal complications.",
-        "ru": "Несправедливость, нечестность, отказ от ответственности или юридические осложнения.",
-        "es": "Injusticia, deshonestidad, negativa a asumir responsabilidad, o complicaciones legales."
+        "en": "Unfairness, dishonesty, avoiding accountability, or a decision made without full information. Can indicate a legal or ethical matter unresolved, or consequences being dodged rather than faced.",
+        "ru": "Несправедливость, нечестность, уклонение от ответственности или решение, принятое без полной информации. Может указывать на неразрешённое юридическое или этическое дело или на уклонение от последствий, а не столкновение с ними.",
+        "es": "Injusticia, deshonestidad, evadir la responsabilidad, o una decisión tomada sin información completa. Puede indicar un asunto legal o ético sin resolver, o consecuencias eludidas en lugar de afrontadas."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of cosmic law: the principle that every cause produces a proportionate effect, and that truth, once weighed honestly, must be acted upon. Ruled by Libra, it demands objectivity even when the personal cost of fairness is high.",
+      "ru": "Архетип космического закона: принцип, согласно которому каждая причина порождает соразмерное следствие, а истина, будучи честно взвешенной, должна быть воплощена в действии. Управляемая Весами, эта карта требует объективности, даже когда личная цена справедливости высока.",
+      "es": "El arquetipo de la ley cósmica: el principio de que toda causa produce un efecto proporcional, y que la verdad, una vez sopesada con honestidad, debe traducirse en acción. Regida por Libra, exige objetividad incluso cuando el costo personal de la equidad es alto."
     }
   },
   {
@@ -605,40 +696,48 @@
     },
     "keywords": {
       "en": [
-        "suspension",
         "surrender",
         "new perspective",
-        "sacrifice"
+        "sacrifice",
+        "suspension",
+        "letting go"
       ],
       "ru": [
-        "приостановка",
         "капитуляция",
         "новый взгляд",
-        "жертва"
+        "жертва",
+        "приостановка",
+        "отпускание"
       ],
       "es": [
-        "suspensión",
-        "entrega",
+        "rendición",
         "nueva perspectiva",
-        "sacrificio"
+        "sacrificio",
+        "suspensión",
+        "soltar"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Willingly suspended between worlds. The Hanged Man chooses to pause, to surrender control, and in doing so sees what was invisible from the upright perspective.",
-        "ru": "Добровольно подвешенный между мирами. Повешенный выбирает паузу, отказывается от контроля и в этом видит то, что было невидимо с обычной точки зрения.",
-        "es": "Suspendido por voluntad propia entre dos mundos. El Colgado elige detenerse, entregar el control, y al hacerlo ve lo que era invisible desde la perspectiva erguida."
+        "en": "Surrender, suspension, new perspective through letting go, sacrifice for insight. Progress comes not from pushing forward but from pausing, releasing control, and seeing the situation from an entirely different angle.",
+        "ru": "Капитуляция, приостановка, новый взгляд через отпускание, жертва ради прозрения. Прогресс приходит не от движения вперёд, а от паузы, отпускания контроля и взгляда на ситуацию под совершенно другим углом.",
+        "es": "Rendición, suspensión, nueva perspectiva a través de soltar, sacrificio en busca de comprensión. El progreso no llega empujando hacia adelante, sino haciendo una pausa, soltando el control y viendo la situación desde un ángulo completamente distinto."
       },
       "reversed": {
-        "en": "Delays, resistance to necessary sacrifice, or stagnation that no longer serves.",
-        "ru": "Задержки, сопротивление необходимой жертве или стагнация, утратившая смысл.",
-        "es": "Demoras, resistencia a un sacrificio necesario, o estancamiento que ya no sirve."
+        "en": "Stalling, resistance to necessary sacrifice, feeling stuck without purpose, or martyrdom that serves no one. Can indicate delay that has outlived its usefulness, or self-sacrifice made for the wrong reasons.",
+        "ru": "Застой, сопротивление необходимой жертве, ощущение бесцельного застревания или мученичество, никому не служащее. Может указывать на задержку, изжившую свою пользу, или самопожертвование по неверным причинам.",
+        "es": "Estancamiento, resistencia a un sacrificio necesario, sentirse atascado sin propósito, o un martirio que no sirve a nadie. Puede indicar una demora que ya agotó su utilidad, o un autosacrificio hecho por razones equivocadas."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of willing sacrifice for higher understanding: suspended between worlds, the seeker gains wisdom precisely by giving up the need to act or control. Linked to the element of Water and Odin's self-hanging on the World Tree, it represents the paradox that surrender can be the most powerful action of all.",
+      "ru": "Архетип добровольной жертвы ради высшего понимания: подвешенный между мирами, ищущий обретает мудрость именно через отказ от потребности действовать или контролировать. Связанная со стихией Воды и самоповешением Одина на Мировом Древе, эта карта олицетворяет парадокс, при котором капитуляция может быть самым мощным из всех действий.",
+      "es": "El arquetipo del sacrificio voluntario en busca de una comprensión superior: suspendido entre mundos, el buscador gana sabiduría precisamente al renunciar a la necesidad de actuar o controlar. Vinculado al elemento Agua y al autoahorcamiento de Odín en el Árbol del Mundo, representa la paradoja de que la rendición puede ser la acción más poderosa de todas."
     }
   },
   {
@@ -654,40 +753,48 @@
     },
     "keywords": {
       "en": [
-        "endings",
-        "transition",
         "transformation",
+        "endings",
+        "release",
+        "renewal",
         "change"
       ],
       "ru": [
-        "завершение",
-        "переход",
         "трансформация",
+        "окончания",
+        "освобождение",
+        "обновление",
         "перемены"
       ],
       "es": [
-        "finales",
-        "transición",
         "transformación",
+        "finales",
+        "liberación",
+        "renovación",
         "cambio"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "What must end so something may live. Death is seldom literal — it is the great transformer, clearing away what has been outgrown to make space for what must emerge.",
-        "ru": "То, что должно закончиться, чтобы нечто могло жить. Смерть редко бывает буквальной — это великий преобразователь, расчищающий отжившее, чтобы дать место тому, что должно возникнуть.",
-        "es": "Lo que debe terminar para que algo pueda vivir. La Muerte rara vez es literal — es el gran transformador, que despeja lo que ya se ha superado para dar espacio a lo que debe surgir."
+        "en": "Transformation, endings that make way for new beginnings, release of what no longer serves. Rarely literal death—more often a decisive, necessary ending that clears space for genuine renewal.",
+        "ru": "Трансформация, окончания, освобождающие место для новых начинаний, отпускание того, что больше не служит. Редко буквальная смерть — чаще решительное, необходимое завершение, освобождающее пространство для подлинного обновления.",
+        "es": "Transformación, finales que dan paso a nuevos comienzos, liberación de lo que ya no sirve. Raramente una muerte literal—más a menudo un final decisivo y necesario que despeja el espacio para una renovación genuina."
       },
       "reversed": {
-        "en": "Resistance to ending, stagnation, fear of letting go of an identity that no longer fits.",
-        "ru": "Сопротивление окончанию, стагнация, страх расстаться с идентичностью, которая больше не подходит.",
-        "es": "Resistencia a terminar, estancamiento, miedo a soltar una identidad que ya no encaja."
+        "en": "Resistance to change, stagnation, fear of letting go, or a transition being dragged out painfully. Can indicate clinging to a situation, relationship, or identity long past its natural end.",
+        "ru": "Сопротивление переменам, застой, страх отпускания или мучительно затянувшийся переход. Может указывать на цепляние за ситуацию, отношения или идентичность, давно пережившие свой естественный конец.",
+        "es": "Resistencia al cambio, estancamiento, miedo a soltar, o una transición que se prolonga dolorosamente. Puede indicar aferrarse a una situación, relación o identidad mucho después de su fin natural."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of transformation through necessary ending: nothing new can be born until the old form is released completely. Ruled by Scorpio, it is the great leveller—stripping away illusion and attachment to reveal what is essential and what must be surrendered.",
+      "ru": "Архетип трансформации через необходимое завершение: ничто новое не может родиться, пока старая форма не будет полностью отпущена. Управляемая Скорпионом, эта карта — великий уравнитель, снимающий иллюзию и привязанность, чтобы раскрыть сущностное и то, что должно быть отпущено.",
+      "es": "El arquetipo de la transformación mediante un final necesario: nada nuevo puede nacer hasta que la forma antigua se libera por completo. Regida por Escorpio, es el gran nivelador—despoja la ilusión y el apego para revelar lo esencial y lo que debe entregarse."
     }
   },
   {
@@ -706,37 +813,45 @@
         "balance",
         "moderation",
         "patience",
-        "purpose"
+        "synthesis",
+        "harmony"
       ],
       "ru": [
         "равновесие",
         "умеренность",
         "терпение",
-        "цель"
+        "синтез",
+        "гармония"
       ],
       "es": [
         "equilibrio",
         "moderación",
         "paciencia",
-        "propósito"
+        "síntesis",
+        "armonía"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The alchemy of the middle way. Temperance blends opposites into something finer than either alone — patience, moderation, and the grace of working in perfect proportion.",
-        "ru": "Алхимия среднего пути. Умеренность смешивает противоположности в нечто более тонкое, чем каждое из них в отдельности — терпение, мера и изящество работы в идеальной пропорции.",
-        "es": "La alquimia del término medio. La Templanza mezcla opuestos en algo más refinado que cualquiera de ellos por separado — paciencia, moderación y la gracia de trabajar en perfecta proporción."
+        "en": "Balance, moderation, patient blending, harmony achieved through gradual integration. Opposing elements are combined slowly and skillfully rather than forced together, producing something greater than either alone.",
+        "ru": "Равновесие, умеренность, терпеливое смешение, гармония, достигнутая через постепенную интеграцию. Противоположные стихии соединяются медленно и умело, а не насильно, порождая нечто большее, чем каждая по отдельности.",
+        "es": "Equilibrio, moderación, mezcla paciente, armonía lograda mediante una integración gradual. Los elementos opuestos se combinan lenta y hábilmente en lugar de forzarse, produciendo algo mayor que cualquiera por separado."
       },
       "reversed": {
-        "en": "Imbalance, excess, impatience, or discord caused by extremes.",
-        "ru": "Дисбаланс, крайности, нетерпение или разлад, вызванный избытком.",
-        "es": "Desequilibrio, exceso, impaciencia, o discordia causada por los extremos."
+        "en": "Imbalance, excess, impatience, or a combination attempted carelessly that fails to blend. Can indicate overindulgence in one direction, or a rushed synthesis that has not been given time to mature.",
+        "ru": "Дисбаланс, избыток, нетерпение или небрежная попытка соединения, не давшая гармонии. Может указывать на чрезмерное увлечение одним направлением или поспешный синтез, которому не дали времени созреть.",
+        "es": "Desequilibrio, exceso, impaciencia, o una combinación intentada con descuido que no logra mezclarse. Puede indicar un exceso en una dirección, o una síntesis apresurada a la que no se le ha dado tiempo para madurar."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of alchemical synthesis: patience as an active creative force that reconciles opposites into a new, harmonious whole. Ruled by Sagittarius, it follows Death's necessary ending with the slow art of healing and recombination, showing that true integration cannot be rushed.",
+      "ru": "Архетип алхимического синтеза: терпение как активная созидательная сила, примиряющая противоположности в новое, гармоничное целое. Управляемая Стрельцом, эта карта следует за необходимым завершением Смерти медленным искусством исцеления и рекомбинации, показывая, что истинную интеграцию нельзя ускорить.",
+      "es": "El arquetipo de la síntesis alquímica: la paciencia como fuerza creativa activa que reconcilia los opuestos en un todo nuevo y armonioso. Regida por Sagitario, sigue al final necesario de la Muerte con el lento arte de la sanación y la recombinación, mostrando que la verdadera integración no puede apresurarse."
     }
   },
   {
@@ -753,39 +868,47 @@
     "keywords": {
       "en": [
         "bondage",
-        "addiction",
         "materialism",
-        "shadow"
+        "shadow",
+        "temptation",
+        "attachment"
       ],
       "ru": [
-        "оковы",
-        "зависимость",
+        "порабощение",
         "материализм",
-        "тень"
+        "тень",
+        "искушение",
+        "привязанность"
       ],
       "es": [
         "esclavitud",
-        "adicción",
         "materialismo",
-        "sombra"
+        "sombra",
+        "tentación",
+        "apego"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The chains we forge ourselves. The Devil illuminates where we are enslaved by fear, desire, or habit — and reminds us that the chains are often not as binding as they appear.",
-        "ru": "Цепи, которые мы куём сами. Дьявол освещает, где мы порабощены страхом, желанием или привычкой, — и напоминает: оковы зачастую не так крепки, как кажется.",
-        "es": "Las cadenas que forjamos nosotros mismos. El Diablo ilumina dónde estamos esclavizados por el miedo, el deseo o el hábito — y recuerda que las cadenas a menudo no son tan firmes como parecen."
+        "en": "Bondage, materialism, addiction, unhealthy attachment, the shadow self. Reveals chains that are largely self-imposed—patterns of fear, desire, or dependency mistaken for inescapable fate.",
+        "ru": "Порабощение, материализм, зависимость, нездоровая привязанность, теневое я. Раскрывает оковы, во многом наложенные самим собой, — паттерны страха, желания или зависимости, ошибочно принимаемые за неизбежную судьбу.",
+        "es": "Esclavitud, materialismo, adicción, apego insano, el yo sombrío. Revela cadenas que en gran parte son autoimpuestas—patrones de miedo, deseo o dependencia confundidos con un destino ineludible."
       },
       "reversed": {
-        "en": "Detachment from addiction, releasing what binds, or reclaiming personal freedom.",
-        "ru": "Освобождение от зависимости, отказ от того, что связывает, возвращение личной свободы.",
-        "es": "Desapego de la adicción, liberación de lo que ata, o recuperación de la libertad personal."
+        "en": "Breaking free, awakening to one's own power, releasing an unhealthy attachment, or confronting denial. Can indicate the first crack of awareness that a chain was never as fixed as it seemed.",
+        "ru": "Освобождение, пробуждение к собственной силе, отпускание нездоровой привязанности или столкновение с отрицанием. Может указывать на первую трещину осознания того, что оковы никогда не были столь незыблемыми, как казалось.",
+        "es": "Liberarse, despertar al propio poder, soltar un apego insano, o enfrentar la negación. Puede indicar la primera grieta de conciencia de que una cadena nunca fue tan fija como parecía."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of the shadow: bondage to instinct, materialism, and fear that masquerades as inevitability. Ruled by Capricorn, it forces confrontation with what has been denied or repressed, showing that liberation begins the moment one recognises the chains can be loosened at will.",
+      "ru": "Архетип тени: порабощённость инстинктом, материализмом и страхом, маскирующаяся под неизбежность. Управляемая Козерогом, эта карта вынуждает к столкновению с тем, что было отрицаемо или подавлено, показывая, что освобождение начинается в момент, когда человек осознаёт, что оковы можно ослабить по своей воле.",
+      "es": "El arquetipo de la sombra: la esclavitud al instinto, el materialismo y el miedo que se disfraza de inevitabilidad. Regido por Capricornio, fuerza la confrontación con lo que ha sido negado o reprimido, mostrando que la liberación comienza en el momento en que uno reconoce que las cadenas pueden aflojarse a voluntad."
     }
   },
   {
@@ -801,40 +924,48 @@
     },
     "keywords": {
       "en": [
-        "sudden change",
         "upheaval",
         "revelation",
-        "chaos"
+        "collapse",
+        "sudden change",
+        "awakening"
       ],
       "ru": [
-        "внезапная перемена",
         "потрясение",
         "откровение",
-        "хаос"
+        "крушение",
+        "внезапная перемена",
+        "пробуждение"
       ],
       "es": [
-        "cambio repentino",
-        "agitación",
+        "trastorno",
         "revelación",
-        "caos"
+        "colapso",
+        "cambio súbito",
+        "despertar"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Lightning and necessary ruin. The Tower strikes down what was built on a false foundation — a dramatic clearing, painful in the moment, that reveals essential truth.",
-        "ru": "Молния и необходимые руины. Башня сокрушает то, что было выстроено на ложном основании — драматическое очищение, болезненное в моменте, но обнажающее существенную истину.",
-        "es": "El rayo y la ruina necesaria. La Torre derriba lo construido sobre una base falsa — una limpieza dramática, dolorosa en el momento, que revela una verdad esencial."
+        "en": "Sudden upheaval, revelation, collapse of false structures, necessary destruction. What was built on a flawed foundation falls abruptly, clearing the way for truth however painful the shock.",
+        "ru": "Внезапное потрясение, откровение, крушение ложных структур, необходимое разрушение. То, что было построено на порочном основании, рушится внезапно, освобождая путь для истины, каким бы болезненным ни был шок.",
+        "es": "Trastorno súbito, revelación, colapso de estructuras falsas, destrucción necesaria. Lo que se construyó sobre un cimiento defectuoso cae abruptamente, despejando el camino para la verdad, por doloroso que sea el impacto."
       },
       "reversed": {
-        "en": "Avoiding necessary change, clinging to a structure that must fall, or disaster averted.",
-        "ru": "Избегание необходимых перемен, цепляние за рушащуюся структуру или предотвращённая катастрофа.",
-        "es": "Evitar un cambio necesario, aferrarse a una estructura que debe caer, o un desastre evitado."
+        "en": "Avoiding an inevitable collapse, delaying necessary change, or a disaster that was seen coming but ignored. Can also indicate fear of change so strong it prevents needed upheaval from occurring.",
+        "ru": "Избегание неизбежного краха, откладывание необходимых перемен или катастрофа, которую предвидели, но проигнорировали. Может также указывать на страх перемен, настолько сильный, что он предотвращает необходимое потрясение.",
+        "es": "Evitar un colapso inevitable, retrasar un cambio necesario, o un desastre que se veía venir pero se ignoró. También puede indicar un miedo al cambio tan fuerte que impide que ocurra el trastorno necesario."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of sudden, revelatory destruction: illusion and false security shattered by a truth too large to contain. Linked to Mars, it is violent and shocking, but ultimately liberating—the lightning strike that ends denial and forces confrontation with reality as it actually is.",
+      "ru": "Архетип внезапного, откровенного разрушения: иллюзия и ложная безопасность, разбитые истиной, слишком большой, чтобы её сдерживать. Связанная с Марсом, эта карта насильственна и шокирующа, но в конечном счёте освобождающа — удар молнии, кладущий конец отрицанию и вынуждающий столкнуться с реальностью такой, какая она есть.",
+      "es": "El arquetipo de la destrucción súbita y reveladora: la ilusión y la falsa seguridad hechas añicos por una verdad demasiado grande para contenerse. Vinculada a Marte, es violenta y impactante, pero en última instancia liberadora—el rayo que pone fin a la negación y fuerza la confrontación con la realidad tal como es."
     }
   },
   {
@@ -851,39 +982,47 @@
     "keywords": {
       "en": [
         "hope",
+        "healing",
         "renewal",
-        "inspiration",
-        "serenity"
+        "faith",
+        "inspiration"
       ],
       "ru": [
         "надежда",
+        "исцеление",
         "обновление",
-        "вдохновение",
-        "безмятежность"
+        "вера",
+        "вдохновение"
       ],
       "es": [
         "esperanza",
+        "sanación",
         "renovación",
-        "inspiración",
-        "serenidad"
+        "fe",
+        "inspiración"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The sky opens after the storm. The Star pours out hope freely — a deep assurance that the universe is benevolent and that healing, renewal, and inspiration are flowing toward you.",
-        "ru": "Небо открывается после бури. Звезда льёт надежду без остатка — глубокая уверенность в том, что вселенная благосклонна и что исцеление, обновление и вдохновение уже движутся к вам.",
-        "es": "El cielo se abre después de la tormenta. La Estrella derrama esperanza con generosidad — una profunda certeza de que el universo es benevolente y de que la sanación, la renovación y la inspiración fluyen hacia ti."
+        "en": "Hope, healing, renewal, quiet faith after crisis. Following the Tower's shock, calm is restored and a gentle, guiding light reappears—inspiration and trust in the future return.",
+        "ru": "Надежда, исцеление, обновление, тихая вера после кризиса. После потрясения Башни спокойствие восстанавливается, и мягкий, направляющий свет возвращается — вдохновение и доверие к будущему возрождаются.",
+        "es": "Esperanza, sanación, renovación, fe tranquila después de la crisis. Tras el impacto de la Torre, la calma se restaura y una luz suave y orientadora reaparece—la inspiración y la confianza en el futuro regresan."
       },
       "reversed": {
-        "en": "Despair, lost faith, or feeling disconnected from hope and creative inspiration.",
-        "ru": "Отчаяние, утрата веры или ощущение оторванности от надежды и творческого вдохновения.",
-        "es": "Desesperanza, fe perdida, o sentirse desconectado de la esperanza y la inspiración creativa."
+        "en": "Despair, disconnection from hope, self-doubt, or a loss of faith in the future. Can indicate feeling that healing is out of reach, or a cynicism that blocks the gentle renewal being offered.",
+        "ru": "Отчаяние, разрыв связи с надеждой, сомнение в себе или утрата веры в будущее. Может указывать на ощущение, что исцеление недостижимо, или на цинизм, блокирующий предлагаемое мягкое обновление.",
+        "es": "Desesperanza, desconexión de la esperanza, duda de sí mismo, o una pérdida de fe en el futuro. Puede indicar sentir que la sanación está fuera de alcance, o un cinismo que bloquea la suave renovación que se ofrece."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of renewed hope after devastation: the quiet, patient replenishment of spirit that follows necessary destruction. Ruled by Aquarius, it represents faith in a larger, benevolent pattern even when immediate circumstances remain uncertain—healing as a gentle, ongoing act rather than a single event.",
+      "ru": "Архетип обновлённой надежды после опустошения: тихое, терпеливое пополнение духа, следующее за необходимым разрушением. Управляемая Водолеем, эта карта олицетворяет веру в более крупный, благосклонный узор, даже когда непосредственные обстоятельства остаются неопределёнными, — исцеление как мягкий, продолжающийся акт, а не единичное событие.",
+      "es": "El arquetipo de la esperanza renovada tras la devastación: la reposición tranquila y paciente del espíritu que sigue a una destrucción necesaria. Regida por Acuario, representa la fe en un patrón más amplio y benevolente incluso cuando las circunstancias inmediatas siguen siendo inciertas—la sanación como un acto suave y continuo, no un evento único."
     }
   },
   {
@@ -900,39 +1039,47 @@
     "keywords": {
       "en": [
         "illusion",
+        "intuition",
+        "the unconscious",
         "fear",
-        "subconscious",
-        "confusion"
+        "uncertainty"
       ],
       "ru": [
         "иллюзия",
+        "интуиция",
+        "бессознательное",
         "страх",
-        "подсознание",
-        "замешательство"
+        "неопределённость"
       ],
       "es": [
         "ilusión",
+        "intuición",
+        "el inconsciente",
         "miedo",
-        "subconsciente",
-        "confusión"
+        "incertidumbre"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The path that dissolves in moonlight. The Moon speaks of illusion, the subconscious, and the uncertain territory between what is real and what is imagined. Not all is as it appears.",
-        "ru": "Тропа, растворяющаяся в лунном свете. Луна говорит об иллюзиях, подсознании и неопределённой территории между реальным и воображаемым. Не всё является тем, чем кажется.",
-        "es": "El sendero que se disuelve bajo la luz de la luna. La Luna habla de la ilusión, el subconsciente y el territorio incierto entre lo real y lo imaginado. No todo es lo que parece."
+        "en": "Illusion, intuition, the unconscious, fear of the unknown, dreams. Clarity gives way to ambiguity—what is real and what is imagined blur together, requiring trust in instinct over certainty.",
+        "ru": "Иллюзия, интуиция, бессознательное, страх неизвестного, сны. Ясность уступает место двусмысленности — реальное и воображаемое сливаются, требуя доверия к инстинкту вместо уверенности.",
+        "es": "Ilusión, intuición, el inconsciente, miedo a lo desconocido, sueños. La claridad da paso a la ambigüedad—lo real y lo imaginado se difuminan, requiriendo confianza en el instinto por encima de la certeza."
       },
       "reversed": {
-        "en": "Clarity beginning to emerge from confusion, releasing irrational fears, or deception exposed.",
-        "ru": "Ясность, начинающая пробиваться сквозь замешательство; освобождение от иррациональных страхов или разоблачение обмана.",
-        "es": "Claridad que empieza a emerger de la confusión, liberación de miedos irracionales, o un engaño al descubierto."
+        "en": "Confusion clearing, hidden anxieties surfacing to be resolved, or deception finally revealed. Can indicate a fog lifting after a period of uncertainty, or facing fears that had been avoided.",
+        "ru": "Прояснение путаницы, всплывающие для разрешения скрытые тревоги или, наконец, раскрытый обман. Может указывать на рассеивающийся туман после периода неопределённости или на встречу со страхами, которых избегали.",
+        "es": "La confusión aclarándose, ansiedades ocultas que salen a la superficie para resolverse, o un engaño finalmente revelado. Puede indicar una niebla que se levanta tras un período de incertidumbre, o afrontar miedos que se habían evitado."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of the deep unconscious: instinct, dream, and primal fear surfacing from beneath the rational mind. Ruled by Pisces, it marks the psyche's most uncertain terrain, where growth requires moving forward despite incomplete information and half-seen shapes in the dark.",
+      "ru": "Архетип глубокого бессознательного: инстинкт, сон и первобытный страх, всплывающие из-под рационального разума. Управляемая Рыбами, эта карта отмечает самую неопределённую территорию психики, где рост требует движения вперёд, несмотря на неполную информацию и полуразличимые очертания во тьме.",
+      "es": "El arquetipo del inconsciente profundo: el instinto, el sueño y el miedo primigenio que emergen desde debajo de la mente racional. Regida por Piscis, marca el terreno más incierto de la psique, donde el crecimiento requiere avanzar a pesar de la información incompleta y las formas apenas visibles en la oscuridad."
     }
   },
   {
@@ -949,39 +1096,47 @@
     "keywords": {
       "en": [
         "joy",
-        "success",
         "vitality",
-        "clarity"
+        "success",
+        "clarity",
+        "authenticity"
       ],
       "ru": [
         "радость",
+        "жизненная сила",
         "успех",
-        "жизненность",
-        "ясность"
+        "ясность",
+        "подлинность"
       ],
       "es": [
         "alegría",
-        "éxito",
         "vitalidad",
-        "claridad"
+        "éxito",
+        "claridad",
+        "autenticidad"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Life at its fullest brightness. The Sun radiates success, joy, and the pure vitality of existence — a time of clarity, warmth, and unambiguous good fortune.",
-        "ru": "Жизнь в полной яркости. Солнце излучает успех, радость и чистую жизненную силу бытия — время ясности, тепла и недвусмысленного удачи.",
-        "es": "La vida en su máximo brillo. El Sol irradia éxito, alegría y la vitalidad pura de la existencia — un tiempo de claridad, calidez y buena fortuna inequívoca."
+        "en": "Joy, vitality, success, clarity, authentic self-expression. After the Moon's uncertainty, direct light returns—warmth, confidence, and simple, unclouded happiness fill the moment.",
+        "ru": "Радость, жизненная сила, успех, ясность, подлинное самовыражение. После неопределённости Луны возвращается прямой свет — тепло, уверенность и простое, незамутнённое счастье наполняют момент.",
+        "es": "Alegría, vitalidad, éxito, claridad, expresión auténtica de uno mismo. Tras la incertidumbre de la Luna, regresa la luz directa—el calor, la confianza y una felicidad simple y sin nubes llenan el momento."
       },
       "reversed": {
-        "en": "Temporary setbacks to happiness, blocked success, or optimism dimmed by circumstance.",
-        "ru": "Временные препятствия для счастья, заблокированный успех или оптимизм, омрачённый обстоятельствами.",
-        "es": "Contratiempos temporales a la felicidad, éxito bloqueado, u optimismo atenuado por las circunstancias."
+        "en": "Temporary sadness, delayed success, or a fragile confidence covering deeper insecurity. Can indicate clouds passing briefly over an otherwise bright situation, rather than a fundamentally dark one.",
+        "ru": "Временная грусть, отложенный успех или хрупкая уверенность, скрывающая более глубокую неуверенность. Может указывать на облака, ненадолго закрывшие в остальном яркую ситуацию, а не на изначально мрачную.",
+        "es": "Tristeza pasajera, éxito retrasado, o una confianza frágil que cubre una inseguridad más profunda. Puede indicar nubes que pasan brevemente sobre una situación por lo demás luminosa, no una situación fundamentalmente oscura."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of radiant vitality and truth revealed: the clear, life-giving light that follows the Moon's uncertain dark. Ruled by the Sun itself, it represents unguarded joy, the innocence of the inner child restored, and success that comes from living authentically rather than through pretence.",
+      "ru": "Архетип лучезарной жизненности и раскрытой истины: ясный, животворящий свет, следующий за неопределённой тьмой Луны. Управляемая самим Солнцем, эта карта олицетворяет неохраняемую радость, восстановленную невинность внутреннего ребёнка и успех, приходящий через подлинную жизнь, а не притворство.",
+      "es": "El arquetipo de la vitalidad radiante y la verdad revelada: la luz clara y dadora de vida que sigue a la oscuridad incierta de la Luna. Regida por el propio Sol, representa una alegría sin guardia, la inocencia del niño interior restaurada, y un éxito que proviene de vivir con autenticidad en lugar de con pretensión."
     }
   },
   {
@@ -997,40 +1152,48 @@
     },
     "keywords": {
       "en": [
-        "reflection",
-        "reckoning",
         "awakening",
-        "absolution"
+        "reckoning",
+        "rebirth",
+        "calling",
+        "renewal"
       ],
       "ru": [
-        "осмысление",
-        "воздаяние",
         "пробуждение",
-        "отпущение"
+        "расплата",
+        "возрождение",
+        "призвание",
+        "обновление"
       ],
       "es": [
-        "reflexión",
-        "ajuste de cuentas",
         "despertar",
-        "absolución"
+        "ajuste de cuentas",
+        "renacimiento",
+        "llamado",
+        "renovación"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "Called into being. Judgement signals a profound awakening — a summons to rise, to evaluate your life honestly, and to answer the call you have been hearing beneath the surface.",
-        "ru": "Призванный к жизни. Суд сигнализирует о глубоком пробуждении — призыве подняться, честно оценить свою жизнь и ответить на зов, который вы слышали под поверхностью.",
-        "es": "Llamado a existir plenamente. El Juicio señala un despertar profundo — un llamado a levantarse, a evaluar tu vida con honestidad, y a responder al llamado que has estado escuchando bajo la superficie."
+        "en": "Awakening, reckoning, rebirth, a call to rise and answer a higher purpose. A moment of reckoning arrives—not as punishment but as an invitation to see clearly and step into a renewed sense of self.",
+        "ru": "Пробуждение, расплата, возрождение, призыв подняться и ответить на высшее предназначение. Наступает момент расплаты — не как наказание, а как приглашение увидеть ясно и вступить в обновлённое ощущение себя.",
+        "es": "Despertar, ajuste de cuentas, renacimiento, un llamado a levantarse y responder a un propósito superior. Llega un momento de ajuste de cuentas—no como castigo, sino como una invitación a ver con claridad y entrar en un renovado sentido de sí mismo."
       },
       "reversed": {
-        "en": "Self-doubt, refusal of the call, fear of judgment, or ignoring a major awakening.",
-        "ru": "Сомнение в себе, отказ от призыва, страх осуждения или игнорирование важного пробуждения.",
-        "es": "Inseguridad, negarse al llamado, miedo al juicio, o ignorar un despertar importante."
+        "en": "Self-doubt, refusal to answer a clear calling, harsh self-judgement, or avoidance of a necessary reckoning. Can indicate an inner critic too loud to hear the actual invitation being offered.",
+        "ru": "Сомнение в себе, отказ ответить на ясный призыв, суровое самоосуждение или избегание необходимой расплаты. Может указывать на внутреннего критика, слишком громкого, чтобы услышать действительно предлагаемое приглашение.",
+        "es": "Duda de sí mismo, negarse a responder a un llamado claro, un autojuicio duro, o evitar un ajuste de cuentas necesario. Puede indicar un crítico interior demasiado ruidoso para escuchar la invitación real que se ofrece."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of the great awakening: a summons from beyond the individual ego that calls the whole self to rise, account for the past, and step into a larger purpose. Ruled by fire and Pluto in modern attributions, it marks the near-completion of the Fool's journey, where scattered experience is gathered into meaningful, integrated wholeness.",
+      "ru": "Архетип великого пробуждения: призыв извне индивидуального эго, зовущий всю личность подняться, дать отчёт за прошлое и вступить в более крупное предназначение. Управляемая огнём и, в современных атрибуциях, Плутоном, эта карта отмечает почти завершение пути Шута, где рассеянный опыт собирается в осмысленную, целостную полноту.",
+      "es": "El arquetipo del gran despertar: una llamada desde más allá del ego individual que convoca a todo el ser a levantarse, rendir cuentas del pasado y entrar en un propósito más amplio. Regida por el fuego y, en atribuciones modernas, por Plutón, marca la casi finalización del viaje del Loco, donde la experiencia dispersa se reúne en una totalidad integrada y con sentido."
     }
   },
   {
@@ -1047,39 +1210,47 @@
     "keywords": {
       "en": [
         "completion",
+        "wholeness",
+        "fulfilment",
         "integration",
-        "accomplishment",
-        "wholeness"
+        "accomplishment"
       ],
       "ru": [
         "завершение",
+        "целостность",
+        "исполнение",
         "интеграция",
-        "достижение",
-        "целостность"
+        "достижение"
       ],
       "es": [
-        "finalización",
+        "culminación",
+        "plenitud",
+        "realización",
         "integración",
-        "logro",
-        "plenitud"
+        "logro"
       ]
     },
     "divination_meaning": {
       "upright": {
-        "en": "The dance of completion. The World marks the triumphant end of a cycle — full integration, mastery achieved, and the joyful awareness that you have arrived exactly where you were meant to be.",
-        "ru": "Танец завершённости. Мир знаменует триумфальное окончание цикла — полная интеграция, обретённое мастерство и радостное осознание того, что вы прибыли именно туда, куда были призваны.",
-        "es": "La danza de la finalización. El Mundo marca el triunfante final de un ciclo — integración plena, maestría alcanzada, y la alegre conciencia de haber llegado exactamente donde debías estar."
+        "en": "Completion, wholeness, fulfilment, successful integration of a long journey. The cycle begun by the Fool reaches its natural conclusion—all elements united in a satisfying, harmonious whole.",
+        "ru": "Завершение, целостность, исполнение, успешная интеграция долгого пути. Цикл, начатый Шутом, достигает своего естественного завершения — все элементы объединены в удовлетворяющее, гармоничное целое.",
+        "es": "Culminación, plenitud, realización, integración exitosa de un largo viaje. El ciclo iniciado por el Loco llega a su conclusión natural—todos los elementos unidos en un todo satisfactorio y armonioso."
       },
       "reversed": {
-        "en": "Incomplete endings, shortcuts avoiding necessary closure, or inability to celebrate success.",
-        "ru": "Незавершённые финалы, обходные пути, уклонение от необходимого завершения или неспособность отпраздновать успех.",
-        "es": "Finales incompletos, atajos que evitan un cierre necesario, o incapacidad para celebrar el éxito."
+        "en": "Incompletion, a cycle not fully closed, delayed closure, or difficulty accepting that something is genuinely finished. Can indicate loose ends still needing attention before true fulfilment is possible.",
+        "ru": "Незавершённость, цикл, не полностью закрытый, отложенное завершение или трудность в принятии того, что нечто действительно закончено. Может указывать на незавершённые дела, всё ещё требующие внимания, прежде чем станет возможным истинное исполнение.",
+        "es": "Falta de culminación, un ciclo no cerrado del todo, un cierre retrasado, o dificultad para aceptar que algo está genuinamente terminado. Puede indicar cabos sueltos que aún requieren atención antes de que sea posible una realización verdadera."
       }
     },
     "liahim_commentary": {
       "en": "",
       "ru": "",
       "es": ""
+    },
+    "symbolic_and_archetypal_meaning": {
+      "en": "The archetype of wholeness achieved: the union of all previous archetypes into a single, integrated dance of completion. Ruled by Saturn, it represents the mastery that comes only at the end of a long process—not a static perfection, but a dynamic, ongoing dance of fulfilled purpose ready to begin a new cycle at a higher turn of the spiral.",
+      "ru": "Архетип достигнутой целостности: союз всех предыдущих архетипов в единый, интегрированный танец завершения. Управляемая Сатурном, эта карта олицетворяет мастерство, приходящее лишь в конце долгого процесса, — не статичное совершенство, а динамичный, продолжающийся танец исполненной цели, готовой начать новый цикл на более высоком витке спирали.",
+      "es": "El arquetipo de la plenitud alcanzada: la unión de todos los arquetipos anteriores en una única danza integrada de culminación. Regida por Saturno, representa el dominio que solo llega al final de un largo proceso—no una perfección estática, sino una danza dinámica y continua de propósito cumplido, lista para comenzar un nuevo ciclo en una vuelta más alta de la espiral."
     }
   },
   {

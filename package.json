@@ -1,6 +1,6 @@
 {
   "name": "the-hand-of-liahim",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A single-file tarot web app. No backend, no dependencies, no build step.",
   "main": "index.js",
   "directories": {

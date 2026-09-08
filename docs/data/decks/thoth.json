@@ -1,0 +1,2258 @@
+{
+  "deck_id": "thoth",
+  "deck_name": {
+    "en": "Thoth",
+    "ru": "Тот",
+    "es": "Thoth"
+  },
+  "image_dir": "thoth",
+  "cards": {
+    "major-0": {
+      "qabalah": {
+        "path_number": "11",
+        "hebrew_letter": {
+          "en": "Aleph",
+          "ru": "Алеф",
+          "es": "Aleph"
+        },
+        "hebrew_symbol": "א",
+        "hebrew_unicode": "U+05D0",
+        "sephirothic_connection": {
+          "en": "Kether – Chokmah",
+          "ru": "Кетер – Хокма",
+          "es": "Kether – Chokmah"
+        },
+        "interpretation": {
+          "en": "As in the RWS attribution, this path carries the uncontrolled, undifferentiated creative energy of Kether toward Chokmah. Crowley emphasises this as pure, pre-rational spirit erupting into manifestation—divine folly as the seed of all future form.",
+          "ru": "Как и в атрибуции RWS, этот путь несёт неконтролируемую, недифференцированную созидательную энергию Кетер к Хокме. Кроули подчёркивает это как чистый, доразумный дух, прорывающийся в проявление — божественное безумие как семя всех будущих форм.",
+          "es": "Como en la atribución RWS, este camino porta la energía creativa incontrolada e indiferenciada de Kether hacia Chokmah. Crowley enfatiza esto como espíritu puro y pre-racional que irrumpe en la manifestación—la locura divina como semilla de toda forma futura."
+        },
+        "notes": {
+          "en": "Same path/letter attribution as RWS (Golden Dawn lineage); Crowley's interpretation shifts emphasis toward ecstatic, Dionysian creative chaos rather than innocent wandering.",
+          "ru": "Та же атрибуция пути/буквы, что и в RWS (традиция Golden Dawn); интерпретация Кроули смещает акцент на экстатический, дионисийский созидательный хаос, а не на невинное странствие.",
+          "es": "Misma atribución de camino/letra que el RWS (linaje de la Golden Dawn); la interpretación de Crowley desplaza el énfasis hacia el caos creativo, extático y dionisíaco, en lugar del vagabundeo inocente."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The dancing, harlequin figure",
+            "ru": "Танцующая фигура арлекина",
+            "es": "La figura danzante de arlequín"
+          },
+          "description": {
+            "en": "Crowley's Fool is a leaping, dancing figure in a multicoloured, leaf-patterned garment, evoking Dionysian ecstasy rather than a simple traveller. This reframes the Fool as active, joyous chaos—the life-force bursting forth rather than quietly setting out.",
+            "ru": "Шут Кроули — это прыгающая, танцующая фигура в разноцветном одеянии с узором из листьев, вызывающая дионисийский экстаз, а не образ простого путника. Это переосмысляет Шута как активный, радостный хаос — жизненную силу, вырывающуюся наружу, а не тихо отправляющуюся в путь.",
+            "es": "El Loco de Crowley es una figura saltarina y danzante con una vestimenta multicolor con motivos de hojas, evocando el éxtasis dionisíaco más que a un simple viajero. Esto reformula al Loco como caos activo y gozoso—la fuerza vital irrumpiendo, en lugar de partir en silencio."
+          }
+        },
+        {
+          "element": {
+            "en": "The ivy-leaf pattern on his robe",
+            "ru": "Узор из листьев плюща на одеянии",
+            "es": "El motivo de hojas de hiedra en su túnica"
+          },
+          "description": {
+            "en": "Ivy is associated with Dionysus/Bacchus, eternal life, and the flourishing of hidden desire—it clings and thrives even on dead wood, symbolising the immortal creative impulse persisting through decay and transformation.",
+            "ru": "Плющ ассоциируется с Дионисом/Бахусом, вечной жизнью и расцветом скрытых желаний — он цепляется и процветает даже на мёртвой древесине, символизируя неумирающий созидательный импульс, сохраняющийся через распад и трансформацию.",
+            "es": "La hiedra está asociada con Dionisio/Baco, la vida eterna y el florecimiento del deseo oculto—se aferra y prospera incluso sobre madera muerta, simbolizando el impulso creativo inmortal que persiste a través de la decadencia y la transformación."
+          }
+        },
+        {
+          "element": {
+            "en": "The crocodile at his foot",
+            "ru": "Крокодил у его ноги",
+            "es": "El cocodrilo a sus pies"
+          },
+          "description": {
+            "en": "A crocodile (associated with the Egyptian god Sebek) snaps near the Fool's foot. Crowley cites the old belief that the crocodile has no natural means of reproduction, making it—paradoxically—a symbol of maximum creative energy: potential so pure it precedes even biological form.",
+            "ru": "Крокодил (связанный с египетским богом Себеком) щёлкает челюстями у ноги Шута. Кроули ссылается на старинное поверье, что у крокодила нет естественного способа размножения, что делает его — парадоксально — символом максимальной созидательной энергии: потенциала, столь чистого, что он предшествует даже биологической форме.",
+            "es": "Un cocodrilo (asociado con el dios egipcio Sebek) muerde cerca del pie del Loco. Crowley cita la vieja creencia de que el cocodrilo no tiene medios naturales de reproducción, lo que lo convierte—paradójicamente—en un símbolo de energía creativa máxima: un potencial tan puro que precede incluso a la forma biológica."
+          }
+        },
+        {
+          "element": {
+            "en": "The tiger",
+            "ru": "Тигр",
+            "es": "El tigre"
+          },
+          "description": {
+            "en": "A tiger accompanies the Fool, representing raw instinctive aggression and appetite. Its presence alongside the Fool's carefree dance suggests that wildness and innocence are not opposites but two faces of the same untamed life-force.",
+            "ru": "Тигр сопровождает Шута, представляя необузданный инстинктивный агрессивный порыв и аппетит. Его присутствие рядом с беззаботным танцем Шута подсказывает, что дикость и невинность — не противоположности, а два лика одной неукротимой жизненной силы.",
+            "es": "Un tigre acompaña al Loco, representando la agresión instintiva cruda y el apetito. Su presencia junto a la danza despreocupada del Loco sugiere que la salvajez y la inocencia no son opuestos, sino dos caras de la misma fuerza vital indomable."
+          }
+        },
+        {
+          "element": {
+            "en": "Butterfly wings",
+            "ru": "Крылья бабочки",
+            "es": "Alas de mariposa"
+          },
+          "description": {
+            "en": "Butterfly wings on the figure signify transformation and the ephemeral, weightless nature of pure becoming—the Fool moves through metamorphosis as easily as a butterfly moves through air.",
+            "ru": "Крылья бабочки на фигуре символизируют трансформацию и эфемерную, невесомую природу чистого становления — Шут проходит через метаморфозы так же легко, как бабочка скользит по воздуху.",
+            "es": "Las alas de mariposa en la figura significan transformación y la naturaleza efímera e ingrávida del devenir puro—el Loco se mueve a través de la metamorfosis con la misma facilidad con que una mariposa se mueve por el aire."
+          }
+        },
+        {
+          "element": {
+            "en": "The Cynocephalus (ape of Thoth)",
+            "ru": "Циноцефал (обезьяна Тота)",
+            "es": "El Cinocéfalo (mono de Thoth)"
+          },
+          "description": {
+            "en": "A dog-headed ape, companion of the god Thoth, appears near the figure—representing the trickster shadow of wisdom: cleverness or mimicry without depth, a reminder that folly and false wisdom can look alike.",
+            "ru": "Собакоголовая обезьяна, спутник бога Тота, появляется возле фигуры — представляя тень-трикстера мудрости: хитрость или подражание без глубины, напоминание о том, что глупость и ложная мудрость могут выглядеть похоже.",
+            "es": "Un mono de cabeza de perro, compañero del dios Thoth, aparece cerca de la figura—representando la sombra embaucadora de la sabiduría: astucia o imitación sin profundidad, un recordatorio de que la locura y la falsa sabiduría pueden parecerse."
+          }
+        },
+        {
+          "element": {
+            "en": "The overflowing cup and sun/moon motifs",
+            "ru": "Переполненная чаша и мотивы солнца/луны",
+            "es": "La copa desbordante y los motivos de sol/luna"
+          },
+          "description": {
+            "en": "A cup overflows with life-force near the figure, with solar imagery near the groin and lunar imagery near the crocodile—together forming what Crowley called 'a glyph of the creative light': the union of masculine and feminine, sun and moon, in unbounded generative joy.",
+            "ru": "Переполненная чаша с жизненной силой находится рядом с фигурой, с солнечными образами у паха и лунными — рядом с крокодилом, вместе образуя то, что Кроули назвал 'иероглифом созидательного света': союз мужского и женского, солнца и луны, в безграничной созидательной радости.",
+            "es": "Una copa se desborda con fuerza vital cerca de la figura, con imágenes solares cerca de la ingle e imágenes lunares cerca del cocodrilo—formando juntas lo que Crowley llamó 'un glifo de la luz creativa': la unión de lo masculino y lo femenino, sol y luna, en un gozo generativo sin límites."
+          }
+        },
+        {
+          "element": {
+            "en": "Number 0 within the wheel of eternity",
+            "ru": "Число 0 в колесе вечности",
+            "es": "El número 0 dentro de la rueda de la eternidad"
+          },
+          "description": {
+            "en": "As card 0, the Fool represents the pre-manifest spirit before form—Crowley's key phrase 'Pure Folly is the key to initiation' casts unknowing itself as the gateway into higher consciousness, a cyclical return to origin rather than a linear beginning.",
+            "ru": "Как карта 0, Шут представляет доформенный дух перед проявлением — ключевая фраза Кроули 'Чистое безумие есть ключ к посвящению' представляет незнание само по себе как врата к высшему сознанию, циклическое возвращение к истоку, а не линейное начало.",
+            "es": "Como carta 0, el Loco representa el espíritu premanifiesto antes de la forma—la frase clave de Crowley 'La Locura Pura es la clave de la iniciación' presenta el no-saber mismo como la puerta hacia una conciencia superior, un retorno cíclico al origen en lugar de un comienzo lineal."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In the Thoth deck, The Fool is reimagined as 'the Green Man'—a Dionysian, ecstatic embodiment of divine folly rather than a naive wanderer. Crowley emphasises spiritual initiation through unknowing: pure, unstructured creative potential that precedes even the concept of gender, form, or biological continuity. Divinationally it points to a leap that is less about innocence and more about sacred, chaotic creative surrender.",
+        "ru": "В деке Тота Шут переосмыслен как 'Зелёный человек' — дионисийское, экстатическое воплощение божественного безумия, а не наивный странник. Кроули подчёркивает духовное посвящение через незнание: чистый, неструктурированный созидательный потенциал, предшествующий даже понятиям пола, формы или биологической продолжительности. В гадании указывает на прыжок, который в меньшей степени связан с невинностью и в большей — со священной, хаотической созидательной самоотдачей.",
+        "es": "En la baraja Thoth, El Loco se reimagina como 'el Hombre Verde'—una encarnación dionisíaca y extática de la locura divina, en lugar de un errante ingenuo. Crowley enfatiza la iniciación espiritual a través del no-saber: un potencial creativo puro y sin estructura que precede incluso al concepto de género, forma o continuidad biológica. En la adivinación apunta a un salto que trata menos de la inocencia y más de la entrega creativa sagrada y caótica."
+      },
+      "name": {
+        "en": "The Fool (The Green Man)",
+        "ru": "Шут (Зелёный человек)",
+        "es": "El Loco (El Hombre Verde)"
+      }
+    },
+    "major-1": {
+      "qabalah": {
+        "path_number": "12",
+        "hebrew_letter": {
+          "en": "Beth",
+          "ru": "Бет",
+          "es": "Beth"
+        },
+        "hebrew_symbol": "ב",
+        "hebrew_unicode": "U+05D1",
+        "sephirothic_connection": {
+          "en": "Kether – Binah",
+          "ru": "Кетер – Бина",
+          "es": "Kether – Binah"
+        },
+        "interpretation": {
+          "en": "Same path/letter as RWS, but Crowley frames Beth as the letter of Mercury and 'the House'—the Magus builds the structure (Binah) through which Kether's pure will becomes communicable, skilled, and directed action.",
+          "ru": "Тот же путь/буква, что и в RWS, но Кроули трактует Бет как букву Меркурия и 'Дома' — Магус выстраивает структуру (Бина), через которую чистая воля Кетер становится передаваемым, умелым и направленным действием.",
+          "es": "Mismo camino/letra que el RWS, pero Crowley enmarca a Beth como la letra de Mercurio y 'la Casa'—el Magus construye la estructura (Binah) a través de la cual la voluntad pura de Kether se convierte en acción comunicable, hábil y dirigida."
+        },
+        "notes": {
+          "en": "Same Golden Dawn path attribution as RWS; naming and imagery differ significantly (The Magus vs The Magician).",
+          "ru": "Та же атрибуция пути Golden Dawn, что и в RWS; названия и образность значительно отличаются (Магус против Маг).",
+          "es": "Misma atribución de camino de la Golden Dawn que el RWS; los nombres e imágenes difieren significativamente (El Magus frente a El Mago)."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The Caduceus as the Magus's own form",
+            "ru": "Кадуцей как сама форма Магуса",
+            "es": "El Caduceo como la propia forma del Magus"
+          },
+          "description": {
+            "en": "Rather than simply holding a wand, the Thoth Magus is himself built around the Caduceus of Hermes—the winged staff with intertwined serpents becomes the axis of his body, showing that he does not merely wield magical power but embodies the principle of active communication and transformation.",
+            "ru": "Вместо того чтобы просто держать жезл, Магус Тота сам построен вокруг Кадуцея Гермеса — крылатый посох с переплетёнными змеями становится осью его тела, показывая, что он не просто владеет магической силой, а воплощает принцип активного общения и трансформации.",
+            "es": "En lugar de simplemente sostener una varita, el Magus de Thoth está construido alrededor del Caduceo de Hermes—el bastón alado con serpientes entrelazadas se convierte en el eje de su cuerpo, mostrando que no simplemente ejerce poder mágico, sino que encarna el principio de la comunicación activa y la transformación."
+          }
+        },
+        {
+          "element": {
+            "en": "The winged sandals",
+            "ru": "Крылатые сандалии",
+            "es": "Las sandalias aladas"
+          },
+          "description": {
+            "en": "Winged sandals mark the Magus as swift and mobile between worlds—Mercury's gift of movement, communication, and the ability to travel freely between the spiritual and material planes.",
+            "ru": "Крылатые сандалии отмечают Магуса как быстрого и подвижного между мирами — дар Меркурия к движению, общению и способности свободно перемещаться между духовным и материальным планами.",
+            "es": "Las sandalias aladas marcan al Magus como veloz y móvil entre mundos—el don de Mercurio del movimiento, la comunicación y la capacidad de viajar libremente entre los planos espiritual y material."
+          }
+        },
+        {
+          "element": {
+            "en": "The Cynocephalus (ape of Thoth) at his feet",
+            "ru": "Циноцефал (обезьяна Тота) у его ног",
+            "es": "El Cinocéfalo (mono de Thoth) a sus pies"
+          },
+          "description": {
+            "en": "A dog-headed ape crouches near the Magus, personifying the trickster shadow of Thoth-Mercury: cleverness or mimicry that distorts truth. It's a reminder that skilled communication always risks becoming mere cunning without depth.",
+            "ru": "Собакоголовая обезьяна сидит возле Магуса, олицетворяя тень-трикстера Тота-Меркурия: хитрость или подражание, искажающее истину. Это напоминание о том, что умелое общение всегда рискует превратиться в простую хитрость без глубины.",
+            "es": "Un mono de cabeza de perro se agazapa cerca del Magus, personificando la sombra embaucadora de Thoth-Mercurio: astucia o imitación que distorsiona la verdad. Es un recordatorio de que la comunicación hábil siempre corre el riesgo de convertirse en mera astucia sin profundidad."
+          }
+        },
+        {
+          "element": {
+            "en": "The winged disk and descending dove in the Caduceus head",
+            "ru": "Крылатый диск и спускающийся голубь в навершии Кадуцея",
+            "es": "El disco alado y la paloma descendente en la cabeza del Caduceo"
+          },
+          "description": {
+            "en": "At the head of the Caduceus, a winged disk contains what appears as a downward arrow but is actually a descending dove—spirit descending into creation, echoing the Fool's own dove/spirit symbolism but now given active, directed form.",
+            "ru": "На навершии Кадуцея крылатый диск содержит то, что похоже на стрелу, направленную вниз, но на самом деле это спускающийся голубь — дух, спускающийся в творение, отражая символику голубя/духа самого Шута, но теперь обретающую активную, направленную форму.",
+            "es": "En la cabeza del Caduceo, un disco alado contiene lo que parece una flecha hacia abajo pero es en realidad una paloma descendente—el espíritu descendiendo a la creación, haciendo eco del propio simbolismo de la paloma/espíritu del Loco, pero ahora dado en forma activa y dirigida."
+          }
+        },
+        {
+          "element": {
+            "en": "The two intertwined serpents",
+            "ru": "Две переплетённые змеи",
+            "es": "Las dos serpientes entrelazadas"
+          },
+          "description": {
+            "en": "The serpents of the Caduceus represent active and passive forces in balanced union—Crowley links them to Eagle and Lion, and to the union of Microcosm and Macrocosm: the Magus as the operative symbol that unites opposites.",
+            "ru": "Змеи Кадуцея представляют активные и пассивные силы в сбалансированном союзе — Кроули связывает их с Орлом и Львом, и с союзом Микрокосма и Макрокосма: Магус как действующий символ, объединяющий противоположности.",
+            "es": "Las serpientes del Caduceo representan fuerzas activas y pasivas en unión equilibrada—Crowley las vincula con el Águila y el León, y con la unión del Microcosmos y el Macrocosmos: el Magus como el símbolo operativo que une los opuestos."
+          }
+        },
+        {
+          "element": {
+            "en": "The table of objects being juggled",
+            "ru": "Стол с предметами, которыми жонглируют",
+            "es": "La mesa de objetos que se hacen malabares"
+          },
+          "description": {
+            "en": "The Magus is shown actively juggling or manipulating multiple objects/tools at once, emphasising dexterity, multitasking skill, and the dynamic (rather than static) nature of his mastery compared to RWS's more composed altar arrangement.",
+            "ru": "Магус изображён активно жонглирующим или манипулирующим несколькими предметами/инструментами одновременно, подчёркивая проворство, умение выполнять несколько задач и динамичную (а не статичную) природу его мастерства по сравнению с более собранной алтарной композицией RWS.",
+            "es": "El Magus aparece haciendo malabares activamente o manipulando múltiples objetos/herramientas a la vez, enfatizando la destreza, la habilidad de multitarea, y la naturaleza dinámica (en lugar de estática) de su maestría en comparación con la disposición más compuesta del altar del RWS."
+          }
+        },
+        {
+          "element": {
+            "en": "Mercury/quicksilver colour symbolism",
+            "ru": "Символика цвета ртути/меркурия",
+            "es": "El simbolismo de color mercurio/plata viva"
+          },
+          "description": {
+            "en": "The card is dominated by yellows and quicksilver tones associated with Mercury, reinforcing the planetary attribution: quick-witted, adaptable, communicative energy rather than fixed, grounded power.",
+            "ru": "На карте преобладают жёлтые и ртутные тона, связанные с Меркурием, подчёркивая планетарную атрибуцию: быстрый, находчивый, коммуникативный тип энергии, а не фиксированная, приземлённая сила.",
+            "es": "La carta está dominada por amarillos y tonos plateados asociados con Mercurio, reforzando la atribución planetaria: una energía rápida de ingenio, adaptable y comunicativa, en lugar de un poder fijo y arraigado."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In the Thoth deck, The Magus foregrounds Mercury: communication, wit, dexterity, and the skilled application of intelligence. Where RWS shows a composed figure with tools laid before him, Crowley's Magus is dynamic and self-referential—built from his own instrument, the Caduceus. Divinationally it points less to 'having all you need' and more to active, quick-thinking engagement with ideas, words, and craft, with the Cynocephalus warning against cleverness that lacks integrity.",
+        "ru": "В деке Тота Магус выдвигает на первый план Меркурия: общение, остроумие, проворство и умелое применение интеллекта. Там, где RWS показывает собранную фигуру с расположенными перед ней инструментами, Магус Кроули динамичен и самореференциален — построен из собственного инструмента, Кадуцея. В гадании указывает не столько на 'наличие всего необходимого', сколько на активное, быстрое взаимодействие с идеями, словами и мастерством, при этом Циноцефал предупреждает против хитрости без внутренней целостности.",
+        "es": "En la baraja Thoth, el Magus antepone a Mercurio: la comunicación, el ingenio, la destreza y la aplicación hábil de la inteligencia. Donde el RWS muestra una figura compuesta con herramientas dispuestas ante él, el Magus de Crowley es dinámico y autorreferencial—construido a partir de su propio instrumento, el Caduceo. En la adivinación apunta menos a 'tener todo lo que necesitas' y más a un compromiso activo y de pensamiento rápido con las ideas, las palabras y el oficio, con el Cinocéfalo advirtiendo contra la astucia que carece de integridad."
+      },
+      "name": {
+        "en": "The Magus",
+        "ru": "Маг (Магус)",
+        "es": "El Magus"
+      }
+    },
+    "major-2": {
+      "qabalah": {
+        "path_number": "13",
+        "hebrew_letter": {
+          "en": "Gimel",
+          "ru": "Гимель",
+          "es": "Gimel"
+        },
+        "hebrew_symbol": "ג",
+        "hebrew_unicode": "U+05D2",
+        "sephirothic_connection": {
+          "en": "Kether – Tiphareth",
+          "ru": "Кетер – Тиферет",
+          "es": "Kether – Tiphareth"
+        },
+        "interpretation": {
+          "en": "Crowley preserves the same path as RWS but emphasises it as the veil of pure light itself (the 'Bride' who conceals and reveals the influence descending from the crown). She is less a static guardian than an active membrane of consciousness.",
+          "ru": "Кроули сохраняет тот же путь, что и в RWS, но подчёркивает его как саму завесу чистого света ('Невесту', скрывающую и раскрывающую влияние, нисходящее от венца). Она в меньшей степени статичная хранительница, а скорее активная мембрана сознания.",
+          "es": "Crowley conserva el mismo camino que el RWS, pero lo enfatiza como el velo de la luz pura misma (la 'Novia' que oculta y revela la influencia que desciende desde la corona). Es menos una guardiana estática que una membrana activa de la conciencia."
+        },
+        "notes": {
+          "en": "Same letter/path attribution as RWS; Crowley's imagery pushes further into abstract, crystalline symbolism of light and veiling.",
+          "ru": "Та же атрибуция буквы/пути, что и в RWS; образность Кроули уходит глубже в абстрактную, кристаллическую символику света и сокрытия.",
+          "es": "Misma atribución de letra/camino que el RWS; la imaginería de Crowley avanza más hacia un simbolismo abstracto y cristalino de luz y velo."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The crystalline, veiled figure",
+            "ru": "Кристаллическая, окутанная фигура",
+            "es": "La figura cristalina y velada"
+          },
+          "description": {
+            "en": "Crowley's Priestess is rendered as translucent, almost geometric, seated behind a shimmering veil of light rather than solid fabric—suggesting she is herself a phenomenon of consciousness rather than a person.",
+            "ru": "Жрица Кроули изображена почти прозрачной, геометрической, восседающей за мерцающей завесой света, а не плотной ткани — предполагая, что она сама является феноменом сознания, а не личностью.",
+            "es": "La Sacerdotisa de Crowley se representa translúcida, casi geométrica, sentada tras un velo de luz resplandeciente en lugar de tela sólida—sugiriendo que ella misma es un fenómeno de la conciencia, no una persona."
+          }
+        },
+        {
+          "element": {
+            "en": "The camel crossing the abyss",
+            "ru": "Верблюд, пересекающий бездну",
+            "es": "El camello que cruza el abismo"
+          },
+          "description": {
+            "en": "A camel motif alludes to Gimel's literal meaning, evoking a journey across emptiness—she carries wisdom across the void between the unmanifest and the manifest, patiently and without hurry.",
+            "ru": "Мотив верблюда отсылает к буквальному значению Гимель, вызывая образ путешествия через пустоту — она несёт мудрость через бездну между непроявленным и проявленным, терпеливо и без спешки.",
+            "es": "Un motivo de camello alude al significado literal de Gimel, evocando un viaje a través del vacío—ella porta la sabiduría a través del abismo entre lo no manifiesto y lo manifiesto, con paciencia y sin prisa."
+          }
+        },
+        {
+          "element": {
+            "en": "The bow and arrow",
+            "ru": "Лук и стрела",
+            "es": "El arco y la flecha"
+          },
+          "description": {
+            "en": "She holds a bow, representing directed, focused intention held in perfect stillness—potential energy gathered but not yet released, echoing the card's theme of latent rather than active power.",
+            "ru": "Она держит лук, олицетворяющий направленное, сосредоточенное намерение, удерживаемое в идеальной неподвижности — потенциальную энергию, собранную, но ещё не высвобожденную, отражая тему карты о скрытой, а не активной силе.",
+            "es": "Sostiene un arco, que representa una intención dirigida y enfocada mantenida en perfecta quietud—energía potencial reunida pero aún no liberada, reflejando el tema de la carta sobre un poder latente más que activo."
+          }
+        },
+        {
+          "element": {
+            "en": "The radiant orb / crown of light",
+            "ru": "Сияющий шар / венец света",
+            "es": "El orbe radiante / corona de luz"
+          },
+          "description": {
+            "en": "A luminous crown or orb above her head signifies her direct, unmediated connection to Kether—unlike other Tree paths, hers channels the crown's light with minimal distortion.",
+            "ru": "Сияющий венец или шар над её головой обозначает прямую, неопосредованную связь с Кетер — в отличие от других путей Древа, её путь передаёт свет венца с минимальными искажениями.",
+            "es": "Una corona u orbe luminoso sobre su cabeza significa su conexión directa y sin mediación con Kether—a diferencia de otros caminos del Árbol, el suyo canaliza la luz de la corona con una distorsión mínima."
+          }
+        },
+        {
+          "element": {
+            "en": "The crescent and orb of the moon",
+            "ru": "Полумесяц и лунный шар",
+            "es": "La luna creciente y el orbe lunar"
+          },
+          "description": {
+            "en": "Lunar imagery persists from the traditional attribution, but rendered as pure geometric light rather than a naturalistic moon—abstracting the Moon's rhythm into a principle of pure reflective consciousness.",
+            "ru": "Лунная образность сохраняется из традиционной атрибуции, но изображена как чистый геометрический свет, а не натуралистичная луна — абстрагируя лунный ритм в принцип чистого отражающего сознания.",
+            "es": "La imaginería lunar persiste desde la atribución tradicional, pero se representa como luz geométrica pura en lugar de una luna naturalista—abstrayendo el ritmo de la Luna en un principio de conciencia reflectante pura."
+          }
+        },
+        {
+          "element": {
+            "en": "The camphor-tree and pomegranate motifs",
+            "ru": "Мотивы камфорного дерева и граната",
+            "es": "Los motivos del alcanforero y la granada"
+          },
+          "description": {
+            "en": "Background botanical symbols continue the fertility and hidden-knowledge associations of the RWS pomegranates, translated into Crowley's more alchemical, elemental visual language.",
+            "ru": "Фоновые растительные символы продолжают ассоциации плодородия и скрытого знания гранатов из RWS, переведённые на более алхимический, стихийный визуальный язык Кроули.",
+            "es": "Los símbolos botánicos de fondo continúan las asociaciones de fertilidad y conocimiento oculto de las granadas del RWS, traducidas al lenguaje visual más alquímico y elemental de Crowley."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Priestess is less a seated guardian and more a principle: the veil of light itself, mediating between pure being and manifest form. Crowley frames her as the gateway of true magical perception, accessible only through silence and trained receptivity rather than desire. Divinationally, she signals a call to still the mind completely so that subtler truths can register.",
+        "ru": "В деке Тота Жрица — это в меньшей степени сидящая хранительница и в большей степени принцип: сама завеса света, посредничающая между чистым бытием и проявленной формой. Кроули представляет её как врата истинного магического восприятия, доступные лишь через тишину и тренированную восприимчивость, а не через желание. В гадании она сигнализирует о призыве полностью успокоить ум, чтобы уловить более тонкие истины.",
+        "es": "En el Thoth, la Sacerdotisa es menos una guardiana sentada y más un principio: el velo de luz mismo, mediando entre el ser puro y la forma manifiesta. Crowley la presenta como la puerta de la verdadera percepción mágica, accesible solo a través del silencio y una receptividad entrenada, no del deseo. En la adivinación, señala un llamado a aquietar la mente por completo para que verdades más sutiles puedan registrarse."
+      },
+      "name": {
+        "en": "The Priestess",
+        "ru": "Жрица",
+        "es": "La Sacerdotisa"
+      }
+    },
+    "major-3": {
+      "qabalah": {
+        "path_number": "14",
+        "hebrew_letter": {
+          "en": "Dalet",
+          "ru": "Далет",
+          "es": "Daleth"
+        },
+        "hebrew_symbol": "ד",
+        "hebrew_unicode": "U+05D3",
+        "sephirothic_connection": {
+          "en": "Chokmah – Binah",
+          "ru": "Хокма – Бина",
+          "es": "Chokmah – Binah"
+        },
+        "interpretation": {
+          "en": "Crowley intensifies this path as the great cosmic womb: Binah receiving Chokmah's force and giving it structure as the Great Mother of manifest existence, associated overtly with Isis and the generative principle of nature itself.",
+          "ru": "Кроули усиливает этот путь как великое космическое лоно: Бина принимает силу Хокма и придаёт ей структуру как Великая Мать проявленного бытия, явно связанная с Исидой и порождающим принципом самой природы.",
+          "es": "Crowley intensifica este camino como el gran útero cósmico: Binah recibiendo la fuerza de Chokmah y dándole estructura como la Gran Madre de la existencia manifiesta, asociada abiertamente con Isis y el principio generativo de la naturaleza misma."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley foregrounds explicit sexual and biological imagery of gestation rather than pastoral comfort.",
+          "ru": "Та же буква/путь, что и в RWS; Кроули выдвигает на первый план откровенную сексуальную и биологическую образность вынашивания, а не пасторальный уют.",
+          "es": "Misma letra/camino que el RWS; Crowley pone en primer plano una imaginería sexual y biológica explícita de gestación en lugar de un confort pastoral."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The double-headed eagle and pelican",
+            "ru": "Двуглавый орёл и пеликан",
+            "es": "El águila bicéfala y el pelícano"
+          },
+          "description": {
+            "en": "Alchemical emblems of the eagle (sublimation) and the self-sacrificing pelican (nurturing to the point of giving one's own substance) frame her as both refined spirit and devoted mother.",
+            "ru": "Алхимические эмблемы орла (сублимация) и жертвующего собой пеликана (забота вплоть до отдачи собственной сути) представляют её одновременно как утончённый дух и преданную мать.",
+            "es": "Emblemas alquímicos del águila (sublimación) y el pelícano que se sacrifica (nutrir hasta entregar la propia sustancia) la enmarcan como espíritu refinado y madre devota a la vez."
+          }
+        },
+        {
+          "element": {
+            "en": "The pale, gravid abdomen",
+            "ru": "Бледный, отяжелевший живот",
+            "es": "El vientre pálido y grávido"
+          },
+          "description": {
+            "en": "Her visibly pregnant form is rendered with frank biological directness, emphasising gestation and generation as sacred, unadorned physical fact rather than gentle allegory.",
+            "ru": "Её явно беременная фигура изображена с откровенной биологической прямотой, подчёркивая вынашивание и порождение как священный, неприкрашенный физический факт, а не мягкую аллегорию.",
+            "es": "Su forma visiblemente embarazada se representa con una franqueza biológica directa, enfatizando la gestación y la generación como un hecho físico sagrado y sin adornos, más que una alegoría suave."
+          }
+        },
+        {
+          "element": {
+            "en": "The lotus wand and shield of doves",
+            "ru": "Жезл-лотос и щит с голубями",
+            "es": "El cetro de loto y el escudo de palomas"
+          },
+          "description": {
+            "en": "She bears a lotus-headed sceptre and a shield marked with doves, uniting Egyptian and Venusian symbols of fecundity, peace, and love as active generative powers.",
+            "ru": "Она держит скипетр с лотосовым навершием и щит с изображением голубей, объединяя египетские и венерианские символы плодородия, мира и любви как активные порождающие силы.",
+            "es": "Porta un cetro rematado en loto y un escudo marcado con palomas, uniendo símbolos egipcios y venusinos de fecundidad, paz y amor como poderes generativos activos."
+          }
+        },
+        {
+          "element": {
+            "en": "The green, verdant background",
+            "ru": "Зелёный, пышный фон",
+            "es": "El fondo verde y frondoso"
+          },
+          "description": {
+            "en": "Dense green growth fills the card, tying her directly to Venus's rulership of vegetation, fertility, and the earth's continual self-renewal.",
+            "ru": "Плотная зелёная растительность заполняет карту, напрямую связывая её с властью Венеры над растительностью, плодородием и непрерывным самообновлением земли.",
+            "es": "Un denso crecimiento verde llena la carta, vinculándola directamente al gobierno de Venus sobre la vegetación, la fertilidad y la continua auto-renovación de la tierra."
+          }
+        },
+        {
+          "element": {
+            "en": "The crown and sceptre of dominion",
+            "ru": "Венец и скипетр владычества",
+            "es": "La corona y el cetro del dominio"
+          },
+          "description": {
+            "en": "Her regalia signals active dominion over the created world—not passive fertility alone, but sovereign authority over the process of manifestation itself.",
+            "ru": "Её регалии обозначают активное владычество над сотворённым миром — не только пассивное плодородие, но и суверенную власть над самим процессом проявления.",
+            "es": "Sus insignias reales señalan un dominio activo sobre el mundo creado—no solo fertilidad pasiva, sino autoridad soberana sobre el propio proceso de manifestación."
+          }
+        },
+        {
+          "element": {
+            "en": "The alchemical symbol for salt",
+            "ru": "Алхимический символ соли",
+            "es": "El símbolo alquímico de la sal"
+          },
+          "description": {
+            "en": "Salt, the alchemical principle of the body and fixed matter, appears in association with her, marking her as the force that gives density and permanence to spirit.",
+            "ru": "Соль, алхимический принцип тела и застывшей материи, появляется в связи с ней, обозначая её как силу, придающую плотность и постоянство духу.",
+            "es": "La sal, el principio alquímico del cuerpo y la materia fija, aparece asociada a ella, marcándola como la fuerza que da densidad y permanencia al espíritu."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Empress is rendered with more explicit sexual and generative frankness than the RWS pastoral queen—Crowley's Isis-figure who actively gestates and gives birth to form itself, rather than simply presiding over a fertile garden. Divinationally she points to creative and biological fertility as forceful, active processes rather than passive gifts.",
+        "ru": "В деке Тота Императрица изображена с более откровенной сексуальной и порождающей прямотой, чем пасторальная королева RWS — фигура Исиды у Кроули, которая активно вынашивает и рождает саму форму, а не просто царит над плодородным садом. В гадании она указывает на творческое и биологическое плодородие как на мощные, активные процессы, а не пассивные дары.",
+        "es": "En el Thoth, la Emperatriz se representa con una franqueza sexual y generativa más explícita que la reina pastoral del RWS—la figura de Isis de Crowley, que gesta y da a luz activamente a la forma misma, en lugar de simplemente presidir un jardín fértil. En la adivinación apunta a la fertilidad creativa y biológica como procesos activos y contundentes, no como dones pasivos."
+      }
+    },
+    "major-4": {
+      "qabalah": {
+        "path_number": "15",
+        "hebrew_letter": {
+          "en": "Tsadi",
+          "ru": "Цади",
+          "es": "Tsade"
+        },
+        "hebrew_symbol": "צ",
+        "hebrew_unicode": "U+05E6",
+        "sephirothic_connection": {
+          "en": "Chokmah – Tiphareth",
+          "ru": "Хокма – Тиферет",
+          "es": "Chokmah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "Crowley famously reassigns this path's letter from Heh to Tzaddi (following his reading of the Sepher Yetzirah), keeping the same Chokmah–Tiphareth connection but reframing the Emperor's force through the fishhook symbolism of Tzaddi—active, penetrating aspiration rather than settled rulership.",
+          "ru": "Кроули знаменито переприписывает букву этого пути с Хе на Цади (следуя своему прочтению Сефер Йецира), сохраняя ту же связь Хокма–Тиферет, но переосмысляя силу Императора через символику рыболовного крючка Цади — активное, проникающее устремление, а не устоявшееся правление.",
+          "es": "Crowley reasigna célebremente la letra de este camino de He a Tzaddi (siguiendo su lectura del Sepher Yetzirah), conservando la misma conexión Chokmah–Tiphareth, pero reformulando la fuerza del Emperador a través del simbolismo del anzuelo de Tzaddi—una aspiración activa y penetrante, no un gobierno asentado."
+        },
+        "notes": {
+          "en": "This is the well-known Crowley swap: he exchanges the letters of the Emperor (here Tzaddi) and the Star (which receives He), against the standard Golden Dawn/RWS attribution, citing the Sepher Yetzirah's original letter order as his justification.",
+          "ru": "Это известный обмен Кроули: он меняет местами буквы Императора (здесь Цади) и Звезды (которая получает Хе), вопреки стандартной атрибуции Golden Dawn/RWS, ссылаясь в качестве обоснования на изначальный порядок букв в Сефер Йецира.",
+          "es": "Este es el conocido intercambio de Crowley: intercambia las letras del Emperador (aquí Tzaddi) y la Estrella (que recibe He), en contra de la atribución estándar de la Golden Dawn/RWS, citando como justificación el orden original de letras del Sepher Yetzirah."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The ram's-head sceptre and crossed sceptres",
+            "ru": "Скипетр с головой барана и скрещённые скипетры",
+            "es": "El cetro con cabeza de carnero y los cetros cruzados"
+          },
+          "description": {
+            "en": "Aries symbolism persists, but Crowley adds crossed rams'-head sceptres, doubling the emphasis on cardinal, initiating fire and assertive command.",
+            "ru": "Символика Овна сохраняется, но Кроули добавляет скрещённые скипетры с головами баранов, удваивая акцент на кардинальном, инициирующем огне и напористом командовании.",
+            "es": "El simbolismo de Aries persiste, pero Crowley añade cetros cruzados con cabeza de carnero, duplicando el énfasis en el fuego cardinal e iniciador y el mando asertivo."
+          }
+        },
+        {
+          "element": {
+            "en": "The cube throne and eagle shields",
+            "ru": "Кубический трон и щиты с орлами",
+            "es": "El trono cúbico y los escudos con águilas"
+          },
+          "description": {
+            "en": "A cubic throne signifies stable, four-square material dominion, while eagle emblems add themes of visionary sovereignty soaring above mere territory.",
+            "ru": "Кубический трон обозначает устойчивое, четырёхугольное материальное владычество, а орлиные эмблемы добавляют темы провидческого суверенитета, парящего над простой территорией.",
+            "es": "Un trono cúbico significa un dominio material estable y cuadrangular, mientras que los emblemas de águila añaden temas de una soberanía visionaria que se eleva por encima del mero territorio."
+          }
+        },
+        {
+          "element": {
+            "en": "The lamb banner",
+            "ru": "Знамя с агнцем",
+            "es": "El estandarte con el cordero"
+          },
+          "description": {
+            "en": "A banner bearing a lamb reiterates the Aries connection while softening pure martial force with an undertone of sacrificial, protective responsibility.",
+            "ru": "Знамя с агнцем повторяет связь с Овном, смягчая чисто марсианскую силу оттенком жертвенной, защитной ответственности.",
+            "es": "Un estandarte con un cordero reitera la conexión con Aries, suavizando la fuerza puramente marcial con un matiz de responsabilidad sacrificial y protectora."
+          }
+        },
+        {
+          "element": {
+            "en": "The double phoenix wand",
+            "ru": "Жезл с двойным фениксом",
+            "es": "El cetro del doble fénix"
+          },
+          "description": {
+            "en": "A wand topped by phoenix imagery signals authority renewed through cycles of destruction and rebirth rather than static, unchanging rule.",
+            "ru": "Жезл, увенчанный образом феникса, указывает на власть, обновляемую через циклы разрушения и возрождения, а не на статичное, неизменное правление.",
+            "es": "Un cetro rematado con la imagen del fénix señala una autoridad que se renueva a través de ciclos de destrucción y renacimiento, no un gobierno estático e inmutable."
+          }
+        },
+        {
+          "element": {
+            "en": "The armoured, martial bearing",
+            "ru": "Закованная в доспехи, воинственная осанка",
+            "es": "El porte acorazado y marcial"
+          },
+          "description": {
+            "en": "Crowley's Emperor is depicted with more overt military hardness than Waite's, foregrounding the Tzaddi-fishhook aspiration to seize and hold power actively.",
+            "ru": "Император Кроули изображён с более откровенной военной жёсткостью, чем у Уэйта, выдвигая на первый план устремление рыболовного крючка Цади активно захватывать и удерживать власть.",
+            "es": "El Emperador de Crowley se representa con una dureza militar más manifiesta que la de Waite, poniendo en primer plano la aspiración del anzuelo Tzaddi de tomar y sostener el poder activamente."
+          }
+        },
+        {
+          "element": {
+            "en": "The red and orange fiery palette",
+            "ru": "Красно-оранжевая огненная палитра",
+            "es": "La paleta ígnea roja y naranja"
+          },
+          "description": {
+            "en": "Hot, fiery colours dominate the card, reinforcing Aries' cardinal-fire nature and the Emperor's role as the will that ignites structures into being.",
+            "ru": "Горячие, огненные цвета доминируют на карте, усиливая природу кардинального огня Овна и роль Императора как воли, воспламеняющей структуры к бытию.",
+            "es": "Colores cálidos e ígneos dominan la carta, reforzando la naturaleza de fuego cardinal de Aries y el papel del Emperador como la voluntad que enciende las estructuras hacia la existencia."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Emperor keeps his Chokmah–Tiphareth path but, via Crowley's Tzaddi reattribution, becomes a more actively aspirational, fishhook-like force—reaching out to seize and shape territory and destiny rather than simply presiding over an already-settled realm. Divinationally he still signals authority and structure, but with a sharper, more assertive edge than the RWS figure.",
+        "ru": "В деке Тота Император сохраняет свой путь Хокма–Тиферет, но благодаря переприписыванию Кроули буквы Цади становится более активно устремлённой, подобной рыболовному крючку силой — тянущейся, чтобы захватить и сформировать территорию и судьбу, а не просто царить над уже устоявшимся владением. В гадании он по-прежнему указывает на власть и структуру, но с более острым, напористым оттенком, чем фигура RWS.",
+        "es": "En el Thoth, el Emperador conserva su camino Chokmah–Tiphareth pero, mediante la reatribución de Tzaddi de Crowley, se convierte en una fuerza más activamente aspiracional, como un anzuelo—que se extiende para tomar y dar forma al territorio y al destino, en lugar de simplemente presidir un reino ya asentado. En la adivinación sigue señalando autoridad y estructura, pero con un filo más agudo y asertivo que la figura del RWS."
+      }
+    },
+    "major-5": {
+      "qabalah": {
+        "path_number": "16",
+        "hebrew_letter": {
+          "en": "Vav",
+          "ru": "Вав",
+          "es": "Vav"
+        },
+        "hebrew_symbol": "ו",
+        "hebrew_unicode": "U+05D5",
+        "sephirothic_connection": {
+          "en": "Chokmah – Chesed",
+          "ru": "Хокма – Хесед",
+          "es": "Chokmah – Chesed"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but reframes the card as 'the Hierophant' who reveals hidden law through the transmission of inspired wisdom to a chosen community, associated with Taurus and Venus's higher, teaching aspect.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но переосмысляет карту как 'Иерофанта', раскрывающего скрытый закон через передачу вдохновенной мудрости избранной общине, связанного с Тельцом и высшим, учительским аспектом Венеры.",
+          "es": "Crowley conserva la atribución estándar, pero reformula la carta como el 'Hierofante' que revela la ley oculta a través de la transmisión de sabiduría inspirada a una comunidad elegida, asociado con Tauro y el aspecto superior y docente de Venus."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley shifts the emphasis toward Taurean fixed-earth stability and the fertile transmission of doctrine into lasting cultural form.",
+          "ru": "Та же буква/путь, что и в RWS; Кроули смещает акцент на тельцовую устойчивость фиксированной земли и плодотворную передачу доктрины в устойчивую культурную форму.",
+          "es": "Misma letra/camino que el RWS; Crowley desplaza el énfasis hacia la estabilidad de tierra fija de Tauro y la transmisión fértil de la doctrina hacia una forma cultural duradera."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The seated figure amid the sacred elephants",
+            "ru": "Восседающая фигура среди священных слонов",
+            "es": "La figura sentada entre los elefantes sagrados"
+          },
+          "description": {
+            "en": "Elephants supporting his throne evoke memory, tradition, and the weighty, ancient stability of transmitted wisdom carried across long spans of time.",
+            "ru": "Слоны, поддерживающие его трон, вызывают образ памяти, традиции и весомой, древней устойчивости передаваемой мудрости, проносимой сквозь долгие отрезки времени.",
+            "es": "Los elefantes que sostienen su trono evocan la memoria, la tradición y la estabilidad pesada y antigua de la sabiduría transmitida a través de largos periodos de tiempo."
+          }
+        },
+        {
+          "element": {
+            "en": "The bees and serpent motifs",
+            "ru": "Мотивы пчёл и змея",
+            "es": "Los motivos de abejas y serpiente"
+          },
+          "description": {
+            "en": "Bees suggest communal industry and organised society, while a serpent motif ties the card to hidden, kundalini-like wisdom made available through structured initiation.",
+            "ru": "Пчёлы символизируют общинный труд и организованное общество, а мотив змея связывает карту со скрытой, подобной кундалини мудростью, доступной через структурированную инициацию.",
+            "es": "Las abejas sugieren la industria comunitaria y la sociedad organizada, mientras que un motivo de serpiente vincula la carta con una sabiduría oculta, tipo kundalini, disponible a través de una iniciación estructurada."
+          }
+        },
+        {
+          "element": {
+            "en": "The ram's head and Taurean bull imagery",
+            "ru": "Голова барана и образ тельца-быка",
+            "es": "La cabeza de carnero y la imagen del toro de Tauro"
+          },
+          "description": {
+            "en": "Taurus symbolism (bull-related imagery) roots the card in fixed earth—doctrine made solid, cultivated, and reliably reproducible generation after generation.",
+            "ru": "Символика Тельца (образы, связанные с быком) укореняет карту в фиксированной земле — доктрину, ставшую твёрдой, возделанной и надёжно воспроизводимой из поколения в поколение.",
+            "es": "El simbolismo de Tauro (imágenes relacionadas con el toro) enraíza la carta en la tierra fija—la doctrina hecha sólida, cultivada y reproducible con fiabilidad, generación tras generación."
+          }
+        },
+        {
+          "element": {
+            "en": "The hidden children beneath his robe",
+            "ru": "Скрытые дети под его мантией",
+            "es": "Los niños ocultos bajo su túnica"
+          },
+          "description": {
+            "en": "Small figures sheltered within his garment suggest doctrine's protective, nurturing function—tradition as a womb that shelters and grows new initiates.",
+            "ru": "Маленькие фигуры, укрытые в его одеянии, предполагают защитную, взращивающую функцию доктрины — традицию как лоно, укрывающее и взращивающее новых посвящённых.",
+            "es": "Pequeñas figuras resguardadas en su vestimenta sugieren la función protectora y nutricia de la doctrina—la tradición como un útero que resguarda y hace crecer a nuevos iniciados."
+          }
+        },
+        {
+          "element": {
+            "en": "The five-pointed star and ecclesiastical staff",
+            "ru": "Пятиконечная звезда и церковный посох",
+            "es": "La estrella de cinco puntas y el báculo eclesiástico"
+          },
+          "description": {
+            "en": "A pentagram and staff combine natural magic with formal hierarchy, showing that Crowley's Hierophant channels both esoteric power and exoteric structure at once.",
+            "ru": "Пентаграмма и посох сочетают природную магию с формальной иерархией, показывая, что Иерофант Кроули одновременно проводит и эзотерическую силу, и экзотерическую структуру.",
+            "es": "Un pentagrama y un báculo combinan la magia natural con la jerarquía formal, mostrando que el Hierofante de Crowley canaliza a la vez el poder esotérico y la estructura exotérica."
+          }
+        },
+        {
+          "element": {
+            "en": "The muted earthen colour palette",
+            "ru": "Приглушённая землистая цветовая палитра",
+            "es": "La paleta de colores terrosos y apagados"
+          },
+          "description": {
+            "en": "Earthy greens and browns dominate, reinforcing Taurus's fixed-earth stability and the card's theme of doctrine made solid, cultivated, and enduring.",
+            "ru": "Землистые зелёные и коричневые тона доминируют, усиливая устойчивость фиксированной земли Тельца и тему карты о доктрине, ставшей твёрдой, возделанной и долговечной.",
+            "es": "Predominan los verdes y marrones terrosos, reforzando la estabilidad de tierra fija de Tauro y el tema de la carta sobre una doctrina hecha sólida, cultivada y duradera."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Hierophant leans into Taurean fixed-earth stability, portraying tradition and initiation as a fertile, cultivated inheritance rather than a purely ecclesiastical office. Divinationally he still points to structured learning and inherited wisdom, but with more emphasis on organic, communal cultivation than on formal religious hierarchy.",
+        "ru": "В деке Тота Иерофант склоняется к тельцовой устойчивости фиксированной земли, изображая традицию и инициацию как плодородное, возделанное наследие, а не чисто церковную должность. В гадании он по-прежнему указывает на структурированное обучение и унаследованную мудрость, но с большим акцентом на органическом, общинном возделывании, чем на формальной религиозной иерархии.",
+        "es": "En el Thoth, el Hierofante se inclina hacia la estabilidad de tierra fija de Tauro, retratando la tradición y la iniciación como una herencia fértil y cultivada, más que como un cargo puramente eclesiástico. En la adivinación sigue señalando el aprendizaje estructurado y la sabiduría heredada, pero con más énfasis en el cultivo orgánico y comunitario que en la jerarquía religiosa formal."
+      }
+    },
+    "major-6": {
+      "qabalah": {
+        "path_number": "17",
+        "hebrew_letter": {
+          "en": "Zayin",
+          "ru": "Заин",
+          "es": "Zain"
+        },
+        "hebrew_symbol": "ז",
+        "hebrew_unicode": "U+05D6",
+        "sephirothic_connection": {
+          "en": "Binah – Tiphareth",
+          "ru": "Бина – Тиферет",
+          "es": "Binah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but expands the card into an alchemical marriage of many opposites at once—not just two lovers but the full reconciliation of dualities under Gemini's rule, mediated by the sword of discriminating intellect.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но расширяет карту до алхимического брака множества противоположностей одновременно — не просто двух влюблённых, а полного примирения дуальностей под властью Близнецов, опосредованного мечом различающего интеллекта.",
+          "es": "Crowley conserva la atribución estándar, pero expande la carta hasta convertirla en un matrimonio alquímico de muchos opuestos a la vez—no solo dos amantes, sino la reconciliación completa de las dualidades bajo el dominio de Géminis, mediada por la espada del intelecto discriminador."
+        },
+        "notes": {
+          "en": "Same path/letter as RWS; Crowley's version is deliberately more complex and crowded, reflecting Gemini's multiplicity rather than a single idealised couple.",
+          "ru": "Тот же путь/буква, что и в RWS; версия Кроули намеренно более сложна и насыщена, отражая множественность Близнецов, а не единую идеализированную пару.",
+          "es": "Mismo camino/letra que el RWS; la versión de Crowley es deliberadamente más compleja y abarrotada, reflejando la multiplicidad de Géminis en lugar de una única pareja idealizada."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The alchemical king and queen",
+            "ru": "Алхимические король и королева",
+            "es": "El rey y la reina alquímicos"
+          },
+          "description": {
+            "en": "A royal couple stands for the marriage of opposing principles—sulphur and mercury, sun and moon—united through ritual rather than mere attraction.",
+            "ru": "Королевская пара олицетворяет брак противоположных принципов — серы и ртути, солнца и луны — объединённых через ритуал, а не простое влечение.",
+            "es": "Una pareja real representa el matrimonio de principios opuestos—azufre y mercurio, sol y luna—unidos mediante el ritual y no la mera atracción."
+          }
+        },
+        {
+          "element": {
+            "en": "The hooded figure officiating",
+            "ru": "Фигура в капюшоне, проводящая обряд",
+            "es": "La figura encapuchada que oficia"
+          },
+          "description": {
+            "en": "A shadowed officiant presides over the union, suggesting that true marriage of opposites requires an initiatory, almost priestly, act of will.",
+            "ru": "Затенённый распорядитель обряда председательствует над союзом, предполагая, что истинный брак противоположностей требует посвятительного, почти жреческого акта воли.",
+            "es": "Un oficiante en sombras preside la unión, sugiriendo que el verdadero matrimonio de opuestos requiere un acto de voluntad iniciático, casi sacerdotal."
+          }
+        },
+        {
+          "element": {
+            "en": "Cupid, the child of the union",
+            "ru": "Купидон, дитя союза",
+            "es": "Cupido, el hijo de la unión"
+          },
+          "description": {
+            "en": "A blindfolded cupid figure represents the new creative potential born from reconciled opposites, love acting without needing to see or justify itself.",
+            "ru": "Фигура Купидона с завязанными глазами олицетворяет новый созидательный потенциал, рождённый из примирённых противоположностей — любовь, действующую, не нуждаясь видеть или оправдывать себя.",
+            "es": "Una figura de Cupido con los ojos vendados representa el nuevo potencial creativo nacido de opuestos reconciliados, el amor actuando sin necesidad de verse o justificarse a sí mismo."
+          }
+        },
+        {
+          "element": {
+            "en": "The orphan child and the many small figures",
+            "ru": "Ребёнок-сирота и множество маленьких фигур",
+            "es": "El niño huérfano y las muchas figuras pequeñas"
+          },
+          "description": {
+            "en": "Additional small figures crowd the scene, emphasising Gemini's multiplicity—not a single simple pair but the full, sometimes chaotic, range of relationships and inner voices to be reconciled.",
+            "ru": "Дополнительные маленькие фигуры заполняют сцену, подчёркивая множественность Близнецов — не единая простая пара, а полный, порой хаотичный спектр отношений и внутренних голосов, подлежащих примирению.",
+            "es": "Figuras pequeñas adicionales abarrotan la escena, enfatizando la multiplicidad de Géminis—no una simple pareja única, sino la gama completa, a veces caótica, de relaciones y voces internas que deben reconciliarse."
+          }
+        },
+        {
+          "element": {
+            "en": "The alembic and alchemical vessel imagery",
+            "ru": "Образы алхимического сосуда и перегонного куба",
+            "es": "La imaginería del alambique y el vaso alquímico"
+          },
+          "description": {
+            "en": "Vessel imagery frames the union as a literal alchemical process—raw elements combined, heated, and transformed into a new, unified substance.",
+            "ru": "Образ сосуда представляет союз как буквальный алхимический процесс — сырые элементы, соединённые, нагретые и преобразованные в новую, единую субстанцию.",
+            "es": "La imaginería del vaso enmarca la unión como un proceso alquímico literal—elementos en bruto combinados, calentados y transformados en una sustancia nueva y unificada."
+          }
+        },
+        {
+          "element": {
+            "en": "The bright, multicoloured composition",
+            "ru": "Яркая, многоцветная композиция",
+            "es": "La composición brillante y multicolor"
+          },
+          "description": {
+            "en": "A busy, vividly coloured composition contrasts with RWS's serene simplicity, reflecting Crowley's view of union as a dynamic, ongoing negotiation rather than a settled harmony.",
+            "ru": "Насыщенная, ярко окрашенная композиция контрастирует со спокойной простотой RWS, отражая взгляд Кроули на союз как на динамичный, продолжающийся процесс, а не устоявшуюся гармонию.",
+            "es": "Una composición atareada y de colores vivos contrasta con la serena simplicidad del RWS, reflejando la visión de Crowley de la unión como una negociación dinámica y continua, no una armonía asentada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Lovers become a complex alchemical marriage of many opposites—king and queen, sun and moon, order and multiplicity—rather than a simple idealised couple, reflecting Crowley's Gemini-based emphasis on discrimination and synthesis. Divinationally it still concerns union and choice, but frames both as an active, sometimes turbulent, creative process rather than a settled state.",
+        "ru": "В деке Тота Влюблённые становятся сложным алхимическим браком множества противоположностей — короля и королевы, солнца и луны, порядка и множественности — а не простой идеализированной парой, отражая акцент Кроули на различении и синтезе, основанный на Близнецах. В гадании она по-прежнему касается союза и выбора, но представляет оба как активный, порой бурный, созидательный процесс, а не устоявшееся состояние.",
+        "es": "En el Thoth, los Enamorados se convierten en un complejo matrimonio alquímico de muchos opuestos—rey y reina, sol y luna, orden y multiplicidad—en lugar de una simple pareja idealizada, reflejando el énfasis de Crowley en la discriminación y la síntesis basado en Géminis. En la adivinación sigue concerniendo a la unión y la elección, pero enmarca ambas como un proceso creativo activo, a veces turbulento, más que un estado asentado."
+      }
+    },
+    "major-7": {
+      "qabalah": {
+        "path_number": "18",
+        "hebrew_letter": {
+          "en": "Chet",
+          "ru": "Хет",
+          "es": "Cheth"
+        },
+        "hebrew_symbol": "ח",
+        "hebrew_unicode": "U+05D7",
+        "sephirothic_connection": {
+          "en": "Binah – Geburah",
+          "ru": "Бина – Гебура",
+          "es": "Binah – Geburah"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard path but intensifies it as the Holy Grail borne forward under armed guard—understanding (Binah) protected and advanced through Geburah's disciplined martial force, associated with Cancer's crab-like armoured shell.",
+          "ru": "Кроули сохраняет стандартный путь, но усиливает его как Святой Грааль, несомый вперёд под вооружённой охраной — понимание (Бина), защищённое и продвигаемое дисциплинированной воинской силой Гебуры, связанной с панцирем краба Рака.",
+          "es": "Crowley conserva el camino estándar, pero lo intensifica como el Santo Grial llevado hacia adelante bajo guardia armada—la comprensión (Binah) protegida y hecha avanzar mediante la fuerza marcial disciplinada de Geburah, asociada al caparazón acorazado de Cáncer."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley foregrounds the Grail and the armoured, Cancerian shell more explicitly than Waite's sphinx-drawn carriage.",
+          "ru": "Та же буква/путь, что и в RWS; Кроули более явно выдвигает на первый план Грааль и бронированный, раковый панцирь, чем колесница со сфинксами Уэйта.",
+          "es": "Misma letra/camino que el RWS; Crowley pone en primer plano el Grial y el caparazón acorazado de Cáncer de forma más explícita que el carruaje tirado por esfinges de Waite."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The armoured warrior beneath a canopy shell",
+            "ru": "Закованный в доспехи воин под панцирным балдахином",
+            "es": "El guerrero acorazado bajo un dosel-caparazón"
+          },
+          "description": {
+            "en": "The charioteer sits within a shell-like canopy reminiscent of Cancer's crab, protected fully while advancing—vulnerability guarded, not exposed, during forward motion.",
+            "ru": "Возница восседает под панцирным балдахином, напоминающим краба Рака, полностью защищённый во время движения вперёд — уязвимость охраняется, а не выставляется напоказ.",
+            "es": "El auriga se sienta bajo un dosel en forma de caparazón que recuerda al cangrejo de Cáncer, completamente protegido mientras avanza—la vulnerabilidad resguardada, no expuesta, durante el movimiento hacia adelante."
+          }
+        },
+        {
+          "element": {
+            "en": "The Holy Grail held aloft",
+            "ru": "Святой Грааль, поднятый ввысь",
+            "es": "El Santo Grial en alto"
+          },
+          "description": {
+            "en": "A radiant grail replaces RWS's shield emblem, marking the goal of the journey as sacred attainment rather than mere territorial conquest.",
+            "ru": "Сияющий Грааль заменяет эмблему щита RWS, обозначая цель путешествия как священное достижение, а не простое территориальное завоевание.",
+            "es": "Un grial radiante reemplaza el emblema del escudo del RWS, marcando la meta del viaje como un logro sagrado, no una mera conquista territorial."
+          }
+        },
+        {
+          "element": {
+            "en": "Four sphinxes of different colours",
+            "ru": "Четыре сфинкса разных цветов",
+            "es": "Cuatro esfinges de diferentes colores"
+          },
+          "description": {
+            "en": "Crowley multiplies the opposing forces from two sphinxes to four, elemental beasts pulling in different directions, intensifying the challenge of unified, disciplined direction.",
+            "ru": "Кроули умножает противоборствующие силы с двух сфинксов до четырёх, стихийных зверей, тянущих в разные стороны, усиливая сложность единого, дисциплинированного направления.",
+            "es": "Crowley multiplica las fuerzas opuestas de dos esfinges a cuatro, bestias elementales que tiran en direcciones distintas, intensificando el desafío de una dirección unificada y disciplinada."
+          }
+        },
+        {
+          "element": {
+            "en": "The starry, cosmic backdrop",
+            "ru": "Звёздный, космический фон",
+            "es": "El fondo estrellado y cósmico"
+          },
+          "description": {
+            "en": "A dense field of stars surrounds the scene, reinforcing that this victory is cosmically significant, not merely a local or personal win.",
+            "ru": "Плотное звёздное поле окружает сцену, подчёркивая, что эта победа имеет космическое значение, а не является лишь локальным или личным успехом.",
+            "es": "Un denso campo de estrellas rodea la escena, reforzando que esta victoria tiene una significación cósmica, no es meramente una victoria local o personal."
+          }
+        },
+        {
+          "element": {
+            "en": "The lightning-flash lines of force",
+            "ru": "Молниевидные линии силы",
+            "es": "Las líneas de fuerza en forma de relámpago"
+          },
+          "description": {
+            "en": "Zigzagging lines of energy radiate from the chariot, visualising the raw, barely-contained power that disciplined will must channel and direct.",
+            "ru": "Зигзагообразные линии энергии исходят от колесницы, визуализируя сырую, едва сдерживаемую силу, которую дисциплинированная воля должна направить и обуздать.",
+            "es": "Líneas de energía en zigzag irradian del carro, visualizando el poder en bruto y apenas contenido que la voluntad disciplinada debe canalizar y dirigir."
+          }
+        },
+        {
+          "element": {
+            "en": "The dark, armoured figure's stillness",
+            "ru": "Неподвижность тёмной фигуры в доспехах",
+            "es": "La quietud de la figura oscura y acorazada"
+          },
+          "description": {
+            "en": "Despite the surrounding chaos of forces, the charioteer himself remains still and composed—victory here is a matter of inner calm amid outer turbulence.",
+            "ru": "Несмотря на окружающий хаос сил, сам возница остаётся неподвижным и невозмутимым — победа здесь есть вопрос внутреннего спокойствия среди внешней турбулентности.",
+            "es": "A pesar del caos circundante de fuerzas, el propio auriga permanece quieto y sereno—la victoria aquí es cuestión de calma interior en medio de la turbulencia exterior."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Chariot intensifies the theme of containment: four opposing elemental sphinxes rather than two must be held in disciplined unity, with the Holy Grail as the sacred prize borne safely through the chaos. Divinationally it stresses that true victory requires inner stillness and structured will amid multiplying, potentially overwhelming forces.",
+        "ru": "В деке Тота Колесница усиливает тему сдерживания: четыре противоборствующих стихийных сфинкса, а не два, должны удерживаться в дисциплинированном единстве, а Святой Грааль выступает священным призом, проносимым невредимо сквозь хаос. В гадании она подчёркивает, что истинная победа требует внутренней неподвижности и структурированной воли среди множащихся, потенциально подавляющих сил.",
+        "es": "En el Thoth, el Carro intensifica el tema de la contención: cuatro esfinges elementales opuestas, en lugar de dos, deben mantenerse en unidad disciplinada, con el Santo Grial como el premio sagrado llevado a salvo a través del caos. En la adivinación resalta que la verdadera victoria requiere quietud interior y voluntad estructurada en medio de fuerzas que se multiplican y pueden abrumar."
+      }
+    },
+    "major-8": {
+      "qabalah": {
+        "path_number": "19",
+        "hebrew_letter": {
+          "en": "Tet",
+          "ru": "Тет",
+          "es": "Teth"
+        },
+        "hebrew_symbol": "ט",
+        "hebrew_unicode": "U+05D8",
+        "sephirothic_connection": {
+          "en": "Chesed – Geburah",
+          "ru": "Хесед – Гебура",
+          "es": "Chesed – Geburah"
+        },
+        "interpretation": {
+          "en": "Because Crowley restores the pre-Golden-Dawn ordering, this card at sequential position 11 (Thoth's own card VIII) carries Strength's traditional letter and path: fierce, joyous vitality balanced between Chesed's expansiveness and Geburah's force.",
+          "ru": "Поскольку Кроули восстанавливает порядок, предшествующий Golden Dawn, эта карта в последовательной позиции 11 (собственная карта Тота VIII) несёт традиционную букву и путь Силы: неистовую, радостную жизненность, уравновешенную между экспансивностью Хесед и силой Гебуры.",
+          "es": "Dado que Crowley restaura el ordenamiento previo a la Golden Dawn, esta carta en la posición secuencial 11 (la propia carta VIII del Thoth) porta la letra y el camino tradicionales de la Fuerza: una vitalidad feroz y gozosa equilibrada entre la expansividad de Chesed y la fuerza de Geburah."
+        },
+        "notes": {
+          "en": "This is the mirror of card 8's note: Crowley's Lust occupies the traditional Marseille position XI (Strength/Teth), the reverse of Waite's VIII placement—hence Thoth's own card number here is VIII even though the sequential card_id is 11.",
+          "ru": "Это зеркальное отражение примечания к карте 8: Вожделение Кроули занимает традиционную марсельскую позицию XI (Сила/Тет), противоположную размещению Уэйта под номером VIII — поэтому собственный номер карты Тота здесь VIII, хотя последовательный card_id равен 11.",
+          "es": "Este es el espejo de la nota de la carta 8: la Lujuria de Crowley ocupa la posición tradicional de Marsella XI (Fuerza/Teth), lo inverso a la colocación de Waite en la VIII—por eso el propio número de carta del Thoth aquí es VIII, aunque el card_id secuencial sea 11."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The Scarlet Woman riding the beast",
+            "ru": "Багряная Женщина, оседлавшая зверя",
+            "es": "La Mujer Escarlata cabalgando a la bestia"
+          },
+          "description": {
+            "en": "A radiant woman rides a seven-headed beast in ecstatic union, reframing 'strength' as joyous, sacred sensuality rather than gentle restraint.",
+            "ru": "Сияющая женщина оседлает семиглавого зверя в экстатическом единении, переосмысляя 'силу' как радостную, священную чувственность, а не мягкую сдержанность.",
+            "es": "Una mujer radiante cabalga una bestia de siete cabezas en unión extática, reformulando la 'fuerza' como sensualidad gozosa y sagrada, no como una contención suave."
+          }
+        },
+        {
+          "element": {
+            "en": "The seven heads of the beast",
+            "ru": "Семь голов зверя",
+            "es": "Las siete cabezas de la bestia"
+          },
+          "description": {
+            "en": "Seven heads represent the seven planetary/alchemical forces harnessed and ridden rather than tamed by gentle hands, showing mastery as active, ecstatic participation.",
+            "ru": "Семь голов олицетворяют семь планетарных/алхимических сил, обузданных и оседланных, а не укрощённых мягкими руками, показывая мастерство как активное, экстатическое участие.",
+            "es": "Siete cabezas representan las siete fuerzas planetarias/alquímicas domeñadas y cabalgadas, no domadas por manos suaves, mostrando el dominio como una participación activa y extática."
+          }
+        },
+        {
+          "element": {
+            "en": "The chalice she holds aloft",
+            "ru": "Чаша, поднятая ею ввысь",
+            "es": "El cáliz que sostiene en alto"
+          },
+          "description": {
+            "en": "A raised cup filled with radiant force signals overflowing vital energy embraced and offered rather than restrained or hidden.",
+            "ru": "Поднятая чаша, наполненная сияющей силой, символизирует переполняющую жизненную энергию, принятую и предложенную, а не сдерживаемую или скрытую.",
+            "es": "Una copa alzada llena de fuerza radiante señala una energía vital desbordante abrazada y ofrecida, no contenida ni oculta."
+          }
+        },
+        {
+          "element": {
+            "en": "The lion-serpent imagery entwined with her",
+            "ru": "Образ льва-змея, переплетённого с ней",
+            "es": "La imaginería del león-serpiente entrelazada con ella"
+          },
+          "description": {
+            "en": "Combined lion and serpent forms fuse Leo's fire with Tet's coiled instinctive force, showing untamed vitality as sacred rather than dangerous.",
+            "ru": "Объединённые образы льва и змея сливают огонь Льва с извивающейся инстинктивной силой Тет, показывая необузданную жизненность как священную, а не опасную.",
+            "es": "Las formas combinadas de león y serpiente fusionan el fuego de Leo con la fuerza instintiva enroscada de Teth, mostrando la vitalidad indómita como sagrada, no peligrosa."
+          }
+        },
+        {
+          "element": {
+            "en": "The riotous, blazing colour field",
+            "ru": "Буйное, пылающее цветовое поле",
+            "es": "El campo de color desenfrenado y ardiente"
+          },
+          "description": {
+            "en": "Dense, overlapping reds and golds fill the whole card, embodying ecstatic excess and creative overflow rather than restrained, contained energy.",
+            "ru": "Плотные, накладывающиеся друг на друга красные и золотые тона заполняют всю карту, воплощая экстатический избыток и творческое переполнение, а не сдержанную, ограниченную энергию.",
+            "es": "Rojos y dorados densos y superpuestos llenan toda la carta, encarnando el exceso extático y el desbordamiento creativo, no una energía contenida y restringida."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, this card is Lust, Crowley's Strength restored to its traditional (pre-Golden-Dawn) position XI rather than VIII, reframing mastery as ecstatic, joyous union with instinctive force rather than its gentle taming. Divinationally at this sequential position, expect Thoth's reading to concern courageous, sacred vitality and creative excess rather than RWS's impartial legal balance.",
+        "ru": "В деке Тота эта карта — Вожделение, Сила Кроули, возвращённая в традиционную (предшествующую Golden Dawn) позицию XI вместо VIII, переосмысляющая мастерство как экстатическое, радостное единение с инстинктивной силой, а не её мягкое укрощение. В гадании на этой последовательной позиции чтение Тота будет касаться мужественной, священной жизненности и творческого избытка, а не беспристрастного юридического равновесия RWS.",
+        "es": "En el Thoth, esta carta es la Lujuria, la Fuerza de Crowley restaurada a su posición tradicional (anterior a la Golden Dawn) XI en lugar de la VIII, reformulando el dominio como una unión extática y gozosa con la fuerza instintiva, no su doma amable. En la adivinación, en esta posición secuencial, la lectura del Thoth concernirá a una vitalidad valiente y sagrada y al exceso creativo, en lugar del equilibrio legal imparcial del RWS."
+      },
+      "number": 11,
+      "name": {
+        "en": "Lust",
+        "ru": "Вожделение",
+        "es": "La Lujuria"
+      }
+    },
+    "major-9": {
+      "qabalah": {
+        "path_number": "20",
+        "hebrew_letter": {
+          "en": "Yod",
+          "ru": "Йод",
+          "es": "Yod"
+        },
+        "hebrew_symbol": "י",
+        "hebrew_unicode": "U+05D9",
+        "sephirothic_connection": {
+          "en": "Chesed – Tiphareth",
+          "ru": "Хесед – Тиферет",
+          "es": "Chesed – Tiphareth"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but emphasises Yod as the seminal, phallic seed-point of creative force—the Hermit here is less a wandering ascetic and more a still, magical impregnator of the void with light, tied to Virgo's discriminating, harvest-ready earth.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но подчёркивает Йод как семенную, фаллическую точку-семя созидательной силы — Отшельник здесь в меньшей степени странствующий аскет и в большей степени неподвижный, магический оплодотворитель пустоты светом, связанный с различающей, готовой к жатве землёй Девы.",
+          "es": "Crowley conserva la atribución estándar, pero enfatiza Yod como el punto-semilla seminal, fálico, de la fuerza creativa—el Ermitaño aquí es menos un asceta errante y más un inmóvil impregnador mágico del vacío con luz, ligado a la tierra discriminadora y lista para la cosecha de Virgo."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's interpretation is more explicitly generative and magical than Waite's contemplative wanderer.",
+          "ru": "Та же буква/путь, что и в RWS; интерпретация Кроули более явно порождающая и магическая, чем созерцательный странник Уэйта.",
+          "es": "Misma letra/camino que el RWS; la interpretación de Crowley es más explícitamente generativa y mágica que el errante contemplativo de Waite."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The seed of light held before him",
+            "ru": "Семя света, удерживаемое перед ним",
+            "es": "La semilla de luz sostenida ante él"
+          },
+          "description": {
+            "en": "Rather than a simple lantern, he holds forth a radiant seed of light, an active generative act of impregnating the darkness rather than merely illuminating a path.",
+            "ru": "Вместо простого фонаря он держит перед собой сияющее семя света — активный порождающий акт оплодотворения тьмы, а не просто освещения пути.",
+            "es": "En lugar de un simple farol, sostiene ante sí una semilla radiante de luz, un acto generativo activo de impregnar la oscuridad, no meramente iluminar un camino."
+          }
+        },
+        {
+          "element": {
+            "en": "The wheat sheaf at his feet",
+            "ru": "Сноп пшеницы у его ног",
+            "es": "La gavilla de trigo a sus pies"
+          },
+          "description": {
+            "en": "A sheaf of wheat ties the card to Virgo's harvest symbolism, showing the Hermit's wisdom as the mature, gathered fruit of long, careful cultivation.",
+            "ru": "Сноп пшеницы связывает карту с символикой урожая Девы, показывая мудрость Отшельника как зрелый, собранный плод долгого, тщательного возделывания.",
+            "es": "Una gavilla de trigo vincula la carta al simbolismo de la cosecha de Virgo, mostrando la sabiduría del Ermitaño como el fruto maduro y recogido de un cultivo largo y cuidadoso."
+          }
+        },
+        {
+          "element": {
+            "en": "The three-headed dog Cerberus at his feet",
+            "ru": "Трёхглавый пёс Цербер у его ног",
+            "es": "El perro tricéfalo Cerbero a sus pies"
+          },
+          "description": {
+            "en": "Cerberus, guardian of thresholds, sits obediently beside him—instinct and vigilance now tamed and put in service of the seeker's solitary path.",
+            "ru": "Цербер, страж порогов, послушно сидит рядом с ним — инстинкт и бдительность, ныне укрощённые и поставленные на службу одинокому пути ищущего.",
+            "es": "Cerbero, guardián de umbrales, se sienta obedientemente a su lado—el instinto y la vigilancia ahora domados y puestos al servicio del camino solitario del buscador."
+          }
+        },
+        {
+          "element": {
+            "en": "The egg of spirit above the lantern",
+            "ru": "Яйцо духа над фонарём",
+            "es": "El huevo del espíritu sobre el farol"
+          },
+          "description": {
+            "en": "An egg-shaped aura surrounds the light he carries, symbolising the germ of new spiritual life waiting to hatch from patient inner cultivation.",
+            "ru": "Яйцевидная аура окружает свет, который он несёт, символизируя зародыш новой духовной жизни, ожидающей вылупления из терпеливого внутреннего возделывания.",
+            "es": "Un aura en forma de huevo rodea la luz que porta, simbolizando el germen de una nueva vida espiritual que espera eclosionar de un cultivo interior paciente."
+          }
+        },
+        {
+          "element": {
+            "en": "His slow, deliberate forward step",
+            "ru": "Его медленный, обдуманный шаг вперёд",
+            "es": "Su paso lento y deliberado hacia adelante"
+          },
+          "description": {
+            "en": "Unlike a static contemplative, Crowley's Hermit moves forward with quiet deliberation, showing that withdrawal here still serves an active, purposeful magical work.",
+            "ru": "В отличие от статичного созерцателя, Отшельник Кроули движется вперёд с тихой обдуманностью, показывая, что уединение здесь всё же служит активной, целенаправленной магической работе.",
+            "es": "A diferencia de un contemplativo estático, el Ermitaño de Crowley avanza con una deliberación silenciosa, mostrando que el retiro aquí sigue sirviendo a un trabajo mágico activo y con propósito."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Hermit becomes an actively generative, almost magical figure—sowing a seed of light into darkness rather than simply carrying a lamp through it, tied to Virgo's harvest and discrimination. Divinationally he still signals introspection and solitude, but frames it as a deliberate, fruitful magical labour rather than passive withdrawal.",
+        "ru": "В деке Тота Отшельник становится активно порождающей, почти магической фигурой — сеющей семя света во тьму, а не просто несущей светильник сквозь неё, связанной с урожаем и различением Девы. В гадании он по-прежнему указывает на самоанализ и уединение, но представляет их как целенаправленный, плодотворный магический труд, а не пассивное отстранение.",
+        "es": "En el Thoth, el Ermitaño se convierte en una figura activamente generativa, casi mágica—sembrando una semilla de luz en la oscuridad en lugar de simplemente llevar una lámpara a través de ella, vinculado a la cosecha y el discernimiento de Virgo. En la adivinación sigue señalando introspección y soledad, pero la enmarca como un trabajo mágico deliberado y fructífero, no como un retiro pasivo."
+      }
+    },
+    "major-10": {
+      "qabalah": {
+        "path_number": "21",
+        "hebrew_letter": {
+          "en": "Kaf",
+          "ru": "Каф",
+          "es": "Kaph"
+        },
+        "hebrew_symbol": "כ",
+        "hebrew_unicode": "U+05DB",
+        "sephirothic_connection": {
+          "en": "Chesed – Netzach",
+          "ru": "Хесед – Нецах",
+          "es": "Chesed – Netzach"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but foregrounds Jupiter's expansive, generative luck as an almost living force spinning through the ten Sephiroth themselves, less observed calmly than actively, joyously ridden.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но выдвигает на первый план экспансивную, порождающую удачу Юпитера как почти живую силу, вращающуюся сквозь сами десять Сфирот, не столько спокойно наблюдаемую, сколько активно, радостно оседлываемую.",
+          "es": "Crowley conserva la atribución estándar, pero pone en primer plano la suerte expansiva y generativa de Júpiter como una fuerza casi viva que gira a través de las propias diez Sephiroth, no tanto observada con calma como cabalgada activa y gozosamente."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's 'Fortune' emphasises dynamic motion and multiplicity of forces rather than static, allegorical observers.",
+          "ru": "Та же буква/путь, что и в RWS; 'Фортуна' Кроули подчёркивает динамическое движение и множественность сил, а не статичных, аллегорических наблюдателей.",
+          "es": "Misma letra/camino que el RWS; la 'Fortuna' de Crowley enfatiza el movimiento dinámico y la multiplicidad de fuerzas en lugar de observadores estáticos y alegóricos."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The ten-spoked wheel of the Sephiroth",
+            "ru": "Десятиспицевое колесо Сфирот",
+            "es": "La rueda de diez rayos de las Sephiroth"
+          },
+          "description": {
+            "en": "Ten spokes explicitly map the wheel to the Tree of Life itself, showing fortune as the very structure of manifest existence turning through its stages.",
+            "ru": "Десять спиц явно отображают колесо на само Древо Жизни, показывая удачу как саму структуру проявленного бытия, вращающуюся через свои стадии.",
+            "es": "Diez rayos mapean explícitamente la rueda al propio Árbol de la Vida, mostrando la fortuna como la estructura misma de la existencia manifiesta que gira a través de sus etapas."
+          }
+        },
+        {
+          "element": {
+            "en": "The three creatures of alchemy: Typhon, sphinx, Hermanubis",
+            "ru": "Три алхимических существа: Тифон, сфинкс, Гермес-Анубис",
+            "es": "Las tres criaturas de la alquimia: Tifón, la esfinge, Hermanubis"
+          },
+          "description": {
+            "en": "Alchemical mercury, sulphur, and salt are embodied respectively by three mythic figures riding the wheel's motion, showing fortune as a chemical, transformative process as much as a fate.",
+            "ru": "Алхимические ртуть, сера и соль воплощены соответственно в трёх мифических фигурах, оседлывающих движение колеса, показывая удачу как химический, преобразующий процесс в той же мере, что и судьбу.",
+            "es": "El mercurio, el azufre y la sal alquímicos están encarnados respectivamente por tres figuras míticas que cabalgan el movimiento de la rueda, mostrando la fortuna como un proceso químico y transformador tanto como un destino."
+          }
+        },
+        {
+          "element": {
+            "en": "The blazing, radiant colour scheme",
+            "ru": "Пылающая, лучезарная цветовая гамма",
+            "es": "El esquema de colores resplandeciente y radiante"
+          },
+          "description": {
+            "en": "Vivid blues and golds radiate outward from the wheel's centre, visualising Jupiter's expansive, generous energy bursting through every layer of the composition.",
+            "ru": "Яркие синие и золотые тона излучаются от центра колеса, визуализируя экспансивную, щедрую энергию Юпитера, прорывающуюся сквозь каждый слой композиции.",
+            "es": "Azules y dorados vívidos irradian desde el centro de la rueda, visualizando la energía expansiva y generosa de Júpiter que estalla a través de cada capa de la composición."
+          }
+        },
+        {
+          "element": {
+            "en": "The elephant supporting the structure",
+            "ru": "Слон, поддерживающий структуру",
+            "es": "El elefante que sostiene la estructura"
+          },
+          "description": {
+            "en": "An elephant beneath the wheel signals memory, weighty stability, and the deep foundational patience required to endure fortune's endless turning.",
+            "ru": "Слон под колесом символизирует память, весомую устойчивость и глубокое фундаментальное терпение, необходимое, чтобы выдержать бесконечное вращение удачи.",
+            "es": "Un elefante bajo la rueda significa la memoria, la estabilidad pesada y la paciencia fundacional profunda necesaria para soportar el giro incesante de la fortuna."
+          }
+        },
+        {
+          "element": {
+            "en": "The blurred, spinning motion lines",
+            "ru": "Размытые линии вращательного движения",
+            "es": "Las líneas borrosas de movimiento giratorio"
+          },
+          "description": {
+            "en": "Crowley renders the wheel almost in motion-blur, emphasising that fortune is never static—any snapshot of luck is already changing even as it is observed.",
+            "ru": "Кроули изображает колесо почти в размытии движения, подчёркивая, что удача никогда не статична — любой снимок везения уже меняется в момент наблюдения.",
+            "es": "Crowley representa la rueda casi en desenfoque de movimiento, enfatizando que la fortuna nunca es estática—cualquier instantánea de la suerte ya está cambiando incluso mientras se observa."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, Fortune maps the wheel directly onto the Tree of Life, presenting fate not as an external force to be calmly observed but as the very engine of manifest existence—dynamic, chemical, ceaselessly turning. Divinationally it still concerns luck and cyclical change, but Crowley's version asks the seeker to actively engage and flow with fortune's motion rather than simply endure it.",
+        "ru": "В деке Тота Фортуна напрямую отображает колесо на Древо Жизни, представляя судьбу не как внешнюю силу, спокойно наблюдаемую, а как сам двигатель проявленного бытия — динамичный, химический, беспрестанно вращающийся. В гадании она по-прежнему касается удачи и циклических перемен, но версия Кроули просит ищущего активно вовлекаться и течь вместе с движением удачи, а не просто терпеть его.",
+        "es": "En el Thoth, la Fortuna mapea la rueda directamente sobre el Árbol de la Vida, presentando el destino no como una fuerza externa a observar con calma, sino como el motor mismo de la existencia manifiesta—dinámico, químico, girando sin cesar. En la adivinación sigue concerniendo a la suerte y al cambio cíclico, pero la versión de Crowley pide al buscador involucrarse activamente y fluir con el movimiento de la fortuna en lugar de simplemente soportarlo."
+      },
+      "name": {
+        "en": "Fortune",
+        "ru": "Фортуна",
+        "es": "La Fortuna"
+      }
+    },
+    "major-11": {
+      "qabalah": {
+        "path_number": "22",
+        "hebrew_letter": {
+          "en": "Lamed",
+          "ru": "Ламед",
+          "es": "Lamed"
+        },
+        "hebrew_symbol": "ל",
+        "hebrew_unicode": "U+05DC",
+        "sephirothic_connection": {
+          "en": "Geburah – Tiphareth",
+          "ru": "Гебура – Тиферет",
+          "es": "Geburah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "Because Crowley restores the pre-Golden-Dawn-swap ordering, this card—here occupying sequential position 8 but bearing Thoth's own card number XI—carries Justice's traditional letter and path: Geburah's severity balanced and refined through Tiphareth's harmony.",
+          "ru": "Поскольку Кроули восстанавливает порядок, предшествующий перестановке Golden Dawn, эта карта — занимающая последовательную позицию 8, но носящая собственный номер Тота XI — несёт традиционную букву и путь Правосудия: строгость Гебуры, уравновешенную и утончённую гармонией Тиферет.",
+          "es": "Dado que Crowley restaura el ordenamiento previo al intercambio de la Golden Dawn, esta carta—que ocupa la posición secuencial 8 pero lleva el propio número XI del Thoth—porta la letra y el camino tradicionales de la Justicia: la severidad de Geburah equilibrada y refinada mediante la armonía de Tiphareth."
+        },
+        "notes": {
+          "en": "IMPORTANT: Crowley reverts to the older, pre-Golden-Dawn Marseille-style numbering in which Justice (which he renames 'Adjustment') occupies position VIII and Strength (renamed 'Lust') occupies position XI—the reverse of Waite's arrangement. This is why Thoth's card at this sequential slot is Adjustment/Lamed rather than Strength/Teth.",
+          "ru": "ВАЖНО: Кроули возвращается к более старой, предшествующей Golden Dawn нумерации в стиле Марсельского Таро, в которой Правосудие (переименованное им в 'Уравновешивание') занимает позицию VIII, а Сила (переименованная в 'Вожделение') — позицию XI, что противоположно расположению Уэйта. Именно поэтому карта Тота в этой последовательной позиции — Уравновешивание/Ламед, а не Сила/Тет.",
+          "es": "IMPORTANTE: Crowley retorna a la numeración más antigua, anterior a la Golden Dawn, de estilo Marsella, en la que la Justicia (que él renombra 'Ajuste') ocupa la posición VIII y la Fuerza (renombrada 'Lujuria') ocupa la posición XI—lo inverso al arreglo de Waite. Por eso la carta del Thoth en esta posición secuencial es Ajuste/Lamed y no Fuerza/Teth."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The blindfolded, poised figure",
+            "ru": "Фигура с завязанными глазами в равновесии",
+            "es": "La figura con los ojos vendados y en equilibrio"
+          },
+          "description": {
+            "en": "A balanced, blindfolded figure stands in perfect equipoise, embodying impartial judgement that weighs outcomes without bias or sentiment.",
+            "ru": "Уравновешенная фигура с завязанными глазами стоит в идеальном равновесии, воплощая беспристрастное суждение, взвешивающее исходы без предвзятости или сантиментов.",
+            "es": "Una figura equilibrada y con los ojos vendados se sostiene en perfecto equilibrio, encarnando un juicio imparcial que sopesa resultados sin sesgo ni sentimentalismo."
+          }
+        },
+        {
+          "element": {
+            "en": "The sword held upright",
+            "ru": "Меч, удерживаемый вертикально",
+            "es": "La espada sostenida en vertical"
+          },
+          "description": {
+            "en": "An upright sword signals decisive, cutting clarity—the power to separate truth from falsehood and enact consequence without hesitation.",
+            "ru": "Вертикально удерживаемый меч символизирует решительную, режущую ясность — способность отделять истину от лжи и приводить в исполнение последствия без колебаний.",
+            "es": "Una espada erguida señala una claridad decisiva y cortante—el poder de separar la verdad de la falsedad y aplicar la consecuencia sin vacilación."
+          }
+        },
+        {
+          "element": {
+            "en": "The scales in perfect balance",
+            "ru": "Весы в идеальном равновесии",
+            "es": "La balanza en perfecto equilibrio"
+          },
+          "description": {
+            "en": "Scales held level represent karmic and causal balance: every action here is understood to produce an exactly proportionate consequence.",
+            "ru": "Ровно удерживаемые весы олицетворяют кармическое и причинное равновесие: каждое действие здесь, как понимается, порождает точно пропорциональное последствие.",
+            "es": "Una balanza sostenida en nivel representa el equilibrio kármico y causal: se entiende que cada acción produce aquí una consecuencia exactamente proporcional."
+          }
+        },
+        {
+          "element": {
+            "en": "The spider and its web",
+            "ru": "Паук и его паутина",
+            "es": "La araña y su telaraña"
+          },
+          "description": {
+            "en": "A spider spinning a precise, geometric web suggests that adjustment is an ongoing, patient process of maintaining structural balance, not a single verdict.",
+            "ru": "Паук, плетущий точную, геометрическую паутину, предполагает, что уравновешивание — это непрерывный, терпеливый процесс поддержания структурного баланса, а не единый вердикт.",
+            "es": "Una araña que teje una tela precisa y geométrica sugiere que el ajuste es un proceso continuo y paciente de mantener el equilibrio estructural, no un veredicto único."
+          }
+        },
+        {
+          "element": {
+            "en": "The green and orange geometric composition",
+            "ru": "Зелёно-оранжевая геометрическая композиция",
+            "es": "La composición geométrica verde y naranja"
+          },
+          "description": {
+            "en": "Sharp, angular colour blocks in Libra's cardinal-air palette reinforce the card's theme of precise, intellectual discrimination rather than emotional reaction.",
+            "ru": "Резкие, угловатые цветовые блоки в кардинально-воздушной палитре Весов усиливают тему карты о точной, интеллектуальной различающей способности, а не эмоциональной реакции.",
+            "es": "Bloques de color afilados y angulares en la paleta de aire cardinal de Libra refuerzan el tema de la carta sobre una discriminación precisa e intelectual, no una reacción emocional."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, this card is Adjustment—Crowley's Justice, restored to the traditional (pre-Golden-Dawn) position VIII rather than XI—emphasising exact, impartial, karmic balance achieved through clear-eyed discrimination rather than emotional force. Divinationally at this sequential position, expect Thoth's reading to concern fairness, consequence, and precise correction rather than the gentle instinct-taming of RWS's Strength.",
+        "ru": "В деке Тота эта карта — Уравновешивание, Правосудие Кроули, возвращённое в традиционную (предшествующую Golden Dawn) позицию VIII вместо XI — подчёркивающее точный, беспристрастный, кармический баланс, достигаемый через ясное различение, а не эмоциональную силу. В гадании на этой последовательной позиции чтение Тота будет касаться справедливости, последствий и точной коррекции, а не мягкого укрощения инстинкта Силы RWS.",
+        "es": "En el Thoth, esta carta es el Ajuste—la Justicia de Crowley, restaurada a la posición tradicional (anterior a la Golden Dawn) VIII en lugar de la XI—enfatizando un equilibrio kármico exacto e imparcial logrado mediante una discriminación clara, no la fuerza emocional. En la adivinación, en esta posición secuencial, la lectura del Thoth concernirá a la equidad, la consecuencia y la corrección precisa, en lugar del suave domado del instinto de la Fuerza del RWS."
+      },
+      "number": 8,
+      "name": {
+        "en": "Adjustment",
+        "ru": "Уравновешивание",
+        "es": "El Ajuste"
+      }
+    },
+    "major-12": {
+      "qabalah": {
+        "path_number": "23",
+        "hebrew_letter": {
+          "en": "Mem",
+          "ru": "Мем",
+          "es": "Mem"
+        },
+        "hebrew_symbol": "מ",
+        "hebrew_unicode": "U+05DE",
+        "sephirothic_connection": {
+          "en": "Geburah – Hod",
+          "ru": "Гебура – Ход",
+          "es": "Geburah – Hod"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but explicitly ties the card to the drowned, dissolving god (Osiris-like) whose apparent death and stillness is the necessary prelude to rebirth—water's dissolving power made central rather than incidental.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но явно связывает карту с утопленным, растворяющимся богом (подобным Осирису), чья кажущаяся смерть и неподвижность — необходимая прелюдия к возрождению — растворяющая сила воды становится центральной, а не второстепенной.",
+          "es": "Crowley conserva la atribución estándar, pero vincula explícitamente la carta con el dios ahogado y disuelto (similar a Osiris), cuya aparente muerte y quietud es el preludio necesario al renacimiento—el poder disolvente del agua hecho central, no incidental."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's imagery is more explicitly aquatic and dissolving, framing suspension as immersion rather than aerial hanging.",
+          "ru": "Та же буква/путь, что и в RWS; образность Кроули более явно водная и растворяющая, представляя приостановку как погружение, а не воздушное подвешивание.",
+          "es": "Misma letra/camino que el RWS; la imaginería de Crowley es más explícitamente acuática y disolvente, enmarcando la suspensión como una inmersión, no un colgamiento aéreo."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figure suspended within a vortex of water",
+            "ru": "Фигура, подвешенная в водовороте",
+            "es": "La figura suspendida dentro de un vórtice de agua"
+          },
+          "description": {
+            "en": "Rather than hanging from a tree, the figure is immersed in swirling water, making Mem's watery, dissolving nature the literal setting of the card.",
+            "ru": "Вместо того чтобы висеть на дереве, фигура погружена в бурлящую воду, делая водную, растворяющую природу Мем буквальной обстановкой карты.",
+            "es": "En lugar de colgar de un árbol, la figura está inmersa en agua arremolinada, haciendo de la naturaleza acuática y disolvente de Mem el escenario literal de la carta."
+          }
+        },
+        {
+          "element": {
+            "en": "The serpent coiling around the leg",
+            "ru": "Змей, обвивающий ногу",
+            "es": "La serpiente enroscada en la pierna"
+          },
+          "description": {
+            "en": "A serpent wraps the bound leg, linking dissolution to transformation and the shedding of an old form as the price of new insight.",
+            "ru": "Змей обвивает связанную ногу, связывая растворение с трансформацией и сбрасыванием старой формы как ценой нового прозрения.",
+            "es": "Una serpiente envuelve la pierna atada, vinculando la disolución con la transformación y el despojarse de una forma antigua como el precio de una nueva comprensión."
+          }
+        },
+        {
+          "element": {
+            "en": "The ankh formed by his posture",
+            "ru": "Анкх, образованный его позой",
+            "es": "El ankh formado por su postura"
+          },
+          "description": {
+            "en": "His suspended shape traces the outline of an ankh, tying apparent death and stillness directly to the promise of renewed life beyond it.",
+            "ru": "Его подвешенная форма очерчивает контур анкха, напрямую связывая кажущуюся смерть и неподвижность с обещанием обновлённой жизни за её пределами.",
+            "es": "Su forma suspendida traza el contorno de un ankh, vinculando directamente la aparente muerte y quietud con la promesa de una vida renovada más allá de ella."
+          }
+        },
+        {
+          "element": {
+            "en": "The green, aquatic colour field",
+            "ru": "Зелёное, водянистое цветовое поле",
+            "es": "El campo de color verde y acuático"
+          },
+          "description": {
+            "en": "Deep greens and blues dominate, immersing the whole card in Mem's watery, reflective, dissolving quality rather than the airy openness of RWS's tree.",
+            "ru": "Глубокие зелёные и синие тона доминируют, погружая всю карту в водную, отражающую, растворяющую качественность Мем, а не в воздушную открытость дерева RWS.",
+            "es": "Verdes y azules profundos dominan, sumergiendo toda la carta en la cualidad acuática, reflectante y disolvente de Mem, en lugar de la apertura aérea del árbol del RWS."
+          }
+        },
+        {
+          "element": {
+            "en": "The radiant point of light at the centre",
+            "ru": "Сияющая точка света в центре",
+            "es": "El punto de luz radiante en el centro"
+          },
+          "description": {
+            "en": "A small, bright point glows at the heart of the dissolving water, indicating that even total surrender retains a seed of persistent, unextinguished consciousness.",
+            "ru": "Маленькая яркая точка сияет в сердце растворяющей воды, указывая, что даже полная капитуляция сохраняет зерно устойчивого, неугасимого сознания.",
+            "es": "Un pequeño punto brillante resplandece en el corazón del agua disolvente, indicando que incluso la rendición total conserva una semilla de conciencia persistente e inextinguible."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Hanged Man becomes an explicitly aquatic dissolution—immersion rather than aerial suspension—linking the card more directly to drowned-and-reborn god myths and to Mem's watery nature. Divinationally it still signals surrender and reversed perspective, but with a stronger undertone of necessary death before rebirth.",
+        "ru": "В деке Тота Повешенный становится явно водным растворением — погружением, а не воздушным подвешиванием — более напрямую связывая карту с мифами об утопленном и возрождённом боге и водной природой Мем. В гадании она по-прежнему указывает на капитуляцию и перевёрнутую перспективу, но с более сильным подтекстом необходимой смерти перед возрождением.",
+        "es": "En el Thoth, el Colgado se convierte en una disolución explícitamente acuática—inmersión en lugar de suspensión aérea—vinculando la carta más directamente con los mitos del dios ahogado y renacido y con la naturaleza acuática de Mem. En la adivinación sigue señalando la rendición y la perspectiva invertida, pero con un matiz más fuerte de muerte necesaria antes del renacimiento."
+      }
+    },
+    "major-13": {
+      "qabalah": {
+        "path_number": "24",
+        "hebrew_letter": {
+          "en": "Nun",
+          "ru": "Нун",
+          "es": "Nun"
+        },
+        "hebrew_symbol": "נ",
+        "hebrew_unicode": "U+05E0",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Netzach",
+          "ru": "Тиферет – Нецах",
+          "es": "Tiphareth – Netzach"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but portrays this path as active, dancing transformation—Scorpio's death-and-rebirth cycle rendered as a joyful, skeletal dance of ceaseless change rather than solemn arrival.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но изображает этот путь как активную, танцующую трансформацию — цикл смерти и возрождения Скорпиона, представленный как радостный, скелетный танец непрестанной перемены, а не торжественное прибытие.",
+          "es": "Crowley conserva la atribución estándar, pero retrata este camino como una transformación activa y danzante—el ciclo de muerte y renacimiento de Escorpio representado como una danza esquelética y gozosa de cambio incesante, en lugar de una llegada solemne."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's skeletal reaper actively dances and works rather than riding solemnly, emphasising continuous process over singular event.",
+          "ru": "Та же буква/путь, что и в RWS; скелетный жнец Кроули активно танцует и трудится, а не торжественно едет верхом, подчёркивая непрерывный процесс, а не единичное событие.",
+          "es": "Misma letra/camino que el RWS; el segador esquelético de Crowley baila y trabaja activamente en lugar de cabalgar solemnemente, enfatizando el proceso continuo por encima del evento singular."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The dancing skeleton wielding a scythe",
+            "ru": "Танцующий скелет с косой",
+            "es": "El esqueleto danzante que empuña una guadaña"
+          },
+          "description": {
+            "en": "Rather than riding solemnly, the skeleton actively dances and reaps, showing transformation as ceaseless, energetic labour rather than a single dramatic arrival.",
+            "ru": "Вместо торжественной верховой езды скелет активно танцует и жнёт, показывая трансформацию как непрестанный, энергичный труд, а не единое драматическое событие.",
+            "es": "En lugar de cabalgar solemnemente, el esqueleto baila y siega activamente, mostrando la transformación como un trabajo incesante y enérgico, no una llegada dramática única."
+          }
+        },
+        {
+          "element": {
+            "en": "The fish and serpent forms swirling beneath",
+            "ru": "Формы рыбы и змея, кружащиеся внизу",
+            "es": "Las formas de pez y serpiente que se arremolinan debajo"
+          },
+          "description": {
+            "en": "Fish and serpent imagery beneath his feet reinforce Nun's watery symbolism, showing transformation as a constant undercurrent shaping all visible life.",
+            "ru": "Образы рыбы и змея под его ногами усиливают водную символику Нун, показывая трансформацию как постоянное подводное течение, формирующее всю видимую жизнь.",
+            "es": "La imaginería de pez y serpiente bajo sus pies refuerza el simbolismo acuático de Nun, mostrando la transformación como una corriente subyacente constante que da forma a toda vida visible."
+          }
+        },
+        {
+          "element": {
+            "en": "The newly forming bubbles of life",
+            "ru": "Новообразующиеся пузыри жизни",
+            "es": "Las burbujas de vida que se forman de nuevo"
+          },
+          "description": {
+            "en": "Small bubble-like forms rise from the decaying matter beneath the dance, indicating that new life is already germinating within apparent decay.",
+            "ru": "Небольшие пузыревидные формы поднимаются из разлагающейся материи под танцем, указывая, что новая жизнь уже зарождается внутри кажущегося разложения.",
+            "es": "Formas pequeñas parecidas a burbujas surgen de la materia en descomposición bajo la danza, indicando que una nueva vida ya está germinando dentro de la aparente decadencia."
+          }
+        },
+        {
+          "element": {
+            "en": "The Scorpio glyph woven into the design",
+            "ru": "Глиф Скорпиона, вплетённый в композицию",
+            "es": "El glifo de Escorpio entretejido en el diseño"
+          },
+          "description": {
+            "en": "Scorpio's symbol appears explicitly, tying the card firmly to the sign's themes of intense transformation, hidden depths, and eventual regeneration.",
+            "ru": "Символ Скорпиона появляется явно, прочно связывая карту с темами знака: интенсивной трансформацией, скрытыми глубинами и итоговой регенерацией.",
+            "es": "El símbolo de Escorpio aparece explícitamente, vinculando firmemente la carta con los temas del signo: transformación intensa, profundidades ocultas y regeneración eventual."
+          }
+        },
+        {
+          "element": {
+            "en": "The dark, star-flecked background",
+            "ru": "Тёмный, усеянный звёздами фон",
+            "es": "El fondo oscuro y salpicado de estrellas"
+          },
+          "description": {
+            "en": "A deep, starry void surrounds the dance, suggesting that this transformation occurs against the backdrop of vast, impersonal cosmic time.",
+            "ru": "Глубокая, звёздная пустота окружает танец, предполагая, что эта трансформация происходит на фоне обширного, безличного космического времени.",
+            "es": "Un vacío profundo y estrellado rodea la danza, sugiriendo que esta transformación ocurre contra el telón de fondo del vasto e impersonal tiempo cósmico."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, Death is rendered as an active, dancing process of ceaseless transformation rather than a singular, solemn arrival—Scorpio's death-rebirth cycle shown as continuous work rather than a one-time event. Divinationally it still signals major transition, but frames change as an ongoing dance to join rather than a fate simply to be met.",
+        "ru": "В деке Тота Смерть изображена как активный, танцующий процесс непрестанной трансформации, а не единичное, торжественное прибытие — цикл смерти-возрождения Скорпиона показан как непрерывный труд, а не разовое событие. В гадании она по-прежнему указывает на крупный переход, но представляет перемену как непрерывный танец, к которому нужно присоединиться, а не судьбу, которую нужно просто встретить.",
+        "es": "En el Thoth, la Muerte se representa como un proceso activo y danzante de transformación incesante, en lugar de una llegada única y solemne—el ciclo de muerte y renacimiento de Escorpio mostrado como un trabajo continuo, no un evento de una sola vez. En la adivinación sigue señalando una transición mayor, pero enmarca el cambio como una danza continua a la que unirse, no un destino que simplemente afrontar."
+      }
+    },
+    "major-14": {
+      "qabalah": {
+        "path_number": "25",
+        "hebrew_letter": {
+          "en": "Samekh",
+          "ru": "Самех",
+          "es": "Samekh"
+        },
+        "hebrew_symbol": "ס",
+        "hebrew_unicode": "U+05E1",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Yesod",
+          "ru": "Тиферет – Йесод",
+          "es": "Tiphareth – Yesod"
+        },
+        "interpretation": {
+          "en": "Crowley renames this path's card 'Art' to foreground alchemy itself as the active, skillful labour of combination—the same Tiphareth-Yesod connection now explicitly framed as the Great Work of uniting opposites through patient craft.",
+          "ru": "Кроули переименовывает карту этого пути в 'Искусство', выдвигая на первый план саму алхимию как активный, умелый труд соединения — та же связь Тиферет-Йесод теперь явно обрамлена как Великое Делание объединения противоположностей через терпеливое ремесло.",
+          "es": "Crowley renombra la carta de este camino como 'El Arte', poniendo en primer plano la propia alquimia como el trabajo activo y hábil de la combinación—la misma conexión Tiphareth-Yesod ahora enmarcada explícitamente como la Gran Obra de unir opuestos mediante un oficio paciente."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's 'Art' emphasises the deliberate, technical labour of transmutation rather than a purely angelic, effortless grace.",
+          "ru": "Та же буква/путь, что и в RWS; 'Искусство' Кроули подчёркивает намеренный, технический труд трансмутации, а не чисто ангельскую, лёгкую грацию.",
+          "es": "Misma letra/camino que el RWS; el 'Arte' de Crowley enfatiza el trabajo deliberado y técnico de la transmutación, no una gracia puramente angélica y sin esfuerzo."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The two-headed figure, half black and half white",
+            "ru": "Двуглавая фигура, наполовину чёрная, наполовину белая",
+            "es": "La figura bicéfala, mitad negra y mitad blanca"
+          },
+          "description": {
+            "en": "A single being with opposing black and white halves actively combines fire and water in a cauldron, embodying inner union rather than external mediation between two separate figures.",
+            "ru": "Единое существо с противоположными чёрной и белой половинами активно соединяет огонь и воду в котле, воплощая внутренний союз, а не внешнее посредничество между двумя отдельными фигурами.",
+            "es": "Un único ser con mitades negra y blanca opuestas combina activamente fuego y agua en un caldero, encarnando la unión interior en lugar de la mediación externa entre dos figuras separadas."
+          }
+        },
+        {
+          "element": {
+            "en": "The cauldron of transmutation",
+            "ru": "Котёл трансмутации",
+            "es": "El caldero de la transmutación"
+          },
+          "description": {
+            "en": "A literal alchemical cauldron replaces the two cups, making the labour of combination explicit, technical, and hard-won rather than effortlessly graceful.",
+            "ru": "Буквальный алхимический котёл заменяет две чаши, делая труд соединения явным, техническим и трудно достижимым, а не лёгким и грациозным.",
+            "es": "Un caldero alquímico literal reemplaza a las dos copas, haciendo que el trabajo de combinación sea explícito, técnico y arduamente ganado, no fácil y grácil."
+          }
+        },
+        {
+          "element": {
+            "en": "The lion and eagle emerging from the mixture",
+            "ru": "Лев и орёл, возникающие из смеси",
+            "es": "El león y el águila que emergen de la mezcla"
+          },
+          "description": {
+            "en": "A lion (fixed fire) and eagle (sublimated water) rise from the cauldron, showing that successful synthesis produces something more refined than either starting element.",
+            "ru": "Лев (фиксированный огонь) и орёл (сублимированная вода) поднимаются из котла, показывая, что успешный синтез порождает нечто более утончённое, чем любой из исходных элементов.",
+            "es": "Un león (fuego fijo) y un águila (agua sublimada) se elevan del caldero, mostrando que una síntesis exitosa produce algo más refinado que cualquiera de los elementos de partida."
+          }
+        },
+        {
+          "element": {
+            "en": "The rainbow arc overhead",
+            "ru": "Радужная дуга наверху",
+            "es": "El arco iris en lo alto"
+          },
+          "description": {
+            "en": "A rainbow spans the scene, marking successful integration as a moment of visible beauty and promise arising directly from patient technical labour.",
+            "ru": "Радуга простирается над сценой, отмечая успешную интеграцию как момент видимой красоты и обещания, возникающего непосредственно из терпеливого технического труда.",
+            "es": "Un arcoíris atraviesa la escena, marcando la integración exitosa como un momento de belleza visible y promesa que surge directamente de un trabajo técnico paciente."
+          }
+        },
+        {
+          "element": {
+            "en": "The alchemical symbols surrounding the figure",
+            "ru": "Алхимические символы, окружающие фигуру",
+            "es": "Los símbolos alquímicos que rodean a la figura"
+          },
+          "description": {
+            "en": "Various alchemical glyphs frame the composition, reinforcing that this card documents an actual technical process—the Great Work in progress, not just an idealised virtue.",
+            "ru": "Различные алхимические символы обрамляют композицию, подчёркивая, что эта карта документирует реальный технический процесс — Великое Делание в процессе, а не просто идеализированную добродетель.",
+            "es": "Varios glifos alquímicos enmarcan la composición, reforzando que esta carta documenta un proceso técnico real—la Gran Obra en marcha, no solo una virtud idealizada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, Temperance becomes Art: the same balancing function reframed as deliberate alchemical labour, an active technical craft of combination rather than an effortless angelic gift. Divinationally it still concerns patience and synthesis, but stresses that genuine integration is skilled work requiring real, sustained effort.",
+        "ru": "В деке Тота Умеренность становится Искусством: та же уравновешивающая функция переосмысляется как намеренный алхимический труд, активное техническое ремесло соединения, а не лёгкий ангельский дар. В гадании она по-прежнему касается терпения и синтеза, но подчёркивает, что подлинная интеграция — это умелая работа, требующая реального, устойчивого усилия.",
+        "es": "En el Thoth, la Templanza se convierte en el Arte: la misma función equilibradora reformulada como un trabajo alquímico deliberado, un oficio técnico activo de combinación, no un don angélico sin esfuerzo. En la adivinación sigue concerniendo a la paciencia y la síntesis, pero enfatiza que la integración genuina es un trabajo hábil que requiere un esfuerzo real y sostenido."
+      },
+      "name": {
+        "en": "Art",
+        "ru": "Искусство",
+        "es": "El Arte"
+      }
+    },
+    "major-15": {
+      "qabalah": {
+        "path_number": "26",
+        "hebrew_letter": {
+          "en": "Ayin",
+          "ru": "Аин",
+          "es": "Ayin"
+        },
+        "hebrew_symbol": "ע",
+        "hebrew_unicode": "U+05E2",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Hod",
+          "ru": "Тиферет – Ход",
+          "es": "Tiphareth – Hod"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but reclaims the Devil as Pan-like generative force and joyous, amoral creative energy rather than pure moral bondage, tied to Capricorn's earthy, goat-footed vitality.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но возвращает Дьяволу образ пановской порождающей силы и радостной, внеморальной созидательной энергии, а не чистого нравственного порабощения, связанного с землистой, козлоногой жизненностью Козерога.",
+          "es": "Crowley conserva la atribución estándar, pero recupera al Diablo como una fuerza generativa panica y una energía creativa gozosa y amoral, en lugar de una pura esclavitud moral, ligada a la vitalidad terrenal y de pies de cabra de Capricornio."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley deliberately strips away Christian moralising, presenting creative-sexual force as ecstatic and value-neutral rather than sinful.",
+          "ru": "Та же буква/путь, что и в RWS; Кроули намеренно снимает христианскую морализацию, представляя творческо-сексуальную силу как экстатическую и ценностно-нейтральную, а не греховную.",
+          "es": "Misma letra/camino que el RWS; Crowley despoja deliberadamente la moralización cristiana, presentando la fuerza creativo-sexual como extática y neutral en cuanto a valores, no pecaminosa."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The single vast eye at the centre",
+            "ru": "Единственный огромный глаз в центре",
+            "es": "El único ojo vasto en el centro"
+          },
+          "description": {
+            "en": "A great single eye dominates the card, referencing Ayin directly and suggesting that what looks like bondage is truly a matter of perception and focus.",
+            "ru": "Огромный единственный глаз доминирует на карте, напрямую отсылая к Аин и предполагая, что то, что выглядит как порабощение, на самом деле является вопросом восприятия и фокуса.",
+            "es": "Un único ojo grande domina la carta, remitiendo directamente a Ayin y sugiriendo que lo que parece esclavitud es en realidad una cuestión de percepción y enfoque."
+          }
+        },
+        {
+          "element": {
+            "en": "The goat of Mendes with erect phallic form",
+            "ru": "Козёл Мендеса с явной фаллической формой",
+            "es": "El macho cabrío de Mendes con forma fálica explícita"
+          },
+          "description": {
+            "en": "Crowley's Devil is rendered with frank sexual imagery, celebrating generative, procreative energy openly rather than shrouding it in shame or restraint.",
+            "ru": "Дьявол Кроули изображён с откровенной сексуальной образностью, открыто прославляя порождающую, деторождающую энергию, а не окутывая её стыдом или сдержанностью.",
+            "es": "El Diablo de Crowley se representa con una imaginería sexual franca, celebrando abiertamente la energía generativa y procreadora, en lugar de envolverla en vergüenza o contención."
+          }
+        },
+        {
+          "element": {
+            "en": "The swarm of small creatures below",
+            "ru": "Рой маленьких существ внизу",
+            "es": "El enjambre de pequeñas criaturas debajo"
+          },
+          "description": {
+            "en": "Numerous small figures multiply beneath the central image, showing fertility and generative abundance as an overwhelming, teeming force of life.",
+            "ru": "Многочисленные маленькие фигуры множатся под центральным образом, показывая плодородие и порождающее изобилие как подавляющую, кишащую жизненную силу.",
+            "es": "Numerosas figuras pequeñas se multiplican bajo la imagen central, mostrando la fertilidad y la abundancia generativa como una fuerza vital abrumadora y hormigueante."
+          }
+        },
+        {
+          "element": {
+            "en": "The horns forming a lunar crescent",
+            "ru": "Рога, образующие лунный полумесяц",
+            "es": "Los cuernos que forman una luna creciente"
+          },
+          "description": {
+            "en": "Curved horns echo a crescent moon shape, linking Capricorn's earthy vitality to cyclical, natural rhythms rather than fixed, static sin.",
+            "ru": "Изогнутые рога отсылают к форме полумесяца, связывая землистую жизненность Козерога с циклическими, природными ритмами, а не с фиксированным, статичным грехом.",
+            "es": "Cuernos curvados evocan la forma de una luna creciente, vinculando la vitalidad terrenal de Capricornio con ritmos cíclicos y naturales, no con un pecado fijo y estático."
+          }
+        },
+        {
+          "element": {
+            "en": "The dense, saturated green and black palette",
+            "ru": "Плотная, насыщенная зелёно-чёрная палитра",
+            "es": "La paleta densa y saturada de verde y negro"
+          },
+          "description": {
+            "en": "Deep greens and blacks give the card an earthy, fecund darkness rather than a purely menacing one, suggesting fertility hidden within apparent shadow.",
+            "ru": "Глубокие зелёные и чёрные тона придают карте землистую, плодородную темноту, а не чисто угрожающую, предполагая плодородие, скрытое в кажущейся тени.",
+            "es": "Verdes y negros profundos dan a la carta una oscuridad terrenal y fecunda, no puramente amenazante, sugiriendo una fertilidad oculta dentro de la sombra aparente."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Devil is reclaimed as a Pan-like, amoral force of generative vitality rather than a symbol of sin—bondage reframed as a question of perception (the eye/Ayin) rather than inherent moral failing. Divinationally it still concerns attachment and instinct, but with less shame and more invitation to recognise raw creative energy as, in itself, morally neutral.",
+        "ru": "В деке Тота Дьявол возвращён как пановская, внеморальная сила порождающей жизненности, а не символ греха — порабощение переосмыслено как вопрос восприятия (глаз/Аин), а не изначального нравственного изъяна. В гадании она по-прежнему касается привязанности и инстинкта, но с меньшим стыдом и большим приглашением признать сырую созидательную энергию как саму по себе нравственно нейтральную.",
+        "es": "En el Thoth, el Diablo se reclama como una fuerza pánica y amoral de vitalidad generativa en lugar de un símbolo de pecado—la esclavitud reformulada como una cuestión de percepción (el ojo/Ayin) en lugar de un fallo moral inherente. En la adivinación sigue concerniendo al apego y al instinto, pero con menos vergüenza y más invitación a reconocer la energía creativa en bruto como, en sí misma, moralmente neutral."
+      }
+    },
+    "major-16": {
+      "qabalah": {
+        "path_number": "27",
+        "hebrew_letter": {
+          "en": "Pe",
+          "ru": "Пе",
+          "es": "Pe"
+        },
+        "hebrew_symbol": "פ",
+        "hebrew_unicode": "U+05E4",
+        "sephirothic_connection": {
+          "en": "Netzach – Hod",
+          "ru": "Нецах – Ход",
+          "es": "Netzach – Hod"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but names this card 'The War' in his early notes, emphasising the Tower as active, ongoing conflict between old form and new energy rather than a single catastrophic event.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но в ранних заметках называет эту карту 'Война', подчёркивая Башню как активный, продолжающийся конфликт между старой формой и новой энергией, а не единичное катастрофическое событие.",
+          "es": "Crowley conserva la atribución estándar, pero en sus notas tempranas llama a esta carta 'La Guerra', enfatizando la Torre como un conflicto activo y en curso entre la forma antigua y la energía nueva, no un evento catastrófico único."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's version is even more explicitly martial and violent, aligning fully with Mars's destructive, purging force.",
+          "ru": "Та же буква/путь, что и в RWS; версия Кроули ещё более явно воинственна и насильственна, полностью соответствуя разрушительной, очищающей силе Марса.",
+          "es": "Misma letra/camino que el RWS; la versión de Crowley es aún más explícitamente marcial y violenta, alineándose por completo con la fuerza destructiva y purgadora de Marte."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The eye of Horus / Shiva atop the destruction",
+            "ru": "Око Хора / Шивы над разрушением",
+            "es": "El ojo de Horus / Shiva sobre la destrucción"
+          },
+          "description": {
+            "en": "A divine eye watches from above the collapsing tower, suggesting that destruction here serves a higher, purposeful will rather than random chaos.",
+            "ru": "Божественное око наблюдает свыше за рушащейся башней, предполагая, что разрушение здесь служит высшей, целенаправленной воле, а не случайному хаосу.",
+            "es": "Un ojo divino observa desde arriba la torre en colapso, sugiriendo que la destrucción aquí sirve a una voluntad superior y con propósito, no al caos aleatorio."
+          }
+        },
+        {
+          "element": {
+            "en": "The dove and serpent falling together",
+            "ru": "Голубь и змей, падающие вместе",
+            "es": "La paloma y la serpiente que caen juntas"
+          },
+          "description": {
+            "en": "A dove (peace, spirit) and serpent (instinct, matter) plummet side by side, showing that this upheaval affects both spiritual illusion and material structure equally.",
+            "ru": "Голубь (мир, дух) и змей (инстинкт, материя) падают бок о бок, показывая, что это потрясение в равной мере затрагивает и духовную иллюзию, и материальную структуру.",
+            "es": "Una paloma (paz, espíritu) y una serpiente (instinto, materia) caen lado a lado, mostrando que este trastorno afecta por igual a la ilusión espiritual y a la estructura material."
+          }
+        },
+        {
+          "element": {
+            "en": "The stark, geometric explosion of shapes",
+            "ru": "Резкий, геометрический взрыв форм",
+            "es": "La explosión geométrica y contundente de formas"
+          },
+          "description": {
+            "en": "Sharp, fragmented geometric shapes fill the composition, visualising the shattering of ordered structure into raw, chaotic component pieces.",
+            "ru": "Резкие, фрагментированные геометрические формы заполняют композицию, визуализируя разбиение упорядоченной структуры на сырые, хаотичные составные части.",
+            "es": "Formas geométricas afiladas y fragmentadas llenan la composición, visualizando el estallido de la estructura ordenada en piezas componentes crudas y caóticas."
+          }
+        },
+        {
+          "element": {
+            "en": "The falling crowned figures",
+            "ru": "Падающие коронованные фигуры",
+            "es": "Las figuras coronadas que caen"
+          },
+          "description": {
+            "en": "Crowned figures tumble amid the wreckage, more explicitly emphasising that established power and hierarchy are specifically targeted by this destruction.",
+            "ru": "Коронованные фигуры кувыркаются среди обломков, более явно подчёркивая, что установленная власть и иерархия являются конкретной мишенью этого разрушения.",
+            "es": "Figuras coronadas caen entre los escombros, enfatizando de manera más explícita que el poder y la jerarquía establecidos son el blanco específico de esta destrucción."
+          }
+        },
+        {
+          "element": {
+            "en": "The vivid orange and black colour scheme",
+            "ru": "Яркая оранжево-чёрная цветовая гамма",
+            "es": "El esquema de colores naranja y negro vívido"
+          },
+          "description": {
+            "en": "Aggressive, high-contrast colour choices heighten the violence of the scene, leaving no ambiguity about the intensity of the Mars-ruled force at work.",
+            "ru": "Агрессивный, высококонтрастный выбор цветов усиливает насилие сцены, не оставляя двусмысленности относительно интенсивности управляемой Марсом силы, действующей здесь.",
+            "es": "Elecciones de color agresivas y de alto contraste intensifican la violencia de la escena, sin dejar ambigüedad sobre la intensidad de la fuerza regida por Marte en acción."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Tower intensifies into overt, martial conflict—an active war between old structure and new energy rather than a single lightning strike—reflecting Crowley's more aggressive Mars symbolism. Divinationally it still signals sudden upheaval and revelation, but frames the process as ongoing struggle rather than one instantaneous collapse.",
+        "ru": "В деке Тота Башня усиливается до открытого, воинственного конфликта — активной войны между старой структурой и новой энергией, а не единичного удара молнии — отражая более агрессивную марсианскую символику Кроули. В гадании она по-прежнему указывает на внезапное потрясение и откровение, но представляет процесс как продолжающуюся борьбу, а не одномоментное крушение.",
+        "es": "En el Thoth, la Torre se intensifica hasta convertirse en un conflicto marcial manifiesto—una guerra activa entre la estructura antigua y la energía nueva, no un único rayo—reflejando el simbolismo marcial más agresivo de Crowley. En la adivinación sigue señalando un trastorno súbito y una revelación, pero enmarca el proceso como una lucha en curso, no un colapso instantáneo."
+      }
+    },
+    "major-17": {
+      "qabalah": {
+        "path_number": "28",
+        "hebrew_letter": {
+          "en": "He",
+          "ru": "Хе",
+          "es": "He"
+        },
+        "hebrew_symbol": "ה",
+        "hebrew_unicode": "U+05D4",
+        "sephirothic_connection": {
+          "en": "Netzach – Yesod",
+          "ru": "Нецах – Йесод",
+          "es": "Netzach – Yesod"
+        },
+        "interpretation": {
+          "en": "Because Crowley reassigns He to this path (in exchange for Tzaddi, which he gives to the Emperor), the Star here carries He's traditional meaning of 'window'—an opening through which pure, distant light of hope becomes visible.",
+          "ru": "Поскольку Кроули переприписывает Хе этому пути (в обмен на Цади, отданную Императору), Звезда здесь несёт традиционное значение Хе — 'окно' — проём, через который становится виден чистый, далёкий свет надежды.",
+          "es": "Dado que Crowley reasigna He a este camino (a cambio de Tzaddi, que otorga al Emperador), la Estrella aquí porta el significado tradicional de He, 'ventana'—una apertura a través de la cual se hace visible la luz pura y distante de la esperanza."
+        },
+        "notes": {
+          "en": "This is the reverse of the Emperor's note: Crowley exchanges the Star's letter (here He) with the Emperor's (Tzaddi), citing the Sepher Yetzirah's letter order against the standard Golden Dawn/RWS attribution used by Waite.",
+          "ru": "Это зеркальное отражение примечания об Императоре: Кроули меняет местами букву Звезды (здесь Хе) с буквой Императора (Цади), ссылаясь на порядок букв Сефер Йецира вопреки стандартной атрибуции Golden Dawn/RWS, использованной Уэйтом.",
+          "es": "Este es el inverso de la nota del Emperador: Crowley intercambia la letra de la Estrella (aquí He) con la del Emperador (Tzaddi), citando el orden de letras del Sepher Yetzirah en contra de la atribución estándar de la Golden Dawn/RWS usada por Waite."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The great nude woman spanning the sky",
+            "ru": "Огромная обнажённая женщина, простирающаяся по небу",
+            "es": "La gran mujer desnuda que abarca el cielo"
+          },
+          "description": {
+            "en": "A vast, star-crowned goddess figure (Nuit) stretches across the entire card, embodying hope as cosmic, infinite space rather than a single small figure by a pool.",
+            "ru": "Огромная, увенчанная звёздами богиня (Нуит) простирается по всей карте, воплощая надежду как космическое, бесконечное пространство, а не единичную маленькую фигуру у водоёма.",
+            "es": "Una vasta figura diosa coronada de estrellas (Nuit) se extiende por toda la carta, encarnando la esperanza como un espacio cósmico e infinito, no una figura pequeña y única junto a un estanque."
+          }
+        },
+        {
+          "element": {
+            "en": "The two streams poured from vessels",
+            "ru": "Два потока, льющиеся из сосудов",
+            "es": "Las dos corrientes vertidas de vasijas"
+          },
+          "description": {
+            "en": "As in RWS, two vessels pour, but here on a cosmic scale, replenishing the entire universe's flow of vital force rather than a single earthly landscape.",
+            "ru": "Как и в RWS, два сосуда льют воду, но здесь в космическом масштабе, пополняя течение жизненной силы всей вселенной, а не единичного земного пейзажа.",
+            "es": "Como en el RWS, dos vasijas vierten, pero aquí a escala cósmica, reponiendo el flujo de fuerza vital de todo el universo, no de un único paisaje terrenal."
+          }
+        },
+        {
+          "element": {
+            "en": "The seven-pointed star crown",
+            "ru": "Семиконечный звёздный венец",
+            "es": "La corona de estrella de siete puntas"
+          },
+          "description": {
+            "en": "A seven-pointed star crowns her head, tying hope to the seven classical planets and their harmonised, complete cosmic influence.",
+            "ru": "Семиконечная звезда венчает её голову, связывая надежду с семью классическими планетами и их гармонизированным, полным космическим влиянием.",
+            "es": "Una estrella de siete puntas corona su cabeza, vinculando la esperanza con los siete planetas clásicos y su influencia cósmica armonizada y completa."
+          }
+        },
+        {
+          "element": {
+            "en": "The globe of the earth beneath her",
+            "ru": "Земной шар под ней",
+            "es": "El globo terráqueo bajo ella"
+          },
+          "description": {
+            "en": "A small earth rests beneath the vast goddess figure, showing the material world as a tiny, cherished part of an infinitely larger, hope-filled cosmos.",
+            "ru": "Небольшая земля покоится под огромной фигурой богини, показывая материальный мир как крошечную, но дорогую часть бесконечно большего, полного надежды космоса.",
+            "es": "Una pequeña tierra descansa bajo la vasta figura de la diosa, mostrando el mundo material como una parte diminuta y preciada de un cosmos infinitamente más grande y lleno de esperanza."
+          }
+        },
+        {
+          "element": {
+            "en": "The deep blue, star-filled background",
+            "ru": "Глубокий синий, усеянный звёздами фон",
+            "es": "El fondo azul profundo y estrellado"
+          },
+          "description": {
+            "en": "An expansive field of stars fills the entire background, immersing the viewer directly in Aquarian, cosmic vastness rather than a single terrestrial night sky.",
+            "ru": "Обширное звёздное поле заполняет весь фон, погружая зрителя непосредственно в водолейскую, космическую необъятность, а не единичное земное ночное небо.",
+            "es": "Un campo expansivo de estrellas llena todo el fondo, sumergiendo al espectador directamente en la inmensidad cósmica y acuariana, no en un único cielo nocturno terrestre."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Star expands hope to cosmic scale—Nuit herself pouring the substance of existence across the whole sky rather than a single figure replenishing an earthly pool—reflecting Crowley's He/window reattribution and Aquarian universality. Divinationally it still concerns hope, healing, and renewed faith, but frames them as part of an infinite, benevolent cosmic order rather than a personal, local recovery.",
+        "ru": "В деке Тота Звезда расширяет надежду до космического масштаба — сама Нуит изливает субстанцию бытия по всему небу, а не единичная фигура пополняет земной водоём — отражая переприписывание Хе/окна Кроули и водолейскую всеобщность. В гадании она по-прежнему касается надежды, исцеления и обновлённой веры, но представляет их как часть бесконечного, благосклонного космического порядка, а не личного, локального восстановления.",
+        "es": "En el Thoth, la Estrella expande la esperanza a escala cósmica—Nuit misma vertiendo la sustancia de la existencia a través de todo el cielo, en lugar de una única figura reponiendo un estanque terrenal—reflejando la reatribución He/ventana de Crowley y la universalidad acuariana. En la adivinación sigue concerniendo a la esperanza, la sanación y la fe renovada, pero las enmarca como parte de un orden cósmico infinito y benevolente, no una recuperación personal y local."
+      }
+    },
+    "major-18": {
+      "qabalah": {
+        "path_number": "29",
+        "hebrew_letter": {
+          "en": "Qof",
+          "ru": "Коф",
+          "es": "Qoph"
+        },
+        "hebrew_symbol": "ק",
+        "hebrew_unicode": "U+05E7",
+        "sephirothic_connection": {
+          "en": "Netzach – Malkuth",
+          "ru": "Нецах – Малкут",
+          "es": "Netzach – Malkuth"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but intensifies the path with explicit imagery of birth, decay, and the recurring cycle of matter dissolving and reforming under Pisces' watery, boundary-dissolving influence.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но усиливает путь явными образами рождения, распада и повторяющегося цикла растворения и переформирования материи под водянистым, растворяющим границы влиянием Рыб.",
+          "es": "Crowley conserva la atribución estándar, pero intensifica el camino con una imaginería explícita de nacimiento, decadencia y el ciclo recurrente de la materia disolviéndose y reformándose bajo la influencia acuosa y disolvente de límites de Piscis."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's version is darker and more explicitly concerned with primordial slime and the biological origins of consciousness.",
+          "ru": "Та же буква/путь, что и в RWS; версия Кроули темнее и более явно связана с первобытной слизью и биологическими истоками сознания.",
+          "es": "Misma letra/camino que el RWS; la versión de Crowley es más oscura y se ocupa de manera más explícita del limo primordial y los orígenes biológicos de la conciencia."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The jackal-headed figures of Anubis",
+            "ru": "Шакалоголовые фигуры Анубиса",
+            "es": "Las figuras con cabeza de chacal de Anubis"
+          },
+          "description": {
+            "en": "Jackal-headed guardians flank the path, representing the liminal threshold-keepers between life, death, and the murky territory of the unconscious.",
+            "ru": "Шакалоголовые стражи стоят по обе стороны пути, олицетворяя пограничных хранителей порога между жизнью, смертью и мутной территорией бессознательного.",
+            "es": "Guardianes con cabeza de chacal flanquean el sendero, representando a los guardianes liminales del umbral entre la vida, la muerte y el territorio turbio del inconsciente."
+          }
+        },
+        {
+          "element": {
+            "en": "The scarab beetle carrying the moon",
+            "ru": "Жук-скарабей, несущий луну",
+            "es": "El escarabajo que porta la luna"
+          },
+          "description": {
+            "en": "A scarab pushes the lunar disc across the sky, tying the Moon to Egyptian symbols of transformation, renewal, and cyclical rebirth from decayed matter.",
+            "ru": "Скарабей толкает лунный диск по небу, связывая Луну с египетскими символами трансформации, обновления и циклического возрождения из разложившейся материи.",
+            "es": "Un escarabajo empuja el disco lunar por el cielo, vinculando la Luna con los símbolos egipcios de transformación, renovación y renacimiento cíclico a partir de la materia en descomposición."
+          }
+        },
+        {
+          "element": {
+            "en": "The primordial slime and emerging creatures",
+            "ru": "Первобытная слизь и возникающие существа",
+            "es": "El limo primordial y las criaturas emergentes"
+          },
+          "description": {
+            "en": "Murky, organic forms writhe at the base of the card, depicting the raw biological ooze from which conscious life gradually differentiates itself.",
+            "ru": "Мутные, органические формы извиваются у основания карты, изображая сырую биологическую тину, из которой постепенно дифференцируется сознательная жизнь.",
+            "es": "Formas orgánicas y turbias se retuercen en la base de la carta, representando el cieno biológico en bruto del que la vida consciente se diferencia gradualmente."
+          }
+        },
+        {
+          "element": {
+            "en": "The thirteen drops of blood or dew",
+            "ru": "Тринадцать капель крови или росы",
+            "es": "Las trece gotas de sangre o rocío"
+          },
+          "description": {
+            "en": "Falling drops, associated with lunar and menstrual cycles, tie the card to the rhythmic, recurring nature of biological and psychic time.",
+            "ru": "Падающие капли, связанные с лунными и менструальными циклами, связывают карту с ритмичной, повторяющейся природой биологического и психического времени.",
+            "es": "Gotas que caen, asociadas a los ciclos lunares y menstruales, vinculan la carta con la naturaleza rítmica y recurrente del tiempo biológico y psíquico."
+          }
+        },
+        {
+          "element": {
+            "en": "The murky green-blue palette",
+            "ru": "Мутная зелёно-синяя палитра",
+            "es": "La paleta turbia de verde y azul"
+          },
+          "description": {
+            "en": "A dim, aqueous colour scheme immerses the entire card in Pisces' dissolving, boundary-less quality rather than a clear night landscape.",
+            "ru": "Тусклая, водянистая цветовая гамма погружает всю карту в растворяющее, безграничное качество Рыб, а не в ясный ночной пейзаж.",
+            "es": "Un esquema de colores tenue y acuoso sumerge toda la carta en la cualidad disolvente y sin límites de Piscis, en lugar de un paisaje nocturno claro."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Moon leans further into the biological and primordial than RWS's dreamlike landscape—murky organic matter, scarabs, and jackal guardians emphasising the raw, dissolving origins of consciousness itself. Divinationally it still concerns illusion and the unconscious, but with a more visceral sense of confronting primal, undifferentiated material rather than simply navigating fog.",
+        "ru": "В деке Тота Луна ещё глубже погружается в биологическое и первобытное, чем сновидческий пейзаж RWS, — мутная органическая материя, скарабеи и стражи-шакалы подчёркивают сырые, растворяющие истоки самого сознания. В гадании она по-прежнему касается иллюзии и бессознательного, но с более висцеральным ощущением столкновения с первобытной, недифференцированной материей, а не просто навигации в тумане.",
+        "es": "En el Thoth, la Luna se adentra aún más en lo biológico y primordial que el paisaje onírico del RWS—materia orgánica turbia, escarabajos y guardianes chacal enfatizan los orígenes crudos y disolventes de la conciencia misma. En la adivinación sigue concerniendo a la ilusión y al inconsciente, pero con una sensación más visceral de confrontar materia primigenia e indiferenciada, en lugar de simplemente navegar la niebla."
+      }
+    },
+    "major-19": {
+      "qabalah": {
+        "path_number": "30",
+        "hebrew_letter": {
+          "en": "Resh",
+          "ru": "Реш",
+          "es": "Resh"
+        },
+        "hebrew_symbol": "ר",
+        "hebrew_unicode": "U+05E8",
+        "sephirothic_connection": {
+          "en": "Hod – Yesod",
+          "ru": "Ход – Йесод",
+          "es": "Hod – Yesod"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but expands the card cosmically, presenting twin dancing children within a great sunburst as the union of all opposites resolved into pure, radiant joy at the heart of manifest existence.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но расширяет карту космически, представляя двух танцующих детей внутри огромного солнечного взрыва как союз всех противоположностей, разрешённый в чистую, лучезарную радость в сердце проявленного бытия.",
+          "es": "Crowley conserva la atribución estándar, pero expande la carta cósmicamente, presentando a gemelos danzantes dentro de un gran estallido solar como la unión de todos los opuestos resuelta en pura alegría radiante en el corazón de la existencia manifiesta."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's twin children replace the single rider, emphasising union and multiplicity resolved rather than a single innocent figure.",
+          "ru": "Та же буква/путь, что и в RWS; близнецы Кроули заменяют единого всадника, подчёркивая союз и разрешённую множественность, а не единственную невинную фигуру.",
+          "es": "Misma letra/camino que el RWS; los gemelos de Crowley reemplazan al jinete único, enfatizando la unión y la multiplicidad resuelta, no una figura inocente única."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The twin dancing children",
+            "ru": "Танцующие дети-близнецы",
+            "es": "Los gemelos danzantes"
+          },
+          "description": {
+            "en": "Two joyful children dance together within the sunburst, embodying the resolution of duality (the Lovers' Gemini theme) into unified, celebratory play.",
+            "ru": "Двое радостных детей танцуют вместе внутри солнечного сияния, воплощая разрешение двойственности (тема Близнецов из Влюблённых) в единую, праздничную игру.",
+            "es": "Dos niños gozosos danzan juntos dentro del estallido solar, encarnando la resolución de la dualidad (el tema geminiano de los Enamorados) en un juego unificado y festivo."
+          }
+        },
+        {
+          "element": {
+            "en": "The great sunburst with twelve rays",
+            "ru": "Огромное солнечное сияние с двенадцатью лучами",
+            "es": "El gran estallido solar con doce rayos"
+          },
+          "description": {
+            "en": "Twelve major rays echo the zodiac's full cycle, showing the Sun's joy as a culmination that gathers and harmonises every phase of the year and journey.",
+            "ru": "Двенадцать главных лучей отражают полный цикл зодиака, показывая радость Солнца как кульминацию, собирающую и гармонизирующую каждую фазу года и пути.",
+            "es": "Doce rayos principales evocan el ciclo completo del zodíaco, mostrando la alegría del Sol como una culminación que reúne y armoniza cada fase del año y del viaje."
+          }
+        },
+        {
+          "element": {
+            "en": "The walled garden encircling the scene",
+            "ru": "Обнесённый стеной сад, окружающий сцену",
+            "es": "El jardín amurallado que rodea la escena"
+          },
+          "description": {
+            "en": "A circular garden wall frames the dancing children, suggesting protected, cultivated joy rather than joy left entirely exposed to the world.",
+            "ru": "Круглая садовая стена обрамляет танцующих детей, предполагая защищённую, возделанную радость, а не радость, полностью открытую миру.",
+            "es": "Un muro circular de jardín enmarca a los niños danzantes, sugiriendo una alegría protegida y cultivada, no una alegría completamente expuesta al mundo."
+          }
+        },
+        {
+          "element": {
+            "en": "The butterflies and flowers surrounding them",
+            "ru": "Бабочки и цветы вокруг них",
+            "es": "Las mariposas y flores que los rodean"
+          },
+          "description": {
+            "en": "Delicate butterflies and blossoms fill the scene, reinforcing transformation completed and beauty enjoyed rather than anxiously pursued.",
+            "ru": "Нежные бабочки и цветы заполняют сцену, подчёркивая завершённую трансформацию и красоту, которой наслаждаются, а не тревожно преследуют.",
+            "es": "Delicadas mariposas y flores llenan la escena, reforzando la transformación completada y la belleza disfrutada, no perseguida con ansiedad."
+          }
+        },
+        {
+          "element": {
+            "en": "The vivid, saturated golden-orange palette",
+            "ru": "Яркая, насыщенная золотисто-оранжевая палитра",
+            "es": "La paleta dorada-naranja vívida y saturada"
+          },
+          "description": {
+            "en": "An intensely warm colour field fills the entire card, leaving no shadow untouched by the Sun's direct, generous radiance.",
+            "ru": "Интенсивно тёплое цветовое поле заполняет всю карту, не оставляя тени, не тронутой прямым, щедрым сиянием Солнца.",
+            "es": "Un campo de color intensamente cálido llena toda la carta, sin dejar sombra alguna sin tocar por el resplandor directo y generoso del Sol."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the Sun becomes an explicit resolution of duality—twin children dancing in joyful union rather than a single rider—celebrating the culmination of the whole zodiacal cycle in radiant, protected joy. Divinationally it still signals vitality, success, and clarity, but with a stronger emphasis on harmony achieved between previously opposing forces.",
+        "ru": "В деке Тота Солнце становится явным разрешением двойственности — дети-близнецы, танцующие в радостном союзе, а не единственный всадник — прославляя кульминацию всего зодиакального цикла в лучезарной, защищённой радости. В гадании оно по-прежнему указывает на жизненность, успех и ясность, но с более сильным акцентом на гармонии, достигнутой между ранее противоборствующими силами.",
+        "es": "En el Thoth, el Sol se convierte en una resolución explícita de la dualidad—gemelos danzando en unión gozosa en lugar de un único jinete—celebrando la culminación de todo el ciclo zodiacal en una alegría radiante y protegida. En la adivinación sigue señalando vitalidad, éxito y claridad, pero con un énfasis más fuerte en la armonía lograda entre fuerzas previamente opuestas."
+      }
+    },
+    "major-20": {
+      "qabalah": {
+        "path_number": "31",
+        "hebrew_letter": {
+          "en": "Shin",
+          "ru": "Шин",
+          "es": "Shin"
+        },
+        "hebrew_symbol": "ש",
+        "hebrew_unicode": "U+05E9",
+        "sephirothic_connection": {
+          "en": "Hod – Malkuth",
+          "ru": "Ход – Малкут",
+          "es": "Hod – Malkuth"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but reframes the card entirely as the dawning of a new spiritual epoch (the Aeon of Horus), where Shin's fiery, purifying force ushers in a wholesale shift in consciousness rather than a single personal reckoning.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но полностью переосмысляет карту как наступление новой духовной эпохи (Эона Гора), где огненная, очищающая сила Шин возвещает всеобъемлющий сдвиг сознания, а не единичную личную расплату.",
+          "es": "Crowley conserva la atribución estándar, pero reformula la carta por completo como el amanecer de una nueva época espiritual (el Eón de Horus), donde la fuerza ígnea y purificadora de Shin anuncia un cambio integral de la conciencia, no un único ajuste de cuentas personal."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's renaming reflects his own Thelemic cosmology of successive spiritual Aeons rather than a single Christian-influenced last judgement.",
+          "ru": "Та же буква/путь, что и в RWS; переименование Кроули отражает его собственную телемическую космологию последовательных духовных Эонов, а не единый Страшный суд под христианским влиянием.",
+          "es": "Misma letra/camino que el RWS; el renombramiento de Crowley refleja su propia cosmología thelémica de Eones espirituales sucesivos, en lugar de un único juicio final de influencia cristiana."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "Nuit arched overhead with Hadit as the winged globe",
+            "ru": "Нуит, изогнутая в вышине, с Хадитом как крылатым шаром",
+            "es": "Nuit arqueada en lo alto con Hadit como el globo alado"
+          },
+          "description": {
+            "en": "The sky goddess Nuit arches over the scene while Hadit appears as a winged solar disc, together framing awakening as a cosmic, Thelemic event rather than a personal moral reckoning.",
+            "ru": "Богиня неба Нуит изгибается над сценой, в то время как Хадит появляется в виде крылатого солнечного диска, вместе обрамляя пробуждение как космическое, телемическое событие, а не личную нравственную расплату.",
+            "es": "La diosa del cielo Nuit se arquea sobre la escena mientras Hadit aparece como un disco solar alado, enmarcando juntos el despertar como un evento cósmico y thelémico, no un ajuste de cuentas moral personal."
+          }
+        },
+        {
+          "element": {
+            "en": "Horus rising from the earth",
+            "ru": "Гор, восстающий из земли",
+            "es": "Horus que se alza de la tierra"
+          },
+          "description": {
+            "en": "The falcon-headed god Horus rises triumphant, symbolising the new Aeon's central deity taking active, dominant form rather than a mass of judged individuals.",
+            "ru": "Сокологоловый бог Гор восстаёт торжествующе, символизируя главное божество нового Эона, принимающее активную, доминирующую форму, а не массу судимых индивидов.",
+            "es": "El dios con cabeza de halcón Horus se alza triunfante, simbolizando a la deidad central del nuevo Eón tomando una forma activa y dominante, en lugar de una masa de individuos juzgados."
+          }
+        },
+        {
+          "element": {
+            "en": "The stele of revealing imagery",
+            "ru": "Образность стелы откровения",
+            "es": "La imaginería de la estela de la revelación"
+          },
+          "description": {
+            "en": "Egyptian stele-inspired iconography roots the card in Crowley's own channeled cosmology (the Book of the Law), emphasising a specific, personal spiritual revelation.",
+            "ru": "Иконография, вдохновлённая египетской стелой, укореняет карту в собственной ченнелингованной космологии Кроули (Книге Закона), подчёркивая конкретное, личное духовное откровение.",
+            "es": "La iconografía inspirada en la estela egipcia enraíza la carta en la propia cosmología canalizada de Crowley (el Libro de la Ley), enfatizando una revelación espiritual específica y personal."
+          }
+        },
+        {
+          "element": {
+            "en": "The small human figures below, dwarfed by the gods",
+            "ru": "Маленькие человеческие фигуры внизу, затмённые богами",
+            "es": "Las pequeñas figuras humanas abajo, empequeñecidas por los dioses"
+          },
+          "description": {
+            "en": "Human figures appear tiny beneath the towering deities, showing the individual reckoning of RWS's Judgement subsumed into a vastly larger cosmic transformation.",
+            "ru": "Человеческие фигуры кажутся крошечными под возвышающимися божествами, показывая, что индивидуальная расплата RWS-Суда поглощена гораздо более крупной космической трансформацией.",
+            "es": "Las figuras humanas aparecen diminutas bajo las deidades imponentes, mostrando que el ajuste de cuentas individual del Juicio del RWS queda subsumido en una transformación cósmica mucho más amplia."
+          }
+        },
+        {
+          "element": {
+            "en": "The vivid blue-and-gold cosmic palette",
+            "ru": "Яркая сине-золотая космическая палитра",
+            "es": "La paleta cósmica azul y dorada vívida"
+          },
+          "description": {
+            "en": "Deep cosmic blues against radiant gold place the scene explicitly in celestial, mythic space rather than an earthly graveyard landscape.",
+            "ru": "Глубокие космические синие тона на фоне лучезарного золота помещают сцену явно в небесное, мифическое пространство, а не в земной пейзаж кладбища.",
+            "es": "Azules cósmicos profundos contra un dorado radiante sitúan la escena explícitamente en un espacio celestial y mítico, no en un paisaje terrenal de cementerio."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, Judgement becomes the Aeon: a cosmic proclamation of a new spiritual epoch centred on Horus, Nuit, and Hadit rather than a personal last-judgement scene. Divinationally it still concerns awakening and rebirth, but Crowley's version asks the querent to see their own transformation as part of a genuinely new order of being, not simply a return to an improved former self.",
+        "ru": "В деке Тота Суд становится Эоном: космическим провозглашением новой духовной эпохи, сосредоточенной на Горе, Нуит и Хадите, а не личной сценой Страшного суда. В гадании она по-прежнему касается пробуждения и возрождения, но версия Кроули просит вопрошающего увидеть собственную трансформацию как часть подлинно нового порядка бытия, а не просто возвращение к улучшенному прежнему себе.",
+        "es": "En el Thoth, el Juicio se convierte en el Eón: una proclamación cósmica de una nueva época espiritual centrada en Horus, Nuit y Hadit, en lugar de una escena personal de juicio final. En la adivinación sigue concerniendo al despertar y al renacimiento, pero la versión de Crowley pide a la persona consultante ver su propia transformación como parte de un orden de ser genuinamente nuevo, no simplemente un retorno a un yo anterior mejorado."
+      },
+      "name": {
+        "en": "The Aeon",
+        "ru": "Эон",
+        "es": "El Eón"
+      }
+    },
+    "major-21": {
+      "qabalah": {
+        "path_number": "32",
+        "hebrew_letter": {
+          "en": "Tav",
+          "ru": "Тав",
+          "es": "Tau"
+        },
+        "hebrew_symbol": "ת",
+        "hebrew_unicode": "U+05EA",
+        "sephirothic_connection": {
+          "en": "Yesod – Malkuth",
+          "ru": "Йесод – Малкут",
+          "es": "Yesod – Malkuth"
+        },
+        "interpretation": {
+          "en": "Crowley keeps the standard attribution but expands the card to encompass the entire cosmos as a single, continuously dancing organism, presenting Tav's completion not as a final static seal but as the endlessly self-renewing totality of existence.",
+          "ru": "Кроули сохраняет стандартную атрибуцию, но расширяет карту, охватывая весь космос как единый, непрерывно танцующий организм, представляя завершение Тав не как окончательную статичную печать, а как бесконечно самообновляющуюся целостность бытия.",
+          "es": "Crowley conserva la atribución estándar, pero expande la carta para abarcar todo el cosmos como un único organismo en danza continua, presentando la culminación de Tav no como un sello final estático, sino como la totalidad de la existencia que se renueva infinitamente a sí misma."
+        },
+        "notes": {
+          "en": "Same letter/path as RWS; Crowley's 'Universe' emphasises cosmic totality and perpetual becoming rather than a single, completed personal achievement.",
+          "ru": "Та же буква/путь, что и в RWS; 'Вселенная' Кроули подчёркивает космическую целостность и вечное становление, а не единичное, завершённое личное достижение.",
+          "es": "Misma letra/camino que el RWS; el 'Universo' de Crowley enfatiza la totalidad cósmica y el devenir perpetuo, no un único logro personal completado."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The dancing hermaphrodite figure of Babalon",
+            "ru": "Танцующая гермафродитная фигура Бабалон",
+            "es": "La figura hermafrodita danzante de Babalon"
+          },
+          "description": {
+            "en": "A dancing, androgynous figure at the centre embodies the union of all opposites into a single, self-sufficient cosmic being rather than a simple graceful dancer.",
+            "ru": "Танцующая, андрогинная фигура в центре воплощает союз всех противоположностей в единое, самодостаточное космическое существо, а не просто грациозного танцора.",
+            "es": "Una figura danzante y andrógina en el centro encarna la unión de todos los opuestos en un único ser cósmico autosuficiente, no un simple danzante grácil."
+          }
+        },
+        {
+          "element": {
+            "en": "The great serpent encircling the whole scene",
+            "ru": "Огромный змей, окружающий всю сцену",
+            "es": "La gran serpiente que rodea toda la escena"
+          },
+          "description": {
+            "en": "A vast ouroboros-like serpent forms the outer boundary, showing completion as an endlessly self-renewing cycle rather than a closed, finished shape.",
+            "ru": "Огромный уроборосоподобный змей образует внешнюю границу, показывая завершение как бесконечно самообновляющийся цикл, а не замкнутую, законченную форму.",
+            "es": "Una vasta serpiente similar a un uróboro forma el límite exterior, mostrando la culminación como un ciclo que se renueva infinitamente a sí mismo, no una forma cerrada y terminada."
+          }
+        },
+        {
+          "element": {
+            "en": "The four fixed-sign creatures at the corners",
+            "ru": "Четыре существа фиксированных знаков по углам",
+            "es": "Las cuatro criaturas de signos fijos en las esquinas"
+          },
+          "description": {
+            "en": "As in RWS, the four fixed-zodiac creatures anchor the corners, but here rendered with more cosmic, mythic weight, as pillars supporting all of manifest existence.",
+            "ru": "Как и в RWS, четыре существа фиксированного зодиака закрепляют углы, но здесь изображённые с большей космической, мифической весомостью, как столпы, поддерживающие всё проявленное бытие.",
+            "es": "Como en el RWS, las cuatro criaturas del zodíaco fijo anclan las esquinas, pero aquí representadas con un peso más cósmico y mítico, como pilares que sostienen toda la existencia manifiesta."
+          }
+        },
+        {
+          "element": {
+            "en": "The spiraling galaxies in the background",
+            "ru": "Спиралевидные галактики на фоне",
+            "es": "Las galaxias en espiral al fondo"
+          },
+          "description": {
+            "en": "Distant spiral galaxies fill the space beyond the central figure, situating personal completion within literally cosmic, astronomical scale.",
+            "ru": "Далёкие спиральные галактики заполняют пространство за центральной фигурой, помещая личное завершение в буквально космический, астрономический масштаб.",
+            "es": "Galaxias espirales lejanas llenan el espacio más allá de la figura central, situando la culminación personal en una escala literalmente cósmica y astronómica."
+          }
+        },
+        {
+          "element": {
+            "en": "The wand tipped with a small disc",
+            "ru": "Жезл с маленьким диском на конце",
+            "es": "La varita rematada con un pequeño disco"
+          },
+          "description": {
+            "en": "A wand crowned with a small disc suggests mastered creative will wielded at cosmic scale, willpower now fully integrated with universal law.",
+            "ru": "Жезл, увенчанный маленьким диском, символизирует освоенную созидательную волю, применяемую в космическом масштабе, — волю, ныне полностью интегрированную с всеобщим законом.",
+            "es": "Una varita coronada con un pequeño disco sugiere una voluntad creativa dominada ejercida a escala cósmica, la fuerza de voluntad ahora plenamente integrada con la ley universal."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Thoth, the World becomes the Universe: completion expanded from a single graceful dancer to the entire cosmos understood as one continuously self-renewing, dancing organism. Divinationally it still signals accomplishment and integration, but Crowley's version frames the achievement as participation in a vast, perpetual cosmic process rather than a single finished personal milestone.",
+        "ru": "В деке Тота Мир становится Вселенной: завершение расширяется от единого грациозного танцора до всего космоса, понимаемого как единый, непрестанно самообновляющийся, танцующий организм. В гадании она по-прежнему указывает на достижение и интеграцию, но версия Кроули представляет достижение как участие в обширном, непрерывном космическом процессе, а не единичную завершённую личную веху.",
+        "es": "En el Thoth, el Mundo se convierte en el Universo: la culminación se expande de un único danzante grácil a todo el cosmos entendido como un organismo danzante que se renueva continuamente a sí mismo. En la adivinación sigue señalando el logro y la integración, pero la versión de Crowley enmarca el logro como una participación en un vasto y perpetuo proceso cósmico, no como un único hito personal terminado."
+      },
+      "name": {
+        "en": "The Universe",
+        "ru": "Вселенная",
+        "es": "El Universo"
+      }
+    }
+  }
+}

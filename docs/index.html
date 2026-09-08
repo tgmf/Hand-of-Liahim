@@ -51,11 +51,13 @@
     --crimson: #8b1a1a;
     --crimson-dim: #5a1010;
     --shadow: rgba(20,10,0,0.35);
-    --card-bg: #1c1408;
+    --card-bg: #0d0a04;
+    --card-bg-dedupe: #0e0a04;
     --card-border: #8b6914;
     --reversed-tint: rgba(139,26,26,0.12);
     --font-title: 'Cinzel', serif;
     --font-body: 'Crimson Pro', serif;
+    --hdr-h: 3.75rem;                 /* mobile fixed-header height (.header-bar) */
     --back-arrow: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='square'%20stroke-linejoin='miter'%3E%3Cpath%20d='M10.2%205.4%203%2012%2010.2%2018.6M3%2012H23'/%3E%3C/svg%3E");
   }
 
@@ -95,8 +97,9 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1000;
     overflow: hidden;
+    pointer-events: none;
   }
 
   .star {
@@ -135,6 +138,10 @@
     color: var(--gold);
   }
 
+  /* Global header bar: [back] · ornament · [settings]. Mobile only —
+     desktop keeps the plain centred header untouched. */
+  .header-btn { display: none; }
+
   h1, .logo-link {
     font-family: var(--font-title);
     font-size: clamp(1.125rem, 3vw, 2rem);
@@ -172,7 +179,10 @@
     display: none;
     animation: fadeIn 0.5s ease;
   }
-  .panel.active { display: block; }
+  .panel.active { 
+    display: block;
+    padding: 1rem;
+  }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(12px); }
@@ -213,80 +223,50 @@
     .section-label-row .section-label { letter-spacing: 0.18em; }
   }
 
-  /* SETTINGS TOGGLE (mobile only) */
-  .settings-toggle {
-    display: none;
-  }
-
-  .settings-close,
-  .settings-header {
-    display: none;
-  }
-
   @media (max-width: 768px) {
-    .settings-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      width: 2.25rem;
-      height: 2.25rem;
-      background: transparent;
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 50%;
-      color: var(--gold-dim);
-      font-size: 1.125rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .settings-toggle:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    #visual-settings-col {
+    /* THE header — one fixed bar, always visible, every screen renders under it.
+       The <h1> title + divider are desktop-only chrome. */
+    header {
       position: fixed;
-      inset: 0;
-      z-index: 200;
-      background: #0d0a04;
-      padding: 0 1.5rem 2rem;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-
-    #visual-settings-col.open {
-      transform: translateX(0);
-    }
-
-    .settings-header {
-      position: sticky;
       top: 0;
-      z-index: 5;
-      display: flex;
-      align-items: center;
-      height: 3rem;
-      margin: 0 -1.5rem;
-      padding: 0 1.5rem;
+      left: 0;
+      right: 0;
+      z-index: 300;                 /* above the settings drawer (200) and card modal (100) */
       background: #0d0a04;
+      margin: 0;
     }
+    header h1,
+    header .divider { display: none; }
 
-    .settings-close {
+    /* push every screen clear of the fixed bar */
+    #app { padding-top: 0; }
+    .panel.active { padding-top: calc(var(--hdr-h) + 1rem); }
+
+    .header-bar {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr 1.75rem;
+      align-items: center;
+      padding: 1rem;
+    }
+    .header-bar .logo-ornament { margin: 0; }
+
+    .header-btn {
       display: block;
-      position: static;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.75rem;
+      height: 1.75rem;
       padding: 0;
       background: transparent;
       border: none;
       color: var(--gold-dim);
-      font-size: 0;
+      font-size: 2rem;
+      line-height: 1;
       cursor: pointer;
       transition: color 0.2s;
     }
-
-    .settings-close::before {
+    .header-btn:hover { color: var(--gold); }
+    .header-settings { justify-self: end; }
+    .header-back { justify-self: start; font-size: 0; }
+    .header-back::before {
       content: '';
       display: block;
       width: 1.5rem;
@@ -302,8 +282,34 @@
       mask-size: contain;
     }
 
-    .settings-close:hover {
-      color: var(--gold);
+    /* Back arrow: hidden on the setup + dealing screens (no history entry to
+       pop back to), shown once you're in a reading or an overlay is open. The
+       settings button stays available on the card modal, but not inside the
+       settings drawer itself. */
+    body[data-panel="setup-panel"] header .header-back,
+    body[data-panel="dealing-panel"] header .header-back { visibility: hidden; }
+    body:has(#visual-settings-col.open) header .header-back,
+    body:has(#card-modal.open) header .header-back { visibility: visible; }
+    body:has(#visual-settings-col.open) header .header-settings { visibility: hidden; }
+
+    /* Moved to <body> on mobile (see placeSettingsPanel) so it floats above
+       every screen — z above #app content and the card modal (100). */
+    #visual-settings-col {
+      position: fixed;
+      top: var(--hdr-h);      /* flush under the fixed header */
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 250;
+      background: #0d0a04;
+      padding: 1.25rem 1.5rem 2rem;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    #visual-settings-col.open {
+      transform: translateX(0);
     }
 
     .ai-settings {
@@ -342,16 +348,6 @@
     background: rgba(201,168,76,0.15);
     border-color: var(--gold);
     color: var(--gold-bright);
-  }
-
-  .choice-btn.selected::after {
-    content: '◆';
-    position: absolute;
-    right: 0.875rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    color: var(--gold);
   }
 
   .choice-btn .btn-title {
@@ -864,13 +860,12 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     touch-action: pan-y;
-    padding: 1.25rem 1rem 2.5rem;
     scrollbar-width: none;
     /* Opaque fill on the layer that actually shows the card. .deck-slide's own
        fill is byte-identical to what's behind it, so the WebView drops it for a
        frame during the open transition and the neighbour card's text shows
        through. This is 1 unit off #150f04 — invisible, but not a de-dupe match. */
-    background: #160f05;
+    background: var(--card-bg-dedupe);
   }
   .modal-rail > .deck-slide > .deck-scroll::-webkit-scrollbar { display: none; }
 
@@ -916,6 +911,10 @@
     100% { background-position: -200% 0; }
   }
 
+  .modal-detail {
+    padding: 0 1rem 2.5rem;
+  }
+
   .modal h2 {
     font-family: var(--font-title);
     font-size: 1.375rem;
@@ -956,6 +955,13 @@
     line-height: 1.7;
     color: rgba(245,237,216,0.85);
     margin-bottom: 1em;
+  }
+
+  .modal-qabalah-meta {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--gold-dim);
+    margin-bottom: 0.5em;
   }
 
   /* DESKTOP MODAL — fullscreen, card fills the left half (scroll to zoom),
@@ -1050,7 +1056,7 @@
 
   /* Responsive */
   @media (max-width: 480px) {
-    #app { padding: 1.5rem 1rem; }
+    #app { padding: 0; }
 
     .cards-grid { gap: 0.625rem; }
 
@@ -1080,14 +1086,15 @@
     }
   }
 
-  /* MOBILE MODAL — full-screen, fixed header, body is a horizontal card pager */
+  /* MOBILE MODAL — opens BELOW the one fixed header (no header of its own),
+     body is a horizontal card pager */
   @media (max-width: 768px) {
-    .modal-overlay { padding: 0; align-items: stretch; }
+    .modal-overlay { padding: 0; align-items: stretch; top: var(--hdr-h); }
     .modal {
       width: 100%;
       max-width: none;
-      height: 100dvh;
-      max-height: 100dvh;
+      height: 100%;
+      max-height: 100%;
       padding: 0;
       border: none;
       overflow: hidden;
@@ -1100,35 +1107,7 @@
       min-height: 0;
     }
 
-    .modal-header {
-      flex: none;
-      display: flex;
-      align-items: center;
-      height: 3rem;
-      padding: 0 1rem;
-      background: #150f04;
-      border-bottom: 1px solid rgba(201,168,76,0.15);
-    }
-    .modal-close {
-      position: static;
-      padding: 0;
-      font-size: 0;
-    }
-    .modal-close::before {
-      content: '';
-      display: block;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: currentColor;
-      -webkit-mask-image: var(--back-arrow);
-      mask-image: var(--back-arrow);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      mask-position: center;
-      -webkit-mask-size: contain;
-      mask-size: contain;
-    }
+    .modal-header { display: none; }
 
     .modal-track { flex: 1 1 auto; min-height: 0; }
     .modal-track.paged { padding: 0.5rem 0.75rem 1rem; }   /* inset so the card edge / shadow shows */
@@ -1139,14 +1118,15 @@
   }
 </style>
 </head>
-<body>
-
-<!-- Stars -->
-<div class="stars" id="stars"></div>
+<body data-panel="setup-panel">
 
 <div id="app">
   <header>
-    <span class="logo-ornament">✦ ✦ ✦</span>
+    <div class="header-bar">
+      <button class="header-btn header-back" onclick="headerBack()" data-i18n-aria="header.back.ariaLabel" aria-label="Back"></button>
+      <span class="logo-ornament">✦ ✦ ✦</span>
+      <button class="header-btn header-settings" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsToggle.ariaLabel" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
+    </div>
     <h1><a href="/" class="logo-link" data-i18n="app.title">The Hand of Liahim</a></h1>
     <div class="divider"><div class="divider-gem"></div></div>
   </header>
@@ -1160,7 +1140,6 @@
       <div class="setup-col">
         <div class="section-label-row">
           <p class="section-label" data-i18n="setup.spread.label">Choose your spread</p>
-          <button class="settings-toggle" id="settings-toggle" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsToggle.ariaLabel" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
         </div>
         <div class="choice-group" id="spread-choices">
           <button class="choice-btn selected" data-val="single" onclick="selectChoice('spread', this)">
@@ -1190,11 +1169,9 @@
         </div>
       </div>
 
-      <!-- Visual & AI settings -->
+      <!-- Visual & AI settings. On mobile this is a drawer that slides in
+           below the one global header (see toggleSettingsPanel). -->
       <div class="setup-col" id="visual-settings-col">
-        <div class="settings-header">
-          <button class="settings-close" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsClose.ariaLabel" aria-label="Close settings">✕</button>
-        </div>
         <div class="deck-section">
           <p class="section-label" data-i18n="setup.deck.label">Card visual theme</p>
           <div class="choice-group" id="deck-choices">
@@ -1348,6 +1325,15 @@
                 <h4 data-i18n="modal.reversed">Reversed</h4>
                 <p class="modal-reversed" id="modal-reversed"></p>
               </div>
+              <div class="modal-meaning-block modal-symbolic-block" id="modal-symbolic-block">
+                <h4 data-i18n="modal.symbolic">Symbolic &amp; Archetypal</h4>
+                <p class="modal-symbolic" id="modal-symbolic"></p>
+              </div>
+              <div class="modal-meaning-block modal-qabalah-block" id="modal-qabalah-block">
+                <h4 data-i18n="modal.qabalah">Qabalah</h4>
+                <p class="modal-qabalah-meta" id="modal-qabalah-meta"></p>
+                <p class="modal-qabalah" id="modal-qabalah"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -1356,6 +1342,9 @@
     </div>
   </div>
 </div>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
 
 <script>
 // ===== STATE =====
@@ -1389,7 +1378,9 @@ let currentIndexFilter = 'all';
 
 // ===== DATA (loaded at runtime from data/*.json — see boot()) =====
 const SUPPORTED_LANGS = ['en', 'ru', 'es'];
+const DECK_CHOICES = ['rider-waite', 'visconti', 'symbolic'];
 const LS_LANG = 'liahim.lang';
+const LS_DECK = 'liahim.deck';
 
 // state.deck value -> deck JSON basename under data/decks/. 'symbolic' has no
 // deck file and no image dir (text-only).
@@ -1402,7 +1393,7 @@ const RAW = { cards: [], decks: {}, locales: {} };
 let LANG = 'en';
 let CARDS = [];                        // flat, resolved for LANG + state.deck
 let SPREADS = {};                      // flat, resolved for LANG
-let DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set() };
+let DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set(), qabalah: {} };
 
 // { en:…, ru:… } -> string for the active language, falling back to en.
 function pick(field) {
@@ -1421,7 +1412,7 @@ function t(key) {
 
 // Build DECK (image dir + missing-art set + number overrides + exclusions).
 function resolveDeck(deckVal) {
-  DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set() };
+  DECK = { image_dir: null, missing: new Set(), numberOverride: {}, excluded: new Set(), qabalah: {} };
   const data = RAW.decks[DECK_FILE[deckVal]];
   if (!data) return;                   // 'symbolic' / unknown -> no images
   DECK.image_dir = data.image_dir || data.deck_id || DECK_FILE[deckVal];
@@ -1431,6 +1422,7 @@ function resolveDeck(deckVal) {
     if (patch === null) { DECK.excluded.add(id); continue; }
     if (patch.image === null) DECK.missing.add(id);
     if (typeof patch.number === 'number') DECK.numberOverride[id] = patch.number;
+    if (patch.qabalah) DECK.qabalah[id] = patch.qabalah;
   }
 }
 
@@ -1449,7 +1441,21 @@ function resolveCards() {
       keywords: (c.keywords && (c.keywords[LANG] || c.keywords.en)) || [],
       upright: pick(c.divination_meaning && c.divination_meaning.upright),
       reversed: pick(c.divination_meaning && c.divination_meaning.reversed),
+      symbolic: pick(c.symbolic_and_archetypal_meaning),
+      qabalah: buildQabalah(DECK.qabalah[c.id]),
     }));
+}
+
+// Resolve a deck's per-card qabalah block to the active language, or null.
+function buildQabalah(q) {
+  if (!q) return null;
+  return {
+    letter: pick(q.hebrew_letter),
+    symbol: q.hebrew_symbol || '',
+    pathNumber: q.path_number || '',
+    sephiroth: pick(q.sephirothic_connection),
+    interpretation: pick(q.interpretation),
+  };
 }
 
 // Flatten the spread catalog (title/desc/positions live in the locale files).
@@ -1538,13 +1544,33 @@ function selectChoice(group, btn) {
   state[group] = btn.dataset.val;
 
   if (group === 'deck') {
+    try { localStorage.setItem(LS_DECK, state.deck); } catch (e) {}
     resolveDeck(state.deck);
     resolveCards();
+    refreshActiveReading();          // live-swap art/meanings if a reading is open
   }
 
   if (group === 'spread') {
     beginReading();
   }
+}
+
+// Re-render the reading panel in place (after a deck or language change) keeping
+// the same drawn cards. No-op unless a reading is currently showing.
+function refreshActiveReading() {
+  if (!document.getElementById('reading-panel').classList.contains('active')) return;
+  if (state.spread === 'index') {
+    renderIndex(currentIndexFilter);
+  } else if (state.currentSpread) {
+    state.currentSpread = SPREADS[state.spread];
+    state.drawnCards = state.drawnCards.map(dc => {
+      const base = CARDS.find(c => c.id === dc.id);
+      if (!base) return dc;          // deck doesn't carry this card — keep as-is
+      return { ...base, isReversed: dc.isReversed, displayName: getCardName(base) };
+    });
+    renderReading();
+  }
+  refreshOpenModal();
 }
 
 // Switch UI + content language, persist the choice, and re-render live views.
@@ -1559,19 +1585,7 @@ function setLang(lang) {
   resolveCards();
   resolveSpreads();
   applyI18n();
-
-  if (document.getElementById('reading-panel').classList.contains('active')) {
-    if (state.spread === 'index') {
-      renderIndex(currentIndexFilter);
-    } else if (state.currentSpread) {
-      state.currentSpread = SPREADS[state.spread];
-      state.drawnCards = state.drawnCards.map(dc => {
-        const base = CARDS.find(c => c.id === dc.id);
-        return { ...base, isReversed: dc.isReversed, displayName: getCardName(base) };
-      });
-      renderReading();
-    }
-  }
+  refreshActiveReading();
 }
 
 // Re-render every element carrying an i18n hook against the active locale.
@@ -1609,6 +1623,7 @@ function updateModelOptions() {
 function showPanel(id) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  document.body.dataset.panel = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1620,15 +1635,39 @@ function goToSetup() {
   }
 }
 
+// #visual-settings-col is the setup grid's right column on desktop, but on
+// mobile it's a drawer that must float above every screen — so it can't stay
+// inside #setup-panel (which is display:none whenever another panel is active).
+function placeSettingsPanel() {
+  const col = document.getElementById('visual-settings-col');
+  if (matchMedia('(max-width: 768px)').matches) {
+    if (col.parentElement !== document.body) document.body.appendChild(col);
+  } else {
+    const grid = document.querySelector('#setup-panel .setup-grid');
+    if (grid && col.parentElement !== grid) grid.appendChild(col);
+  }
+}
+matchMedia('(max-width: 768px)').addEventListener('change', placeSettingsPanel);
+
 function toggleSettingsPanel() {
   const col = document.getElementById('visual-settings-col');
   if (col.classList.contains('open')) {
     history.back();                       // pops the overlay state -> popstate closes it
   } else {
-    col.classList.add('open');
+    col.classList.add('open');           // CSS sits it under the fixed header (top: var(--hdr-h))
     updateScrollLock();
     history.pushState({ overlay: 'settings' }, '');
   }
+}
+
+// The one fixed header's back arrow just walks history — every screen (reading,
+// card modal, settings drawer) is a pushState entry, and the popstate handler
+// below is the single place that reconciles the DOM to history.state. This is
+// exactly what the hardware/gesture back button does, so they stay in lockstep.
+// (The arrow is hidden on the setup + dealing screens, which have no entry to
+// pop back to — see CSS.)
+function headerBack() {
+  history.back();
 }
 
 // Lock page scroll while the card modal or the settings drawer is open.
@@ -2339,6 +2378,10 @@ const modalZoom = { scale: 1 };
 // swipe can cycle through and the position currently shown (null = no cycling).
 let modalCards = null;
 let modalIndex = -1;
+// What the modal is currently showing, so a deck/language change can re-render
+// it live (see refreshOpenModal).
+let modalCard = null;
+let modalOpts = null;
 (function initModalZoom() {
   const box = document.getElementById('modal-visual');
   const img = document.getElementById('modal-img');
@@ -2398,6 +2441,32 @@ function renderCardInto(root, card, opts = {}) {
   root.querySelector('.modal-upright-block').style.display = showUpright ? '' : 'none';
   root.querySelector('.modal-reversed-block').style.display = showReversed ? '' : 'none';
 
+  // Symbolic / archetypal meaning and qabalah — shown only when the card carries them.
+  const symbolicBlock = root.querySelector('.modal-symbolic-block');
+  if (card.symbolic) {
+    root.querySelector('.modal-symbolic').textContent = card.symbolic;
+    symbolicBlock.style.display = '';
+  } else {
+    symbolicBlock.style.display = 'none';
+  }
+
+  const qabalahBlock = root.querySelector('.modal-qabalah-block');
+  if (card.qabalah) {
+    const q = card.qabalah;
+    const meta = [
+      [q.letter, q.symbol].filter(Boolean).join(' '),
+      q.sephiroth,
+      q.pathNumber && `${t('modal.qabalah.path')} ${q.pathNumber}`,
+    ].filter(Boolean).join('  ·  ');
+    const metaEl = root.querySelector('.modal-qabalah-meta');
+    metaEl.textContent = meta;
+    metaEl.style.display = meta ? '' : 'none';
+    root.querySelector('.modal-qabalah').textContent = q.interpretation || '';
+    qabalahBlock.style.display = '';
+  } else {
+    qabalahBlock.style.display = 'none';
+  }
+
   root.querySelector('.modal-keywords').innerHTML = card.keywords.map(k =>
     `<span class="keyword">${k}</span>`
   ).join('');
@@ -2447,6 +2516,8 @@ function openModal(card, opts = {}) {
   // The card deck only runs for a spread with more than one card, on mobile.
   modalCards = (opts.list && opts.list.length > 1) ? opts.list : null;
   modalIndex = modalCards ? opts.index : -1;
+  modalCard = card;
+  modalOpts = opts;
 
   document.getElementById('card-modal').classList.add('open');
   updateScrollLock();
@@ -2668,13 +2739,48 @@ function teardownDeck() {
   }, { passive: true });
 })();
 
-function teardownOverlays() {
+function closeCardModal() {
   document.getElementById('card-modal').classList.remove('open');
-  document.getElementById('visual-settings-col').classList.remove('open');
   modalCards = null;
   modalIndex = -1;
+  modalCard = null;
+  modalOpts = null;
   teardownDeck();
   updateScrollLock();
+}
+
+// Re-render whatever the card modal is currently showing against the freshly
+// resolved CARDS (after a deck or language change), keeping orientation/position.
+function refreshOpenModal() {
+  if (!document.getElementById('card-modal').classList.contains('open')) return;
+
+  const remap = (c) => {
+    const base = CARDS.find(cc => cc.id === c.id);
+    return base ? { ...base, isReversed: c.isReversed, displayName: getCardName(base) } : c;
+  };
+
+  if (modalCards) {
+    modalCards = modalCards.map(remap);
+    if (pagerActive()) {
+      modalIndex = deckK;            // preserve the swiped-to position
+      buildDeck();
+    } else {
+      fillModalCard(modalCards[Math.max(0, modalIndex)], modalOpts || {});
+    }
+  } else if (modalCard) {
+    modalCard = remap(modalCard);
+    fillModalCard(modalCard, modalOpts || {});
+  }
+}
+
+function closeSettingsDrawer() {
+  document.getElementById('visual-settings-col').classList.remove('open');
+  updateScrollLock();
+}
+
+function teardownOverlays() {
+  closeCardModal();
+  closeSettingsDrawer();
 }
 
 function closeModal(event) {
@@ -2827,6 +2933,8 @@ function initFromURL() {
 // Load the JSON data files, resolve for the active language, then run the
 // original URL-driven init. Needs http(s) — fetch() is blocked on file://.
 async function boot() {
+  placeSettingsPanel();
+
   const load = (p) => fetch(p).then(r => {
     if (!r.ok) throw new Error(`${p}: ${r.status}`);
     return r.json();
@@ -2854,6 +2962,12 @@ async function boot() {
 
   LANG = initialLang();
   document.documentElement.lang = LANG;
+
+  try {
+    const savedDeck = localStorage.getItem(LS_DECK);
+    if (savedDeck && DECK_CHOICES.includes(savedDeck)) state.deck = savedDeck;
+  } catch (e) {}
+
   selectChoiceButton('lang', LANG);
   selectChoiceButton('deck', state.deck);
   selectChoiceButton('spread', state.spread);
@@ -2869,13 +2983,23 @@ async function boot() {
 
 boot();
 
+// THE reconciler: every back/forward (on-screen arrow, browser, or Android
+// gesture) lands here, and this is the only place that maps history.state back
+// onto the DOM. Screens are stacked as pushState entries:
+//   {panel:'setup'}  ->  {panel:'reading'}  ->  {overlay:'card'}  ->  {overlay:'settings'}
 window.addEventListener('popstate', (e) => {
-  if (document.getElementById('card-modal').classList.contains('open') ||
-      document.getElementById('visual-settings-col').classList.contains('open')) {
-    teardownOverlays();
+  const st = e.state;
+  const modalOpen = document.getElementById('card-modal').classList.contains('open');
+  const drawerOpen = document.getElementById('visual-settings-col').classList.contains('open');
+
+  if (modalOpen || drawerOpen) {
+    // Peel one layer: close whichever overlay the entry we've landed on is NOT.
+    // (e.g. drawer opened over the card modal -> back closes only the drawer.)
+    if (drawerOpen && !(st && st.overlay === 'settings')) closeSettingsDrawer();
+    if (modalOpen && !(st && st.overlay === 'card')) closeCardModal();
     return;                     // consumed the back gesture -- don't switch panels / minimize
   }
-  const st = e.state;
+
   if (st && st.panel === 'reading') {
     const decoded = decodeReadingFromURL();
     if (decoded) {

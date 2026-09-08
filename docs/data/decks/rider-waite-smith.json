@@ -13,24 +13,24 @@
         "hebrew_letter": {
           "en": "Aleph",
           "ru": "Алеф",
-          "es": "Álef"
+          "es": "Aleph"
         },
         "hebrew_symbol": "א",
         "hebrew_unicode": "U+05D0",
         "sephirothic_connection": {
           "en": "Kether – Chokmah",
           "ru": "Кетер – Хокма",
-          "es": "Kéter – Jokmá"
+          "es": "Kether – Chokmah"
         },
         "interpretation": {
           "en": "This path represents the flow of pure creative force from the unknowable source (Kether) into the first spark of differentiated wisdom (Chokmah). It suggests initiation through direct experience of unity, where insight arises before form.",
           "ru": "Этот путь представляет поток чистой созидательной силы из непознаваемого источника (Кетер) в первую искру дифференцированной мудрости (Хокма). Он предполагает инициацию через непосредственный опыт единства, где прозрение возникает раньше формы.",
-          "es": "Este sendero representa el flujo de la fuerza creativa pura desde la fuente incognoscible (Kéter) hacia la primera chispa de sabiduría diferenciada (Jokmá). Sugiere la iniciación a través de la experiencia directa de la unidad, donde la intuición surge antes que la forma."
+          "es": "Este camino representa el flujo de fuerza creativa pura desde la fuente incognoscible (Kether) hacia la primera chispa de sabiduría diferenciada (Chokmah). Sugiere una iniciación a través de la experiencia directa de la unidad, donde la comprensión surge antes que la forma."
         },
         "notes": {
           "en": "Traditional Golden Dawn attribution used in RWS-influenced systems.",
           "ru": "Традиционная атрибуция Golden Dawn, используемая в системах, связанных с RWS.",
-          "es": "Atribución tradicional de la Golden Dawn utilizada en los sistemas influenciados por el RWS."
+          "es": "Atribución tradicional de la Golden Dawn utilizada en sistemas influenciados por el RWS."
         }
       },
       "visual_elements": [
@@ -38,24 +38,24 @@
           "element": {
             "en": "The youthful figure at the cliff edge",
             "ru": "Юная фигура на краю обрыва",
-            "es": "La joven figura al borde del acantilado"
+            "es": "La figura juvenil al borde del precipicio"
           },
           "description": {
             "en": "A young traveller in colourful, motley clothing walks lightly toward a precipice, one foot already in motion. This expresses readiness to begin, momentum, and a willingness to learn by doing—even without a full plan. The cliff itself marks the threshold between the known and the unknown, the moment of risk and possibility.",
             "ru": "Молодой путник в разноцветной, пёстрой одежде легко шагает к обрыву, уже сделав шаг вперёд. Это выражает готовность начать, движение вперёд и желание учиться на деле — даже без полного плана. Сам обрыв обозначает порог между известным и неизвестным, момент риска и возможностей.",
-            "es": "Un joven viajero con ropas coloridas y abigarradas camina ligero hacia un precipicio, con un pie ya en movimiento. Esto expresa disposición para comenzar, impulso, y voluntad de aprender haciendo — incluso sin un plan completo. El propio acantilado marca el umbral entre lo conocido y lo desconocido, el momento del riesgo y la posibilidad."
+            "es": "Un joven viajero con ropa colorida y variopinta camina ligero hacia un precipicio, con un pie ya en movimiento. Esto expresa disposición para comenzar, impulso y voluntad de aprender haciendo—incluso sin un plan completo. El propio precipicio marca el umbral entre lo conocido y lo desconocido, el momento de riesgo y posibilidad."
           }
         },
         {
           "element": {
             "en": "Upward gaze and open posture",
             "ru": "Взгляд вверх и открытая поза",
-            "es": "La mirada hacia arriba y la postura abierta"
+            "es": "Mirada hacia arriba y postura abierta"
           },
           "description": {
             "en": "The Fool looks up toward the sky/sun rather than down at the drop. This suggests trust, optimism, and 'beginner's mind': curiosity over calculation, faith over fear. It's the stance of someone guided by intuition and inspiration more than by caution.",
             "ru": "Шут смотрит вверх на небо и солнце, а не вниз на обрыв. Это указывает на доверие, оптимизм и 'сознание новичка': любопытство важнее расчёта, вера важнее страха. Это позиция человека, которым руководит интуиция и вдохновение, а не осторожность.",
-            "es": "El Loco mira hacia el cielo o el sol en lugar de hacia el precipicio. Esto sugiere confianza, optimismo y 'mente de principiante': curiosidad por encima del cálculo, fe por encima del miedo. Es la postura de alguien guiado más por la intuición y la inspiración que por la cautela."
+            "es": "El Loco mira hacia el cielo/sol en lugar de mirar hacia abajo, al precipicio. Esto sugiere confianza, optimismo y 'mente de principiante': la curiosidad por encima del cálculo, la fe por encima del miedo. Es la postura de alguien guiado por la intuición y la inspiración más que por la cautela."
           }
         },
         {
@@ -67,7 +67,7 @@
           "description": {
             "en": "The white rose stands for purity of intention, innocence, and desire raised to a higher, uncorrupted level. It signals that the Fool's motive is sincere and unburdened by cynicism or manipulation.",
             "ru": "Белая роза символизирует чистоту намерений, невинность и желание, поднятое на более высокий, неиспорченный уровень. Она указывает на то, что мотивы Шута искренни и не отягощены цинизмом или манипуляцией.",
-            "es": "La rosa blanca representa la pureza de intención, la inocencia, y el deseo elevado a un nivel superior e incorrupto. Señala que el motivo del Loco es sincero y no está cargado de cinismo ni manipulación."
+            "es": "La rosa blanca representa la pureza de intención, la inocencia y el deseo elevado a un nivel superior e incorrupto. Señala que el motivo del Loco es sincero y está libre de cinismo o manipulación."
           }
         },
         {
@@ -79,19 +79,19 @@
           "description": {
             "en": "Slung over the shoulder is a black staff bearing a tiny bundle of possessions. This represents the bare essentials for the journey: past experience and latent potential carried lightly, not as heavy baggage. The bundle hints at untapped knowledge or skills that will be discovered and shaped along the way.",
             "ru": "Через плечо перекинут чёрный посох с небольшим узелком вещей. Это символизирует лишь самое необходимое для пути: прошлый опыт и скрытый потенциал, которые несут легко, а не как тяжёлый багаж. Узелок намекает на нераскрытые знания или навыки, которые будут обнаружены и раскрыты по мере пути.",
-            "es": "Colgado del hombro hay un bastón negro con un pequeño hatillo de pertenencias. Esto representa lo esencial para el viaje: experiencia pasada y potencial latente llevados con ligereza, no como un equipaje pesado. El hatillo insinúa conocimientos o habilidades sin explotar que se descubrirán y desarrollarán en el camino."
+            "es": "Sobre el hombro lleva un bastón negro con un pequeño hatillo de pertenencias. Esto representa lo esencial para el viaje: experiencia pasada y potencial latente llevados con ligereza, no como un equipaje pesado. El hatillo sugiere conocimientos o habilidades no explotados que se descubrirán y desarrollarán en el camino."
           }
         },
         {
           "element": {
             "en": "The small white dog at his heels",
             "ru": "Маленькая белая собака у его ног",
-            "es": "El pequeño perro blanco a sus talones"
+            "es": "El pequeño perro blanco a sus pies"
           },
           "description": {
             "en": "The dog is instinct, loyalty, and the inner warning system. It both encourages the Fool forward and barks a caution about the edge—symbolising intuition that can protect if heeded, but which the Fool may cheerfully ignore in his enthusiasm.",
             "ru": "Собака символизирует инстинкт, преданность и внутреннюю систему предупреждения. Она одновременно подталкивает Шута вперёд и предупреждающе лает об обрыве — символизируя интуицию, которая может защитить, если её услышать, но которую Шут может весело игнорировать в своём энтузиазме.",
-            "es": "El perro es el instinto, la lealtad, y el sistema de alerta interior. Al mismo tiempo anima al Loco a avanzar y ladra advirtiendo sobre el borde — simbolizando una intuición que puede proteger si se le presta atención, pero que el Loco puede alegremente ignorar en su entusiasmo."
+            "es": "El perro representa el instinto, la lealtad y el sistema interno de advertencia. Al mismo tiempo anima al Loco a avanzar y ladra advirtiendo sobre el borde—simbolizando una intuición que puede proteger si se le escucha, pero que el Loco puede ignorar alegremente en su entusiasmo."
           }
         },
         {
@@ -103,7 +103,7 @@
           "description": {
             "en": "The distant peaks signify future challenges, trials already crossed in spirit, and the long arc of growth ahead. They remind us that the journey has stages and obstacles, even if the Fool is focused only on the first step.",
             "ru": "Далёкие вершины символизируют будущие испытания, преодоленные духом трудности и долгий путь роста впереди. Они напоминают, что путешествие состоит из этапов и препятствий, даже если Шут сосредоточен лишь на первом шаге.",
-            "es": "Los picos lejanos significan los desafíos futuros, las pruebas ya superadas en espíritu, y el largo arco de crecimiento por delante. Nos recuerdan que el viaje tiene etapas y obstáculos, aunque el Loco esté concentrado únicamente en el primer paso."
+            "es": "Los picos lejanos significan futuros desafíos, pruebas ya superadas en espíritu, y el largo arco de crecimiento por venir. Nos recuerdan que el viaje tiene etapas y obstáculos, aunque el Loco esté centrado solo en el primer paso."
           }
         },
         {
@@ -115,26 +115,2108 @@
           "description": {
             "en": "The radiant sun overhead represents clarity, illumination, and divine guidance. The light suggests a clean slate—awareness before fear or expectation colours it—and spiritual support for the leap.",
             "ru": "Сияющее солнце над головой символизирует ясность, озарение и божественное руководство. Свет намекает на чистый лист — осознанность до того, как её окрасят страх или ожидания — и духовную поддержку для прыжка.",
-            "es": "El sol radiante en lo alto representa claridad, iluminación y guía divina. La luz sugiere una hoja en blanco — conciencia antes de que el miedo o la expectativa la tiñan — y apoyo espiritual para el salto."
+            "es": "El sol radiante en lo alto representa claridad, iluminación y guía divina. La luz sugiere una página en blanco—conciencia antes de que el miedo o la expectativa la coloreen—y apoyo espiritual para el salto."
           }
         },
         {
           "element": {
             "en": "Number 0 (or unnumbered)",
             "ru": "Число 0 (или без номера)",
-            "es": "Número 0 (o sin numerar)"
+            "es": "El número 0 (o sin numerar)"
           },
           "description": {
             "en": "As 0, The Fool is the void that contains all possibilities: the egg-point from which the rest of the Major Arcana unfolds. Numerologically it denotes potential, emptiness, and the source from which all numbers (and experiences) emerge.",
             "ru": "Как число 0, Шут представляет собой пустоту, содержащую все возможности: точку-исток, из которой разворачиваются все остальные Старшие Арканы. Нумерологически это обозначает потенциал, пустоту и источник, из которого возникают все числа (и опыт).",
-            "es": "Como el número 0, El Loco es el vacío que contiene todas las posibilidades: el punto-huevo del que se despliega el resto de los Arcanos Mayores. Numerológicamente denota potencial, vacío, y la fuente de la que surgen todos los números (y experiencias)."
+            "es": "Como el 0, El Loco es el vacío que contiene todas las posibilidades: el punto germinal desde el cual se despliega el resto de los Arcanos Mayores. Numerológicamente denota potencial, vacío y la fuente de la que emergen todos los números (y experiencias)."
           }
         }
       ],
       "deck_specific_divination_and_symbolism": {
         "en": "In RWS, The Fool emphasises the moment of first movement—the instant before experience hardens into pattern. It is the card of pure potential and the courage to begin. Divinationally it often marks unexpected opportunities, travel, or a call to trust intuition over planning. Symbolically it is the archetypal wanderer whose innocence is not ignorance but a conscious choice to remain open to life.",
-        "ru": "В RWS Шут подчёркивает момент первого движения — миг до того, как опыт застывает в устойчивый паттерн. Это карта чистого потенциала и смелости начать. В гадании часто указывает на неожиданные возможности, путешествия или призыв доверять интуиции больше, чем планированию. Символически это архетипический странник, чья невинность не является невежеством, а осознанным выбором оставаться открытым жизни.",
-        "es": "En el RWS, El Loco enfatiza el momento del primer movimiento — el instante antes de que la experiencia se solidifique en un patrón. Es la carta del potencial puro y el valor de comenzar. En la adivinación, a menudo señala oportunidades inesperadas, viajes, o un llamado a confiar en la intuición más que en la planificación. Simbólicamente es el vagabundo arquetípico cuya inocencia no es ignorancia, sino una elección consciente de permanecer abierto a la vida."
+        "ru": "В RWS Шут подчёркивает момент первого движения — миг до того, как опыт застывает в устойчивый паттерн. Это карта чистого потенциала и смелости начать. В гадании часто отмечает неожиданные возможности, путешествия или призыв доверять интуиции больше, чем планированию. Символически это архетипический странник, чья невинность не является невежеством, а осознанным выбором оставаться открытым жизни.",
+        "es": "En el RWS, El Loco enfatiza el momento del primer movimiento—el instante antes de que la experiencia se convierta en patrón. Es la carta del potencial puro y el valor de comenzar. En la adivinación suele marcar oportunidades inesperadas, viajes, o un llamado a confiar en la intuición más que en la planificación. Simbólicamente es el errante arquetípico cuya inocencia no es ignorancia, sino una elección consciente de permanecer abierto a la vida."
+      }
+    },
+    "major-1": {
+      "qabalah": {
+        "path_number": "12",
+        "hebrew_letter": {
+          "en": "Beth",
+          "ru": "Бет",
+          "es": "Beth"
+        },
+        "hebrew_symbol": "ב",
+        "hebrew_unicode": "U+05D1",
+        "sephirothic_connection": {
+          "en": "Kether – Binah",
+          "ru": "Кетер – Бина",
+          "es": "Kether – Binah"
+        },
+        "interpretation": {
+          "en": "This path channels the raw creative impulse of Kether down into Binah, the sphere of form-giving understanding. It suggests the moment thought becomes structured intention—will refined into a plan ready for manifestation.",
+          "ru": "Этот путь направляет изначальный созидательный импульс Кетер вниз в Бину, сферу формообразующего понимания. Он символизирует момент, когда мысль становится структурированным намерением — воля, отточенная в план, готовый к проявлению.",
+          "es": "Este camino canaliza el impulso creativo bruto de Kether hacia Binah, la esfera de la comprensión que da forma. Sugiere el momento en que el pensamiento se convierte en intención estructurada—la voluntad refinada en un plan listo para manifestarse."
+        },
+        "notes": {
+          "en": "Traditional Golden Dawn attribution used in RWS-influenced systems.",
+          "ru": "Традиционная атрибуция Golden Dawn, используемая в системах, связанных с RWS.",
+          "es": "Atribución tradicional de la Golden Dawn utilizada en sistemas influenciados por el RWS."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The lemniscate (infinity symbol) above the head",
+            "ru": "Лемниската (символ бесконечности) над головой",
+            "es": "La lemniscata (símbolo del infinito) sobre la cabeza"
+          },
+          "description": {
+            "en": "A horizontal figure-eight hovers above the Magician's head, representing boundless potential and connection to the infinite flow of spirit. It signals that the Magician does not generate energy but conducts it—accessing limitless creative resources when aligned.",
+            "ru": "Горизонтальная восьмёрка парит над головой Мага, представляя безграничный потенциал и связь с бесконечным потоком духа. Она указывает на то, что Маг не создаёт энергию, а проводит её — получая доступ к неограниченным созидательным ресурсам при правильной настройке.",
+            "es": "Un ocho horizontal flota sobre la cabeza del Mago, representando el potencial ilimitado y la conexión con el flujo infinito del espíritu. Señala que el Mago no genera energía sino que la conduce—accediendo a recursos creativos ilimitados cuando está alineado."
+          }
+        },
+        {
+          "element": {
+            "en": "Raised right hand and downward-pointing left hand",
+            "ru": "Поднятая правая рука и опущенная левая рука",
+            "es": "Mano derecha levantada y mano izquierda señalando hacia abajo"
+          },
+          "description": {
+            "en": "One hand reaches toward the sky, the other points to the earth, embodying the Hermetic axiom 'as above, so below'. This posture shows the Magician as a conduit between spiritual and material realms, drawing from the unseen and grounding it in form.",
+            "ru": "Одна рука устремлена к небу, другая указывает на землю, воплощая герметическую аксиому 'как вверху, так и внизу'. Эта поза показывает Мага как проводника между духовным и материальным мирами, извлекающего из невидимого и закрепляющего это в форме.",
+            "es": "Una mano se extiende hacia el cielo, la otra señala hacia la tierra, encarnando el axioma hermético 'como arriba, es abajo'. Esta postura muestra al Mago como un conducto entre los reinos espiritual y material, extrayendo de lo invisible y anclándolo en la forma."
+          }
+        },
+        {
+          "element": {
+            "en": "The white wand held aloft",
+            "ru": "Белый жезл, поднятый вверх",
+            "es": "La varita blanca en alto"
+          },
+          "description": {
+            "en": "A white wand raised high symbolises activated will and purity of intention. Unlike a wand laid aside, this one is already in motion—willpower engaged and directed toward manifestation.",
+            "ru": "Белый жезл, поднятый высоко, символизирует активированную волю и чистоту намерения. В отличие от отложенного жезла, этот уже находится в движении — сила воли задействована и направлена на проявление.",
+            "es": "Una varita blanca elevada simboliza la voluntad activada y la pureza de intención. A diferencia de una varita dejada a un lado, esta ya está en movimiento—la fuerza de voluntad comprometida y dirigida hacia la manifestación."
+          }
+        },
+        {
+          "element": {
+            "en": "The four elemental tools on the table (wand, cup, sword, pentacle)",
+            "ru": "Четыре стихийных инструмента на столе (жезл, чаша, меч, пентакль)",
+            "es": "Las cuatro herramientas elementales sobre la mesa (varita, copa, espada, pentáculo)"
+          },
+          "description": {
+            "en": "The four Minor Arcana suits are arranged on the altar: wand (fire/passion), cup (water/emotion), sword (air/intellect), pentacle (earth/material). Together they represent all the building blocks of creation at the Magician's disposal—he has every resource needed to manifest.",
+            "ru": "Четыре масти Младших Арканов расположены на алтаре: жезл (огонь/страсть), чаша (вода/эмоции), меч (воздух/интеллект), пентакль (земля/материя). Вместе они представляют все составляющие созидания, доступные Магу — у него есть все ресурсы, необходимые для проявления.",
+            "es": "Los cuatro palos del Arcano Menor están dispuestos en el altar: varita (fuego/pasión), copa (agua/emoción), espada (aire/intelecto), pentáculo (tierra/material). Juntos representan todos los elementos de la creación a disposición del Mago—tiene todos los recursos necesarios para manifestar."
+          }
+        },
+        {
+          "element": {
+            "en": "The square table or altar",
+            "ru": "Квадратный стол или алтарь",
+            "es": "La mesa o altar cuadrado"
+          },
+          "description": {
+            "en": "The solid, square table represents the foundation of the elements and the material plane. It is the stable ground upon which spirit is anchored into form—the quintessence (spirit) made manifest through the four elements.",
+            "ru": "Прочный квадратный стол представляет основу стихий и материального плана. Это устойчивая опора, на которой дух закрепляется в форме — квинтэссенция (дух), проявленная через четыре стихии.",
+            "es": "La mesa cuadrada y sólida representa la base de los elementos y el plano material. Es el terreno estable sobre el cual el espíritu se ancla en la forma—la quintaesencia (espíritu) manifestada a través de los cuatro elementos."
+          }
+        },
+        {
+          "element": {
+            "en": "The red robe and white garments",
+            "ru": "Красная мантия и белые одеяния",
+            "es": "La túnica roja y las prendas blancas"
+          },
+          "description": {
+            "en": "The Magician wears a red cloak over white robes: red for action, vitality, and material engagement; white for purity, spiritual clarity, and higher intention. The combination shows spiritual power expressed through active, worldly means.",
+            "ru": "Маг носит красный плащ над белыми одеяниями: красный символизирует действие, жизненную силу и вовлечённость в материальный мир; белый — чистоту, духовную ясность и высшее намерение. Это сочетание показывает духовную силу, выраженную через активные, мирские средства.",
+            "es": "El Mago lleva una capa roja sobre túnicas blancas: el rojo por la acción, la vitalidad y el compromiso material; el blanco por la pureza, la claridad espiritual y la intención superior. La combinación muestra el poder espiritual expresado a través de medios activos y mundanos."
+          }
+        },
+        {
+          "element": {
+            "en": "The ouroboros belt (serpent swallowing its tail)",
+            "ru": "Пояс-уроборос (змея, кусающая свой хвост)",
+            "es": "El cinturón uróboros (serpiente que se traga su propia cola)"
+          },
+          "description": {
+            "en": "A serpent encircles the Magician's waist, swallowing its own tail. This symbolises the endless cycle of mastery—each completion becomes a new beginning—and the integration of opposing forces into a unified, self-renewing whole.",
+            "ru": "Змея обвивает пояс Мага, кусая собственный хвост. Это символизирует бесконечный цикл мастерства — каждое завершение становится новым началом — и интеграцию противоположных сил в единое, самообновляющееся целое.",
+            "es": "Una serpiente rodea la cintura del Mago, tragándose su propia cola. Esto simboliza el ciclo infinito de la maestría—cada finalización se convierte en un nuevo comienzo—y la integración de fuerzas opuestas en un todo unificado y auto-renovable."
+          }
+        },
+        {
+          "element": {
+            "en": "Red roses and white lilies in the background",
+            "ru": "Красные розы и белые лилии на фоне",
+            "es": "Rosas rojas y lirios blancos de fondo"
+          },
+          "description": {
+            "en": "Red roses and white lilies grow behind the Magician, representing desire and purity, passion and spiritual clarity. They frame his work as a balance between heartfelt drive and clean, uncorrupted intention.",
+            "ru": "Красные розы и белые лилии растут за спиной Мага, представляя желание и чистоту, страсть и духовную ясность. Они обрамляют его труд как баланс между искренним стремлением и чистым, неиспорченным намерением.",
+            "es": "Rosas rojas y lirios blancos crecen detrás del Mago, representando el deseo y la pureza, la pasión y la claridad espiritual. Enmarcan su labor como un equilibrio entre el impulso sincero y la intención limpia e incorrupta."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, The Magician emphasises conscious will, skill, and the practical mechanics of manifestation. It is the card of 'you have everything you need'—tools, talent, and opportunity aligned. Divinationally it often marks a moment to act decisively, use one's gifts, and take responsibility for outcomes. Symbolically it is the first active Major Arcana card after The Fool's potential: the point where possibility becomes deliberate creation.",
+        "ru": "В RWS Маг подчёркивает осознанную волю, мастерство и практическую механику проявления. Это карта 'у вас есть всё необходимое' — инструменты, талант и возможность в гармонии. В гадании часто отмечает момент решительных действий, использования своих даров и принятия ответственности за результаты. Символически это первая активная карта Старших Арканов после потенциала Шута: точка, где возможность становится осознанным творением.",
+        "es": "En el RWS, El Mago enfatiza la voluntad consciente, la habilidad y la mecánica práctica de la manifestación. Es la carta de 'tienes todo lo que necesitas'—herramientas, talento y oportunidad alineados. En la adivinación suele marcar un momento para actuar con decisión, usar los propios dones y asumir la responsabilidad de los resultados. Simbólicamente es la primera carta activa del Arcano Mayor tras el potencial de El Loco: el punto donde la posibilidad se convierte en creación deliberada."
+      }
+    },
+    "major-2": {
+      "qabalah": {
+        "path_number": "13",
+        "hebrew_letter": {
+          "en": "Gimel",
+          "ru": "Гимель",
+          "es": "Gimel"
+        },
+        "hebrew_symbol": "ג",
+        "hebrew_unicode": "U+05D2",
+        "sephirothic_connection": {
+          "en": "Kether – Tiphareth",
+          "ru": "Кетер – Тиферет",
+          "es": "Kether – Tiphareth"
+        },
+        "interpretation": {
+          "en": "This path carries the direct, hidden channel from the crown of pure being (Kether) down to the heart of harmony (Tiphareth), bypassing the more differentiated Sephiroth. It represents intuitive knowledge that arrives whole, without the mediation of logic.",
+          "ru": "Этот путь несёт прямой, скрытый канал от венца чистого бытия (Кетер) к сердцу гармонии (Тиферет), минуя более дифференцированные Сфирот. Он представляет интуитивное знание, приходящее целостным, без посредничества логики.",
+          "es": "Este camino porta el canal directo y oculto desde la corona del ser puro (Kether) hasta el corazón de la armonía (Tiphareth), sin pasar por las Sephiroth más diferenciadas. Representa el conocimiento intuitivo que llega completo, sin la mediación de la lógica."
+        },
+        "notes": {
+          "en": "Gimel means 'camel'—the vehicle that crosses the desert void, linking the highest and the central points of the Tree directly.",
+          "ru": "Гимель означает 'верблюд' — средство, пересекающее пустынную пустоту, напрямую соединяя высшую и центральную точки Древа.",
+          "es": "Gimel significa 'camello'—el vehículo que atraviesa el vacío del desierto, uniendo directamente el punto más alto y el punto central del Árbol."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The veil of pomegranates behind her",
+            "ru": "Завеса из гранатов позади неё",
+            "es": "El velo de granadas detrás de ella"
+          },
+          "description": {
+            "en": "A veil embroidered with pomegranates (a symbol of fertility and hidden abundance) separates her from the water beyond, marking the boundary between what can be known and what remains veiled until one is ready.",
+            "ru": "Завеса, расшитая гранатами (символ плодородия и скрытого изобилия), отделяет её от воды за ней, обозначая границу между тем, что можно познать, и тем, что остаётся сокрытым до готовности.",
+            "es": "Un velo bordado con granadas (símbolo de fertilidad y abundancia oculta) la separa del agua detrás, marcando el límite entre lo que puede conocerse y lo que permanece velado hasta estar preparado."
+          }
+        },
+        {
+          "element": {
+            "en": "The pillars of Boaz and Jachin",
+            "ru": "Колонны Боаз и Иахин",
+            "es": "Las columnas de Boaz y Jachin"
+          },
+          "description": {
+            "en": "The black pillar (Boaz, severity) and white pillar (Jachin, mercy) flank her throne, echoing the Temple of Solomon and the Kabbalistic pillars of the Tree of Life—she sits in the Middle Pillar of balance between opposing forces.",
+            "ru": "Чёрная колонна (Боаз, строгость) и белая колонна (Иахин, милосердие) обрамляют её трон, отсылая к Храму Соломона и каббалистическим колоннам Древа Жизни — она восседает в Срединном столпе равновесия между противоборствующими силами.",
+            "es": "La columna negra (Boaz, severidad) y la blanca (Jachin, misericordia) flanquean su trono, evocando el Templo de Salomón y los pilares cabalísticos del Árbol de la Vida—ella se sienta en el Pilar Medio, el equilibrio entre fuerzas opuestas."
+          }
+        },
+        {
+          "element": {
+            "en": "The scroll of Torah (TORA)",
+            "ru": "Свиток Торы (TORA)",
+            "es": "El pergamino de la Torá (TORA)"
+          },
+          "description": {
+            "en": "Held partly hidden in her lap, the scroll marked 'TORA' represents esoteric law and memory—divine wisdom that is only partially revealed, inviting deeper study rather than passive reading.",
+            "ru": "Частично скрытый на коленях свиток с надписью 'TORA' символизирует эзотерический закон и память — божественную мудрость, раскрытую лишь частично, приглашающую к более глубокому изучению, а не к пассивному чтению.",
+            "es": "Sostenido parcialmente oculto en su regazo, el pergamino marcado 'TORA' representa la ley esotérica y la memoria—sabiduría divina revelada solo en parte, que invita a un estudio más profundo en lugar de una lectura pasiva."
+          }
+        },
+        {
+          "element": {
+            "en": "The lunar crescent at her feet",
+            "ru": "Лунный серп у её ног",
+            "es": "La luna creciente a sus pies"
+          },
+          "description": {
+            "en": "A crescent moon rests beneath her feet, tying her to the Moon's rhythms of ebb and reflection, and to the tides of the unconscious mind that rise and recede beyond conscious control.",
+            "ru": "Полумесяц покоится у её ног, связывая её с лунными ритмами прилива и отражения, а также с приливами бессознательного разума, которые поднимаются и отступают вне сознательного контроля.",
+            "es": "Una luna creciente descansa bajo sus pies, vinculándola a los ritmos lunares de flujo y reflejo, y a las mareas de la mente inconsciente que suben y bajan más allá del control consciente."
+          }
+        },
+        {
+          "element": {
+            "en": "The equal-armed cross on her chest",
+            "ru": "Равносторонний крест на груди",
+            "es": "La cruz de brazos iguales en su pecho"
+          },
+          "description": {
+            "en": "A solar cross rests on her breast, balancing her lunar, receptive nature with an inner solar consciousness—suggesting that true intuition integrates both light and shadow rather than favouring one.",
+            "ru": "Солнечный крест покоится на её груди, уравновешивая её лунную, восприимчивую природу внутренним солнечным сознанием — предполагая, что истинная интуиция объединяет и свет, и тень, а не отдаёт предпочтение одному.",
+            "es": "Una cruz solar descansa sobre su pecho, equilibrando su naturaleza lunar y receptiva con una conciencia solar interior—sugiriendo que la intuición verdadera integra tanto la luz como la sombra, sin favorecer a ninguna."
+          }
+        },
+        {
+          "element": {
+            "en": "The still water beyond the veil",
+            "ru": "Спокойная вода за завесой",
+            "es": "El agua quieta más allá del velo"
+          },
+          "description": {
+            "en": "Glimpsed past the veil, calm water represents the vast unconscious sea from which all symbols and dreams arise—inaccessible directly, but sensed by anyone attuned enough to notice it.",
+            "ru": "Видимая за завесой спокойная вода символизирует необъятное бессознательное море, из которого возникают все символы и сны — недоступное напрямую, но ощутимое для того, кто достаточно настроен, чтобы его заметить.",
+            "es": "Vislumbrada tras el velo, el agua en calma representa el vasto mar inconsciente del que surgen todos los símbolos y sueños—inaccesible directamente, pero percibido por quien esté lo bastante sintonizado para notarlo."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the High Priestess is the card of the veiled threshold: she does not act, she guards and reveals only what is ready to be known. Divinationally she counsels patience, inner listening, and trust in dreams, gut feelings, and quiet signs rather than forced conclusions. She is closely tied to Waite's own esoteric framing of hidden Christian-Kabbalistic mysteries beneath the everyday.",
+        "ru": "В RWS Верховная Жрица — карта скрытого порога: она не действует, а охраняет и раскрывает лишь то, что готово быть познанным. В гадании она советует терпение, внутреннее слушание и доверие снам, интуитивным ощущениям и тихим знакам, а не форсированным выводам. Она тесно связана с собственным эзотерическим прочтением Уэйта скрытых христианско-каббалистических тайн под повседневностью.",
+        "es": "En el RWS, la Sacerdotisa es la carta del umbral velado: no actúa, custodia y revela solo lo que está listo para conocerse. En la adivinación aconseja paciencia, escucha interior y confianza en los sueños, la intuición y las señales silenciosas en lugar de conclusiones forzadas. Está estrechamente ligada al propio marco esotérico de Waite sobre misterios cabalístico-cristianos ocultos bajo lo cotidiano."
+      }
+    },
+    "major-3": {
+      "qabalah": {
+        "path_number": "14",
+        "hebrew_letter": {
+          "en": "Dalet",
+          "ru": "Далет",
+          "es": "Daleth"
+        },
+        "hebrew_symbol": "ד",
+        "hebrew_unicode": "U+05D3",
+        "sephirothic_connection": {
+          "en": "Chokmah – Binah",
+          "ru": "Хокма – Бина",
+          "es": "Chokmah – Binah"
+        },
+        "interpretation": {
+          "en": "This path joins the Supernal Father (Chokmah, dynamic force) to the Supernal Mother (Binah, receptive form), the union from which all further structure descends. It is the primal marriage of energy and form.",
+          "ru": "Этот путь соединяет Наднебесного Отца (Хокма, динамическая сила) с Наднебесной Матерью (Бина, восприимчивая форма) — союз, из которого нисходит вся дальнейшая структура. Это изначальный брак энергии и формы.",
+          "es": "Este camino une al Padre Supernal (Chokmah, fuerza dinámica) con la Madre Supernal (Binah, forma receptiva), la unión de la que desciende toda estructura posterior. Es el matrimonio primordial de energía y forma."
+        },
+        "notes": {
+          "en": "Daleth means 'door'—the Empress is the doorway through which formless force becomes fertile, structured creation.",
+          "ru": "Далет означает 'дверь' — Императрица есть врата, через которые бесформенная сила становится плодородным, структурированным творением.",
+          "es": "Daleth significa 'puerta'—la Emperatriz es la puerta por la cual la fuerza sin forma se convierte en creación fértil y estructurada."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The wheat field at her feet",
+            "ru": "Пшеничное поле у её ног",
+            "es": "El campo de trigo a sus pies"
+          },
+          "description": {
+            "en": "Ripe, golden wheat surrounds her throne, a direct symbol of harvest, fertility, and Venusian abundance made tangible in the material world.",
+            "ru": "Спелая золотая пшеница окружает её трон — прямой символ урожая, плодородия и венерианского изобилия, воплощённого в материальном мире.",
+            "es": "Trigo dorado y maduro rodea su trono, un símbolo directo de cosecha, fertilidad y abundancia venusina hecha tangible en el mundo material."
+          }
+        },
+        {
+          "element": {
+            "en": "The cushioned throne with Venus symbol",
+            "ru": "Мягкий трон со знаком Венеры",
+            "es": "El trono acolchado con el símbolo de Venus"
+          },
+          "description": {
+            "en": "A heart-shaped shield bearing the astrological glyph of Venus rests against her throne, anchoring the card firmly to love, beauty, and sensual pleasure as active creative forces.",
+            "ru": "Щит в форме сердца с астрологическим символом Венеры прислонён к её трону, прочно связывая карту с любовью, красотой и чувственным наслаждением как активными созидательными силами.",
+            "es": "Un escudo en forma de corazón con el glifo astrológico de Venus descansa junto a su trono, anclando firmemente la carta al amor, la belleza y el placer sensual como fuerzas creativas activas."
+          }
+        },
+        {
+          "element": {
+            "en": "The flowing river and waterfall",
+            "ru": "Текущая река и водопад",
+            "es": "El río fluido y la cascada"
+          },
+          "description": {
+            "en": "Water moves freely behind her, representing emotional flow, fertility, and the life-giving currents that feed the lush garden she inhabits.",
+            "ru": "Вода свободно течёт позади неё, символизируя эмоциональный поток, плодородие и живительные течения, питающие пышный сад, в котором она обитает.",
+            "es": "El agua fluye libremente detrás de ella, representando el flujo emocional, la fertilidad y las corrientes vivificantes que alimentan el exuberante jardín que habita."
+          }
+        },
+        {
+          "element": {
+            "en": "The crown of twelve stars",
+            "ru": "Венец из двенадцати звёзд",
+            "es": "La corona de doce estrellas"
+          },
+          "description": {
+            "en": "Twelve stars encircle her crown, echoing the zodiac and suggesting her dominion extends over the full cycle of time, seasons, and cosmic order.",
+            "ru": "Двенадцать звёзд окружают её венец, отсылая к зодиаку и намекая, что её владычество распространяется на полный цикл времени, времён года и космического порядка.",
+            "es": "Doce estrellas rodean su corona, evocando el zodíaco y sugiriendo que su dominio se extiende sobre el ciclo completo del tiempo, las estaciones y el orden cósmico."
+          }
+        },
+        {
+          "element": {
+            "en": "Her pregnant, relaxed posture",
+            "ru": "Её беременная, расслабленная поза",
+            "es": "Su postura embarazada y relajada"
+          },
+          "description": {
+            "en": "She reclines at ease, often depicted as visibly pregnant, embodying creation that is already underway and unfolding at its own unhurried pace.",
+            "ru": "Она непринуждённо возлежит, часто изображаемая явно беременной, воплощая творение, которое уже началось и разворачивается в своём неспешном темпе.",
+            "es": "Se reclina con soltura, a menudo representada visiblemente embarazada, encarnando una creación que ya está en marcha y se despliega a su propio ritmo, sin prisa."
+          }
+        },
+        {
+          "element": {
+            "en": "The dense forest surrounding the clearing",
+            "ru": "Густой лес, окружающий поляну",
+            "es": "El bosque denso que rodea el claro"
+          },
+          "description": {
+            "en": "Lush trees enclose her garden clearing, marking it as a protected, fertile sanctuary set apart from the wilder, untamed world beyond.",
+            "ru": "Пышные деревья окружают её лесную поляну, обозначая её как защищённое, плодородное святилище, обособленное от более дикого, неукрощённого мира снаружи.",
+            "es": "Árboles frondosos rodean el claro de su jardín, marcándolo como un santuario protegido y fértil, apartado del mundo más salvaje e indómito."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Empress is nature's own creative principle brought to full, comfortable maturity—the necessary complement to the Magician's willed action and the High Priestess's hidden potential. Divinationally she often signals pregnancy (literal or metaphorical), artistic flourishing, or an invitation to slow down and enjoy abundance rather than chase it.",
+        "ru": "В RWS Императрица — это собственный созидательный принцип природы, доведённый до полной, спокойной зрелости — необходимое дополнение к волевому действию Мага и скрытому потенциалу Верховной Жрицы. В гадании она часто указывает на беременность (буквальную или метафорическую), художественный расцвет или приглашение замедлиться и наслаждаться изобилием, а не гнаться за ним.",
+        "es": "En el RWS, la Emperatriz es el propio principio creativo de la naturaleza llevado a plena y cómoda madurez—el complemento necesario a la acción voluntaria del Mago y al potencial oculto de la Sacerdotisa. En la adivinación suele señalar embarazo (literal o metafórico), florecimiento artístico, o una invitación a bajar el ritmo y disfrutar de la abundancia en lugar de perseguirla."
+      }
+    },
+    "major-4": {
+      "qabalah": {
+        "path_number": "15",
+        "hebrew_letter": {
+          "en": "He",
+          "ru": "Хе",
+          "es": "He"
+        },
+        "hebrew_symbol": "ה",
+        "hebrew_unicode": "U+05D4",
+        "sephirothic_connection": {
+          "en": "Chokmah – Tiphareth",
+          "ru": "Хокма – Тиферет",
+          "es": "Chokmah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "This path channels the dynamic force of Chokmah directly down to the harmonising heart of Tiphareth, expressed here as governing will that shapes the self and the world into balanced order.",
+          "ru": "Этот путь передаёт динамическую силу Хокма напрямую к гармонизирующему сердцу Тиферет, выражаясь здесь как правящая воля, придающая себе и миру уравновешенный порядок.",
+          "es": "Este camino canaliza la fuerza dinámica de Chokmah directamente hacia el corazón armonizador de Tiphareth, expresado aquí como la voluntad gobernante que da al yo y al mundo un orden equilibrado."
+        },
+        "notes": {
+          "en": "Traditional Golden Dawn attribution as used by Waite; associated with Aries and Mars-like assertive will.",
+          "ru": "Традиционная атрибуция Golden Dawn, использованная Уэйтом; связана с Овном и марсианской, напористой волей.",
+          "es": "Atribución tradicional de la Golden Dawn utilizada por Waite; asociada con Aries y una voluntad asertiva de tipo marcial."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The stone throne carved with ram heads",
+            "ru": "Каменный трон с резными головами баранов",
+            "es": "El trono de piedra tallado con cabezas de carnero"
+          },
+          "description": {
+            "en": "Ram heads reference Aries, cardinal fire, and the assertive, initiating will that founds new structures and defends existing ones.",
+            "ru": "Головы баранов отсылают к Овну, кардинальному огню и напористой, инициирующей воле, основывающей новые структуры и защищающей уже существующие.",
+            "es": "Las cabezas de carnero remiten a Aries, el fuego cardinal, y la voluntad asertiva e iniciadora que funda nuevas estructuras y defiende las existentes."
+          }
+        },
+        {
+          "element": {
+            "en": "The ankh-topped sceptre",
+            "ru": "Скипетр с навершием в виде анкха",
+            "es": "El cetro rematado en ankh"
+          },
+          "description": {
+            "en": "His sceptre, an Egyptian ankh, unites worldly rulership with life-giving spiritual authority—power exercised in service of life, not merely domination for its own sake.",
+            "ru": "Его скипетр — египетский анкх — объединяет мирскую власть с животворящим духовным авторитетом: власть, применяемая на службе жизни, а не просто ради господства.",
+            "es": "Su cetro, un ankh egipcio, une el gobierno mundano con la autoridad espiritual dadora de vida—el poder ejercido al servicio de la vida, no la mera dominación por sí misma."
+          }
+        },
+        {
+          "element": {
+            "en": "The golden orb in his left hand",
+            "ru": "Золотой шар в левой руке",
+            "es": "El orbe dorado en su mano izquierda"
+          },
+          "description": {
+            "en": "The orb of dominion signifies the whole world held in ordered grasp—territory, responsibility, and stewardship bound into a single symbol of governance.",
+            "ru": "Держава власти обозначает весь мир, удерживаемый в упорядоченной хватке — территорию, ответственность и попечительство, объединённые в единый символ правления.",
+            "es": "El orbe de dominio significa el mundo entero sostenido en un asimiento ordenado—territorio, responsabilidad y custodia unidos en un solo símbolo de gobierno."
+          }
+        },
+        {
+          "element": {
+            "en": "His rigid, armoured posture beneath robes",
+            "ru": "Его жёсткая, закованная в доспехи поза под мантией",
+            "es": "Su postura rígida y acorazada bajo los ropajes"
+          },
+          "description": {
+            "en": "Armour glimpsed beneath his red robe signals that his authority rests on readiness to defend, not on ceremony alone—stability backed by real strength held in reserve.",
+            "ru": "Доспехи, проглядывающие из-под красной мантии, указывают на то, что его власть опирается на готовность защищать, а не только на церемонию — стабильность, подкреплённая реальной силой, удерживаемой в резерве.",
+            "es": "La armadura que se vislumbra bajo su túnica roja indica que su autoridad se apoya en la disposición a defender, no solo en la ceremonia—estabilidad respaldada por una fuerza real mantenida en reserva."
+          }
+        },
+        {
+          "element": {
+            "en": "The barren, mountainous background",
+            "ru": "Бесплодный, гористый фон",
+            "es": "El fondo árido y montañoso"
+          },
+          "description": {
+            "en": "Unlike the Empress's lush garden, his backdrop is rocky and austere, showing that order and structure, not organic growth, are his domain and his gift.",
+            "ru": "В отличие от пышного сада Императрицы, его фон каменист и суров, показывая, что порядок и структура, а не органический рост, являются его владением и его даром.",
+            "es": "A diferencia del exuberante jardín de la Emperatriz, su fondo es rocoso y austero, mostrando que el orden y la estructura, no el crecimiento orgánico, son su dominio y su don."
+          }
+        },
+        {
+          "element": {
+            "en": "His long white beard",
+            "ru": "Его длинная белая борода",
+            "es": "Su larga barba blanca"
+          },
+          "description": {
+            "en": "The beard marks accumulated age and experience—authority earned through time and testing, not granted by youth or impulse.",
+            "ru": "Борода обозначает накопленный возраст и опыт — власть, заслуженную временем и испытаниями, а не дарованную молодостью или порывом.",
+            "es": "La barba marca la edad y la experiencia acumuladas—una autoridad ganada a través del tiempo y las pruebas, no otorgada por la juventud o el impulso."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Emperor is the necessary counterpart to the Empress's organic fertility: he gives lasting shape, law, and protection to what she brings forth. Divinationally he speaks to fatherhood, institutional power, discipline, and the responsible use of authority—warning, when reversed, against control that has curdled into rigidity or domination.",
+        "ru": "В RWS Император — необходимый противовес органическому плодородию Императрицы: он придаёт устойчивую форму, закон и защиту тому, что она порождает. В гадании он говорит об отцовстве, институциональной власти, дисциплине и ответственном использовании авторитета — предупреждая, в перевёрнутом положении, против контроля, скисшего в косность или господство.",
+        "es": "En el RWS, el Emperador es el contrapunto necesario a la fertilidad orgánica de la Emperatriz: da forma duradera, ley y protección a lo que ella engendra. En la adivinación habla de paternidad, poder institucional, disciplina y el uso responsable de la autoridad—advirtiendo, cuando está invertida, contra un control que se ha agriado en rigidez o dominación."
+      }
+    },
+    "major-5": {
+      "qabalah": {
+        "path_number": "16",
+        "hebrew_letter": {
+          "en": "Vav",
+          "ru": "Вав",
+          "es": "Vav"
+        },
+        "hebrew_symbol": "ו",
+        "hebrew_unicode": "U+05D5",
+        "sephirothic_connection": {
+          "en": "Chokmah – Chesed",
+          "ru": "Хокма – Хесед",
+          "es": "Chokmah – Chesed"
+        },
+        "interpretation": {
+          "en": "This path extends Chokmah's dynamic wisdom into Chesed's benevolent, ordering mercy—wisdom institutionalised as loving law, teaching, and guidance offered freely to those who would receive it.",
+          "ru": "Этот путь продолжает динамическую мудрость Хокма в благодетельное, упорядочивающее милосердие Хесед — мудрость, институционализированную как любящий закон, учение и наставление, свободно предлагаемое тем, кто готов его принять.",
+          "es": "Este camino extiende la sabiduría dinámica de Chokmah hacia la misericordia benevolente y ordenadora de Chesed—la sabiduría institucionalizada como ley amorosa, enseñanza y guía ofrecida libremente a quienes estén dispuestos a recibirla."
+        },
+        "notes": {
+          "en": "Vav means 'nail' or 'hook'—the linking word that joins ideas into coherent doctrine, much as the Hierophant links seeker to tradition.",
+          "ru": "Вав означает 'гвоздь' или 'крюк' — связующее слово, соединяющее идеи в целостную доктрину, подобно тому как Иерофант связывает ищущего с традицией.",
+          "es": "Vav significa 'clavo' o 'gancho'—la palabra de enlace que une las ideas en una doctrina coherente, igual que el Hierofante une al buscador con la tradición."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The triple cross and papal tiara",
+            "ru": "Тройной крест и папская тиара",
+            "es": "La cruz triple y la tiara papal"
+          },
+          "description": {
+            "en": "His triple crown and staff echo ecclesiastical authority, marking him as mediator of formal, organised spiritual teaching rather than solitary revelation.",
+            "ru": "Его тройная корона и посох отсылают к церковной власти, обозначая его как посредника формального, организованного духовного учения, а не одинокого откровения.",
+            "es": "Su triple corona y su báculo evocan la autoridad eclesiástica, marcándolo como mediador de una enseñanza espiritual formal y organizada, no de una revelación solitaria."
+          }
+        },
+        {
+          "element": {
+            "en": "The two acolytes kneeling before him",
+            "ru": "Два послушника, преклонившие колени перед ним",
+            "es": "Los dos acólitos arrodillados ante él"
+          },
+          "description": {
+            "en": "Two kneeling figures receive his blessing, showing doctrine passed from teacher to student—knowledge transmitted through relationship and lineage, not discovered alone.",
+            "ru": "Две коленопреклонённые фигуры принимают его благословение, показывая доктрину, передаваемую от учителя к ученику — знание, передаваемое через отношения и преемственность, а не открываемое в одиночку.",
+            "es": "Dos figuras arrodilladas reciben su bendición, mostrando la doctrina transmitida de maestro a alumno—el conocimiento transmitido a través de la relación y el linaje, no descubierto en solitario."
+          }
+        },
+        {
+          "element": {
+            "en": "The crossed keys at his feet",
+            "ru": "Скрещённые ключи у его ног",
+            "es": "Las llaves cruzadas a sus pies"
+          },
+          "description": {
+            "en": "Crossed golden and silver keys represent access to both conscious and subconscious knowledge, the unlocking of mysteries through sanctioned, structured means.",
+            "ru": "Скрещённые золотой и серебряный ключи символизируют доступ как к сознательному, так и к подсознательному знанию — раскрытие тайн через санкционированные, структурированные средства.",
+            "es": "Las llaves cruzadas de oro y plata representan el acceso tanto al conocimiento consciente como al subconsciente, el desvelamiento de misterios mediante medios sancionados y estructurados."
+          }
+        },
+        {
+          "element": {
+            "en": "The pillars echoing the High Priestess",
+            "ru": "Колонны, перекликающиеся с Верховной Жрицей",
+            "es": "Las columnas que evocan a la Sacerdotisa"
+          },
+          "description": {
+            "en": "Grey pillars behind him recall the High Priestess's black-and-white pair, suggesting the Hierophant makes public and communal what she guards in silence and privacy.",
+            "ru": "Серые колонны позади него напоминают чёрно-белую пару Верховной Жрицы, предполагая, что Иерофант делает публичным и общинным то, что она хранит в молчании и уединении.",
+            "es": "Las columnas grises detrás de él recuerdan el par blanco y negro de la Sacerdotisa, sugiriendo que el Hierofante hace público y comunitario lo que ella custodia en silencio y en privado."
+          }
+        },
+        {
+          "element": {
+            "en": "His raised hand in a gesture of blessing",
+            "ru": "Его поднятая рука в жесте благословения",
+            "es": "Su mano alzada en gesto de bendición"
+          },
+          "description": {
+            "en": "Two fingers raised, two folded—the traditional sign of blessing that links the visible and hidden worlds, exoteric teaching and esoteric mystery held together.",
+            "ru": "Два пальца подняты, два сложены — традиционный знак благословения, связывающий видимый и скрытый миры, экзотерическое учение и эзотерическую тайну, удерживаемые вместе.",
+            "es": "Dos dedos alzados, dos doblados—el signo tradicional de bendición que une el mundo visible y el oculto, la enseñanza exotérica y el misterio esotérico sostenidos juntos."
+          }
+        },
+        {
+          "element": {
+            "en": "The red robe over white undergarment",
+            "ru": "Красная мантия поверх белого одеяния",
+            "es": "La túnica roja sobre la vestimenta blanca interior"
+          },
+          "description": {
+            "en": "Red over white signals worldly authority (red) built upon and expressing an underlying spiritual purity (white)—outer institution serving inner truth.",
+            "ru": "Красный поверх белого обозначает мирскую власть (красный), выстроенную на основе и выражающую внутреннюю духовную чистоту (белый) — внешний институт, служащий внутренней истине.",
+            "es": "El rojo sobre el blanco señala la autoridad mundana (rojo) construida sobre y expresando una pureza espiritual subyacente (blanco)—la institución externa al servicio de la verdad interior."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Hierophant represents organised religion, formal education, and the value of tradition and mentorship as vehicles for spiritual growth—counterbalancing the High Priestess's private intuition with public, teachable doctrine. Divinationally he can point to marriage, formal commitment, conventional wisdom, or the guidance of a trusted teacher or institution.",
+        "ru": "В RWS Иерофант олицетворяет организованную религию, формальное образование и ценность традиции и наставничества как проводников духовного роста — уравновешивая частную интуицию Верховной Жрицы публичной, обучаемой доктриной. В гадании он может указывать на брак, формальные обязательства, общепринятую мудрость или наставничество доверенного учителя или института.",
+        "es": "En el RWS, el Hierofante representa la religión organizada, la educación formal y el valor de la tradición y la mentoría como vehículos para el crecimiento espiritual—contrapesando la intuición privada de la Sacerdotisa con una doctrina pública y enseñable. En la adivinación puede señalar matrimonio, compromiso formal, sabiduría convencional, o la guía de un maestro o institución de confianza."
+      }
+    },
+    "major-6": {
+      "qabalah": {
+        "path_number": "17",
+        "hebrew_letter": {
+          "en": "Zayin",
+          "ru": "Заин",
+          "es": "Zain"
+        },
+        "hebrew_symbol": "ז",
+        "hebrew_unicode": "U+05D6",
+        "sephirothic_connection": {
+          "en": "Binah – Tiphareth",
+          "ru": "Бина – Тиферет",
+          "es": "Binah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "This path connects Binah's understanding and form-giving discernment to Tiphareth's harmonious heart, expressing discrimination between choices resolved into unified, beautiful balance.",
+          "ru": "Этот путь соединяет понимание и формообразующее различение Бины с гармоничным сердцем Тиферет, выражая различение между выборами, разрешаемое в единое, прекрасное равновесие.",
+          "es": "Este camino conecta la comprensión y el discernimiento formador de Binah con el corazón armonioso de Tiphareth, expresando la discriminación entre opciones resuelta en un equilibrio unificado y hermoso."
+        },
+        "notes": {
+          "en": "Zayin means 'sword'—the discriminating blade of choice that must cut between paths before union can be achieved.",
+          "ru": "Заин означает 'меч' — различающий клинок выбора, который должен разделить пути, прежде чем можно достичь союза.",
+          "es": "Zayin significa 'espada'—la hoja discriminadora de la elección que debe cortar entre caminos antes de que pueda lograrse la unión."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The angel Raphael overhead",
+            "ru": "Ангел Рафаил над головой",
+            "es": "El ángel Rafael en lo alto"
+          },
+          "description": {
+            "en": "Raphael, angel of air and healing, blesses the couple from above, signalling that true union is sanctioned by higher, conscious awareness rather than blind impulse.",
+            "ru": "Рафаил, ангел воздуха и исцеления, благословляет пару свыше, указывая, что истинный союз освящён высшим, осознанным восприятием, а не слепым порывом.",
+            "es": "Rafael, ángel del aire y la sanación, bendice a la pareja desde lo alto, señalando que la unión verdadera está sancionada por una conciencia superior y consciente, no por el impulso ciego."
+          }
+        },
+        {
+          "element": {
+            "en": "The tree of flames behind the man",
+            "ru": "Дерево пламени позади мужчины",
+            "es": "El árbol de llamas detrás del hombre"
+          },
+          "description": {
+            "en": "Twelve flames on a tree behind the male figure suggest passion and zodiacal life-force, tempered will standing behind desire rather than ruled by it.",
+            "ru": "Двенадцать языков пламени на дереве позади мужской фигуры символизируют страсть и зодиакальную жизненную силу, укрощённую волю, стоящую за желанием, а не подчинённую ему.",
+            "es": "Doce llamas en un árbol detrás de la figura masculina sugieren pasión y fuerza vital zodiacal, una voluntad templada que respalda el deseo en lugar de ser gobernada por él."
+          }
+        },
+        {
+          "element": {
+            "en": "The tree of fruit behind the woman, with serpent",
+            "ru": "Плодовое дерево позади женщины со змеем",
+            "es": "El árbol frutal detrás de la mujer, con la serpiente"
+          },
+          "description": {
+            "en": "A tree bearing fruit and a coiled serpent evoke Eden, temptation, and knowledge gained through experience—choice made possible only once awareness of good and evil exists.",
+            "ru": "Плодоносящее дерево и свернувшийся змей вызывают образ Эдема, искушения и знания, обретённого через опыт — выбор, становящийся возможным лишь при наличии осознания добра и зла.",
+            "es": "Un árbol con fruto y una serpiente enroscada evocan el Edén, la tentación y el conocimiento obtenido a través de la experiencia—una elección posible solo una vez que existe conciencia del bien y del mal."
+          }
+        },
+        {
+          "element": {
+            "en": "The mountain rising between them",
+            "ru": "Гора, поднимающаяся между ними",
+            "es": "La montaña que se alza entre ellos"
+          },
+          "description": {
+            "en": "A distant peak between the figures suggests the aspirational, elevating potential of a relationship grounded in shared higher purpose rather than mere attraction.",
+            "ru": "Далёкая вершина между фигурами символизирует устремлённый, возвышающий потенциал отношений, основанных на общей высшей цели, а не только на влечении.",
+            "es": "Un pico lejano entre las figuras sugiere el potencial aspiracional y elevador de una relación fundamentada en un propósito superior compartido, no solo en la atracción."
+          }
+        },
+        {
+          "element": {
+            "en": "Their nakedness and unguarded stance",
+            "ru": "Их нагота и незащищённая поза",
+            "es": "Su desnudez y postura desprotegida"
+          },
+          "description": {
+            "en": "Both figures stand exposed and vulnerable, representing honesty, innocence restored through conscious choice, and the courage required for true intimacy.",
+            "ru": "Обе фигуры стоят обнажёнными и уязвимыми, символизируя честность, невинность, восстановленную через осознанный выбор, и смелость, необходимую для истинной близости.",
+            "es": "Ambas figuras están expuestas y vulnerables, representando la honestidad, la inocencia restaurada mediante una elección consciente, y el valor necesario para la verdadera intimidad."
+          }
+        },
+        {
+          "element": {
+            "en": "The sun blazing overhead",
+            "ru": "Солнце, пылающее в вышине",
+            "es": "El sol resplandeciente en lo alto"
+          },
+          "description": {
+            "en": "A radiant sun illuminates the whole scene, marking the union and the choice it represents as fundamentally conscious, vital, and life-affirming.",
+            "ru": "Сияющее солнце освещает всю сцену, отмечая союз и представленный им выбор как фундаментально осознанный, жизненный и жизнеутверждающий.",
+            "es": "Un sol radiante ilumina toda la escena, marcando la unión y la elección que representa como algo fundamentalmente consciente, vital y afirmador de la vida."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Lovers moves beyond simple romance into the territory of conscious moral choice: the harmony of true partnership is possible only after temptation and discernment have been faced honestly. Divinationally it speaks to relationships, but equally to any decision that requires aligning action with one's deepest values.",
+        "ru": "В RWS Влюблённые выходят за пределы простого романтизма в область осознанного нравственного выбора: гармония истинного партнёрства возможна лишь после того, как искушение и различение были честно встречены. В гадании карта говорит об отношениях, но в равной степени о любом решении, требующем согласования действий с глубочайшими ценностями человека.",
+        "es": "En el RWS, los Enamorados van más allá del simple romance hacia el terreno de la elección moral consciente: la armonía de una verdadera pareja solo es posible después de haber afrontado con honestidad la tentación y el discernimiento. En la adivinación habla de relaciones, pero igualmente de cualquier decisión que requiera alinear la acción con los valores más profundos de uno."
+      }
+    },
+    "major-7": {
+      "qabalah": {
+        "path_number": "18",
+        "hebrew_letter": {
+          "en": "Chet",
+          "ru": "Хет",
+          "es": "Cheth"
+        },
+        "hebrew_symbol": "ח",
+        "hebrew_unicode": "U+05D7",
+        "sephirothic_connection": {
+          "en": "Binah – Geburah",
+          "ru": "Бина – Гебура",
+          "es": "Binah – Geburah"
+        },
+        "interpretation": {
+          "en": "This path connects Binah's deep, receptive understanding to Geburah's disciplined severity, expressing the containment of great force within a structured, protective vessel.",
+          "ru": "Этот путь соединяет глубокое, восприимчивое понимание Бины со строгой дисциплиной Гебуры, выражая сдерживание великой силы в структурированном, защищённом сосуде.",
+          "es": "Este camino conecta la comprensión profunda y receptiva de Binah con la severidad disciplinada de Geburah, expresando la contención de una gran fuerza dentro de un vehículo estructurado y protector."
+        },
+        "notes": {
+          "en": "Chet means 'fence' or 'enclosure'—the protective boundary that allows raw force to be directed rather than dispersed.",
+          "ru": "Хет означает 'ограда' или 'изгородь' — защитная граница, позволяющая направить сырую силу, а не рассеять её.",
+          "es": "Chet significa 'cerca' o 'recinto'—el límite protector que permite dirigir la fuerza en bruto en lugar de dispersarla."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The black and white sphinxes",
+            "ru": "Чёрный и белый сфинксы",
+            "es": "Las esfinges negra y blanca"
+          },
+          "description": {
+            "en": "Two sphinxes of opposite colour, pulling in no fixed direction, represent opposing forces (positive/negative, conscious/unconscious) held in check by the charioteer's will alone.",
+            "ru": "Два сфинкса противоположных цветов, не тянущих в определённом направлении, олицетворяют противоборствующие силы (положительное/отрицательное, сознательное/бессознательное), удерживаемые в узде одной лишь волей возницы.",
+            "es": "Dos esfinges de color opuesto, sin tirar en una dirección fija, representan fuerzas opuestas (positivo/negativo, consciente/inconsciente) contenidas únicamente por la voluntad del auriga."
+          }
+        },
+        {
+          "element": {
+            "en": "The starry canopy above the chariot",
+            "ru": "Звёздный балдахин над колесницей",
+            "es": "El dosel estrellado sobre el carro"
+          },
+          "description": {
+            "en": "A canopy of stars overhead links the charioteer's earthly drive to cosmic order, suggesting his victory is guided by something larger than personal ambition.",
+            "ru": "Балдахин из звёзд наверху связывает земное устремление возницы с космическим порядком, предполагая, что его победа направляется чем-то большим, чем личные амбиции.",
+            "es": "Un dosel de estrellas en lo alto vincula el impulso terrenal del auriga con el orden cósmico, sugiriendo que su victoria está guiada por algo más grande que la ambición personal."
+          }
+        },
+        {
+          "element": {
+            "en": "The crescent moons on his shoulders",
+            "ru": "Полумесяцы на его плечах",
+            "es": "Las lunas crecientes en sus hombros"
+          },
+          "description": {
+            "en": "Lunar emblems at his shoulders tie emotional, Cancerian sensitivity to his outward show of strength—will tempered and informed by feeling, not divorced from it.",
+            "ru": "Лунные эмблемы на плечах связывают эмоциональную, раковую чувствительность с его внешним проявлением силы — волю, смягчённую и обогащённую чувством, а не оторванную от него.",
+            "es": "Los emblemas lunares en sus hombros vinculan la sensibilidad emocional, propia de Cáncer, con su muestra externa de fuerza—una voluntad templada e informada por el sentimiento, no desligada de él."
+          }
+        },
+        {
+          "element": {
+            "en": "The square shield with a wingless disc",
+            "ru": "Квадратный щит с бескрылым диском",
+            "es": "El escudo cuadrado con un disco sin alas"
+          },
+          "description": {
+            "en": "His breastplate bears a squared, geometric emblem, signalling that raw drive here is disciplined by structure and reason rather than left as pure impulse.",
+            "ru": "Его нагрудник украшен квадратным, геометрическим символом, указывая, что сырой импульс здесь дисциплинирован структурой и разумом, а не оставлен чистым порывом.",
+            "es": "Su coraza lleva un emblema cuadrado y geométrico, indicando que el impulso en bruto aquí está disciplinado por la estructura y la razón, no dejado como puro instinto."
+          }
+        },
+        {
+          "element": {
+            "en": "The city walls behind him",
+            "ru": "Городские стены позади него",
+            "es": "Las murallas de la ciudad detrás de él"
+          },
+          "description": {
+            "en": "A walled city in the background marks what has been won or left behind, framing the Chariot's forward motion as a decisive departure from safety into deliberate conquest.",
+            "ru": "Обнесённый стеной город на фоне обозначает то, что было завоёвано или оставлено позади, обрамляя движение Колесницы вперёд как решительный уход от безопасности к целенаправленному завоеванию.",
+            "es": "Una ciudad amurallada al fondo marca lo que se ha ganado o dejado atrás, enmarcando el avance del Carro como una partida decisiva de la seguridad hacia una conquista deliberada."
+          }
+        },
+        {
+          "element": {
+            "en": "The absence of reins",
+            "ru": "Отсутствие поводьев",
+            "es": "La ausencia de riendas"
+          },
+          "description": {
+            "en": "Notably, the charioteer holds no reins—mastery here comes from focused will and inner authority alone, not from mechanical control over the sphinxes.",
+            "ru": "Примечательно, что возница не держит поводьев — здесь мастерство достигается лишь сосредоточенной волей и внутренним авторитетом, а не механическим контролем над сфинксами.",
+            "es": "Notablemente, el auriga no sostiene riendas—el dominio aquí proviene únicamente de la voluntad enfocada y la autoridad interior, no del control mecánico sobre las esfinges."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Chariot represents hard-won victory through the disciplined harnessing of opposing forces rather than their elimination—triumph achieved by directed will, not brute domination. Divinationally it points to determined action, overcoming obstacles through focus, and success that requires holding contradictory impulses in balanced control.",
+        "ru": "В RWS Колесница олицетворяет тяжело завоёванную победу через дисциплинированное обуздание противоборствующих сил, а не их устранение — триумф, достигнутый направленной волей, а не грубым господством. В гадании она указывает на решительное действие, преодоление препятствий через сосредоточенность и успех, требующий удержания противоречивых импульсов в сбалансированном контроле.",
+        "es": "En el RWS, el Carro representa una victoria ganada con esfuerzo a través del dominio disciplinado de fuerzas opuestas en lugar de su eliminación—un triunfo logrado por la voluntad dirigida, no por la dominación bruta. En la adivinación señala una acción decidida, superar obstáculos mediante el enfoque, y un éxito que requiere mantener impulsos contradictorios en un control equilibrado."
+      }
+    },
+    "major-8": {
+      "qabalah": {
+        "path_number": "19",
+        "hebrew_letter": {
+          "en": "Tet",
+          "ru": "Тет",
+          "es": "Teth"
+        },
+        "hebrew_symbol": "ט",
+        "hebrew_unicode": "U+05D8",
+        "sephirothic_connection": {
+          "en": "Chesed – Geburah",
+          "ru": "Хесед – Гебура",
+          "es": "Chesed – Geburah"
+        },
+        "interpretation": {
+          "en": "This path balances Chesed's expansive mercy against Geburah's disciplined severity, expressing power exercised through loving restraint rather than either indulgence or harshness.",
+          "ru": "Этот путь уравновешивает всеобъемлющее милосердие Хесед со строгой дисциплиной Гебуры, выражая силу, проявляемую через любящую сдержанность, а не потворство или суровость.",
+          "es": "Este camino equilibra la misericordia expansiva de Chesed con la severidad disciplinada de Geburah, expresando el poder ejercido mediante una contención amorosa, ni indulgente ni dura."
+        },
+        "notes": {
+          "en": "Tet means 'serpent'—the coiled instinctive force that, once mastered gently, becomes a wellspring of vitality rather than a threat. Golden Dawn/RWS attributes this to Leo.",
+          "ru": "Тет означает 'змей' — свернувшаяся инстинктивная сила, которая, будучи мягко укрощённой, становится источником жизненной силы, а не угрозой. Golden Dawn/RWS связывает её со Львом.",
+          "es": "Tet significa 'serpiente'—la fuerza instintiva enroscada que, una vez domada con suavidad, se convierte en un manantial de vitalidad en lugar de una amenaza. La Golden Dawn/RWS la atribuye a Leo."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The woman gently closing the lion's jaws",
+            "ru": "Женщина, мягко смыкающая пасть льва",
+            "es": "La mujer que cierra suavemente las fauces del león"
+          },
+          "description": {
+            "en": "She subdues the lion with bare hands and a calm expression, showing mastery achieved through gentleness and presence rather than weapons or force.",
+            "ru": "Она усмиряет льва голыми руками со спокойным выражением лица, показывая мастерство, достигнутое через мягкость и присутствие, а не оружие или силу.",
+            "es": "Ella somete al león con las manos desnudas y una expresión serena, mostrando un dominio logrado mediante la suavidad y la presencia, no las armas ni la fuerza."
+          }
+        },
+        {
+          "element": {
+            "en": "The infinity symbol above her head",
+            "ru": "Знак бесконечности над её головой",
+            "es": "El símbolo del infinito sobre su cabeza"
+          },
+          "description": {
+            "en": "A lemniscate floats above her, the same symbol found on the Magician, linking this quiet mastery to the same infinite, focused will that channels power into form.",
+            "ru": "Лемниската парит над ней — тот же символ, что и у Мага, связывая это тихое мастерство с той же бесконечной, сосредоточенной волей, направляющей силу в форму.",
+            "es": "Una lemniscata flota sobre ella, el mismo símbolo que aparece en el Mago, vinculando este dominio silencioso con la misma voluntad infinita y enfocada que canaliza el poder hacia la forma."
+          }
+        },
+        {
+          "element": {
+            "en": "The flower garland around her waist and the lion's neck",
+            "ru": "Цветочная гирлянда на её талии и шее льва",
+            "es": "La guirnalda de flores en su cintura y en el cuello del león"
+          },
+          "description": {
+            "en": "Delicate flowers link the woman and the beast, suggesting that gentleness itself, not restraint by force, is the true binding agent between instinct and higher will.",
+            "ru": "Нежные цветы связывают женщину и зверя, предполагая, что именно сама мягкость, а не принуждение силой, служит истинным связующим звеном между инстинктом и высшей волей.",
+            "es": "Delicadas flores enlazan a la mujer y a la bestia, sugiriendo que la propia suavidad, no la contención por la fuerza, es el verdadero agente vinculante entre el instinto y la voluntad superior."
+          }
+        },
+        {
+          "element": {
+            "en": "Her white robe",
+            "ru": "Её белое одеяние",
+            "es": "Su túnica blanca"
+          },
+          "description": {
+            "en": "Her simple white garment signals purity of intent and inner calm as the true source of her power over the beast, not physical dominance.",
+            "ru": "Её простое белое одеяние обозначает чистоту намерения и внутреннее спокойствие как истинный источник её власти над зверем, а не физическое превосходство.",
+            "es": "Su sencilla vestimenta blanca señala la pureza de intención y la calma interior como la verdadera fuente de su poder sobre la bestia, no el dominio físico."
+          }
+        },
+        {
+          "element": {
+            "en": "The golden mountain landscape",
+            "ru": "Золотой горный пейзаж",
+            "es": "El paisaje montañoso dorado"
+          },
+          "description": {
+            "en": "A bright, open landscape behind them suggests that inner mastery, once achieved, opens outward into clarity and expansive possibility.",
+            "ru": "Яркий, открытый пейзаж позади них предполагает, что внутреннее мастерство, будучи достигнутым, раскрывается вовне к ясности и широким возможностям.",
+            "es": "Un paisaje abierto y luminoso detrás de ellos sugiere que el dominio interior, una vez logrado, se abre hacia afuera en claridad y posibilidad expansiva."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, Strength reframes courage as gentle, loving mastery of one's own instinctive nature rather than domination through force—a quieter, more enduring power than the Chariot's assertive drive. Divinationally it counsels patience, compassion (including toward oneself), and the confidence that comes from inner composure rather than external conquest.",
+        "ru": "В RWS Сила переосмысляет мужество как мягкое, любящее овладение собственной инстинктивной природой, а не господство через силу — более тихая, более прочная власть, чем напористый порыв Колесницы. В гадании она советует терпение, сострадание (в том числе к самому себе) и уверенность, исходящую из внутреннего спокойствия, а не внешнего завоевания.",
+        "es": "En el RWS, la Fuerza reformula el coraje como un dominio amable y amoroso de la propia naturaleza instintiva, en lugar de la dominación por la fuerza—un poder más silencioso y duradero que el impulso asertivo del Carro. En la adivinación aconseja paciencia, compasión (incluso hacia uno mismo), y la confianza que proviene de la serenidad interior más que de la conquista externa."
+      }
+    },
+    "major-9": {
+      "qabalah": {
+        "path_number": "20",
+        "hebrew_letter": {
+          "en": "Yod",
+          "ru": "Йод",
+          "es": "Yod"
+        },
+        "hebrew_symbol": "י",
+        "hebrew_unicode": "U+05D9",
+        "sephirothic_connection": {
+          "en": "Chesed – Tiphareth",
+          "ru": "Хесед – Тиферет",
+          "es": "Chesed – Tiphareth"
+        },
+        "interpretation": {
+          "en": "This path carries Chesed's benevolent, generous mercy down into Tiphareth's harmonious centre, expressing wisdom offered freely but quietly, a small guiding light rather than a grand gesture.",
+          "ru": "Этот путь несёт благодетельное, щедрое милосердие Хесед вниз, к гармоничному центру Тиферет, выражая мудрость, предлагаемую свободно, но тихо — маленький направляющий свет, а не грандиозный жест.",
+          "es": "Este camino lleva la misericordia benevolente y generosa de Chesed hacia el centro armonioso de Tiphareth, expresando una sabiduría ofrecida libremente pero en silencio, una pequeña luz guía en lugar de un gran gesto."
+        },
+        "notes": {
+          "en": "Yod means 'hand'—the smallest Hebrew letter, symbolising the seed-point of creative potential distilled to its essence, much as the Hermit distils experience into simple wisdom.",
+          "ru": "Йод означает 'рука' — самая маленькая буква иврита, символизирующая семя-точку созидательного потенциала, дистиллированного до сущности, подобно тому как Отшельник дистиллирует опыт в простую мудрость.",
+          "es": "Yod significa 'mano'—la letra hebrea más pequeña, que simboliza el punto-semilla del potencial creativo destilado a su esencia, tal como el Ermitaño destila la experiencia en sabiduría simple."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The lantern with the six-pointed star",
+            "ru": "Фонарь с шестиконечной звездой",
+            "es": "El farol con la estrella de seis puntas"
+          },
+          "description": {
+            "en": "His raised lantern contains a Seal of Solomon, representing distilled wisdom offered as a small, focused light to guide others through darkness.",
+            "ru": "Его поднятый фонарь содержит Печать Соломона, представляя дистиллированную мудрость, предлагаемую как маленький, сфокусированный свет, ведущий других сквозь тьму.",
+            "es": "Su farol en alto contiene un Sello de Salomón, representando la sabiduría destilada ofrecida como una luz pequeña y enfocada para guiar a otros a través de la oscuridad."
+          }
+        },
+        {
+          "element": {
+            "en": "The grey cloak and hood",
+            "ru": "Серый плащ и капюшон",
+            "es": "La capa y capucha grises"
+          },
+          "description": {
+            "en": "His plain grey robe signals renunciation of worldly display, humility, and a focus turned inward rather than toward status or appearance.",
+            "ru": "Его простое серое одеяние символизирует отказ от мирской показности, смирение и фокус, обращённый внутрь, а не на статус или внешность.",
+            "es": "Su sencilla túnica gris señala la renuncia a la ostentación mundana, la humildad y un enfoque vuelto hacia adentro en lugar de hacia el estatus o la apariencia."
+          }
+        },
+        {
+          "element": {
+            "en": "The staff he leans upon",
+            "ru": "Посох, на который он опирается",
+            "es": "El bastón en el que se apoya"
+          },
+          "description": {
+            "en": "A tall staff supports him on rough terrain, symbolising the accumulated experience and inner authority that steady a person through solitary, uncertain paths.",
+            "ru": "Высокий посох поддерживает его на пересечённой местности, символизируя накопленный опыт и внутренний авторитет, поддерживающие человека на одиноких, неопределённых путях.",
+            "es": "Un bastón alto lo sostiene en terreno accidentado, simbolizando la experiencia acumulada y la autoridad interior que sostienen a una persona a través de caminos solitarios e inciertos."
+          }
+        },
+        {
+          "element": {
+            "en": "The snowy, mountainous peak",
+            "ru": "Снежная горная вершина",
+            "es": "La cima montañosa y nevada"
+          },
+          "description": {
+            "en": "He stands alone at a high, barren summit, having climbed above the noise and business of ordinary life to gain clearer perspective.",
+            "ru": "Он стоит один на высокой, пустынной вершине, поднявшись над шумом и суетой обычной жизни, чтобы обрести более ясную перспективу.",
+            "es": "Se encuentra solo en una cumbre alta y árida, habiendo ascendido por encima del ruido y el ajetreo de la vida ordinaria para obtener una perspectiva más clara."
+          }
+        },
+        {
+          "element": {
+            "en": "His bowed head and downward gaze",
+            "ru": "Его склонённая голова и взгляд вниз",
+            "es": "Su cabeza inclinada y su mirada hacia abajo"
+          },
+          "description": {
+            "en": "Rather than looking outward for guidance, his gaze turns down and inward, embodying contemplative self-examination as the true source of insight.",
+            "ru": "Вместо того чтобы искать наставления вовне, его взгляд обращён вниз и внутрь, воплощая созерцательное самоисследование как истинный источник прозрения.",
+            "es": "En lugar de buscar guía hacia afuera, su mirada se vuelve hacia abajo y hacia adentro, encarnando el autoexamen contemplativo como la verdadera fuente de perspicacia."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Hermit is wisdom earned through solitary withdrawal, offered afterward as a single small, steady light for others rather than loudly proclaimed. Divinationally he counsels a pause for reflection, seeking guidance from within or from a wise mentor, and trusting patient, quiet insight over hurried external answers.",
+        "ru": "В RWS Отшельник — это мудрость, обретённая через уединённое отстранение, предлагаемая затем как единственный маленький, устойчивый свет для других, а не громко провозглашаемая. В гадании он советует сделать паузу для размышления, искать руководство внутри себя или у мудрого наставника и доверять терпеливому, тихому прозрению больше, чем поспешным внешним ответам.",
+        "es": "En el RWS, el Ermitaño es la sabiduría ganada mediante el retiro solitario, ofrecida después como una única luz pequeña y constante para otros, no proclamada en voz alta. En la adivinación aconseja una pausa para la reflexión, buscar guía desde dentro o de un mentor sabio, y confiar en una percepción paciente y silenciosa por encima de respuestas externas apresuradas."
+      }
+    },
+    "major-10": {
+      "qabalah": {
+        "path_number": "21",
+        "hebrew_letter": {
+          "en": "Kaf",
+          "ru": "Каф",
+          "es": "Kaph"
+        },
+        "hebrew_symbol": "כ",
+        "hebrew_unicode": "U+05DB",
+        "sephirothic_connection": {
+          "en": "Chesed – Netzach",
+          "ru": "Хесед – Нецах",
+          "es": "Chesed – Netzach"
+        },
+        "interpretation": {
+          "en": "This path extends Chesed's expansive generosity into Netzach's dynamic, emotional vitality, expressing fortune's endless, generative movement made felt and desired rather than merely thought.",
+          "ru": "Этот путь простирает всеобъемлющую щедрость Хесед в динамическую, эмоциональную жизненность Нецах, выражая бесконечное, порождающее движение удачи, ощущаемое и желаемое, а не только мыслимое.",
+          "es": "Este camino extiende la generosidad expansiva de Chesed hacia la vitalidad dinámica y emocional de Netzach, expresando el movimiento incesante y generativo de la fortuna, sentido y deseado, no solo pensado."
+        },
+        "notes": {
+          "en": "Kaf means 'palm of the hand'—the grasping, cyclical gesture of grabbing hold of and releasing fortune as it turns.",
+          "ru": "Каф означает 'ладонь' — хватательный, циклический жест захвата и отпускания удачи по мере её вращения.",
+          "es": "Kaf significa 'palma de la mano'—el gesto cíclico de asir y soltar la fortuna a medida que gira."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The four winged creatures in the corners",
+            "ru": "Четыре крылатых существа по углам",
+            "es": "Las cuatro criaturas aladas en las esquinas"
+          },
+          "description": {
+            "en": "An angel, eagle, lion, and bull—the four fixed zodiac signs—read scrolls in the corners, representing stable wisdom that observes the wheel's turning without being swept up in it.",
+            "ru": "Ангел, орёл, лев и телец — четыре фиксированных знака зодиака — читают свитки по углам, олицетворяя устойчивую мудрость, наблюдающую за вращением колеса, не будучи увлечённой им.",
+            "es": "Un ángel, un águila, un león y un toro—los cuatro signos fijos del zodíaco—leen pergaminos en las esquinas, representando una sabiduría estable que observa el girar de la rueda sin ser arrastrada por ella."
+          }
+        },
+        {
+          "element": {
+            "en": "The sphinx atop the wheel",
+            "ru": "Сфинкс на вершине колеса",
+            "es": "La esfinge en lo alto de la rueda"
+          },
+          "description": {
+            "en": "A sphinx holding a sword sits balanced at the top, representing the still point of wisdom that maintains equilibrium even as fortune turns wildly below.",
+            "ru": "Сфинкс с мечом восседает в равновесии на вершине, олицетворяя неподвижную точку мудрости, сохраняющую равновесие, даже когда удача бешено вращается внизу.",
+            "es": "Una esfinge con una espada se sienta en equilibrio en la cima, representando el punto quieto de la sabiduría que mantiene el equilibrio incluso mientras la fortuna gira salvajemente abajo."
+          }
+        },
+        {
+          "element": {
+            "en": "The serpent descending on the left",
+            "ru": "Змей, спускающийся слева",
+            "es": "La serpiente que desciende por la izquierda"
+          },
+          "description": {
+            "en": "A serpent (Typhon) slides down the wheel's side, representing the downward, dissolving pull of fate that must be accepted as part of the cycle.",
+            "ru": "Змей (Тифон) сползает по стороне колеса, олицетворяя нисходящее, растворяющее притяжение судьбы, которое нужно принять как часть цикла.",
+            "es": "Una serpiente (Tifón) se desliza por el costado de la rueda, representando el tirón descendente y disolvente del destino que debe aceptarse como parte del ciclo."
+          }
+        },
+        {
+          "element": {
+            "en": "Anubis rising on the right",
+            "ru": "Восходящий Анубис справа",
+            "es": "Anubis que asciende por la derecha"
+          },
+          "description": {
+            "en": "Anubis-like Hermanubis climbs up the opposite side, embodying the rising, transformative phase of fortune's cycle that follows every descent.",
+            "ru": "Гермес-Анубис поднимается с противоположной стороны, воплощая восходящую, преобразующую фазу цикла удачи, следующую за каждым спадом.",
+            "es": "Hermanubis, con aspecto de Anubis, asciende por el lado opuesto, encarnando la fase ascendente y transformadora del ciclo de la fortuna que sigue a cada descenso."
+          }
+        },
+        {
+          "element": {
+            "en": "The Hebrew letters and alchemical symbols on the wheel",
+            "ru": "Еврейские буквы и алхимические символы на колесе",
+            "es": "Las letras hebreas y símbolos alquímicos en la rueda"
+          },
+          "description": {
+            "en": "YHVH and alchemical glyphs for mercury, sulphur, water, and salt encircle the rim, tying the wheel's turning to both divine name and the fundamental transformative elements of existence.",
+            "ru": "YHVH и алхимические символы ртути, серы, воды и соли окружают обод, связывая вращение колеса как с божественным именем, так и с фундаментальными преобразующими элементами бытия.",
+            "es": "YHVH y los glifos alquímicos de mercurio, azufre, agua y sal rodean el borde, vinculando el giro de la rueda tanto con el nombre divino como con los elementos transformadores fundamentales de la existencia."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Wheel represents fate's impersonal, cyclical movement—rise and fall as natural law rather than personal failure or triumph. Divinationally it marks a significant turning point, a change of fortune arriving from outside one's direct control, and the wisdom of meeting change with equanimity rather than resistance.",
+        "ru": "В RWS Колесо олицетворяет безличное, циклическое движение судьбы — подъём и спад как естественный закон, а не личный провал или триумф. В гадании оно отмечает значимый поворотный момент, перемену удачи, приходящую извне прямого контроля человека, и мудрость встречать перемены с невозмутимостью, а не сопротивлением.",
+        "es": "En el RWS, la Rueda representa el movimiento impersonal y cíclico del destino—ascenso y caída como ley natural, no como fracaso o triunfo personal. En la adivinación marca un punto de inflexión significativo, un cambio de fortuna que llega desde fuera del control directo propio, y la sabiduría de afrontar el cambio con ecuanimidad en lugar de resistencia."
+      }
+    },
+    "major-11": {
+      "qabalah": {
+        "path_number": "22",
+        "hebrew_letter": {
+          "en": "Lamed",
+          "ru": "Ламед",
+          "es": "Lamed"
+        },
+        "hebrew_symbol": "ל",
+        "hebrew_unicode": "U+05DC",
+        "sephirothic_connection": {
+          "en": "Geburah – Tiphareth",
+          "ru": "Гебура – Тиферет",
+          "es": "Geburah – Tiphareth"
+        },
+        "interpretation": {
+          "en": "This path carries Geburah's severe, cutting discernment into Tiphareth's harmonious balance, expressing judgement that is strict but ultimately oriented toward restoring equilibrium and beauty.",
+          "ru": "Этот путь несёт строгую, режущую проницательность Гебуры в гармоничное равновесие Тиферет, выражая суждение, которое строго, но в конечном счёте направлено на восстановление равновесия и красоты.",
+          "es": "Este camino lleva el discernimiento severo y cortante de Geburah hacia el equilibrio armonioso de Tiphareth, expresando un juicio que es estricto pero orientado, en última instancia, a restaurar el equilibrio y la belleza."
+        },
+        "notes": {
+          "en": "Lamed means 'ox-goad'—the instrument that prods toward correct direction, reflecting Justice's corrective, guiding function. Golden Dawn/RWS attributes this to Libra.",
+          "ru": "Ламед означает 'стрекало' — орудие, побуждающее к верному направлению, отражая корректирующую, направляющую функцию Правосудия. Golden Dawn/RWS связывает её с Весами.",
+          "es": "Lamed significa 'aguijada de buey'—el instrumento que impulsa hacia la dirección correcta, reflejando la función correctiva y orientadora de la Justicia. La Golden Dawn/RWS la atribuye a Libra."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The upright sword in her right hand",
+            "ru": "Вертикальный меч в её правой руке",
+            "es": "La espada erguida en su mano derecha"
+          },
+          "description": {
+            "en": "Her raised, double-edged sword represents clear-cut, decisive discrimination—truth that cuts cleanly through confusion and ambiguity.",
+            "ru": "Её поднятый обоюдоострый меч символизирует чёткое, решительное различение — истину, ясно рассекающую смятение и двусмысленность.",
+            "es": "Su espada de doble filo alzada representa una discriminación clara y decisiva—la verdad que corta limpiamente a través de la confusión y la ambigüedad."
+          }
+        },
+        {
+          "element": {
+            "en": "The balanced scales in her left hand",
+            "ru": "Уравновешенные весы в её левой руке",
+            "es": "La balanza equilibrada en su mano izquierda"
+          },
+          "description": {
+            "en": "Perfectly level scales weigh evidence and consequence with total impartiality, unaffected by personal preference or pressure.",
+            "ru": "Идеально ровные весы взвешивают доказательства и последствия с полной беспристрастностью, не подверженной личным предпочтениям или давлению.",
+            "es": "Una balanza perfectamente nivelada pesa la evidencia y la consecuencia con total imparcialidad, sin verse afectada por la preferencia personal o la presión."
+          }
+        },
+        {
+          "element": {
+            "en": "The square-cornered crown",
+            "ru": "Венец с квадратными углами",
+            "es": "La corona de esquinas cuadradas"
+          },
+          "description": {
+            "en": "Her crown's squared form signals rational, structured thought applied to moral questions rather than emotional or impulsive reaction.",
+            "ru": "Квадратная форма её венца символизирует рациональное, структурированное мышление, применённое к нравственным вопросам, а не эмоциональную или импульсивную реакцию.",
+            "es": "La forma cuadrada de su corona señala un pensamiento racional y estructurado aplicado a las cuestiones morales, no una reacción emocional o impulsiva."
+          }
+        },
+        {
+          "element": {
+            "en": "The purple veil behind the pillars",
+            "ru": "Пурпурная завеса за колоннами",
+            "es": "El velo púrpura detrás de las columnas"
+          },
+          "description": {
+            "en": "A veil behind two grey pillars recalls the High Priestess's threshold, suggesting Justice, too, mediates between visible law and unseen, deeper truth.",
+            "ru": "Завеса за двумя серыми колоннами напоминает о пороге Верховной Жрицы, предполагая, что Правосудие тоже опосредует между видимым законом и незримой, более глубокой истиной.",
+            "es": "Un velo detrás de dos columnas grises recuerda el umbral de la Sacerdotisa, sugiriendo que la Justicia también media entre la ley visible y una verdad más profunda e invisible."
+          }
+        },
+        {
+          "element": {
+            "en": "Her direct, forward-facing gaze",
+            "ru": "Её прямой, устремлённый вперёд взгляд",
+            "es": "Su mirada directa y frontal"
+          },
+          "description": {
+            "en": "She looks straight ahead without flinching, embodying the unwavering, unhidden nature of true justice—nothing about it depends on averting one's eyes.",
+            "ru": "Она смотрит прямо перед собой, не дрогнув, воплощая непоколебимую, неутаённую природу истинного правосудия — в нём ничто не зависит от отведённого взгляда.",
+            "es": "Mira al frente sin pestañear, encarnando la naturaleza inquebrantable y sin ocultamiento de la verdadera justicia—nada en ella depende de apartar la mirada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, Justice affirms that consequences follow causes fairly and inevitably, calling for honesty, accountability, and clear-eyed decision-making. Divinationally it often points to legal matters, contracts, and situations requiring balanced, unbiased judgement—and reminds the querent that fairness applies equally to how they judge themselves.",
+        "ru": "В RWS Справедливость утверждает, что последствия следуют за причинами честно и неизбежно, призывая к честности, ответственности и ясному, взвешенному принятию решений. В гадании она часто указывает на юридические вопросы, договоры и ситуации, требующие сбалансированного, непредвзятого суждения — и напоминает вопрошающему, что справедливость в равной мере применима к тому, как он судит самого себя.",
+        "es": "En el RWS, la Justicia afirma que las consecuencias siguen a las causas de manera justa e inevitable, llamando a la honestidad, la responsabilidad y una toma de decisiones clara. En la adivinación suele señalar asuntos legales, contratos y situaciones que requieren un juicio equilibrado e imparcial—y recuerda a la persona consultante que la equidad se aplica igualmente a cómo se juzga a sí misma."
+      }
+    },
+    "major-12": {
+      "qabalah": {
+        "path_number": "23",
+        "hebrew_letter": {
+          "en": "Mem",
+          "ru": "Мем",
+          "es": "Mem"
+        },
+        "hebrew_symbol": "מ",
+        "hebrew_unicode": "U+05DE",
+        "sephirothic_connection": {
+          "en": "Geburah – Hod",
+          "ru": "Гебура – Ход",
+          "es": "Geburah – Hod"
+        },
+        "interpretation": {
+          "en": "This path carries Geburah's severe discipline into Hod's intellectual, communicative structure, expressing insight gained precisely through disciplined stillness and suspension of usual mental activity.",
+          "ru": "Этот путь несёт строгую дисциплину Гебуры в интеллектуальную, коммуникативную структуру Ход, выражая прозрение, обретаемое именно через дисциплинированную неподвижность и приостановку обычной умственной деятельности.",
+          "es": "Este camino lleva la disciplina severa de Geburah hacia la estructura intelectual y comunicativa de Hod, expresando una comprensión obtenida precisamente mediante la quietud disciplinada y la suspensión de la actividad mental habitual."
+        },
+        "notes": {
+          "en": "Mem means 'water'—the element of stillness, reflection, and dissolution associated with this path and with the Hanged Man's suspended calm.",
+          "ru": "Мем означает 'вода' — стихия неподвижности, отражения и растворения, связанная с этим путём и с подвешенным спокойствием Повешенного.",
+          "es": "Mem significa 'agua'—el elemento de la quietud, la reflexión y la disolución asociado a este camino y a la calma suspendida del Colgado."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The man hanging upside down by one foot",
+            "ru": "Человек, висящий вниз головой за одну ногу",
+            "es": "El hombre colgado boca abajo por un pie"
+          },
+          "description": {
+            "en": "Suspended from a living tree by one foot, he hangs calmly rather than in distress, showing that this posture is chosen surrender, not punishment endured.",
+            "ru": "Подвешенный за одну ногу к живому дереву, он висит спокойно, а не в отчаянии, показывая, что эта поза — избранная капитуляция, а не претерпеваемое наказание.",
+            "es": "Suspendido de un árbol vivo por un pie, cuelga con calma en lugar de angustia, mostrando que esta postura es una rendición elegida, no un castigo padecido."
+          }
+        },
+        {
+          "element": {
+            "en": "His glowing halo",
+            "ru": "Его сияющий нимб",
+            "es": "Su halo resplandeciente"
+          },
+          "description": {
+            "en": "A subtle golden halo around his head signals that this state of surrender brings illumination, not diminishment—wisdom gained through the pause itself.",
+            "ru": "Тонкий золотой нимб вокруг его головы указывает, что это состояние капитуляции приносит озарение, а не умаление — мудрость, обретаемую через саму паузу.",
+            "es": "Un sutil halo dorado alrededor de su cabeza señala que este estado de rendición trae iluminación, no disminución—sabiduría ganada a través de la propia pausa."
+          }
+        },
+        {
+          "element": {
+            "en": "His crossed legs forming a figure-four",
+            "ru": "Скрещённые ноги, образующие цифру четыре",
+            "es": "Sus piernas cruzadas formando un cuatro"
+          },
+          "description": {
+            "en": "His free leg crosses behind the bound one, echoing a numeral shape that suggests structured, meaningful pattern even within apparent helplessness.",
+            "ru": "Его свободная нога скрещена позади связанной, отсылая к форме цифры, предполагающей структурированный, осмысленный узор даже в кажущейся беспомощности.",
+            "es": "Su pierna libre se cruza detrás de la atada, evocando una forma numérica que sugiere un patrón estructurado y significativo incluso dentro de la aparente indefensión."
+          }
+        },
+        {
+          "element": {
+            "en": "His calm facial expression",
+            "ru": "Его спокойное выражение лица",
+            "es": "Su expresión facial serena"
+          },
+          "description": {
+            "en": "Rather than pain, his face shows peace and quiet acceptance, embodying the paradox that release of struggle can itself be deeply restful.",
+            "ru": "Вместо боли его лицо выражает мир и тихое принятие, воплощая парадокс, при котором отказ от борьбы сам по себе может быть глубоко умиротворяющим.",
+            "es": "En lugar de dolor, su rostro muestra paz y una aceptación serena, encarnando la paradoja de que soltar la lucha puede ser en sí mismo profundamente reparador."
+          }
+        },
+        {
+          "element": {
+            "en": "His hands bound behind his back",
+            "ru": "Его руки, связанные за спиной",
+            "es": "Sus manos atadas a la espalda"
+          },
+          "description": {
+            "en": "His hands are hidden and bound, indicating that action is entirely suspended here—there is nothing to grasp for, only to receive.",
+            "ru": "Его руки скрыты и связаны, указывая, что действие здесь полностью приостановлено — нечего хватать, можно лишь принимать.",
+            "es": "Sus manos están ocultas y atadas, indicando que la acción está aquí totalmente suspendida—no hay nada que asir, solo recibir."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Hanged Man represents wisdom won through voluntary suspension of ordinary striving: seeing the world differently by literally turning one's perspective upside down. Divinationally he counsels patience, letting go of the need to force an outcome, and trusting that a period of apparent inaction may itself be the necessary work.",
+        "ru": "В RWS Повешенный олицетворяет мудрость, обретённую через добровольную приостановку обычного стремления: видение мира иначе через буквальное переворачивание перспективы. В гадании он советует терпение, отпускание потребности форсировать исход и доверие тому, что период кажущегося бездействия сам может быть необходимой работой.",
+        "es": "En el RWS, el Colgado representa la sabiduría ganada mediante la suspensión voluntaria del esfuerzo ordinario: ver el mundo de otra manera literalmente invirtiendo la propia perspectiva. En la adivinación aconseja paciencia, soltar la necesidad de forzar un resultado, y confiar en que un período de aparente inacción puede ser en sí el trabajo necesario."
+      }
+    },
+    "major-13": {
+      "qabalah": {
+        "path_number": "24",
+        "hebrew_letter": {
+          "en": "Nun",
+          "ru": "Нун",
+          "es": "Nun"
+        },
+        "hebrew_symbol": "נ",
+        "hebrew_unicode": "U+05E0",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Netzach",
+          "ru": "Тиферет – Нецах",
+          "es": "Tiphareth – Netzach"
+        },
+        "interpretation": {
+          "en": "This path carries Tiphareth's harmonious, integrated self into Netzach's emotional, desirous vitality, showing that transformation of the ego must pass through and reshape one's deepest wants and attachments.",
+          "ru": "Этот путь несёт гармоничное, целостное я Тиферет в эмоциональную, желающую жизненность Нецах, показывая, что трансформация эго должна пройти через глубочайшие желания и привязанности и переформировать их.",
+          "es": "Este camino lleva el yo armonioso e integrado de Tiphareth hacia la vitalidad emocional y deseante de Netzach, mostrando que la transformación del ego debe atravesar y remodelar los deseos y apegos más profundos."
+        },
+        "notes": {
+          "en": "Nun means 'fish'—a symbol of life moving through the waters of change, and of what must be shed or transformed to continue swimming forward.",
+          "ru": "Нун означает 'рыба' — символ жизни, движущейся сквозь воды перемен, и того, что должно быть сброшено или преобразовано, чтобы продолжать плыть вперёд.",
+          "es": "Nun significa 'pez'—un símbolo de la vida que se mueve a través de las aguas del cambio, y de lo que debe desprenderse o transformarse para seguir nadando hacia adelante."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The skeletal figure in black armour",
+            "ru": "Скелетообразная фигура в чёрных доспехах",
+            "es": "La figura esquelética con armadura negra"
+          },
+          "description": {
+            "en": "Death rides as an armoured skeleton, showing transformation as an impartial, inevitable force that spares no one and negotiates with nothing.",
+            "ru": "Смерть едет как скелет в доспехах, показывая трансформацию как беспристрастную, неизбежную силу, никого не щадящую и ни с чем не идущую на компромисс.",
+            "es": "La Muerte cabalga como un esqueleto acorazado, mostrando la transformación como una fuerza imparcial e inevitable que no perdona a nadie ni negocia con nada."
+          }
+        },
+        {
+          "element": {
+            "en": "The white rose on the black banner",
+            "ru": "Белая роза на чёрном знамени",
+            "es": "La rosa blanca en el estandarte negro"
+          },
+          "description": {
+            "en": "A five-petaled white rose on his banner represents purity and life persisting even within death's dark passage—renewal hidden inside apparent destruction.",
+            "ru": "Пятилепестковая белая роза на его знамени олицетворяет чистоту и жизнь, сохраняющуюся даже в тёмном переходе смерти — обновление, скрытое внутри кажущегося разрушения.",
+            "es": "Una rosa blanca de cinco pétalos en su estandarte representa la pureza y la vida que persisten incluso dentro del oscuro pasaje de la muerte—una renovación oculta dentro de la aparente destrucción."
+          }
+        },
+        {
+          "element": {
+            "en": "The fallen king before the horse",
+            "ru": "Павший король перед конём",
+            "es": "El rey caído ante el caballo"
+          },
+          "description": {
+            "en": "A crowned figure lies fallen, showing that no rank, wealth, or power exempts anyone from the necessity of transformative ending.",
+            "ru": "Коронованная фигура лежит поверженной, показывая, что ни ранг, ни богатство, ни власть не освобождают никого от необходимости преобразующего завершения.",
+            "es": "Una figura coronada yace caída, mostrando que ningún rango, riqueza o poder exime a nadie de la necesidad de un final transformador."
+          }
+        },
+        {
+          "element": {
+            "en": "The rising sun between distant towers",
+            "ru": "Восходящее солнце между дальними башнями",
+            "es": "El sol naciente entre torres lejanas"
+          },
+          "description": {
+            "en": "A sunrise glimpsed between two towers on the horizon promises that beyond this ending lies a new day, however invisible it may seem from within the loss.",
+            "ru": "Восход солнца, видимый между двух башен на горизонте, обещает, что за этим завершением лежит новый день, каким бы невидимым он ни казался изнутри утраты.",
+            "es": "Un amanecer vislumbrado entre dos torres en el horizonte promete que más allá de este final hay un nuevo día, por invisible que parezca desde dentro de la pérdida."
+          }
+        },
+        {
+          "element": {
+            "en": "The child, priest, and maiden who face him",
+            "ru": "Ребёнок, священник и дева, встречающие его",
+            "es": "El niño, el sacerdote y la doncella que le hacen frente"
+          },
+          "description": {
+            "en": "Figures of every age and station respond differently to Death's approach—fear, denial, and calm acceptance shown side by side as equally human reactions.",
+            "ru": "Фигуры всех возрастов и сословий по-разному реагируют на приближение Смерти — страх, отрицание и спокойное принятие показаны бок о бок как в равной степени человеческие реакции.",
+            "es": "Figuras de toda edad y condición responden de manera distinta a la llegada de la Muerte—el miedo, la negación y la aceptación calmada se muestran lado a lado como reacciones igualmente humanas."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, Death represents transformation as an impartial, universal law: something must end completely before something genuinely new can begin. Divinationally it rarely means literal death, instead pointing to major life transitions, the end of a phase or relationship, and the necessity of letting go rather than clinging to what has already run its course.",
+        "ru": "В RWS Смерть олицетворяет трансформацию как беспристрастный, всеобщий закон: нечто должно завершиться полностью, прежде чем может начаться нечто подлинно новое. В гадании она редко означает буквальную смерть, вместо этого указывая на крупные жизненные переходы, конец этапа или отношений и необходимость отпустить, а не цепляться за то, что уже исчерпало себя.",
+        "es": "En el RWS, la Muerte representa la transformación como una ley universal e imparcial: algo debe terminar por completo antes de que algo genuinamente nuevo pueda comenzar. En la adivinación rara vez significa una muerte literal, señalando en cambio grandes transiciones vitales, el fin de una etapa o relación, y la necesidad de soltar en lugar de aferrarse a lo que ya ha cumplido su curso."
+      }
+    },
+    "major-14": {
+      "qabalah": {
+        "path_number": "25",
+        "hebrew_letter": {
+          "en": "Samekh",
+          "ru": "Самех",
+          "es": "Samekh"
+        },
+        "hebrew_symbol": "ס",
+        "hebrew_unicode": "U+05E1",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Yesod",
+          "ru": "Тиферет – Йесод",
+          "es": "Tiphareth – Yesod"
+        },
+        "interpretation": {
+          "en": "This path connects Tiphareth's integrated, harmonious self to Yesod's foundational, subconscious structure, expressing balance that must be established at the level of habit and instinct, not just conscious intention.",
+          "ru": "Этот путь соединяет целостное, гармоничное я Тиферет с фундаментальной, подсознательной структурой Йесод, выражая равновесие, которое должно быть установлено на уровне привычки и инстинкта, а не только сознательного намерения.",
+          "es": "Este camino conecta el yo integrado y armonioso de Tiphareth con la estructura fundacional y subconsciente de Yesod, expresando un equilibrio que debe establecerse a nivel del hábito y el instinto, no solo de la intención consciente."
+        },
+        "notes": {
+          "en": "Samekh means 'prop' or 'support'—the sustaining structure that holds two opposing streams together long enough for them to truly blend.",
+          "ru": "Самех означает 'опора' или 'подпорка' — поддерживающая структура, удерживающая два противоположных потока вместе достаточно долго, чтобы они по-настоящему смешались.",
+          "es": "Samekh significa 'apoyo' o 'sostén'—la estructura sustentadora que mantiene unidas dos corrientes opuestas el tiempo suficiente para que realmente se mezclen."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The angel pouring water between two cups",
+            "ru": "Ангел, переливающий воду между двумя чашами",
+            "es": "El ángel que vierte agua entre dos copas"
+          },
+          "description": {
+            "en": "An androgynous angel pours liquid fluidly between two cups without spilling a drop, symbolising the seamless, patient blending of opposites into a unified flow.",
+            "ru": "Андрогинный ангел плавно переливает жидкость между двумя чашами, не пролив ни капли, символизируя бесшовное, терпеливое смешение противоположностей в единый поток.",
+            "es": "Un ángel andrógino vierte líquido fluidamente entre dos copas sin derramar una gota, simbolizando la mezcla fluida y paciente de opuestos en un flujo unificado."
+          }
+        },
+        {
+          "element": {
+            "en": "One foot on land, one in water",
+            "ru": "Одна нога на земле, другая в воде",
+            "es": "Un pie en tierra, el otro en el agua"
+          },
+          "description": {
+            "en": "The angel stands with one foot on solid ground and one submerged in a pool, bridging the material and emotional/subconscious realms simultaneously.",
+            "ru": "Ангел стоит одной ногой на твёрдой земле, а другой погружённой в водоём, одновременно наводя мост между материальным и эмоциональным/подсознательным царствами.",
+            "es": "El ángel se sostiene con un pie en tierra firme y el otro sumergido en un estanque, tendiendo un puente entre los reinos material y emocional/subconsciente simultáneamente."
+          }
+        },
+        {
+          "element": {
+            "en": "The triangle within a square on the chest",
+            "ru": "Треугольник в квадрате на груди",
+            "es": "El triángulo dentro de un cuadrado en el pecho"
+          },
+          "description": {
+            "en": "A geometric emblem on the angel's robe represents spirit (triangle) working within and through matter (square)—alchemy expressed as sacred geometry.",
+            "ru": "Геометрическая эмблема на одеянии ангела олицетворяет дух (треугольник), действующий внутри материи (квадрат) и через неё — алхимию, выраженную как священную геометрию.",
+            "es": "Un emblema geométrico en la túnica del ángel representa el espíritu (triángulo) obrando dentro y a través de la materia (cuadrado)—la alquimia expresada como geometría sagrada."
+          }
+        },
+        {
+          "element": {
+            "en": "The path winding toward distant mountains",
+            "ru": "Тропа, извивающаяся к дальним горам",
+            "es": "El sendero que serpentea hacia montañas lejanas"
+          },
+          "description": {
+            "en": "A path leads from the pool toward a radiant crown between two peaks, suggesting that patient balance is itself the road toward higher attainment.",
+            "ru": "Тропа ведёт от водоёма к сияющему венцу между двумя вершинами, предполагая, что терпеливое равновесие само по себе является дорогой к высшему достижению.",
+            "es": "Un sendero conduce desde el estanque hacia una corona radiante entre dos picos, sugiriendo que el equilibrio paciente es en sí mismo el camino hacia un logro superior."
+          }
+        },
+        {
+          "element": {
+            "en": "The irises growing at the water's edge",
+            "ru": "Ирисы, растущие у кромки воды",
+            "es": "Los lirios que crecen a la orilla del agua"
+          },
+          "description": {
+            "en": "Iris flowers, associated with the messenger goddess Iris and the rainbow, mark the meeting point of realms as a place of communication and connection.",
+            "ru": "Цветы ириса, связанные с богиней-вестницей Иридой и радугой, отмечают точку встречи царств как место общения и связи.",
+            "es": "Las flores de lirio, asociadas con la diosa mensajera Iris y el arcoíris, marcan el punto de encuentro de los reinos como un lugar de comunicación y conexión."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, Temperance represents the patient, skillful blending of opposites into a new harmonious whole—healing and integration following the necessary ending of Death. Divinationally it counsels moderation, patience, and the value of gradual synthesis over hasty combination, especially after a period of upheaval.",
+        "ru": "В RWS Умеренность олицетворяет терпеливое, умелое смешение противоположностей в новое гармоничное целое — исцеление и интеграцию, следующие за необходимым завершением Смерти. В гадании она советует умеренность, терпение и ценность постепенного синтеза перед поспешным соединением, особенно после периода потрясений.",
+        "es": "En el RWS, la Templanza representa la mezcla paciente y hábil de opuestos en un nuevo todo armonioso—la sanación y la integración que siguen al final necesario de la Muerte. En la adivinación aconseja moderación, paciencia y el valor de la síntesis gradual por encima de la combinación apresurada, especialmente tras un período de agitación."
+      }
+    },
+    "major-15": {
+      "qabalah": {
+        "path_number": "26",
+        "hebrew_letter": {
+          "en": "Ayin",
+          "ru": "Аин",
+          "es": "Ayin"
+        },
+        "hebrew_symbol": "ע",
+        "hebrew_unicode": "U+05E2",
+        "sephirothic_connection": {
+          "en": "Tiphareth – Hod",
+          "ru": "Тиферет – Ход",
+          "es": "Tiphareth – Hod"
+        },
+        "interpretation": {
+          "en": "This path connects Tiphareth's harmonious selfhood to Hod's structured intellect, expressing how the rational mind can be seduced into constructing elaborate justifications for self-imposed bondage.",
+          "ru": "Этот путь соединяет гармоничную самость Тиферет со структурированным интеллектом Ход, выражая, как рациональный ум может быть соблазнён построением изощрённых оправданий для самоналоженного порабощения.",
+          "es": "Este camino conecta la identidad armoniosa de Tiphareth con el intelecto estructurado de Hod, expresando cómo la mente racional puede seducirse para construir elaboradas justificaciones de una esclavitud autoimpuesta."
+        },
+        "notes": {
+          "en": "Ayin means 'eye'—the faculty of perception that, when clouded, mistakes illusion for reality and bondage for necessity. Associated with Capricorn.",
+          "ru": "Аин означает 'глаз' — способность восприятия, которая, будучи затуманенной, принимает иллюзию за реальность, а порабощение за необходимость. Связана с Козерогом.",
+          "es": "Ayin significa 'ojo'—la facultad de percepción que, cuando está nublada, confunde la ilusión con la realidad y la esclavitud con la necesidad. Asociada con Capricornio."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The horned, goat-like Baphomet figure",
+            "ru": "Рогатая, козлоподобная фигура Бафомета",
+            "es": "La figura cornuda y caprina de Baphomet"
+          },
+          "description": {
+            "en": "A composite, half-human half-goat figure sits enthroned, embodying the raw, unintegrated animal nature that has been given false authority over the self.",
+            "ru": "Составная, полулюдская-полукозлиная фигура восседает на троне, воплощая сырую, неинтегрированную животную природу, которой была дарована ложная власть над личностью.",
+            "es": "Una figura compuesta, mitad humana y mitad caprina, se sienta entronizada, encarnando la naturaleza animal en bruto y no integrada a la que se le ha otorgado una falsa autoridad sobre el yo."
+          }
+        },
+        {
+          "element": {
+            "en": "The loosely chained couple below",
+            "ru": "Слабо скованная пара внизу",
+            "es": "La pareja débilmente encadenada abajo"
+          },
+          "description": {
+            "en": "A man and woman stand chained at the neck, but the chains are loose enough to slip off—bondage here is largely voluntary, maintained by belief rather than necessity.",
+            "ru": "Мужчина и женщина стоят, скованные за шею, но цепи достаточно слабы, чтобы их можно было снять — порабощение здесь во многом добровольно, поддерживаемое верой, а не необходимостью.",
+            "es": "Un hombre y una mujer están encadenados por el cuello, pero las cadenas son lo bastante flojas como para deslizarse—la esclavitud aquí es en gran parte voluntaria, sostenida por la creencia y no por la necesidad."
+          }
+        },
+        {
+          "element": {
+            "en": "The inverted pentagram on his forehead",
+            "ru": "Перевёрнутая пентаграмма на его лбу",
+            "es": "El pentagrama invertido en su frente"
+          },
+          "description": {
+            "en": "An inverted pentagram signals spirit subordinated to matter—priorities turned upside down so that base desire rules over higher purpose.",
+            "ru": "Перевёрнутая пентаграмма символизирует дух, подчинённый материи, — приоритеты, перевёрнутые так, что низменное желание властвует над высшей целью.",
+            "es": "Un pentagrama invertido señala el espíritu subordinado a la materia—las prioridades invertidas de modo que el deseo bajo gobierna sobre el propósito superior."
+          }
+        },
+        {
+          "element": {
+            "en": "The small tails on the human figures",
+            "ru": "Небольшие хвосты у человеческих фигур",
+            "es": "Las pequeñas colas en las figuras humanas"
+          },
+          "description": {
+            "en": "Subtle tails on the man and woman, one bearing grapes and one fire, suggest that even in bondage, some spark of appetite or vitality remains their own to reclaim.",
+            "ru": "Едва заметные хвосты у мужчины и женщины, один с виноградом, другой с пламенем, предполагают, что даже в порабощении какая-то искра аппетита или жизненности остаётся их собственной и может быть возвращена.",
+            "es": "Colas sutiles en el hombre y la mujer, una con uvas y otra con fuego, sugieren que incluso en la esclavitud, alguna chispa de apetito o vitalidad sigue siendo suya y puede reclamarse."
+          }
+        },
+        {
+          "element": {
+            "en": "The upraised torch held downward",
+            "ru": "Поднятый факел, направленный вниз",
+            "es": "La antorcha en alto sostenida hacia abajo"
+          },
+          "description": {
+            "en": "Baphomet's torch burns pointed downward rather than upward, a perversion of the Hermit's guiding light into a fire that illuminates only base, material concerns.",
+            "ru": "Факел Бафомета горит, направленный вниз, а не вверх, — искажение направляющего света Отшельника в огонь, освещающий лишь низменные, материальные заботы.",
+            "es": "La antorcha de Baphomet arde apuntando hacia abajo en lugar de hacia arriba, una perversión de la luz guía del Ermitaño convertida en un fuego que solo ilumina preocupaciones bajas y materiales."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Devil exposes bondage that is largely self-created—chains loose enough to remove, illusions mistaken for permanent fact. Divinationally it points to unhealthy attachments, addiction, materialism, or fear-based patterns, and asks the querent to recognise their own power to loosen what has felt inescapable.",
+        "ru": "В RWS Дьявол разоблачает порабощённость, во многом созданную самим человеком, — цепи, достаточно слабые, чтобы их снять, иллюзии, принимаемые за постоянный факт. В гадании он указывает на нездоровые привязанности, зависимость, материализм или основанные на страхе паттерны и просит вопрошающего признать собственную силу ослабить то, что казалось неизбежным.",
+        "es": "En el RWS, el Diablo expone una esclavitud que en gran parte es autocreada—cadenas lo bastante flojas como para quitárselas, ilusiones confundidas con un hecho permanente. En la adivinación señala apegos insanos, adicción, materialismo o patrones basados en el miedo, y pide a la persona consultante reconocer su propio poder para aflojar lo que se sentía ineludible."
+      }
+    },
+    "major-16": {
+      "qabalah": {
+        "path_number": "27",
+        "hebrew_letter": {
+          "en": "Pe",
+          "ru": "Пе",
+          "es": "Pe"
+        },
+        "hebrew_symbol": "פ",
+        "hebrew_unicode": "U+05E4",
+        "sephirothic_connection": {
+          "en": "Netzach – Hod",
+          "ru": "Нецах – Ход",
+          "es": "Netzach – Hod"
+        },
+        "interpretation": {
+          "en": "This path connects Netzach's emotional desire to Hod's rational structure, expressing the violent collision that occurs when deeply held feeling and rigid intellectual construction can no longer be reconciled.",
+          "ru": "Этот путь соединяет эмоциональное желание Нецах с рациональной структурой Ход, выражая насильственное столкновение, происходящее, когда глубоко укоренившееся чувство и жёсткая интеллектуальная конструкция более не могут быть примирены.",
+          "es": "Este camino conecta el deseo emocional de Netzach con la estructura racional de Hod, expresando la colisión violenta que ocurre cuando un sentimiento profundamente arraigado y una construcción intelectual rígida ya no pueden reconciliarse."
+        },
+        "notes": {
+          "en": "Pe means 'mouth'—the sudden utterance or eruption of truth that can no longer be held back or spoken around. Associated with Mars.",
+          "ru": "Пе означает 'рот' — внезапное произнесение или извержение истины, которую больше нельзя сдерживать или обходить молчанием. Связана с Марсом.",
+          "es": "Pe significa 'boca'—la súbita expresión o erupción de la verdad que ya no puede contenerse ni eludirse. Asociada con Marte."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The lightning bolt striking the crown",
+            "ru": "Молния, ударяющая в корону",
+            "es": "El rayo que golpea la corona"
+          },
+          "description": {
+            "en": "Lightning knocks the crown from the tower's summit, showing that false authority and illusion, however elevated, are vulnerable to sudden, undeniable truth.",
+            "ru": "Молния сбивает корону с вершины башни, показывая, что ложная власть и иллюзия, сколь бы вознесёнными они ни были, уязвимы для внезапной, неоспоримой истины.",
+            "es": "Un rayo derriba la corona de la cima de la torre, mostrando que la falsa autoridad y la ilusión, por elevadas que estén, son vulnerables a una verdad súbita e innegable."
+          }
+        },
+        {
+          "element": {
+            "en": "The two falling figures",
+            "ru": "Две падающие фигуры",
+            "es": "Las dos figuras que caen"
+          },
+          "description": {
+            "en": "A man and woman tumble headfirst from the tower, illustrating the disorienting, unavoidable descent that follows the collapse of a familiar structure.",
+            "ru": "Мужчина и женщина падают головой вниз из башни, иллюстрируя дезориентирующее, неизбежное падение, следующее за крушением привычной структуры.",
+            "es": "Un hombre y una mujer caen de cabeza desde la torre, ilustrando el descenso desorientador e ineludible que sigue al colapso de una estructura familiar."
+          }
+        },
+        {
+          "element": {
+            "en": "The flames bursting from the windows",
+            "ru": "Пламя, вырывающееся из окон",
+            "es": "Las llamas que estallan de las ventanas"
+          },
+          "description": {
+            "en": "Fire consumes the tower's interior, symbolising that the destruction originates from within—a structure undone by its own hidden flaws, not merely external attack.",
+            "ru": "Огонь охватывает внутреннюю часть башни, символизируя, что разрушение исходит изнутри — структура, разрушенная собственными скрытыми изъянами, а не просто внешней атакой.",
+            "es": "El fuego consume el interior de la torre, simbolizando que la destrucción se origina desde dentro—una estructura deshecha por sus propios defectos ocultos, no solo por un ataque externo."
+          }
+        },
+        {
+          "element": {
+            "en": "The twenty-two Yods falling like rain",
+            "ru": "Двадцать два йода, падающие подобно дождю",
+            "es": "Los veintidós yods que caen como lluvia"
+          },
+          "description": {
+            "en": "Small flame-like drops (interpreted as Hebrew Yods, one for each Major Arcana path) fall from the sky, suggesting that this catastrophe carries seeds of the whole tarot's transformative wisdom within it.",
+            "ru": "Маленькие капли, подобные пламени (истолковываемые как еврейские йоды, по одному на каждый путь Старших Арканов), падают с неба, предполагая, что эта катастрофа несёт в себе зёрна преобразующей мудрости всего Таро.",
+            "es": "Pequeñas gotas parecidas a llamas (interpretadas como Yods hebreos, uno por cada camino de los Arcanos Mayores) caen del cielo, sugiriendo que esta catástrofe lleva dentro de sí semillas de la sabiduría transformadora de todo el tarot."
+          }
+        },
+        {
+          "element": {
+            "en": "The dark, stormy sky",
+            "ru": "Тёмное, грозовое небо",
+            "es": "El cielo oscuro y tormentoso"
+          },
+          "description": {
+            "en": "A black sky filled with storm signals that this upheaval is part of a larger, cosmic process of clearing, not simply isolated bad luck.",
+            "ru": "Чёрное небо, полное бури, указывает на то, что это потрясение — часть более крупного, космического процесса очищения, а не просто изолированная неудача.",
+            "es": "Un cielo negro lleno de tormenta señala que este trastorno es parte de un proceso cósmico más amplio de despeje, no simplemente mala suerte aislada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Tower represents sudden, unavoidable revelation that shatters illusion and false structure—destruction that is violent but ultimately clarifying and necessary. Divinationally it warns of abrupt upheaval, often a shock that has been building unseen, and reminds the querent that what falls was never as stable as it appeared.",
+        "ru": "В RWS Башня олицетворяет внезапное, неизбежное откровение, разбивающее иллюзию и ложную структуру, — разрушение, которое насильственно, но в конечном счёте проясняюще и необходимо. В гадании она предупреждает о резком потрясении, часто шоке, назревавшем незримо, и напоминает вопрошающему, что то, что рухнуло, никогда не было столь устойчивым, как казалось.",
+        "es": "En el RWS, la Torre representa una revelación súbita e ineludible que hace añicos la ilusión y la estructura falsa—una destrucción violenta pero, en última instancia, clarificadora y necesaria. En la adivinación advierte de un trastorno abrupto, a menudo un shock que se ha ido gestando sin ser visto, y recuerda a la persona consultante que lo que cae nunca fue tan estable como parecía."
+      }
+    },
+    "major-17": {
+      "qabalah": {
+        "path_number": "28",
+        "hebrew_letter": {
+          "en": "Tsadi",
+          "ru": "Цади",
+          "es": "Tsade"
+        },
+        "hebrew_symbol": "צ",
+        "hebrew_unicode": "U+05E6",
+        "sephirothic_connection": {
+          "en": "Netzach – Yesod",
+          "ru": "Нецах – Йесод",
+          "es": "Netzach – Yesod"
+        },
+        "interpretation": {
+          "en": "This path connects Netzach's emotional, desirous vitality to Yesod's foundational, image-forming subconscious, expressing hope as a feeling that quietly reshapes the deep patterns from which future action grows.",
+          "ru": "Этот путь соединяет эмоциональную, желающую жизненность Нецах с фундаментальным, формирующим образы подсознанием Йесод, выражая надежду как чувство, тихо переформирующее глубокие паттерны, из которых вырастает будущее действие.",
+          "es": "Este camino conecta la vitalidad emocional y deseante de Netzach con el subconsciente fundacional y formador de imágenes de Yesod, expresando la esperanza como un sentimiento que remodela en silencio los patrones profundos de los que crece la acción futura."
+        },
+        "notes": {
+          "en": "Tsadi means 'fishhook'—the aspirational reach toward something not yet grasped, associated with Aquarius in the standard Golden Dawn/RWS attribution.",
+          "ru": "Цади означает 'рыболовный крюк' — устремлённое тяготение к тому, что ещё не схвачено, связанное с Водолеем в стандартной атрибуции Golden Dawn/RWS.",
+          "es": "Tsadi significa 'anzuelo'—el alcance aspiracional hacia algo aún no asido, asociado con Acuario en la atribución estándar de la Golden Dawn/RWS."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The kneeling nude woman pouring two jugs",
+            "ru": "Обнажённая коленопреклонённая женщина, льющая из двух кувшинов",
+            "es": "La mujer desnuda arrodillada que vierte dos jarras"
+          },
+          "description": {
+            "en": "She pours water from one jug onto land and from another back into a pool, replenishing both the conscious world and the subconscious source it draws from.",
+            "ru": "Она льёт воду из одного кувшина на землю, а из другого — обратно в водоём, пополняя одновременно сознательный мир и подсознательный источник, из которого он черпает.",
+            "es": "Ella vierte agua de una jarra sobre la tierra y de otra de vuelta al estanque, reponiendo tanto el mundo consciente como la fuente subconsciente de la que se nutre."
+          }
+        },
+        {
+          "element": {
+            "en": "The large central star and seven smaller stars",
+            "ru": "Большая центральная звезда и семь меньших звёзд",
+            "es": "La gran estrella central y siete estrellas menores"
+          },
+          "description": {
+            "en": "An eight-pointed central star, surrounded by seven smaller ones, suggests guiding hope radiating outward to illuminate all directions at once.",
+            "ru": "Восьмиконечная центральная звезда, окружённая семью меньшими, символизирует направляющую надежду, излучающуюся во всех направлениях сразу.",
+            "es": "Una estrella central de ocho puntas, rodeada de siete más pequeñas, sugiere una esperanza guía que irradia hacia afuera para iluminar todas las direcciones a la vez."
+          }
+        },
+        {
+          "element": {
+            "en": "The ibis bird in the tree",
+            "ru": "Птица ибис на дереве",
+            "es": "El ave ibis en el árbol"
+          },
+          "description": {
+            "en": "A bird resembling an ibis, associated with Thoth, perches nearby, tying renewed hope to sacred wisdom and the recording of what has been learned through crisis.",
+            "ru": "Птица, напоминающая ибиса, связанного с Тотом, устраивается неподалёку, связывая обновлённую надежду со священной мудростью и фиксацией уроков, извлечённых из кризиса.",
+            "es": "Un ave parecida a un ibis, asociada con Thoth, se posa cerca, vinculando la esperanza renovada con la sabiduría sagrada y el registro de lo aprendido a través de la crisis."
+          }
+        },
+        {
+          "element": {
+            "en": "Her one foot on land and one in the pool",
+            "ru": "Одна её нога на земле, другая в водоёме",
+            "es": "Su pie en tierra y el otro en el estanque"
+          },
+          "description": {
+            "en": "As with Temperance, one foot rests on solid ground and one in water, showing hope as a bridge integrating conscious effort and subconscious trust.",
+            "ru": "Как и в Умеренности, одна нога покоится на твёрдой земле, а другая в воде, показывая надежду как мост, объединяющий сознательное усилие и подсознательное доверие.",
+            "es": "Como en la Templanza, un pie descansa en tierra firme y el otro en el agua, mostrando la esperanza como un puente que integra el esfuerzo consciente y la confianza subconsciente."
+          }
+        },
+        {
+          "element": {
+            "en": "The gentle, undisturbed landscape",
+            "ru": "Мягкий, нетронутый пейзаж",
+            "es": "El paisaje suave y sereno"
+          },
+          "description": {
+            "en": "A calm, open landscape surrounds her, free of the Tower's wreckage, indicating that peace has genuinely been restored, not merely painted over.",
+            "ru": "Спокойный, открытый пейзаж окружает её, свободный от обломков Башни, указывая, что мир был по-настоящему восстановлен, а не просто закрашен.",
+            "es": "Un paisaje sereno y abierto la rodea, libre de los escombros de la Torre, indicando que la paz se ha restaurado genuinamente, no solo se ha disimulado."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Star restores hope and quiet trust in the wake of the Tower's upheaval—renewal that comes gently, through faith rather than force. Divinationally it speaks to healing, inspiration, and a renewed sense of purpose or possibility, especially after a difficult period has cleared away what no longer served.",
+        "ru": "В RWS Звезда восстанавливает надежду и тихое доверие после потрясения Башни — обновление, приходящее мягко, через веру, а не силу. В гадании она говорит об исцелении, вдохновении и обновлённом ощущении цели или возможности, особенно после того, как трудный период устранил то, что уже не служило.",
+        "es": "En el RWS, la Estrella restaura la esperanza y la confianza tranquila tras el trastorno de la Torre—una renovación que llega con suavidad, a través de la fe y no de la fuerza. En la adivinación habla de sanación, inspiración y un renovado sentido de propósito o posibilidad, especialmente después de que un período difícil haya despejado lo que ya no servía."
+      }
+    },
+    "major-18": {
+      "qabalah": {
+        "path_number": "29",
+        "hebrew_letter": {
+          "en": "Qof",
+          "ru": "Коф",
+          "es": "Qoph"
+        },
+        "hebrew_symbol": "ק",
+        "hebrew_unicode": "U+05E7",
+        "sephirothic_connection": {
+          "en": "Netzach – Malkuth",
+          "ru": "Нецах – Малкут",
+          "es": "Netzach – Malkuth"
+        },
+        "interpretation": {
+          "en": "This path connects Netzach's emotional current directly into Malkuth's material, embodied reality, expressing how deep instinct and half-conscious feeling shape the physical world without full rational mediation.",
+          "ru": "Этот путь соединяет эмоциональное течение Нецах напрямую с материальной, воплощённой реальностью Малкут, выражая, как глубокий инстинкт и полуосознанное чувство формируют физический мир без полного рационального опосредования.",
+          "es": "Este camino conecta la corriente emocional de Netzach directamente con la realidad material y encarnada de Malkuth, expresando cómo el instinto profundo y el sentimiento semiconsciente dan forma al mundo físico sin plena mediación racional."
+        },
+        "notes": {
+          "en": "Qof means 'back of the head'—the primal, non-rational part of the brain associated with instinct, sleep, and dream. Associated with Pisces.",
+          "ru": "Коф означает 'затылок' — примитивная, нерациональная часть мозга, связанная с инстинктом, сном и сновидением. Связана с Рыбами.",
+          "es": "Qof significa 'nuca'—la parte primigenia y no racional del cerebro asociada al instinto, el sueño y los sueños. Asociada con Piscis."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The moon with both crescent and full face",
+            "ru": "Луна с полумесяцем и полным ликом одновременно",
+            "es": "La luna con la fase creciente y el rostro completo"
+          },
+          "description": {
+            "en": "A crescent moon overlays a fuller, human-faced moon, suggesting the layered nature of the unconscious: surface appearance and deeper presence held together.",
+            "ru": "Полумесяц накладывается на более полную луну с человеческим лицом, предполагая слоистую природу бессознательного: поверхностное проявление и более глубокое присутствие, удерживаемые вместе.",
+            "es": "Una luna creciente se superpone a una luna más llena con rostro humano, sugiriendo la naturaleza estratificada del inconsciente: la apariencia superficial y una presencia más profunda sostenidas juntas."
+          }
+        },
+        {
+          "element": {
+            "en": "The dog and wolf howling",
+            "ru": "Собака и волк, воющие",
+            "es": "El perro y el lobo que aúllan"
+          },
+          "description": {
+            "en": "A domesticated dog and a wild wolf howl together at the moon, representing tamed and untamed instinct responding equally to the pull of the unconscious.",
+            "ru": "Домашняя собака и дикий волк вместе воют на луну, олицетворяя укрощённый и неукрощённый инстинкт, одинаково откликающийся на притяжение бессознательного.",
+            "es": "Un perro domesticado y un lobo salvaje aúllan juntos a la luna, representando el instinto domado y el indómito respondiendo por igual al tirón del inconsciente."
+          }
+        },
+        {
+          "element": {
+            "en": "The crayfish emerging from the pool",
+            "ru": "Рак, выползающий из водоёма",
+            "es": "El cangrejo de río que emerge del estanque"
+          },
+          "description": {
+            "en": "A crustacean crawling from the water symbolises primal consciousness stirring up from the depths, not yet fully formed or land-adapted.",
+            "ru": "Ракообразное, выползающее из воды, символизирует первобытное сознание, поднимающееся из глубин, ещё не полностью сформированное или приспособленное к суше.",
+            "es": "Un crustáceo que sale del agua simboliza la conciencia primigenia agitándose desde las profundidades, aún no completamente formada ni adaptada a la tierra."
+          }
+        },
+        {
+          "element": {
+            "en": "The winding path between two towers",
+            "ru": "Извилистая тропа между двумя башнями",
+            "es": "El sendero sinuoso entre dos torres"
+          },
+          "description": {
+            "en": "A path disappears into distant mountains between two watchtowers, showing that the way forward through uncertainty is real, even if its destination cannot yet be clearly seen.",
+            "ru": "Тропа теряется в дальних горах между двумя сторожевыми башнями, показывая, что путь вперёд сквозь неопределённость реален, даже если его конечная точка пока не видна ясно.",
+            "es": "Un sendero desaparece en montañas lejanas entre dos torres de vigilancia, mostrando que el camino hacia adelante a través de la incertidumbre es real, aunque su destino aún no pueda verse con claridad."
+          }
+        },
+        {
+          "element": {
+            "en": "The drops of dew or blood falling from the moon",
+            "ru": "Капли росы или крови, падающие с луны",
+            "es": "Las gotas de rocío o sangre que caen de la luna"
+          },
+          "description": {
+            "en": "Fifteen drops fall from the moon's face, sometimes read as dew nourishing the earth, sometimes as psychic residue—the unconscious continually seeding the conscious world below.",
+            "ru": "Пятнадцать капель падают с лика луны, иногда истолковываемых как роса, питающая землю, иногда как психический осадок — бессознательное, непрестанно засевающее сознательный мир внизу.",
+            "es": "Quince gotas caen del rostro de la luna, a veces leídas como rocío que nutre la tierra, a veces como residuo psíquico—el inconsciente sembrando continuamente el mundo consciente de abajo."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Moon represents the uncertain, dreamlike territory of the unconscious—instinct, fear, and illusion mixed together in a landscape that cannot be fully mapped by reason alone. Divinationally it warns of confusion, deception, or anxiety, while also affirming that intuition can still guide safe passage even when the path ahead is unclear.",
+        "ru": "В RWS Луна олицетворяет неопределённую, сновидческую территорию бессознательного — инстинкт, страх и иллюзию, смешанные в ландшафте, который невозможно полностью нанести на карту одним лишь разумом. В гадании она предупреждает о смятении, обмане или тревоге, одновременно подтверждая, что интуиция всё же может направлять безопасный путь, даже когда дорога впереди неясна.",
+        "es": "En el RWS, la Luna representa el territorio incierto y onírico del inconsciente—el instinto, el miedo y la ilusión mezclados en un paisaje que la razón sola no puede cartografiar por completo. En la adivinación advierte de confusión, engaño o ansiedad, a la vez que afirma que la intuición aún puede guiar un paso seguro incluso cuando el camino por delante no es claro."
+      }
+    },
+    "major-19": {
+      "qabalah": {
+        "path_number": "30",
+        "hebrew_letter": {
+          "en": "Resh",
+          "ru": "Реш",
+          "es": "Resh"
+        },
+        "hebrew_symbol": "ר",
+        "hebrew_unicode": "U+05E8",
+        "sephirothic_connection": {
+          "en": "Hod – Yesod",
+          "ru": "Ход – Йесод",
+          "es": "Hod – Yesod"
+        },
+        "interpretation": {
+          "en": "This path carries Hod's clear, structured intellect into Yesod's foundational subconscious, expressing truth and understanding so direct and radiant that it illuminates the deep patterns of the self without distortion.",
+          "ru": "Этот путь несёт ясный, структурированный интеллект Ход в фундаментальное подсознание Йесод, выражая истину и понимание, столь прямые и лучезарные, что они освещают глубокие паттерны личности без искажения.",
+          "es": "Este camino lleva el intelecto claro y estructurado de Hod hacia el subconsciente fundacional de Yesod, expresando una verdad y comprensión tan directa y radiante que ilumina los patrones profundos del yo sin distorsión."
+        },
+        "notes": {
+          "en": "Resh means 'head' or 'face'—the illuminated countenance of clear consciousness, associated with the Sun itself in the standard attribution.",
+          "ru": "Реш означает 'голова' или 'лицо' — озарённый лик ясного сознания, связанный с самим Солнцем в стандартной атрибуции.",
+          "es": "Resh significa 'cabeza' o 'rostro'—el semblante iluminado de la conciencia clara, asociado con el propio Sol en la atribución estándar."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The radiant sun with alternating rays",
+            "ru": "Лучезарное солнце с чередующимися лучами",
+            "es": "El sol radiante con rayos alternos"
+          },
+          "description": {
+            "en": "Straight and wavy rays alternate around the sun's face, representing the balanced union of intellectual clarity and intuitive warmth.",
+            "ru": "Прямые и волнистые лучи чередуются вокруг лика солнца, олицетворяя сбалансированный союз интеллектуальной ясности и интуитивного тепла.",
+            "es": "Rayos rectos y ondulados se alternan alrededor del rostro del sol, representando la unión equilibrada de la claridad intelectual y la calidez intuitiva."
+          }
+        },
+        {
+          "element": {
+            "en": "The naked child riding a white horse",
+            "ru": "Обнажённый ребёнок, скачущий на белом коне",
+            "es": "El niño desnudo montado en un caballo blanco"
+          },
+          "description": {
+            "en": "An unguarded, joyful child rides bareback without saddle or reins, embodying innocent trust, vitality, and freedom from unnecessary defence or pretence.",
+            "ru": "Незащищённый, радостный ребёнок скачет без седла и поводьев, воплощая невинное доверие, жизненность и свободу от ненужной защиты или притворства.",
+            "es": "Un niño sin guardia y gozoso monta a pelo, sin silla ni riendas, encarnando la confianza inocente, la vitalidad y la libertad de una defensa o pretensión innecesarias."
+          }
+        },
+        {
+          "element": {
+            "en": "The four sunflowers behind the wall",
+            "ru": "Четыре подсолнуха за стеной",
+            "es": "Los cuatro girasoles detrás del muro"
+          },
+          "description": {
+            "en": "Sunflowers turning toward the light echo humanity's natural orientation toward truth, growth, and warmth once fear has been set aside.",
+            "ru": "Подсолнухи, обращённые к свету, отражают естественную ориентацию человечества на истину, рост и тепло, как только страх был отброшен.",
+            "es": "Los girasoles vueltos hacia la luz reflejan la orientación natural de la humanidad hacia la verdad, el crecimiento y la calidez, una vez que el miedo se ha dejado de lado."
+          }
+        },
+        {
+          "element": {
+            "en": "The low garden wall",
+            "ru": "Низкая садовая стена",
+            "es": "El muro bajo del jardín"
+          },
+          "description": {
+            "en": "A modest wall separates the child from the flowers without fully blocking the connection, suggesting healthy boundaries can coexist with open, joyful expression.",
+            "ru": "Скромная стена отделяет ребёнка от цветов, не блокируя связь полностью, предполагая, что здоровые границы могут сосуществовать с открытым, радостным самовыражением.",
+            "es": "Un muro modesto separa al niño de las flores sin bloquear del todo la conexión, sugiriendo que unos límites saludables pueden coexistir con una expresión abierta y gozosa."
+          }
+        },
+        {
+          "element": {
+            "en": "The bright red plume on the child's head",
+            "ru": "Ярко-красное перо на голове ребёнка",
+            "es": "El penacho rojo brillante en la cabeza del niño"
+          },
+          "description": {
+            "en": "A vivid feather signals vital life-force and a natural, unselfconscious display of confidence rather than anxious self-doubt.",
+            "ru": "Яркое перо символизирует жизненную силу и естественное, непринуждённое проявление уверенности, а не тревожное сомнение в себе.",
+            "es": "Una pluma vívida señala la fuerza vital y una muestra natural y espontánea de confianza, no una duda de sí mismo ansiosa."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the Sun brings unguarded clarity, joy, and vitality following the Moon's uncertain dream-state—truth revealed plainly, without shadow or disguise. Divinationally it signals success, happiness, good health, and the confidence that comes from living openly and authentically rather than through fear or pretence.",
+        "ru": "В RWS Солнце приносит незащищённую ясность, радость и жизненность после неопределённого сновидческого состояния Луны — истину, раскрытую откровенно, без тени или маскировки. В гадании оно указывает на успех, счастье, доброе здоровье и уверенность, приходящую от открытой и подлинной жизни, а не через страх или притворство.",
+        "es": "En el RWS, el Sol trae una claridad, alegría y vitalidad sin guardia tras el estado onírico incierto de la Luna—la verdad revelada con claridad, sin sombra ni disfraz. En la adivinación señala éxito, felicidad, buena salud y la confianza que proviene de vivir de forma abierta y auténtica, no a través del miedo o la pretensión."
+      }
+    },
+    "major-20": {
+      "qabalah": {
+        "path_number": "31",
+        "hebrew_letter": {
+          "en": "Shin",
+          "ru": "Шин",
+          "es": "Shin"
+        },
+        "hebrew_symbol": "ש",
+        "hebrew_unicode": "U+05E9",
+        "sephirothic_connection": {
+          "en": "Hod – Malkuth",
+          "ru": "Ход – Малкут",
+          "es": "Hod – Malkuth"
+        },
+        "interpretation": {
+          "en": "This path carries Hod's clear, intellectual structure down into Malkuth's fully embodied, material reality, expressing a summons so total that it must be answered in the flesh, not merely contemplated in thought.",
+          "ru": "Этот путь несёт ясную, интеллектуальную структуру Ход вниз, в полностью воплощённую, материальную реальность Малкут, выражая призыв, столь всеобъемлющий, что на него нужно ответить во плоти, а не просто размышлять о нём мысленно.",
+          "es": "Este camino lleva la estructura clara e intelectual de Hod hacia la realidad material y plenamente encarnada de Malkuth, expresando una convocatoria tan total que debe responderse en la carne, no meramente contemplarse en el pensamiento."
+        },
+        "notes": {
+          "en": "Shin means 'tooth'—associated with fire and the consuming, purifying element that transforms whatever it touches. Associated with the element of Fire (or Pluto in modern systems).",
+          "ru": "Шин означает 'зуб' — связана с огнём и поглощающей, очищающей стихией, преобразующей всё, к чему прикасается. Связана со стихией Огня (или Плутоном в современных системах).",
+          "es": "Shin significa 'diente'—asociada con el fuego y el elemento consumidor y purificador que transforma todo lo que toca. Asociada con el elemento Fuego (o Plutón en sistemas modernos)."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The angel Gabriel blowing the trumpet",
+            "ru": "Ангел Гавриил, трубящий в трубу",
+            "es": "El ángel Gabriel que toca la trompeta"
+          },
+          "description": {
+            "en": "Gabriel sounds a trumpet from the clouds, representing a summons that cannot be ignored—a call to awaken that comes from beyond ordinary will.",
+            "ru": "Гавриил трубит в трубу из облаков, представляя призыв, который невозможно игнорировать, — зов к пробуждению, исходящий извне обычной воли.",
+            "es": "Gabriel toca una trompeta desde las nubes, representando una convocatoria que no puede ignorarse—un llamado al despertar que viene de más allá de la voluntad ordinaria."
+          }
+        },
+        {
+          "element": {
+            "en": "The banner with a red cross",
+            "ru": "Знамя с красным крестом",
+            "es": "El estandarte con la cruz roja"
+          },
+          "description": {
+            "en": "A flag bearing an equal-armed red cross hangs from the trumpet, tying this awakening to themes of sacrifice, healing, and unified purpose.",
+            "ru": "Флаг с равносторонним красным крестом свисает с трубы, связывая это пробуждение с темами жертвы, исцеления и единой цели.",
+            "es": "Una bandera con una cruz roja de brazos iguales cuelga de la trompeta, vinculando este despertar con temas de sacrificio, sanación y propósito unificado."
+          }
+        },
+        {
+          "element": {
+            "en": "The rising figures from open graves",
+            "ru": "Восстающие фигуры из открытых могил",
+            "es": "Las figuras que se alzan de tumbas abiertas"
+          },
+          "description": {
+            "en": "Naked figures rise with arms open from coffins below, showing rebirth as total and unguarded—nothing held back or hidden from the moment of reckoning.",
+            "ru": "Обнажённые фигуры поднимаются с открытыми руками из гробов внизу, показывая возрождение как полное и незащищённое — ничто не утаено и не скрыто от момента расплаты.",
+            "es": "Figuras desnudas se alzan con los brazos abiertos desde ataúdes abajo, mostrando el renacimiento como algo total y sin guardia—nada se retiene ni se oculta ante el momento del ajuste de cuentas."
+          }
+        },
+        {
+          "element": {
+            "en": "The mountains in the background",
+            "ru": "Горы на заднем плане",
+            "es": "Las montañas al fondo"
+          },
+          "description": {
+            "en": "Distant peaks frame the scene, suggesting that this awakening, while personal, occurs within a larger, timeless natural and spiritual order.",
+            "ru": "Дальние вершины обрамляют сцену, предполагая, что это пробуждение, будучи личным, происходит в рамках более крупного, вневременного природного и духовного порядка.",
+            "es": "Picos lejanos enmarcan la escena, sugiriendo que este despertar, aunque personal, ocurre dentro de un orden natural y espiritual más amplio y atemporal."
+          }
+        },
+        {
+          "element": {
+            "en": "The calm sea below the figures",
+            "ru": "Спокойное море под фигурами",
+            "es": "El mar en calma bajo las figuras"
+          },
+          "description": {
+            "en": "A tranquil sea beneath the rising figures signals that emotional turmoil has settled, making space for clear, unclouded response to the call.",
+            "ru": "Спокойное море под восстающими фигурами указывает, что эмоциональное смятение улеглось, освобождая место для ясного, незамутнённого ответа на призыв.",
+            "es": "Un mar tranquilo bajo las figuras que se alzan señala que la agitación emocional se ha calmado, dejando espacio para una respuesta clara y sin nubes al llamado."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, Judgement represents a decisive summons to awaken, take stock, and rise renewed—accountability offered as liberation rather than punishment. Divinationally it often signals a turning point of self-evaluation, forgiveness (of self or others), and answering a call toward one's next, truer chapter.",
+        "ru": "В RWS Суд олицетворяет решительный призыв пробудиться, подвести итоги и восстать обновлённым — ответственность, предложенная как освобождение, а не наказание. В гадании он часто указывает на поворотный момент самооценки, прощения (себя или других) и ответ на призыв к своей следующей, более истинной главе.",
+        "es": "En el RWS, el Juicio representa una convocatoria decisiva a despertar, hacer balance y levantarse renovado—la responsabilidad ofrecida como liberación, no como castigo. En la adivinación suele señalar un punto de inflexión de autoevaluación, perdón (propio o ajeno), y responder a un llamado hacia el próximo capítulo, más verdadero, de la propia vida."
+      }
+    },
+    "major-21": {
+      "qabalah": {
+        "path_number": "32",
+        "hebrew_letter": {
+          "en": "Tav",
+          "ru": "Тав",
+          "es": "Tau"
+        },
+        "hebrew_symbol": "ת",
+        "hebrew_unicode": "U+05EA",
+        "sephirothic_connection": {
+          "en": "Yesod – Malkuth",
+          "ru": "Йесод – Малкут",
+          "es": "Yesod – Malkuth"
+        },
+        "interpretation": {
+          "en": "This final path connects Yesod's subconscious foundation to Malkuth's fully realised material kingdom, expressing the complete grounding of inner pattern into outer, tangible, lived accomplishment.",
+          "ru": "Этот последний путь соединяет подсознательный фундамент Йесод с полностью реализованным материальным царством Малкут, выражая полное укоренение внутреннего паттерна во внешнем, осязаемом, прожитом достижении.",
+          "es": "Este último camino conecta el fundamento subconsciente de Yesod con el reino material plenamente realizado de Malkuth, expresando el arraigo completo del patrón interior en un logro exterior, tangible y vivido."
+        },
+        "notes": {
+          "en": "Tav means 'mark' or 'seal'—the final letter of the Hebrew alphabet, signifying completion, signature, and the seal set upon a finished work.",
+          "ru": "Тав означает 'знак' или 'печать' — последняя буква еврейского алфавита, обозначающая завершение, подпись и печать, поставленную на завершённом труде.",
+          "es": "Tav significa 'marca' o 'sello'—la última letra del alfabeto hebreo, que significa culminación, firma y el sello puesto sobre una obra terminada."
+        }
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The dancing figure within the wreath",
+            "ru": "Танцующая фигура внутри венка",
+            "es": "La figura danzante dentro de la corona"
+          },
+          "description": {
+            "en": "A graceful, androgynous dancer moves within an oval laurel wreath, embodying integrated wholeness in joyful, effortless motion rather than static achievement.",
+            "ru": "Грациозный, андрогинный танцор движется внутри овального лаврового венка, воплощая интегрированную целостность в радостном, непринуждённом движении, а не статичном достижении.",
+            "es": "Un danzante grácil y andrógino se mueve dentro de una corona de laurel ovalada, encarnando la totalidad integrada en un movimiento gozoso y sin esfuerzo, no en un logro estático."
+          }
+        },
+        {
+          "element": {
+            "en": "The wreath of laurel or victory leaves",
+            "ru": "Венок из лавра или победных листьев",
+            "es": "La corona de laurel u hojas de la victoria"
+          },
+          "description": {
+            "en": "An unbroken oval wreath surrounds the dancer, symbolising the completed cycle: the seeker's journey has come full circle back to unified wholeness.",
+            "ru": "Непрерывный овальный венок окружает танцора, символизируя завершённый цикл: путь ищущего пришёл полным кругом обратно к единой целостности.",
+            "es": "Una corona ovalada e ininterrumpida rodea al danzante, simbolizando el ciclo completado: el viaje del buscador ha dado la vuelta completa hasta la totalidad unificada."
+          }
+        },
+        {
+          "element": {
+            "en": "The four winged creatures at the corners",
+            "ru": "Четыре крылатых существа по углам",
+            "es": "Las cuatro criaturas aladas en las esquinas"
+          },
+          "description": {
+            "en": "The same angel, eagle, lion, and bull from the Wheel of Fortune reappear, now settled and stable, showing that all elemental and zodiacal forces have found lasting equilibrium.",
+            "ru": "Те же ангел, орёл, лев и телец из Колеса Фортуны появляются вновь, теперь устоявшиеся и стабильные, показывая, что все стихийные и зодиакальные силы обрели прочное равновесие.",
+            "es": "El mismo ángel, águila, león y toro de la Rueda de la Fortuna reaparecen, ahora asentados y estables, mostrando que todas las fuerzas elementales y zodiacales han hallado un equilibrio duradero."
+          }
+        },
+        {
+          "element": {
+            "en": "The two wands she holds",
+            "ru": "Два жезла, которые она держит",
+            "es": "Las dos varitas que sostiene"
+          },
+          "description": {
+            "en": "Small wands in each hand suggest balanced, mastered will—active creative power held with ease rather than strained effort.",
+            "ru": "Небольшие жезлы в каждой руке символизируют сбалансированную, освоенную волю — активную созидательную силу, удерживаемую с лёгкостью, а не напряжённым усилием.",
+            "es": "Pequeñas varitas en cada mano sugieren una voluntad equilibrada y dominada—un poder creativo activo sostenido con soltura, no con un esfuerzo forzado."
+          }
+        },
+        {
+          "element": {
+            "en": "The purple sash draped around her body",
+            "ru": "Пурпурная перевязь, обёрнутая вокруг её тела",
+            "es": "La banda púrpura envuelta alrededor de su cuerpo"
+          },
+          "description": {
+            "en": "A flowing violet scarf conceals and reveals her form in equal measure, suggesting mastery that integrates both visible accomplishment and hidden mystery.",
+            "ru": "Развевающийся фиолетовый шарф в равной мере скрывает и раскрывает её форму, предполагая мастерство, объединяющее и видимое достижение, и скрытую тайну.",
+            "es": "Una bufanda violeta y ondulante oculta y revela su forma a partes iguales, sugiriendo un dominio que integra tanto el logro visible como el misterio oculto."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In RWS, the World represents the successful completion of a full cycle: all previous lessons integrated into a graceful, sustainable wholeness. Divinationally it signals accomplishment, fulfilment, and the satisfying close of a significant chapter—while also hinting that this ending is itself the threshold to a new journey, echoing the Fool's original step into the unknown.",
+        "ru": "В RWS Мир олицетворяет успешное завершение полного цикла: все прежние уроки интегрированы в грациозную, устойчивую целостность. В гадании он указывает на достижение, исполнение и удовлетворяющее завершение значимой главы, одновременно намекая, что это завершение само по себе является порогом к новому пути, перекликаясь с изначальным шагом Шута в неизвестность.",
+        "es": "En el RWS, el Mundo representa la culminación exitosa de un ciclo completo: todas las lecciones previas integradas en una plenitud grácil y sostenible. En la adivinación señala logro, realización y el cierre satisfactorio de un capítulo significativo—mientras también sugiere que este final es en sí el umbral hacia un nuevo viaje, haciendo eco del paso original del Loco hacia lo desconocido."
       }
     }
   }

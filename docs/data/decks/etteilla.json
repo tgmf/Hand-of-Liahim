@@ -1,0 +1,1133 @@
+{
+  "deck_id": "etteilla",
+  "deck_name": {
+    "en": "Etteilla",
+    "ru": "Эттейла",
+    "es": "Etteilla"
+  },
+  "image_dir": "etteilla",
+  "cards": {
+    "major-0": {
+      "number": 78,
+      "name": {
+        "en": "Folly / The Alchemist (La Folie)",
+        "ru": "Безумие / Алхимик (La Folie)",
+        "es": "La Locura / El Alquimista (La Folie)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The lone eccentric figure",
+            "ru": "Одинокая эксцентричная фигура",
+            "es": "La figura excéntrica solitaria"
+          },
+          "description": {
+            "en": "Numbered 78—last in Etteilla's sequence rather than first—this card depicts a wandering, distracted figure associated with madness, eccentricity, and irrational behaviour. Its position at the very end of the deck (rather than as card 0) reflects Etteilla's own thematic ordering, unrelated to the RWS/Golden Dawn numbering.",
+            "ru": "Пронумерованная как 78 — последняя в последовательности Эттейлы, а не первая — эта карта изображает странствующую, отвлечённую фигуру, ассоциирующуюся с безумием, эксцентричностью и неразумным поведением. Её положение в самом конце колоды (а не как карта 0) отражает собственную тематическую последовательность Эттейлы, не связанную с нумерацией RWS/Golden Dawn.",
+            "es": "Numerada como 78—la última en la secuencia de Etteilla, en lugar de la primera—esta carta representa una figura errante y distraída asociada con la locura, la excentricidad y el comportamiento irracional. Su posición al final de la baraja (en lugar de ser la carta 0) refleja el propio orden temático de Etteilla, no relacionado con la numeración RWS/Golden Dawn."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "As typical of Etteilla-style decks, the card carries a printed list of keyword meanings at the top: folly, eccentricity, distraction, insanity, intoxication, delirium, frenzy—alongside softer readings such as enthusiasm, innocence, and naivety, showing the era's practice of printing divinatory meanings directly on the card.",
+            "ru": "Как это типично для карт в стиле Эттейлы, карта содержит напечатанный список ключевых значений в верхней части: безумие, эксцентричность, отвлечённость, помешательство, опьянение, бред, исступление — наряду с более мягкими значениями, такими как энтузиазм, невинность и наивность, отражая практику той эпохи печатать значения гадания прямо на карте.",
+            "es": "Como es típico en las barajas de estilo Etteilla, la carta lleva una lista impresa de significados clave en la parte superior: locura, excentricidad, distracción, demencia, embriaguez, delirio, frenesí—junto a lecturas más suaves como entusiasmo, inocencia e ingenuidad, mostrando la práctica de la época de imprimir los significados adivinatorios directamente en la carta."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "The reversed meanings printed at the bottom include imbecility, carelessness, apathy, exhaustion, and emptiness/nullity—reframing the same wandering figure as directionless or drained rather than freely inspired.",
+            "ru": "Перевёрнутые значения, напечатанные в нижней части, включают слабоумие, беспечность, апатию, истощение и пустоту/ничтожность — переосмысляя ту же странствующую фигуру как лишённую направления или истощённую, а не свободно вдохновлённую.",
+            "es": "Los significados invertidos impresos en la parte inferior incluyen imbecilidad, descuido, apatía, agotamiento y vacío/nulidad—reformulando a la misma figura errante como carente de dirección o agotada, en lugar de libremente inspirada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Etteilla's system, this card ('Folly, or the Alchemist') sits outside the normal numerical sequence (card 78, not 0), underscoring how differently his deck was structured compared to later esoteric decks. It carries strong associations with irrationality and altered states, but also innocence and untutored enthusiasm—closer to a moral caution about excess than to RWS's optimistic 'new beginnings'. Etteilla's own numbering and thematic order (a Creation-myth sequence for the Majors, rather than 0–21) means this card functions as a kind of wildcard or outlier rather than the deck's starting point.",
+        "ru": "В системе Эттейлы эта карта ('Безумие, или Алхимик') находится за пределами обычной числовой последовательности (карта 78, а не 0), подчёркивая, насколько иначе была устроена его колода по сравнению с более поздними эзотерическими деками. Она несёт сильные ассоциации с иррациональностью и изменёнными состояниями сознания, но также с невинностью и неискушённым энтузиазмом — ближе к моральному предостережению об избытке, чем к оптимистичным 'новым начинаниям' RWS. Собственная нумерация и тематический порядок Эттейлы (последовательность мифа о творении для Старших Арканов, а не 0–21) означают, что эта карта функционирует скорее как своеобразный аутсайдер, чем как начальная точка колоды.",
+        "es": "En el sistema de Etteilla, esta carta ('Locura, o el Alquimista') se sitúa fuera de la secuencia numérica normal (carta 78, no 0), subrayando cuán diferente estaba estructurada su baraja en comparación con barajas esotéricas posteriores. Lleva fuertes asociaciones con la irracionalidad y los estados alterados, pero también con la inocencia y el entusiasmo no instruido—más cercana a una advertencia moral sobre el exceso que a los optimistas 'nuevos comienzos' del RWS. La propia numeración y orden temático de Etteilla (una secuencia de mito de la Creación para los Mayores, en lugar de 0–21) significa que esta carta funciona como una especie de comodín o atípico, más que como el punto de partida de la baraja."
+      }
+    },
+    "major-1": {
+      "number": 15,
+      "name": {
+        "en": "Illness / The Magician or the Juggler (Maladie / Le Magicien ou le Bateleur)",
+        "ru": "Болезнь / Маг или Жонглёр (Maladie / Le Magicien ou le Bateleur)",
+        "es": "Enfermedad / El Mago o el Malabarista (Maladie / Le Magicien ou le Bateleur)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The single standing figure with tools",
+            "ru": "Одиночная стоящая фигура с инструментами",
+            "es": "La figura solitaria de pie con herramientas"
+          },
+          "description": {
+            "en": "Etteilla's equivalent card depicts a lone figure associated with skill and craft, echoing the older 'Bateleur' (juggler/street-performer) tradition that predates both RWS and Thoth—the root image from which the modern Magician descends.",
+            "ru": "Эквивалентная карта Эттейлы изображает одинокую фигуру, связанную с мастерством и ремеслом, отражая более старую традицию 'Bateleur' (жонглёра/уличного artиста), которая предшествует и RWS, и Тоту — исходный образ, от которого произошёл современный Маг.",
+            "es": "La carta equivalente de Etteilla representa a una figura solitaria asociada con la habilidad y el oficio, haciendo eco de la tradición más antigua del 'Bateleur' (malabarista/artista de calle) que precede tanto al RWS como a Thoth—la imagen raíz de la cual desciende el Mago moderno."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Etteilla's card carries its own printed divinatory keywords at the top of the card, in keeping with his system's practice of listing meanings directly on each card rather than relying solely on pictorial symbolism.",
+            "ru": "Карта Эттейлы содержит собственные напечатанные ключевые слова гадания в верхней части, в соответствии с практикой его системы перечислять значения прямо на каждой карте, а не полагаться исключительно на изобразительную символику.",
+            "es": "La carta de Etteilla lleva sus propias palabras clave adivinatorias impresas en la parte superior, en línea con la práctica de su sistema de enumerar los significados directamente en cada carta en lugar de depender únicamente del simbolismo pictórico."
+          }
+        },
+        {
+          "element": {
+            "en": "Numbering discrepancy across editions",
+            "ru": "Расхождение в нумерации между изданиями",
+            "es": "Discrepancia de numeración entre ediciones"
+          },
+          "description": {
+            "en": "Different editions/printings of the Etteilla deck give this card different sequential numbers and even different titles ('Maladie'/Illness in some numbering schemes, 'Le Magicien ou le Bateleur' explicitly in others), reflecting the historical instability of Etteilla's own system before it was later standardised by other authors.",
+            "ru": "Разные издания/тиражи колоды Эттейлы дают этой карте разные порядковые номера и даже разные названия ('Maladie'/Болезнь в одних схемах нумерации, 'Le Magicien ou le Bateleur' явно в других), отражая историческую неустойчивость собственной системы Эттейлы до её последующей стандартизации другими авторами.",
+            "es": "Diferentes ediciones/tiradas de la baraja Etteilla dan a esta carta números secuenciales distintos e incluso títulos diferentes ('Maladie'/Enfermedad en algunos esquemas de numeración, 'Le Magicien ou le Bateleur' explícitamente en otros), reflejando la inestabilidad histórica del propio sistema de Etteilla antes de ser posteriormente estandarizado por otros autores."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's equivalent to The Magician sits at a historically ambiguous point: some numbering traditions call it 'Maladie' (Illness) and correspond it to this trump by thematic content rather than shared title, while other printed editions of the Etteilla/Book of Thoth deck explicitly title a card 'Le Magicien ou le Bateleur'. Either way, the card traces back to the older 'Bateleur' (street performer/juggler) figure, predating the more elevated 'ceremonial magician' imagery later developed in RWS and Thoth. Divinationally, Etteilla's tradition leans toward themes of skill, cunning, and adaptability, with 'illness' readings in some editions suggesting the shadow side: instability, ailment, or fragile vitality rather than confident mastery.",
+        "ru": "Эквивалент Маг у Эттейлы находится в исторически неоднозначной точке: некоторые традиции нумерации называют её 'Maladie' (Болезнь) и соотносят с этим трампом по тематическому содержанию, а не по общему названию, в то время как другие печатные издания колоды Эттейлы/Книги Тота явно называют карту 'Le Magicien ou le Bateleur'. В любом случае карта восходит к более старому образу 'Bateleur' (уличного artиста/жонглёра), предшествующему более возвышенной образности 'церемониального магa', позже развитой в RWS и Тоте. В гадании традиция Эттейлы склоняется к темам мастерства, хитрости и приспособляемости, при этом трактовки 'болезни' в некоторых изданиях указывают на теневую сторону: неустойчивость, недомогание или хрупкую жизненную силу, а не уверенное мастерство.",
+        "es": "El equivalente de Etteilla a El Mago se encuentra en un punto históricamente ambiguo: algunas tradiciones de numeración lo llaman 'Maladie' (Enfermedad) y lo corresponden con este triunfo por contenido temático más que por título compartido, mientras que otras ediciones impresas de la baraja Etteilla/Libro de Thoth titulan explícitamente una carta 'Le Magicien ou le Bateleur'. De cualquier manera, la carta se remonta a la figura más antigua del 'Bateleur' (artista de calle/malabarista), que precede a la imaginería más elevada del 'mago ceremonial' desarrollada después en el RWS y Thoth. En la adivinación, la tradición de Etteilla se inclina hacia temas de habilidad, astucia y adaptabilidad, con lecturas de 'enfermedad' en algunas ediciones sugiriendo el lado oscuro: inestabilidad, dolencia o vitalidad frágil en lugar de una maestría segura."
+      }
+    },
+    "major-2": {
+      "number": 8,
+      "name": {
+        "en": "Etteilla / The Female Querent (La Questionnante)",
+        "ru": "Эттейла / Женщина-вопрошающая (La Questionnante)",
+        "es": "Etteilla / La Questionnante (La Consultante)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The seated female figure representing the querent",
+            "ru": "Сидящая женская фигура, представляющая вопрошающую",
+            "es": "La figura femenina sentada que representa a la consultante"
+          },
+          "description": {
+            "en": "Unlike RWS's archetypal guardian, Etteilla's card literally depicts the person consulting the cards herself—inserting the reader's female client directly into the deck's own imagery as card 8.",
+            "ru": "В отличие от архетипической хранительницы RWS, карта Эттейлы буквально изображает саму обратившуюся за гаданием — вводя женщину-клиента гадателя прямо в образность колоды под номером 8.",
+            "es": "A diferencia de la guardiana arquetípica del RWS, la carta de Etteilla representa literalmente a la persona que consulta las cartas—insertando a la consultante misma directamente en la imaginería de la baraja como carta 8."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings printed on the card include the questioner herself, a fair woman, and matters of personal concern brought to the reading—centring the querent's own presence within the spread.",
+            "ru": "Значения в прямом положении, напечатанные на карте, включают саму вопрошающую, светловолосую женщину и личные вопросы, вынесенные на расклад — помещая присутствие самой вопрошающей в центр расклада.",
+            "es": "Los significados al derecho impresos en la carta incluyen a la propia consultante, una mujer rubia y asuntos personales traídos a la lectura—centrando la presencia de la propia consultante dentro de la tirada."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings shift toward a woman of different temperament or circumstance—jealous, deceitful, or troubled—showing how Etteilla's system reframes the same base figure through the querent's own shadow side.",
+            "ru": "Перевёрнутые значения смещаются в сторону женщины иного темперамента или обстоятельств — ревнивой, лживой или встревоженной — показывая, как система Эттейлы переосмысляет ту же базовую фигуру через теневую сторону самой вопрошающей.",
+            "es": "Los significados invertidos se desplazan hacia una mujer de temperamento o circunstancias distintas—celosa, engañosa o angustiada—mostrando cómo el sistema de Etteilla reformula a la misma figura base a través del lado sombrío de la propia consultante."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "In Etteilla's deck, card 8 is not an archetypal guardian of mystery but a direct stand-in for the female client herself, reflecting his practical, consultation-based approach to cartomancy rather than the esoteric symbolism later layered on by the Golden Dawn. It personalises the reading, asking what role this specific woman—her mood, her honesty, her intentions—plays in the matter at hand.",
+        "ru": "В колоде Эттейлы карта 8 — не архетипическая хранительница тайны, а прямое олицетворение самой женщины-клиентки, отражающее его практичный, консультационный подход к картомантии, а не эзотерическую символику, добавленную позднее Golden Dawn. Она персонализирует гадание, спрашивая, какую роль эта конкретная женщина — её настроение, честность, намерения — играет в рассматриваемом вопросе.",
+        "es": "En la baraja de Etteilla, la carta 8 no es una guardiana arquetípica del misterio sino una representación directa de la propia clienta, reflejando su enfoque práctico y basado en la consulta hacia la cartomancia, en lugar del simbolismo esotérico añadido después por la Golden Dawn. Personaliza la lectura, preguntando qué papel juega esta mujer concreta—su ánimo, su honestidad, sus intenciones—en el asunto que se consulta."
+      }
+    },
+    "major-3": {
+      "number": 6,
+      "name": {
+        "en": "Etteilla / Night or Day (Nuit / Jour)",
+        "ru": "Эттейла / Ночь или День (Nuit / Jour)",
+        "es": "Etteilla / Noche o Día (Nuit / Jour)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The dual figure of Night and Day",
+            "ru": "Двойственная фигура Ночи и Дня",
+            "es": "La figura dual de la Noche y el Día"
+          },
+          "description": {
+            "en": "Rather than a single fertility goddess, Etteilla's card six pairs contrasting states—light and darkness—reflecting his cosmological, Creation-myth-based sequence for the Major Arcana rather than an archetypal-psychological one.",
+            "ru": "Вместо единой богини плодородия, шестая карта Эттейлы сопоставляет контрастные состояния — свет и тьму — отражая его космологическую, основанную на мифе о творении последовательность Старших Арканов, а не архетипически-психологическую.",
+            "es": "En lugar de una única diosa de la fertilidad, la carta seis de Etteilla empareja estados contrastantes—luz y oscuridad—reflejando su secuencia cosmológica, basada en el mito de la Creación, para los Arcanos Mayores, en lugar de una arquetípico-psicológica."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include fertility, generation, and the fruitful outcome of a matter—echoing the RWS Empress's abundance theme even while the imagery differs completely.",
+            "ru": "Значения в прямом положении включают плодородие, порождение и плодотворный исход дела — перекликаясь с темой изобилия Императрицы RWS, даже при полностью иной образности.",
+            "es": "Los significados al derecho incluyen fertilidad, generación y el resultado fructífero de un asunto—haciendo eco del tema de abundancia de la Emperatriz del RWS, aunque la imaginería sea completamente distinta."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings shift toward doubt, hesitation, or a matter that has not yet come to fruition—the day/night duality tipping toward obscurity rather than clarity.",
+            "ru": "Перевёрнутые значения смещаются к сомнению, нерешительности или делу, ещё не принёсшему плодов — двойственность дня и ночи склоняется к неясности, а не к ясности.",
+            "es": "Los significados invertidos se desplazan hacia la duda, la vacilación o un asunto que aún no ha dado fruto—la dualidad día/noche inclinándose hacia la oscuridad en lugar de la claridad."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's sixth card belongs to his Creation-myth ordering of the Majors, pairing Night and Day as primordial cosmic forces rather than depicting a maternal figure. It nonetheless converges thematically with the RWS/Thoth Empress on fruition and generative outcome, showing how independently-derived systems can still echo one another's core meanings through different symbolic paths.",
+        "ru": "Шестая карта Эттейлы принадлежит его основанной на мифе о творении последовательности Старших Арканов, сопоставляя Ночь и День как изначальные космические силы, а не изображая материнскую фигуру. Тем не менее она тематически сходится с Императрицей RWS/Тота в теме плодоношения и порождающего результата, показывая, как независимо разработанные системы могут перекликаться в своих ключевых значениях разными символическими путями.",
+        "es": "La sexta carta de Etteilla pertenece a su ordenamiento de los Arcanos Mayores basado en el mito de la Creación, emparejando la Noche y el Día como fuerzas cósmicas primordiales en lugar de representar una figura materna. Sin embargo, converge temáticamente con la Emperatriz del RWS/Thoth en la fructificación y el resultado generativo, mostrando cómo sistemas desarrollados de forma independiente pueden hacer eco de los mismos significados centrales por caminos simbólicos distintos."
+      }
+    },
+    "major-4": {
+      "number": 7,
+      "name": {
+        "en": "Etteilla / Support or Protection (Appui / Protection)",
+        "ru": "Эттейла / Опора или Защита (Appui / Protection)",
+        "es": "Etteilla / Apoyo o Protección (Appui / Protection)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The protective figure of support",
+            "ru": "Защищающая фигура опоры",
+            "es": "La figura protectora de apoyo"
+          },
+          "description": {
+            "en": "Etteilla's seventh card foregrounds the theme of a steady helper or benefactor rather than a specifically paternal or political ruler, keeping the focus practical and relational.",
+            "ru": "Седьмая карта Эттейлы выдвигает на первый план тему надёжного помощника или благодетеля, а не конкретно отцовского или политического правителя, сохраняя фокус практическим и межличностным.",
+            "es": "La séptima carta de Etteilla pone en primer plano el tema de un ayudante o benefactor estable, en lugar de un gobernante específicamente paterno o político, manteniendo el enfoque práctico y relacional."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include protection, support, assistance from a powerful person, and stability offered by an outside force.",
+            "ru": "Значения в прямом положении включают защиту, поддержку, помощь влиятельного человека и стабильность, предлагаемую внешней силой.",
+            "es": "Los significados al derecho incluyen protección, apoyo, ayuda de una persona poderosa y estabilidad ofrecida por una fuerza externa."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to withdrawn support, a fall from protection, or reliance on an authority that proves unstable or absent when needed.",
+            "ru": "Перевёрнутые значения указывают на отозванную поддержку, утрату защиты или опору на власть, которая оказывается неустойчивой или отсутствующей в нужный момент.",
+            "es": "Los significados invertidos apuntan a un apoyo retirado, una caída de la protección, o la dependencia de una autoridad que resulta inestable o ausente cuando se la necesita."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's card seven treats authority in purely functional terms—support received or withdrawn—rather than exploring fatherhood or civic order as archetypes. It reflects his broader cartomantic method of reading practical outcomes (will help arrive, or won't it?) over psychological or mythic depth.",
+        "ru": "Седьмая карта Эттейлы трактует власть в чисто функциональных терминах — полученная или отозванная поддержка — а не исследует отцовство или гражданский порядок как архетипы. Она отражает его более широкий картомантический метод чтения практических исходов (придёт ли помощь или нет?), а не психологическую или мифическую глубину.",
+        "es": "La carta siete de Etteilla trata la autoridad en términos puramente funcionales—apoyo recibido o retirado—en lugar de explorar la paternidad o el orden cívico como arquetipos. Refleja su método cartomántico más amplio, centrado en leer resultados prácticos (¿llegará la ayuda o no?) por encima de la profundidad psicológica o mítica."
+      }
+    },
+    "major-5": {
+      "number": 1,
+      "name": {
+        "en": "Etteilla / The Male Querent (Le Questionnant)",
+        "ru": "Эттейла / Мужчина-вопрошающий (Le Questionnant)",
+        "es": "Etteilla / El Consultante (Le Questionnant)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The seated male figure representing the querent",
+            "ru": "Сидящая мужская фигура, представляющая вопрошающего",
+            "es": "La figura masculina sentada que representa al consultante"
+          },
+          "description": {
+            "en": "As card number 1—the very first in Etteilla's sequence—this figure represents the male client himself, anchoring the entire deck's reading around the person seeking counsel.",
+            "ru": "Будучи картой номер 1 — самой первой в последовательности Эттейлы — эта фигура представляет самого мужчину-клиента, закрепляя всё гадание колоды вокруг человека, ищущего совета.",
+            "es": "Como carta número 1—la primerísima en la secuencia de Etteilla—esta figura representa al propio cliente masculino, anclando toda la lectura de la baraja en torno a la persona que busca consejo."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings centre on the querent himself, a fair man, and the concerns he brings to the table, similarly to how card 8 centres the female querent.",
+            "ru": "Значения в прямом положении сосредоточены на самом вопрошающем, светловолосом мужчине и вопросах, которые он приносит к раскладу, подобно тому как карта 8 сосредоточена на женщине-вопрошающей.",
+            "es": "Los significados al derecho se centran en el propio consultante, un hombre rubio y los asuntos que trae a la consulta, de forma similar a como la carta 8 centra a la consultante femenina."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings suggest a man of troubled or duplicitous character, showing how the same base figure of the querent shifts to reveal shadow motivations.",
+            "ru": "Перевёрнутые значения указывают на человека тревожного или лживого характера, показывая, как одна и та же базовая фигура вопрошающего меняется, раскрывая теневые мотивы.",
+            "es": "Los significados invertidos sugieren a un hombre de carácter turbado o falso, mostrando cómo la misma figura base del consultante se transforma para revelar motivaciones sombrías."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Placing the male querent at card 1 rather than assigning it any doctrinal or hierarchical meaning shows Etteilla's cartomantic priorities clearly: his system is built to reflect the person asking the question back to themselves before addressing any external situation, a structurally very different starting point from RWS's institutional Hierophant.",
+        "ru": "Помещение мужчины-вопрошающего на карту 1, вместо придания ей какого-либо доктринального или иерархического значения, ясно показывает картомантические приоритеты Эттейлы: его система построена так, чтобы отразить самого спрашивающего обратно к нему самому, прежде чем обращаться к какой-либо внешней ситуации — структурно совершенно иная отправная точка, чем институциональный Иерофант RWS.",
+        "es": "Colocar al consultante masculino en la carta 1, en lugar de asignarle un significado doctrinal o jerárquico, muestra con claridad las prioridades cartománticas de Etteilla: su sistema está construido para reflejar a la persona que pregunta hacia sí misma antes de abordar cualquier situación externa, un punto de partida estructuralmente muy distinto del Hierofante institucional del RWS."
+      }
+    },
+    "major-6": {
+      "number": 13,
+      "name": {
+        "en": "Etteilla / Marriage or Union (Mariage / Union)",
+        "ru": "Эттейла / Брак или Союз (Mariage / Union)",
+        "es": "Etteilla / Matrimonio o Unión (Mariage / Union)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The wedded couple",
+            "ru": "Обвенчанная пара",
+            "es": "La pareja desposada"
+          },
+          "description": {
+            "en": "Etteilla depicts a more literal marriage scene than RWS's Edenic allegory, keeping the card's focus on concrete social union rather than moral or psychological symbolism.",
+            "ru": "Эттейла изображает более буквальную свадебную сцену, чем эдемская аллегория RWS, сохраняя фокус карты на конкретном социальном союзе, а не на нравственной или психологической символике.",
+            "es": "Etteilla representa una escena de matrimonio más literal que la alegoría edénica del RWS, manteniendo el foco de la carta en la unión social concreta en lugar del simbolismo moral o psicológico."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include marriage, union, agreement, and meeting—a straightforward reading of the card as literal partnership or accord.",
+            "ru": "Значения в прямом положении включают брак, союз, согласие и встречу — прямое прочтение карты как буквального партнёрства или договорённости.",
+            "es": "Los significados al derecho incluyen matrimonio, unión, acuerdo y encuentro—una lectura directa de la carta como pareja o acuerdo literal."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to a broken engagement, discord in partnership, or an ill-considered union entered into too hastily.",
+            "ru": "Перевёрнутые значения указывают на расторгнутую помолвку, разлад в партнёрстве или необдуманный союз, заключённый слишком поспешно.",
+            "es": "Los significados invertidos apuntan a un compromiso roto, discordia en la pareja, o una unión mal considerada, contraída con demasiada premura."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's card thirteen reads marriage and union at face value, as a concrete social and legal event rather than an allegory of moral choice—consistent with his broader preference for practical, situational divination over psychological archetype.",
+        "ru": "Тринадцатая карта Эттейлы трактует брак и союз буквально, как конкретное социальное и юридическое событие, а не аллегорию нравственного выбора — что согласуется с его более широким предпочтением практического, ситуативного гадания перед психологическим архетипом.",
+        "es": "La carta trece de Etteilla lee el matrimonio y la unión de manera literal, como un evento social y legal concreto en lugar de una alegoría de elección moral—coherente con su preferencia más amplia por la adivinación práctica y situacional sobre el arquetipo psicológico."
+      }
+    },
+    "major-7": {
+      "number": 21,
+      "name": {
+        "en": "Etteilla / Dissension or Arrogance",
+        "ru": "Эттейла / Раздор или Высокомерие",
+        "es": "Etteilla / Disensión o Arrogancia"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The quarrelling figures",
+            "ru": "Ссорящиеся фигуры",
+            "es": "Las figuras en disputa"
+          },
+          "description": {
+            "en": "Rather than a triumphant charioteer, Etteilla's card twenty-one depicts conflict and discord, showing forces pulling apart rather than held in disciplined unity.",
+            "ru": "Вместо триумфального возницы, двадцать первая карта Эттейлы изображает конфликт и раздор, показывая силы, разрывающие друг друга, а не удерживаемые в дисциплинированном единстве.",
+            "es": "En lugar de un auriga triunfante, la carta veintiuno de Etteilla representa conflicto y discordia, mostrando fuerzas que se desgarran en vez de mantenerse en unidad disciplinada."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include dissension, quarrel, and disputed matters—reading the card as a warning about conflict rather than a symbol of victory.",
+            "ru": "Значения в прямом положении включают раздор, ссору и спорные дела — трактуя карту как предупреждение о конфликте, а не как символ победы.",
+            "es": "Los significados al derecho incluyen disensión, disputa y asuntos litigiosos—leyendo la carta como una advertencia sobre el conflicto, no como un símbolo de victoria."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings intensify into arrogance, pride, and domineering behaviour that provokes conflict rather than resolving it.",
+            "ru": "Перевёрнутые значения усиливаются до высокомерия, гордыни и властного поведения, провоцирующего конфликт, а не разрешающего его.",
+            "es": "Los significados invertidos se intensifican hacia la arrogancia, el orgullo y un comportamiento dominante que provoca el conflicto en lugar de resolverlo."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's placement of dissension and arrogance at card twenty-one is a striking divergence from RWS/Thoth's triumphant Chariot, illustrating how his independently derived sequence can assign an entirely different emotional register to the same numerical position, oriented toward warning rather than celebration.",
+        "ru": "Размещение Эттейлой раздора и высокомерия на карте двадцать один — разительное отличие от триумфальной Колесницы RWS/Тота, иллюстрирующее, как его независимо разработанная последовательность может придавать совершенно иной эмоциональный регистр той же числовой позиции, ориентированный на предостережение, а не на торжество.",
+        "es": "La colocación por parte de Etteilla de la disensión y la arrogancia en la carta veintiuno es una divergencia sorprendente respecto al triunfante Carro del RWS/Thoth, ilustrando cómo su secuencia desarrollada de forma independiente puede asignar un registro emocional completamente distinto a la misma posición numérica, orientado hacia la advertencia en lugar de la celebración."
+      }
+    },
+    "major-8": {
+      "number": 11,
+      "name": {
+        "en": "Etteilla / Strength or Sovereign (La Force / Le Souverain)",
+        "ru": "Эттейла / Сила или Государь (La Force / Le Souverain)",
+        "es": "Etteilla / La Fuerza o El Soberano (La Force / Le Souverain)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The sovereign figure of command",
+            "ru": "Державная фигура повеления",
+            "es": "La figura soberana de mando"
+          },
+          "description": {
+            "en": "Etteilla's card eleven depicts authority and physical strength together, closer to RWS's theme than card 8's Thoth counterpart, though still rooted in his own distinct sequence.",
+            "ru": "Одиннадцатая карта Эттейлы изображает власть и физическую силу вместе, ближе к теме RWS, чем аналог этой карты у Тота под номером 8, хотя и остаётся укоренённой в его собственной отдельной последовательности.",
+            "es": "La carta once de Etteilla representa la autoridad y la fuerza física juntas, más cercana al tema del RWS que la contraparte del Thoth en la carta 8, aunque sigue enraizada en su propia secuencia distinta."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include strength, power, authority, and command over a situation or one's own passions.",
+            "ru": "Значения в прямом положении включают силу, власть, авторитет и владение ситуацией или собственными страстями.",
+            "es": "Los significados al derecho incluyen fuerza, poder, autoridad y dominio sobre una situación o las propias pasiones."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impреso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings include abuse of power, despotism, or a strength that has curdled into cruelty.",
+            "ru": "Перевёрнутые значения включают злоупотребление властью, деспотизм или силу, скисшую в жестокость.",
+            "es": "Los significados invertidos incluyen abuso de poder, despotismo, o una fuerza que se ha agriado en crueldad."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's card eleven keeps strength and sovereignty together as a single practical theme of command, without RWS's gentle-taming allegory or Thoth's Marseille-restored Justice framing—another example of his sequence following its own internal logic rather than either later system's structure.",
+        "ru": "Одиннадцатая карта Эттейлы объединяет силу и суверенитет в единую практическую тему власти, без мягкой аллегории укрощения RWS или переосмысления Правосудия в марсельском духе у Тота — ещё один пример того, как его последовательность следует собственной внутренней логике, а не структуре какой-либо из более поздних систем.",
+        "es": "La carta once de Etteilla mantiene la fuerza y la soberanía juntas como un único tema práctico de mando, sin la alegoría de doma amable del RWS ni el encuadre de Justicia restaurada al estilo Marsella del Thoth—otro ejemplo de cómo su secuencia sigue su propia lógica interna en lugar de la estructura de cualquiera de los sistemas posteriores."
+      }
+    },
+    "major-9": {
+      "number": 18,
+      "name": {
+        "en": "Etteilla / Traitor or False Devotee (Traitre / Faux Devot)",
+        "ru": "Эттейла / Предатель или Лжеблагочестивый (Traitre / Faux Devot)",
+        "es": "Etteilla / Traidor o Falso Devoto (Traitre / Faux Devot)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The cloaked figure of hidden treachery",
+            "ru": "Закутанная фигура скрытого предательства",
+            "es": "La figura encapuchada de la traición oculta"
+          },
+          "description": {
+            "en": "Rather than a wise sage, Etteilla's card eighteen depicts deceit hiding behind a pious or trustworthy appearance—a very different reading from the RWS/Thoth Hermit's genuine wisdom.",
+            "ru": "Вместо мудрого старца восемнадцатая карта Эттейлы изображает обман, скрывающийся за благочестивой или заслуживающей доверия внешностью — совершенно иное прочтение, чем подлинная мудрость Отшельника RWS/Тота.",
+            "es": "En lugar de un sabio, la carta dieciocho de Etteilla representa el engaño oculto tras una apariencia piadosa o digna de confianza—una lectura muy distinta de la genuina sabiduría del Ermitaño del RWS/Thoth."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include betrayal, hypocrisy, and false piety used to disguise self-interest.",
+            "ru": "Значения в прямом положении включают предательство, лицемерие и ложное благочестие, используемое для маскировки корысти.",
+            "es": "Los significados al derecho incluyen traición, hipocresía y falsa piedad usada para disimular el interés propio."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings soften toward suspicion proven unfounded, or the unmasking of a previously hidden deception.",
+            "ru": "Перевёрнутые значения смягчаются до подозрения, оказавшегося необоснованным, или разоблачения ранее скрытого обмана.",
+            "es": "Los significados invertidos se suavizan hacia una sospecha que resulta infundada, o el desenmascaramiento de un engaño previamente oculto."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's eighteenth card warns of hidden treachery cloaked in false devotion, a moral caution rather than a portrait of earned wisdom—another instance where his Creation-myth-based sequence produces a meaning almost opposite to the RWS/Thoth Hermit at the same position.",
+        "ru": "Восемнадцатая карта Эттейлы предупреждает о скрытом предательстве, прикрытом ложной набожностью, — нравственное предостережение, а не портрет заслуженной мудрости — ещё один случай, когда его последовательность, основанная на мифе о творении, порождает значение, почти противоположное Отшельнику RWS/Тота в той же позиции.",
+        "es": "La decimoctava carta de Etteilla advierte de una traición oculta disfrazada de falsa devoción, una advertencia moral en lugar de un retrato de sabiduría ganada—otro caso en el que su secuencia basada en el mito de la Creación produce un significado casi opuesto al del Ermitaño del RWS/Thoth en la misma posición."
+      }
+    },
+    "major-10": {
+      "number": 20,
+      "name": {
+        "en": "Etteilla / Fortune or Increase (Fortune / Augmentation)",
+        "ru": "Эттейла / Удача или Приумножение (Fortune / Augmentation)",
+        "es": "Etteilla / Fortuna o Aumento (Fortune / Augmentation)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The rising fortune imagery",
+            "ru": "Образ восходящей удачи",
+            "es": "La imaginería de la fortuna en ascenso"
+          },
+          "description": {
+            "en": "Etteilla's card twenty keeps the direct theme of fortune and increase, aligning closely with RWS/Thoth despite occupying a different numerical slot in his sequence.",
+            "ru": "Двадцатая карта Эттейлы сохраняет прямую тему удачи и приумножения, тесно соотносясь с RWS/Тотом, несмотря на иную числовую позицию в его последовательности.",
+            "es": "La carta veinte de Etteilla mantiene el tema directo de la fortuna y el aumento, alineándose estrechamente con el RWS/Thoth pese a ocupar una posición numérica distinta en su secuencia."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include increase, prosperity, good fortune, and beneficial growth in one's affairs.",
+            "ru": "Значения в прямом положении включают приумножение, процветание, удачу и благоприятный рост в делах.",
+            "es": "Los significados al derecho incluyen aumento, prosperidad, buena fortuna y un crecimiento beneficioso en los asuntos propios."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to reduction, loss of fortune, or an increase that proves excessive and unsustainable.",
+            "ru": "Перевёрнутые значения указывают на сокращение, потерю удачи или приумножение, оказавшееся чрезмерным и неустойчивым.",
+            "es": "Los significados invertidos apuntan a la reducción, la pérdida de fortuna, o un aumento que resulta excesivo e insostenible."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Card twenty is one of the clearer thematic overlaps between Etteilla's independent sequence and the later RWS/Thoth systems—all three converge on fortune and cyclical increase, even though Etteilla arrived at this meaning through his own Creation-myth-based logic rather than Golden Dawn symbolism.",
+        "ru": "Карта двадцать — один из более ясных тематических пересечений между независимой последовательностью Эттейлы и более поздними системами RWS/Тота — все три сходятся на теме удачи и циклического приумножения, хотя Эттейла пришёл к этому значению через собственную логику, основанную на мифе о творении, а не через символику Golden Dawn.",
+        "es": "La carta veinte es una de las coincidencias temáticas más claras entre la secuencia independiente de Etteilla y los sistemas posteriores del RWS/Thoth—los tres convergen en la fortuna y el aumento cíclico, aunque Etteilla llegó a este significado a través de su propia lógica basada en el mito de la Creación, no en el simbolismo de la Golden Dawn."
+      }
+    },
+    "major-11": {
+      "number": 9,
+      "name": {
+        "en": "Etteilla / Justice or the Jurist (La Justice / Le Legiste)",
+        "ru": "Эттейла / Правосудие или Законник (La Justice / Le Legiste)",
+        "es": "Etteilla / La Justicia o El Jurista (La Justice / Le Legiste)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The robed figure of the jurist",
+            "ru": "Облачённая фигура законника",
+            "es": "La figura togada del jurista"
+          },
+          "description": {
+            "en": "Etteilla's card nine depicts a legal professional directly, keeping Justice grounded in practical, courtroom-style fairness rather than cosmic law.",
+            "ru": "Девятая карта Эттейлы напрямую изображает юриста, сохраняя Правосудие укоренённым в практической, судебной справедливости, а не космическом законе.",
+            "es": "La carta nueve de Etteilla representa directamente a un profesional del derecho, manteniendo la Justicia arraigada en una equidad práctica y judicial, no en la ley cósmica."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include justice, legal proceedings, a lawyer or judge, and fair resolution of a dispute.",
+            "ru": "Значения в прямом положении включают правосудие, судебное разбирательство, адвоката или судью и справедливое разрешение спора.",
+            "es": "Los significados al derecho incluyen justicia, procedimientos legales, un abogado o juez, y la resolución justa de una disputa."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to an unjust ruling, corrupt legal process, or an unresolved dispute dragging on unfairly.",
+            "ru": "Перевёрнутые значения указывают на несправедливое решение, коррумпированный судебный процесс или неразрешённый спор, несправедливо затягивающийся.",
+            "es": "Los significados invertidos apuntan a un fallo injusto, un proceso legal corrupto, o una disputa sin resolver que se prolonga injustamente."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's card nine keeps Justice close to its everyday, legal meaning—the jurist who resolves practical disputes—converging thematically with RWS's Justice even though Thoth's card at this sequential position is a completely different card (Lust) due to Crowley's numbering swap.",
+        "ru": "Девятая карта Эттейлы сохраняет Правосудие близким к его повседневному, юридическому значению — законник, разрешающий практические споры — тематически сближаясь с Правосудием RWS, хотя карта Тота в этой последовательной позиции представляет собой совершенно иную карту (Вожделение) из-за перестановки нумерации Кроули.",
+        "es": "La carta nueve de Etteilla mantiene la Justicia cercana a su significado cotidiano y legal—el jurista que resuelve disputas prácticas—convergiendo temáticamente con la Justicia del RWS, aunque la carta del Thoth en esta posición secuencial es una carta completamente distinta (la Lujuria) debido al intercambio de numeración de Crowley."
+      }
+    },
+    "major-12": {
+      "number": 12,
+      "name": {
+        "en": "Etteilla / Prudence or the People (La Prudence / Le Peuple)",
+        "ru": "Эттейла / Благоразумие или Народ (La Prudence / Le Peuple)",
+        "es": "Etteilla / La Prudencia o El Pueblo (La Prudence / Le Peuple)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The prudent figure among the common people",
+            "ru": "Благоразумная фигура среди простого народа",
+            "es": "La figura prudente entre el pueblo llano"
+          },
+          "description": {
+            "en": "Etteilla's card twelve depicts careful, measured behaviour among ordinary people rather than a suspended sacrificial figure, keeping the theme grounded and social.",
+            "ru": "Двенадцатая карта Эттейлы изображает осторожное, взвешенное поведение среди обычных людей, а не подвешенную жертвенную фигуру, сохраняя тему приземлённой и социальной.",
+            "es": "La carta doce de Etteilla representa un comportamiento cuidadoso y medido entre personas comunes, en lugar de una figura sacrificial suspendida, manteniendo el tema arraigado y social."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include prudence, caution, good counsel, and careful management of one's affairs.",
+            "ru": "Значения в прямом положении включают благоразумие, осторожность, добрый совет и тщательное ведение своих дел.",
+            "es": "Los significados al derecho incluyen prudencia, cautela, buen consejo y una gestión cuidadosa de los propios asuntos."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to recklessness, poor judgement, or bad counsel followed against one's better instincts.",
+            "ru": "Перевёрнутые значения указывают на безрассудство, дурное суждение или следование плохому совету вопреки лучшим инстинктам.",
+            "es": "Los significados invertidos apuntan a la imprudencia, el mal juicio, o seguir un mal consejo en contra del propio buen instinto."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's card twelve reads as sound practical judgement rather than mystical sacrifice, another example of his cartomancy favouring everyday virtue and social wisdom over the archetypal, esoteric symbolism later developed by the Golden Dawn-influenced decks.",
+        "ru": "Двенадцатая карта Эттейлы читается как здравое практическое суждение, а не мистическая жертва — ещё один пример того, как его картомантия отдаёт предпочтение повседневной добродетели и социальной мудрости перед архетипической, эзотерической символикой, развитой позднее колодами под влиянием Golden Dawn.",
+        "es": "La carta doce de Etteilla se lee como un juicio práctico sensato en lugar de un sacrificio místico, otro ejemplo de cómo su cartomancia favorece la virtud cotidiana y la sabiduría social por encima del simbolismo arquetípico y esotérico desarrollado después por las barajas influidas por la Golden Dawn."
+      }
+    },
+    "major-13": {
+      "number": 17,
+      "name": {
+        "en": "Etteilla / Mortality or Nothingness (Moralite / Neant)",
+        "ru": "Эттейла / Смертность или Ничто (Moralite / Neant)",
+        "es": "Etteilla / Mortalidad o Nada (Moralite / Neant)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The stark, skeletal figure of an end",
+            "ru": "Суровая, скелетная фигура конца",
+            "es": "La figura esquelética y austera de un final"
+          },
+          "description": {
+            "en": "Etteilla's card seventeen leans into the starker, more literal reading of endings and mortality, without RWS's rose of hope or Thoth's dancing renewal.",
+            "ru": "Семнадцатая карта Эттейлы склоняется к более суровому, буквальному прочтению окончаний и смертности, без розы надежды RWS или танцующего обновления Тота.",
+            "es": "La carta diecisiete de Etteilla se inclina hacia una lectura más cruda y literal de los finales y la mortalidad, sin la rosa de esperanza del RWS ni el renacimiento danzante del Thoth."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include destruction, decline, and matters coming to an emptied, finished state.",
+            "ru": "Значения в прямом положении включают разрушение, упадок и дела, приходящие к опустошённому, завершённому состоянию.",
+            "es": "Los significados al derecho incluyen destrucción, declive y asuntos que llegan a un estado vacío y terminado."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings can soften slightly toward a slow but definite change or a decline that is nonetheless survivable.",
+            "ru": "Перевёрнутые значения могут немного смягчаться до медленной, но определённой перемены или упадка, тем не менее переносимого.",
+            "es": "Los significados invertidos pueden suavizarse ligeramente hacia un cambio lento pero definido, o un declive que, no obstante, es superable."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's seventeenth card reads endings in a starker, more fatalistic register than the later esoteric decks, reflecting an older cartomantic tradition less invested in reframing mortality as symbolic renewal.",
+        "ru": "Семнадцатая карта Эттейлы трактует окончания в более суровом, фаталистическом регистре, чем более поздние эзотерические колоды, отражая более старую картомантическую традицию, менее заинтересованную в переосмыслении смертности как символического обновления.",
+        "es": "La carta diecisiete de Etteilla lee los finales en un registro más crudo y fatalista que las barajas esotéricas posteriores, reflejando una tradición cartomántica más antigua, menos interesada en reformular la mortalidad como una renovación simbólica."
+      }
+    },
+    "major-14": {
+      "number": 10,
+      "name": {
+        "en": "Etteilla / Temperance or the Priest (La Temperance / Le Pretre)",
+        "ru": "Эттейла / Умеренность или Священник (La Temperance / Le Pretre)",
+        "es": "Etteilla / La Templanza o El Sacerdote (La Temperance / Le Pretre)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The robed priest figure",
+            "ru": "Облачённая фигура священника",
+            "es": "La figura del sacerdote con hábito"
+          },
+          "description": {
+            "en": "Etteilla's card ten pairs moderation directly with a religious officiant, keeping the theme close to institutional virtue rather than alchemical process.",
+            "ru": "Десятая карта Эттейлы напрямую сочетает умеренность с религиозным служителем, сохраняя тему близкой к институциональной добродетели, а не алхимическому процессу.",
+            "es": "La carta diez de Etteilla empareja directamente la moderación con un oficiante religioso, manteniendo el tema cercano a la virtud institucional en lugar del proceso alquímico."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include temperance, moderation, and sound, measured guidance from a trusted spiritual figure.",
+            "ru": "Значения в прямом положении включают умеренность, сдержанность и разумное, взвешенное руководство от заслуживающей доверия духовной фигуры.",
+            "es": "Los significados al derecho incluyen templanza, moderación y una guía sensata y medida de una figura espiritual de confianza."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to excess, poor combination of interests, or false or misleading spiritual counsel.",
+            "ru": "Перевёрнутые значения указывают на избыток, неудачное сочетание интересов или ложное либо вводящее в заблуждение духовное наставление.",
+            "es": "Los significados invertidos apuntan al exceso, una mala combinación de intereses, o un consejo espiritual falso o engañoso."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's tenth card keeps moderation tied to a specific religious officiant rather than to angelic or alchemical imagery, reflecting his practical bent toward reading roles and relationships rather than abstract virtues.",
+        "ru": "Десятая карта Эттейлы сохраняет умеренность привязанной к конкретному религиозному служителю, а не к ангельским или алхимическим образам, отражая его практическую склонность читать роли и отношения, а не абстрактные добродетели.",
+        "es": "La carta diez de Etteilla mantiene la moderación ligada a un oficiante religioso específico en lugar de a una imaginería angélica o alquímica, reflejando su inclinación práctica hacia la lectura de roles y relaciones más que de virtudes abstractas."
+      }
+    },
+    "major-15": {
+      "number": 14,
+      "name": {
+        "en": "Etteilla / Major or Minor Force (Force Majeure / Force Mineure)",
+        "ru": "Эттейла / Большая или Малая Сила (Force Majeure / Force Mineure)",
+        "es": "Etteilla / Fuerza Mayor o Fuerza Menor (Force Majeure / Force Mineure)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figure overwhelmed by circumstance",
+            "ru": "Фигура, подавленная обстоятельствами",
+            "es": "La figura abrumada por las circunstancias"
+          },
+          "description": {
+            "en": "Rather than a devil figure, Etteilla's fourteenth card depicts overwhelming external force, either fated and unavoidable or petty and avoidable.",
+            "ru": "Вместо фигуры дьявола четырнадцатая карта Эттейлы изображает подавляющую внешнюю силу — либо роковую и неизбежную, либо мелкую и избегаемую.",
+            "es": "En lugar de una figura diabólica, la decimocuarta carta de Etteilla representa una fuerza externa abrumadora, ya sea fatal e inevitable o menor y evitable."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include overwhelming circumstance, unavoidable pressure, and forces beyond personal control.",
+            "ru": "Значения в прямом положении включают подавляющие обстоятельства, неизбежное давление и силы, находящиеся вне личного контроля.",
+            "es": "Los significados al derecho incluyen circunstancias abrumadoras, presión ineludible y fuerzas fuera del control personal."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings shift toward minor, manageable difficulty—force that seemed major turning out to be more modest than feared.",
+            "ru": "Перевёрнутые значения смещаются к незначительной, преодолимой трудности — сила, казавшаяся значительной, оказывается более скромной, чем предполагалось.",
+            "es": "Los significados invertidos se desplazan hacia una dificultad menor y manejable—una fuerza que parecía grande resulta ser más modesta de lo temido."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's fourteenth card concerns externally imposed force and pressure rather than self-created psychological bondage, once again favouring a practical, circumstantial reading over the archetypal shadow-work later associated with this position in RWS and Thoth.",
+        "ru": "Четырнадцатая карта Эттейлы касается внешне навязанной силы и давления, а не самосозданного психологического порабощения, вновь отдавая предпочтение практическому, ситуативному прочтению перед архетипической теневой работой, позднее связанной с этой позицией в RWS и Тоте.",
+        "es": "La decimocuarta carta de Etteilla concierne a una fuerza y presión impuestas externamente, en lugar de una esclavitud psicológica autocreada, favoreciendo una vez más una lectura práctica y circunstancial por encima del trabajo arquetípico de la sombra asociado después a esta posición en el RWS y el Thoth."
+      }
+    },
+    "major-16": {
+      "number": 19,
+      "name": {
+        "en": "Etteilla / Misery or Prison (Misere / Prison)",
+        "ru": "Эттейла / Нищета или Тюрьма (Misere / Prison)",
+        "es": "Etteilla / Miseria o Prisión (Misere / Prison)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The confined, suffering figure",
+            "ru": "Заточённая, страждущая фигура",
+            "es": "La figura confinada y sufriente"
+          },
+          "description": {
+            "en": "Rather than an exploding tower, Etteilla's nineteenth card depicts confinement and hardship, a slower, grinding form of misfortune rather than sudden shock.",
+            "ru": "Вместо взрывающейся башни девятнадцатая карта Эттейлы изображает заточение и лишения — более медленную, изнуряющую форму несчастья, а не внезапный шок.",
+            "es": "En lugar de una torre que estalla, la decimonovena carta de Etteilla representa el confinamiento y la penuria, una forma más lenta y desgastante de infortunio, no un shock repentino."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include misery, poverty, confinement, and prolonged hardship without immediate relief.",
+            "ru": "Значения в прямом положении включают нищету, бедность, заточение и затяжные лишения без немедленного облегчения.",
+            "es": "Los significados al derecho incluyen miseria, pobreza, confinamiento y penuria prolongada sin alivio inmediato."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings soften slightly toward release from confinement or the easing of a long-standing hardship.",
+            "ru": "Перевёрнутые значения немного смягчаются до освобождения от заточения или облегчения давних лишений.",
+            "es": "Los significados invertidos se suavizan ligeramente hacia la liberación del confinamiento o el alivio de una penuria de larga data."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's nineteenth card frames difficulty as grinding, ongoing misery and confinement rather than one sudden catastrophic event, giving this sequential position a very different emotional texture from the explosive RWS/Thoth Tower.",
+        "ru": "Девятнадцатая карта Эттейлы представляет трудность как изнуряющую, продолжающуюся нищету и заточение, а не одно внезапное катастрофическое событие, придавая этой последовательной позиции совершенно иную эмоциональную окраску по сравнению со взрывной Башней RWS/Тота.",
+        "es": "La decimonovena carta de Etteilla enmarca la dificultad como una miseria y un confinamiento desgastantes y continuos, en lugar de un único evento catastrófico repentino, dándole a esta posición secuencial una textura emocional muy distinta de la explosiva Torre del RWS/Thoth."
+      }
+    },
+    "major-17": {
+      "number": 4,
+      "name": {
+        "en": "Etteilla / Despoilment or Air (Depouillement / Air)",
+        "ru": "Эттейла / Обнажение или Воздух (Depouillement / Air)",
+        "es": "Etteilla / Despojamiento o Aire (Depouillement / Air)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figure stripped bare",
+            "ru": "Обнажённая фигура",
+            "es": "La figura despojada"
+          },
+          "description": {
+            "en": "Etteilla's card four depicts loss or stripping away, a more ambivalent reading than RWS/Thoth's straightforwardly hopeful Star.",
+            "ru": "Четвёртая карта Эттейлы изображает утрату или обнажение — более неоднозначное прочтение, чем прямо обнадёживающая Звезда RWS/Тота.",
+            "es": "La carta cuatro de Etteilla representa la pérdida o el despojamiento, una lectura más ambivalente que la Estrella directamente esperanzadora del RWS/Thoth."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include being stripped of possessions or illusions, exposure, and the element of Air as clarity gained through loss.",
+            "ru": "Значения в прямом положении включают лишение имущества или иллюзий, обнажение и стихию Воздуха как ясность, обретённую через утрату.",
+            "es": "Los significados al derecho incluyen ser despojado de posesiones o ilusiones, la exposición, y el elemento Aire como claridad ganada a través de la pérdida."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings soften toward hope after loss, or clarity that emerges once excess has been stripped away.",
+            "ru": "Перевёрнутые значения смягчаются до надежды после утраты или ясности, возникающей после устранения избытка.",
+            "es": "Los significados invertidos se suavizan hacia la esperanza tras la pérdida, o la claridad que emerge una vez que se ha despojado el exceso."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's fourth card frames this position around loss and exposure rather than pure hope, showing how his elemental (Air) and Creation-myth-based logic can produce a more bittersweet reading than the later esoteric decks' star of renewal.",
+        "ru": "Четвёртая карта Эттейлы обрамляет эту позицию вокруг утраты и обнажения, а не чистой надежды, показывая, как его стихийная (Воздух) логика, основанная на мифе о творении, может порождать более горько-сладкое прочтение, чем звезда обновления более поздних эзотерических колод.",
+        "es": "La carta cuatro de Etteilla enmarca esta posición en torno a la pérdida y la exposición en lugar de la esperanza pura, mostrando cómo su lógica elemental (Aire) y basada en el mito de la Creación puede producir una lectura más agridulce que la estrella de renovación de las barajas esotéricas posteriores."
+      }
+    },
+    "major-18": {
+      "number": 3,
+      "name": {
+        "en": "Etteilla / Words or Water (Propos / Eau)",
+        "ru": "Эттейла / Слова или Вода (Propos / Eau)",
+        "es": "Etteilla / Palabras o Agua (Propos / Eau)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figures engaged in conversation or reflection",
+            "ru": "Фигуры, вовлечённые в беседу или размышление",
+            "es": "Las figuras enfrascadas en conversación o reflexión"
+          },
+          "description": {
+            "en": "Etteilla's card three centres speech and the element of water, converging loosely with RWS/Thoth's emphasis on emotional depth and the unconscious.",
+            "ru": "Третья карта Эттейлы сосредоточена на речи и стихии воды, слегка сходясь с акцентом RWS/Тота на эмоциональной глубине и бессознательном.",
+            "es": "La carta tres de Etteilla se centra en el habla y el elemento agua, convergiendo levemente con el énfasis del RWS/Thoth en la profundidad emocional y el inconsciente."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include words spoken, news received, and matters connected to the element of water.",
+            "ru": "Значения в прямом положении включают произнесённые слова, полученные новости и дела, связанные со стихией воды.",
+            "es": "Los significados al derecho incluyen palabras dichas, noticias recibidas y asuntos relacionados con el elemento agua."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to harmful gossip, misunderstanding, or news that brings unexpected difficulty.",
+            "ru": "Перевёрнутые значения указывают на вредные сплетни, недопонимание или новости, приносящие неожиданные трудности.",
+            "es": "Los significados invertidos apuntan a chismes dañinos, malentendidos, o noticias que traen dificultades inesperadas."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's third card ties speech and the water element together, offering a communication-focused reading distinct from RWS/Thoth's dreamlike unconscious symbolism, though both ultimately gesture toward the same watery, emotionally charged territory.",
+        "ru": "Третья карта Эттейлы объединяет речь и стихию воды, предлагая прочтение, сосредоточенное на общении, отличное от сновидческой бессознательной символики RWS/Тота, хотя оба в конечном счёте указывают на ту же водную, эмоционально насыщенную территорию.",
+        "es": "La carta tres de Etteilla une el habla y el elemento agua, ofreciendo una lectura centrada en la comunicación, distinta del simbolismo onírico e inconsciente del RWS/Thoth, aunque ambos apuntan, en última instancia, al mismo territorio acuoso y emocionalmente cargado."
+      }
+    },
+    "major-19": {
+      "number": 2,
+      "name": {
+        "en": "Etteilla / Enlightenment or Fire (Eclaircissement / Feu)",
+        "ru": "Эттейла / Прояснение или Огонь (Eclaircissement / Feu)",
+        "es": "Etteilla / Esclarecimiento o Fuego (Eclaircissement / Feu)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figure receiving sudden clarity",
+            "ru": "Фигура, обретающая внезапную ясность",
+            "es": "La figura que recibe una claridad súbita"
+          },
+          "description": {
+            "en": "Etteilla's card two ties directly to clarification and the element of fire, converging closely with RWS/Thoth's theme of illuminating truth and vitality.",
+            "ru": "Вторая карта Эттейлы напрямую связана с прояснением и стихией огня, тесно сходясь с темой RWS/Тота об озаряющей истине и жизненности.",
+            "es": "La carta dos de Etteilla se vincula directamente con el esclarecimiento y el elemento fuego, convergiendo estrechamente con el tema del RWS/Thoth sobre la verdad iluminadora y la vitalidad."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include clarification, sudden understanding, and the resolving light of the element of fire.",
+            "ru": "Значения в прямом положении включают прояснение, внезапное понимание и разрешающий свет стихии огня.",
+            "es": "Los significados al derecho incluyen esclarecimiento, comprensión súbita y la luz resolutiva del elemento fuego."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to confusion that resists clearing, or a truth still obscured despite hope for resolution.",
+            "ru": "Перевёрнутые значения указывают на путаницу, не поддающуюся прояснению, или истину, всё ещё скрытую, несмотря на надежду на разрешение.",
+            "es": "Los significados invertidos apuntan a una confusión que resiste aclararse, o una verdad aún oscurecida a pesar de la esperanza de resolución."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Card two is one of the strongest convergence points between Etteilla's independent sequence and the later esoteric decks—all three systems land on illumination, clarity, and vital fire at this position, despite arriving there through entirely different structural logics.",
+        "ru": "Карта два — одна из самых сильных точек схождения между независимой последовательностью Эттейлы и более поздними эзотерическими колодами — все три системы приходят к озарению, ясности и живительному огню в этой позиции, несмотря на то что достигают этого совершенно разными структурными путями.",
+        "es": "La carta dos es uno de los puntos de convergencia más fuertes entre la secuencia independiente de Etteilla y las barajas esotéricas posteriores—los tres sistemas llegan a la iluminación, la claridad y el fuego vital en esta posición, a pesar de llegar allí mediante lógicas estructurales completamente distintas."
+      }
+    },
+    "major-20": {
+      "number": 16,
+      "name": {
+        "en": "Etteilla / Judgement (Jugement)",
+        "ru": "Эттейла / Суд (Jugement)",
+        "es": "Etteilla / El Juicio (Jugement)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The figure receiving a verdict",
+            "ru": "Фигура, получающая вердикт",
+            "es": "La figura que recibe un veredicto"
+          },
+          "description": {
+            "en": "Etteilla's card sixteen keeps a direct judgement theme, one of the clearer overlaps with RWS/Thoth despite occupying a different sequential slot.",
+            "ru": "Шестнадцатая карта Эттейлы сохраняет прямую тему суда — один из более ясных случаев пересечения с RWS/Тотом, несмотря на иную последовательную позицию.",
+            "es": "La carta dieciséis de Etteilla mantiene un tema directo de juicio, una de las coincidencias más claras con el RWS/Thoth, pese a ocupar una posición secuencial distinta."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include judgement, verdict, a decision reached, and the outcome of a matter finally made clear.",
+            "ru": "Значения в прямом положении включают суд, вердикт, принятое решение и исход дела, наконец ставший ясным.",
+            "es": "Los significados al derecho incluyen juicio, veredicto, una decisión alcanzada y el desenlace de un asunto finalmente aclarado."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to an unjust or delayed verdict, or indecision that prevents resolution.",
+            "ru": "Перевёрнутые значения указывают на несправедливый или отложенный вердикт или на нерешительность, препятствующую разрешению.",
+            "es": "Los significados invertidos apuntan a un veredicto injusto o retrasado, o a la indecisión que impide la resolución."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Card sixteen is another point of thematic convergence: Etteilla's straightforward reading of judgement and verdict lines up closely with RWS's awakening/reckoning theme, even though Thoth's card at this position (the Aeon) reframes the same idea on a cosmic rather than personal scale.",
+        "ru": "Карта шестнадцать — ещё одна точка тематического схождения: прямолинейное прочтение суда и вердикта Эттейлой близко соотносится с темой пробуждения/расплаты RWS, хотя карта Тота в этой позиции (Эон) переосмысляет ту же идею в космическом, а не личном масштабе.",
+        "es": "La carta dieciséis es otro punto de convergencia temática: la lectura directa del juicio y el veredicto de Etteilla se alinea estrechamente con el tema de despertar/ajuste de cuentas del RWS, aunque la carta del Thoth en esta posición (el Eón) reformula la misma idea a una escala cósmica en lugar de personal."
+      }
+    },
+    "major-21": {
+      "number": 5,
+      "name": {
+        "en": "Etteilla / Voyage or Earth (Voyage / Terre)",
+        "ru": "Эттейла / Путешествие или Земля (Voyage / Terre)",
+        "es": "Etteilla / Viaje o Tierra (Voyage / Terre)"
+      },
+      "visual_elements": [
+        {
+          "element": {
+            "en": "The traveller reaching a destination",
+            "ru": "Путешественник, достигающий цели",
+            "es": "El viajero que llega a un destino"
+          },
+          "description": {
+            "en": "Etteilla's card five ties completion to literal travel and the element of earth, a grounded, concrete reading distinct from RWS/Thoth's cosmic dance imagery.",
+            "ru": "Пятая карта Эттейлы связывает завершение с буквальным путешествием и стихией земли — приземлённое, конкретное прочтение, отличное от образности космического танца RWS/Тота.",
+            "es": "La carta cinco de Etteilla vincula la culminación con el viaje literal y el elemento tierra, una lectura arraigada y concreta, distinta de la imaginería de danza cósmica del RWS/Thoth."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (upright)",
+            "ru": "Печатная панель ключевых слов (в прямом положении)",
+            "es": "Panel impreso de palabras clave (al derecho)"
+          },
+          "description": {
+            "en": "Upright meanings include travel, a journey reaching completion, and matters connected to the element of earth.",
+            "ru": "Значения в прямом положении включают путешествие, странствие, достигающее завершения, и дела, связанные со стихией земли.",
+            "es": "Los significados al derecho incluyen viaje, un trayecto que llega a su fin, y asuntos relacionados con el elemento tierra."
+          }
+        },
+        {
+          "element": {
+            "en": "Printed keyword panel (reversed)",
+            "ru": "Печатная панель ключевых слов (в перевёрнутом положении)",
+            "es": "Panel impreso de palabras clave (invertido)"
+          },
+          "description": {
+            "en": "Reversed meanings point to a journey delayed, interrupted, or a change of plans that unsettles an expected arrival.",
+            "ru": "Перевёрнутые значения указывают на путешествие, отложенное, прерванное, или на изменение планов, нарушающее ожидаемое прибытие.",
+            "es": "Los significados invertidos apuntan a un viaje retrasado, interrumpido, o un cambio de planes que desestabiliza una llegada esperada."
+          }
+        }
+      ],
+      "deck_specific_divination_and_symbolism": {
+        "en": "Etteilla's fifth card reads completion through the very concrete lens of travel and arrival, grounding the World's grand thematic wholeness in the practical, everyday experience of a journey finally reaching its destination—a fitting, if structurally independent, echo of the same underlying idea of a cycle completed.",
+        "ru": "Пятая карта Эттейлы трактует завершение через вполне конкретную призму путешествия и прибытия, укореняя грандиозную тематическую целостность Мира в практическом, повседневном опыте путешествия, наконец достигающего своей цели, — подходящее, хотя и структурно независимое, эхо той же базовой идеи завершённого цикла.",
+        "es": "La carta cinco de Etteilla lee la culminación a través de la lente muy concreta del viaje y la llegada, arraigando la gran totalidad temática del Mundo en la experiencia práctica y cotidiana de un viaje que finalmente alcanza su destino—un eco apropiado, aunque estructuralmente independiente, de la misma idea subyacente de un ciclo completado."
+      }
+    }
+  }
+}
