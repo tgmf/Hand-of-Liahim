@@ -169,6 +169,15 @@ if (document.documentElement.lang === 'ru') {
     margin-bottom: 1rem;
     position: relative;
     z-index: 300;
+    /* Hidden until boot() confirms the header text is in the resolved
+       language (body.i18n-ready) — otherwise the title briefly shows the
+       hardcoded English fallback while data/locales/*.json is still loading. */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  body.i18n-ready header {
+    opacity: 1;
   }
 
   body:has(#card-modal.open) header h1,
@@ -2834,6 +2843,7 @@ async function boot() {
       '<p style="padding:2rem 1rem;text-align:center;color:var(--gold);line-height:1.6">' +
       'Could not load card data. Serve this page over http(s) — e.g. <code>npm run serve</code> — ' +
       'rather than opening the file directly.</p>';
+    document.body.classList.add('i18n-ready');   // reveal the header even on failure
     return;
   }
 
@@ -2853,6 +2863,7 @@ async function boot() {
   resolveCards();
   resolveSpreads();
   applyI18n();
+  document.body.classList.add('i18n-ready');   // header text is correct now — fade it in
 
   initFromURL();
 }
