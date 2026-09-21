@@ -5,6 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Hand of Liahim — Tarot Reader</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" href="fonts/cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+// Resolve + apply the language BEFORE first paint, so <html lang> (and the
+// --font-title it selects via :root[lang="ru"]) is correct from frame one
+// instead of only after boot()'s data fetch resolves. Runs synchronously
+// during head parsing, on purpose. SUPPORTED_LANGS/LS_LANG/initialLang() are
+// declared here (not with `var`) but stay visible to the later <script> at
+// the bottom of <body>, which reuses them instead of redeclaring.
+const SUPPORTED_LANGS = ['en', 'ru', 'es'];
+const LS_LANG = 'liahim.lang';
+
+// Resolution order: ?lang= (also persisted) -> localStorage -> navigator -> en.
+function initialLang() {
+  try {
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q && SUPPORTED_LANGS.includes(q)) {
+      try { localStorage.setItem(LS_LANG, q); } catch (e) {}
+      return q;
+    }
+  } catch (e) {}
+  try {
+    const saved = localStorage.getItem(LS_LANG);
+    if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+  } catch (e) {}
+  const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  return SUPPORTED_LANGS.includes(nav) ? nav : 'en';
+}
+
+document.documentElement.lang = initialLang();
+
+// Cormorant SC (RU titles) isn't otherwise preloaded like Cinzel is above,
+// so RU visitors would still see a font swap on the header text.
+if (document.documentElement.lang === 'ru') {
+  document.write('<link rel="preload" href="fonts/cormorant-sc-400.woff2" as="font" type="font/woff2" crossorigin>');
+}
+</script>
 <style>
   /* Self-hosted so the app renders correctly offline (Google Fonts <link>
      removed). Subsets under docs/fonts/ — Cinzel & Crimson Pro are Latin-only
@@ -76,7 +112,7 @@
     overflow-x: hidden;
   }
 
-  /* Freeze the page behind an open card modal or settings drawer */
+  /* Freeze the page behind an open card modal or settings drawer. */
   html.no-scroll, body.no-scroll { overflow: hidden; }
 
   /* Starfield bg. The leading linear layer holds the backdrop at plain
@@ -118,18 +154,25 @@
 
   #app {
     position: relative;
-    z-index: 1;
     max-width: 68.75rem;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 5rem;
+    padding: 2.5rem 1.5rem;
   }
 
-  /* HEADER */
+  /* HEADER — no z-index on #app above, so this competes directly with the
+     card modal (100) and settings drawer (250) instead of being trapped
+     under them; it always wins and stays on top. Since it now genuinely
+     floats above the modal at every width, the title has to get out of the
+     way while the modal's open, or it'd float over the modal content too. */
   header {
     text-align: center;
     margin-bottom: 1rem;
     position: relative;
+    z-index: 300;
   }
+
+  body:has(#card-modal.open) header h1,
+  body:has(#card-modal.open) header .divider { display: none; }
 
   .logo-ornament {
     display: block;
@@ -232,7 +275,6 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 300;                 /* above the settings drawer (250) and card modal (100) */
       background: var(--card-bg);
       margin: 0;
     }
@@ -241,17 +283,27 @@
     body:not([data-panel="setup-panel"]) header h1,
     body:not([data-panel="setup-panel"]) header .divider,
     body:has(#visual-settings-col.open) header h1,
-    body:has(#visual-settings-col.open) header .divider,
-    body:has(#card-modal.open) header h1,
-    body:has(#card-modal.open) header .divider { display: none; }
+    body:has(#visual-settings-col.open) header .divider { display: none; }
 
     .header-bar {
       display: grid;
-      grid-template-columns: 1.75rem 1fr 1.75rem;
+      grid-template-columns: 1.75rem 1.75rem 1fr 1.75rem 1.75rem;
       align-items: center;
+      gap: 0.75rem;
       padding: 1rem;
     }
+    .header-bar .header-placeholder { width: 1.75rem; }
     .header-bar .logo-ornament { margin: 0; }
+
+    /* In the mobile bar the picker sits in the grid flow (left of the
+       settings icon) instead of floating at the header's top-right corner.
+       position:relative (not static) so it still anchors the dropdown itself
+       — static would fall back to header as the containing block, and on
+       the home screen header is taller than just this icon row. */
+    .header-bar .lang-picker {
+      position: relative;
+      justify-self: end;
+    }
 
     .header-btn {
       display: block;
@@ -261,8 +313,8 @@
       background: transparent;
       border: none;
       color: var(--gold-dim);
-      font-size: 2rem;
-      line-height: 1;
+      font-size: 2.2rem;
+      line-height: 0.85;
       cursor: pointer;
       transition: color 0.2s;
     }
@@ -286,14 +338,11 @@
     }
 
     /* Back arrow: hidden on the setup + dealing screens (no history entry to
-       pop back to), shown once you're in a reading or an overlay is open. The
-       settings button stays available on the card modal, but not inside the
-       settings drawer itself. */
+       pop back to), shown once you're in a reading or an overlay is open. */
     body[data-panel="setup-panel"] header .header-back,
     body[data-panel="dealing-panel"] header .header-back { visibility: hidden; }
     body:has(#visual-settings-col.open) header .header-back,
     body:has(#card-modal.open) header .header-back { visibility: visible; }
-    body:has(#visual-settings-col.open) header .header-settings { visibility: hidden; }
 
     /* Moved to <body> on mobile (see placeSettingsPanel) so it floats above
        every screen — z above #app content and the card modal (100). */
@@ -315,9 +364,6 @@
       transform: translateX(0);
     }
 
-    .ai-settings {
-      margin-top: 2rem;
-    }
   }
 
   /* CHOICE GROUPS */
@@ -368,6 +414,82 @@
     font-style: italic;
   }
 
+  /* LANGUAGE PICKER — sits in the header, top-right corner on desktop
+     (see the mobile media query for its spot in the header-bar instead). */
+  .lang-picker {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .lang-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: transparent;
+    border: none;
+    color: var(--gold-dim);
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .lang-trigger svg {
+    fill: currentColor;
+  }
+
+  .lang-trigger:hover {
+    color: var(--gold-bright);
+  }
+
+  .lang-options {
+    position: absolute;
+    top: calc(100% + .5rem);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.375rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+  }
+
+  .lang-picker.open .lang-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .lang-option {
+    background: transparent;
+    border: none;
+    color: var(--parchment);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 0.875rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: start;
+    transition: all 0.2s;
+  }
+
+  .lang-option:hover {
+    background: rgba(201,168,76,0.1);
+    color: var(--gold-bright);
+  }
+
+  .lang-option.selected {
+    color: var(--gold);
+  }
+
   /* CTA BUTTON */
   .btn-primary {
     background: linear-gradient(135deg, #8b6914, #c9a84c, #8b6914);
@@ -408,83 +530,6 @@
   .btn-secondary:hover {
     border-color: var(--gold);
     color: var(--gold);
-  }
-
-  /* AI SETTINGS */
-  .ai-settings {
-    background: rgba(201,168,76,0.04);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 1.25rem 1.5rem;
-  }
-
-  .ai-settings h3 {
-    font-family: var(--font-title);
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  .ai-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  @media (max-width: 480px) { .ai-row { grid-template-columns: 1fr; } }
-
-  .ai-field label {
-    display: block;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    margin-bottom: 0.375rem;
-  }
-
-  .ai-field select,
-  .ai-field input {
-    width: 100%;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(201,168,76,0.2);
-    color: var(--parchment);
-    font-family: var(--font-body);
-    font-size: 1.25rem;
-    padding: 0.5625rem 0.75rem;
-    outline: none;
-    transition: border-color 0.2s;
-    border-radius: 2px;
-  }
-
-  .ai-field select:focus,
-  .ai-field input:focus {
-    border-color: var(--gold);
-  }
-
-  .ai-field select option { background: #1a1108; }
-
-  .ai-note {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--gold-dim);
-    margin-top: 0.625rem;
-    line-height: 1.5;
-  }
-
-  /* Desktop: settings column matches the spread column's height, with the
-     deck picker and AI options pushed to opposite ends. */
-  @media (min-width: 769px) {
-    #visual-settings-col {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-    #visual-settings-col .ai-settings {
-      min-height: 13.5rem; /* ≈ three choice buttons tall */
-    }
   }
 
   /* DEALING ANIMATION */
@@ -717,63 +762,6 @@
     color: var(--gold-dim);
   }
 
-  /* AI PANEL */
-  .ai-reading-section {
-    margin-top: 2.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .ai-reading-box {
-    background: rgba(201,168,76,0.04);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 1.75rem 2rem;
-    position: relative;
-  }
-
-  .ai-reading-box::before {
-    content: '✦';
-    position: absolute;
-    top: -0.625rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--card-bg);
-    padding: 0 0.75rem;
-    color: var(--gold);
-    font-size: 1rem;
-  }
-
-  .ai-reading-box h3 {
-    font-family: var(--font-title);
-    font-size: 1.25rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    margin-bottom: 1em;
-    text-align: center;
-  }
-
-  #ai-output {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: rgba(245,237,216,0.88);
-    white-space: pre-wrap;
-    font-style: italic;
-  }
-
-  #ai-output.placeholder {
-    text-align: center;
-    font-style: italic;
-    color: var(--gold-dim);
-    padding: 1.25rem 0;
-  }
-
-  .ai-actions {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-    flex-wrap: wrap;
-  }
-
   /* FOOTER ACTIONS */
   .reading-footer {
     text-align: center;
@@ -985,7 +973,7 @@
   }
 
   .modal-meaning p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.7;
     color: rgba(245,237,216,0.85);
     margin-bottom: 1em;
@@ -1158,8 +1146,19 @@
   <header>
     <div class="header-bar">
       <button class="header-btn header-back" onclick="headerBack()" data-i18n-aria="header.back.ariaLabel" aria-label="Back"></button>
+      <i class="header-placeholder"></i>
       <span class="logo-ornament">✦ ✦ ✦</span>
-      <button class="header-btn header-settings" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsToggle.ariaLabel" aria-label="Card visual theme &amp; AI interpretation settings">⚙</button>
+      <div class="lang-picker" id="lang-picker">
+        <button class="lang-trigger" id="lang-trigger" onclick="toggleLangPicker(event)" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+        </button>
+        <div class="lang-options" id="lang-choices">
+          <button class="lang-option" data-val="en" onclick="setLang('en')">EN</button>
+          <button class="lang-option" data-val="ru" onclick="setLang('ru')">RU</button>
+          <button class="lang-option" data-val="es" onclick="setLang('es')">ES</button>
+        </div>
+      </div>
+      <button class="header-btn header-settings" onclick="toggleSettingsPanel()" data-i18n-aria="setup.settingsToggle.ariaLabel" aria-label="Card visual theme settings">⚙</button>
     </div>
     <h1><a href="/" class="logo-link" data-i18n="app.title">The Hand of Liahim</a></h1>
     <div class="divider"><div class="divider-gem"></div></div>
@@ -1203,7 +1202,7 @@
         </div>
       </div>
 
-      <!-- Visual & AI settings. On mobile this is a drawer that slides in
+      <!-- Visual settings. On mobile this is a drawer that slides in
            below the one global header (see toggleSettingsPanel). -->
       <div class="setup-col" id="visual-settings-col">
         <div class="deck-section">
@@ -1224,47 +1223,6 @@
           </div>
         </div>
 
-        <div class="deck-section">
-          <p class="section-label" data-i18n="settings.language.label">Language</p>
-          <div class="choice-group" id="lang-choices">
-            <button class="choice-btn" data-val="en" onclick="setLang('en')">
-              <span class="btn-title">English</span>
-            </button>
-            <button class="choice-btn" data-val="ru" onclick="setLang('ru')">
-              <span class="btn-title">Русский</span>
-            </button>
-            <button class="choice-btn" data-val="es" onclick="setLang('es')">
-              <span class="btn-title">Español</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- AI Settings -->
-        <div class="ai-settings">
-          <h3 data-i18n="ai.title">⊕ AI Interpretation (optional)</h3>
-          <div class="ai-row">
-            <div class="ai-field">
-              <label data-i18n="ai.provider.label">Provider</label>
-              <select id="ai-provider" onchange="updateModelOptions()">
-                <option value="none" data-i18n="ai.provider.none">None — I'll interpret myself</option>
-                <option value="anthropic">Anthropic (Claude)</option>
-                <option value="openai">OpenAI (GPT)</option>
-                <option value="gemini">Google (Gemini)</option>
-              </select>
-            </div>
-            <div class="ai-field" id="model-field">
-              <label data-i18n="ai.model.label">Model</label>
-              <select id="ai-model">
-                <option value="">—</option>
-              </select>
-            </div>
-          </div>
-          <div class="ai-field" id="key-field" style="display:none">
-            <label data-i18n="ai.key.label">API Key</label>
-            <input type="password" id="ai-key" data-i18n-ph="ai.key.placeholder" placeholder="Paste your API key here — stored only in browser memory" autocomplete="off">
-          </div>
-          <p class="ai-note" data-i18n="ai.key.note">Your key is never sent anywhere except directly to the chosen provider. It stays in memory only and is cleared when you close the tab.</p>
-        </div>
       </div>
 
     </div>
@@ -1306,18 +1264,6 @@
     <div id="meanings-section" class="meanings-section">
       <h3 data-i18n="reading.meanings.title">Card Meanings</h3>
       <div class="meaning-cards" id="meaning-cards"></div>
-    </div>
-
-    <!-- AI section -->
-    <div class="ai-reading-section" id="ai-section">
-      <div class="ai-reading-box">
-        <h3 data-i18n="reading.interpretation.title">Interpretation</h3>
-        <div id="ai-output" class="placeholder" data-i18n="ai.output.placeholder">Click "Get AI Reading" to receive an interpretation, or reflect on the cards yourself.</div>
-        <div class="ai-actions">
-          <button class="btn-primary" id="ai-btn" onclick="getAiReading()" style="display:none" data-i18n="ai.button.get">Get AI Reading</button>
-          <button class="btn-secondary" onclick="clearAiReading()" id="clear-ai-btn" style="display:none" data-i18n="ai.button.clear">Clear</button>
-        </div>
-      </div>
     </div>
 
     <div class="reading-footer">
@@ -1414,9 +1360,9 @@ let currentIndexFilter = 'all';
 })();
 
 // ===== DATA (loaded at runtime from data/*.json — see boot()) =====
-const SUPPORTED_LANGS = ['en', 'ru', 'es'];
+// SUPPORTED_LANGS / LS_LANG / initialLang() are declared in the early <script>
+// in <head> (needed there before first paint) and reused here as-is.
 const DECK_CHOICES = ['rider-waite', 'visconti', 'symbolic'];
-const LS_LANG = 'liahim.lang';
 const LS_DECK = 'liahim.deck';
 
 // state.deck value -> deck JSON basename under data/decks/. 'symbolic' has no
@@ -1585,6 +1531,11 @@ function selectChoice(group, btn) {
     resolveDeck(state.deck);
     resolveCards();
     refreshActiveReading();          // live-swap art/meanings if a reading is open
+    // Close the settings drawer the same way the gear/back-arrow would, so
+    // the pushState entry it opened with gets consumed instead of left stale.
+    if (document.getElementById('visual-settings-col').classList.contains('open')) {
+      history.back();
+    }
   }
 
   if (group === 'spread') {
@@ -1612,11 +1563,12 @@ function refreshActiveReading() {
 
 // Switch UI + content language, persist the choice, and re-render live views.
 function setLang(lang) {
+  closeLangPicker();
   if (!SUPPORTED_LANGS.includes(lang) || lang === LANG) return;
   LANG = lang;
   try { localStorage.setItem(LS_LANG, lang); } catch (e) {}
   document.documentElement.lang = lang;
-  selectChoiceButton('lang', lang);
+  updateLangPicker();
 
   resolveDeck(state.deck);
   resolveCards();
@@ -1624,6 +1576,26 @@ function setLang(lang) {
   applyI18n();
   refreshActiveReading();
 }
+
+// Reflect the active language on the trigger button and the option list.
+function updateLangPicker() {
+  document.querySelectorAll('#lang-choices .lang-option').forEach(b => {
+    b.classList.toggle('selected', b.dataset.val === LANG);
+  });
+}
+
+function toggleLangPicker(e) {
+  e.stopPropagation();
+  const open = document.getElementById('lang-picker').classList.toggle('open');
+  document.getElementById('lang-trigger').setAttribute('aria-expanded', open);
+}
+
+function closeLangPicker() {
+  document.getElementById('lang-picker').classList.remove('open');
+  document.getElementById('lang-trigger').setAttribute('aria-expanded', 'false');
+}
+
+document.addEventListener('click', () => closeLangPicker());
 
 // Re-render every element carrying an i18n hook against the active locale.
 function applyI18n() {
@@ -1637,24 +1609,6 @@ function applyI18n() {
     el.setAttribute('placeholder', t(el.dataset.i18nPh));
   });
   document.title = t('app.titleTag');
-}
-
-function updateModelOptions() {
-  const provider = document.getElementById('ai-provider').value;
-  const modelSel = document.getElementById('ai-model');
-  const keyField = document.getElementById('key-field');
-  const modelField = document.getElementById('model-field');
-
-  const models = {
-    none: [],
-    anthropic: ['claude-opus-4-5', 'claude-sonnet-4-5', 'claude-haiku-4-5-20251001'],
-    openai: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo'],
-    gemini: ['gemini-2.5-flash', 'gemini-2.0-pro', 'gemini-2.5-pro'],
-  };
-
-  modelSel.innerHTML = models[provider].map(m => `<option value="${m}">${m}</option>`).join('');
-  keyField.style.display = provider === 'none' ? 'none' : 'block';
-  modelField.style.display = provider === 'none' ? 'none' : 'block';
 }
 
 function showPanel(id) {
@@ -1708,11 +1662,27 @@ function headerBack() {
 }
 
 // Lock page scroll while the card modal or the settings drawer is open.
+// Snaps to top before the lock engages: freezing overflow while still
+// scrolled detaches the sticky header on some mobile browsers, since it
+// needs an active scroll container to compute its "stuck" position against.
+// Scroll position is restored after the lock lifts.
+let scrollLockY = 0;
 function updateScrollLock() {
   const open = document.getElementById('card-modal').classList.contains('open')
     || document.getElementById('visual-settings-col').classList.contains('open');
+  if (open === document.body.classList.contains('no-scroll')) return;
+
+  if (open) {
+    scrollLockY = window.scrollY;
+    window.scrollTo(0, 0);
+  }
   document.documentElement.classList.toggle('no-scroll', open);
   document.body.classList.toggle('no-scroll', open);
+  if (!open) {
+    // A layout pass has to land before the page is scrollable again, or this
+    // scrollTo is a no-op.
+    requestAnimationFrame(() => window.scrollTo(0, scrollLockY));
+  }
 }
 
 function selectChoiceButton(group, val) {
@@ -2175,7 +2145,6 @@ function renderReading() {
   updateShareButtonsVisibility();
   document.getElementById('index-filters').style.display = 'none';
   document.getElementById('meanings-section').style.display = 'block';
-  document.getElementById('ai-section').style.display = 'block';
   document.getElementById('reading-spread-name').textContent = spread.name;
 
   // Card visuals — use thumb URLs for fast grid loading
@@ -2302,18 +2271,6 @@ function renderReading() {
 
     meaningsEl.appendChild(mc);
   });
-
-  // Show AI button if provider set
-  const provider = document.getElementById('ai-provider').value;
-  const aiBtn = document.getElementById('ai-btn');
-  aiBtn.style.display = provider !== 'none' ? 'inline-block' : 'none';
-
-  const aiOut = document.getElementById('ai-output');
-  aiOut.className = 'placeholder';
-  aiOut.textContent = provider !== 'none'
-    ? t('ai.output.placeholder')
-    : t('ai.placeholder.selfReflect');
-  document.getElementById('clear-ai-btn').style.display = 'none';
 }
 
 function renderIndex(filter) {
@@ -2324,7 +2281,6 @@ function renderIndex(filter) {
   const filters = document.getElementById('index-filters');
   filters.style.display = 'flex';
   document.getElementById('meaning-cards').innerHTML = '';
-  document.getElementById('ai-section').style.display = 'none';
   document.getElementById('meanings-section').style.display = 'none';
 
   const cards = filter === 'all'
@@ -2478,6 +2434,9 @@ function renderCardInto(root, card, opts = {}) {
   const showReversed = opts.showBoth || card.isReversed;
   root.querySelector('.modal-upright-block').style.display = showUpright ? '' : 'none';
   root.querySelector('.modal-reversed-block').style.display = showReversed ? '' : 'none';
+  // In a drawn spread, upright is the default/unlabeled state — only "Reversed"
+  // gets called out. The Card Index still labels both, since it shows both.
+  root.querySelector('.modal-upright-block h4').style.display = opts.showBoth ? '' : 'none';
 
   // Symbolic / archetypal meaning and qabalah — shown only when the card carries them.
   const symbolicBlock = root.querySelector('.modal-symbolic-block');
@@ -2829,134 +2788,14 @@ function closeModal(event) {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal({ target: { id: 'card-modal' }});
+  if (e.key === 'Escape') {
+    closeModal({ target: { id: 'card-modal' }});
+    closeLangPicker();
+  }
 });
 
-// ===== AI READING =====
-async function getAiReading() {
-  const provider = document.getElementById('ai-provider').value;
-  const model = document.getElementById('ai-model').value;
-  const key = document.getElementById('ai-key').value.trim();
-
-  if (!key) {
-    alert(t('ai.error.noKey'));
-    return;
-  }
-
-  const spread = state.currentSpread;
-  const cardList = state.drawnCards.map((c, i) =>
-    `${spread.positions[i]}: ${c.displayName}${c.isReversed ? t('share.reversedParen') : ''} — ${c.isReversed ? c.reversed : c.upright}`
-  ).join('\n');
-
-  const prompt = t('ai.prompt.template')
-    .replace('{spread}', spread.name)
-    .replace('{desc}', spread.desc)
-    .replace('{cards}', cardList);
-
-  const aiOut = document.getElementById('ai-output');
-  aiOut.className = '';
-  aiOut.textContent = t('ai.status.reading');
-
-  const btn = document.getElementById('ai-btn');
-  btn.disabled = true;
-  btn.textContent = t('ai.button.reading');
-
-  try {
-    let text = '';
-
-    if (provider === 'anthropic') {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': key,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true',
-        },
-        body: JSON.stringify({
-          model,
-          max_tokens: 600,
-          messages: [{ role: 'user', content: prompt }],
-        }),
-      });
-      const data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-      text = data.content[0].text;
-
-    } else if (provider === 'openai') {
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
-        body: JSON.stringify({
-          model,
-          max_tokens: 600,
-          messages: [{ role: 'user', content: prompt }],
-        }),
-      });
-      const data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-      text = data.choices[0].message.content;
-
-    } else if (provider === 'gemini') {
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-        }
-      );
-      const data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-      text = data.candidates[0].content.parts[0].text;
-    }
-
-    // Typewriter effect
-    aiOut.textContent = '';
-    let i = 0;
-    const typeTimer = setInterval(() => {
-      if (i < text.length) {
-        aiOut.textContent += text[i++];
-      } else {
-        clearInterval(typeTimer);
-      }
-    }, 12);
-
-    document.getElementById('clear-ai-btn').style.display = 'inline-block';
-
-  } catch (err) {
-    aiOut.className = '';
-    aiOut.textContent = t('ai.error.generic').replace('{msg}', err.message);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = t('ai.button.get');
-  }
-}
-
-function clearAiReading() {
-  const aiOut = document.getElementById('ai-output');
-  aiOut.className = 'placeholder';
-  aiOut.textContent = t('ai.output.placeholder');
-  document.getElementById('clear-ai-btn').style.display = 'none';
-}
-
 // ===== INIT =====
-// Resolution order: ?lang= (also persisted) -> localStorage -> navigator -> en.
-function initialLang() {
-  try {
-    const q = new URLSearchParams(location.search).get('lang');
-    if (q && SUPPORTED_LANGS.includes(q)) {
-      try { localStorage.setItem(LS_LANG, q); } catch (e) {}
-      return q;
-    }
-  } catch (e) {}
-  try {
-    const saved = localStorage.getItem(LS_LANG);
-    if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
-  } catch (e) {}
-  const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
-  return SUPPORTED_LANGS.includes(nav) ? nav : 'en';
-}
+// initialLang() is declared in the early <script> in <head>.
 
 function initFromURL() {
   const originalSearch = location.search;
@@ -3006,7 +2845,7 @@ async function boot() {
     if (savedDeck && DECK_CHOICES.includes(savedDeck)) state.deck = savedDeck;
   } catch (e) {}
 
-  selectChoiceButton('lang', LANG);
+  updateLangPicker();
   selectChoiceButton('deck', state.deck);
   selectChoiceButton('spread', state.spread);
 
@@ -3015,7 +2854,6 @@ async function boot() {
   resolveSpreads();
   applyI18n();
 
-  updateModelOptions();
   initFromURL();
 }
 

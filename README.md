@@ -9,7 +9,6 @@ A single-file tarot web app, plus a Capacitor wrapper that builds the same sourc
 - 5 spreads: Single Card, Three-Card, Celtic Cross, Horseshoe, Relationship
 - Full 78-card deck with upright & reversed meanings
 - Historical card visuals from Wikimedia Commons and Archive.org (Rider-Waite-Smith, Visconti-Sforza)
-- Optional AI interpretation via Anthropic, OpenAI, or Gemini — or none at all
 - Two deck systems: Rider-Waite-Smith and Thoth
 
 ## Repo layout
@@ -35,10 +34,6 @@ npx cap run android      # or open android/ in Android Studio
 ```
 
 Package ID: `st.tgmf.liahim`. Targeting Google Play first; iOS via `@capacitor/ios` is planned on the same codebase, no separate project.
-
-## AI Keys
-
-Keys are entered in-browser and never leave your device — they go directly to the provider's API and are cleared when the tab closes.
 
 ## License
 
