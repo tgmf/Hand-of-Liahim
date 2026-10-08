@@ -737,7 +737,7 @@ if (document.documentElement.lang === 'ru') {
      are dealt from it. JS positions it (deckPlace) with one transform. */
   #deck {
     display: none;
-    position: fixed; left: 0; top: 0;
+    position: fixed; left: 0.5rem; top: 0;
     width: 150px; height: 240px;        /* 5:8, like the dealt cards */
     z-index: 200;                       /* above the dealt backs (≤ ~115), below the sheet scrim and header */
     transform-origin: 0 0;
@@ -1146,6 +1146,13 @@ if (document.documentElement.lang === 'ru') {
     transition: width 0.25s, opacity 0.25s;
   }
   .modal-dots i.on { width: 22px; opacity: 1; }
+  .modal-dots .count {
+    font-family: var(--font-title);
+    font-size: 0.722rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--parch);
+  }
 
   .modal-close {
     background: none;
@@ -2900,11 +2907,13 @@ function renderIndex(filter) {
 
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
-  cards.forEach(card => {
-    const dc = { ...card, isReversed: false, displayName: getCardName(card) };
+  // The filtered list is also what the card page swipes through.
+  const list = cards.map(card => ({ ...card, isReversed: false, displayName: getCardName(card) }));
+  cards.forEach((card, idx) => {
+    const dc = list[idx];
     const wrap = document.createElement('div');
     wrap.className = 'tarot-card-wrap';
-    wrap.onclick = () => openModal(dc, { showBoth: true });
+    wrap.onclick = () => openModal(dc, { showBoth: true, list, index: idx });
 
     const inner = document.createElement('div');
     inner.className = 'card-inner';
@@ -3032,7 +3041,7 @@ function resetModalZoom() {
 function renderCardInto(root, card, opts = {}, idx = -1) {
   // "I · Past" above the name when the card belongs to a drawn spread.
   const spread = state.currentSpread;
-  const pos = idx >= 0 && spread && spread.positions[idx]
+  const pos = !opts.showBoth && idx >= 0 && spread && spread.positions[idx]
     ? `${toRoman(idx + 1)} · ${spread.positions[idx]}` : '';
   const posEl = root.querySelector('.modal-pos');
   posEl.textContent = pos;
@@ -3252,17 +3261,29 @@ function deckCommit(dir) {
   deckRole = dir > 0 ? { c: r.r, l: r.c, r: r.l } : { c: r.l, l: r.r, r: r.c };
   const staleNode = s[dir > 0 ? deckRole.r : deckRole.l];
   const staleIdx = dir > 0 ? (deckK + 1) % n : (deckK - 1 + n) % n;
-  renderCardInto(staleNode, modalCards[staleIdx], {}, staleIdx);
+  renderCardInto(staleNode, modalCards[staleIdx], modalOpts || {}, staleIdx);
   deckOffset = 0;
   deckApply();
   renderDeckDots();
 }
 
-// Progress dots under the card deck (mobile): the current card's pill is wide.
+// Progress under the card deck (mobile): dots for a short hand, where the
+// current card's pill is wide; a "12 / 78" counter once there are too many.
+const DECK_DOTS_MAX = 12;
 function renderDeckDots() {
   const dots = document.getElementById('modal-dots');
   const n = modalCards ? modalCards.length : 0;
-  if (dots.children.length !== n) {
+  if (n > DECK_DOTS_MAX) {
+    let count = dots.firstElementChild;
+    if (!count || !count.classList.contains('count')) {
+      count = document.createElement('span');
+      count.className = 'count';
+      dots.replaceChildren(count);
+    }
+    count.textContent = `${deckK + 1} / ${n}`;
+    return;
+  }
+  if (dots.children.length !== n || dots.querySelector('.count')) {
     dots.replaceChildren(...Array.from({ length: n }, () => document.createElement('i')));
   }
   Array.from(dots.children).forEach((d, i) => d.classList.toggle('on', i === deckK));
@@ -3292,9 +3313,10 @@ function buildDeck() {
   deckK = modalIndex;
   deckRole = { c: 1, l: 0, r: 2 };
   const s = rail.children;
-  renderCardInto(s[deckRole.c], modalCards[deckK], {}, deckK);
-  renderCardInto(s[deckRole.l], modalCards[(deckK - 1 + n) % n], {}, (deckK - 1 + n) % n);
-  renderCardInto(s[deckRole.r], modalCards[(deckK + 1) % n], {}, (deckK + 1) % n);
+  const o = modalOpts || {};
+  renderCardInto(s[deckRole.c], modalCards[deckK], o, deckK);
+  renderCardInto(s[deckRole.l], modalCards[(deckK - 1 + n) % n], o, (deckK - 1 + n) % n);
+  renderCardInto(s[deckRole.r], modalCards[(deckK + 1) % n], o, (deckK + 1) % n);
   deckOffset = 0;
   deckApply();
   renderDeckDots();
