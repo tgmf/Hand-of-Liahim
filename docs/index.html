@@ -526,14 +526,8 @@ if (document.documentElement.lang === 'ru') {
     gap: 2.2rem;
     padding: 0 1.5rem;
   }
-  .hs-card {
-    width: 150px; height: 210px;
-    border-radius: 8px;
-    border: 1.5px solid var(--parch);
-    background: var(--parch) url('img/back-hand.webp') center / 107% 104% no-repeat;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
-    transform: rotate(-3deg);
-  }
+  /* Empty placeholder: the deck (#deck, below) is laid over it. */
+  .hs-slot { width: 150px; height: 240px; }
   .hs-q {
     font-family: var(--font-title);
     font-size: 1.333rem;
@@ -576,18 +570,18 @@ if (document.documentElement.lang === 'ru') {
     cursor: pointer;
   }
   @media (max-height: 700px) {
-    .hs-card { width: 110px; height: 154px; }
+    .hs-slot { width: 110px; height: 176px; }
     .hs-mid { gap: 1.2rem; }
     .hs-hand { height: 76px; }
     .hs-liahim { height: 52px; }
     .hs-bottom { gap: 1rem; padding-bottom: 1.4rem; }
   }
-  @media (max-height: 560px) { .hs-card { display: none; } }
+  @media (max-height: 560px) { .hs-slot { width: 80px; height: 128px; } }
 
   /* HOME — spread preview + the fan of spreads (the plain list is desktop-only) */
   .setup-grid { display: none; }
   #setup-panel.active { padding: 0 1.333rem; }
-  #fan-home { display: grid; }
+  #fan-home { display: grid; -webkit-user-select: none; user-select: none; }
   #fan-home > * { grid-area: 1 / 1; }
   .fan-preview {
     position: relative;
@@ -666,6 +660,7 @@ if (document.documentElement.lang === 'ru') {
   }
   #deal-cta {
     display: none;
+    -webkit-user-select: none; user-select: none;
     position: fixed; left: 24px; right: 24px; bottom: 44px; z-index: 80;
     flex-direction: column; align-items: center; gap: 14px;
     opacity: 0; transform: translateY(16px); pointer-events: none;
@@ -747,6 +742,43 @@ if (document.documentElement.lang === 'ru') {
     pointer-events: none;
   }
   #fan.left .fan-num, #fan.left .fan-title { left: auto; right: 12px; }
+
+  /* THE DECK — a stack of card backs. On the hand question it sits in the
+     middle; afterwards it rests in the corner opposite the fan, and spreads
+     are dealt from it. JS positions it (deckPlace) with one transform. */
+  #deck {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    width: 150px; height: 240px;        /* 5:8, like the dealt cards */
+    z-index: 200;                       /* above the dealt backs (≤ ~115), below the sheet scrim and header */
+    transform-origin: 0 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    opacity: 0;
+    transition: transform 0.7s cubic-bezier(0.2,0.8,0.2,1), opacity 0.4s;
+  }
+  body[data-panel="setup-panel"] #deck { display: block; }
+  body.i18n-ready #deck { opacity: 1; }
+  html.needs-hand #deck, #deck.moving { z-index: 410; }
+  .deck-layer {
+    position: absolute; inset: 0;
+    border: 1.5px solid var(--parch);
+    border-radius: 8px;
+    background: #141118;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+  }
+  .deck-layer.top {
+    background: #141118 url('img/back-hand.webp') center / 107% 104% no-repeat;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  }
+  /* Riffle shuffle (deckShuffle): the pile splits to both sides, then the halves
+     are interleaved in the DOM so the cards genuinely change places. While it
+     runs every layer shows the card back. */
+  .deck-layer { transition: transform 0.24s ease-in-out calc(var(--i) * 14ms); }
+  .deck-layer.sl { transform: translate(calc(var(--x) - 80px), var(--y)) rotate(-9deg); }
+  .deck-layer.sr { transform: translate(calc(var(--x) + 80px), var(--y)) rotate(9deg); }
+  #deck.shuffling .deck-layer { background: #141118 url('img/back-hand.webp') center / 107% 104% no-repeat; }
 
   /* JOURNAL */
   .journal-open-btn { width: 100%; margin-top: 1rem; }
@@ -1244,7 +1276,7 @@ if (document.documentElement.lang === 'ru') {
      ============================================================ */
   @media (min-width: 769px) {
     .menu-btn, .header-back, #menu-panel, #menu-scrim, #sheet-scrim, #hand-setup,
-    #fan-home, #fan, #deal-cta, .pos-num, .meaning-num, .modal-pos { display: none !important; }
+    #fan-home, #fan, #deck, #deal-cta, .pos-num, .meaning-num, .modal-pos { display: none !important; }
 
     #app { padding: 2.5rem 1.5rem; }
 
@@ -1684,6 +1716,7 @@ if (document.documentElement.lang === 'ru') {
 </div>
 <div id="sheet-scrim" onclick="toggleSettingsPanel()"></div>
 
+<div id="deck" aria-hidden="true"></div>
 <div id="fan"></div>
 <div id="deal-cta">
   <button class="deal-read" id="deal-read" onclick="fanRead()"></button>
@@ -1698,7 +1731,7 @@ if (document.documentElement.lang === 'ru') {
       <div class="divider"><div class="divider-gem"></div></div>
     </div>
     <div class="hs-mid">
-      <div class="hs-card"></div>
+      <div class="hs-slot" id="hs-slot"></div>
       <h2 class="hs-q" data-i18n="hand.question">Which hand do you use?</h2>
     </div>
     <div class="hs-bottom">
@@ -3410,6 +3443,8 @@ const MOBILE_MQ = matchMedia('(max-width: 768px)');
 
 // s = card slots in "card units" (centre x, centre y[, rotation]) inside a bw × bh box.
 const FAN_SPREADS = [
+  // Not a spread: dragging it out shuffles the deck.
+  { key: 'shuffle',      num: '0',       bw: 1.5, bh: 1.7, shuffle: true, idx: true, s: [[.5, .85, -7], [.75, .8], [1.0, .85, 7]] },
   { key: 'single',       num: 'I',       bw: 1,   bh: 1.6, s: [[.5, .8]] },
   { key: 'three',        num: 'III',     bw: 3.6, bh: 1.6, s: [[.5, .8], [1.8, .8], [3.1, .8]] },
   { key: 'celtic',       num: 'X',       bw: 5.1, bh: 6.8, s: [[1.8, 3.4], [1.8, 3.4, 90], [1.8, 5.6], [.5, 3.4], [1.8, 1.2], [3.1, 3.4], [4.6, 6.0], [4.6, 4.27], [4.6, 2.53], [4.6, .8]] },
@@ -3424,7 +3459,8 @@ const fan = {
   built: false,
   hand: 'right',      // saved preference
   side: 'right',      // side the fan is currently laid out on
-  sel: 1,
+  sel: FAN_SPREADS.findIndex(sp => sp.key === 'three'),
+  busy: false,        // a shuffle is playing
   drag: null,         // { i, dx, dy, dropped? }
   st: null,           // pointer gesture in progress
   phase: 'idle',      // idle | deal | fly | ready
@@ -3480,6 +3516,7 @@ function fanInit() {
     fan.arms.push(arm);
     fan.cards.push(card);
   });
+  deckBuild();
   window.addEventListener('resize', fanResize);
   fanResize();
   fanMinis();
@@ -3492,6 +3529,7 @@ function fanResize() {
   fan.k = Math.max(.72, Math.min(1, window.innerHeight / 844));
   document.getElementById('fan').style.setProperty('--fk', fan.k);
   fanPreview();
+  deckPlace(false, fan.phase === 'ready');
 }
 
 function fanMinis() {
@@ -3530,7 +3568,7 @@ function fanPreview() {
 function fanHint() {
   const p = fanProg();
   document.getElementById('fan-hint').textContent =
-    t(p >= 1 ? 'home.hint.release' : p > 0 ? 'home.hint.further' : 'home.hint.drag');
+    t(p >= 1 ? (FAN_SPREADS[fan.sel].shuffle ? 'home.hint.shuffle' : 'home.hint.release') : p > 0 ? 'home.hint.further' : 'home.hint.drag');
   document.getElementById('fan-ring').style.opacity = p >= 1 ? 1 : p * .45;
 }
 
@@ -3566,7 +3604,7 @@ function fanLayout() {
 }
 
 function fanDown(e, i) {
-  if (fan.phase !== 'idle' || !fan.shown || fan.st) return;
+  if (fan.phase !== 'idle' || !fan.shown || fan.busy || fan.st) return;
   if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
   fan.st = { i, x: e.clientX, y: e.clientY, id: e.pointerId };
   fan.sel = i;
@@ -3590,9 +3628,14 @@ function fanUp(e) {
   fan.st = null;
   const d = fan.drag;
   if (d && Math.hypot(d.dx, d.dy) > FAN_GEO.th) {
-    // Dropped: the backs start flying from where the card was let go.
-    const r = fan.cards[d.i].getBoundingClientRect();
-    fanDeal(d.i, { x: r.left + r.width / 2, y: r.top + r.height / 2, rot: fanAngle(d.i) * .5 }, d);
+    if (FAN_SPREADS[d.i].shuffle) {
+      fan.drag = null;              // the card springs back; the deck does the work
+      fanLayout();
+      fanHint();
+      deckShuffle();
+    } else {
+      fanDeal(d.i, d);
+    }
   } else {
     fan.drag = null;
     fanLayout();
@@ -3601,7 +3644,7 @@ function fanUp(e) {
 }
 
 // Deal spread i: backs fly from `src` (viewport px) to the spread's slots.
-function fanDeal(i, src, drag) {
+function fanDeal(i, drag) {
   fanClear();
   fan.phase = 'deal';
   fan.dealIdx = i;
@@ -3614,6 +3657,9 @@ function fanDeal(i, src, drag) {
   document.getElementById('fan-home').classList.add('dealing');
   document.getElementById('deal-read').textContent = t(sp.idx ? 'home.openIndex' : 'home.readHand');
 
+  // Cards are drawn from the deck: each back starts on top of it.
+  const deckBox = document.querySelector('#deck .deck-layer.top').getBoundingClientRect();
+  const src = { x: deckBox.left + deckBox.width / 2, y: deckBox.top + deckBox.height / 2 };
   const board = document.getElementById('deal-board');
   const br = board.getBoundingClientRect();
   const slots = layoutSlots(sp, 0, 0, board.clientWidth, FAN_BOARD_H);
@@ -3622,7 +3668,7 @@ function fanDeal(i, src, drag) {
     const el = document.createElement('div');
     el.className = 'deal-back';
     el.style.cssText = `width:${p.w}px;height:${p.h}px;z-index:${70 + j + (p.r ? 20 : 0)};`
-      + `transform:translate(${src.x - br.left - p.w / 2}px,${src.y - br.top - p.h / 2}px) rotate(${src.rot}deg) scale(.9)`;
+      + `transform:translate(${src.x - br.left - p.w / 2}px,${src.y - br.top - p.h / 2}px) rotate(${deckAngle()}deg) scale(${deckBox.width / p.w})`;
     return el;
   }));
   fanLayout();
@@ -3640,6 +3686,7 @@ function fanDeal(i, src, drag) {
   fanAt(60 + slots.length * gap + 800, () => {
     fan.phase = 'ready';
     document.getElementById('deal-cta').classList.add('show');
+    deckPlace(true, true);        // every card is down: the deck slides off its screen edge
     fanMessage();
   });
 }
@@ -3667,6 +3714,7 @@ function fanReset() {
   fan.st = null;
   document.getElementById('fan-home').classList.remove('dealing');
   document.getElementById('deal-cta').classList.remove('show');
+  deckPlace(true);                 // the deck slides back in
   document.getElementById('deal-board').replaceChildren();
   fanLayout();
   fanHint();
@@ -3699,6 +3747,7 @@ function setHand(h, persist) {
     document.getElementById('fan').classList.toggle('left', h === 'left');
     fanMinis();
     fanLayout();
+    deckPlace(true, fan.phase === 'ready');
   };
   if (!fan.shown || fan.phase !== 'idle') { apply(); return; }
   fan.shown = false;
@@ -3720,26 +3769,110 @@ function dismissHandSetup() {
 function chooseHand(h) {
   setHand(h, true);
   dismissHandSetup();
+  deckPlace(true);              // the deck slides to the side opposite the fan
   fan.shown = true;
   fanLayout();
 }
 
-// "Liahim": let the hand choose a spread (never the Card Index) and deal it now.
-// No side was picked, so nothing is saved: the question comes back next launch.
-// This session the fan just uses the default (right).
+// "Liahim": let the hand choose a spread (never the Card Index or Shuffle) and
+// deal it now, straight off the deck. No side was picked, so nothing is saved:
+// the question comes back next launch. This session the fan uses the default.
 function chooseLiahim() {
   setHand('right', false);
-  dismissHandSetup();
-  const i = Math.floor(Math.random() * (FAN_SPREADS.length - 1));
-  const m = fanM(), g = FAN_GEO;
-  const R = (g.r0 + g.ch / 2 + g.lift) * fan.k, rad = fanAngle(i) * Math.PI / 180;
-  const px = fan.side === 'left' ? -2 : window.innerWidth + 2, py = window.innerHeight + 2;
+  const dealable = FAN_SPREADS.map((sp, i) => i).filter(i => !FAN_SPREADS[i].idx);
   fan.shown = false;
-  fanDeal(i, {
-    x: px + Math.sin(rad) * R - 60 * m * fan.k,
-    y: py - Math.cos(rad) * R - 160 * fan.k,
-    rot: fanAngle(i) * .5,
+  fanDeal(dealable[Math.floor(Math.random() * dealable.length)]);   // reads the deck where it sits now
+  dismissHandSetup();
+  deckPlace(true);              // to its corner while the cards are dealt; it leaves once they're down
+}
+
+// ----- The deck -----
+const DECK_LAYERS = 8;
+const DECK_HOME_SCALE = 0.8;
+
+let deckOrder = [];          // layers, bottom -> top
+
+function deckBuild() {
+  const deck = document.getElementById('deck');
+  deckOrder = Array.from({ length: DECK_LAYERS }, () => {
+    const el = document.createElement('i');
+    el.className = 'deck-layer';
+    return el;
   });
+  deck.replaceChildren(...deckOrder);
+  deckLayout();
+  deck.addEventListener('click', deckShuffle);
+}
+
+// Stack the layers in deckOrder (last = top, shows the back art). Order is
+// kept in z-index rather than the DOM, so a re-stack animates instead of
+// snapping. Deterministic little offsets so the pile looks hand-piled.
+function deckLayout() {
+  deckOrder.forEach((el, i) => {
+    const j = (i * 37) % 7 - 3;
+    el.classList.toggle('top', i === DECK_LAYERS - 1);
+    el.style.cssText = `--i:${i};--x:${(i - DECK_LAYERS) * 0.9 + j * 0.25}px;--y:${(i - DECK_LAYERS) * 1.3}px;--r:${j * 0.5}deg;z-index:${i}`;
+  });
+}
+
+// Rotation of the deck as placed (used to start dealt cards at the same tilt).
+function deckAngle() {
+  if (handPending()) return -3;
+  return fan.side === 'right' ? -4 : 4;
+}
+
+// Centre of the screen on the hand question; otherwise on the side opposite the
+// fan (left for a right-handed user, and vice versa). away = slid off that edge.
+function deckPlace(animate, away) {
+  const deck = document.getElementById('deck');
+  let x, y, sc;
+  if (handPending()) {
+    const r = document.getElementById('hs-slot').getBoundingClientRect();
+    x = r.left; y = r.top; sc = r.width / 150;
+  } else {
+    sc = DECK_HOME_SCALE * fan.k;
+    const w = 150 * sc, h = 240 * sc;
+    const toLeft = fan.side === 'right';
+    x = away ? (toLeft ? -w - 60 : window.innerWidth + 60)
+             : (toLeft ? 10 : window.innerWidth - w - 10);
+    y = window.innerHeight - h - 250;   // well above the fan
+  }
+  if (!animate) deck.style.transition = 'none';
+  deck.style.transform = `translate(${x}px,${y}px) rotate(${deckAngle()}deg) scale(${sc})`;
+  if (!animate) { void deck.offsetWidth; deck.style.transition = ''; }
+  else {
+    // Stay above the fading hand question while crossing the screen.
+    deck.classList.add('moving');
+    setTimeout(() => deck.classList.remove('moving'), 750);
+  }
+}
+
+// Three riffles: split the pile to both sides, then merge the halves at random.
+async function deckShuffle() {
+  if (fan.busy || (fan.phase !== 'idle' && !handPending())) return;
+  fan.busy = true;
+  const deck = document.getElementById('deck');
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  deck.classList.add('shuffling');
+  for (let round = 0; round < 3; round++) {
+    const half = deckOrder.length / 2;
+    deckOrder.forEach((el, i) => el.classList.add(i < half ? 'sl' : 'sr'));
+    await wait(260);
+    const lo = deckOrder.slice(0, half), hi = deckOrder.slice(half);
+    // Riffle: drop cards from either half at random until both are used up.
+    const merged = [], oldTop = deckOrder[deckOrder.length - 1];
+    while (lo.length || hi.length) {
+      const pile = !hi.length || (lo.length && Math.random() < 0.5) ? lo : hi;
+      merged.push(pile.shift());
+    }
+    if (merged[merged.length - 1] === oldTop) merged.push(merged.splice(merged.length - 2, 1)[0]);   // the top card always changes
+    deckOrder = merged;
+    deckOrder.forEach(el => el.classList.remove('sl', 'sr'));
+    deckLayout();
+    await wait(300);
+  }
+  deck.classList.remove('shuffling');
+  fan.busy = false;
 }
 
 // ----- Hamburger menu -----
