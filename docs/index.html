@@ -130,6 +130,25 @@ if (document.documentElement.lang === 'ru') {
     overflow-x: hidden;
   }
 
+  /* Twinkling starfield, above everything but never intercepting input. */
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    background: var(--parch);
+    border-radius: 50%;
+    animation: twinkle var(--d,3s) ease-in-out infinite var(--dl,0s);
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: var(--a, 0.4); transform: scale(1); }
+    50% { opacity: 0.1; transform: scale(0.7); }
+  }
+
   /* Freeze the page behind an open card modal or settings sheet. */
   html.no-scroll, body.no-scroll { overflow: hidden; }
 
@@ -1629,6 +1648,9 @@ if (document.documentElement.lang === 'ru') {
   </div>
 </div>
 
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
 <!-- MOBILE: hamburger menu, theme-sheet scrim, fan of spreads, deal buttons,
      first-launch hand question. All hidden on desktop (see CSS). -->
 <div id="menu-scrim" onclick="toggleMenu(false)"></div>
@@ -1699,6 +1721,24 @@ const state = {
 
 // Card Index: the filter currently shown, so a language switch can re-render it.
 let currentIndexFilter = 'all';
+
+// ===== STARS =====
+(function() {
+  const container = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 1.8 + 0.4;
+    s.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      left:${Math.random()*100}%;top:${Math.random()*100}%;
+      --d:${(Math.random()*3+2).toFixed(1)}s;
+      --dl:${(Math.random()*4).toFixed(1)}s;
+      --a:${(Math.random()*0.6+0.1).toFixed(2)};
+    `;
+    container.appendChild(s);
+  }
+})();
 
 // ===== DATA (loaded at runtime from data/*.json — see boot()) =====
 // SUPPORTED_LANGS / LS_LANG / initialLang() are declared in the early <script>
