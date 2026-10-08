@@ -265,6 +265,45 @@ if (document.documentElement.lang === 'ru') {
     margin-bottom: 0;
   }
 
+  /* JOURNAL */
+  .journal-open-btn { width: 100%; margin-top: 1rem; }
+  .journal-privacy, .journal-empty {
+    text-align: center;
+    color: var(--gold-dim);
+    font-size: 1rem;
+  }
+  .journal-list { max-width: 40rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+  .journal-item {
+    border: 1px solid var(--card-border);
+    background: rgba(201,168,76,0.05);
+    border-radius: 4px;
+    padding: 1rem;
+  }
+  .journal-item.focus { border-color: var(--gold); }
+  .journal-head { display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .journal-date { color: var(--gold-dim); font-size: 0.95rem; }
+  .journal-spread { font-family: var(--font-title); color: var(--gold-bright); letter-spacing: 0.1em; }
+  .journal-thumbs { display: flex; gap: 0.375rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .journal-thumb {
+    width: 2.75rem; aspect-ratio: 2 / 3.2;
+    object-fit: cover; border-radius: 2px;
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.1rem;
+  }
+  .journal-thumb.reversed { transform: rotate(180deg); }
+  .journal-note {
+    width: 100%; min-height: 4.5rem; resize: vertical;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--parchment);
+    font-family: var(--font-body); font-size: 1rem;
+    padding: 0.5rem 0.75rem; border-radius: 4px;
+  }
+  .journal-note:focus { outline: none; border-color: var(--gold); }
+  .journal-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+  .journal-actions .btn-secondary { padding: 0.5rem 1rem; font-size: 0.85rem; letter-spacing: 0.2em; }
+
   /* SETUP GRID */
   .setup-grid {
     display: grid;
@@ -1233,6 +1272,10 @@ if (document.documentElement.lang === 'ru') {
             <span class="btn-sub" data-i18n="spread.index.desc">Browse all 78 cards</span>
           </button>
         </div>
+        <button class="choice-btn journal-open-btn" onclick="openJournal()">
+          <span class="btn-title" data-i18n="journal.open">Journal</span>
+          <span class="btn-sub" data-i18n="journal.openDesc">Your saved hands and notes, kept only on this device</span>
+        </button>
       </div>
 
       <!-- Visual settings. On mobile this is a drawer that slides in
@@ -1304,9 +1347,19 @@ if (document.documentElement.lang === 'ru') {
       <button class="btn-secondary" id="share-btn-bottom" onclick="shareReading()" style="display:none" data-i18n="reading.button.share">Share Reading</button>
       <button class="btn-secondary" id="copy-link-btn" onclick="copyLinkToClipboard()" style="display:none" data-i18n="reading.button.copyLink">Copy Link</button>
       <button class="btn-secondary" id="copy-image-btn" onclick="copyImageToClipboard()" style="display:none" data-i18n="reading.button.copyImage">Copy Image</button>
+      <button class="btn-secondary" id="save-journal-btn" onclick="saveToJournal()" data-i18n="journal.save">Save to Journal</button>
       <button class="btn-secondary" id="change-settings-btn" onclick="goToSetup()" data-i18n="reading.button.changeSettings">Change Settings</button>
     </div>
   </div><!-- /reading-panel -->
+
+  <!-- JOURNAL PANEL -->
+  <div class="panel" id="journal-panel">
+    <div class="spread-title"><h2 data-i18n="journal.title">Journal</h2></div>
+    <p class="journal-privacy" data-i18n="journal.privacy">Entries are stored only on this device.</p>
+    <div class="divider"><div class="divider-gem"></div></div>
+    <p class="journal-empty" id="journal-empty" style="display:none" data-i18n="journal.empty">No saved hands yet.</p>
+    <div class="journal-list" id="journal-list"></div>
+  </div><!-- /journal-panel -->
 
 </div><!-- /app -->
 
@@ -1579,6 +1632,7 @@ function selectChoice(group, btn) {
 // Re-render the reading panel in place (after a deck or language change) keeping
 // the same drawn cards. No-op unless a reading is currently showing.
 function refreshActiveReading() {
+  if (document.getElementById('journal-panel').classList.contains('active')) { renderJournal(); return; }
   if (!document.getElementById('reading-panel').classList.contains('active')) return;
   if (state.spread === 'index') {
     renderIndex(currentIndexFilter);
@@ -1749,7 +1803,10 @@ function updateReadingHistoryState(isRedraw) {
 }
 
 function decodeReadingFromURL() {
-  const params = new URLSearchParams(location.search);
+  return decodeReading(new URLSearchParams(location.search));
+}
+
+function decodeReading(params) {
   const spreadKey = params.get('spread');
   if (!spreadKey) return null;
   if (spreadKey === 'index') return { spreadKey: 'index' };
@@ -1786,6 +1843,154 @@ function applyDecodedReading(decoded) {
   selectChoiceButton('spread', decoded.spreadKey);
   renderReading();
   showPanel('reading-panel');
+}
+
+// ===== JOURNAL =====
+// Records live only in this browser's localStorage. A record stores the same
+// query string as a shared link (spread + card ids + reversals), so names and
+// art are re-resolved in the current language/deck whenever it is shown.
+const LS_JOURNAL = 'liahim.journal';
+
+function loadJournal() {
+  try {
+    const list = JSON.parse(localStorage.getItem(LS_JOURNAL));
+    return Array.isArray(list) ? list : [];
+  } catch (e) { return []; }
+}
+
+function storeJournal(list) {
+  try { localStorage.setItem(LS_JOURNAL, JSON.stringify(list)); return true; } catch (e) { return false; }
+}
+
+function journalDate(rec) {
+  return new Date(rec.ts).toLocaleString(LANG, { dateStyle: 'medium', timeStyle: 'short' });
+}
+
+function saveToJournal() {
+  const btn = document.getElementById('save-journal-btn');
+  const qs = readingQueryString();
+  const list = loadJournal();
+  let rec = list.find(r => r.qs === qs);
+  if (!rec) {
+    rec = {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+      ts: new Date().toISOString(),
+      qs,
+      note: '',
+    };
+    list.unshift(rec);
+    if (!storeJournal(list)) {
+      const original = btn.textContent;
+      btn.textContent = t('journal.saveFailed');
+      setTimeout(() => { btn.textContent = original; }, 1800);
+      return;
+    }
+    // Ask the browser not to evict the journal under storage pressure.
+    if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+  }
+  openJournal(rec.id);
+}
+
+function openJournal(focusId) {
+  if (!(history.state && history.state.panel === 'journal')) {
+    history.pushState({ panel: 'journal' }, '', location.pathname);
+  }
+  renderJournal(focusId);
+  showPanel('journal-panel');
+}
+
+function renderJournal(focusId) {
+  const list = loadJournal();
+  const root = document.getElementById('journal-list');
+  root.innerHTML = '';
+  document.getElementById('journal-empty').style.display = list.length ? 'none' : 'block';
+
+  list.forEach(rec => {
+    const decoded = decodeReading(new URLSearchParams(rec.qs));
+    if (!decoded || decoded.spreadKey === 'index') return;
+
+    const item = document.createElement('div');
+    item.className = 'journal-item' + (rec.id === focusId ? ' focus' : '');
+
+    const head = document.createElement('div');
+    head.className = 'journal-head';
+    const spreadEl = document.createElement('span');
+    spreadEl.className = 'journal-spread';
+    spreadEl.textContent = SPREADS[decoded.spreadKey].name;
+    const dateEl = document.createElement('span');
+    dateEl.className = 'journal-date';
+    dateEl.textContent = journalDate(rec);
+    head.append(spreadEl, dateEl);
+
+    const thumbs = document.createElement('div');
+    thumbs.className = 'journal-thumbs';
+    decoded.cards.forEach(c => {
+      const base = CARDS.find(cc => cc.id === c.id);
+      const url = getCardThumbUrl({ ...base, isReversed: c.isReversed });
+      let el;
+      if (url) {
+        el = document.createElement('img');
+        el.src = url;
+        el.alt = getCardName(base);
+      } else {
+        el = document.createElement('div');
+        el.textContent = base.symbol || '✦';
+      }
+      el.className = 'journal-thumb' + (c.isReversed ? ' reversed' : '');
+      el.title = getCardName(base);
+      thumbs.appendChild(el);
+    });
+
+    const note = document.createElement('textarea');
+    note.className = 'journal-note';
+    note.value = rec.note || '';
+    note.placeholder = t('journal.notePlaceholder');
+    note.setAttribute('aria-label', t('journal.noteAria'));
+    note.addEventListener('input', () => updateJournalNote(rec.id, note.value));
+
+    const actions = document.createElement('div');
+    actions.className = 'journal-actions';
+    [['journal.openHand', () => openRecord(rec.id)],
+     ['journal.share', () => shareRecord(rec.id)],
+     ['journal.delete', () => deleteRecord(rec.id)]].forEach(([key, fn]) => {
+      const b = document.createElement('button');
+      b.className = 'btn-secondary';
+      b.textContent = t(key);
+      b.onclick = fn;
+      actions.appendChild(b);
+    });
+
+    item.append(head, thumbs, note, actions);
+    root.appendChild(item);
+    if (rec.id === focusId) note.focus({ preventScroll: false });
+  });
+}
+
+function updateJournalNote(id, text) {
+  const list = loadJournal();
+  const rec = list.find(r => r.id === id);
+  if (rec) { rec.note = text; storeJournal(list); }
+}
+
+function deleteRecord(id) {
+  if (!window.confirm(t('journal.confirmDelete'))) return;
+  storeJournal(loadJournal().filter(r => r.id !== id));
+  renderJournal();
+}
+
+function openRecord(id) {
+  const rec = loadJournal().find(r => r.id === id);
+  const decoded = rec && decodeReading(new URLSearchParams(rec.qs));
+  if (!decoded) return;
+  applyDecodedReading(decoded);
+  history.pushState({ panel: 'reading' }, '', rec.qs);
+}
+
+// Share goes through the reading view so the image and link are built from the
+// same on-screen hand; getShareContent() adds the record's date and note.
+function shareRecord(id) {
+  openRecord(id);
+  if (isMobileOS()) shareReading(); else copyLinkToClipboard();
 }
 
 function roundRectPath(ctx, x, y, w, h, r) {
@@ -2014,11 +2219,14 @@ const SHARE_ORIGIN = 'https://liahim.tgmf.st';
 function getShareContent() {
   const url = CAPACITOR ? SHARE_ORIGIN + location.pathname + location.search : location.href;
   const spread = state.currentSpread;
-  const text = state.spread === 'index'
+  let text = state.spread === 'index'
     ? t('share.indexText')
     : t('share.readingLabel').replace('{spread}', spread.name) + '\n' + state.drawnCards
         .map((c, i) => `${spread.positions[i]}: ${c.displayName}${c.isReversed ? t('share.reversedParen') : ''}`)
         .join('\n');
+  // A hand saved in the journal shares with its date and note.
+  const rec = state.spread !== 'index' && loadJournal().find(r => r.qs === readingQueryString());
+  if (rec) text += '\n\n' + journalDate(rec) + (rec.note ? '\n' + rec.note : '');
   return { url, text, combinedText: `${text}\n${url}` };
 }
 
@@ -2125,6 +2333,7 @@ function updateShareButtonsVisibility() {
   document.getElementById('share-btn-bottom').style.display = mobile ? 'inline-block' : 'none';
   document.getElementById('copy-link-btn').style.display = mobile ? 'none' : 'inline-block';
   document.getElementById('copy-image-btn').style.display = (!mobile && state.spread !== 'index') ? 'inline-block' : 'none';
+  document.getElementById('save-journal-btn').style.display = state.spread !== 'index' ? 'inline-block' : 'none';
 }
 
 // ===== READING =====
@@ -2911,6 +3120,12 @@ window.addEventListener('popstate', (e) => {
     return;                     // consumed the back gesture -- don't switch panels / minimize
   }
 
+  if (st && st.panel === 'journal') {
+    renderJournal();
+    showPanel('journal-panel');
+    return;
+  }
+
   if (st && st.panel === 'reading') {
     const decoded = decodeReadingFromURL();
     if (decoded) {
@@ -2931,7 +3146,7 @@ if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App
     const overlayOpen =
       document.getElementById('card-modal').classList.contains('open') ||
       document.getElementById('visual-settings-col').classList.contains('open');
-    if (overlayOpen || (history.state && history.state.panel === 'reading')) {
+    if (overlayOpen || (history.state && (history.state.panel === 'reading' || history.state.panel === 'journal'))) {
       history.back();
     } else {
       App.minimizeApp();
