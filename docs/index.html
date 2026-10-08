@@ -242,7 +242,8 @@ if (document.documentElement.lang === 'ru') {
   body[data-panel="setup-panel"] header .header-back,
   body[data-panel="dealing-panel"] header .header-back { visibility: hidden; }
   body:has(#visual-settings-col.open) header .header-back,
-  body:has(#card-modal.open) header .header-back { visibility: visible; }
+  body:has(#card-modal.open) header .header-back,
+  body:has(#fan-home.dealing) header .header-back { visibility: visible; }
 
   /* Phones switch language from the menu; the picker is desktop-only. */
   .lang-picker { display: none; }
@@ -1686,7 +1687,7 @@ if (document.documentElement.lang === 'ru') {
 <div id="fan"></div>
 <div id="deal-cta">
   <button class="deal-read" id="deal-read" onclick="fanRead()"></button>
-  <button class="deal-reset" onclick="fanReset()" data-i18n="home.chooseAnother">Choose another spread</button>
+  <button class="deal-reset" onclick="fanCancel()" data-i18n="home.chooseAnother">Choose another spread</button>
 </div>
 
 <div id="hand-setup" role="dialog" aria-modal="true" data-i18n-aria="hand.question" aria-label="Which hand do you use?">
@@ -2348,65 +2349,82 @@ function drawCoverImage(ctx, img, x, y, w, h, flip) {
   ctx.restore();
 }
 
-function drawReadingCard(ctx, card, position, x, y, w, h, img) {
-  roundRectPath(ctx, x, y, w, h, 12);
-  ctx.fillStyle = '#1c1408';
-  ctx.fill();
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = card.isReversed ? '#8b1a1a' : '#8b6914';
-  ctx.stroke();
+// Share-image palette — mirrors the CSS tokens (:root). Canvas takes oklch()
+// in current browsers; the hex is the fallback where it doesn't.
+const SHARE_FONT = "'Cinzel', 'Cormorant SC', Georgia, serif";
+function setColor(ctx, prop, modern, fallback) {
+  ctx[prop] = fallback;
+  ctx[prop] = modern;
+}
+const shareVerm = (ctx, prop) => setColor(ctx, prop, 'oklch(0.64 0.17 33)', '#d9603f');
+const shareVermDark = (ctx, prop) => setColor(ctx, prop, 'oklch(0.45 0.17 33)', '#9c2f14');
 
-  ctx.save();
-  roundRectPath(ctx, x, y, w, h, 12);
-  ctx.clip();
+// One card as on screen: parchment-framed art (turned over when reversed, with
+// the vermilion offset shadow), then "I · POSITION", the name, "Reversed".
+// (x, y, w) is the art box; its height follows the 300:520 card ratio.
+function drawReadingCard(ctx, card, label, x, y, w, artH, img) {
+  const r = 8, off = 4;
 
-  const headerH = 42;
-  ctx.textAlign = 'center';
-  ctx.fillStyle = '#b08838';
-  ctx.font = "600 15px Cinzel, 'Cormorant SC', Georgia, serif";
-  wrapCenteredLines(ctx, position.toUpperCase(), w - 24).forEach((line, i) => {
-    ctx.fillText(line, x + w / 2, y + 24 + i * 18);
-  });
-
-  if (img) {
-    const imgX = x + 6, imgY = y + headerH, imgW = w - 12, imgH = h - headerH - 6;
-    drawCoverImage(ctx, img, imgX, imgY, imgW, imgH, card.isReversed);
-
-    const scrimH = Math.min(imgH, 108);
-    const grad = ctx.createLinearGradient(0, imgY + imgH - scrimH, 0, imgY + imgH);
-    grad.addColorStop(0, 'rgba(20,14,6,0)');
-    grad.addColorStop(1, 'rgba(20,14,6,0.92)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(imgX, imgY + imgH - scrimH, imgW, scrimH);
-  } else {
-    const symbolCx = x + w / 2, symbolCy = y + headerH + (h - headerH) / 2 - 18;
-    ctx.save();
-    if (card.isReversed) {
-      ctx.translate(symbolCx, symbolCy);
-      ctx.rotate(Math.PI);
-      ctx.translate(-symbolCx, -symbolCy);
-    }
-    ctx.fillStyle = '#c9a84c';
-    ctx.font = '58px serif';
-    ctx.fillText(card.symbol || '✦', symbolCx, symbolCy + 20);
-    ctx.restore();
+  if (card.isReversed) {
+    roundRectPath(ctx, x + off, y + off, w, artH, r);
+    shareVerm(ctx, 'fillStyle');
+    ctx.fill();
   }
 
-  ctx.fillStyle = '#e8c46a';
-  ctx.font = "600 19px Cinzel, 'Cormorant SC', Georgia, serif";
-  const nameLines = wrapCenteredLines(ctx, card.displayName, w - 24);
-  const nameLastLineY = y + h - (card.isReversed ? 56 : 30);
-  nameLines.forEach((line, i) => {
-    ctx.fillText(line, x + w / 2, nameLastLineY - (nameLines.length - 1 - i) * 22);
+  roundRectPath(ctx, x, y, w, artH, r);
+  ctx.fillStyle = '#efe6d2';
+  ctx.fill();
+
+  ctx.save();
+  roundRectPath(ctx, x, y, w, artH, r);
+  ctx.clip();
+  if (img) {
+    drawCoverImage(ctx, img, x, y, w, artH, card.isReversed);
+  } else {
+    const cx = x + w / 2, cy = y + artH / 2;
+    ctx.save();
+    if (card.isReversed) {
+      ctx.translate(cx, cy);
+      ctx.rotate(Math.PI);
+      ctx.translate(-cx, -cy);
+    }
+    ctx.textAlign = 'center';
+    shareVermDark(ctx, 'fillStyle');
+    ctx.font = '72px serif';
+    ctx.fillText(card.symbol || '✦', cx, cy + 24);
+    ctx.restore();
+  }
+  ctx.restore();
+
+  roundRectPath(ctx, x, y, w, artH, r);
+  ctx.lineWidth = 3;
+  if (card.isReversed) shareVerm(ctx, 'strokeStyle'); else ctx.strokeStyle = '#efe2c4';
+  ctx.stroke();
+
+  const cx = x + w / 2;
+  let ty = y + artH + 30;
+  ctx.textAlign = 'center';
+
+  shareVerm(ctx, 'fillStyle');
+  ctx.font = `600 14px ${SHARE_FONT}`;
+  wrapCenteredLines(ctx, label.toUpperCase(), w).forEach(line => {
+    ctx.fillText(line, cx, ty);
+    ty += 18;
+  });
+
+  ctx.fillStyle = '#ece6da';
+  ctx.font = `600 19px ${SHARE_FONT}`;
+  ty += 8;
+  wrapCenteredLines(ctx, card.displayName, w).forEach(line => {
+    ctx.fillText(line, cx, ty);
+    ty += 24;
   });
 
   if (card.isReversed) {
-    ctx.fillStyle = '#c94f4f';
-    ctx.font = 'italic 14px Georgia, serif';
-    ctx.fillText(t('reading.card.reversedBadge'), x + w / 2, y + h - 16);
+    shareVerm(ctx, 'fillStyle');
+    ctx.font = `600 14px ${SHARE_FONT}`;
+    ctx.fillText(t('reading.card.reversedBadge').toUpperCase(), cx, ty + 2);
   }
-
-  ctx.restore();
 }
 
 const _cardImageCache = new Map();
@@ -2458,7 +2476,9 @@ async function buildReadingImageBlob() {
     })
   );
 
-  const cardW = 220, cardH = 320, gap = 26;
+  // Art box 220 wide at the 300:520 card ratio; the caption (position, name,
+  // reversed) takes up to ~125px below it.
+  const cardW = 220, artH = Math.round(cardW * 520 / 300), cardH = artH + 125, gap = 26;
   const cols = n <= 3 ? n : n <= 6 ? 3 : n <= 8 ? 4 : 5;
   const rows = Math.ceil(n / cols);
 
@@ -2469,9 +2489,9 @@ async function buildReadingImageBlob() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
 
-  ctx.font = "600 40px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.font = `600 40px ${SHARE_FONT}`;
   const titleWidth = ctx.measureText(t('app.title')).width;
-  ctx.font = "600 22px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.font = `600 22px ${SHARE_FONT}`;
   const spreadNameWidth = ctx.measureText(spread.name).width;
   const minHeaderWidth = Math.max(titleWidth, spreadNameWidth) + 80;
 
@@ -2479,20 +2499,25 @@ async function buildReadingImageBlob() {
   canvas.width = width;
   canvas.height = height;
 
-  ctx.fillStyle = '#0d0a04';
+  // Same backdrop as the app: a soft glow at the upper left fading to near-black.
+  const bg = ctx.createRadialGradient(width * 0.3, height * 0.15, 0, width * 0.3, height * 0.15, Math.max(width, height) * 0.8);
+  bg.addColorStop(0, '#1a1620');
+  bg.addColorStop(0.6, '#0b0a0d');
+  bg.addColorStop(1, '#060508');
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, width, height);
 
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#c9a84c';
+  shareVerm(ctx, 'fillStyle');
   ctx.font = '28px serif';
   ctx.fillText('✦ ✦ ✦', width / 2, 56);
 
-  ctx.fillStyle = '#e8c46a';
-  ctx.font = "600 40px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.fillStyle = '#efe2c4';
+  ctx.font = `600 40px ${SHARE_FONT}`;
   ctx.fillText(t('app.title'), width / 2, 108);
 
-  ctx.fillStyle = '#b08838';
-  ctx.font = "600 22px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.fillStyle = '#a9a296';
+  ctx.font = `600 22px ${SHARE_FONT}`;
   ctx.fillText(spread.name, width / 2, 148);
 
   const startX = (width - gridWidth) / 2;
@@ -2500,11 +2525,11 @@ async function buildReadingImageBlob() {
     const col = i % cols, row = Math.floor(i / cols);
     const x = startX + col * (cardW + gap);
     const y = headerH + row * (cardH + gap);
-    drawReadingCard(ctx, card, spread.positions[i], x, y, cardW, cardH, cardImages[i]);
+    drawReadingCard(ctx, card, `${toRoman(i + 1)} · ${spread.positions[i]}`, x, y, cardW, artH, cardImages[i]);
   });
 
-  ctx.fillStyle = 'rgba(176,136,56,0.6)';
-  ctx.font = "14px Cinzel, 'Cormorant SC', Georgia, serif";
+  ctx.fillStyle = 'rgba(169,162,150,0.6)';
+  ctx.font = `14px ${SHARE_FONT}`;
   ctx.fillText('liahim.tgmf.st', width / 2, height - 28);
 
   return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
@@ -3583,6 +3608,9 @@ function fanDeal(i, src, drag) {
   fan.sel = i;
   fan.drag = { ...(drag || { i, dx: 0, dy: 0 }), dropped: true };
   const sp = FAN_SPREADS[i];
+  // The dealt screen is a history step of its own, so back (arrow, swipe or
+  // hardware) returns to the fan instead of leaving the app.
+  if (!(history.state && history.state.panel === 'deal')) history.pushState({ panel: 'deal' }, '', location.pathname);
   document.getElementById('fan-home').classList.add('dealing');
   document.getElementById('deal-read').textContent = t(sp.idx ? 'home.openIndex' : 'home.readHand');
 
@@ -3621,10 +3649,17 @@ function fanRead() {
   const key = FAN_SPREADS[fan.dealIdx].key;
   state.spread = key;
   selectChoiceButton('spread', key);
+  if (history.state && history.state.panel === 'deal') history.replaceState({ panel: 'setup' }, '', location.pathname);
   beginReading(false, true);
 }
 
-// "Choose another spread" (and re-entry to home): back to the idle fan.
+// "Choose another spread": step back out of the dealt screen.
+function fanCancel() {
+  if (history.state && history.state.panel === 'deal') history.back();   // popstate -> fanReset
+  else fanReset();
+}
+
+// Back to the idle fan (also the re-entry to home).
 function fanReset() {
   fanClear();
   fan.phase = 'idle';
@@ -3837,7 +3872,7 @@ if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App
     const overlayOpen =
       document.getElementById('card-modal').classList.contains('open') ||
       document.getElementById('visual-settings-col').classList.contains('open');
-    if (overlayOpen || (history.state && (history.state.panel === 'reading' || history.state.panel === 'journal'))) {
+    if (overlayOpen || (history.state && (history.state.panel === 'reading' || history.state.panel === 'journal' || history.state.panel === 'deal'))) {
       history.back();
     } else {
       App.minimizeApp();
