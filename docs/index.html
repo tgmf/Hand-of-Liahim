@@ -573,13 +573,14 @@ if (document.documentElement.lang === 'ru') {
   #fan-home { display: grid; -webkit-user-select: none; user-select: none; }
   #fan-home > * { grid-area: 1 / 1; }
   .fan-preview {
+    --diagram-h: clamp(8rem, 28dvh, 18rem);
     position: relative;
     pointer-events: none;
     transition: opacity 0.35s, transform 0.35s;
   }
-  #fan-home.dealing .fan-preview { opacity: 0; transform: translateY(-12px); }
+  #fan-home.dealing .fan-preview { opacity: 0; transform: translateY(-0.667rem); }
   .fan-ring {
-    position: absolute; inset: -10px -12px;
+    position: absolute; inset: -0.556rem -0.667rem;
     border: 1.5px dashed var(--parch);
     border-radius: 14px;
     opacity: 0;
@@ -594,6 +595,18 @@ if (document.documentElement.lang === 'ru') {
     text-transform: uppercase;
     color: var(--parch);
     margin-bottom: 0.4rem;
+    transition: font-size 0.35s, letter-spacing 0.35s, margin 0.35s;
+  }
+  .fan-hint.big { font-size: 1.667rem; letter-spacing: 0.14em; line-height: 1.25; margin-top: calc(var(--diagram-h) / 3); margin-bottom: 0.6rem; animation: hint-pulse 2.6s ease-in-out infinite; }
+  /* Nothing picked yet: the cards glow one after another, like a wave along the fan. */
+  #fan.pulse .fan-card { animation: fan-pulse 2.6s ease-in-out infinite; }
+  @keyframes fan-pulse {
+    0%, 45%, 100% { filter: none; }
+    20% { filter: brightness(1.1) drop-shadow(0 0 0.7rem var(--parch)); }
+  }
+  @keyframes hint-pulse {
+    0%, 80%, 100% { filter: none; }
+    20% { filter: brightness(1.1) drop-shadow(0 0 0.7rem var(--parch)); }
   }
   .fan-name {
     font-family: var(--font-title);
@@ -609,7 +622,7 @@ if (document.documentElement.lang === 'ru') {
     line-height: 1.3;
     color: var(--soft);
   }
-  .fan-diagram { position: relative; width: min(342px, 100%); height: 150px; margin-top: 22px; }
+  .fan-diagram { position: relative; width: 100%; height: var(--diagram-h); margin-top: 1.222rem; }
   .slot {
     position: absolute;
     display: flex; align-items: center; justify-content: center;
@@ -637,7 +650,7 @@ if (document.documentElement.lang === 'ru') {
     color: var(--parch);
     margin-bottom: 1rem;
   }
-  .deal-board { position: relative; width: min(342px, 100%); height: 420px; margin: 0 auto; }
+  .deal-board { position: relative; width: min(19rem, 100%); height: clamp(16rem, 48dvh, 28rem); margin: 0 auto; }
   .deal-back, .dealing-placeholder {
     border: 1.5px solid var(--parch);
     border-radius: 4px;
@@ -650,15 +663,15 @@ if (document.documentElement.lang === 'ru') {
   #deal-cta {
     display: none;
     -webkit-user-select: none; user-select: none;
-    position: fixed; left: 24px; right: 24px; bottom: 44px; z-index: 80;
-    flex-direction: column; align-items: center; gap: 14px;
-    opacity: 0; transform: translateY(16px); pointer-events: none;
+    position: fixed; left: 1.333rem; right: 1.333rem; bottom: 2.444rem; z-index: 80;
+    flex-direction: column; align-items: center; gap: 0.778rem;
+    opacity: 0; transform: translateY(0.889rem); pointer-events: none;
     transition: opacity 0.4s, transform 0.4s;
   }
   body[data-panel="setup-panel"] #deal-cta { display: flex; }
   #deal-cta.show { opacity: 1; transform: none; pointer-events: auto; }
   .deal-read {
-    width: 100%; height: 52px;
+    width: 100%; height: 2.889rem;
     border: none; border-radius: 2px;
     background: var(--parch); color: var(--bg);
     font-family: var(--font-title);
@@ -669,7 +682,7 @@ if (document.documentElement.lang === 'ru') {
     cursor: pointer;
   }
   .deal-reset {
-    min-height: 44px; padding: 0 12px;
+    min-height: 2.444rem; padding: 0 0.667rem;
     background: none; border: none;
     color: var(--soft);
     font-family: var(--font-body);
@@ -738,7 +751,7 @@ if (document.documentElement.lang === 'ru') {
   #deck {
     display: none;
     position: fixed; left: 0.5rem; top: 0;
-    width: 150px; height: 240px;        /* 5:8, like the dealt cards */
+    width: 8.333rem; height: 13.333rem; /* 5:8, like the dealt cards */
     z-index: 200;                       /* above the dealt backs (≤ ~115), below the sheet scrim and header */
     transform-origin: 0 0;
     cursor: pointer;
@@ -765,8 +778,8 @@ if (document.documentElement.lang === 'ru') {
      are interleaved in the DOM so the cards genuinely change places. While it
      runs every layer shows the card back. */
   .deck-layer { transition: transform 0.24s ease-in-out calc(var(--i) * 14ms); }
-  .deck-layer.sl { transform: translate(calc(var(--x) - 80px), var(--y)) rotate(-9deg); }
-  .deck-layer.sr { transform: translate(calc(var(--x) + 80px), var(--y)) rotate(9deg); }
+  .deck-layer.sl { transform: translate(calc(var(--x) - 4.444rem), var(--y)) rotate(-9deg); }
+  .deck-layer.sr { transform: translate(calc(var(--x) + 4.444rem), var(--y)) rotate(9deg); }
   #deck.shuffling .deck-layer { background: #141118 url('img/back-hand.webp') center / 107% 104% no-repeat; }
 
   /* JOURNAL */
@@ -3464,13 +3477,12 @@ const FAN_SPREADS = [
   { key: 'index',        num: 'LXXVIII', bw: 7.0, bh: 7.0, idx: true, s: Array.from({ length: 24 }, (_, i) => [.5 + (i % 6) * 1.2, .8 + Math.floor(i / 6) * 1.8]) },
 ];
 const FAN_GEO = { r0: 104, cw: 138, ch: 222, lift: 34, a0: -72, a1: -18, th: 115 };
-const FAN_BOARD_H = 420;
 
 const fan = {
   built: false,
   hand: 'right',      // saved preference
   side: 'right',      // side the fan is currently laid out on
-  sel: FAN_SPREADS.findIndex(sp => sp.key === 'three'),
+  sel: -1,            // -1 = nothing picked yet (until a card is touched)
   busy: false,        // a shuffle is playing
   drag: null,         // { i, dx, dy, dropped? }
   st: null,           // pointer gesture in progress
@@ -3482,8 +3494,8 @@ const fan = {
 };
 
 // Lay a spread's slots out in the box (bx, by, bw, bh). top = pin to the top edge.
-function layoutSlots(sp, bx, by, bw, bh, top) {
-  const k = Math.min(bw / sp.bw, bh / sp.bh);
+function layoutSlots(sp, bx, by, bw, bh, top, maxK = Infinity) {
+  const k = Math.min(bw / sp.bw, bh / sp.bh, maxK);
   const ox = bx + (bw - sp.bw * k) / 2;
   const oy = top ? by : by + (bh - sp.bh * k) / 2;
   return sp.s.map((p, i) => ({
@@ -3517,6 +3529,7 @@ function fanInit() {
     arm.className = 'fan-arm';
     const card = document.createElement('div');
     card.className = 'fan-card';
+    card.style.animationDelay = `${i * 0.18}s`;
     card.innerHTML = '<div class="fan-rule"></div><span class="fan-num"></span><div class="fan-mini"></div><span class="fan-title"></span>';
     card.addEventListener('pointerdown', e => fanDown(e, i));
     card.addEventListener('pointermove', fanMove);
@@ -3537,7 +3550,7 @@ function fanInit() {
 
 // The fan is drawn at a fixed design size and scaled down on short screens.
 function fanResize() {
-  fan.k = Math.max(.72, Math.min(1, window.innerHeight / 844));
+  fan.k = Math.max(.72, Math.min(1, window.innerHeight / 844)) * parseFloat(getComputedStyle(document.documentElement).fontSize) / 18;   // design px scale with rem
   document.getElementById('fan').style.setProperty('--fk', fan.k);
   fanPreview();
   deckPlace(false, fan.phase === 'ready');
@@ -3568,16 +3581,25 @@ function fanText() {
 function fanPreview() {
   if (!fan.built) return;
   const s = FAN_SPREADS[fan.sel];
+  const box = document.getElementById('fan-diagram');
+  if (!s) {
+    document.getElementById('fan-name').textContent = '';
+    document.getElementById('fan-desc').textContent = '';
+    box.innerHTML = '';
+    return;
+  }
   document.getElementById('fan-name').textContent = t(`spread.${s.key}.title`);
   document.getElementById('fan-desc').textContent = t(`spread.${s.key}.desc`);
-  const box = document.getElementById('fan-diagram');
-  box.innerHTML = layoutSlots(s, 0, 0, box.clientWidth || 342, 150, true).map(p =>
+  box.innerHTML = layoutSlots(s, 0, 0, box.clientWidth || 342, box.clientHeight || 150, false,
+    6.5 * parseFloat(getComputedStyle(document.documentElement).fontSize)).map(p =>
     `<div class="slot" style="left:${p.l}px;top:${p.t}px;width:${p.w}px;height:${p.h}px;font-size:${p.fs / 18}rem;transform:rotate(${p.r}deg)">${p.n}</div>`
   ).join('');
 }
 
 function fanHint() {
   const p = fanProg();
+  document.getElementById('fan-hint').classList.toggle('big', fan.sel < 0);
+  document.getElementById('fan').classList.toggle('pulse', fan.sel < 0);
   document.getElementById('fan-hint').textContent =
     t(p >= 1 ? (FAN_SPREADS[fan.sel].shuffle ? 'home.hint.shuffle' : 'home.hint.release') : p > 0 ? 'home.hint.further' : 'home.hint.drag');
   document.getElementById('fan-ring').style.opacity = p >= 1 ? 1 : p * .45;
@@ -3599,7 +3621,7 @@ function fanLayout() {
     const isSel = fan.sel === i && idle;
     const t = d && !d.dropped ? Math.min(Math.hypot(d.dx, d.dy) / g.th, 1) : (d ? 1 : 0);
     // Neighbours of the selected card part to make room for it.
-    const a = fanAngle(i) + (idle ? (i < fan.sel ? -3 : i > fan.sel ? 4 : 0) : 0) * m;
+    const a = fanAngle(i) + (idle && fan.sel >= 0 ? (i < fan.sel ? -3 : i > fan.sel ? 4 : 0) : 0) * m;
     const out = (!idle || !fan.shown) && !d;
     const dx = d ? d.dx : out ? 230 * m : 0;
     const dy = d ? d.dy : out ? 230 : 0;
@@ -3648,7 +3670,7 @@ function fanUp(e) {
       fanDeal(d.i, d);
     }
   } else {
-    fan.drag = null;
+    fan.drag = null;                // released early: the card stays selected, its preview stays up
     fanLayout();
     fanHint();
   }
@@ -3673,7 +3695,7 @@ function fanDeal(i, drag) {
   const src = { x: deckBox.left + deckBox.width / 2, y: deckBox.top + deckBox.height / 2 };
   const board = document.getElementById('deal-board');
   const br = board.getBoundingClientRect();
-  const slots = layoutSlots(sp, 0, 0, board.clientWidth, FAN_BOARD_H);
+  const slots = layoutSlots(sp, 0, 0, board.clientWidth, board.clientHeight);
   const gap = Math.min(90, 1400 / slots.length);
   board.replaceChildren(...slots.map((p, j) => {
     const el = document.createElement('div');
@@ -3723,11 +3745,13 @@ function fanReset() {
   fan.phase = 'idle';
   fan.drag = null;
   fan.st = null;
+  fan.sel = -1;
   document.getElementById('fan-home').classList.remove('dealing');
   document.getElementById('deal-cta').classList.remove('show');
   deckPlace(true);                 // the deck slides back in
   document.getElementById('deal-board').replaceChildren();
   fanLayout();
+  fanPreview();
   fanHint();
   fanMessage();
 }
@@ -3758,6 +3782,7 @@ function setHand(h, persist) {
     document.getElementById('fan').classList.toggle('left', h === 'left');
     fanMinis();
     fanLayout();
+    fanPreview();
     deckPlace(true, fan.phase === 'ready');
   };
   if (!fan.shown || fan.phase !== 'idle') { apply(); return; }
@@ -3822,7 +3847,7 @@ function deckLayout() {
   deckOrder.forEach((el, i) => {
     const j = (i * 37) % 7 - 3;
     el.classList.toggle('top', i === DECK_LAYERS - 1);
-    el.style.cssText = `--i:${i};--x:${(i - DECK_LAYERS) * 0.9 + j * 0.25}px;--y:${(i - DECK_LAYERS) * 1.3}px;--r:${j * 0.5}deg;z-index:${i}`;
+    el.style.cssText = `--i:${i};--x:${((i - DECK_LAYERS) * 0.9 + j * 0.25) / 18}rem;--y:${(i - DECK_LAYERS) * 1.3 / 18}rem;--r:${j * 0.5}deg;z-index:${i}`;
   });
 }
 
@@ -3839,14 +3864,15 @@ function deckPlace(animate, away) {
   let x, y, sc;
   if (handPending()) {
     const r = document.getElementById('hs-slot').getBoundingClientRect();
-    x = r.left; y = r.top; sc = r.width / 150;
+    x = r.left; y = r.top; sc = r.width / deck.offsetWidth;
   } else {
     sc = DECK_HOME_SCALE * fan.k;
-    const w = 150 * sc, h = 240 * sc;
+    const w = deck.offsetWidth * sc, h = deck.offsetHeight * sc;
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const toLeft = fan.side === 'right';
-    x = away ? (toLeft ? -w - 60 : window.innerWidth + 60)
-             : (toLeft ? 10 : window.innerWidth - w - 10);
-    y = window.innerHeight - h - 250;   // well above the fan
+    x = away ? (toLeft ? -w - 3.333 * rem : window.innerWidth + 3.333 * rem)
+             : (toLeft ? 0.556 * rem : window.innerWidth - w - 0.556 * rem);
+    y = window.innerHeight - h - 250 * fan.k;   // well above the fan
   }
   if (!animate) deck.style.transition = 'none';
   deck.style.transform = `translate(${x}px,${y}px) rotate(${deckAngle()}deg) scale(${sc})`;
